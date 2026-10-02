@@ -1,0 +1,116 @@
+{
+  "client": "CPERS",
+  "quarter": "4Q25",
+  "meaning_hash": "f84bbddd56d7b5dcac9d957b33b0e6187d6fc6db0db5b1cb5e1858bf7782bb54",
+  "financial_hash": "fd3c910ca6c903a497f7b31e94325acdfb2459406fe1b9fef9812598018d6665",
+  "source_hashes": {
+    "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
+    "flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
+    "flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
+    "flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
+    "flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
+    "ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
+    "manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
+    "manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
+    "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
+    "manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
+    "manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
+    "manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
+    "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
+    "market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
+    "prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
+    "prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b"
+  },
+  "checks_passed": 51,
+  "checks_total": 51,
+  "issues": [
+    {
+      "code": "missing_manager",
+      "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+      "severity": "warning",
+      "fund": "Meridian Opportunity Fund V"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 4, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_731a8525b3f7f8dc"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 5, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_82edbc60210220b8"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 6, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_c76e46f3cd82c67f"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 7, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_aaa790b11e09b0c8"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 8, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_8838ad19fd46bc56"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 9, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_a9cf247c7c653d9c"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 10, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_a668b1ffdb4bc05e"
+    }
+  ],
+  "ranked_funds": [
+    {
+      "name": "Cornerstone Core Property Fund",
+      "roles": [
+        "second-largest detractor",
+        "largest individual position"
+      ],
+      "contribution": -187176.36,
+      "nav": 54424849.41
+    },
+    {
+      "name": "Redwood Logistics Trust",
+      "roles": [
+        "largest contributor",
+        "second-largest individual position"
+      ],
+      "contribution": 1367035.55,
+      "nav": 51915756.06
+    },
+    {
+      "name": "Ironwood Value-Add Fund III",
+      "roles": [
+        "second-largest contributor"
+      ],
+      "contribution": 1036289.0,
+      "nav": 11103969.0
+    },
+    {
+      "name": "Meridian Opportunity Fund V",
+      "roles": [
+        "largest detractor"
+      ],
+      "contribution": -469293.73,
+      "nav": 30237149.55
+    }
+  ],
+  "model_provider": null,
+  "model_name": null,
+  "api_calls": 0,
+  "api_usage": []
+}

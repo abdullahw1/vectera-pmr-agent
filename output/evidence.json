@@ -1,0 +1,3935 @@
+{
+  "checks": [
+    {
+      "actual": 54424849.410000004,
+      "delta": 7.450580596923828e-09,
+      "expected": 54424849.41,
+      "name": "Cornerstone Core Property Fund cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 54424849.41,
+      "delta": 0.0,
+      "expected": 54424849.41,
+      "name": "Cornerstone Core Property Fund cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 41870446.64,
+      "delta": 0.0,
+      "expected": 41870446.64,
+      "name": "Beacon Diversified Property Trust cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 41870446.64,
+      "delta": 0.0,
+      "expected": 41870446.64,
+      "name": "Beacon Diversified Property Trust cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 48575998.36,
+      "delta": 0.0,
+      "expected": 48575998.36,
+      "name": "Summit Multifamily Partners cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 48575998.36,
+      "delta": 0.0,
+      "expected": 48575998.36,
+      "name": "Summit Multifamily Partners cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 30830683.68,
+      "delta": 0.0,
+      "expected": 30830683.68,
+      "name": "Whitfield Diversified Property Fund cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 30830683.68,
+      "delta": 0.0,
+      "expected": 30830683.68,
+      "name": "Whitfield Diversified Property Fund cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 50199121.199999996,
+      "delta": -7.450580596923828e-09,
+      "expected": 50199121.2,
+      "name": "Silverline Core-Plus Fund cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 50199121.2,
+      "delta": 0.0,
+      "expected": 50199121.2,
+      "name": "Silverline Core-Plus Fund cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 49729238.0,
+      "delta": 0.0,
+      "expected": 49729238.0,
+      "name": "Kestrel U.S. Real Estate Fund cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 49729238.0,
+      "delta": 0.0,
+      "expected": 49729238.0,
+      "name": "Kestrel U.S. Real Estate Fund cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 51915756.059999995,
+      "delta": -7.450580596923828e-09,
+      "expected": 51915756.06,
+      "name": "Redwood Logistics Trust cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 51915756.06,
+      "delta": 0.0,
+      "expected": 51915756.06,
+      "name": "Redwood Logistics Trust cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 43274370.24,
+      "delta": 0.0,
+      "expected": 43274370.24,
+      "name": "Harborview Industrial Fund cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 43274370.24,
+      "delta": 0.0,
+      "expected": 43274370.24,
+      "name": "Harborview Industrial Fund cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 112620.0,
+      "delta": 0.0,
+      "expected": 112620.0,
+      "name": "Tidewater Distressed Realty Fund cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 112620.0,
+      "delta": 0.0,
+      "expected": 112620.0,
+      "name": "Tidewater Distressed Realty Fund cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 11103969.0,
+      "delta": 0.0,
+      "expected": 11103969.0,
+      "name": "Ironwood Value-Add Fund III cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 11103969.0,
+      "delta": 0.0,
+      "expected": 11103969.0,
+      "name": "Ironwood Value-Add Fund III cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 30237149.55,
+      "delta": 0.0,
+      "expected": 30237149.55,
+      "name": "Meridian Opportunity Fund V cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 30237149.55,
+      "delta": 0.0,
+      "expected": 30237149.55,
+      "name": "Meridian Opportunity Fund V cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 23841867.020000003,
+      "delta": 3.725290298461914e-09,
+      "expected": 23841867.02,
+      "name": "Blackford Special Situations Fund II cash roll-forward",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 23841867.02,
+      "delta": 0.0,
+      "expected": 23841867.02,
+      "name": "Blackford Special Situations Fund II cross-sheet NAV",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 370820463.59000003,
+      "delta": 5.960464477539063e-08,
+      "expected": 370820463.59,
+      "name": "Strategic NAV footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 3294060.93,
+      "delta": 0.0,
+      "expected": 3294060.93,
+      "name": "Strategic income footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 742725.32,
+      "delta": 0.0,
+      "expected": 742725.32,
+      "name": "Strategic fees footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 1755356.3800000001,
+      "delta": 2.3283064365386963e-10,
+      "expected": 1755356.38,
+      "name": "Strategic appreciation footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 372421944.93,
+      "delta": 0.0,
+      "expected": 372421944.93,
+      "name": "Strategic beginning footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 157723.44,
+      "delta": 0.0,
+      "expected": 157723.44,
+      "name": "Strategic contributions footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 2842086.2800000003,
+      "delta": 4.656612873077393e-10,
+      "expected": 2842086.28,
+      "name": "Strategic distributions footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 3223810.49,
+      "delta": 0.0,
+      "expected": 3223810.49,
+      "name": "Strategic withdrawals footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 65295605.57,
+      "delta": 0.0,
+      "expected": 65295605.57,
+      "name": "Tactical NAV footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 46258.48,
+      "delta": 0.0,
+      "expected": 46258.48,
+      "name": "Tactical income footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 308430.27999999997,
+      "delta": -5.820766091346741e-11,
+      "expected": 308430.28,
+      "name": "Tactical fees footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 1565345.24,
+      "delta": 0.0,
+      "expected": 1565345.24,
+      "name": "Tactical appreciation footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 64437412.46,
+      "delta": 0.0,
+      "expected": 64437412.46,
+      "name": "Tactical beginning footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 0.0,
+      "delta": 0.0,
+      "expected": 0.0,
+      "name": "Tactical contributions footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 444980.33,
+      "delta": 0.0,
+      "expected": 444980.33,
+      "name": "Tactical distributions footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 0.0,
+      "delta": 0.0,
+      "expected": 0.0,
+      "name": "Tactical withdrawals footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 436116069.15999997,
+      "delta": -5.960464477539063e-08,
+      "expected": 436116069.16,
+      "name": "Portfolio NAV footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 391814526.42,
+      "delta": 0.0,
+      "expected": 391814526.42,
+      "name": "Commitment footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 3340319.41,
+      "delta": 0.0,
+      "expected": 3340319.41,
+      "name": "Portfolio income footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 1051155.5999999999,
+      "delta": -2.3283064365386963e-10,
+      "expected": 1051155.6,
+      "name": "Portfolio fees footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 3320701.62,
+      "delta": 0.0,
+      "expected": 3320701.62,
+      "name": "Portfolio appreciation footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 436859357.39,
+      "delta": 0.0,
+      "expected": 436859357.39,
+      "name": "Portfolio beginning footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 157723.44,
+      "delta": 0.0,
+      "expected": 157723.44,
+      "name": "Portfolio contributions footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 3287066.61,
+      "delta": 0.0,
+      "expected": 3287066.61,
+      "name": "Portfolio distributions footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 3223810.49,
+      "delta": 0.0,
+      "expected": 3223810.49,
+      "name": "Portfolio withdrawals footing",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 100.0,
+      "delta": 0.0,
+      "expected": 100,
+      "name": "property diversification sum",
+      "passed": true,
+      "tolerance": 0.02
+    },
+    {
+      "actual": 99.99999999999999,
+      "delta": -1.4210854715202004e-14,
+      "expected": 100,
+      "name": "geography diversification sum",
+      "passed": true,
+      "tolerance": 0.02
+    }
+  ],
+  "facts": {
+    "f_0143b08a077bcbd7": {
+      "source": {
+        "cell": "C17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 60000000
+    },
+    "f_024f9747ea82a800": {
+      "source": {
+        "cell": "F9",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Northgate Logistics Partners"
+    },
+    "f_037f806a00f867b8": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 11
+      },
+      "value": [
+        "Private Real Estate Debt \u2014 Opportunistic",
+        "\u2022 Reduced bank lending has widened spreads, creating selective opportunities in senior and mezzanine credit.",
+        "\u2022 Relevant for dedicated debt mandates; not a focus of core / value-add equity portfolios."
+      ]
+    },
+    "f_053826a516ff9ed2": {
+      "source": {
+        "cell": "G13",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Approve a commitment of up to USD 30 million to a core-plus logistics strategy"
+    },
+    "f_056bbf7200de9be8": {
+      "source": {
+        "cell": "C18",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_05a8a5831f8bd754": {
+      "source": {
+        "cell": "G6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 8.281096281391738
+    },
+    "f_05b59e99389849b8": {
+      "source": {
+        "cell": "A17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Silverline Core-Plus Fund"
+    },
+    "f_072db1656d2253ea": {
+      "source": {
+        "cell": "E6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 3223810.49
+    },
+    "f_07773256cc89e5c4": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_33f30aecc4d95f1e"
+      ],
+      "source": {
+        "cell": "G14",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 25000000.0
+    },
+    "f_079d3c8299af65ea": {
+      "source": {
+        "cell": "B6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 10.21531681791713
+    },
+    "f_082266a1744be067": {
+      "source": {
+        "cell": "G20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 308430.28
+    },
+    "f_0993143bfbfcfdff": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 12
+      },
+      "value": [
+        "Risks We Are Monitoring",
+        "\u2022 A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery.",
+        "\u2022 Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office.",
+        "\u2022 Slower-than-expected supply absorption in select multifamily submarkets."
+      ]
+    },
+    "f_09e598b984b36915": {
+      "source": {
+        "cell": "C17",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_0a3f534112b4936f": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_c406e2b62100dba8",
+        "f_211bb3ec2c5c035b",
+        "f_1094743ca38363d5"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 590243.76
+    },
+    "f_0b2f7a1e152acef6": {
+      "source": {
+        "cell": "C7",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 424
+    },
+    "f_0b38330db80c6de6": {
+      "source": {
+        "cell": "A13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Cornerstone Core Property Fund"
+    },
+    "f_0ce94ac39ad2d6f2": {
+      "source": {
+        "cell": "F6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Property"
+      },
+      "value": 1.210078231954257
+    },
+    "f_0cfbe0bba52b3060": {
+      "source": {
+        "cell": "D6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Property"
+      },
+      "value": 36.20124610806096
+    },
+    "f_0fe77348f1351c15": {
+      "source": {
+        "cell": "W6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 2.29230116837735
+    },
+    "f_1094743ca38363d5": {
+      "source": {
+        "cell": "G7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 95960.81
+    },
+    "f_10a88430f35664c4": {
+      "source": {
+        "cell": "A30",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": "CPERS Custom Benchmark"
+    },
+    "f_10ad4a943fecf9f8": {
+      "source": {
+        "cell": "F13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.30723300416828
+    },
+    "f_114f224b7be7563f": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_54263532ea2d5161"
+      ],
+      "source": {
+        "cell": "G3",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 20000000.0
+    },
+    "f_1181846acf41ae56": {
+      "source": {
+        "cell": "H10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 188349
+    },
+    "f_128dd2b3a0bbce27": {
+      "source": {
+        "cell": "G14",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 41870446.64
+    },
+    "f_145359c1a7c2b331": {
+      "source": {
+        "cell": "G18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 49729238
+    },
+    "f_148219dca5a43332": {
+      "source": {
+        "cell": "W20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.31574999006689
+    },
+    "f_14b98dedc889d641": {
+      "source": {
+        "cell": "B5",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 486
+    },
+    "f_1502f0550dbb42a3": {
+      "source": {
+        "cell": "E6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Property"
+      },
+      "value": 8.185721779735681
+    },
+    "f_15b0422df462d7e6": {
+      "source": {
+        "cell": "F18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -31854.07
+    },
+    "f_17922cdd1a43e3b2": {
+      "source": {
+        "cell": "F18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 10.2178501274776
+    },
+    "f_186b8f56ecb0535e": {
+      "source": {
+        "cell": "W10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.32357785733761
+    },
+    "f_18af08d65f5ce457": {
+      "formula": "top two positive and negative dollar contributions; top two NAVs; alphabetical tie-break",
+      "inputs": [
+        "f_0b38330db80c6de6",
+        "f_92f49b852eba08e5",
+        "f_f50151e82610d9ca",
+        "f_1ddbfa65c04644d2",
+        "f_d7a2121aedebfe8d",
+        "f_128dd2b3a0bbce27",
+        "f_69afbc35654a0ded",
+        "f_0a3f534112b4936f",
+        "f_b1fceaf9f67defc1",
+        "f_205a258010db4f8a",
+        "f_65d3d5776e2d6f26",
+        "f_62601802ad62e13d",
+        "f_05b59e99389849b8",
+        "f_26f8a45d7977b4cc",
+        "f_61ae7464721b5cca",
+        "f_d2c5a1b09abbd5ee",
+        "f_e377f1dea766f606",
+        "f_145359c1a7c2b331",
+        "f_a28ed47ef16e42a6",
+        "f_dfeb0a03cb677d9c",
+        "f_32c7b35d93ba4163",
+        "f_2d8e82fff98516f3",
+        "f_6f2b7f186f8cb0b1",
+        "f_84b4f5105c54dc61",
+        "f_cbdb4277c0a67314",
+        "f_41eb3c46e4687cbf",
+        "f_65bb4c68a4aeb173",
+        "f_c14e046778ff1105",
+        "f_62a2c0b3dea9dccd",
+        "f_6e2eb4d8c867a684",
+        "f_7e76b74a96a1f345",
+        "f_9df9d367ceb65abc",
+        "f_32121b05c291a735",
+        "f_9ec6e048945507c2",
+        "f_a52c96ddd4e61154",
+        "f_48937beba85a45f6"
+      ],
+      "source": {
+        "kind": "ranking"
+      },
+      "value": []
+    },
+    "f_18cb20c5b122de5b": {
+      "source": {
+        "cell": "I18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 30237149.55
+    },
+    "f_18e8e610b40c2f4d": {
+      "source": {
+        "cell": "E12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_1961be993cc52f2e": {
+      "source": {
+        "cell": "B13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 372421944.93
+    },
+    "f_19c5a9f45f94e49a": {
+      "source": {
+        "cell": "G13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 742725.32
+    },
+    "f_1a9bbe457b9d2109": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 4
+      },
+      "value": [
+        "Return Backdrop \u2014 U.S. Private Real Estate",
+        "Trailing 3-year returns still carry the drawdown, but the latest quarter and one-year figures have turned positive."
+      ]
+    },
+    "f_1b3771758491c514": {
+      "source": {
+        "cell": "B6",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 489
+    },
+    "f_1bf8818c96bdac97": {
+      "source": {
+        "cell": "V13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 4.76859516972454
+    },
+    "f_1cf58d6da0f65a9b": {
+      "source": {
+        "cell": "F5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 534034.9
+    },
+    "f_1d6ae569c04fb5d4": {
+      "source": {
+        "cell": "G5",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Approve up to a USD20 million commitment to Blackford Special Situations Fund II"
+    },
+    "f_1ddbfa65c04644d2": {
+      "source": {
+        "cell": "A14",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Beacon Diversified Property Trust"
+    },
+    "f_1ef6d9d68aec726a": {
+      "source": {
+        "cell": "D6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_1fb9cc9048973307": {
+      "source": {
+        "cell": "V10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 4.56079692951544
+    },
+    "f_204b79a493557a04": {
+      "source": {
+        "cell": "I6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 17.63727326703328
+    },
+    "f_205a258010db4f8a": {
+      "source": {
+        "cell": "A16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Whitfield Diversified Property Fund"
+    },
+    "f_20dffd8905560704": {
+      "source": {
+        "cell": "J10",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "approved"
+    },
+    "f_211bb3ec2c5c035b": {
+      "source": {
+        "cell": "H7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 147924.68
+    },
+    "f_212c3832d022b22e": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_1d6ae569c04fb5d4"
+      ],
+      "source": {
+        "cell": "G5",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 20000000.0
+    },
+    "f_21bd50c4da48af1f": {
+      "source": {
+        "cell": "J18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 42.2
+    },
+    "f_21cad4d72ffa4f8d": {
+      "source": {
+        "cell": "B7",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-06-17 00:00:00"
+    },
+    "f_22884a114aee46dc": {
+      "source": {
+        "cell": "E25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 3223810.49
+    },
+    "f_23645aafca29c3ad": {
+      "source": {
+        "cell": "D8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 170363.04
+    },
+    "f_257a8862881bdb5f": {
+      "source": {
+        "cell": "J5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 28.2
+    },
+    "f_267d625bd09ad8f9": {
+      "source": {
+        "cell": "I7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 48575998.36
+    },
+    "f_269bcd2482f7e88c": {
+      "source": {
+        "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
+        "method": "heading-delimited extraction",
+        "page": 1,
+        "quote": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion."
+      },
+      "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion."
+    },
+    "f_26f8a45d7977b4cc": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_426f30fbd79bf0a5",
+        "f_a1d64105509bfc3e",
+        "f_f0e9a752a89402cc"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 373688.77999999997
+    },
+    "f_29b6c68728fb16b2": {
+      "source": {
+        "cell": "V18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 9.86511749723479
+    },
+    "f_2a6c0b6146d63fd7": {
+      "source": {
+        "cell": "D19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 348746.33
+    },
+    "f_2b1beddb5c5c1bd8": {
+      "source": {
+        "cell": "B4",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 484
+    },
+    "f_2b92565e44a7a2a8": {
+      "source": {
+        "cell": "G8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 66232
+    },
+    "f_2bb4965bb8a96ae0": {
+      "source": {
+        "cell": "C8",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_2c32ccd2393b2bfd": {
+      "source": {
+        "cell": "W17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.90118848166085
+    },
+    "f_2c53f7c9182ca4cf": {
+      "source": {
+        "cell": "D6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 7.12806118834026
+    },
+    "f_2c676eafd15c7170": {
+      "source": {
+        "cell": "F19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -41647.45
+    },
+    "f_2ca92edd8be9b2e2": {
+      "source": {
+        "cell": "K6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 12.0690145834966
+    },
+    "f_2d5b0186b6b013c6": {
+      "source": {
+        "cell": "G28",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 65295605.57
+    },
+    "f_2d8e82fff98516f3": {
+      "source": {
+        "cell": "A20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Harborview Industrial Fund"
+    },
+    "f_2db7399f42bf208f": {
+      "source": {
+        "cell": "F7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.1191008452347
+    },
+    "f_2e5715259e47f59e": {
+      "source": {
+        "cell": "C10",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_2e62f3c20096bfd7": {
+      "source": {
+        "cell": "C26",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 20000000
+    },
+    "f_2eb9a401a652eda3": {
+      "source": {
+        "cell": "F12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 2.69214164511806
+    },
+    "f_2effffe0c1cda52c": {
+      "source": {
+        "cell": "D12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 442309.43
+    },
+    "f_2f0e1689715853f4": {
+      "source": {
+        "cell": "F14",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.156401240214102
+    },
+    "f_2f8ba729257b309c": {
+      "source": {
+        "cell": "B8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 30680965.2
+    },
+    "f_2f999e3a2611f46c": {
+      "source": {
+        "cell": "B20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 64437412.46
+    },
+    "f_2ff32504d3c54463": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_c20c39c11a552f08"
+      ],
+      "source": {
+        "cell": "G7",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 20000000.0
+    },
+    "f_30a201c12e3a3965": {
+      "source": {
+        "cell": "J13",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "approved"
+    },
+    "f_30a82808c5faa5c1": {
+      "source": {
+        "cell": "F7",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Ironwood Value-Add Fund III"
+    },
+    "f_30b273f5b78af1b9": {
+      "source": {
+        "cell": "C27",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 20000000
+    },
+    "f_31ba8179db9585cd": {
+      "source": {
+        "cell": "G16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 634
+    },
+    "f_32121b05c291a735": {
+      "source": {
+        "cell": "G26",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 30237149.55
+    },
+    "f_32a888fa2a5cba5b": {
+      "source": {
+        "cell": "F11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.66261896895477
+    },
+    "f_32c7b35d93ba4163": {
+      "source": {
+        "cell": "G19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 51915756.06
+    },
+    "f_33737f355601c396": {
+      "source": {
+        "cell": "B7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 48428073.68
+    },
+    "f_33ba243d34b9d2dc": {
+      "source": {
+        "file": "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf",
+        "method": "heading-delimited extraction",
+        "page": 1,
+        "quote": "The Fund is substantially wound down. A single residual position \u2014 the final tranche of a distressed retail mortgage note \u2014 remains, valued at approximately $0.11 million at quarter-end. No distributions were made during the quarter."
+      },
+      "value": "The Fund is substantially wound down. A single residual position \u2014 the final tranche of a distressed retail mortgage note \u2014 remains, valued at approximately $0.11 million at quarter-end. No distributions were made during the quarter."
+    },
+    "f_33f30aecc4d95f1e": {
+      "source": {
+        "cell": "G14",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Withdraw the previously approved USD 25 million commitment to Alder Creek Multifamily Fund III; the Fund closed at its hard cap without an allocation to the client"
+    },
+    "f_36562237ba82512e": {
+      "source": {
+        "cell": "B3",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 482
+    },
+    "f_366465601f677aef": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_cd338233292486a5"
+      ],
+      "source": {
+        "cell": "G12",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 25000000.0
+    },
+    "f_36804666902b2348": {
+      "source": {
+        "cell": "B13",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-09-16 00:00:00"
+    },
+    "f_36950c41dea9233d": {
+      "source": {
+        "cell": "F6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": -0.339376888698555
+    },
+    "f_36e9aae658809ead": {
+      "source": {
+        "cell": "B6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 44534756.42
+    },
+    "f_38042dc533210641": {
+      "source": {
+        "cell": "C11",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_38c09d05464d04cf": {
+      "source": {
+        "cell": "F19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": -1.52832330895732
+    },
+    "f_3a68a53a7dbe100e": {
+      "source": {
+        "cell": "H17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 942909
+    },
+    "f_3a81bda6aeb96760": {
+      "formula": "top two positive and negative dollar contributions; top two NAVs; alphabetical tie-break",
+      "inputs": [
+        "f_0b38330db80c6de6",
+        "f_92f49b852eba08e5",
+        "f_f50151e82610d9ca",
+        "f_1ddbfa65c04644d2",
+        "f_d7a2121aedebfe8d",
+        "f_128dd2b3a0bbce27",
+        "f_69afbc35654a0ded",
+        "f_0a3f534112b4936f",
+        "f_b1fceaf9f67defc1",
+        "f_205a258010db4f8a",
+        "f_65d3d5776e2d6f26",
+        "f_62601802ad62e13d",
+        "f_05b59e99389849b8",
+        "f_26f8a45d7977b4cc",
+        "f_61ae7464721b5cca",
+        "f_d2c5a1b09abbd5ee",
+        "f_e377f1dea766f606",
+        "f_145359c1a7c2b331",
+        "f_a28ed47ef16e42a6",
+        "f_dfeb0a03cb677d9c",
+        "f_32c7b35d93ba4163",
+        "f_2d8e82fff98516f3",
+        "f_6f2b7f186f8cb0b1",
+        "f_84b4f5105c54dc61",
+        "f_cbdb4277c0a67314",
+        "f_41eb3c46e4687cbf",
+        "f_65bb4c68a4aeb173",
+        "f_c14e046778ff1105",
+        "f_62a2c0b3dea9dccd",
+        "f_6e2eb4d8c867a684",
+        "f_7e76b74a96a1f345",
+        "f_9df9d367ceb65abc",
+        "f_32121b05c291a735",
+        "f_9ec6e048945507c2",
+        "f_a52c96ddd4e61154",
+        "f_48937beba85a45f6"
+      ],
+      "source": {
+        "kind": "ranking"
+      },
+      "value": [
+        "largest contributor",
+        "second-largest individual position"
+      ]
+    },
+    "f_3cf2c4fd856194c6": {
+      "source": {
+        "cell": "A5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 4955864422
+    },
+    "f_3d7f4da712e28b20": {
+      "source": {
+        "cell": "J12",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "approved"
+    },
+    "f_3d8269f82ffd5c72": {
+      "source": {
+        "cell": "F10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 701291
+    },
+    "f_3dc1d66df53f7faa": {
+      "source": {
+        "cell": "J19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 49.7
+    },
+    "f_3e67f395ae8db317": {
+      "source": {
+        "cell": "H6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 147008.9
+    },
+    "f_3f0ea1fcdea98869": {
+      "source": {
+        "cell": "J10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 25.2589494702858
+    },
+    "f_3f2ff107eb54353d": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 10,
+        "quote": "<=35% Ex-US"
+      },
+      "value": [
+        35.0
+      ]
+    },
+    "f_3f56e7f4d3a78c13": {
+      "source": {
+        "cell": "C14",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 40000000
+    },
+    "f_3f7191fd95aa8414": {
+      "source": {
+        "cell": "W11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.40556445971304
+    },
+    "f_41eb3c46e4687cbf": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_572fb74162cccb1b",
+        "f_e6443d946097d017",
+        "f_31ba8179db9585cd"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 2538.0
+    },
+    "f_4200da4e6f0149ae": {
+      "source": {
+        "cell": "V12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 10.0643683508967
+    },
+    "f_426f30fbd79bf0a5": {
+      "source": {
+        "cell": "F9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 188925.41
+    },
+    "f_4387c6dd75bd4d47": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 1
+      },
+      "value": [
+        "Market Outlook \u2014 Fourth Quarter 2025",
+        "Vectera Advisors \u2014 House View"
+      ]
+    },
+    "f_468ebd0919519050": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 5
+      },
+      "value": [
+        "Capital Markets \u2014 Cap Rates and Rates",
+        "Cap rates have held broadly stable as Treasury yields settled; the spread has re-widened versus the 2024 trough."
+      ]
+    },
+    "f_488ac0cd1fc48bc0": {
+      "source": {
+        "cell": "J12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 44.49
+    },
+    "f_489168ef17ec79ef": {
+      "source": {
+        "cell": "V11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 6.63099777274422
+    },
+    "f_48937beba85a45f6": {
+      "source": {
+        "cell": "G27",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 23841867.02
+    },
+    "f_4a2abeb24b0916cb": {
+      "source": {
+        "cell": "B16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 110082
+    },
+    "f_4abc52c2b6861eb4": {
+      "source": {
+        "cell": "W9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.89918805876582
+    },
+    "f_4ae169b745498bc8": {
+      "source": {
+        "cell": "C4",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 397
+    },
+    "f_4b312de946cdf35a": {
+      "source": {
+        "cell": "H51",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 9.61990450522944
+    },
+    "f_4c4f77114a837b6f": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "method": "PDF font spans and contents headings"
+      },
+      "value": {
+        "body_font": "Helvetica",
+        "body_size": 9.2,
+        "heading_size": 15.0,
+        "primary": "#1b2a4a",
+        "section_order": [
+          "Portfolio Overview",
+          "Investment Guidelines & Fund Statistics",
+          "Portfolio Managers",
+          "Annualized Time-Weighted Return",
+          "Performance Update",
+          "Strategic Portfolio",
+          "Tactical and Special Situations Portfolio",
+          "Recent Investment Activity",
+          "Market Update",
+          "Allocation Over Time",
+          "Diversification",
+          "Compliance",
+          "Disclosure Statements",
+          "Appendix A: Quarterly Flash Report"
+        ]
+      }
+    },
+    "f_4cb6f0987417f0d4": {
+      "source": {
+        "cell": "F25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 3340319.41
+    },
+    "f_4de703a004dd4240": {
+      "source": {
+        "cell": "E9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 5.456896006300482
+    },
+    "f_4f4d61379390c213": {
+      "source": {
+        "cell": "C5",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_4f89f3e0004ba6d1": {
+      "source": {
+        "cell": "F21",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 2.022386359491009
+    },
+    "f_50643cfbd0a5a476": {
+      "source": {
+        "cell": "E5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "AnnReturns(Agg)"
+      },
+      "value": 2.661877523805845
+    },
+    "f_54263532ea2d5161": {
+      "source": {
+        "cell": "G3",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Approve a commitment of up to USD20 million to Meridian Opportunity Fund V"
+    },
+    "f_5463b0a34e1ea102": {
+      "source": {
+        "cell": "D11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 344320.06
+    },
+    "f_5519b88c82956e7a": {
+      "source": {
+        "cell": "J3",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "approved"
+    },
+    "f_5672784084673725": {
+      "source": {
+        "cell": "W8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.90804358834174
+    },
+    "f_56fe2135e7d842d0": {
+      "source": {
+        "cell": "F10",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Ridgeline Value Fund IV"
+    },
+    "f_572fb74162cccb1b": {
+      "source": {
+        "cell": "F16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -5770
+    },
+    "f_57a53f2f63d23012": {
+      "source": {
+        "cell": "W19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.40291503656352
+    },
+    "f_589f8faa10aa5e13": {
+      "source": {
+        "cell": "A7",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "2Q25"
+    },
+    "f_596da09c0187dd39": {
+      "source": {
+        "cell": "F15",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Sentinel Logistics Income Fund"
+    },
+    "f_5a0b0fad4f8d17f2": {
+      "source": {
+        "cell": "C8",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 437
+    },
+    "f_5ae37fdc822e031c": {
+      "source": {
+        "cell": "G10",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Approve up to a USD25 million commitment to Ridgeline Value Fund IV"
+    },
+    "f_5d0e10b27a369b1a": {
+      "source": {
+        "cell": "E17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_5dd91fbea43dc8ed": {
+      "source": {
+        "cell": "C9",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_5e5d896feb7b843f": {
+      "source": {
+        "cell": "J7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 22.17
+    },
+    "f_5eb3a93d041ba495": {
+      "source": {
+        "cell": "C2",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 372
+    },
+    "f_5f40254c78163241": {
+      "source": {
+        "cell": "D20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 444980.33
+    },
+    "f_5f44c324f72358f0": {
+      "source": {
+        "cell": "G9",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Approve a commitment of up to USD40 million to Northgate Logistics Partners"
+    },
+    "f_600e8741740efe86": {
+      "source": {
+        "cell": "J6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 3.582728105861375
+    },
+    "f_60ad9e923ba3e122": {
+      "source": {
+        "cell": "H6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 7.983794363143867
+    },
+    "f_61ae7464721b5cca": {
+      "source": {
+        "cell": "G17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 50199121.2
+    },
+    "f_622bd9a8cd747a86": {
+      "source": {
+        "cell": "W7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 2.16457243659055
+    },
+    "f_62601802ad62e13d": {
+      "source": {
+        "cell": "G16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 30830683.68
+    },
+    "f_62a2c0b3dea9dccd": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_b121b0d5585bbe60",
+        "f_3a68a53a7dbe100e",
+        "f_a3530c1160075f8c"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 1036289.0
+    },
+    "f_637496525e82a91f": {
+      "source": {
+        "cell": "C6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 13.07782520604736
+    },
+    "f_641c51c419a0a24c": {
+      "source": {
+        "cell": "F13",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Sentinel Logistics Income Fund"
+    },
+    "f_6474acabad107519": {
+      "source": {
+        "cell": "E10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_65bb4c68a4aeb173": {
+      "source": {
+        "cell": "G24",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 112620
+    },
+    "f_65d3d5776e2d6f26": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_9c329eb83fb66e16",
+        "f_cc3889e7fb70d26b",
+        "f_2b92565e44a7a2a8"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 320081.52
+    },
+    "f_678546ed97cf51c4": {
+      "source": {
+        "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
+        "method": "heading-delimited extraction",
+        "page": 1,
+        "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV."
+      },
+      "value": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV."
+    },
+    "f_67ad5fe9f0e9e3de": {
+      "source": {
+        "cell": "G5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 163256.86
+    },
+    "f_67f474c375399be3": {
+      "source": {
+        "cell": "A3",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "2Q24"
+    },
+    "f_67f6d551716638be": {
+      "source": {
+        "cell": "C16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 15910000
+    },
+    "f_69afbc35654a0ded": {
+      "source": {
+        "cell": "A15",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Summit Multifamily Partners"
+    },
+    "f_6a43a030f68485b1": {
+      "formula": "(current quarter return - prior displayed quarter return) * 100",
+      "inputs": [
+        "f_73d7a6957dee7886",
+        "f_e6ee09be84553a2b"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": 10.413534816237702
+    },
+    "f_6bf1e1a9f00167a3": {
+      "source": {
+        "cell": "C7",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_6d3d28a46b071c9a": {
+      "source": {
+        "cell": "C20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_6dd504337da5c476": {
+      "source": {
+        "cell": "C18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 45630580
+    },
+    "f_6e2eb4d8c867a684": {
+      "source": {
+        "cell": "G25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 11103969
+    },
+    "f_6e7965a224f49274": {
+      "source": {
+        "cell": "C12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 64633.57
+    },
+    "f_6f2b7f186f8cb0b1": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_997b69e2d678c8e5",
+        "f_d265ee87e54ef15f",
+        "f_d94be323b0c59bd4"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 563014.9
+    },
+    "f_7095597644db8382": {
+      "source": {
+        "cell": "E18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_7152e7649d731553": {
+      "source": {
+        "cell": "B14",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-11-18 00:00:00"
+    },
+    "f_731a8525b3f7f8dc": {
+      "source": {
+        "asset": "assets/slide_4_chart_1.png",
+        "chart": 1,
+        "file": "market_outlook_4Q25.pptx",
+        "method": "model vision",
+        "requires_review": true,
+        "slide": 4
+      },
+      "value": null
+    },
+    "f_733e3254aca0668a": {
+      "source": {
+        "cell": "E33",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 7585950.24
+    },
+    "f_736e4d7841ba51c9": {
+      "source": {
+        "cell": "A2",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "1Q24"
+    },
+    "f_73baf9443bcea568": {
+      "formula": "count flash investments + count open approvals",
+      "inputs": [
+        "f_0b38330db80c6de6",
+        "f_1ddbfa65c04644d2",
+        "f_69afbc35654a0ded",
+        "f_205a258010db4f8a",
+        "f_05b59e99389849b8",
+        "f_d2c5a1b09abbd5ee",
+        "f_a28ed47ef16e42a6",
+        "f_2d8e82fff98516f3",
+        "f_cbdb4277c0a67314",
+        "f_c14e046778ff1105",
+        "f_7e76b74a96a1f345",
+        "f_9ec6e048945507c2",
+        "f_024f9747ea82a800",
+        "f_56fe2135e7d842d0"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": 14
+    },
+    "f_73d7a6957dee7886": {
+      "source": {
+        "cell": "C9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 1.284135348162377
+    },
+    "f_76dc96a3213c198d": {
+      "source": {
+        "cell": "U5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "AnnReturns(Agg)"
+      },
+      "value": 2.507888001548886
+    },
+    "f_7763c7aba4b49024": {
+      "formula": "NAV / target allocation * 100",
+      "inputs": [
+        "f_de7c757bcb0e863a",
+        "f_c07ad303d5a48c7c"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": 88.00000004035623
+    },
+    "f_7906111b3af6a8d8": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 10
+      },
+      "value": [
+        "Retail \u2014 Selective",
+        "\u2022 Years of minimal new supply against steady population growth have tightened availability, especially in the Sun Belt (exhibit).",
+        "\u2022 Grocery-anchored and necessity-based formats are favored for resilient cash flows.",
+        "\u2022 Discretionary and enclosed-mall formats remain out of favor."
+      ]
+    },
+    "f_79212cf224c49141": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 10,
+        "quote": "<=40% per sector"
+      },
+      "value": [
+        40.0
+      ]
+    },
+    "f_79b29bb3ce376b6e": {
+      "formula": "sleeve NAV / portfolio NAV * 100",
+      "inputs": [
+        "f_2d5b0186b6b013c6",
+        "f_de7c757bcb0e863a"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": 14.972070553549056
+    },
+    "f_7b22b8ca5102af73": {
+      "source": {
+        "cell": "G18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -31290.15
+    },
+    "f_7b277517172cfec8": {
+      "source": {
+        "cell": "B2",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 480
+    },
+    "f_7b8336c60d751713": {
+      "source": {
+        "cell": "J9",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "approved"
+    },
+    "f_7d2aac3f6da06b38": {
+      "source": {
+        "cell": "G6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 93089.87
+    },
+    "f_7d3022045ce1cdad": {
+      "source": {
+        "cell": "I6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 41870446.64
+    },
+    "f_7de421a51001b15b": {
+      "source": {
+        "cell": "J5",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "approved"
+    },
+    "f_7e70cc9e39e9082d": {
+      "source": {
+        "cell": "I9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 50199121.2
+    },
+    "f_7e76b74a96a1f345": {
+      "source": {
+        "cell": "A26",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Meridian Opportunity Fund V"
+    },
+    "f_80098dde24ce0f2f": {
+      "source": {
+        "cell": "F6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 17.22007307886236
+    },
+    "f_80975533ca8b15bb": {
+      "source": {
+        "cell": "C13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 157723.44
+    },
+    "f_822ed5d5481e08e7": {
+      "formula": "top two positive and negative dollar contributions; top two NAVs; alphabetical tie-break",
+      "inputs": [
+        "f_0b38330db80c6de6",
+        "f_92f49b852eba08e5",
+        "f_f50151e82610d9ca",
+        "f_1ddbfa65c04644d2",
+        "f_d7a2121aedebfe8d",
+        "f_128dd2b3a0bbce27",
+        "f_69afbc35654a0ded",
+        "f_0a3f534112b4936f",
+        "f_b1fceaf9f67defc1",
+        "f_205a258010db4f8a",
+        "f_65d3d5776e2d6f26",
+        "f_62601802ad62e13d",
+        "f_05b59e99389849b8",
+        "f_26f8a45d7977b4cc",
+        "f_61ae7464721b5cca",
+        "f_d2c5a1b09abbd5ee",
+        "f_e377f1dea766f606",
+        "f_145359c1a7c2b331",
+        "f_a28ed47ef16e42a6",
+        "f_dfeb0a03cb677d9c",
+        "f_32c7b35d93ba4163",
+        "f_2d8e82fff98516f3",
+        "f_6f2b7f186f8cb0b1",
+        "f_84b4f5105c54dc61",
+        "f_cbdb4277c0a67314",
+        "f_41eb3c46e4687cbf",
+        "f_65bb4c68a4aeb173",
+        "f_c14e046778ff1105",
+        "f_62a2c0b3dea9dccd",
+        "f_6e2eb4d8c867a684",
+        "f_7e76b74a96a1f345",
+        "f_9df9d367ceb65abc",
+        "f_32121b05c291a735",
+        "f_9ec6e048945507c2",
+        "f_a52c96ddd4e61154",
+        "f_48937beba85a45f6"
+      ],
+      "source": {
+        "kind": "ranking"
+      },
+      "value": [
+        "second-largest contributor"
+      ]
+    },
+    "f_82edbc60210220b8": {
+      "source": {
+        "asset": "assets/slide_5_chart_1.png",
+        "chart": 1,
+        "file": "market_outlook_4Q25.pptx",
+        "method": "model vision",
+        "requires_review": true,
+        "slide": 5
+      },
+      "value": null
+    },
+    "f_838fd8afbb04bcdd": {
+      "source": {
+        "cell": "F9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.0432576612681
+    },
+    "f_83b5c6d2613c7074": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 10,
+        "quote": "This Performance Measurement Report has been prepared by Vectera Advisors solely for Cascadia Public Employees'\n Retirement System and is intended for the exclusive and confidential use of CPERS and its authorized representatives.\n Performance results are presented net of investment management fees, incentive allocations and fund-level expenses\n unless otherwise indicated, and reflect the reinvestment of income. Returns for periods of one year or less are not\n annualized. Time-weighted returns (TWR) are calculated using a Modified Dietz methodology; since-inception internal\n rates of return (IRR) and equity multiples are money-weighted and reflect the timing and magnitude of capital flows. Market\n values are based on the most recent valuations reported by underlying fund managers and may reflect appraised rather\n than transaction values. Past performance is not indicative of future results. All figures in this report are synthetic and were\n created solely for an evaluation exercise.\n\n\n\n\n\n"
+      },
+      "value": "This Performance Measurement Report has been prepared by Vectera Advisors solely for Cascadia Public Employees' Retirement System and is intended for the exclusive and confidential use of CPERS and its authorized representatives. Performance results are presented net of investment management fees, incentive allocations and fund-level expenses unless otherwise indicated, and reflect the reinvestment of income. Returns for periods of one year or less are not annualized. Time-weighted returns (TWR) are calculated using a Modified Dietz methodology; since-inception internal rates of return (IRR) and equity multiples are money-weighted and reflect the timing and magnitude of capital flows. Market values are based on the most recent valuations reported by underlying fund managers and may reflect appraised rather than transaction values. Past performance is not indicative of future results. All figures in this report are synthetic and were created solely for an evaluation exercise."
+    },
+    "f_84b4f5105c54dc61": {
+      "source": {
+        "cell": "G20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 43274370.24
+    },
+    "f_85398e11e66ac951": {
+      "source": {
+        "cell": "C20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 40000000
+    },
+    "f_86a3ee72d7ef83dd": {
+      "source": {
+        "cell": "B9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 50124791.55
+    },
+    "f_878a8f62eb2b78a7": {
+      "source": {
+        "cell": "D7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 442319.08
+    },
+    "f_8838ad19fd46bc56": {
+      "source": {
+        "asset": "assets/slide_8_chart_1.png",
+        "chart": 1,
+        "file": "market_outlook_4Q25.pptx",
+        "method": "model vision",
+        "requires_review": true,
+        "slide": 8
+      },
+      "value": null
+    },
+    "f_8992ad81c86752d2": {
+      "source": {
+        "cell": "E13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 3223810.49
+    },
+    "f_8ac67bca467c8f56": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_5f44c324f72358f0"
+      ],
+      "source": {
+        "cell": "G9",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 40000000.0
+    },
+    "f_8b6601fb90b16065": {
+      "source": {
+        "cell": "J17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_8c79b56fa50652b9": {
+      "source": {
+        "cell": "D5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 540922.54
+    },
+    "f_8c9121834733ae67": {
+      "formula": "sleeve NAV / portfolio NAV * 100",
+      "inputs": [
+        "f_fefc85dc9e5396ed",
+        "f_de7c757bcb0e863a"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": 85.02792944645094
+    },
+    "f_8cbcfad27587946a": {
+      "source": {
+        "cell": "D9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 299359.13
+    },
+    "f_8d7d174913ebeb3c": {
+      "source": {
+        "cell": "E7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_8e53833fb531a012": {
+      "source": {
+        "file": "manager_reports/redwood_logistics_trust_4Q25.pdf",
+        "method": "heading-delimited extraction",
+        "page": 1,
+        "quote": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value."
+      },
+      "value": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value."
+    },
+    "f_8f07d3115bcda2da": {
+      "source": {
+        "cell": "B18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 30706443.28
+    },
+    "f_90f09760525ef3d9": {
+      "source": {
+        "cell": "B3",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-02-11 00:00:00"
+    },
+    "f_928ae5d68f836b1e": {
+      "source": {
+        "cell": "A1",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Cascadia Public Employees' Retirement System"
+    },
+    "f_92a1741bd2688289": {
+      "source": {
+        "cell": "A8",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "3Q25"
+    },
+    "f_92d536193ffc5c2d": {
+      "source": {
+        "cell": "E11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_92f49b852eba08e5": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_1cf58d6da0f65a9b",
+        "f_fc99de377c2e2f69",
+        "f_67ad5fe9f0e9e3de"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -187176.36
+    },
+    "f_930267acbe366601": {
+      "source": {
+        "cell": "I16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 112620
+    },
+    "f_93adec6456b7842c": {
+      "source": {
+        "cell": "C25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 20000000
+    },
+    "f_94cb35bf69671c48": {
+      "source": {
+        "cell": "V6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 9.87284312831661
+    },
+    "f_94f604beb8d0fa3b": {
+      "source": {
+        "cell": "B10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 49518338
+    },
+    "f_957442e1990f951a": {
+      "source": {
+        "cell": "F14",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Alder Creek Multifamily Fund III"
+    },
+    "f_969cf17f2a26773e": {
+      "source": {
+        "cell": "I8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 30830683.68
+    },
+    "f_9792b2b8c2c37934": {
+      "source": {
+        "cell": "D25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 3287066.61
+    },
+    "f_97c7d88ddaa94007": {
+      "source": {
+        "file": "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf",
+        "method": "heading-delimited extraction",
+        "page": 1,
+        "quote": "Two assets were most relevant. Riverside Town Center (grocery-anchored retail, Sacramento) delivered stable, in-line income. Metro Apartments (Denver) appreciated modestly on rent growth. The balance of the portfolio performed in line with expectations. Leverage was ~25% LTV."
+      },
+      "value": "Two assets were most relevant. Riverside Town Center (grocery-anchored retail, Sacramento) delivered stable, in-line income. Metro Apartments (Denver) appreciated modestly on rent growth. The balance of the portfolio performed in line with expectations. Leverage was ~25% LTV."
+    },
+    "f_9851ee8df2cab49a": {
+      "source": {
+        "cell": "F10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 0.749506586638144
+    },
+    "f_98b444b80287674f": {
+      "source": {
+        "cell": "B12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 43089031.2
+    },
+    "f_997b69e2d678c8e5": {
+      "source": {
+        "cell": "F12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 463956.21
+    },
+    "f_99bec5fd1fc6d77e": {
+      "source": {
+        "cell": "I10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 49729238
+    },
+    "f_9a9a210983fa6543": {
+      "formula": "top two positive and negative dollar contributions; top two NAVs; alphabetical tie-break",
+      "inputs": [
+        "f_0b38330db80c6de6",
+        "f_92f49b852eba08e5",
+        "f_f50151e82610d9ca",
+        "f_1ddbfa65c04644d2",
+        "f_d7a2121aedebfe8d",
+        "f_128dd2b3a0bbce27",
+        "f_69afbc35654a0ded",
+        "f_0a3f534112b4936f",
+        "f_b1fceaf9f67defc1",
+        "f_205a258010db4f8a",
+        "f_65d3d5776e2d6f26",
+        "f_62601802ad62e13d",
+        "f_05b59e99389849b8",
+        "f_26f8a45d7977b4cc",
+        "f_61ae7464721b5cca",
+        "f_d2c5a1b09abbd5ee",
+        "f_e377f1dea766f606",
+        "f_145359c1a7c2b331",
+        "f_a28ed47ef16e42a6",
+        "f_dfeb0a03cb677d9c",
+        "f_32c7b35d93ba4163",
+        "f_2d8e82fff98516f3",
+        "f_6f2b7f186f8cb0b1",
+        "f_84b4f5105c54dc61",
+        "f_cbdb4277c0a67314",
+        "f_41eb3c46e4687cbf",
+        "f_65bb4c68a4aeb173",
+        "f_c14e046778ff1105",
+        "f_62a2c0b3dea9dccd",
+        "f_6e2eb4d8c867a684",
+        "f_7e76b74a96a1f345",
+        "f_9df9d367ceb65abc",
+        "f_32121b05c291a735",
+        "f_9ec6e048945507c2",
+        "f_a52c96ddd4e61154",
+        "f_48937beba85a45f6"
+      ],
+      "source": {
+        "kind": "ranking"
+      },
+      "value": [
+        "largest detractor"
+      ]
+    },
+    "f_9b5283f9e4429ea4": {
+      "source": {
+        "cell": "G10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 76247
+    },
+    "f_9ba8a1ed35f1fac7": {
+      "source": {
+        "cell": "B19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 23456973.18
+    },
+    "f_9bfbd31107580271": {
+      "source": {
+        "cell": "F13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 3294060.93
+    },
+    "f_9c329eb83fb66e16": {
+      "source": {
+        "cell": "F8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 108458.25
+    },
+    "f_9df9d367ceb65abc": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_15b0422df462d7e6",
+        "f_c7f51e7ae34b3487",
+        "f_7b22b8ca5102af73"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -469293.73
+    },
+    "f_9ec6e048945507c2": {
+      "source": {
+        "cell": "A27",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Blackford Special Situations Fund II"
+    },
+    "f_9f049bd0c6121180": {
+      "formula": "Strategic/Tactical NAV / total NAV * 100",
+      "inputs": [
+        "f_fefc85dc9e5396ed",
+        "f_2d5b0186b6b013c6",
+        "f_de7c757bcb0e863a"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": "85.0% / 15.0%"
+    },
+    "f_9f2fa6574add8b51": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 6
+      },
+      "value": [
+        "Sector Outlook \u2014 Forecast NOI Growth",
+        "Residential and industrial lead forecast income growth; office and retail lag across the horizon."
+      ]
+    },
+    "f_a00d31e6d85d6946": {
+      "source": {
+        "cell": "A5",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "4Q24"
+    },
+    "f_a1d64105509bfc3e": {
+      "source": {
+        "cell": "H9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 306712.31
+    },
+    "f_a2503e4b4b44afae": {
+      "source": {
+        "cell": "M7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "AnnReturns(Agg)"
+      },
+      "value": -0.4689220195756127
+    },
+    "f_a28ed47ef16e42a6": {
+      "source": {
+        "cell": "A19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Redwood Logistics Trust"
+    },
+    "f_a3530c1160075f8c": {
+      "source": {
+        "cell": "G17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 32150
+    },
+    "f_a52c96ddd4e61154": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_2c676eafd15c7170",
+        "f_d624f871205b31ca",
+        "f_c0a22869fd9995fe"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 733640.1700000002
+    },
+    "f_a52e003492f0492b": {
+      "source": {
+        "cell": "W26",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.44949928269256
+    },
+    "f_a5a61961686b2af0": {
+      "source": {
+        "cell": "J14",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "withdrawn"
+    },
+    "f_a668b1ffdb4bc05e": {
+      "source": {
+        "asset": "assets/slide_10_chart_1.png",
+        "chart": 1,
+        "file": "market_outlook_4Q25.pptx",
+        "method": "model vision",
+        "requires_review": true,
+        "slide": 10
+      },
+      "value": null
+    },
+    "f_a6e60242597d2abe": {
+      "source": {
+        "cell": "G11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 61356.27
+    },
+    "f_a8fc455ee68d9277": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_053826a516ff9ed2"
+      ],
+      "source": {
+        "cell": "G13",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 30000000.0
+    },
+    "f_a97af34061d53e09": {
+      "source": {
+        "cell": "D16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_a9cf247c7c653d9c": {
+      "source": {
+        "asset": "assets/slide_9_chart_1.png",
+        "chart": 1,
+        "file": "market_outlook_4Q25.pptx",
+        "method": "model vision",
+        "requires_review": true,
+        "slide": 9
+      },
+      "value": null
+    },
+    "f_aa4f8e356bbd6ea7": {
+      "formula": "top two positive and negative dollar contributions; top two NAVs; alphabetical tie-break",
+      "inputs": [
+        "f_0b38330db80c6de6",
+        "f_92f49b852eba08e5",
+        "f_f50151e82610d9ca",
+        "f_1ddbfa65c04644d2",
+        "f_d7a2121aedebfe8d",
+        "f_128dd2b3a0bbce27",
+        "f_69afbc35654a0ded",
+        "f_0a3f534112b4936f",
+        "f_b1fceaf9f67defc1",
+        "f_205a258010db4f8a",
+        "f_65d3d5776e2d6f26",
+        "f_62601802ad62e13d",
+        "f_05b59e99389849b8",
+        "f_26f8a45d7977b4cc",
+        "f_61ae7464721b5cca",
+        "f_d2c5a1b09abbd5ee",
+        "f_e377f1dea766f606",
+        "f_145359c1a7c2b331",
+        "f_a28ed47ef16e42a6",
+        "f_dfeb0a03cb677d9c",
+        "f_32c7b35d93ba4163",
+        "f_2d8e82fff98516f3",
+        "f_6f2b7f186f8cb0b1",
+        "f_84b4f5105c54dc61",
+        "f_cbdb4277c0a67314",
+        "f_41eb3c46e4687cbf",
+        "f_65bb4c68a4aeb173",
+        "f_c14e046778ff1105",
+        "f_62a2c0b3dea9dccd",
+        "f_6e2eb4d8c867a684",
+        "f_7e76b74a96a1f345",
+        "f_9df9d367ceb65abc",
+        "f_32121b05c291a735",
+        "f_9ec6e048945507c2",
+        "f_a52c96ddd4e61154",
+        "f_48937beba85a45f6"
+      ],
+      "source": {
+        "kind": "ranking"
+      },
+      "value": [
+        "second-largest detractor",
+        "largest individual position"
+      ]
+    },
+    "f_aaa790b11e09b0c8": {
+      "source": {
+        "asset": "assets/slide_7_chart_1.png",
+        "chart": 1,
+        "file": "market_outlook_4Q25.pptx",
+        "method": "model vision",
+        "requires_review": true,
+        "slide": 7
+      },
+      "value": null
+    },
+    "f_ab2167e3836ae275": {
+      "source": {
+        "cell": "V19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 17.9657709243879
+    },
+    "f_ab33b0a2db4798d5": {
+      "source": {
+        "cell": "H13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 1755356.38
+    },
+    "f_ab57f20a261f413e": {
+      "source": {
+        "cell": "E16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_abb227fb9f5151fd": {
+      "source": {
+        "cell": "W12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.36207301331066
+    },
+    "f_ac147d6c209de618": {
+      "source": {
+        "cell": "B11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 50893040.57
+    },
+    "f_acb1d33c303dcaed": {
+      "source": {
+        "cell": "B10",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-11-18 00:00:00"
+    },
+    "f_ad1584e3e5b803cf": {
+      "source": {
+        "cell": "B5",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-04-08 00:00:00"
+    },
+    "f_ad7a7d98b5a97ea6": {
+      "source": {
+        "cell": "J20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 37.689
+    },
+    "f_af97020109dacac8": {
+      "source": {
+        "cell": "C25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 157723.44
+    },
+    "f_b121b0d5585bbe60": {
+      "source": {
+        "cell": "F17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 125530
+    },
+    "f_b196030c5466a115": {
+      "source": {
+        "cell": "B9",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 496
+    },
+    "f_b1fceaf9f67defc1": {
+      "source": {
+        "cell": "G15",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 48575998.36
+    },
+    "f_b262c37a98df7b96": {
+      "source": {
+        "cell": "H20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 1565345.24
+    },
+    "f_b307792947e93c20": {
+      "source": {
+        "cell": "I19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 23841867.02
+    },
+    "f_b3bf258157c14f60": {
+      "source": {
+        "cell": "J7",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "approved"
+    },
+    "f_b51692af84362ace": {
+      "source": {
+        "cell": "A9",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "4Q25"
+    },
+    "f_b5a59ba851fe4267": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 7
+      },
+      "value": [
+        "Industrial & Logistics \u2014 Overweight",
+        "\u2022 Our top overweight: fundamentals remain tight and rent growth is normalizing from double-digit peaks.",
+        "\u2022 Vacancy sits well below its long-run average; new supply is moderating after a record delivery wave.",
+        "\u2022 Focus on infill locations and outdoor / industrial storage."
+      ]
+    },
+    "f_b5b9ce5794ad2acb": {
+      "source": {
+        "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
+        "method": "heading-delimited extraction",
+        "page": 1,
+        "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion."
+      },
+      "value": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion."
+    },
+    "f_b5c020af3795bb6f": {
+      "source": {
+        "cell": "W13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.14925583234582
+    },
+    "f_b5f56e3b0b87ae55": {
+      "source": {
+        "cell": "I17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 11103969
+    },
+    "f_b62f1ac42789f65f": {
+      "source": {
+        "cell": "B5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 55152948.31
+    },
+    "f_b7249d47a85f8561": {
+      "source": {
+        "cell": "E7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "AnnReturns(Agg)"
+      },
+      "value": 5.456896006300482
+    },
+    "f_b7329b55b11102b7": {
+      "source": {
+        "cell": "V17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 20.040093794608
+    },
+    "f_b753ac225deec8f3": {
+      "source": {
+        "cell": "B8",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 489
+    },
+    "f_b7bb1866834f19e2": {
+      "source": {
+        "cell": "C19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 40000000
+    },
+    "f_b93435951591b214": {
+      "source": {
+        "cell": "D13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 2842086.28
+    },
+    "f_b992f2f96c190398": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_c9357d48f9331fcc"
+      ],
+      "source": {
+        "cell": "G15",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 30000000.0
+    },
+    "f_ba17e2c1bef7963c": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 8
+      },
+      "value": [
+        "Residential / Multifamily \u2014 Favored",
+        "\u2022 A widening own-versus-rent affordability gap supports durable rental demand (exhibit).",
+        "\u2022 Record new deliveries are peaking and set to taper, easing rent pressure.",
+        "\u2022 A key area of interest for new capital deployment."
+      ]
+    },
+    "f_baf0349aa27ef910": {
+      "source": {
+        "cell": "V8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 7.461515098076809
+    },
+    "f_bf989cb2a07ac867": {
+      "source": {
+        "cell": "F8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.21880495164886
+    },
+    "f_c07ad303d5a48c7c": {
+      "source": {
+        "cell": "B5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 495586442
+    },
+    "f_c07fe605813ccf88": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 2
+      },
+      "value": [
+        "Key Themes",
+        "\u2022 Core real-estate values are stabilizing after the 2023\u20132024 repricing; U.S. private funds have turned positive over the past year (see exhibits).",
+        "\u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail.",
+        "\u2022 Leverage discipline and patient deployment into the recovery."
+      ]
+    },
+    "f_c0a22869fd9995fe": {
+      "source": {
+        "cell": "G19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 306936.43
+    },
+    "f_c14e046778ff1105": {
+      "source": {
+        "cell": "A25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Ironwood Value-Add Fund III"
+    },
+    "f_c20c39c11a552f08": {
+      "source": {
+        "cell": "G7",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Approve a commitment of up to USD20 million to Ironwood Value-Add Fund III"
+    },
+    "f_c406e2b62100dba8": {
+      "source": {
+        "cell": "F7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 538279.89
+    },
+    "f_c447f8ccd5c82b48": {
+      "source": {
+        "cell": "C3",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 386
+    },
+    "f_c4a35056612b5b2a": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 3,
+        "quote": "allocated 10.0% of total plan assets to real estate, with an allowable range of 5\u201320%"
+      },
+      "value": [
+        10.0,
+        5.0,
+        20.0
+      ]
+    },
+    "f_c4bc4791db06d4ee": {
+      "source": {
+        "cell": "B7",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 491
+    },
+    "f_c55713d55758bcfb": {
+      "source": {
+        "cell": "B12",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-08-19 00:00:00"
+    },
+    "f_c6a367026df1bf76": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 3
+      },
+      "value": [
+        "Macro & Capital Markets",
+        "\u2022 Global macro is stabilizing; core values are recovering following the significant 2023\u20132024 repricing.",
+        "\u2022 U.S. private real estate fund returns have moved back into positive territory over the trailing year (exhibit).",
+        "\u2022 Cap rates have largely stabilized while the spread over Treasuries has widened, restoring the real-estate risk premium (exhibit).",
+        "\u2022 Transaction activity is rebounding from cyclical lows as rate volatility eases and bid-ask spreads narrow.",
+        "\u2022 We maintain leverage discipline and prefer moderate loan-to-value as financing normalizes."
+      ]
+    },
+    "f_c76e46f3cd82c67f": {
+      "source": {
+        "asset": "assets/slide_6_chart_1.png",
+        "chart": 1,
+        "file": "market_outlook_4Q25.pptx",
+        "method": "model vision",
+        "requires_review": true,
+        "slide": 6
+      },
+      "value": null
+    },
+    "f_c7f51e7ae34b3487": {
+      "source": {
+        "cell": "H18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -468729.81
+    },
+    "f_c7f914fd458e6014": {
+      "source": {
+        "cell": "B9",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-10-14 00:00:00"
+    },
+    "f_c8222acb6dbf63ea": {
+      "source": {
+        "cell": "C24",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 20000000
+    },
+    "f_c9357d48f9331fcc": {
+      "source": {
+        "cell": "G15",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Note the lapse of the previously approved USD 30 million commitment to Sentinel Logistics Income Fund; the approval expired unexercised on 30 November 2025 and is not being renewed"
+    },
+    "f_c9511bcf018eb763": {
+      "source": {
+        "cell": "G6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Property"
+      },
+      "value": 23.07287207693352
+    },
+    "f_c9faeb3bfbba1c4b": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 9
+      },
+      "value": [
+        "Office \u2014 Underweight",
+        "\u2022 Transaction cap rates have repriced sharply higher \u2014 well above appraisal marks (exhibit).",
+        "\u2022 A pronounced bifurcation persists; only best-in-class, well-located assets are favored.",
+        "\u2022 Leasing is improving off a low base, but the recovery is uneven."
+      ]
+    },
+    "f_caa4b4626ba9a2c8": {
+      "source": {
+        "cell": "I12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 43274370.24
+    },
+    "f_cb7de5e796b28b83": {
+      "source": {
+        "cell": "F6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 412491.81
+    },
+    "f_cba39cbde2af615c": {
+      "source": {
+        "cell": "U7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "AnnReturns(Agg)"
+      },
+      "value": 5.582675897256585
+    },
+    "f_cbb224976d2f95ad": {
+      "source": {
+        "cell": "C13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 40000000
+    },
+    "f_cbdb4277c0a67314": {
+      "source": {
+        "cell": "A24",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Tidewater Distressed Realty Fund"
+    },
+    "f_cc1a8bade3fa64a8": {
+      "source": {
+        "cell": "J8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 50
+    },
+    "f_cc3889e7fb70d26b": {
+      "source": {
+        "cell": "H8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 277855.27
+    },
+    "f_cd338233292486a5": {
+      "source": {
+        "cell": "G12",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Approve a commitment of up to USD 25 million to a value-add multifamily strategy"
+    },
+    "f_cdbe05adc2d7a899": {
+      "source": {
+        "cell": "C5",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 405
+    },
+    "f_cf0cfc929216f789": {
+      "source": {
+        "cell": "V20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 10.7535903035472
+    },
+    "f_cf54691d90486688": {
+      "source": {
+        "cell": "F3",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Meridian Opportunity Fund V"
+    },
+    "f_d14a3c22c3ba023d": {
+      "source": {
+        "cell": "I11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 51915756.06
+    },
+    "f_d265ee87e54ef15f": {
+      "source": {
+        "cell": "H12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 163692.26
+    },
+    "f_d27d232d7653528a": {
+      "source": {
+        "cell": "B17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 10163914
+    },
+    "f_d2923007900e6ba4": {
+      "source": {
+        "cell": "C33",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 391814526.42
+    },
+    "f_d2c5a1b09abbd5ee": {
+      "source": {
+        "cell": "A18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": "Kestrel U.S. Real Estate Fund"
+    },
+    "f_d32bd814245da843": {
+      "source": {
+        "cell": "V26",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 9.32738743007635
+    },
+    "f_d56742ed447d75d0": {
+      "source": {
+        "cell": "F11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 346623.46
+    },
+    "f_d5c2807196c01177": {
+      "source": {
+        "cell": "A6",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "1Q25"
+    },
+    "f_d624f871205b31ca": {
+      "source": {
+        "cell": "H19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 1082224.05
+    },
+    "f_d70bce785a12db03": {
+      "formula": "NAV / total plan assets * 100",
+      "inputs": [
+        "f_de7c757bcb0e863a",
+        "f_3cf2c4fd856194c6"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": 8.800000000484275
+    },
+    "f_d73cd590256c7309": {
+      "source": {
+        "cell": "J9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 49.3
+    },
+    "f_d76aab6156cb1089": {
+      "source": {
+        "cell": "F20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 46258.48
+    },
+    "f_d7a2121aedebfe8d": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_cb7de5e796b28b83",
+        "f_3e67f395ae8db317",
+        "f_7d2aac3f6da06b38"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 466410.83999999997
+    },
+    "f_d8297b3c312c6b0d": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 10,
+        "quote": "<=50% / 75%"
+      },
+      "value": [
+        50.0,
+        75.0
+      ]
+    },
+    "f_d94be323b0c59bd4": {
+      "source": {
+        "cell": "G12",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 64633.57
+    },
+    "f_d9e6fb8af87b6f3b": {
+      "source": {
+        "cell": "C6",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 412
+    },
+    "f_dad58d8f40b263c0": {
+      "formula": "parse explicit USD amount and unit",
+      "inputs": [
+        "f_5ae37fdc822e031c"
+      ],
+      "source": {
+        "cell": "G10",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": 25000000.0
+    },
+    "f_db1b0451c16c7a7b": {
+      "source": {
+        "cell": "B15",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "2025-12-09 00:00:00"
+    },
+    "f_db592f2cc078d7b2": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 3,
+        "quote": "Marcus Ellison, Senior Managing Director  \u2022 Marcus.Ellison@vectera.com\n Priya Raman, Senior Principal  \u2022 Priya.Raman@vectera.com\n Devin Cho, Principal  \u2022 Devin.Cho@vectera.com\n Ana Reyes, Senior Analyst  \u2022 Ana.Reyes@vectera.com"
+      },
+      "value": "Marcus Ellison, Senior Managing Director  \u2022 Marcus.Ellison@vectera.com\n Priya Raman, Senior Principal  \u2022 Priya.Raman@vectera.com\n Devin Cho, Principal  \u2022 Devin.Cho@vectera.com\n Ana Reyes, Senior Analyst  \u2022 Ana.Reyes@vectera.com"
+    },
+    "f_dbd18f2721013434": {
+      "source": {
+        "cell": "E5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_dcfceb52c2508683": {
+      "source": {
+        "cell": "E20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_dd0a9bd56c837039": {
+      "source": {
+        "cell": "J16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_ddb79e4bfab62bdd": {
+      "source": {
+        "cell": "A4",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": "3Q24"
+    },
+    "f_ddcb4cb9729e3321": {
+      "source": {
+        "cell": "D18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_de7c757bcb0e863a": {
+      "source": {
+        "cell": "G33",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 436116069.16
+    },
+    "f_dea82393b554169b": {
+      "source": {
+        "cell": "E6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Geographic"
+      },
+      "value": 2.804817107906016
+    },
+    "f_df18d54392ed1fc2": {
+      "source": {
+        "cell": "C19",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_dfeb0a03cb677d9c": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_d56742ed447d75d0",
+        "f_eefa57ab793d3feb",
+        "f_a6e60242597d2abe"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 1367035.55
+    },
+    "f_e0a5059bae27b980": {
+      "source": {
+        "cell": "C15",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 30273946.42
+    },
+    "f_e2e6353426e9d7e7": {
+      "source": {
+        "cell": "D17",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 96234
+    },
+    "f_e2f6a049e33b9df4": {
+      "source": {
+        "cell": "E19",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_e3562f7acc0f8c6f": {
+      "source": {
+        "cell": "C6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 93089.87
+    },
+    "f_e377f1dea766f606": {
+      "formula": "income + appreciation - fees",
+      "inputs": [
+        "f_3d8269f82ffd5c72",
+        "f_1181846acf41ae56",
+        "f_9b5283f9e4429ea4"
+      ],
+      "source": {
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 813393.0
+    },
+    "f_e3d49688999ee127": {
+      "source": {
+        "cell": "B25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 436859357.39
+    },
+    "f_e6443d946097d017": {
+      "source": {
+        "cell": "H16",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 8942
+    },
+    "f_e6ee09be84553a2b": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 3,
+        "quote": "Portfolio returned 1.18% net of all fees during the Quarter"
+      },
+      "value": 1.18
+    },
+    "f_e9f7ee8c6d090d70": {
+      "source": {
+        "cell": "D33",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 475455390.03
+    },
+    "f_ea163cced4b0ac1f": {
+      "source": {
+        "cell": "E8",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_ea292c0f38592ba7": {
+      "source": {
+        "file": "prior_pmr_3Q25.pdf",
+        "page": 3,
+        "quote": "Cascadia Public Employees' Retirement System (\"CPERS\") retained Vectera Advisors (\"Vectera\") as investment manager\n  to invest and manage its real estate portfolio (\"Portfolio\" or \"Program\") in 2001. Vectera was awarded discretion over the\n Program beginning in 2011."
+      },
+      "value": "Cascadia Public Employees' Retirement System (\"CPERS\") retained Vectera Advisors (\"Vectera\") as investment manager\n  to invest and manage its real estate portfolio (\"Portfolio\" or \"Program\") in 2001. Vectera was awarded discretion over the\n Program beginning in 2011."
+    },
+    "f_eadd47f1b6f5e59c": {
+      "source": {
+        "cell": "J6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 27.9597150489369
+    },
+    "f_ebba3c8fcf555aad": {
+      "source": {
+        "cell": "F12",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Alder Creek Multifamily Fund III"
+    },
+    "f_ecfb7f29c8201a41": {
+      "source": {
+        "cell": "G25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 1051155.6
+    },
+    "f_ed103488d881e88b": {
+      "source": {
+        "cell": "B6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Property"
+      },
+      "value": 23.45868508190368
+    },
+    "f_ed33bd8e9b59753c": {
+      "source": {
+        "cell": "F5",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "Blackford Special Situations Fund II"
+    },
+    "f_eefa57ab793d3feb": {
+      "source": {
+        "cell": "H11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 1081768.36
+    },
+    "f_ef4a8420f9cb6ad4": {
+      "source": {
+        "cell": "C16",
+        "file": "flash_4Q25.xlsx",
+        "interpretation": "blank capital flow = zero",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_ef5846786d6fe4ae": {
+      "source": {
+        "cell": "W18",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 1.46882838680147
+    },
+    "f_ef74f88d8498a8b1": {
+      "formula": "flash commitments + open approvals",
+      "inputs": [
+        "f_d2923007900e6ba4",
+        "f_8ac67bca467c8f56",
+        "f_dad58d8f40b263c0"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": 456814526.42
+    },
+    "f_f0e9a752a89402cc": {
+      "source": {
+        "cell": "G9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 121948.94
+    },
+    "f_f19dec4937dcb034": {
+      "source": {
+        "cell": "D10",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 602493
+    },
+    "f_f4018abf04e42e63": {
+      "source": {
+        "cell": "B9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 1.524751826261894
+    },
+    "f_f4e0dd3648b1b58a": {
+      "source": {
+        "cell": "C9",
+        "file": "allocation_history.xlsx",
+        "sheet": "Allocation History"
+      },
+      "value": 436
+    },
+    "f_f50151e82610d9ca": {
+      "source": {
+        "cell": "G13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 54424849.41
+    },
+    "f_f6c5c53e080f419f": {
+      "source": {
+        "cell": "C6",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "All Property"
+      },
+      "value": 7.871396721411899
+    },
+    "f_f731e5ea340a7a7a": {
+      "source": {
+        "cell": "E9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 0
+    },
+    "f_f7d354bc01a1e7da": {
+      "source": {
+        "cell": "J13",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 33.971
+    },
+    "f_f7fec8895394ab59": {
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 13
+      },
+      "value": [
+        "Positioning Summary",
+        "\u2022 Maintain leverage discipline; prefer moderate loan-to-value.",
+        "\u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail.",
+        "\u2022 Deploy patiently into the recovery as pricing stabilizes."
+      ]
+    },
+    "f_f8fe906f23f7bb13": {
+      "source": {
+        "cell": "J15",
+        "file": "ic_log_2025.xlsx",
+        "sheet": "Log "
+      },
+      "value": "lapsed"
+    },
+    "f_f9b7514f361cc84e": {
+      "source": {
+        "cell": "J11",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 31.15
+    },
+    "f_fad071c54e190432": {
+      "source": {
+        "cell": "M5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "AnnReturns(Agg)"
+      },
+      "value": -3.01595722640724
+    },
+    "f_fb639ccbb3c83666": {
+      "source": {
+        "cell": "H25",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 3320701.62
+    },
+    "f_fb73a42d4c243200": {
+      "source": {
+        "cell": "V7",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 7.002246621176489
+    },
+    "f_fbb602a3f9ac4652": {
+      "source": {
+        "cell": "F30",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 0.698383729519694
+    },
+    "f_fc99de377c2e2f69": {
+      "source": {
+        "cell": "H5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": -557954.4
+    },
+    "f_fd017d9c584e3f66": {
+      "source": {
+        "cell": "F20",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 3.12861066161374
+    },
+    "f_fe18c47e55b70a9f": {
+      "source": {
+        "cell": "V9",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "ReturnsMultiples(Agg)"
+      },
+      "value": 8.98776172766865
+    },
+    "f_fee70c26166bc4f2": {
+      "source": {
+        "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
+        "method": "heading-delimited extraction",
+        "page": 1,
+        "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level."
+      },
+      "value": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level."
+    },
+    "f_feee7bb5c78a242b": {
+      "source": {
+        "cell": "I5",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "CashActivity(Agg)"
+      },
+      "value": 54424849.41
+    },
+    "f_fefc85dc9e5396ed": {
+      "source": {
+        "cell": "G21",
+        "file": "flash_4Q25.xlsx",
+        "sheet": "FundingStatus(Agg)"
+      },
+      "value": 370820463.59
+    }
+  },
+  "issues": [
+    {
+      "code": "missing_manager",
+      "fund": "Meridian Opportunity Fund V",
+      "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+      "severity": "warning"
+    },
+    {
+      "code": "chart_unavailable",
+      "fact_id": "f_731a8525b3f7f8dc",
+      "message": "Slide 4, chart 1: image values unavailable without successful model access",
+      "severity": "blocker"
+    },
+    {
+      "code": "chart_unavailable",
+      "fact_id": "f_82edbc60210220b8",
+      "message": "Slide 5, chart 1: image values unavailable without successful model access",
+      "severity": "blocker"
+    },
+    {
+      "code": "chart_unavailable",
+      "fact_id": "f_c76e46f3cd82c67f",
+      "message": "Slide 6, chart 1: image values unavailable without successful model access",
+      "severity": "blocker"
+    },
+    {
+      "code": "chart_unavailable",
+      "fact_id": "f_aaa790b11e09b0c8",
+      "message": "Slide 7, chart 1: image values unavailable without successful model access",
+      "severity": "blocker"
+    },
+    {
+      "code": "chart_unavailable",
+      "fact_id": "f_8838ad19fd46bc56",
+      "message": "Slide 8, chart 1: image values unavailable without successful model access",
+      "severity": "blocker"
+    },
+    {
+      "code": "chart_unavailable",
+      "fact_id": "f_a9cf247c7c653d9c",
+      "message": "Slide 9, chart 1: image values unavailable without successful model access",
+      "severity": "blocker"
+    },
+    {
+      "code": "chart_unavailable",
+      "fact_id": "f_a668b1ffdb4bc05e",
+      "message": "Slide 10, chart 1: image values unavailable without successful model access",
+      "severity": "blocker"
+    }
+  ],
+  "matches": [
+    {
+      "accepted": true,
+      "canonical": "Cornerstone Core Property Fund",
+      "file": "cornerstone_core_property_fund_4Q25.pdf",
+      "rule": "punctuation/legal suffix/Roman numeral normalization"
+    },
+    {
+      "accepted": true,
+      "canonical": "Ironwood Value-Add Fund III",
+      "file": "ironwood_value_add_fund_3_4Q25.pdf",
+      "rule": "punctuation/legal suffix/Roman numeral normalization"
+    },
+    {
+      "accepted": true,
+      "canonical": "Kestrel U.S. Real Estate Fund",
+      "file": "kestrel_us_real_estate_fund_4Q25.pdf",
+      "rule": "punctuation/legal suffix/Roman numeral normalization"
+    },
+    {
+      "accepted": true,
+      "canonical": "Northgate Logistics Partners",
+      "file": "northgate_logistics_partners_4Q25.pdf",
+      "rule": "punctuation/legal suffix/Roman numeral normalization"
+    },
+    {
+      "accepted": true,
+      "canonical": "Redwood Logistics Trust",
+      "file": "redwood_logistics_trust_4Q25.pdf",
+      "rule": "punctuation/legal suffix/Roman numeral normalization"
+    },
+    {
+      "accepted": true,
+      "canonical": "Ridgeline Value Fund IV",
+      "file": "ridgeline_value_fund_iv_4Q25.pdf",
+      "rule": "punctuation/legal suffix/Roman numeral normalization"
+    },
+    {
+      "accepted": true,
+      "canonical": "Tidewater Distressed Realty Fund",
+      "file": "tidewater_distressed_realty_fund_4Q25.pdf",
+      "rule": "punctuation/legal suffix/Roman numeral normalization"
+    }
+  ]
+}

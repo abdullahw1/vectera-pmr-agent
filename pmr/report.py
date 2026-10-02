@@ -1,0 +1,306 @@
+"""One report model feeds the PDF and an inspectable HTML evidence review."""
+from __future__ import annotations
+
+import html
+import io
+import os
+import re
+import tempfile
+from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
+
+import fitz
+os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "vectera-matplotlib"))
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.enums import TA_CENTER
+from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
+                               Image, PageBreak, KeepTogether, HRFlowable)
+
+from .ingest import norm
+
+NAVY = "#1b2b49"
+GOLD = "#c5a04a"
+
+
+def money(value):
+    return f"${number(value / 1e6, 1)}M"
+
+
+def number(value, places=1):
+    """Use financial half-up rounding, including values exactly between display ticks."""
+    decimal = Decimal(str(value)).quantize(Decimal(1).scaleb(-places), rounding=ROUND_HALF_UP)
+    return f"{decimal:,.{places}f}"
+
+
+def dollars(value):
+    return ("-$" if value < 0 else "$") + number(abs(value), 2)
+
+
+def build_sections(data, sources, ledger):
+    p, funds, activity = data["portfolio"], data["funds"], data["activity"]
+    sections = []
+    def add(title):
+        section = dict(title=title, blocks=[]); sections.append(section); return section
+    def para(section, text, ids):
+        section["blocks"].append(dict(type="paragraph", text=text, evidence=list(dict.fromkeys(i for i in ids if i))))
+    def table(section, columns, rows, evidence):
+        section["blocks"].append(dict(type="table", columns=columns, rows=rows, evidence=list(dict.fromkeys(evidence))))
+    def derived(key, value, formula, inputs):
+        p[key] = value
+        p[key + "_id"] = ledger.add(value, {"kind": "calculation"}, formula=formula, inputs=inputs)
+    open_total = sum(e["amount"] or 0 for e in activity["open"])
+    derived("approved_total", p["commitment"] + open_total, "flash commitments + open approvals",
+            [p["commitment_id"]] + [e["amount_id"] for e in activity["open"]])
+    count_ids = [f["name_id"] for f in funds] + [e["id"] for e in activity["open"]]
+    derived("positions", len(funds) + len(activity["open"]), "count flash investments + count open approvals", count_ids)
+    derived("plan_pct", p["nav"] / p["plan"] * 100, "NAV / total plan assets * 100", [p["nav_id"], p["plan_id"]])
+    derived("target_pct", p["nav"] / p["target"] * 100, "NAV / target allocation * 100", [p["nav_id"], p["target_id"]])
+    prior_pages = sources["prior"][2]; prior_file = sources["prior"][1].name
+    # Carry forward static mandate history only; quarterly facts are always regenerated.
+    overview_page = next((t for t in prior_pages if "retained Vectera" in t), "")
+    match = re.search(r"(.+?retained Vectera.*?beginning in \d{4}\.)", overview_page, re.S)
+    static_intro = re.sub(r"^.*?Portfolio Overview\s*", "", match[1], flags=re.S).strip() if match else ""
+    s = add("Portfolio Overview")
+    if static_intro:
+        fid = ledger.add(static_intro, {"file": prior_file, "page": prior_pages.index(overview_page) + 1, "quote": static_intro})
+        para(s, re.sub(r"\s+", " ", static_intro), [fid])
+    para(s, f"Since inception, {money(p['approved_total'])} has been committed or approved for commitment across "
+         f"{p['positions']} individual investment positions: {len(funds)} funded and carried in the flash, plus "
+         f"{len(activity['open'])} open approvals not funded by quarter-end. The funded investments have generated "
+         f"a since-inception net IRR of {p['irr']:.1f}% and a {p['multiple']:.2f}x net equity multiple.",
+         [p[k + "_id"] for k in ["approved_total", "positions", "irr", "multiple"]])
+    para(s, f"At quarter-end, portfolio NAV was {money(p['nav'])}, or {p['plan_pct']:.1f}% of the "
+         f"{money(p['plan'])} total plan and {p['target_pct']:.1f}% of its {money(p['target'])} target real estate allocation.",
+         [p[k + "_id"] for k in ["nav", "plan_pct", "plan", "target_pct", "target"]])
+    para(s, f"The Portfolio returned {p['q_net']:.2f}% net during the quarter and {p['one_net']:.2f}% over one year, "
+         f"against {p['benchmark_q']:.2f}% and {p['benchmark_one']:.2f}%, respectively, for the {p['benchmark']}.",
+         [p[k + "_id"] for k in ["q_net", "one_net", "benchmark_q", "benchmark_one", "benchmark"]])
+    s = add("Investment Guidelines & Fund Statistics")
+    if "allocation" in data["policy"]:
+        target, low, high = data["policy"]["allocation"]
+        para(s, f"The policy allocation to real estate is {target:g}% of total plan assets, with an allowable range of "
+             f"{low:g}-{high:g}%. The return objective is to exceed the {p['benchmark']}.", [data["policy"]["allocation_id"], p["benchmark_id"]])
+    stats = [["Funded investments", str(len(funds))], ["Approved, not yet funded", str(len(activity["open"]))],
+             ["Total committed or approved", money(p["approved_total"])], ["Flash commitment total", money(p["commitment"])],
+             ["Market value (NAV)", money(p["nav"])], ["Real estate as % of plan assets", f"{p['plan_pct']:.1f}%"],
+             ["NAV as % of target", f"{p['target_pct']:.1f}%"], ["Since-inception net IRR", f"{p['irr']:.1f}%"],
+             ["Since-inception net equity multiple", f"{p['multiple']:.2f}x"]]
+    split = " / ".join(number(data["sleeves"][s]["nav"] / p["nav"] * 100) + "%" for s in ["Strategic", "Tactical"])
+    split_id = ledger.add(split, {"kind": "calculation"}, formula="Strategic/Tactical NAV / total NAV * 100",
+                          inputs=[data["sleeves"][s]["nav_id"] for s in ["Strategic", "Tactical"]] + [p["nav_id"]])
+    stats.insert(7, ["Strategic / Tactical split", split])
+    table(s, ["Statistic", "Value"], stats, [v for k, v in p.items() if k.endswith("_id")] + count_ids + [split_id])
+    s = add("Portfolio Managers")
+    for i, page in enumerate(prior_pages):
+        match = re.search(r"Portfolio Managers\s*(.*?)(?:Vectera Advisors\s*\||$)", page, re.S)
+        if match and "@" in match[1]:
+            text = match[1].strip()
+            fid = ledger.add(text, {"file": prior_file, "page": i + 1, "quote": text})
+            lines = re.findall(r"[^@]+@[\w.-]+", re.sub(r"\s+", " ", text))
+            for line in lines or [text]:
+                para(s, line.strip(), [fid])
+            break
+    s = add("Annualized Time-Weighted Return")
+    s["blocks"].append(dict(type="chart", kind="annual", evidence=[v[k] for v in p["annual"] for k in ["value_id", "benchmark_id"]]))
+    para(s, f"The chart compares the Portfolio's net time-weighted returns with the {p['benchmark']}. "
+         "Returns are read from the annual returns exhibit, not calculated from fund cash flows.", [p["benchmark_id"]])
+    s = add("Performance Update")
+    para(s, f"The Portfolio generated {money(p['income'])} of gross income and {money(p['appreciation'])} of appreciation. "
+         f"Manager fees were {money(p['fees'])}. The quarter's return was {p['q_gross']:.2f}% gross and {p['q_net']:.2f}% net.",
+         [p[k + "_id"] for k in ["income", "appreciation", "fees", "q_gross", "q_net"]])
+    featured = sorted((f for f in funds if f["roles"]), key=lambda f: (-f["contribution"], f["name"]))
+    rows = [[f["name"], "; ".join(f["roles"]), number(f["income"], 2), number(f["appreciation"], 2),
+             number(f["fees"], 2), number(f["contribution"], 2)] for f in featured]
+    table(s, ["Fund", "Role", "Income", "Apprec.", "Fees", "Contribution"], rows,
+          [f[k + "_id"] for f in featured for k in ["name", "roles", "income", "appreciation", "fees", "contribution"]])
+    if len([f for f in funds if f["contribution"] < 0]) < 2:
+        para(s, "Every other fund contributed positively or had zero dollar contribution during the quarter.", [f["contribution_id"] for f in funds])
+    # Prior narrative is a baseline, never a source of current-period asset drivers.
+    match = re.search(r"Portfolio returned\s+([\d.-]+)% net.*?Quarter", overview_page, re.S)
+    if match:
+        old = float(match[1]); fid = ledger.add(old, {"file": prior_file, "page": prior_pages.index(overview_page) + 1, "quote": match[0]})
+        delta = (p["q_net"] - old) * 100
+        did = ledger.add(delta, {"kind": "calculation"}, formula="(current quarter return - prior displayed quarter return) * 100", inputs=[p["q_net_id"], fid])
+        para(s, f"The quarterly net return changed from {old:.2f}% in the prior report to {p['q_net']:.2f}%, "
+             f"a change of {delta:+.1f} basis points, using the prior report's displayed precision.", [fid, p["q_net_id"], did])
+    for sleeve in ["Strategic", "Tactical"]:
+        s = add("Strategic Portfolio" if sleeve == "Strategic" else "Tactical and Special Situations Portfolio")
+        sl = data["sleeves"][sleeve]
+        share = sl["nav"] / p["nav"] * 100
+        fid = ledger.add(share, {"kind": "calculation"}, formula="sleeve NAV / portfolio NAV * 100", inputs=[sl["nav_id"], p["nav_id"]])
+        para(s, f"The {sleeve} sleeve represented {share:.1f}% of portfolio market value and returned {sl['q_net']:.2f}% net during the quarter.", [fid, sl["q_net_id"]])
+        for fund in [f for f in funds if f["sleeve"] == sleeve]:
+            return_text = f"returned {fund['q_net']:.2f}% net" if fund["q_net"] is not None else "had no quarterly net return reported in the flash"
+            role = " was the Portfolio's " + " and ".join(fund["roles"]) + "." if fund["roles"] else "."
+            text = fund["name"] + role + f" The Fund {return_text}, with quarter-end NAV of {money(fund['nav'])} and {number(fund['ltv'])}% LTV."
+            ids = [fund[k + "_id"] for k in ["name", "roles", "q_net", "nav", "ltv"]]
+            if fund["roles"]:
+                text += f" Income of {dollars(fund['income'])}, appreciation of {dollars(fund['appreciation'])} and fees of {dollars(fund['fees'])} resulted in a {dollars(fund['contribution'])} dollar contribution."
+                ids += [fund[k + "_id"] for k in ["income", "appreciation", "fees", "contribution"]]
+            para(s, text, ids)
+            if fund["roles"]:
+                passages = data["support"].get(fund["name"], [])
+                for passage in passages:
+                    para(s, passage["text"], [passage["id"]])
+                if not passages:
+                    para(s, "No current manager report was supplied for this fund. Commentary is limited to verified flash figures; asset-level drivers are unavailable.", [fund["name_id"]])
+    s = add("Recent Investment Activity")
+    para(s, f"The Investment Committee approved {len(activity['new'])} new commitments for {data['client']} during the quarter." if activity["new"]
+         else "No new commitments were approved for this client during the quarter.", [e["id"] for e in activity["new"]])
+    for e in activity["new"]:
+        para(s, f"{e['name']} - {money(e['amount'])}, approved {e['date']}.", [e[k] for k in ["id", "amount_id", "date_id", "action_id"]])
+        if any(opened["name"] == e["name"] for opened in activity["open"]):
+            para(s, "The approval remained open and was not carried as a funded holding at quarter-end. No performance figures are assigned to this commitment.",
+                 [e["id"], e["action_id"]] + [fund["name_id"] for fund in funds])
+        for passage in data["support"].get(e["name"], []):
+            para(s, passage["text"], [passage["id"]])
+    for e in activity["reversed"]:
+        explanation = e["recommendation"].split(";", 1)[1].strip() if ";" in e["recommendation"] else ""
+        action_text = "lapsed" if e["action"] == "lapsed" else "was " + e["action"]
+        para(s, f"The previously approved {money(e['amount'])} commitment to {e['name']} {action_text} during the quarter. "
+             + (explanation[:1].upper() + explanation[1:] + "." if explanation else ""), [e[k] for k in ["id", "amount_id", "action_id"]])
+    s = add("Market Update")
+    # House-view text is condensed by choosing portfolio-relevant slides; numerical pixels remain separately reviewable.
+    for slide in data["slides"]:
+        if any(word in norm(slide["title"]) for word in ["key themes", "risks", "positioning"]):
+            para(s, " ".join(t.lstrip("• ") for t in slide["text"]), [slide["id"]])
+    available = [c for c in data["charts"] if c["data"]]
+    for chart in available[:3]:
+        values = chart["data"].get("series", [])
+        highlights = chart["data"].get("highlights", [])
+        selected = [values[i] for i in highlights if isinstance(i, int) and 0 <= i < len(values)][:4]
+        values = selected or values[:4]
+        if values:
+            table(s, ["Market Exhibit", "Series / Period", "Value"],
+                  [[chart["data"].get("title", ""), str(v.get("series", "")) + " / " + str(v.get("label", "")),
+                    str(v.get("value", "")) + str(v.get("unit", ""))] for v in values], [chart["id"]])
+    if data["charts"] and not available:
+        para(s, "Quantitative chart-image extraction is unavailable in this run. The house-view chart images are retained in the review package for inspection; no pixel values have been guessed.", [])
+    para(s, f"House-view market indices and the {p['benchmark']} are distinct series. "
+         "The client benchmark is used for performance comparison and the return-objective test.", [p["benchmark_id"]])
+    s = add("Allocation Over Time")
+    s["blocks"].append(dict(type="chart", kind="allocation", evidence=[r[k] for r in data["history"] for k in ["quarter_id", "target_id", "nav_id"]]))
+    para(s, f"Quarter-end NAV was {money(p['nav'])} against a target allocation of {money(p['target'])}. "
+         "The historical exhibit uses the allocation workbook's rounded USD-million series.", [p["nav_id"], p["target_id"]])
+    s = add("Diversification")
+    for kind in ["property", "geography"]:
+        s["blocks"].append(dict(type="chart", kind=kind, evidence=[v["id"] for v in data["diversification"][kind]]))
+    look = next(v for v in data["diversification"]["geography"] if norm(v["label"]) == "ex us")
+    para(s, f"Look-through Ex-US property exposure was {look['value']:.1f}%. The compliance test uses the separate "
+         f"fund-level Ex-US classification, {p['ex_us']:.1f}%. These measure property location and fund classification, respectively.", [look["id"], p["ex_us_id"]])
+    s = add("Compliance")
+    table(s, ["Guideline", "Limit", "Actual", "Status"], [[r[k] for k in ["label", "limit", "actual", "status"]] for r in data["compliance"]],
+          [fid for r in data["compliance"] for fid in r["evidence"]])
+    para(s, "Leverage uses the flash's precomputed sleeve LTV subtotals, rather than averaging individual fund ratios.", [v["ltv_id"] for v in data["sleeves"].values()])
+    s = add("Disclosure Statements")
+    for i, page in enumerate(prior_pages):
+        match = re.search(r"Disclosure Statements\s*(This Performance.*?)(?=Vectera Advisors\s*\||$)", page, re.S)
+        if match:
+            text = re.sub(r"\s+", " ", match[1]).strip()
+            fid = ledger.add(text, {"file": prior_file, "page": i + 1, "quote": match[1]})
+            para(s, text, [fid]); break
+    s = add("Appendix A: Quarterly Flash Report")
+    para(s, "The following pages reproduce the current quarter's supplied flash PDF. The workbook remains the authoritative source for portfolio calculations.", [])
+    order = data.get("template", {}).get("section_order", [])
+    lookup = {norm(s["title"]): s for s in sections}
+    if order and all(norm(title) in lookup for title in order) and len(order) == len(sections):
+        sections = [{**lookup[norm(title)], "title": title} for title in order]
+    elif order:
+        ledger.issue("template_structure", "Prior contents differ from supported financial sections; standard structure retained for review")
+    return sections
+
+
+def chart_bytes(kind, data):
+    primary = data.get("template", {}).get("primary", NAVY)
+    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
+    fig, ax = plt.subplots(figsize=(7.1, 3.0))
+    if kind == "annual":
+        annual = data["portfolio"]["annual"]; xs = list(range(len(annual)))
+        ax.bar([x - .18 for x in xs], [v["value"] for v in annual], .36, color=primary, label="Portfolio")
+        ax.bar([x + .18 for x in xs], [v["benchmark"] for v in annual], .36, color=GOLD, label=data["portfolio"]["benchmark"])
+        ax.set_xticks(xs, [f"{v['horizon']}-Yr" for v in annual]); ax.set_ylabel("Net return (%)"); ax.axhline(0, color="#555555", lw=.7)
+        for container in ax.containers: ax.bar_label(container, fmt="%.1f", padding=3, fontsize=8)
+        ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(.5, 1.2), ncol=2)
+    elif kind == "allocation":
+        rows = data["history"]
+        ax.plot([r["quarter"] for r in rows], [r["target"] for r in rows], color=GOLD, marker="o", label="Target allocation")
+        ax.plot([r["quarter"] for r in rows], [r["nav"] for r in rows], color=NAVY, marker="o", label="NAV")
+        ax.set_ylabel("USD million"); ax.legend(frameon=False)
+    else:
+        rows = data["diversification"][kind]
+        if kind == "property":
+            ax.bar([r["label"] for r in rows], [r["value"] for r in rows], color=[NAVY, GOLD, "#527c8c", "#897c66", "#65745f", "#a4adb5"])
+            ax.set_ylabel("% of market value")
+            for container in ax.containers: ax.bar_label(container, fmt="%.1f%%", padding=3)
+        else:
+            rows = sorted(rows, key=lambda r: r["value"])
+            ax.barh([r["label"] for r in rows], [r["value"] for r in rows], color=NAVY)
+            ax.set_xlabel("% of market value")
+            for container in ax.containers: ax.bar_label(container, fmt="%.1f%%", padding=3, fontsize=8)
+            ax.set_xlim(0, max(r["value"] for r in rows) * 1.22)
+    ax.grid(axis="x" if kind == "geography" else "y", alpha=.18); ax.set_axisbelow(True)
+    fig.tight_layout(); buf = io.BytesIO(); fig.savefig(buf, format="png", dpi=160); plt.close(fig); buf.seek(0)
+    return buf
+
+
+def render_pdf(data, sections, path, appendix, approved=False):
+    template = data.get("template", {})
+    primary = template.get("primary", NAVY)
+    styles = getSampleStyleSheet()
+    styles.add(ParagraphStyle(name="BodyPMR", fontName=template.get("body_font", "Helvetica"), fontSize=template.get("body_size", 9.2), leading=12, spaceAfter=9))
+    styles.add(ParagraphStyle(name="TitlePMR", fontName="Helvetica-Bold", fontSize=25, leading=31, textColor=colors.HexColor(NAVY), alignment=TA_CENTER))
+    styles.add(ParagraphStyle(name="HeadingPMR", fontName="Helvetica-Bold", fontSize=template.get("heading_size", 15), leading=18, textColor=colors.HexColor(primary), spaceBefore=12, spaceAfter=7))
+    styles.add(ParagraphStyle(name="CellPMR", fontName="Helvetica", fontSize=7, leading=9))
+    story = [Spacer(1, 140), Paragraph(html.escape(data["portfolio"]["name"]), styles["TitlePMR"]), Spacer(1, 25),
+             Paragraph("Performance Measurement Report", styles["TitlePMR"]), Spacer(1, 20),
+             Paragraph(data["period_label"], styles["BodyPMR"]), Paragraph("Prepared by Vectera Advisors", styles["BodyPMR"]),
+             Paragraph("Trade Secret &amp; Confidential", styles["BodyPMR"]),
+             Paragraph("APPROVED" if approved else "DRAFT - pending evidence review and approval", styles["BodyPMR"]), PageBreak()]
+    story += [Paragraph("Contents", styles["HeadingPMR"])]
+    for i, s in enumerate(sections, 1):
+        story.append(Paragraph(f"{i}. {html.escape(s['title'])}", styles["BodyPMR"]))
+    story.append(PageBreak())
+    # Preserve the sample's grouping while allowing text to flow onto extra pages when necessary.
+    page_starts = {"Portfolio Overview", "Annualized Time-Weighted Return", "Strategic Portfolio",
+                   "Tactical and Special Situations Portfolio", "Recent Investment Activity", "Allocation Over Time",
+                   "Diversification", "Compliance", "Appendix A: Quarterly Flash Report"}
+    for index, section in enumerate(sections):
+        if index and section["title"] in page_starts:
+            story.append(PageBreak())
+        story.append(Paragraph(html.escape(section["title"]), styles["HeadingPMR"]))
+        story.append(HRFlowable(width="100%", thickness=.5, color=colors.HexColor(NAVY), spaceAfter=8))
+        for block in section["blocks"]:
+            if block["type"] == "paragraph":
+                story.append(Paragraph(html.escape(block["text"]), styles["BodyPMR"]))
+            elif block["type"] == "chart":
+                story.append(Image(chart_bytes(block["kind"], data), width=495, height=209))
+                story.append(Spacer(1, 10))
+            else:
+                count = len(block["columns"])
+                widths = [110, 135, 60, 60, 55, 75] if count == 6 else [125, 105, 170, 95] if count == 4 else [300, 195] if count == 2 else [200, 220, 75]
+                cells = [[Paragraph(html.escape(str(c)), styles["CellPMR"]) for c in row] for row in [block["columns"]] + block["rows"]]
+                table = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
+                table.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), colors.HexColor(NAVY)),
+                    ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#eef1f5")]),
+                    ("VALIGN", (0, 0), (-1, -1), "TOP"), ("LINEBELOW", (0, 0), (-1, 0), .5, colors.HexColor(NAVY)),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 5), ("RIGHTPADDING", (0, 0), (-1, -1), 5),
+                    ("TOPPADDING", (0, 0), (-1, -1), 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
+                # Paragraphs have their own styles, so header color must be set on their text.
+                table._cellvalues[0] = [Paragraph('<font color="white"><b>' + html.escape(str(c)) + '</b></font>', styles["CellPMR"]) for c in block["columns"]]
+                story.extend([table, Spacer(1, 12)])
+    def footer(canvas, doc):
+        canvas.setFont("Helvetica", 7); canvas.setFillColor(colors.grey)
+        canvas.drawString(45, 28, "Vectera Advisors | Trade Secret & Confidential")
+        canvas.drawRightString(567, 28, f"Page {doc.page}" + (" | DRAFT" if not approved else ""))
+    buffer = io.BytesIO()
+    SimpleDocTemplate(buffer, pagesize=(612, 792), leftMargin=57, rightMargin=60, topMargin=48, bottomMargin=48,
+                      title=f"{data['client']} {data['quarter']} Performance Measurement Report", invariant=1).build(story, onFirstPage=footer, onLaterPages=footer)
+    with fitz.open(stream=buffer.getvalue(), filetype="pdf") as result:
+        if appendix:
+            with fitz.open(appendix) as flash:
+                result.insert_pdf(flash)
+        result.save(path)
