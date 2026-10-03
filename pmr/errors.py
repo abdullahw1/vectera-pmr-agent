@@ -1,4 +1,5 @@
 """Explain known validation failures without hiding their original diagnostics."""
+
 import re
 
 
@@ -26,14 +27,18 @@ def explain_failure(reason, client, period):
         title = "Previous report is ambiguous"
         message = f"More than one report could be the most recent prior PMR for {client}."
         action = "Keep the intended prior-quarter report in the source package and move conflicting copies to another folder, then generate again."
-    elif reason.startswith(("Expected number at ", "Expected a finite number", "Currency must ", "Invalid currency")):
+    elif reason.startswith(
+        ("Expected number at ", "Expected a finite number", "Currency must ", "Invalid currency")
+    ):
         title = "Invalid numerical data"
         message = "A required financial value is missing or invalid. The app will not guess a value or silently round it."
         action = "Check the original spreadsheet using Technical Details below. Correct the source value and generate a new draft."
     elif reason.startswith("Source files changed during generation"):
         title = "Source documents changed during the run"
         message = "The input package changed while the report was being generated. Its evidence can no longer be verified consistently."
-        action = "Finish editing the source documents, then generate again without changing them during the run."
+        action = (
+            "Finish editing the source documents, then generate again without changing them during the run."
+        )
     elif reason.startswith("Implementation changed during generation"):
         title = "Application updated during the run"
         message = "The reporting code changed during generation, so this run was stopped to protect reproducibility."

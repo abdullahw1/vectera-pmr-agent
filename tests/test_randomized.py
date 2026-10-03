@@ -1,4 +1,5 @@
 """Seeded adversarial permutations are reproducible, not unrestricted fuzzing."""
+
 import random
 import shutil
 from decimal import Decimal
@@ -44,7 +45,10 @@ def test_randomized_file_row_and_ic_order_preserve_results(tmp_path, seed):
     book.save(path)
     data, activity, ledger = calculate(root)
     assert data["portfolio"]["nav"] == Decimal("436116069.16")
-    assert [e["name"] for e in activity["open"]] == ["Northgate Logistics Partners", "Ridgeline Value Fund IV"]
+    assert [e["name"] for e in activity["open"]] == [
+        "Northgate Logistics Partners",
+        "Ridgeline Value Fund IV",
+    ]
     assert all(c["passed"] for c in ledger.checks if c["severity"] == "blocker")
 
 

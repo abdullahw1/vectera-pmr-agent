@@ -1,4 +1,5 @@
 """python -m pmr generate --client CODE --quarter 4Q25"""
+
 import argparse
 import json
 from pathlib import Path
@@ -35,7 +36,14 @@ def main():
         return
     if args.command == "start":
         try:
-            serve_workspace(args.inputs, args.output, args.client, args.quarter, args.port, open_browser=not args.no_browser)
+            serve_workspace(
+                args.inputs,
+                args.output,
+                args.client,
+                args.quarter,
+                args.port,
+                open_browser=not args.no_browser,
+            )
         except KeyboardInterrupt:
             print("Workspace stopped.")
         return
@@ -43,7 +51,9 @@ def main():
         _, summary = generate(args.inputs.resolve(), args.output.resolve(), args.client, args.quarter)
     except (ValueError, StopIteration, KeyError) as error:
         args.output.mkdir(parents=True, exist_ok=True)
-        (args.output / "failure.json").write_text(json.dumps(dict(status="blocked", reason=str(error)), indent=2), encoding="utf-8")
+        (args.output / "failure.json").write_text(
+            json.dumps(dict(status="blocked", reason=str(error)), indent=2), encoding="utf-8"
+        )
         print(f"Required source data could not be resolved: {error}", file=sys.stderr)
         raise SystemExit(2)
     print(f"Draft saved: {args.output / 'report.pdf'}")

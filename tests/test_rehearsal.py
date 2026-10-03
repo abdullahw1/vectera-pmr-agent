@@ -1,4 +1,5 @@
 """Full client/period adaptation, not only isolated spreadsheet parsing."""
+
 from pathlib import Path
 import os
 
@@ -7,7 +8,8 @@ from pmr.pipeline import generate
 
 
 def test_coherent_next_quarter_with_cross_year_approval(tmp_path, monkeypatch):
-    for key in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]: monkeypatch.delenv(key, raising=False)
+    for key in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]:
+        monkeypatch.delenv(key, raising=False)
     original = Path(__file__).resolve().parents[1] / "inputs"
     expected = build_fixture(original, tmp_path / "inputs")
     payload, summary = generate(tmp_path / "inputs", tmp_path / "output", "EWRS", "1Q26")

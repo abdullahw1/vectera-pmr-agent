@@ -1,4 +1,5 @@
 """Golden expectations live only in tests; mutations exercise unseen-run behavior."""
+
 from pathlib import Path
 import shutil
 
@@ -9,6 +10,7 @@ from decimal import Decimal
 from pmr.evidence import Ledger
 from pmr.ingest import discover, quarter, entity
 from pmr.finance import build_financials, commitments
+from pmr.pipeline import generate
 
 INPUTS = Path(__file__).resolve().parents[1] / "inputs"
 
@@ -37,7 +39,10 @@ def test_golden_financial_results():
     assert data["portfolio"]["ex_us"] == pytest.approx(9.6199045052)
     roles = {f["name"]: f["roles"] for f in data["funds"]}
     assert roles["Redwood Logistics Trust"] == ["largest contributor", "second-largest individual position"]
-    assert roles["Cornerstone Core Property Fund"] == ["second-largest detractor", "largest individual position"]
+    assert roles["Cornerstone Core Property Fund"] == [
+        "second-largest detractor",
+        "largest individual position",
+    ]
     assert roles["Ironwood Value-Add Fund III"] == ["second-largest contributor"]
     assert roles["Meridian Opportunity Fund V"] == ["largest detractor"]
     assert sum(e["amount"] for e in activity["open"]) == 65_000_000
@@ -63,25 +68,74 @@ def test_rows_move_and_filenames_change(tmp_path):
 def test_ic_order_does_not_define_chronology(tmp_path):
     root = copied(tmp_path)
     path = root / "ic_log_2025.xlsx"
-    book = openpyxl.load_workbook(path); sheet = book.active
+    book = openpyxl.load_workbook(path)
+    sheet = book.active
     rows = list(sheet.values)
     for index, row in enumerate(reversed(rows[1:]), 2):
         for column, value in enumerate(row, 1):
             sheet.cell(index, column, value)
     book.save(path)
     _, activity, _ = calculate(root)
-    assert [e["name"] for e in activity["open"]] == ["Northgate Logistics Partners", "Ridgeline Value Fund IV"]
+    assert [e["name"] for e in activity["open"]] == [
+        "Northgate Logistics Partners",
+        "Ridgeline Value Fund IV",
+    ]
 
 
 def test_bad_cash_value_is_a_blocker(tmp_path):
     root = copied(tmp_path)
     path = root / "flash_4Q25.xlsx"
-    book = openpyxl.load_workbook(path); sheet = book["CashActivity(Agg)"]
+    book = openpyxl.load_workbook(path)
+    sheet = book["CashActivity(Agg)"]
     row = next(r for r in sheet if r[0].value == "Cornerstone Core Property Fund")
     row[5].value += 1000
     book.save(path)
     _, _, ledger = calculate(root)
     assert any(x["code"] == "reconciliation" and x["severity"] == "blocker" for x in ledger.issues)
+
+
+def test_fund_missing_from_cash_sheet_blocks_without_crashing(tmp_path):
+    root = copied(tmp_path)
+    path = root / "flash_4Q25.xlsx"
+    book = openpyxl.load_workbook(path)
+    sheet = book["CashActivity(Agg)"]
+    row = next(r for r in sheet if r[0].value == "Blackford Special Situations Fund II")
+    sheet.delete_rows(row[0].row)
+    book.save(path)
+    data, _, ledger = calculate(root)
+    assert "Blackford Special Situations Fund II" not in {f["name"] for f in data["funds"]}
+    assert any(x["code"] == "fund_row_missing" and x["severity"] == "blocker" for x in ledger.issues)
+
+
+def test_fund_missing_from_returns_sheet_keeps_flash_figures(tmp_path):
+    root = copied(tmp_path)
+    path = root / "flash_4Q25.xlsx"
+    book = openpyxl.load_workbook(path)
+    sheet = book["ReturnsMultiples(Agg)"]
+    row = next(r for r in sheet if r[0].value == "Blackford Special Situations Fund II")
+    sheet.delete_rows(row[0].row)
+    book.save(path)
+    data, _, ledger = calculate(root)
+    fund = next(f for f in data["funds"] if f["name"] == "Blackford Special Situations Fund II")
+    assert fund["q_net"] is None and fund["contribution"] is not None
+    assert any(x["code"] == "fund_row_missing" and x["severity"] == "blocker" for x in ledger.issues)
+
+
+def test_conflicting_ic_amounts_block_instead_of_guessing(tmp_path):
+    root = copied(tmp_path)
+    path = root / "ic_log_2025.xlsx"
+    book = openpyxl.load_workbook(path)
+    sheet = book.active
+    row = next(r for r in sheet if r[5].value == "Northgate Logistics Partners")
+    row[6].value = "Approve USD 40 million to Northgate Logistics Partners, reduced from USD 50 million"
+    book.save(path)
+    _, activity, ledger = calculate(root)
+    northgate = next(e for e in activity["new"] if e["name"] == "Northgate Logistics Partners")
+    assert northgate["amount"] is None
+    assert any(x["code"] == "ic_amount" and x["severity"] == "blocker" for x in ledger.issues)
+    # The full pipeline must still produce a reviewable draft, not crash downstream.
+    _, summary = generate(root, tmp_path / "out", "CPERS", "4Q25")
+    assert any(x["code"] == "ic_amount" for x in summary["issues"])
 
 
 def test_entity_normalization_is_conservative():
@@ -98,7 +152,8 @@ def test_document_date_wins_over_inception_quarter():
 def test_unknown_committee_action_blocks_finalization(tmp_path):
     root = copied(tmp_path)
     path = root / "ic_log_2025.xlsx"
-    book = openpyxl.load_workbook(path); sheet = book.active
+    book = openpyxl.load_workbook(path)
+    sheet = book.active
     row = next(r for r in sheet if r[5].value == "Northgate Logistics Partners")
     row[9].value = "maybe approved"
     book.save(path)
@@ -131,6 +186,7 @@ def test_zero_balance_fund_can_be_added_without_code_edits(tmp_path):
 
 def test_different_client_identity_benchmark_and_policy(tmp_path):
     import fitz
+
     root = copied(tmp_path)
     path = root / "flash_4Q25.xlsx"
     book = openpyxl.load_workbook(path)
@@ -140,12 +196,19 @@ def test_different_client_identity_benchmark_and_policy(tmp_path):
         for row in sheet:
             for cell in row:
                 if isinstance(cell.value, str):
-                    cell.value = cell.value.replace(old_name, new_name).replace("CPERS Custom Benchmark", "EWRS Custom Benchmark")
+                    cell.value = cell.value.replace(old_name, new_name).replace(
+                        "CPERS Custom Benchmark", "EWRS Custom Benchmark"
+                    )
     book.save(path)
-    document = fitz.open(); page = document.new_page()
-    page.insert_text((50, 50), new_name + "\nPerformance Measurement Report\nThird Quarter 2025\n"
-                     "allocated 12% of total plan assets with an allowable range of 6-22%\n"
-                     "<=42% per sector\n<=30% Ex-US\n<=45% / 70%", fontsize=10)
+    document = fitz.open()
+    page = document.new_page()
+    page.insert_text(
+        (50, 50),
+        new_name + "\nPerformance Measurement Report\nThird Quarter 2025\n"
+        "allocated 12% of total plan assets with an allowable range of 6-22%\n"
+        "<=42% per sector\n<=30% Ex-US\n<=45% / 70%",
+        fontsize=10,
+    )
     document.save(root / "unfamiliar_prior.pdf")
     data, _, ledger = calculate(root, "EWRS")
     assert data["portfolio"]["name"] == new_name
@@ -157,9 +220,25 @@ def test_different_client_identity_benchmark_and_policy(tmp_path):
 
 def test_after_quarter_approval_excluded(tmp_path):
     from datetime import datetime
-    root = copied(tmp_path); path = root / "ic_log_2025.xlsx"
-    book = openpyxl.load_workbook(path); sheet = book.active
-    sheet.append([9999, datetime(2026, 1, 5), "IC", "Commitment", "CPERS", "Future Fund", "Approve USD99 million", None, None, "approved"])
+
+    root = copied(tmp_path)
+    path = root / "ic_log_2025.xlsx"
+    book = openpyxl.load_workbook(path)
+    sheet = book.active
+    sheet.append(
+        [
+            9999,
+            datetime(2026, 1, 5),
+            "IC",
+            "Commitment",
+            "CPERS",
+            "Future Fund",
+            "Approve USD99 million",
+            None,
+            None,
+            "approved",
+        ]
+    )
     book.save(path)
     _, activity, _ = calculate(root)
     assert all(e["name"] != "Future Fund" for e in activity["events"])

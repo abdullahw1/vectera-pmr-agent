@@ -21,3 +21,7 @@ pmr = ["web/*.html", "web/icons/*.svg", "web/icons/LICENSE"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.black]
+line-length = 110
+target-version = ["py312"]

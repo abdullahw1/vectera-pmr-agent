@@ -1,4 +1,5 @@
 """Presentation regression: Letter paper, readable source values and repeated labels."""
+
 from pathlib import Path
 import re
 

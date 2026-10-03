@@ -3,15 +3,42 @@
 JSON stores Decimal as base-ten strings, never binary floating-point approximations.
 Rates remain supplied ratios; they are not recalculated from rounded cash flows.
 """
+
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 import math
 
-MONEY_KEYS = {"nav", "commitment", "funded", "unfunded", "plan", "target", "beginning",
-              "contributions", "distributions", "withdrawals", "income", "fees",
-              "appreciation", "ending", "contribution", "approved_total", "amount"}
-MONEY_HEADERS = {"market value dollars", "commitment amount", "funded amount", "unfunded commitments",
-                 "beginning market value dollars", "contributions", "distributions", "withdrawals",
-                 "gross income", "manager fees", "appreciation"}
+MONEY_KEYS = {
+    "nav",
+    "commitment",
+    "funded",
+    "unfunded",
+    "plan",
+    "target",
+    "beginning",
+    "contributions",
+    "distributions",
+    "withdrawals",
+    "income",
+    "fees",
+    "appreciation",
+    "ending",
+    "contribution",
+    "approved_total",
+    "amount",
+}
+MONEY_HEADERS = {
+    "market value dollars",
+    "commitment amount",
+    "funded amount",
+    "unfunded commitments",
+    "beginning market value dollars",
+    "contributions",
+    "distributions",
+    "withdrawals",
+    "gross income",
+    "manager fees",
+    "appreciation",
+}
 
 
 def currency(value):

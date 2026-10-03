@@ -3,113 +3,48 @@
     {
       "stage": "discovery",
       "status": "completed",
-      "seconds": 0.41
+      "seconds": 0.372
     },
     {
       "stage": "exact_finance",
       "status": "completed",
-      "seconds": 0.055
+      "seconds": 0.062
     },
     {
       "stage": "source_passages",
       "status": "completed",
-      "seconds": 0.006
-    },
-    {
-      "stage": "evidence_agent",
-      "status": "completed",
-      "seconds": 0.004
+      "seconds": 0.005
     },
     {
       "stage": "chart_vision",
       "status": "completed",
-      "seconds": 0.029
+      "seconds": 0.027
     },
     {
       "stage": "cross_source_checks",
       "status": "completed",
-      "seconds": 0.005
+      "seconds": 0.006
     },
     {
       "stage": "grounded_narrative",
       "status": "completed",
-      "seconds": 15.073
+      "seconds": 12.953
     },
     {
       "stage": "report_render",
       "status": "completed",
-      "seconds": 2.477
+      "seconds": 2.202
     }
   ],
   "provider": "openai",
   "model": "gpt-4.1-2025-04-14",
   "vision_model": "gpt-4.1-mini-2025-04-14",
-  "api_calls": 14,
+  "api_calls": 10,
   "token_usage": [
     {
-      "prompt_tokens": 609,
-      "completion_tokens": 114,
-      "total_tokens": 723,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 278,
-      "completion_tokens": 34,
-      "total_tokens": 312,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 428,
-      "completion_tokens": 98,
-      "total_tokens": 526,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 311,
-      "completion_tokens": 63,
-      "total_tokens": 374,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 431,
+      "prompt_tokens": 445,
       "completion_tokens": 93,
-      "total_tokens": 524,
+      "total_tokens": 538,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -122,9 +57,9 @@
       }
     },
     {
-      "prompt_tokens": 239,
-      "completion_tokens": 36,
-      "total_tokens": 275,
+      "prompt_tokens": 270,
+      "completion_tokens": 84,
+      "total_tokens": 354,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -137,9 +72,54 @@
       }
     },
     {
-      "prompt_tokens": 489,
+      "prompt_tokens": 418,
+      "completion_tokens": 69,
+      "total_tokens": 487,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 224,
+      "completion_tokens": 57,
+      "total_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 421,
+      "completion_tokens": 80,
+      "total_tokens": 501,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 479,
       "completion_tokens": 123,
-      "total_tokens": 612,
+      "total_tokens": 602,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -152,9 +132,9 @@
       }
     },
     {
-      "prompt_tokens": 295,
-      "completion_tokens": 49,
-      "total_tokens": 344,
+      "prompt_tokens": 437,
+      "completion_tokens": 97,
+      "total_tokens": 534,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -167,9 +147,9 @@
       }
     },
     {
-      "prompt_tokens": 447,
-      "completion_tokens": 109,
-      "total_tokens": 556,
+      "prompt_tokens": 270,
+      "completion_tokens": 65,
+      "total_tokens": 335,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -182,9 +162,9 @@
       }
     },
     {
-      "prompt_tokens": 269,
-      "completion_tokens": 27,
-      "total_tokens": 296,
+      "prompt_tokens": 1066,
+      "completion_tokens": 552,
+      "total_tokens": 1618,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -197,54 +177,9 @@
       }
     },
     {
-      "prompt_tokens": 1076,
-      "completion_tokens": 546,
-      "total_tokens": 1622,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 1106,
-      "completion_tokens": 157,
-      "total_tokens": 1263,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 1636,
-      "completion_tokens": 451,
-      "total_tokens": 2087,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 974,
-      "completion_tokens": 61,
-      "total_tokens": 1035,
+      "prompt_tokens": 1033,
+      "completion_tokens": 56,
+      "total_tokens": 1089,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -257,122 +192,9 @@
       }
     }
   ],
-  "cache_hits": 11,
-  "cache_misses": 14,
+  "cache_hits": 9,
+  "cache_misses": 10,
   "failed_calls": 0,
-  "agent": {
-    "status": "finished",
-    "steps": [
-      {
-        "step": 1,
-        "action": {
-          "tool": "list_evidence",
-          "args": {}
-        },
-        "observation": [
-          {
-            "id": "f_678546ed97cf51c4",
-            "entity": "Cornerstone Core Property Fund",
-            "heading": "Investments Impacting Performance"
-          },
-          {
-            "id": "f_fee70c26166bc4f2",
-            "entity": "Ironwood Value-Add Fund III",
-            "heading": "Investments Impacting Performance"
-          },
-          {
-            "id": "f_97c7d88ddaa94007",
-            "entity": "Kestrel U.S. Real Estate Fund",
-            "heading": "Investments Impacting Performance"
-          },
-          {
-            "id": "f_b5b9ce5794ad2acb",
-            "entity": "Northgate Logistics Partners",
-            "heading": "Fund Strategy"
-          },
-          {
-            "id": "f_8e53833fb531a012",
-            "entity": "Redwood Logistics Trust",
-            "heading": "Investments Impacting Performance"
-          },
-          {
-            "id": "f_269bcd2482f7e88c",
-            "entity": "Ridgeline Value Fund IV",
-            "heading": "Fund Strategy"
-          },
-          {
-            "id": "f_33ba243d34b9d2dc",
-            "entity": "Tidewater Distressed Realty Fund",
-            "heading": "Status"
-          }
-        ],
-        "valid": true
-      },
-      {
-        "step": 2,
-        "action": {
-          "tool": "inspect_passage",
-          "args": {
-            "id": "f_678546ed97cf51c4"
-          }
-        },
-        "observation": {
-          "text": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-          "id": "f_678546ed97cf51c4",
-          "entity": "Cornerstone Core Property Fund",
-          "heading": "Investments Impacting Performance",
-          "source": {
-            "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
-            "page": 1,
-            "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-            "method": "heading-delimited extraction"
-          }
-        },
-        "valid": true
-      },
-      {
-        "step": 3,
-        "action": {
-          "tool": "validate_claim",
-          "args": {
-            "id": "f_678546ed97cf51c4",
-            "quote": "Leverage was conservative at ~28% LTV."
-          }
-        },
-        "observation": {
-          "valid": true,
-          "evidence_id": "f_678546ed97cf51c4"
-        },
-        "valid": true
-      },
-      {
-        "step": 4,
-        "action": {
-          "tool": "finish",
-          "args": {}
-        },
-        "observation": {
-          "status": "finished"
-        },
-        "valid": true
-      }
-    ],
-    "validated_claims": [
-      {
-        "id": "f_678546ed97cf51c4",
-        "quote": "Leverage was conservative at ~28% LTV.",
-        "entity": "Cornerstone Core Property Fund",
-        "source": {
-          "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
-          "page": 1,
-          "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-          "method": "heading-delimited extraction"
-        }
-      }
-    ],
-    "max_steps": 8,
-    "seconds": 0.004
-  },
   "blockers": 0,
   "warnings": 10,
   "review_items": 7

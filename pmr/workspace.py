@@ -1,4 +1,5 @@
 """Local browser workflow; report generation stays in an isolated Python process."""
+
 from __future__ import annotations
 
 import base64
@@ -20,10 +21,24 @@ from .ingest import quarter
 from .review import approve
 from .errors import explain_failure
 
-ARTIFACTS = {"report.pdf", "final_report.pdf", "appendix.pdf", "review.html", "review.md", "draft.json",
-             "evidence.json", "verification.json", "manifest.json", "semantic_manifest.json", "agent_trace.json",
-             "diagnostics.json", "approval.json", "final_evidence.json", "final_sections.json",
-             "final_manifest.json", "final_semantic_manifest.json"}
+ARTIFACTS = {
+    "report.pdf",
+    "final_report.pdf",
+    "appendix.pdf",
+    "review.html",
+    "review.md",
+    "draft.json",
+    "evidence.json",
+    "verification.json",
+    "manifest.json",
+    "semantic_manifest.json",
+    "diagnostics.json",
+    "approval.json",
+    "final_evidence.json",
+    "final_sections.json",
+    "final_manifest.json",
+    "final_semantic_manifest.json",
+}
 MAX_BODY = 40_000_000
 
 
@@ -46,14 +61,26 @@ class Workspace:
             job = read_json(path)
             if job and path.parent.name == job.get("id"):
                 if job["status"] in {"queued", "running"}:
-                    job.update(status="failed", error="Application stopped during this run; generate a new draft.")
+                    job.update(
+                        status="failed", error="Application stopped during this run; generate a new draft."
+                    )
                 self.jobs[job["id"]] = job
         draft = read_json(self.output / "draft.json", {})
-        self.defaults = dict(client=client or draft.get("data", {}).get("client", ""),
-                             quarter=period or draft.get("data", {}).get("quarter", ""), inputs=str(self.inputs))
+        self.defaults = dict(
+            client=client or draft.get("data", {}).get("client", ""),
+            quarter=period or draft.get("data", {}).get("quarter", ""),
+            inputs=str(self.inputs),
+        )
         if draft:
-            self.jobs["current"] = dict(id="current", client=draft["data"]["client"], quarter=draft["data"]["quarter"],
-                                        inputs=str(self.inputs), status="draft", created=(self.output / "draft.json").stat().st_mtime, existing=True)
+            self.jobs["current"] = dict(
+                id="current",
+                client=draft["data"]["client"],
+                quarter=draft["data"]["quarter"],
+                inputs=str(self.inputs),
+                status="draft",
+                created=(self.output / "draft.json").stat().st_mtime,
+                existing=True,
+            )
 
     def directory(self, identifier):
         if identifier not in self.jobs:
@@ -69,18 +96,27 @@ class Workspace:
         summary = read_json(folder / "verification.json")
         if summary:
             issues = summary["issues"]
-            result.update(checks_passed=summary["checks_passed"], checks_total=summary["checks_total"],
-                          blockers=sum(i["severity"] == "blocker" for i in issues),
-                          warnings=sum(i["severity"] == "warning" for i in issues),
-                          charts=sum(i["severity"] == "review" for i in issues))
+            result.update(
+                checks_passed=summary["checks_passed"],
+                checks_total=summary["checks_total"],
+                blockers=sum(i["severity"] == "blocker" for i in issues),
+                warnings=sum(i["severity"] == "warning" for i in issues),
+                charts=sum(i["severity"] == "review" for i in issues),
+            )
         if (folder / "approval.json").exists():
             result["status"] = "approved"
         return result
 
     def state(self):
         with self.lock:
-            return dict(defaults=self.defaults, active=self.active,
-                        runs=[self.snapshot(j) for j in sorted(self.jobs.values(), key=lambda j: j["created"], reverse=True)])
+            return dict(
+                defaults=self.defaults,
+                active=self.active,
+                runs=[
+                    self.snapshot(j)
+                    for j in sorted(self.jobs.values(), key=lambda j: j["created"], reverse=True)
+                ],
+            )
 
     def create(self, request):
         client = str(request.get("client", "")).strip()
@@ -94,9 +130,18 @@ class Workspace:
             raise ValueError("Choose the document package folder containing spreadsheets and PDFs")
         with self.lock:
             if self.active:
-                raise ValueError("A report is already running. Wait for it to finish before starting another.")
+                raise ValueError(
+                    "A report is already running. Wait for it to finish before starting another."
+                )
             identifier = uuid.uuid4().hex[:12]
-            job = dict(id=identifier, client=client, quarter=period, inputs=str(source), status="queued", created=time.time())
+            job = dict(
+                id=identifier,
+                client=client,
+                quarter=period,
+                inputs=str(source),
+                status="queued",
+                created=time.time(),
+            )
             self.jobs[identifier] = job
             self.active = identifier
             folder = self.directory(identifier)
@@ -117,11 +162,28 @@ class Workspace:
                 job["status"] = "running"
                 self.save(job)
             # No shell interpolation; credentials are inherited, never sent to the browser.
-            command = [sys.executable, "-m", "pmr", "generate", "--client", job["client"], "--quarter", job["quarter"],
-                       "--inputs", job["inputs"], "--output", str(folder)]
+            command = [
+                sys.executable,
+                "-m",
+                "pmr",
+                "generate",
+                "--client",
+                job["client"],
+                "--quarter",
+                job["quarter"],
+                "--inputs",
+                job["inputs"],
+                "--output",
+                str(folder),
+            ]
             with (folder / "run.log").open("w", encoding="utf-8") as log:
-                process = subprocess.Popen(command, cwd=Path(__file__).resolve().parents[1], stdout=log, stderr=log,
-                                           env=os.environ.copy())
+                process = subprocess.Popen(
+                    command,
+                    cwd=Path(__file__).resolve().parents[1],
+                    stdout=log,
+                    stderr=log,
+                    env=os.environ.copy(),
+                )
                 with self.lock:
                     self.process = process
                 result = process.wait()
@@ -129,10 +191,20 @@ class Workspace:
             with self.lock:
                 job["status"] = "draft" if result == 0 else "failed"
                 if result:
-                    job.update(explain_failure(failure.get("reason", "Generation failed. Inspect the local run.log for diagnostics."), job["client"], job["quarter"]))
+                    job.update(
+                        explain_failure(
+                            failure.get(
+                                "reason", "Generation failed. Inspect the local run.log for diagnostics."
+                            ),
+                            job["client"],
+                            job["quarter"],
+                        )
+                    )
         except OSError:
             with self.lock:
-                job.update(status="failed", error="The local Python worker could not start or save its output.")
+                job.update(
+                    status="failed", error="The local Python worker could not start or save its output."
+                )
         finally:
             with self.lock:
                 self.active = None
@@ -150,7 +222,11 @@ class Workspace:
             if not isinstance(item, dict):
                 raise ValueError("Each uploaded document must include a path and data")
             path = PurePosixPath(str(item.get("path", "")))
-            if path.is_absolute() or any(p in {"..", "."} or p.startswith(".") for p in path.parts) or "\\" in str(path):
+            if (
+                path.is_absolute()
+                or any(p in {"..", "."} or p.startswith(".") for p in path.parts)
+                or "\\" in str(path)
+            ):
                 raise ValueError("Invalid uploaded document path")
             if path.suffix.lower() not in {".pdf", ".xlsx", ".pptx"} or str(path) in seen:
                 raise ValueError("Upload only unique PDF, XLSX and PPTX documents")
@@ -161,7 +237,9 @@ class Workspace:
                 raise ValueError("Invalid uploaded document data") from None
             total += len(content)
             if total > 25_000_000:
-                raise ValueError("The document package exceeds the 25 MB upload limit; use its local folder path instead")
+                raise ValueError(
+                    "The document package exceeds the 25 MB upload limit; use its local folder path instead"
+                )
             decoded.append((path, content))
         folder = self.output / "uploads" / uuid.uuid4().hex[:12]
         for path, content in decoded:
@@ -208,6 +286,7 @@ class Workspace:
 
 def make_server(workspace, port=0):
     from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+
     token = secrets.token_urlsafe(32)
     web = Path(__file__).parent / "web"
 
@@ -229,16 +308,24 @@ def make_server(workspace, port=0):
             self.wfile.write(content)
 
         def valid_host(self):
-            return self.headers.get("Host") in {f"127.0.0.1:{self.server.server_port}", f"localhost:{self.server.server_port}"}
+            return self.headers.get("Host") in {
+                f"127.0.0.1:{self.server.server_port}",
+                f"localhost:{self.server.server_port}",
+            }
 
         def do_GET(self):
             if not self.valid_host():
-                self.reply(403, dict(message="Invalid local host")); return
+                self.reply(403, dict(message="Invalid local host"))
+                return
             path = urlparse(self.path).path
             try:
                 if path in {"/", "/index.html"}:
                     boot = json.dumps(dict(token=token)).replace("<", "\\u003c")
-                    self.reply(200, (web / "index.html").read_text().replace("__BOOT__", boot), "text/html; charset=utf-8")
+                    self.reply(
+                        200,
+                        (web / "index.html").read_text(encoding="utf-8").replace("__BOOT__", boot),
+                        "text/html; charset=utf-8",
+                    )
                 elif path == "/api/state":
                     self.reply(200, workspace.state())
                 elif path.startswith("/icons/"):
@@ -253,13 +340,19 @@ def make_server(workspace, port=0):
                     else:
                         file = workspace.artifact(identifier, relative)
                         if relative == "review.html":
-                            page = file.read_text().replace("fetch('/approve'", "fetch('approve'")
-                            if "X-PMR-Token" not in page:
-                                page = page.replace("'Content-Type':'application/json'", "'Content-Type':'application/json','X-PMR-Token':window.PMR_CSRF||''")
-                            page = page.replace("<script>", "<script>window.PMR_CSRF=" + json.dumps(token) + ";</script><script>", 1)
+                            page = file.read_text(encoding="utf-8")
+                            page = page.replace(
+                                "<script>",
+                                "<script>window.PMR_CSRF=" + json.dumps(token) + ";</script><script>",
+                                1,
+                            )
                             self.reply(200, page, "text/html; charset=utf-8")
                         else:
-                            self.reply(200, file.read_bytes(), mimetypes.guess_type(file.name)[0] or "application/octet-stream")
+                            self.reply(
+                                200,
+                                file.read_bytes(),
+                                mimetypes.guess_type(file.name)[0] or "application/octet-stream",
+                            )
                 else:
                     self.reply(404, dict(message="Not found"))
             except (ValueError, KeyError, OSError):
@@ -267,8 +360,14 @@ def make_server(workspace, port=0):
 
         def do_POST(self):
             origin = self.headers.get("Origin")
-            if not self.valid_host() or self.headers.get("X-PMR-Token") != token or origin and origin != "http://" + self.headers["Host"]:
-                self.reply(403, dict(message="Reload the local workspace before making changes")); return
+            if (
+                not self.valid_host()
+                or self.headers.get("X-PMR-Token") != token
+                or origin
+                and origin != "http://" + self.headers["Host"]
+            ):
+                self.reply(403, dict(message="Reload the local workspace before making changes"))
+                return
             try:
                 length = int(self.headers.get("Content-Length", 0))
                 if not 0 < length <= MAX_BODY:
@@ -291,7 +390,12 @@ def make_server(workspace, port=0):
                 error = sys.exc_info()[1]
                 self.reply(400, dict(message=str(error)))
             except OSError:
-                self.reply(500, dict(message="The local file operation failed. Check folder permissions and available disk space."))
+                self.reply(
+                    500,
+                    dict(
+                        message="The local file operation failed. Check folder permissions and available disk space."
+                    ),
+                )
 
     return ThreadingHTTPServer(("127.0.0.1", port), Handler)
 
@@ -304,6 +408,7 @@ def serve_workspace(inputs, output, client=None, period=None, port=0, open_brows
             print(f"PMR workspace: {url}\nKeep this terminal open. Press Ctrl+C to stop.", flush=True)
             if open_browser:
                 import webbrowser
+
                 webbrowser.open(url)
             server.serve_forever()
     finally:

@@ -1,4 +1,5 @@
 """Local workspace routing and document isolation; no provider calls required."""
+
 import base64
 import io
 import json
@@ -28,17 +29,22 @@ def test_upload_preserves_folders(workspace):
     assert result["count"] == 1
     assert (workspace.output / "uploads").is_relative_to(workspace.output)
     from pathlib import Path
+
     assert (Path(result["inputs"]) / "manager_reports/report.pdf").read_bytes() == b"synthetic source"
 
 
-@pytest.mark.parametrize("path", ["../secret.pdf", "/secret.pdf", ".env", "nested/.private.pdf", "a\\report.pdf", "report.txt"])
+@pytest.mark.parametrize(
+    "path", ["../secret.pdf", "/secret.pdf", ".env", "nested/.private.pdf", "a\\report.pdf", "report.txt"]
+)
 def test_upload_rejects_unsafe_paths(workspace, path):
     with pytest.raises(ValueError):
         workspace.upload(dict(files=[document(path)]))
     assert not (workspace.output / "uploads").exists()
 
 
-@pytest.mark.parametrize("files", [[], [None], [document(), document()], [dict(path="x.pdf", data="invalid!")]])
+@pytest.mark.parametrize(
+    "files", [[], [None], [document(), document()], [dict(path="x.pdf", data="invalid!")]]
+)
 def test_upload_rejects_invalid_packages(workspace, files):
     with pytest.raises(ValueError):
         workspace.upload(dict(files=files))
@@ -47,8 +53,11 @@ def test_upload_rejects_invalid_packages(workspace, files):
 def test_generate_validates_before_starting_worker(workspace, monkeypatch):
     worker = Mock()
     monkeypatch.setattr("pmr.workspace.threading.Thread", worker)
-    for request in [dict(client="", quarter="4Q25"), dict(client="CPERS", quarter="5Q25"),
-                    dict(client="CPERS", quarter="4Q25", inputs="/does/not/exist")]:
+    for request in [
+        dict(client="", quarter="4Q25"),
+        dict(client="CPERS", quarter="5Q25"),
+        dict(client="CPERS", quarter="4Q25", inputs="/does/not/exist"),
+    ]:
         with pytest.raises(ValueError):
             workspace.create(request)
     worker.assert_not_called()
@@ -89,7 +98,9 @@ def test_worker_failure_is_visible_and_releases_active(workspace, monkeypatch):
     process = Mock()
     process.wait.return_value = 1
     monkeypatch.setattr("pmr.workspace.subprocess.Popen", Mock(return_value=process))
-    (workspace.directory(job["id"]) / "failure.json").write_text(json.dumps(dict(reason="No matching client")))
+    (workspace.directory(job["id"]) / "failure.json").write_text(
+        json.dumps(dict(reason="No matching client"))
+    )
     workspace.run(job["id"])
     result = workspace.state()["runs"][0]
     assert result["status"] == "failed"
@@ -102,6 +113,7 @@ def test_worker_failure_is_visible_and_releases_active(workspace, monkeypatch):
 def handler(workspace, monkeypatch):
     # Exercise routing without opening a socket in restricted development sandboxes.
     from pmr.workspace import make_server
+
     server = Mock()
     monkeypatch.setattr("http.server.ThreadingHTTPServer", server)
     monkeypatch.setattr("pmr.workspace.secrets.token_urlsafe", lambda _: "test-token")
@@ -113,9 +125,14 @@ def handler(workspace, monkeypatch):
     return instance
 
 
-@pytest.mark.parametrize("headers", [{"Host": "external.example:8888", "X-PMR-Token": "test-token"},
-                                   {"Host": "127.0.0.1:8888"},
-                                   {"Host": "127.0.0.1:8888", "X-PMR-Token": "test-token", "Origin": "https://external.example"}])
+@pytest.mark.parametrize(
+    "headers",
+    [
+        {"Host": "external.example:8888", "X-PMR-Token": "test-token"},
+        {"Host": "127.0.0.1:8888"},
+        {"Host": "127.0.0.1:8888", "X-PMR-Token": "test-token", "Origin": "https://external.example"},
+    ],
+)
 def test_write_routes_require_local_host_token_and_origin(handler, headers):
     handler.headers = headers
     handler.do_POST()

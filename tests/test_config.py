@@ -1,4 +1,5 @@
 """Credential loading must preserve external keys and the no-key verification mode."""
+
 import os
 
 from pmr.config import load_environment

@@ -3,6 +3,7 @@
 This is a test fixture generator, not production ingestion. Fixture names, dates
 and invented approvals below are intentionally allowed golden-test data.
 """
+
 import argparse
 from datetime import datetime
 from decimal import Decimal
@@ -41,9 +42,11 @@ def make_pdf(path, pages):
     style = ParagraphStyle("Fixture", fontName="Helvetica", fontSize=8, leading=10)
     story = []
     for i, text in enumerate(pages):
-        if i: story.append(PageBreak())
+        if i:
+            story.append(PageBreak())
         for line in text.splitlines():
-            if line.strip(): story.append(Paragraph(html.escape(line.strip()), style))
+            if line.strip():
+                story.append(Paragraph(html.escape(line.strip()), style))
     SimpleDocTemplate(str(path), invariant=1).build(story)
 
 
@@ -62,8 +65,12 @@ def build_fixture(source, destination):
             removed_values["nav"] = currency(values[headers[norm("Market Value ($)")]])
         # Subtract only additive money columns from affected aggregates.
         for row in ws:
-            if row[0].row > start and norm(row[0].value) in {norm("Tactical Investments"), norm("Vectera Initiated Investments"),
-                                     norm(OLD + " Portfolio"), norm("US Portfolio")}:
+            if row[0].row > start and norm(row[0].value) in {
+                norm("Tactical Investments"),
+                norm("Vectera Initiated Investments"),
+                norm(OLD + " Portfolio"),
+                norm("US Portfolio"),
+            }:
                 for header, column in headers.items():
                     if header in MONEY_HEADERS and isinstance(row[column].value, (int, float)):
                         # Synthetic auxiliary totals can carry Excel serialization dust;
@@ -75,7 +82,11 @@ def build_fixture(source, destination):
         for offset, label in enumerate(ADDED):
             ws.insert_rows(index + offset)
             for column, value in enumerate(values, 1):
-                ws.cell(index + offset, column, label if column == 1 else 0 if isinstance(value, (int, float)) else value)
+                ws.cell(
+                    index + offset,
+                    column,
+                    label if column == 1 else 0 if isinstance(value, (int, float)) else value,
+                )
         # An extra empty row shifts every downstream label without changing meaning.
         ws.insert_rows(1, 3)
     funding = book["FundingStatus(Agg)"]
@@ -83,13 +94,22 @@ def build_fixture(source, destination):
     nav = currency(portfolio[6].value)
     schedule_start = next(r[0].row for r in funding if r[0].value == "Investment")
     for row in funding:
-        if row[0].row > schedule_start and isinstance(row[6].value, (int, float)) and isinstance(row[7].value, (int, float)) and row[0].value:
+        if (
+            row[0].row > schedule_start
+            and isinstance(row[6].value, (int, float))
+            and isinstance(row[7].value, (int, float))
+            and row[0].value
+        ):
             row[7].value = float(currency(row[6].value) / nav * 100)
     for ws in book:
         for row in ws:
             for cell in row:
                 if isinstance(cell.value, str):
-                    cell.value = cell.value.replace(OLD, NEW).replace("CPERS", CODE).replace("Fourth Quarter 2025", "First Quarter 2026")
+                    cell.value = (
+                        cell.value.replace(OLD, NEW)
+                        .replace("CPERS", CODE)
+                        .replace("Fourth Quarter 2025", "First Quarter 2026")
+                    )
     book.save(flash)
     flash.rename(destination / "renamed_current_data.xlsx")
     # Supplied rendered sources are automatically re-read and rendered, not hand-transcribed.
@@ -97,16 +117,29 @@ def build_fixture(source, destination):
         pages = pdf_pages(path)
         if path.name == "prior_pmr_3Q25.pdf":
             pages = [transform(t).replace("Third Quarter 2025", "Fourth Quarter 2025") for t in pages]
-            pages.append("Prior approved, not funded commitments: Northgate Logistics Partners; Ridgeline Value Fund IV.")
+            pages.append(
+                "Prior approved, not funded commitments: Northgate Logistics Partners; Ridgeline Value Fund IV."
+            )
             make_pdf(path, pages)
         elif path.name == "prior_pmr_2Q25.pdf":
             continue
         elif path.name == "flash_4Q25.pdf":
             # Rebuild the exhibit from the mutated workbook, rather than attaching
             # the old period's holdings under a renamed title.
-            make_pdf(path, ["\n".join([NEW, "First Quarter 2026", ws.title] +
-                          [" | ".join(str(c.value) if c.value is not None else "" for c in row) for row in ws if any(c.value is not None for c in row)])
-                          for ws in book])
+            make_pdf(
+                path,
+                [
+                    "\n".join(
+                        [NEW, "First Quarter 2026", ws.title]
+                        + [
+                            " | ".join(str(c.value) if c.value is not None else "" for c in row)
+                            for row in ws
+                            if any(c.value is not None for c in row)
+                        ]
+                    )
+                    for ws in book
+                ],
+            )
         else:
             make_pdf(path, [transform(t) for t in pages])
     history_path = destination / "allocation_history.xlsx"
@@ -117,14 +150,41 @@ def build_fixture(source, destination):
     log = openpyxl.load_workbook(log_path)
     for row in log.active:
         for cell in row:
-            if isinstance(cell.value, str): cell.value = cell.value.replace("CPERS", CODE)
+            if isinstance(cell.value, str):
+                cell.value = cell.value.replace("CPERS", CODE)
     log.save(log_path)
-    new_log = openpyxl.Workbook(); ws = new_log.active; ws.title = "Log "
+    new_log = openpyxl.Workbook()
+    ws = new_log.active
+    ws.title = "Log "
     ws.append([c.value for c in log.active[1]])
-    ws.append(["NEW-1", datetime(2026, 2, 3), "IC", "Commitment", NEW,
-               "Northgate Logistics Partners", "Withdraw USD40 million; investor withdrew", None, None, "Withdrawn"])
-    ws.append(["NEW-2", datetime(2026, 1, 6), "IC", "Due Diligence", CODE,
-               "Example Due Diligence Fund", "Explore investment", None, None, "Deferred"])
+    ws.append(
+        [
+            "NEW-1",
+            datetime(2026, 2, 3),
+            "IC",
+            "Commitment",
+            NEW,
+            "Northgate Logistics Partners",
+            "Withdraw USD40 million; investor withdrew",
+            None,
+            None,
+            "Withdrawn",
+        ]
+    )
+    ws.append(
+        [
+            "NEW-2",
+            datetime(2026, 1, 6),
+            "IC",
+            "Due Diligence",
+            CODE,
+            "Example Due Diligence Fund",
+            "Explore investment",
+            None,
+            None,
+            "Deferred",
+        ]
+    )
     new_log.save(destination / "ic_log_2026.xlsx")
     deck_path = destination / "market_outlook_4Q25.pptx"
     with zipfile.ZipFile(deck_path) as original:
@@ -132,29 +192,55 @@ def build_fixture(source, destination):
     with zipfile.ZipFile(deck_path, "w", zipfile.ZIP_DEFLATED) as output:
         for name, content in files.items():
             if name.startswith("ppt/slides/") and name.endswith(".xml"):
-                content = content.decode().replace("Fourth Quarter 2025", "First Quarter 2026").replace("4Q25", "1Q26").encode()
+                content = (
+                    content.decode()
+                    .replace("Fourth Quarter 2025", "First Quarter 2026")
+                    .replace("4Q25", "1Q26")
+                    .encode()
+                )
             output.writestr(name, content)
     deck_path.rename(destination / "unfamiliar_outlook.pptx")
-    return dict(client=CODE, quarter="1Q26", funded_count=13, removed=REMOVED, added=ADDED,
-                nav=str(nav), open_names=["Ridgeline Value Fund IV"], new_count=0)
+    return dict(
+        client=CODE,
+        quarter="1Q26",
+        funded_count=13,
+        removed=REMOVED,
+        added=ADDED,
+        nav=str(nav),
+        open_names=["Ridgeline Value Fund IV"],
+        new_count=0,
+    )
 
 
 def rehearse(source, record):
     import os
+
     # This rehearsal deliberately tests deterministic behavior, not live vision accuracy.
-    for key in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]: os.environ.pop(key, None)
+    for key in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]:
+        os.environ.pop(key, None)
     with tempfile.TemporaryDirectory(prefix="pmr-unseen-") as folder:
         root = Path(folder)
         expected = build_fixture(source, root / "inputs")
         payload, summary = generate(root / "inputs", root / "output", expected["client"], expected["quarter"])
         data = payload["data"]
-        observed = dict(funded_count=len(data["funds"]), nav=str(data["portfolio"]["nav"]),
-                        open_names=[e["name"] for e in data["activity"]["open"]], new_count=len(data["activity"]["new"]),
-                        sections=len(payload["sections"]), checks_passed=summary["checks_passed"], checks_total=summary["checks_total"])
+        observed = dict(
+            funded_count=len(data["funds"]),
+            nav=str(data["portfolio"]["nav"]),
+            open_names=[e["name"] for e in data["activity"]["open"]],
+            new_count=len(data["activity"]["new"]),
+            sections=len(payload["sections"]),
+            checks_passed=summary["checks_passed"],
+            checks_total=summary["checks_total"],
+        )
         passed = all(observed[k] == expected[k] for k in ["funded_count", "nav", "open_names", "new_count"])
         passed &= observed["sections"] == 14 and observed["checks_passed"] == observed["checks_total"]
-        result = dict(passed=passed, mode="no-key full pipeline; not vision accuracy or Windows validation",
-                      expected=expected, observed=observed, issues=summary["issues"])
+        result = dict(
+            passed=passed,
+            mode="no-key full pipeline; not vision accuracy or Windows validation",
+            expected=expected,
+            observed=observed,
+            issues=summary["issues"],
+        )
         record.parent.mkdir(parents=True, exist_ok=True)
         record.write_text(json.dumps(result, indent=2), encoding="utf-8")
         return result

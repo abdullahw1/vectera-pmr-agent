@@ -1,7 +1,7 @@
 {
   "client": "CPERS",
   "quarter": "4Q25",
-  "meaning_hash": "5001936f0386218c28cc7e9acd9d1cb0da9abdeb70c0ab5296473236e8387ce3",
+  "meaning_hash": "fc79dd0d154c7347c6e941fc97dd8ddd005801c01f09166dd17cb8ac36a68783",
   "semantic_hash": "28dc0057c6382ae637dd20d984bc8a58a3787d8cbc5f9e32517e61a304558240",
   "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
   "source_hashes": {
@@ -24,27 +24,26 @@
   },
   "implementation_hashes": {
     "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
-    "__main__.py": "f9245d1c0f711f76b472c699ac2af0c0a3bcc92c831321908f16dedbc016d295",
-    "agent.py": "da9363576beecda277e22d8fdc31209be4bc24f35ece300ee33291e77f6f5b4b",
-    "appendix.py": "1e3424634872174cdfe4dc97b06b6178ad7b699800b9ca7ddefe70d240921b83",
-    "charts.py": "8fbdfdf81910b678fcb81f19f7b91dacf2c6959d785e6d3232232f7896633ec0",
-    "config.py": "dd2b4d95ab80598ce217fae9b9c031a3f54f0b05d81e022f8b0569eda94fa59a",
-    "crosschecks.py": "0758aca585de3a7aa7c5a2e191aac9775bcd7b610207a610e9379839ff3af269",
-    "errors.py": "0f99dc7872b59f510d243cbed64bce616ff216d4758a16f631e8e9058fdc1b3d",
-    "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
-    "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
-    "ingest.py": "b52c0aafe65c728935c4bd067888645781681f39fdd7fdf9dfd3001884dcb728",
-    "market.py": "a5152a80274df29e81f9e59fb2c943eb84d6cbb6fae0c4fc99707160e6ed085e",
-    "models.py": "1b9f4bad059b8da27cc574514b0e5b3893638f222d58509fa0e10730e6be1157",
-    "narrative.py": "19e38104712e1ffcb90da14857e831248c711937006b45e70e645cd6dfd3ab92",
-    "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
-    "pipeline.py": "63e6beedf95036a84ca7c89919f6067d8073fb5054d89351049d0d6ec484ee63",
-    "report.py": "378f7e14c572365664592c7bc5f0fef556558c23b76cdc7436351bf107f6abbb",
-    "review.py": "228cd36e5715ce39084958338ab791b2b7b82b25df436f4d4e3dc84164adec66",
-    "synthesis.py": "bd07859deadc72786b9eaf5e47d72c95012c3f5e80687dbe3d854556fc67256b",
-    "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
-    "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac",
-    "workspace.py": "533bdab4db2fd17c3811e8e901cda520f67a9682bf5c6cb553c757334d54a4bd"
+    "__main__.py": "f39f35e219410779b4beaa952430e805a227a0909c35ff90ad2d0f12a89c0148",
+    "appendix.py": "accde3ebbd82469c68c1ae0f228ee712a840cb53ee4de9ec4ddbdb0c458c9ed2",
+    "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
+    "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
+    "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+    "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
+    "evidence.py": "6a6cc68d190ddb5131e2f052ad397e2e07bb2e77db2c0d3a24c8fe58e5152621",
+    "finance.py": "8896149f1788046e31b6cd1efbbf809fcde2d675f596ef22ac9c658c51dbb18a",
+    "ingest.py": "0c00f87894212c999816b3fb8f0976912994d6224b545713171762166dfae464",
+    "market.py": "fdb828cb83904b057e6c2f0ba8433f503c2345c793a786a4d11ccd13cc7143ba",
+    "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
+    "narrative.py": "fa2ca30d294d3bdc4e761f54f8b272351d6776ac0afadca4f39ce29abd7aadf1",
+    "numeric.py": "77d0ef38d922391f89de2a3a5a01830fbcc52c10806694bfb8787908c002b450",
+    "pipeline.py": "7a9fcf39691fed48b558321c162abb5a48864ff1e3b39f698251a64af7488216",
+    "report.py": "c5046d75886cdbd5c3706a940cc9efe7b3b9e4ec0ec40f4c0049e6a9a4588bfb",
+    "review.py": "12d19dd396ec46d33229ee509a071c911e89cff6275ac936e3ca74202ae95422",
+    "synthesis.py": "14566deb0b7daa08aedd061d64973fce3002b90db85f78bc48d556a38614a05a",
+    "template.py": "e2f34491b56f7bd8e79c085d3c43d195f2c7dbd1e95ea0f36f1ae4c7ffee352d",
+    "verification.py": "b257fa368925ae7a2597bb55bdb4ae449090a82b5651f6dd2166547cd0afce2e",
+    "workspace.py": "666c8977fb4674c0c0a92a63b7fd9297dbe7a34fcae67d22ab5a67865a018a93"
   },
   "checks_passed": 58,
   "checks_total": 58,
@@ -135,7 +134,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
       "severity": "warning",
       "evidence": [
-        "f_a08f80b56d36e832"
+        "f_3317c618d50c20f4"
       ]
     },
     {
@@ -143,8 +142,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
       "severity": "warning",
       "evidence": [
-        "f_1736538836c121d0",
-        "f_fa8df8d33ad5b5fe"
+        "f_6da70a087bf812d0"
       ]
     },
     {
@@ -168,7 +166,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
       "severity": "warning",
       "evidence": [
-        "f_ba89b458b34536d9"
+        "f_b17c6a4833417a83"
       ]
     },
     {
@@ -176,13 +174,13 @@
       "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
       "severity": "warning",
       "evidence": [
-        "f_fc2abdb6bdd80403",
-        "f_424d459257f560cc",
+        "f_60c23729fba5fe88",
+        "f_7d66af00c382b018",
+        "f_7802b253efc4237c",
         "f_d423b5543401e785",
-        "f_74dd8e5be3b7e4e1",
-        "f_40acc3d2877e245a",
-        "f_c7ff158a1ce3736e",
-        "f_5781c533c94498eb"
+        "f_b1c7ba7aaba9277c",
+        "f_e61abc623616a550",
+        "f_c7ff158a1ce3736e"
       ]
     }
   ],
@@ -224,72 +222,12 @@
   ],
   "model_provider": "openai",
   "model_name": "gpt-4.1-2025-04-14",
-  "api_calls": 14,
+  "api_calls": 10,
   "api_usage": [
     {
-      "prompt_tokens": 609,
-      "completion_tokens": 114,
-      "total_tokens": 723,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 278,
-      "completion_tokens": 34,
-      "total_tokens": 312,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 428,
-      "completion_tokens": 98,
-      "total_tokens": 526,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 311,
-      "completion_tokens": 63,
-      "total_tokens": 374,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 431,
+      "prompt_tokens": 445,
       "completion_tokens": 93,
-      "total_tokens": 524,
+      "total_tokens": 538,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -302,9 +240,9 @@
       }
     },
     {
-      "prompt_tokens": 239,
-      "completion_tokens": 36,
-      "total_tokens": 275,
+      "prompt_tokens": 270,
+      "completion_tokens": 84,
+      "total_tokens": 354,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -317,9 +255,54 @@
       }
     },
     {
-      "prompt_tokens": 489,
+      "prompt_tokens": 418,
+      "completion_tokens": 69,
+      "total_tokens": 487,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 224,
+      "completion_tokens": 57,
+      "total_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 421,
+      "completion_tokens": 80,
+      "total_tokens": 501,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 479,
       "completion_tokens": 123,
-      "total_tokens": 612,
+      "total_tokens": 602,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -332,9 +315,9 @@
       }
     },
     {
-      "prompt_tokens": 295,
-      "completion_tokens": 49,
-      "total_tokens": 344,
+      "prompt_tokens": 437,
+      "completion_tokens": 97,
+      "total_tokens": 534,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -347,9 +330,9 @@
       }
     },
     {
-      "prompt_tokens": 447,
-      "completion_tokens": 109,
-      "total_tokens": 556,
+      "prompt_tokens": 270,
+      "completion_tokens": 65,
+      "total_tokens": 335,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -362,9 +345,9 @@
       }
     },
     {
-      "prompt_tokens": 269,
-      "completion_tokens": 27,
-      "total_tokens": 296,
+      "prompt_tokens": 1066,
+      "completion_tokens": 552,
+      "total_tokens": 1618,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0
@@ -377,54 +360,9 @@
       }
     },
     {
-      "prompt_tokens": 1076,
-      "completion_tokens": 546,
-      "total_tokens": 1622,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 1106,
-      "completion_tokens": 157,
-      "total_tokens": 1263,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 1636,
-      "completion_tokens": 451,
-      "total_tokens": 2087,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 974,
-      "completion_tokens": 61,
-      "total_tokens": 1035,
+      "prompt_tokens": 1033,
+      "completion_tokens": 56,
+      "total_tokens": 1089,
       "prompt_tokens_details": {
         "cached_tokens": 0,
         "audio_tokens": 0

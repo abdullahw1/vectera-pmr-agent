@@ -3285,31 +3285,31 @@
       "id": "s6.b3",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "The fund manager reported that three assets shaped the quarter, with One Financial Plaza (Chicago office) written down on lower submarket comparables and a near-term lease expiry, Bayfront Apartments (San Diego) held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributing positively, partially offsetting the office drag; leverage was conservative at ~28% LTV.",
+      "text": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag, with leverage remaining conservative at ~28% LTV.",
       "rows": null,
       "numbers": [
         "28"
       ],
       "evidence": [
-        "f_a08f80b56d36e832"
+        "f_3317c618d50c20f4"
       ],
       "resolved_evidence": [
-        "f_678546ed97cf51c4",
-        "f_a08f80b56d36e832"
+        "f_3317c618d50c20f4",
+        "f_678546ed97cf51c4"
       ],
       "locators": [
         {
           "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
           "page": 1,
           "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-          "method": "heading-delimited extraction"
+          "method": "source-bound model prose",
+          "requires_review": true
         },
         {
           "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
           "page": 1,
           "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-          "method": "source-bound model prose",
-          "requires_review": true
+          "method": "heading-delimited extraction"
         }
       ],
       "status": "source_linked"
@@ -7966,26 +7966,17 @@
       "id": "s7.b4",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, according to the fund manager. The Fund is unlevered at the fund level, as stated in the fund overview.",
+      "text": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, and the Fund is unlevered at the fund level.",
       "rows": null,
       "numbers": [],
       "evidence": [
-        "f_1736538836c121d0",
-        "f_fa8df8d33ad5b5fe"
+        "f_6da70a087bf812d0"
       ],
       "resolved_evidence": [
-        "f_1736538836c121d0",
-        "f_fa8df8d33ad5b5fe",
+        "f_6da70a087bf812d0",
         "f_fee70c26166bc4f2"
       ],
       "locators": [
-        {
-          "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
-          "page": 1,
-          "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
-          "method": "source-bound model prose",
-          "requires_review": true
-        },
         {
           "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
           "page": 1,
@@ -9448,15 +9439,15 @@
       "id": "s8.b7",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
+      "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy that emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
       "rows": null,
       "numbers": [],
       "evidence": [
-        "f_ba89b458b34536d9"
+        "f_b17c6a4833417a83"
       ],
       "resolved_evidence": [
         "f_269bcd2482f7e88c",
-        "f_ba89b458b34536d9"
+        "f_b17c6a4833417a83"
       ],
       "locators": [
         {
@@ -9583,7 +9574,7 @@
       "id": "s9.b1",
       "section": "Market Update",
       "type": "paragraph",
-      "text": "The market deck highlights that core real-estate values are stabilizing after the 2023\u20132024 repricing, with U.S. private funds turning positive over the past year and a preference for industrial / logistics and multifamily, while remaining underweight office and selective in retail. A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery, while refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office, and slower-than-expected supply absorption is noted in select multifamily submarkets. Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr. At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield. The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%, and the deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential. The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%, and the transaction/appraisal gap widened from 0.7 to 2.1 percentage points. The market deck emphasizes leverage discipline and patient deployment into the recovery as pricing stabilizes.",
+      "text": "The market deck notes that core real-estate values are stabilizing after the 2023\u20132024 repricing, with U.S. private funds turning positive over the past year and a preference for industrial / logistics and multifamily, while remaining underweight office and selective in retail. The market deck highlights that a resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery, while refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office, and slower-than-expected supply absorption is noted in select multifamily submarkets. The market deck's positioning guidance is to maintain leverage discipline, prefer moderate loan-to-value, tilt toward industrial / logistics and multifamily, underweight office, be selective in retail, and deploy capital patiently as pricing stabilizes. Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr. At 25Q4, the NPI value-weighted cap rate was ~4.6%, compared to ~4.2% for the 10-year Treasury yield. The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%, with the deck forecasting 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential, and reiterating a house-view preference for industrial / logistics and multifamily, underweight office, and selectivity in retail. The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%, and the transaction/appraisal gap widened from 0.7 to 2.1 percentage points.",
       "rows": null,
       "numbers": [
         "2023",
@@ -9610,36 +9601,36 @@
         "2.1"
       ],
       "evidence": [
-        "f_fc2abdb6bdd80403",
-        "f_424d459257f560cc",
+        "f_60c23729fba5fe88",
+        "f_7d66af00c382b018",
+        "f_7802b253efc4237c",
         "f_d423b5543401e785",
-        "f_74dd8e5be3b7e4e1",
-        "f_40acc3d2877e245a",
-        "f_c7ff158a1ce3736e",
-        "f_5781c533c94498eb"
+        "f_b1c7ba7aaba9277c",
+        "f_e61abc623616a550",
+        "f_c7ff158a1ce3736e"
       ],
       "resolved_evidence": [
         "f_0993143bfbfcfdff",
-        "f_40acc3d2877e245a",
-        "f_424d459257f560cc",
         "f_5253785e9e45fb51",
-        "f_5781c533c94498eb",
         "f_585c23b393cd1f1e",
+        "f_60c23729fba5fe88",
         "f_6d57eddcaeaf2604",
-        "f_74dd8e5be3b7e4e1",
+        "f_7802b253efc4237c",
         "f_7b3c078cd261039c",
+        "f_7d66af00c382b018",
         "f_832187d04bd0b44c",
         "f_86b1e5a4e1a0dc9e",
         "f_a06e1e2330ae70b3",
         "f_a10e970c92b9cd19",
+        "f_b1c7ba7aaba9277c",
         "f_c07fe605813ccf88",
         "f_c7ff158a1ce3736e",
         "f_d423b5543401e785",
         "f_d43da4925626e156",
         "f_d80efd691877ad26",
         "f_dea15697cfa9083b",
-        "f_f7fec8895394ab59",
-        "f_fc2abdb6bdd80403"
+        "f_e61abc623616a550",
+        "f_f7fec8895394ab59"
       ],
       "locators": [
         {
@@ -9648,24 +9639,17 @@
         },
         {
           "file": "market_outlook_4Q25.pptx",
-          "slide": 12,
-          "quote": "\u2022 A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office. \u2022 Slower-than-expected supply absorption in select multifamily submarkets.",
-          "method": "source-bound model prose",
-          "requires_review": true
-        },
-        {
-          "file": "market_outlook_4Q25.pptx",
-          "slide": 13,
-          "quote": "\u2022 Maintain leverage discipline; prefer moderate loan-to-value. \u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. \u2022 Deploy patiently into the recovery as pricing stabilizes.",
-          "method": "source-bound model prose",
-          "requires_review": true
-        },
-        {
-          "file": "market_outlook_4Q25.pptx",
           "slide": 5,
           "chart": 1,
           "asset": "assets/slide_5_chart_1.png",
           "method": "model vision",
+          "requires_review": true
+        },
+        {
+          "file": "market_outlook_4Q25.pptx",
+          "slide": 2,
+          "quote": "\u2022 Core real-estate values are stabilizing after the 2023\u20132024 repricing; U.S. private funds have turned positive over the past year (see exhibits). \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail. \u2022 Leverage discipline and patient deployment into the recovery.",
+          "method": "source-bound model prose",
           "requires_review": true
         },
         {
@@ -9678,10 +9662,24 @@
         },
         {
           "file": "market_outlook_4Q25.pptx",
+          "slide": 13,
+          "quote": "\u2022 Maintain leverage discipline; prefer moderate loan-to-value. \u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. \u2022 Deploy patiently into the recovery as pricing stabilizes.",
+          "method": "source-bound model prose",
+          "requires_review": true
+        },
+        {
+          "file": "market_outlook_4Q25.pptx",
           "slide": 6,
           "chart": 1,
           "asset": "assets/slide_6_chart_1.png",
           "method": "model vision",
+          "requires_review": true
+        },
+        {
+          "file": "market_outlook_4Q25.pptx",
+          "slide": 12,
+          "quote": "\u2022 A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office. \u2022 Slower-than-expected supply absorption in select multifamily submarkets.",
+          "method": "source-bound model prose",
           "requires_review": true
         },
         {
@@ -9711,13 +9709,6 @@
         {
           "file": "market_outlook_4Q25.pptx",
           "slide": 13
-        },
-        {
-          "file": "market_outlook_4Q25.pptx",
-          "slide": 2,
-          "quote": "\u2022 Core real-estate values are stabilizing after the 2023\u20132024 repricing; U.S. private funds have turned positive over the past year (see exhibits). \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail. \u2022 Leverage discipline and patient deployment into the recovery.",
-          "method": "source-bound model prose",
-          "requires_review": true
         }
       ],
       "status": "source_linked"
@@ -19163,8 +19154,8 @@
         "f_a10e970c92b9cd19"
       ]
     },
-    "f_a08f80b56d36e832": {
-      "value": "The fund manager reported that three assets shaped the quarter, with One Financial Plaza (Chicago office) written down on lower submarket comparables and a near-term lease expiry, Bayfront Apartments (San Diego) held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributing positively, partially offsetting the office drag; leverage was conservative at ~28% LTV.",
+    "f_3317c618d50c20f4": {
+      "value": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag, with leverage remaining conservative at ~28% LTV.",
       "source": {
         "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
         "page": 1,
@@ -19177,22 +19168,8 @@
         "f_678546ed97cf51c4"
       ]
     },
-    "f_1736538836c121d0": {
-      "value": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, according to the fund manager.",
-      "source": {
-        "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
-        "page": 1,
-        "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
-        "method": "source-bound model prose",
-        "requires_review": true
-      },
-      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
-      "inputs": [
-        "f_fee70c26166bc4f2"
-      ]
-    },
-    "f_fa8df8d33ad5b5fe": {
-      "value": "The Fund is unlevered at the fund level, as stated in the fund overview.",
+    "f_6da70a087bf812d0": {
+      "value": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, and the Fund is unlevered at the fund level.",
       "source": {
         "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
         "page": 1,
@@ -19233,8 +19210,8 @@
         "f_8e53833fb531a012"
       ]
     },
-    "f_ba89b458b34536d9": {
-      "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
+    "f_b17c6a4833417a83": {
+      "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy that emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
       "source": {
         "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
         "page": 1,
@@ -19291,8 +19268,8 @@
         "f_d80efd691877ad26"
       ]
     },
-    "f_fc2abdb6bdd80403": {
-      "value": "The market deck highlights that core real-estate values are stabilizing after the 2023\u20132024 repricing, with U.S. private funds turning positive over the past year and a preference for industrial / logistics and multifamily, while remaining underweight office and selective in retail.",
+    "f_60c23729fba5fe88": {
+      "value": "The market deck notes that core real-estate values are stabilizing after the 2023\u20132024 repricing, with U.S. private funds turning positive over the past year and a preference for industrial / logistics and multifamily, while remaining underweight office and selective in retail.",
       "source": {
         "file": "market_outlook_4Q25.pptx",
         "slide": 2,
@@ -19305,8 +19282,8 @@
         "f_c07fe605813ccf88"
       ]
     },
-    "f_424d459257f560cc": {
-      "value": "A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery, while refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office, and slower-than-expected supply absorption is noted in select multifamily submarkets.",
+    "f_7d66af00c382b018": {
+      "value": "The market deck highlights that a resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery, while refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office, and slower-than-expected supply absorption is noted in select multifamily submarkets.",
       "source": {
         "file": "market_outlook_4Q25.pptx",
         "slide": 12,
@@ -19317,6 +19294,20 @@
       "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
       "inputs": [
         "f_0993143bfbfcfdff"
+      ]
+    },
+    "f_7802b253efc4237c": {
+      "value": "The market deck's positioning guidance is to maintain leverage discipline, prefer moderate loan-to-value, tilt toward industrial / logistics and multifamily, underweight office, be selective in retail, and deploy capital patiently as pricing stabilizes.",
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 13,
+        "quote": "\u2022 Maintain leverage discipline; prefer moderate loan-to-value. \u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. \u2022 Deploy patiently into the recovery as pricing stabilizes.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_f7fec8895394ab59"
       ]
     },
     "f_d423b5543401e785": {
@@ -19332,8 +19323,8 @@
         "f_86b1e5a4e1a0dc9e"
       ]
     },
-    "f_74dd8e5be3b7e4e1": {
-      "value": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield.",
+    "f_b1c7ba7aaba9277c": {
+      "value": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, compared to ~4.2% for the 10-year Treasury yield.",
       "source": {
         "kind": "verified market writing bundle",
         "quote": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield.",
@@ -19345,8 +19336,8 @@
         "f_a06e1e2330ae70b3"
       ]
     },
-    "f_40acc3d2877e245a": {
-      "value": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%, and the deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential.",
+    "f_e61abc623616a550": {
+      "value": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%, with the deck forecasting 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential, and reiterating a house-view preference for industrial / logistics and multifamily, underweight office, and selectivity in retail.",
       "source": {
         "kind": "verified market writing bundle",
         "quote": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%. The deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential. House-view positioning: \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail.",
@@ -19369,20 +19360,6 @@
       "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
       "inputs": [
         "f_d43da4925626e156"
-      ]
-    },
-    "f_5781c533c94498eb": {
-      "value": "The market deck emphasizes leverage discipline and patient deployment into the recovery as pricing stabilizes.",
-      "source": {
-        "file": "market_outlook_4Q25.pptx",
-        "slide": 13,
-        "quote": "\u2022 Maintain leverage discipline; prefer moderate loan-to-value. \u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. \u2022 Deploy patiently into the recovery as pricing stabilizes.",
-        "method": "source-bound model prose",
-        "requires_review": true
-      },
-      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
-      "inputs": [
-        "f_f7fec8895394ab59"
       ]
     },
     "f_05eed7a975cccf5d": {

@@ -1,4 +1,5 @@
 """Small evidence ledger shared by extraction, calculations and rendering."""
+
 from __future__ import annotations
 
 import hashlib
@@ -42,11 +43,22 @@ class Ledger:
             actual, expected, tolerance = (Decimal(str(v)) for v in (actual, expected, tolerance))
         delta = actual - expected
         passed = abs(delta) <= tolerance
-        self.checks.append(dict(name=name, actual=actual, expected=expected,
-                                delta=delta, tolerance=tolerance, passed=passed,
-                                severity=severity, evidence=evidence or []))
+        self.checks.append(
+            dict(
+                name=name,
+                actual=actual,
+                expected=expected,
+                delta=delta,
+                tolerance=tolerance,
+                passed=passed,
+                severity=severity,
+                evidence=evidence or [],
+            )
+        )
         if not passed:
-            self.issue("reconciliation", f"{name}: difference {delta:,.4f}", severity, evidence=evidence or [])
+            self.issue(
+                "reconciliation", f"{name}: difference {delta:,.4f}", severity, evidence=evidence or []
+            )
 
     def save(self, path: Path):
         path.write_text(json.dumps(self.__dict__, indent=2, sort_keys=True, default=str), encoding="utf-8")

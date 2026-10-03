@@ -49,16 +49,32 @@ def test_external_draft_edit_invalidates_approval(tmp_path, no_keys):
 def test_mocked_chart_review_and_finalization(tmp_path, no_keys, monkeypatch):
     def extraction(self, prompt, image=None):
         if image:
-            return dict(title="Offline test exhibit", series=[dict(label="Test period", series="Test", value=1, unit="%")], highlights=[0])
+            return dict(
+                title="Offline test exhibit",
+                series=[dict(label="Test period", series="Test", value=1, unit="%")],
+                highlights=[0],
+            )
         return None
+
     monkeypatch.setattr("pmr.models.Model.ask", extraction)
     payload, _ = generate(INPUTS, tmp_path, "CPERS", "4Q25")
     chart_ids = [c["id"] for c in payload["data"]["charts"]]
     with pytest.raises(ValueError, match="Confirm all chart"):
         approve(tmp_path, dict(draft_hash=payload["draft_hash"], reviewer="Test", confirmed_charts=[]))
-    corrected = dict(title="Offline corrected exhibit", series=[dict(label="Test period", series="Test", value=2, unit="%")])
-    approve(tmp_path, dict(draft_hash=payload["draft_hash"], reviewer="Test", confirmed_charts=chart_ids,
-                           acknowledged=True, corrections={chart_ids[0]: dict(data=corrected, reason="Test corrected visible value")}))
+    corrected = dict(
+        title="Offline corrected exhibit",
+        series=[dict(label="Test period", series="Test", value=2, unit="%")],
+    )
+    approve(
+        tmp_path,
+        dict(
+            draft_hash=payload["draft_hash"],
+            reviewer="Test",
+            confirmed_charts=chart_ids,
+            acknowledged=True,
+            corrections={chart_ids[0]: dict(data=corrected, reason="Test corrected visible value")},
+        ),
+    )
     approval = json.loads((tmp_path / "approval.json").read_text())
     assert approval["draft_hash"] == payload["draft_hash"]
     assert len(approval["report_sha256"]) == 64
@@ -71,21 +87,26 @@ def test_mocked_chart_review_and_finalization(tmp_path, no_keys, monkeypatch):
 def test_source_change_during_model_enrichment_is_rejected(tmp_path, no_keys, monkeypatch):
     import shutil
     import openpyxl
+
     root = tmp_path / "inputs"
     shutil.copytree(INPUTS, root)
     changed = False
+
     def extraction(self, prompt, image=None):
         nonlocal changed
         if image:
             if not changed:
                 path = root / "flash_4Q25.xlsx"
                 book = openpyxl.load_workbook(path)
-                row = next(r for r in book["CashActivity(Agg)"] if r[0].value == "Cornerstone Core Property Fund")
+                row = next(
+                    r for r in book["CashActivity(Agg)"] if r[0].value == "Cornerstone Core Property Fund"
+                )
                 row[5].value += 1
                 book.save(path)
                 changed = True
             return dict(title="Test", series=[dict(label="Test", series="Test", value=1, unit="%")])
         return None
+
     monkeypatch.setattr("pmr.models.Model.ask", extraction)
     with pytest.raises(ValueError, match="changed during generation"):
         generate(root, tmp_path / "output", "CPERS", "4Q25")
@@ -95,6 +116,7 @@ def test_source_change_during_model_enrichment_is_rejected(tmp_path, no_keys, mo
 
 def test_word_numeral_and_changed_heading_end_to_end(tmp_path, no_keys):
     import shutil
+
     root = tmp_path / "inputs"
     shutil.copytree(INPUTS, root)
     report = root / "manager_reports" / "ironwood_value_add_fund_3_4Q25.pdf"
@@ -110,6 +132,10 @@ def test_word_numeral_and_changed_heading_end_to_end(tmp_path, no_keys):
     assert summary["checks_passed"] == summary["checks_total"]
     name = "Ironwood Value-Add Fund III"
     assert name in payload["data"]["support"]
-    assert any(i["code"] == "manager_extraction" and i.get("fund") == name for i in payload["ledger"]["issues"])
-    section = next(s for s in payload["sections"] if s["title"] == "Tactical and Special Situations Portfolio")
+    assert any(
+        i["code"] == "manager_extraction" and i.get("fund") == name for i in payload["ledger"]["issues"]
+    )
+    section = next(
+        s for s in payload["sections"] if s["title"] == "Tactical and Special Situations Portfolio"
+    )
     assert any("A current manager report was supplied" in b.get("text", "") for b in section["blocks"])
