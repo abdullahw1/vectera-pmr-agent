@@ -968,98 +968,98 @@
       "Cornerstone Core Property Fund": [
         {
           "text": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-          "id": "f_678546ed97cf51c4",
+          "id": "f_a093d05aaff6d2d9",
           "entity": "Cornerstone Core Property Fund",
           "heading": "Investments Impacting Performance",
           "source": {
             "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
             "page": 1,
             "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-            "method": "heading-delimited extraction"
+            "method": "prose section under heading 'Investments Impacting Performance'"
           }
         }
       ],
       "Ironwood Value-Add Fund III": [
         {
           "text": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
-          "id": "f_fee70c26166bc4f2",
+          "id": "f_9881e46a373d884d",
           "entity": "Ironwood Value-Add Fund III",
           "heading": "Investments Impacting Performance",
           "source": {
             "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
             "page": 1,
             "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
-            "method": "heading-delimited extraction"
+            "method": "prose section under heading 'Investments Impacting Performance'"
           }
         }
       ],
       "Kestrel U.S. Real Estate Fund": [
         {
           "text": "Two assets were most relevant. Riverside Town Center (grocery-anchored retail, Sacramento) delivered stable, in-line income. Metro Apartments (Denver) appreciated modestly on rent growth. The balance of the portfolio performed in line with expectations. Leverage was ~25% LTV.",
-          "id": "f_97c7d88ddaa94007",
+          "id": "f_8bbf86b6dc8282bc",
           "entity": "Kestrel U.S. Real Estate Fund",
           "heading": "Investments Impacting Performance",
           "source": {
             "file": "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf",
             "page": 1,
             "quote": "Two assets were most relevant. Riverside Town Center (grocery-anchored retail, Sacramento) delivered stable, in-line income. Metro Apartments (Denver) appreciated modestly on rent growth. The balance of the portfolio performed in line with expectations. Leverage was ~25% LTV.",
-            "method": "heading-delimited extraction"
+            "method": "prose section under heading 'Investments Impacting Performance'"
           }
         }
       ],
       "Northgate Logistics Partners": [
         {
           "text": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
-          "id": "f_b5b9ce5794ad2acb",
+          "id": "f_087dd6d054a15114",
           "entity": "Northgate Logistics Partners",
           "heading": "Fund Strategy",
           "source": {
             "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
             "page": 1,
             "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
-            "method": "heading-delimited extraction"
+            "method": "prose section under heading 'Fund Strategy'"
           }
         }
       ],
       "Redwood Logistics Trust": [
         {
           "text": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
-          "id": "f_8e53833fb531a012",
+          "id": "f_c675ed57670622b5",
           "entity": "Redwood Logistics Trust",
           "heading": "Investments Impacting Performance",
           "source": {
             "file": "manager_reports/redwood_logistics_trust_4Q25.pdf",
             "page": 1,
             "quote": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
-            "method": "heading-delimited extraction"
+            "method": "prose section under heading 'Investments Impacting Performance'"
           }
         }
       ],
       "Ridgeline Value Fund IV": [
         {
           "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
-          "id": "f_269bcd2482f7e88c",
+          "id": "f_fc61436ca223f7de",
           "entity": "Ridgeline Value Fund IV",
           "heading": "Fund Strategy",
           "source": {
             "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
             "page": 1,
             "quote": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
-            "method": "heading-delimited extraction"
+            "method": "prose section under heading 'Fund Strategy'"
           }
         }
       ],
       "Tidewater Distressed Realty Fund": [
         {
           "text": "The Fund is substantially wound down. A single residual position \u2014 the final tranche of a distressed retail mortgage note \u2014 remains, valued at approximately $0.11 million at quarter-end. No distributions were made during the quarter.",
-          "id": "f_33ba243d34b9d2dc",
+          "id": "f_11daa582c7e52ff2",
           "entity": "Tidewater Distressed Realty Fund",
           "heading": "Status",
           "source": {
             "file": "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf",
             "page": 1,
             "quote": "The Fund is substantially wound down. A single residual position \u2014 the final tranche of a distressed retail mortgage note \u2014 remains, valued at approximately $0.11 million at quarter-end. No distributions were made during the quarter.",
-            "method": "heading-delimited extraction"
+            "method": "prose section under heading 'Status'"
           }
         }
       ]
@@ -2245,88 +2245,88 @@
     ],
     "narratives": {
       "Cornerstone Core Property Fund": {
-        "text": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag, with leverage remaining conservative at ~28% LTV.",
+        "text": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag; leverage was conservative at ~28% LTV.",
         "evidence": [
-          "f_3317c618d50c20f4"
+          "f_cc885b2107b4a52c"
         ],
         "masked_response": {
           "sentences": [
             {
-              "text": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag, with leverage remaining conservative at [[VALUE_A]] LTV.",
-              "source_id": "f_678546ed97cf51c4"
+              "text": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag; leverage was conservative at [[VALUE_A]] LTV.",
+              "source_id": "f_a093d05aaff6d2d9"
             }
           ]
         },
         "source_order": [
-          "f_678546ed97cf51c4"
+          "f_a093d05aaff6d2d9"
         ]
       },
       "Ironwood Value-Add Fund III": {
         "text": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, and the Fund is unlevered at the fund level.",
         "evidence": [
-          "f_6da70a087bf812d0"
+          "f_ef7244c47896ba79"
         ],
         "masked_response": {
           "sentences": [
             {
               "text": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, and the Fund is unlevered at the fund level.",
-              "source_id": "f_fee70c26166bc4f2"
+              "source_id": "f_9881e46a373d884d"
             }
           ]
         },
         "source_order": [
-          "f_fee70c26166bc4f2"
+          "f_9881e46a373d884d"
         ]
       },
       "Northgate Logistics Partners": {
         "text": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets, with a strategy focused on lease-up, mark-to-market of below-market rents, and selective development completion.",
         "evidence": [
-          "f_7de5c251ffdb0891"
+          "f_b0497728800c864e"
         ],
         "masked_response": {
           "sentences": [
             {
               "text": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets, with a strategy focused on lease-up, mark-to-market of below-market rents, and selective development completion.",
-              "source_id": "f_b5b9ce5794ad2acb"
+              "source_id": "f_087dd6d054a15114"
             }
           ]
         },
         "source_order": [
-          "f_b5b9ce5794ad2acb"
+          "f_087dd6d054a15114"
         ]
       },
       "Redwood Logistics Trust": {
         "text": "Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting, while Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant, and Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion; leverage remained conservative at approximately 31% loan-to-value.",
         "evidence": [
-          "f_946a264c8d8591b9"
+          "f_e13d93f23b9938fe"
         ],
         "masked_response": {
           "sentences": [
             {
               "text": "Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to [[VALUE_A]] occupancy at rents ahead of underwriting, while Harbor [[VALUE_B]] Distribution (Savannah) appreciated modestly on a new [[VALUE_C]]-year lease to an investment-grade tenant, and Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion; leverage remained conservative at [[VALUE_D]] loan-to-value.",
-              "source_id": "f_8e53833fb531a012"
+              "source_id": "f_c675ed57670622b5"
             }
           ]
         },
         "source_order": [
-          "f_8e53833fb531a012"
+          "f_c675ed57670622b5"
         ]
       },
       "Ridgeline Value Fund IV": {
-        "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy that emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
+        "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
         "evidence": [
-          "f_b17c6a4833417a83"
+          "f_9f206c09e4307823"
         ],
         "masked_response": {
           "sentences": [
             {
-              "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy that emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
-              "source_id": "f_269bcd2482f7e88c"
+              "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
+              "source_id": "f_fc61436ca223f7de"
             }
           ]
         },
         "source_order": [
-          "f_269bcd2482f7e88c"
+          "f_fc61436ca223f7de"
         ]
       },
       "market": {
@@ -2846,10 +2846,11 @@
         },
         {
           "type": "paragraph",
-          "text": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag, with leverage remaining conservative at ~28% LTV.",
+          "text": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag; leverage was conservative at ~28% LTV.",
           "evidence": [
-            "f_3317c618d50c20f4"
-          ]
+            "f_cc885b2107b4a52c"
+          ],
+          "kind": "model_prose"
         },
         {
           "type": "paragraph",
@@ -2925,8 +2926,9 @@
           "type": "paragraph",
           "text": "Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting, while Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant, and Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion; leverage remained conservative at approximately 31% loan-to-value.",
           "evidence": [
-            "f_946a264c8d8591b9"
-          ]
+            "f_e13d93f23b9938fe"
+          ],
+          "kind": "model_prose"
         },
         {
           "type": "paragraph",
@@ -2981,8 +2983,9 @@
           "type": "paragraph",
           "text": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, and the Fund is unlevered at the fund level.",
           "evidence": [
-            "f_6da70a087bf812d0"
-          ]
+            "f_ef7244c47896ba79"
+          ],
+          "kind": "model_prose"
         },
         {
           "type": "paragraph",
@@ -3063,8 +3066,9 @@
           "type": "paragraph",
           "text": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets, with a strategy focused on lease-up, mark-to-market of below-market rents, and selective development completion.",
           "evidence": [
-            "f_7de5c251ffdb0891"
-          ]
+            "f_b0497728800c864e"
+          ],
+          "kind": "model_prose"
         },
         {
           "type": "paragraph",
@@ -3098,10 +3102,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy that emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
+          "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
           "evidence": [
-            "f_b17c6a4833417a83"
-          ]
+            "f_9f206c09e4307823"
+          ],
+          "kind": "model_prose"
         },
         {
           "type": "paragraph",
@@ -3139,7 +3144,8 @@
             "f_b1c7ba7aaba9277c",
             "f_e61abc623616a550",
             "f_c7ff158a1ce3736e"
-          ]
+          ],
+          "kind": "model_prose"
         },
         {
           "type": "paragraph",
@@ -10256,67 +10262,67 @@
           "f_c9357d48f9331fcc"
         ]
       },
-      "f_678546ed97cf51c4": {
+      "f_a093d05aaff6d2d9": {
         "value": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
         "source": {
           "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
           "page": 1,
           "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
-          "method": "heading-delimited extraction"
+          "method": "prose section under heading 'Investments Impacting Performance'"
         }
       },
-      "f_fee70c26166bc4f2": {
+      "f_9881e46a373d884d": {
         "value": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
         "source": {
           "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
           "page": 1,
           "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
-          "method": "heading-delimited extraction"
+          "method": "prose section under heading 'Investments Impacting Performance'"
         }
       },
-      "f_97c7d88ddaa94007": {
+      "f_8bbf86b6dc8282bc": {
         "value": "Two assets were most relevant. Riverside Town Center (grocery-anchored retail, Sacramento) delivered stable, in-line income. Metro Apartments (Denver) appreciated modestly on rent growth. The balance of the portfolio performed in line with expectations. Leverage was ~25% LTV.",
         "source": {
           "file": "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf",
           "page": 1,
           "quote": "Two assets were most relevant. Riverside Town Center (grocery-anchored retail, Sacramento) delivered stable, in-line income. Metro Apartments (Denver) appreciated modestly on rent growth. The balance of the portfolio performed in line with expectations. Leverage was ~25% LTV.",
-          "method": "heading-delimited extraction"
+          "method": "prose section under heading 'Investments Impacting Performance'"
         }
       },
-      "f_b5b9ce5794ad2acb": {
+      "f_087dd6d054a15114": {
         "value": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
         "source": {
           "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
           "page": 1,
           "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
-          "method": "heading-delimited extraction"
+          "method": "prose section under heading 'Fund Strategy'"
         }
       },
-      "f_8e53833fb531a012": {
+      "f_c675ed57670622b5": {
         "value": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
         "source": {
           "file": "manager_reports/redwood_logistics_trust_4Q25.pdf",
           "page": 1,
           "quote": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
-          "method": "heading-delimited extraction"
+          "method": "prose section under heading 'Investments Impacting Performance'"
         }
       },
-      "f_269bcd2482f7e88c": {
+      "f_fc61436ca223f7de": {
         "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
         "source": {
           "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
           "page": 1,
           "quote": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
-          "method": "heading-delimited extraction"
+          "method": "prose section under heading 'Fund Strategy'"
         }
       },
-      "f_33ba243d34b9d2dc": {
+      "f_11daa582c7e52ff2": {
         "value": "The Fund is substantially wound down. A single residual position \u2014 the final tranche of a distressed retail mortgage note \u2014 remains, valued at approximately $0.11 million at quarter-end. No distributions were made during the quarter.",
         "source": {
           "file": "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf",
           "page": 1,
           "quote": "The Fund is substantially wound down. A single residual position \u2014 the final tranche of a distressed retail mortgage note \u2014 remains, valued at approximately $0.11 million at quarter-end. No distributions were made during the quarter.",
-          "method": "heading-delimited extraction"
+          "method": "prose section under heading 'Status'"
         }
       },
       "f_4387c6dd75bd4d47": {
@@ -12029,8 +12035,8 @@
           "f_a10e970c92b9cd19"
         ]
       },
-      "f_3317c618d50c20f4": {
-        "value": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag, with leverage remaining conservative at ~28% LTV.",
+      "f_cc885b2107b4a52c": {
+        "value": "One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry, while Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag; leverage was conservative at ~28% LTV.",
         "source": {
           "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
           "page": 1,
@@ -12040,10 +12046,10 @@
         },
         "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
         "inputs": [
-          "f_678546ed97cf51c4"
+          "f_a093d05aaff6d2d9"
         ]
       },
-      "f_6da70a087bf812d0": {
+      "f_ef7244c47896ba79": {
         "value": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, and the Fund is unlevered at the fund level.",
         "source": {
           "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
@@ -12054,10 +12060,10 @@
         },
         "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
         "inputs": [
-          "f_fee70c26166bc4f2"
+          "f_9881e46a373d884d"
         ]
       },
-      "f_7de5c251ffdb0891": {
+      "f_b0497728800c864e": {
         "value": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets, with a strategy focused on lease-up, mark-to-market of below-market rents, and selective development completion.",
         "source": {
           "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
@@ -12068,10 +12074,10 @@
         },
         "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
         "inputs": [
-          "f_b5b9ce5794ad2acb"
+          "f_087dd6d054a15114"
         ]
       },
-      "f_946a264c8d8591b9": {
+      "f_e13d93f23b9938fe": {
         "value": "Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting, while Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant, and Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion; leverage remained conservative at approximately 31% loan-to-value.",
         "source": {
           "file": "manager_reports/redwood_logistics_trust_4Q25.pdf",
@@ -12082,11 +12088,11 @@
         },
         "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
         "inputs": [
-          "f_8e53833fb531a012"
+          "f_c675ed57670622b5"
         ]
       },
-      "f_b17c6a4833417a83": {
-        "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy that emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
+      "f_9f206c09e4307823": {
+        "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
         "source": {
           "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
           "page": 1,
@@ -12096,7 +12102,7 @@
         },
         "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
         "inputs": [
-          "f_269bcd2482f7e88c"
+          "f_fc61436ca223f7de"
         ]
       },
       "f_86b1e5a4e1a0dc9e": {
@@ -12580,7 +12586,7 @@
         "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
         "severity": "warning",
         "evidence": [
-          "f_3317c618d50c20f4"
+          "f_cc885b2107b4a52c"
         ]
       },
       {
@@ -12588,7 +12594,7 @@
         "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
         "severity": "warning",
         "evidence": [
-          "f_6da70a087bf812d0"
+          "f_ef7244c47896ba79"
         ]
       },
       {
@@ -12596,7 +12602,7 @@
         "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
         "severity": "warning",
         "evidence": [
-          "f_7de5c251ffdb0891"
+          "f_b0497728800c864e"
         ]
       },
       {
@@ -12604,7 +12610,7 @@
         "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
         "severity": "warning",
         "evidence": [
-          "f_946a264c8d8591b9"
+          "f_e13d93f23b9938fe"
         ]
       },
       {
@@ -12612,7 +12618,7 @@
         "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
         "severity": "warning",
         "evidence": [
-          "f_b17c6a4833417a83"
+          "f_9f206c09e4307823"
         ]
       },
       {
@@ -13587,5 +13593,5 @@
     "assets/slide_9_chart_1.png": "05de74df3a64e0ca9a9650f4dfca566525367a95fee5e7f2665d3143227c2a32",
     "appendix.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30"
   },
-  "draft_hash": "e23430401dbb0a66bf6e876f3d8b78dbb55e07e2dc7cace2ed453fbe9ef78a9a"
+  "draft_hash": "1ca57956e21f6bbb8f75f9244022ec0f6bedc2af9af25b904c65ae7645e3835f"
 }

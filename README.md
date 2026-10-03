@@ -54,7 +54,8 @@ content-addressed cache.
    limits are parsed from the prior PMR, not hardcoded.
 3. **Gather evidence** (`narrative.py`, `crosschecks.py`): matches manager reports to funds with explicit
    normalisation rules (legal suffixes, Roman, Arabic and word numerals, "&"). Unmatched reports are flagged
-   with suggestions and never merged silently. Deck chart values are read by a vision model, then checked
+   with suggestions and never merged silently. Commentary is read as heading-plus-paragraph sections and chosen
+   by what the heading is about (drivers, then strategy, then status), so a renamed heading still works. Deck chart values are read by a vision model, then checked
    against the axis range.
 4. **Write** (`synthesis.py`): the model sees source passages with every number replaced by a placeholder.
    Each sentence must cite a registered passage, and code puts the exact source numbers back. A second model
@@ -73,7 +74,7 @@ generation. It writes `final_report.pdf` and a hash-bound `approval.json`.
 ## Verification
 
 ```powershell
-python -m pytest -q                                                        # 123 tests: golden 4Q25 answers, perturbations, guardrails
+python -m pytest -q                                                        # 126 tests: golden 4Q25 answers, perturbations, guardrails
 python scripts/verify_repeatability.py --client CPERS --quarter 4Q25       # two clean no-key runs must match
 python scripts/verify_repeatability.py --client CPERS --quarter 4Q25 --online --record output/live_repeatability.json
 python scripts/rehearse_unseen.py                                          # different client, 1Q26, changed rows and funds

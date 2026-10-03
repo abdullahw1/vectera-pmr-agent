@@ -138,4 +138,6 @@ def test_word_numeral_and_changed_heading_end_to_end(tmp_path, no_keys):
     section = next(
         s for s in payload["sections"] if s["title"] == "Tactical and Special Situations Portfolio"
     )
-    assert any("A current manager report was supplied" in b.get("text", "") for b in section["blocks"])
+    # The renamed section is still recovered (flagged for review), not reported as missing.
+    assert payload["data"]["support"][name]
+    assert any("Eastgate Industrial" in b.get("text", "") for b in section["blocks"])

@@ -65,7 +65,11 @@ def semantic_manifest(data, sections):
                     "kind": b.get("kind"),
                     "columns": b.get("columns"),
                     "rows": b.get("rows"),
-                    "numbers": numeric_tokens(b.get("text", "")),
+                    # Model prose may order its sentences differently on a fresh run; its figures must
+                    # still match exactly, so compare them as a sorted list rather than in reading order.
+                    "numbers": (sorted if b.get("kind") == "model_prose" else list)(
+                        numeric_tokens(b.get("text", ""))
+                    ),
                 }
                 for b in s["blocks"]
             ],

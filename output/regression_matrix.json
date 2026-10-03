@@ -1,27 +1,27 @@
 {
   "passed": true,
-  "total": 123,
+  "total": 126,
   "cases": [
     {
       "test": "test_source_exhibits_keep_values_on_letter_pages",
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.473
+      "seconds": 2.189
     },
     {
       "test": "test_each_projection_has_one_complete_header_and_unchanged_values",
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 4.536
+      "seconds": 5.799
     },
     {
       "test": "test_unrecognized_readable_source_layout_is_retained",
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.233
+      "seconds": 0.027
     },
     {
       "test": "test_local_env_loads_without_expanding_literal_credentials",
@@ -42,7 +42,7 @@
       "module": "tests.test_config",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.002
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[Expected one populated flash for UNKNOWN/(2025, 4), found 0-Quarterly spreadsheet not found]",
@@ -56,21 +56,21 @@
       "module": "tests.test_errors",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[No prior client PMR found; policy and format cannot be established-Previous report is missing]",
       "module": "tests.test_errors",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[Ambiguous most recent prior client PMR-Previous report is ambiguous]",
       "module": "tests.test_errors",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[Expected number at flash.xlsx/FundingStatus(Agg)/B8-Invalid numerical data]",
@@ -91,14 +91,14 @@
       "module": "tests.test_errors",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[Implementation changed during generation; rerun-Application updated during the run]",
       "module": "tests.test_errors",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[Unrecognized validation error-Report generation stopped]",
@@ -112,56 +112,56 @@
       "module": "tests.test_errors",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.002
     },
     {
       "test": "test_golden_financial_results",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.425
+      "seconds": 0.857
     },
     {
       "test": "test_rows_move_and_filenames_change",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.506
+      "seconds": 1.045
     },
     {
       "test": "test_ic_order_does_not_define_chronology",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.434
+      "seconds": 1.006
     },
     {
       "test": "test_bad_cash_value_is_a_blocker",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.516
+      "seconds": 0.999
     },
     {
       "test": "test_fund_missing_from_cash_sheet_blocks_without_crashing",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.557
+      "seconds": 1.053
     },
     {
       "test": "test_fund_missing_from_returns_sheet_keeps_flash_figures",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.498
+      "seconds": 1.0
     },
     {
       "test": "test_conflicting_ic_amounts_block_instead_of_guessing",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 3.644
+      "seconds": 5.313
     },
     {
       "test": "test_entity_normalization_is_conservative",
@@ -182,49 +182,49 @@
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.429
+      "seconds": 0.804
     },
     {
       "test": "test_zero_balance_fund_can_be_added_without_code_edits",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.502
+      "seconds": 0.824
     },
     {
       "test": "test_different_client_identity_benchmark_and_policy",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.49
+      "seconds": 0.821
     },
     {
       "test": "test_after_quarter_approval_excluded",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.494
+      "seconds": 0.812
     },
     {
       "test": "test_currency_rejects_invalid_source[True]",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.002
     },
     {
       "test": "test_currency_rejects_invalid_source[False]",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_currency_rejects_invalid_source[nan]",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.0
     },
     {
       "test": "test_currency_rejects_invalid_source[inf]",
@@ -238,28 +238,28 @@
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.0
     },
     {
       "test": "test_currency_rejects_invalid_source[not money]",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.0
     },
     {
       "test": "test_one_cent_error_blocks_and_exact_serialization",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.51
+      "seconds": 0.827
     },
     {
       "test": "test_plan_facts_have_client_scope_not_adjacent_numeric_cell",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.409
+      "seconds": 0.724
     },
     {
       "test": "test_quote_numbers_cannot_borrow_another_entity",
@@ -273,14 +273,14 @@
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.0
     },
     {
       "test": "test_chart_schema_rejects_unsafe_observations[duplicate]",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_chart_schema_rejects_unsafe_observations[no_label]",
@@ -301,24 +301,31 @@
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.0
     },
     {
       "test": "test_mixed_chart_confidence_is_conservatively_approximate",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_approximation_is_disclosed_even_if_provider_omits_note",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_chart_and_quote_numeric_changes_affect_semantic_hash",
+      "module": "tests.test_guardrails",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.001
+    },
+    {
+      "test": "test_reordered_model_sentences_keep_the_same_figures_signature",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
@@ -329,21 +336,21 @@
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.863
+      "seconds": 1.449
     },
     {
       "test": "test_duplicate_flash_is_not_chosen_by_filename",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.104
+      "seconds": 0.407
     },
     {
       "test": "test_empty_workbook_is_explicit_blocker",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.417
+      "seconds": 0.739
     },
     {
       "test": "test_setup_installs_once_and_reinstalls_manifest_change",
@@ -364,14 +371,14 @@
       "module": "tests.test_launcher",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.004
+      "seconds": 0.005
     },
     {
       "test": "test_latest_quarter_uses_chronology_not_lexical_order",
       "module": "tests.test_market",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_material_sectors_follow_actual_portfolio_exposure",
@@ -420,7 +427,7 @@
       "module": "tests.test_models",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.002
     },
     {
       "test": "test_cache_avoids_second_api_call",
@@ -441,147 +448,154 @@
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 6.565
+      "seconds": 7.525
     },
     {
       "test": "test_external_draft_edit_invalidates_approval",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 3.272
+      "seconds": 3.709
     },
     {
       "test": "test_mocked_chart_review_and_finalization",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.329
+      "seconds": 5.875
     },
     {
       "test": "test_source_change_during_model_enrichment_is_rejected",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 3.283
+      "seconds": 3.69
     },
     {
       "test": "test_word_numeral_and_changed_heading_end_to_end",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 3.244
+      "seconds": 3.548
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[7]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.608
+      "seconds": 0.913
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[19]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.525
+      "seconds": 0.835
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[42]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.518
+      "seconds": 0.843
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[101]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.526
+      "seconds": 0.826
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[503]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.593
+      "seconds": 0.899
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[11]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.908
+      "seconds": 1.502
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[37]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.92
+      "seconds": 1.509
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[83]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.995
+      "seconds": 2.056
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[211]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.976
+      "seconds": 2.266
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[997]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.918
+      "seconds": 2.703
     },
     {
       "test": "test_coherent_next_quarter_with_cross_year_approval",
       "module": "tests.test_rehearsal",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 2.933
+      "seconds": 3.476
+    },
+    {
+      "test": "test_harder_unseen_layout_and_label_changes",
+      "module": "tests.test_rehearsal",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 6.717
     },
     {
       "test": "test_acknowledgment_is_required_by_backend",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 3.887
+      "seconds": 3.652
     },
     {
       "test": "test_changed_asset_blocks_approval",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 4.791
+      "seconds": 3.73
     },
     {
       "test": "test_correction_requires_reason_and_full_schema",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 3.463
+      "seconds": 3.508
     },
     {
       "test": "test_unknown_chart_id_cannot_be_confirmed",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 3.307
+      "seconds": 3.616
     },
     {
       "test": "test_final_semantics_and_evidence_are_saved",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.373
+      "seconds": 5.687
     },
     {
       "test": "test_scoped_quote_and_number_firewall",
@@ -595,14 +609,21 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_renamed_heading_is_not_a_missing_report",
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.011
+    },
+    {
+      "test": "test_section_preference_picks_drivers_over_commentary",
+      "module": "tests.test_synthesis",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.011
     },
     {
       "test": "test_invalid_prose_gets_one_bounded_repair",
@@ -630,7 +651,7 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.0
     },
     {
       "test": "test_word_numeral_and_ampersand_matching",
@@ -658,7 +679,7 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_host_attaches_exact_quote_without_model_transcription",
@@ -672,7 +693,7 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_house_view_dates_are_not_optional_numeric_inventory",
@@ -686,7 +707,7 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.0
+      "seconds": 0.001
     },
     {
       "test": "test_manager_claim_cannot_be_attributed_to_market_deck",
@@ -700,7 +721,7 @@
       "module": "tests.test_template",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.035
+      "seconds": 0.036
     },
     {
       "test": "test_upload_preserves_folders",
@@ -728,7 +749,7 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.003
     },
     {
       "test": "test_upload_rejects_unsafe_paths[nested/.private.pdf]",
@@ -770,14 +791,14 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.003
     },
     {
       "test": "test_upload_rejects_invalid_packages[files3]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.002
     },
     {
       "test": "test_generate_validates_before_starting_worker",
@@ -798,7 +819,7 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.004
+      "seconds": 0.005
     },
     {
       "test": "test_worker_failure_is_visible_and_releases_active",
@@ -812,14 +833,14 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.009
+      "seconds": 0.007
     },
     {
       "test": "test_write_routes_require_local_host_token_and_origin[headers1]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.003
     },
     {
       "test": "test_write_routes_require_local_host_token_and_origin[headers2]",
@@ -854,7 +875,7 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.004
     },
     {
       "test": "test_unknown_bundle_is_404",

@@ -317,7 +317,12 @@ def build_financials(sources, requested, client, ledger):
     for sheet_name, key in [("All Property", "property"), ("All Geographic", "geography")]:
         sheet = sheets[sheet_name]
         row = sheet.find(sources["name"] + " Portfolio")
-        header = next(r for r in sheet.rows() if any(norm(c.value) in {"apartment", "northeast"} for c in r))
+        # The category header is the nearest row above the client row that labels several columns.
+        header = next(
+            r
+            for r in reversed(sheet.rows()[: row[0].row - 1])
+            if sum(isinstance(c.value, str) and bool(c.value.strip()) for c in r[1:]) >= 2
+        )
         values = []
         for i, c in enumerate(header):
             if i and c.value is not None:

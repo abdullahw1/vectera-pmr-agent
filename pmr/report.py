@@ -80,10 +80,11 @@ def build_sections(data, sources, ledger):
         sections.append(section)
         return section
 
-    def para(section, text, ids):
-        section["blocks"].append(
-            dict(type="paragraph", text=text, evidence=list(dict.fromkeys(i for i in ids if i)))
-        )
+    def para(section, text, ids, kind=None):
+        block = dict(type="paragraph", text=text, evidence=list(dict.fromkeys(i for i in ids if i)))
+        if kind:
+            block["kind"] = kind
+        section["blocks"].append(block)
 
     def table(section, columns, rows, evidence, cell_evidence=None):
         block = dict(type="table", columns=columns, rows=rows, evidence=list(dict.fromkeys(evidence)))
@@ -360,16 +361,9 @@ def build_sections(data, sources, ledger):
                 passages = data["support"].get(fund["name"], [])
                 narrative = data.get("narratives", {}).get(fund["name"])
                 if narrative:
-                    para(s, narrative["text"], narrative["evidence"])
+                    para(s, narrative["text"], narrative["evidence"], kind="model_prose")
                 elif passages:
-                    if all(p["heading"] == "Unclassified manager page" for p in passages):
-                        para(
-                            s,
-                            "A current manager report was supplied, but its narrative requires review before asset-level commentary can be included.",
-                            [p["id"] for p in passages],
-                        )
-                    else:
-                        para(s, qualitative_fallback(passages), [p["id"] for p in passages])
+                    para(s, qualitative_fallback(passages), [p["id"] for p in passages])
                 if not passages:
                     found = fund["name"] in data["support"]
                     text = (
@@ -408,7 +402,7 @@ def build_sections(data, sources, ledger):
         narrative = data.get("narratives", {}).get(e["name"])
         passages = data["support"].get(e["name"], [])
         if narrative:
-            para(s, narrative["text"], narrative["evidence"])
+            para(s, narrative["text"], narrative["evidence"], kind="model_prose")
         elif passages:
             para(s, qualitative_fallback(passages), [p["id"] for p in passages])
     for e in activity["reversed"]:
@@ -423,7 +417,7 @@ def build_sections(data, sources, ledger):
     s = add("Market Update")
     narrative = data.get("narratives", {}).get("market")
     if narrative:
-        para(s, narrative["text"], narrative["evidence"])
+        para(s, narrative["text"], narrative["evidence"], kind="model_prose")
     else:
         bundle = [p for p in data.get("market_passages", []) if not p.get("qualitative_only")]
         para(

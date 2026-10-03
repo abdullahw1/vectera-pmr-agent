@@ -122,6 +122,27 @@ def test_chart_and_quote_numeric_changes_affect_semantic_hash():
     assert digest(semantic_manifest(data, sections)) != original
 
 
+def test_reordered_model_sentences_keep_the_same_figures_signature():
+    keys = ["portfolio", "funds", "sleeves", "activity", "policy", "compliance", "history", "diversification"]
+    data = {k: {} for k in keys}
+    data.update(client="A", quarter="1Q26", charts=[])
+
+    def signature(text, kind):
+        block = dict(type="paragraph", text=text, kind=kind)
+        return digest(semantic_manifest(data, [dict(title="Market", blocks=[block])]))
+
+    first, reordered = (
+        "Funds returned 1.0%. Cap rates were 4.6%.",
+        "Cap rates were 4.6%. Funds returned 1.0%.",
+    )
+    assert signature(first, "model_prose") == signature(reordered, "model_prose")
+    assert signature(first, "model_prose") != signature(
+        "Funds returned 1.1%. Cap rates were 4.6%.", "model_prose"
+    )
+    # Code-written paragraphs are fixed templates, so their reading order stays part of the check.
+    assert signature(first, None) != signature(reordered, None)
+
+
 def test_relevant_invalid_ic_date_and_full_client_name(tmp_path):
     root = copied(tmp_path)
     path = root / "ic_log_2025.xlsx"

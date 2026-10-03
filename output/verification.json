@@ -1,8 +1,8 @@
 {
   "client": "CPERS",
   "quarter": "4Q25",
-  "meaning_hash": "fc79dd0d154c7347c6e941fc97dd8ddd005801c01f09166dd17cb8ac36a68783",
-  "semantic_hash": "28dc0057c6382ae637dd20d984bc8a58a3787d8cbc5f9e32517e61a304558240",
+  "meaning_hash": "2af277eeee861c522152edfbff6a79129d4d7dcc6400f1b827829fe312080488",
+  "semantic_hash": "deb2349765f7dc9f78b3961c7da0c7f83b8b54c75505b81d10b7c09fca399036",
   "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
   "source_hashes": {
     "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -31,18 +31,18 @@
     "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
     "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
     "evidence.py": "6a6cc68d190ddb5131e2f052ad397e2e07bb2e77db2c0d3a24c8fe58e5152621",
-    "finance.py": "8896149f1788046e31b6cd1efbbf809fcde2d675f596ef22ac9c658c51dbb18a",
-    "ingest.py": "0c00f87894212c999816b3fb8f0976912994d6224b545713171762166dfae464",
+    "finance.py": "04a270e537a357b80db4403c88cbdd554426b3dc47a0689d0b68bb653122cf9f",
+    "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
     "market.py": "fdb828cb83904b057e6c2f0ba8433f503c2345c793a786a4d11ccd13cc7143ba",
     "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
-    "narrative.py": "fa2ca30d294d3bdc4e761f54f8b272351d6776ac0afadca4f39ce29abd7aadf1",
+    "narrative.py": "553f9bc790d3899977555c6bd8f6f67a57905bf51dd062e55a6f7615d072568c",
     "numeric.py": "77d0ef38d922391f89de2a3a5a01830fbcc52c10806694bfb8787908c002b450",
     "pipeline.py": "7a9fcf39691fed48b558321c162abb5a48864ff1e3b39f698251a64af7488216",
-    "report.py": "c5046d75886cdbd5c3706a940cc9efe7b3b9e4ec0ec40f4c0049e6a9a4588bfb",
+    "report.py": "9339e4e2f453c73c9d852b5b2728f51c31f84e610b35a5774e4182fe0281a426",
     "review.py": "12d19dd396ec46d33229ee509a071c911e89cff6275ac936e3ca74202ae95422",
     "synthesis.py": "14566deb0b7daa08aedd061d64973fce3002b90db85f78bc48d556a38614a05a",
     "template.py": "e2f34491b56f7bd8e79c085d3c43d195f2c7dbd1e95ea0f36f1ae4c7ffee352d",
-    "verification.py": "b257fa368925ae7a2597bb55bdb4ae449090a82b5651f6dd2166547cd0afce2e",
+    "verification.py": "6892c8fbf396348c6d34e70ded348b3100229886e34323e8f17da1efccfa2efb",
     "workspace.py": "666c8977fb4674c0c0a92a63b7fd9297dbe7a34fcae67d22ab5a67865a018a93"
   },
   "checks_passed": 58,
@@ -134,7 +134,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
       "severity": "warning",
       "evidence": [
-        "f_3317c618d50c20f4"
+        "f_cc885b2107b4a52c"
       ]
     },
     {
@@ -142,7 +142,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
       "severity": "warning",
       "evidence": [
-        "f_6da70a087bf812d0"
+        "f_ef7244c47896ba79"
       ]
     },
     {
@@ -150,7 +150,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
       "severity": "warning",
       "evidence": [
-        "f_7de5c251ffdb0891"
+        "f_b0497728800c864e"
       ]
     },
     {
@@ -158,7 +158,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
       "severity": "warning",
       "evidence": [
-        "f_946a264c8d8591b9"
+        "f_e13d93f23b9938fe"
       ]
     },
     {
@@ -166,7 +166,7 @@
       "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
       "severity": "warning",
       "evidence": [
-        "f_b17c6a4833417a83"
+        "f_9f206c09e4307823"
       ]
     },
     {
@@ -222,157 +222,6 @@
   ],
   "model_provider": "openai",
   "model_name": "gpt-4.1-2025-04-14",
-  "api_calls": 10,
-  "api_usage": [
-    {
-      "prompt_tokens": 445,
-      "completion_tokens": 93,
-      "total_tokens": 538,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 270,
-      "completion_tokens": 84,
-      "total_tokens": 354,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 418,
-      "completion_tokens": 69,
-      "total_tokens": 487,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 224,
-      "completion_tokens": 57,
-      "total_tokens": 281,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 421,
-      "completion_tokens": 80,
-      "total_tokens": 501,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 479,
-      "completion_tokens": 123,
-      "total_tokens": 602,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 437,
-      "completion_tokens": 97,
-      "total_tokens": 534,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 270,
-      "completion_tokens": 65,
-      "total_tokens": 335,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 1066,
-      "completion_tokens": 552,
-      "total_tokens": 1618,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    },
-    {
-      "prompt_tokens": 1033,
-      "completion_tokens": 56,
-      "total_tokens": 1089,
-      "prompt_tokens_details": {
-        "cached_tokens": 0,
-        "audio_tokens": 0
-      },
-      "completion_tokens_details": {
-        "reasoning_tokens": 0,
-        "audio_tokens": 0,
-        "accepted_prediction_tokens": 0,
-        "rejected_prediction_tokens": 0
-      }
-    }
-  ]
+  "api_calls": 0,
+  "api_usage": []
 }

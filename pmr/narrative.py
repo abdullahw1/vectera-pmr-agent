@@ -24,11 +24,54 @@ def clean(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def section(text, heading, endings):
-    match = re.search(
-        re.escape(heading) + r"\s+(.*?)(?=" + "|".join(re.escape(e) for e in endings) + r"|$)", text, re.S
+# Manager documents put a short heading above each prose paragraph. Sections are chosen by
+# what the heading is about, so a renamed heading still works; the order sets preference.
+SECTION_PREFERENCE = [
+    ("drivers", r"impact|driver|asset|attribution"),
+    ("strategy", r"strategy|overview"),
+    ("status", r"status|wind.?down"),
+]
+NOT_NARRATIVE = r"outlook|term|pipeline|statistic|confidential|metric"
+
+
+def is_heading(line):
+    """A short Title Case line without digits or a closing period, e.g. 'Investments Impacting Performance'.
+
+    Wrapped prose lines contain lowercase words; subtitles and table rows contain digits.
+    """
+    words = re.findall(r"[A-Za-z][\w'-]*", line)
+    return (
+        0 < len(line.split()) <= 8
+        and not re.search(r"\d|[.!?]$", line)
+        and all(w[0].isupper() for w in words if len(w) > 3)
     )
-    return clean(match[1]) if match else ""
+
+
+def prose_sections(pages):
+    """(page, heading, paragraph) for each heading line followed by prose.
+
+    Works on text lines, not PDF blocks, because PDF generators split paragraphs differently.
+    """
+    sections = []
+    for page_no, page in enumerate(pages, 1):
+        lines = [line.strip() for line in page.splitlines() if line.strip()]
+        starts = [i for i, line in enumerate(lines) if is_heading(line)]
+        for i, j in zip(starts, starts[1:] + [len(lines)]):
+            # Footers ("Confidential ...") must not lend a table its only full sentence.
+            body = clean(
+                " ".join(line for line in lines[i + 1 : j] if not re.match(NOT_NARRATIVE, line, re.I))
+            )
+            if len(body) >= 60 and re.search(r"[a-z]\.(\s|$)", body):
+                sections.append((page_no, clean(lines[i]), body))
+    return sections
+
+
+def choose_sections(sections):
+    for rule, pattern in SECTION_PREFERENCE:
+        chosen = [s for s in sections if re.search(pattern, s[1], re.I)]
+        if chosen:
+            return chosen, rule
+    return [s for s in sections if not re.search(NOT_NARRATIVE, s[1], re.I)], "fallback"
 
 
 def supporting_documents(sources, financials, activity, ledger, model):
@@ -77,71 +120,36 @@ def supporting_documents(sources, financials, activity, ledger, model):
         if name in support:
             ledger.issue("duplicate_manager", f"Multiple manager sources for {name}", "blocker")
             continue
-        passages = []
-        for page_no, page in enumerate(pages, 1):
-            for heading, endings in [
-                ("Investments Impacting Performance", ["Outlook", "Selected Portfolio Statistics"]),
-                ("Fund Strategy", ["Investment Pipeline", "Terms", "Fund Terms"]),
-                ("Status", ["Track Record", "Selected Portfolio Statistics"]),
-            ]:
-                if heading == "Status" and "Final Wind-Down Update" not in page:
-                    continue
-                excerpt = section(page, heading, endings)
-                if excerpt:
-                    if heading == "Fund Strategy":
-                        excerpt = " ".join(re.split(r"(?<=[.!?])\s+(?=[A-Z])", excerpt)[:2])
-                    # Extractive model selection provides automatic source verification, not an opaque entailment guess.
-                    # Stable source excerpts fix the report's numeric inventory independently
-                    # of model wording choices.
-                    selected = excerpt
-                    fid = ledger.add(
-                        selected,
-                        {
-                            "file": str(path.relative_to(sources["root"])),
-                            "page": page_no,
-                            "quote": excerpt,
-                            "method": "heading-delimited extraction",
-                        },
-                    )
-                    if selected not in clean(page):
-                        raise ValueError(f"Source excerpt failed page verification: {path.name}/{page_no}")
-                    passages.append(
-                        dict(
-                            text=selected,
-                            id=fid,
-                            entity=name,
-                            heading=heading,
-                            source=ledger.facts[fid]["source"],
-                        )
-                    )
-        support[name] = passages
-        if not passages:
+        sections = prose_sections(pages)
+        chosen, rule = choose_sections(sections)
+        if rule == "fallback":
             ledger.issue(
                 "manager_extraction",
-                f"Manager report found for {name}, but no recognized narrative section; page evidence retained for review",
+                f"{path.name}: no performance, strategy or status heading recognised; using all prose sections "
+                f"({', '.join(h for _, h, _ in chosen) or 'none'}) for review",
                 fund=name,
             )
-            for page_no, page in enumerate(pages, 1):
-                excerpt = clean(page)
-                if excerpt:
-                    fid = ledger.add(
-                        excerpt,
-                        {
-                            "file": str(path.relative_to(sources["root"])),
-                            "page": page_no,
-                            "quote": excerpt,
-                            "method": "unrecognized-heading page fallback",
-                        },
-                    )
-                    passages.append(
-                        dict(
-                            text=excerpt,
-                            id=fid,
-                            entity=name,
-                            heading="Unclassified manager page",
-                            source=ledger.facts[fid]["source"],
-                        )
-                    )
+        passages = []
+        for page_no, heading, text in chosen:
+            if rule == "strategy":
+                # SPEC 1.6 asks for a one-to-two sentence strategy description.
+                text = " ".join(re.split(r"(?<=[.!?])\s+(?=[A-Z])", text)[:2])
+            if text not in clean(pages[page_no - 1]):
+                ledger.issue(
+                    "manager_extraction", f"{path.name} p{page_no}: excerpt failed page verification"
+                )
+                continue
+            source = {
+                "file": str(path.relative_to(sources["root"])),
+                "page": page_no,
+                "quote": text,
+                "method": f"prose section under heading '{heading}'",
+            }
+            fid = ledger.add(text, source)
+            passages.append(
+                dict(text=text, id=fid, entity=name, heading=heading, source=ledger.facts[fid]["source"])
+            )
+        support[name] = passages
     for fund in financials["funds"]:
         if fund["fees"] < 0:
             ledger.issue(

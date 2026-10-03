@@ -4,6 +4,8 @@ from pmr.evidence import Ledger
 from pmr.report import accounting, dollars, billions
 from decimal import Decimal
 from pathlib import Path
+import fitz
+from pmr.ingest import pdf_pages
 from pmr.narrative import supporting_documents
 
 
@@ -37,27 +39,53 @@ def test_display_does_not_change_exact_values():
     assert value == Decimal("-557954.40")
 
 
-def test_renamed_heading_is_not_a_missing_report():
+def manager_pdf(path, blocks):
+    document = fitz.open()
+    page = document.new_page()
+    y = 50
+    for text in blocks:
+        page.insert_textbox(fitz.Rect(50, y, 550, y + 60), text, fontsize=10)
+        y += 70
+    document.save(path)
+
+
+def test_renamed_heading_is_not_a_missing_report(tmp_path):
     ledger = Ledger()
     name = "Cornerstone Core Property Fund"
-    sources = dict(
-        root=Path("inputs"),
-        managers=[
-            (
-                Path("inputs/manager.pdf"),
-                [
-                    name
-                    + "\nQuarterly Operating Review\nLeasing demand improved while refinancing remained a risk."
-                ],
-            )
-        ],
+    path = tmp_path / "manager.pdf"
+    prose = "Leasing demand improved at the logistics assets while refinancing remained a risk for office."
+    manager_pdf(
+        path, [name, "Quarterly Operating Review", prose, "Outlook", "The Manager expects stable income."]
     )
+    sources = dict(root=tmp_path, managers=[(path, pdf_pages(path))])
     funds = [dict(name=name, roles=["largest position"], fees=Decimal("0"), fees_id="fee")]
     support = supporting_documents(sources, dict(funds=funds), dict(new=[]), ledger, None)
-    assert support[name]
-    assert support[name][0]["heading"] == "Unclassified manager page"
+    # The unknown heading is used, the outlook is not, and the gap is flagged instead of called "missing".
+    assert [p["text"] for p in support[name]] == [prose]
     assert any(i["code"] == "manager_extraction" for i in ledger.issues)
     assert not any(i["code"] == "missing_manager" for i in ledger.issues)
+
+
+def test_section_preference_picks_drivers_over_commentary(tmp_path):
+    ledger = Ledger()
+    name = "Redwood Logistics Trust"
+    path = tmp_path / "manager.pdf"
+    drivers = "Gateway Logistics Center was marked up after lease-up completed at rents ahead of plan."
+    manager_pdf(
+        path,
+        [
+            name,
+            "Portfolio Manager Commentary",
+            "The Fund had a good quarter overall and did well.",
+            "Key Asset Drivers",
+            drivers,
+        ],
+    )
+    sources = dict(root=tmp_path, managers=[(path, pdf_pages(path))])
+    funds = [dict(name=name, roles=["largest contributor"], fees=Decimal("0"), fees_id="fee")]
+    support = supporting_documents(sources, dict(funds=funds), dict(new=[]), ledger, None)
+    assert [p["text"] for p in support[name]] == [drivers]
+    assert not any(i["code"] == "manager_extraction" for i in ledger.issues)
 
 
 def test_invalid_prose_gets_one_bounded_repair():

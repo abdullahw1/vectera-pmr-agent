@@ -148,9 +148,47 @@ class Sheet:
         return row[0].row, result
 
 
+def flash_identity(book):
+    """The client title cell: a top-of-sheet label whose '<name> Portfolio' row also exists in the
+    diversification sheet, so a moved or extra title line cannot be mistaken for the client."""
+    titles = [
+        c
+        for row in book["FundingStatus(Agg)"].iter_rows()
+        for c in row
+        if isinstance(c.value, str) and c.value.strip() and not quarter(c.value)
+    ]
+    labels = set()
+    if "All Property" in book.sheetnames:
+        labels = {norm(r[0].value) for r in book["All Property"].iter_rows() if isinstance(r[0].value, str)}
+    confirmed = [c for c in titles if norm(client_name(c) + " Portfolio") in labels]
+    return (confirmed or titles or [None])[0]
+
+
+def client_name(cell):
+    return re.sub(r"\s+Portfolio$", "", str(cell.value).strip())
+
+
+def report_texts(root):
+    """Whitespace-normalised text of every readable PDF, for checking client definitions."""
+    texts = []
+    for path in sorted(root.rglob("*.pdf")):
+        try:
+            texts.append(re.sub(r"\s+", " ", " ".join(pdf_pages(path))))
+        except Exception:
+            continue  # unreadable PDFs are reported by the main discovery pass
+    return texts
+
+
+def defines_client(texts, name, client):
+    """True if a report defines the code for this exact name, as in 'Full Name ("CODE")'."""
+    pattern = re.escape(name) + r"\s*\([\"“]" + re.escape(client) + r"[\"”]\)"
+    return any(re.search(pattern, text, re.I) for text in texts)
+
+
 def discover(root, client, requested, ledger):
     candidates = []
     books = {}
+    texts = report_texts(root)
     for path in sorted(root.rglob("*.xlsx")):
         try:
             book = openpyxl.load_workbook(path, data_only=True)
@@ -177,8 +215,11 @@ def discover(root, client, requested, ledger):
             for c in row
             if isinstance(c.value, str) and "benchmark" in c.value.lower()
         ]
-        # The short code is present in the benchmark label; content outranks filenames.
+        # Content outranks filenames: the benchmark label carries the short code, or the flash's
+        # title is the full name a prior PMR defines for that code, as in 'Full Name ("CODE")'.
         belongs = any(re.search(r"\b" + re.escape(client) + r"\b", label, re.I) for label in labels)
+        identity = flash_identity(book)
+        belongs = belongs or (identity is not None and defines_client(texts, client_name(identity), client))
         if belongs and quarter(text) == requested:
             candidates.append((path, book))
         else:
@@ -200,11 +241,8 @@ def discover(root, client, requested, ledger):
         )
     )
     ws = book["FundingStatus(Agg)"]
-    # The workbook contract places its identity above the first labelled data section.
-    identity = next(
-        c for row in ws for c in row if isinstance(c.value, str) and not quarter(c.value) and c.value.strip()
-    )
-    name = re.sub(r"\s+Portfolio$", "", identity.value)
+    identity = flash_identity(book)
+    name = client_name(identity)
     name_id = Sheet(flash, ws, ledger).fact(identity)
     prior, managers, appendix, logs, history, deck = [], [], [], [], [], []
     for path in sorted(root.rglob("*")):
