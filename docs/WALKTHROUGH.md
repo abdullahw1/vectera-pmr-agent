@@ -29,7 +29,7 @@
 
 **Why no LangGraph or vector database?** A small source set needs controlled retrieval and a testable loop. More orchestration would add setup without improving the financial authority boundary. In the real company, this retrieval interface would use their shared RAG service instead of creating a competing engine.
 
-**Why PyMuPDF?** It is an approved parser, reads text and font/layout information, renders review pages, and places original flash content as sharp vector panels without external executables. Oversized source pages are normalized to Letter paper; wide tables repeat investment names instead of shrinking to unreadable text.
+**Why PyMuPDF?** It is an approved parser, reads text and font/layout information, and extracts flash tables for retypesetting without external executables. ReportLab produces portrait tables with one header row and source-page captions. Blank padding is removed, not financial values. Unfamiliar layouts are retained as original vector exhibits only when they fit readably; otherwise an explicit adapter/review requirement stops generation.
 
 **How do you prevent hallucinations?** Text is limited to automatically extracted, verifiable passages. Financial prose is templated from source facts. Image readings remain reviewable and require confirmation.
 

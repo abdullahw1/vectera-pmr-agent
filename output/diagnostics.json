@@ -3,37 +3,37 @@
     {
       "stage": "discovery",
       "status": "completed",
-      "seconds": 0.681
+      "seconds": 0.472
     },
     {
       "stage": "exact_finance",
       "status": "completed",
-      "seconds": 0.084
+      "seconds": 0.061
     },
     {
       "stage": "source_passages",
       "status": "completed",
-      "seconds": 0.01
+      "seconds": 0.009
     },
     {
       "stage": "evidence_agent",
       "status": "completed",
-      "seconds": 0.007
+      "seconds": 0.004
     },
     {
       "stage": "chart_vision",
       "status": "completed",
-      "seconds": 0.036
+      "seconds": 0.025
     },
     {
       "stage": "cross_source_checks",
       "status": "completed",
-      "seconds": 0.011
+      "seconds": 0.01
     },
     {
       "stage": "report_render",
       "status": "completed",
-      "seconds": 3.163
+      "seconds": 3.157
     }
   ],
   "provider": "openai",
@@ -166,7 +166,7 @@
       }
     ],
     "max_steps": 8,
-    "seconds": 0.005
+    "seconds": 0.004
   },
   "blockers": 0,
   "warnings": 3,

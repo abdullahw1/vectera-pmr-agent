@@ -22,7 +22,7 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table, Tab
 
 from .ingest import norm
 from .numeric import display
-from .market import select_observations
+from .market import observation_sentence
 from .appendix import append_exhibits
 
 NAVY = "#1b2a4a"
@@ -183,18 +183,14 @@ def build_sections(data, sources, ledger):
     s = add("Market Update")
     # House-view text is condensed by choosing portfolio-relevant slides; numerical pixels remain separately reviewable.
     for slide in data["slides"]:
-        if any(word in norm(slide["title"]) for word in ["key themes", "risks", "positioning"]):
+        if any(word in norm(slide["title"]) for word in ["key themes", "risks"]):
             para(s, " ".join(t.lstrip("• ") for t in slide["text"]), [slide["id"]])
     available = [c for c in data["charts"] if c["data"]]
-    for chart in available:
-        values = chart["data"].get("series", [])
-        values = select_observations(values, data["diversification"]["property"])
-        if values:
-            table(s, ["Market Exhibit", "Series / Period", "Value"],
-                  [[chart["data"].get("title", ""), str(v.get("series", "")) + " / " + str(v.get("label", "")),
-                    ("~" if v.get("method") == "axis_read" else "") +
-                    ("$" + number(v["value"], 0) + " / month" if v["unit"] == "USD/month" else
-                     number(v["value"], 1) + v["unit"])] for v in values], [chart["id"]])
+    for offset in range(0, len(available), 3):
+        group = available[offset:offset + 3]
+        text = " ".join(observation_sentence(chart, data["diversification"]["property"]) for chart in group)
+        if text.strip():
+            para(s, text, [chart["id"] for chart in group])
     for signal in data.get("market_signals", []):
         para(s, f"For {signal['title']}, the transaction/appraisal gap {signal['direction']} from "
              f"{signal['old_gap']:.1f} to {signal['new_gap']:.1f} percentage points between "
@@ -227,7 +223,7 @@ def build_sections(data, sources, ledger):
             fid = ledger.add(text, {"file": prior_file, "page": i + 1, "quote": match[1]})
             para(s, text, [fid]); break
     s = add("Appendix A: Quarterly Flash Report")
-    para(s, "The following pages reproduce the supplied flash content on Letter paper. Wide tables use labeled panels with repeated investment names; the original PDF is retained separately. The workbook remains authoritative for portfolio calculations.", [])
+    para(s, "The following pages retypeset the supplied flash on portrait Letter paper with single-row table headers. The original PDF is retained separately; the workbook remains authoritative for portfolio calculations.", [])
     order = data.get("template", {}).get("section_order", [])
     lookup = {norm(s["title"]): s for s in sections}
     if order and all(norm(title) in lookup for title in order) and len(order) == len(sections):
@@ -291,8 +287,10 @@ def render_pdf(data, sections, path, appendix, approved=False):
     # Preserve the sample's grouping while allowing text to flow onto extra pages when necessary.
     page_starts = {"Portfolio Overview", "Annualized Time-Weighted Return", "Strategic Portfolio",
                    "Tactical and Special Situations Portfolio", "Recent Investment Activity", "Allocation Over Time",
-                   "Diversification", "Compliance", "Appendix A: Quarterly Flash Report"}
+                   "Diversification", "Compliance"}
     for index, section in enumerate(sections):
+        if section["title"] == "Appendix A: Quarterly Flash Report" and appendix:
+            continue  # The appendix renderer supplies its heading, not an extra introduction page.
         if index and section["title"] in page_starts:
             story.append(PageBreak())
         story.append(Paragraph(html.escape(section["title"]), styles["HeadingPMR"]))

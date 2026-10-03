@@ -24,7 +24,7 @@ These are reference readings from the supplied synthetic images, not production 
 - Meridian lacks a manager report. Confirm that the report gives flash figures and no invented asset-level causes.
 - Allocation history has no client column. The requested-period NAV/target agree with the flash at displayed precision, but ownership remains an assumption.
 
-Read the full PDF, including all appendix panels, and the two-page write-up. Confirm that the limitations describe what was actually observed. Enter your actual reviewer name, acknowledge the review, confirm all seven chart extractions, and approve only when satisfied. No automatic tool should acknowledge on your behalf.
+Read the full PDF, including all appendix tables, and the two-page write-up. Confirm that the limitations describe what was actually observed. Enter your actual reviewer name, acknowledge the review, confirm all seven chart extractions, and approve only when satisfied. No automatic tool should acknowledge on your behalf.
 
 ## Package and prepare
 

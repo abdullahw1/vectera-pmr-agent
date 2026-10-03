@@ -109,7 +109,9 @@ Financial corrections belong in the authoritative input workbook, followed by re
 | `output/cache/` | Content-addressed model responses; never API keys |
 | `output/appendix.pdf` | Unmodified supplied flash PDF |
 
-The standalone `appendix.pdf` retains the six original source pages. Every report page is portrait US Letter. Vector source exhibits have unused outer whitespace removed, and wide tables are split at column groups with investment names repeated. Short panels share a page when they fit. Source-page/panel labels preserve navigation. Report pagination grows to preserve readability rather than forcing an approximate page count.
+The standalone `appendix.pdf` retains the six original source pages. Every report page is portrait US Letter. PyMuPDF extracts the source tables, which are retypeset with one header row, external titles and source-page captions. Grouped return headers become single period/metric labels; adjacent horizons share readable tables. Empty spreadsheet padding and nonnumerical section-only rows are removed, but all displayed financial values and blank data cells are retained. The sample is 15 pages; pagination can grow for larger unseen portfolios. Market Update uses source-backed prose rather than seven separate tables; full chart observations remain in the evidence manifests.
+
+An unfamiliar appendix layout is retained as the original vector exhibit on portrait pages if its text remains readable at 7pt or above. Its original header styling is not rewritten. If it cannot fit readably, generation stops with an explicit adapter/review requirement rather than guessing columns or dropping values.
 
 ## Verification
 
@@ -143,7 +145,7 @@ Direct dependencies are pinned in `requirements.txt`. Development used Python 3.
 | `narrative.py` | Manager passages, deck text/images, model image extraction, allocation history |
 | `template.py` | Prior PDF typography, primary color and contents order |
 | `report.py` | Shared report model, charts and PDF layout |
-| `appendix.py` | Readable Letter-size vector source panels and repeated investment names |
+| `appendix.py` | Parsed source tables retypeset on portrait Letter with single-row headers |
 | `review.py` | Evidence UI, chart corrections, approval record and local server |
 | `pipeline.py` | Run orchestration and output manifests |
 

@@ -2311,193 +2311,51 @@
         {
           "columns": null,
           "kind": null,
-          "numbers": [],
+          "numbers": [
+            "1.0",
+            "3.3",
+            "1",
+            "25",
+            "4.6",
+            "4.2",
+            "10",
+            "2025",
+            "1.7",
+            "2.2"
+          ],
           "rows": null,
           "type": "paragraph"
         },
         {
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
+          "columns": null,
           "kind": null,
-          "numbers": [],
-          "rows": [
-            [
-              "U.S. Private Real Estate \u2014 Fund Total Return (net)",
-              "Fund Total Return (net) / Latest Qtr",
-              "1.0%"
-            ],
-            [
-              "U.S. Private Real Estate \u2014 Fund Total Return (net)",
-              "Fund Total Return (net) / 1-Yr",
-              "3.3%"
-            ]
+          "numbers": [
+            "1",
+            "5.5",
+            "4.4",
+            "4",
+            "3,400",
+            "2,500",
+            "25",
+            "5.6",
+            "7.7"
           ],
-          "type": "table"
+          "rows": null,
+          "type": "paragraph"
         },
         {
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
+          "columns": null,
           "kind": null,
-          "numbers": [],
-          "rows": [
-            [
-              "NPI Cap Rate vs. 10-Year Treasury",
-              "10-Yr Treasury Yield / 25Q4",
-              "~4.2%"
-            ],
-            [
-              "NPI Cap Rate vs. 10-Year Treasury",
-              "NPI Val-Wtd Cap Rate / 25Q4",
-              "~4.6%"
-            ]
+          "numbers": [
+            "2007",
+            "2025",
+            "65.0",
+            "30.0",
+            "38.0",
+            "17.0"
           ],
-          "type": "table"
-        },
-        {
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "kind": null,
-          "numbers": [],
-          "rows": [
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2025 / Industrial",
-              "~1.7%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2026-27 (p.a.) / Industrial",
-              "~1.3%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2028-30 (p.a.) / Industrial",
-              "~1.8%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2025 / Residential",
-              "~2.2%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2026-27 (p.a.) / Residential",
-              "~1.4%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2028-30 (p.a.) / Residential",
-              "~1.3%"
-            ]
-          ],
-          "type": "table"
-        },
-        {
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "kind": null,
-          "numbers": [],
-          "rows": [
-            [
-              "U.S. Industrial \u2014 Total Return (net, % annualized)",
-              "Industrial: Specialized / 1-Yr",
-              "5.5%"
-            ],
-            [
-              "U.S. Industrial \u2014 Total Return (net, % annualized)",
-              "NPI-Industrial / 1-Yr",
-              "4.4%"
-            ]
-          ],
-          "type": "table"
-        },
-        {
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "kind": null,
-          "numbers": [],
-          "rows": [
-            [
-              "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
-              "Cost to Own / 4Q25",
-              "$3,400 / month"
-            ],
-            [
-              "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
-              "Cost to Rent / 4Q25",
-              "$2,500 / month"
-            ]
-          ],
-          "type": "table"
-        },
-        {
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "kind": null,
-          "numbers": [],
-          "rows": [
-            [
-              "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
-              "Appraisal Cap Rate / 25Q4",
-              "~5.6%"
-            ],
-            [
-              "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
-              "Transaction Cap Rate / 25Q4",
-              "~7.7%"
-            ]
-          ],
-          "type": "table"
-        },
-        {
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "kind": null,
-          "numbers": [],
-          "rows": [
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Population Growth / Austin",
-              "~65.0%"
-            ],
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Retail Inventory Growth / Austin",
-              "~30.0%"
-            ],
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Population Growth / Charlotte",
-              "~38.0%"
-            ],
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Retail Inventory Growth / Charlotte",
-              "~17.0%"
-            ]
-          ],
-          "type": "table"
+          "rows": null,
+          "type": "paragraph"
         },
         {
           "columns": null,

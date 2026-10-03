@@ -2917,198 +2917,25 @@
         },
         {
           "type": "paragraph",
-          "text": "Maintain leverage discipline; prefer moderate loan-to-value. Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. Deploy patiently into the recovery as pricing stabilizes.",
+          "text": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr. At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield. The deck forecasts 2025 NOI growth of ~1.7% for industrial and ~2.2% for residential.",
           "evidence": [
-            "f_f7fec8895394ab59"
-          ]
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "rows": [
-            [
-              "U.S. Private Real Estate \u2014 Fund Total Return (net)",
-              "Fund Total Return (net) / Latest Qtr",
-              "1.0%"
-            ],
-            [
-              "U.S. Private Real Estate \u2014 Fund Total Return (net)",
-              "Fund Total Return (net) / 1-Yr",
-              "3.3%"
-            ]
-          ],
-          "evidence": [
-            "f_6d57eddcaeaf2604"
-          ]
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "rows": [
-            [
-              "NPI Cap Rate vs. 10-Year Treasury",
-              "10-Yr Treasury Yield / 25Q4",
-              "~4.2%"
-            ],
-            [
-              "NPI Cap Rate vs. 10-Year Treasury",
-              "NPI Val-Wtd Cap Rate / 25Q4",
-              "~4.6%"
-            ]
-          ],
-          "evidence": [
-            "f_585c23b393cd1f1e"
-          ]
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "rows": [
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2025 / Industrial",
-              "~1.7%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2026-27 (p.a.) / Industrial",
-              "~1.3%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2028-30 (p.a.) / Industrial",
-              "~1.8%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2025 / Residential",
-              "~2.2%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2026-27 (p.a.) / Residential",
-              "~1.4%"
-            ],
-            [
-              "Forecast NOI Growth by Sector (% per year)",
-              "2028-30 (p.a.) / Residential",
-              "~1.3%"
-            ]
-          ],
-          "evidence": [
+            "f_6d57eddcaeaf2604",
+            "f_585c23b393cd1f1e",
             "f_7b3c078cd261039c"
           ]
         },
         {
-          "type": "table",
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "rows": [
-            [
-              "U.S. Industrial \u2014 Total Return (net, % annualized)",
-              "Industrial: Specialized / 1-Yr",
-              "5.5%"
-            ],
-            [
-              "U.S. Industrial \u2014 Total Return (net, % annualized)",
-              "NPI-Industrial / 1-Yr",
-              "4.4%"
-            ]
-          ],
+          "type": "paragraph",
+          "text": "For 1-Yr, net industrial returns were 5.5% for Industrial: Specialized and 4.4% for NPI-Industrial. At 4Q25, monthly housing costs were $3,400/month (cost to own) versus $2,500/month (cost to rent). The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%.",
           "evidence": [
-            "f_40b4ae9da0b0b8fb"
-          ]
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "rows": [
-            [
-              "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
-              "Cost to Own / 4Q25",
-              "$3,400 / month"
-            ],
-            [
-              "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
-              "Cost to Rent / 4Q25",
-              "$2,500 / month"
-            ]
-          ],
-          "evidence": [
-            "f_1e9d1839d8ae53af"
-          ]
-        },
-        {
-          "type": "table",
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "rows": [
-            [
-              "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
-              "Appraisal Cap Rate / 25Q4",
-              "~5.6%"
-            ],
-            [
-              "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
-              "Transaction Cap Rate / 25Q4",
-              "~7.7%"
-            ]
-          ],
-          "evidence": [
+            "f_40b4ae9da0b0b8fb",
+            "f_1e9d1839d8ae53af",
             "f_a10e970c92b9cd19"
           ]
         },
         {
-          "type": "table",
-          "columns": [
-            "Market Exhibit",
-            "Series / Period",
-            "Value"
-          ],
-          "rows": [
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Population Growth / Austin",
-              "~65.0%"
-            ],
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Retail Inventory Growth / Austin",
-              "~30.0%"
-            ],
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Population Growth / Charlotte",
-              "~38.0%"
-            ],
-            [
-              "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
-              "Retail Inventory Growth / Charlotte",
-              "~17.0%"
-            ]
-          ],
+          "type": "paragraph",
+          "text": "The retail exhibit for 2007-2025 shows Austin: ~65.0% population growth versus ~30.0% retail inventory growth; Charlotte: ~38.0% population growth versus ~17.0% retail inventory growth.",
           "evidence": [
             "f_639f583c749c2eec"
           ]
@@ -3302,7 +3129,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "The following pages reproduce the supplied flash content on Letter paper. Wide tables use labeled panels with repeated investment names; the original PDF is retained separately. The workbook remains authoritative for portfolio calculations.",
+          "text": "The following pages retypeset the supplied flash on portrait Letter paper with single-row table headers. The original PDF is retained separately; the workbook remains authoritative for portfolio calculations.",
           "evidence": []
         }
       ]
@@ -13296,5 +13123,5 @@
     "assets/slide_9_chart_1.png": "05de74df3a64e0ca9a9650f4dfca566525367a95fee5e7f2665d3143227c2a32",
     "appendix.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30"
   },
-  "draft_hash": "2ce7e116cb299507c632197f1f639b8ad849a74c6f25df280cfce96d77b5447a"
+  "draft_hash": "1904d0d0c9ac4f901e783a09dec41b2eada4b7129b8874e2e8966b58820d7c02"
 }

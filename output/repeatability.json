@@ -5,8 +5,8 @@
     {
       "client": "CPERS",
       "quarter": "4Q25",
-      "meaning_hash": "4f1f6e33aeddf8b1c0f158f37a13fdad499491943eba7048957d02e62623a99f",
-      "semantic_hash": "c03a62dbca3f05f0f378d2d5a80433a25d736d6f587dcef172a27d6868cec8ab",
+      "meaning_hash": "f26f5f6eefadeaa211238a17e4f9a2ca179b13475697f4d82d3f7de87692f376",
+      "semantic_hash": "0967a7756ede6f68388bc471a6e6200b5258755b07e163c73b19132accd4263c",
       "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
       "source_hashes": {
         "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -28,24 +28,26 @@
       },
       "implementation_hashes": {
         "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
-        "__main__.py": "5fd857a3a064eef8ed7e57935bc4ef56a195ee43836283100d5cbb80d9703f31",
+        "__main__.py": "f9245d1c0f711f76b472c699ac2af0c0a3bcc92c831321908f16dedbc016d295",
         "agent.py": "da9363576beecda277e22d8fdc31209be4bc24f35ece300ee33291e77f6f5b4b",
-        "appendix.py": "f6217d2a917248dff2b5555ea23a3232166925e158f3d82a4b12aa71de81b71a",
+        "appendix.py": "1e3424634872174cdfe4dc97b06b6178ad7b699800b9ca7ddefe70d240921b83",
         "charts.py": "8fbdfdf81910b678fcb81f19f7b91dacf2c6959d785e6d3232232f7896633ec0",
         "config.py": "dd2b4d95ab80598ce217fae9b9c031a3f54f0b05d81e022f8b0569eda94fa59a",
         "crosschecks.py": "0758aca585de3a7aa7c5a2e191aac9775bcd7b610207a610e9379839ff3af269",
+        "errors.py": "0f99dc7872b59f510d243cbed64bce616ff216d4758a16f631e8e9058fdc1b3d",
         "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
         "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
         "ingest.py": "bdd75ed6331e4f93963d8981c24218f5dc1f759e328ffd769687cfbfa33f6970",
-        "market.py": "59c6497ab50f741b33c0389fa76727058327035d3e354d9aa1dcb40564e96b1a",
+        "market.py": "cdf84010c1087052ec003e6424566dddcdf917068e5f2e9d0e6a5fcd1a930a3c",
         "models.py": "8ee35924780dceea48cff96601c87f27592cde0a7f43595125a12f23e2f0f40e",
         "narrative.py": "64cd8b43d59d679843dc50491059e1d64db408fd46353d8d2d7b794352e881a2",
         "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
-        "pipeline.py": "6e05e18082fe9d582d05a5a9b467e7edc945dc59ee715e86e3bbefb81efafdae",
-        "report.py": "7001a6cb57aeec5a18a94364f4ae52d5cc80fc082db668d571a210e0effa2da6",
-        "review.py": "4b7f9a85e229ec0e13627d94c3ad181d630d4078ab67c9ec2a0f5b0182628dab",
+        "pipeline.py": "a72082e613efe24cfbda52de8b638c049c9708793b87a850dd6c7e7fb99ebf94",
+        "report.py": "a1ee01887fc398c84e39fcff94e9dbb3f8a84637603a6ea313cb00f016db5cbf",
+        "review.py": "aadc14112224423549e79766df2633b113991e9e29ad58623779ef154a43cc91",
         "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
-        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac"
+        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac",
+        "workspace.py": "533bdab4db2fd17c3811e8e901cda520f67a9682bf5c6cb553c757334d54a4bd"
       },
       "checks_passed": 58,
       "checks_total": 58,
@@ -168,8 +170,8 @@
     {
       "client": "CPERS",
       "quarter": "4Q25",
-      "meaning_hash": "4f1f6e33aeddf8b1c0f158f37a13fdad499491943eba7048957d02e62623a99f",
-      "semantic_hash": "c03a62dbca3f05f0f378d2d5a80433a25d736d6f587dcef172a27d6868cec8ab",
+      "meaning_hash": "f26f5f6eefadeaa211238a17e4f9a2ca179b13475697f4d82d3f7de87692f376",
+      "semantic_hash": "0967a7756ede6f68388bc471a6e6200b5258755b07e163c73b19132accd4263c",
       "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
       "source_hashes": {
         "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -191,24 +193,26 @@
       },
       "implementation_hashes": {
         "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
-        "__main__.py": "5fd857a3a064eef8ed7e57935bc4ef56a195ee43836283100d5cbb80d9703f31",
+        "__main__.py": "f9245d1c0f711f76b472c699ac2af0c0a3bcc92c831321908f16dedbc016d295",
         "agent.py": "da9363576beecda277e22d8fdc31209be4bc24f35ece300ee33291e77f6f5b4b",
-        "appendix.py": "f6217d2a917248dff2b5555ea23a3232166925e158f3d82a4b12aa71de81b71a",
+        "appendix.py": "1e3424634872174cdfe4dc97b06b6178ad7b699800b9ca7ddefe70d240921b83",
         "charts.py": "8fbdfdf81910b678fcb81f19f7b91dacf2c6959d785e6d3232232f7896633ec0",
         "config.py": "dd2b4d95ab80598ce217fae9b9c031a3f54f0b05d81e022f8b0569eda94fa59a",
         "crosschecks.py": "0758aca585de3a7aa7c5a2e191aac9775bcd7b610207a610e9379839ff3af269",
+        "errors.py": "0f99dc7872b59f510d243cbed64bce616ff216d4758a16f631e8e9058fdc1b3d",
         "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
         "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
         "ingest.py": "bdd75ed6331e4f93963d8981c24218f5dc1f759e328ffd769687cfbfa33f6970",
-        "market.py": "59c6497ab50f741b33c0389fa76727058327035d3e354d9aa1dcb40564e96b1a",
+        "market.py": "cdf84010c1087052ec003e6424566dddcdf917068e5f2e9d0e6a5fcd1a930a3c",
         "models.py": "8ee35924780dceea48cff96601c87f27592cde0a7f43595125a12f23e2f0f40e",
         "narrative.py": "64cd8b43d59d679843dc50491059e1d64db408fd46353d8d2d7b794352e881a2",
         "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
-        "pipeline.py": "6e05e18082fe9d582d05a5a9b467e7edc945dc59ee715e86e3bbefb81efafdae",
-        "report.py": "7001a6cb57aeec5a18a94364f4ae52d5cc80fc082db668d571a210e0effa2da6",
-        "review.py": "4b7f9a85e229ec0e13627d94c3ad181d630d4078ab67c9ec2a0f5b0182628dab",
+        "pipeline.py": "a72082e613efe24cfbda52de8b638c049c9708793b87a850dd6c7e7fb99ebf94",
+        "report.py": "a1ee01887fc398c84e39fcff94e9dbb3f8a84637603a6ea313cb00f016db5cbf",
+        "review.py": "aadc14112224423549e79766df2633b113991e9e29ad58623779ef154a43cc91",
         "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
-        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac"
+        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac",
+        "workspace.py": "533bdab4db2fd17c3811e8e901cda520f67a9682bf5c6cb553c757334d54a4bd"
       },
       "checks_passed": 58,
       "checks_total": 58,
@@ -1961,13 +1965,6 @@
                 "2020",
                 "2021"
               ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3742,13 +3739,6 @@
                 "2020",
                 "2021"
               ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [],
               "rows": null,
               "type": "paragraph"
             },

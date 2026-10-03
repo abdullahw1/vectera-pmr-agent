@@ -1,4 +1,4 @@
-from pmr.market import select_observations
+from pmr.market import select_observations, observation_sentence
 
 
 def point(label, series="A", value=1):
@@ -20,3 +20,21 @@ def test_material_sectors_follow_actual_portfolio_exposure():
 def test_short_return_horizon_and_latest_quarter_are_retained():
     points = [point("1-Yr"), point("3-Yr"), point("5-Yr"), point("Latest Qtr")]
     assert [p["label"] for p in select_observations(points, [])] == ["Latest Qtr", "1-Yr"]
+
+
+def test_market_prose_uses_source_values_and_retains_approximation():
+    chart = dict(data=dict(title="Forecast NOI Growth by Sector (% per year)", series=[
+        dict(label="Industrial", series="2026", value=1.7, unit="%", method="axis_read"),
+        dict(label="Industrial", series="2027", value=8.9, unit="%", method="axis_read"),
+        dict(label="Residential", series="2026", value=2.2, unit="%", method="label")]))
+    text = observation_sentence(chart, [dict(label="Industrial", value=40), dict(label="Apartment", value=30)])
+    assert "2026 NOI growth" in text and "~1.7%" in text and "2.2%" in text
+    assert "8.9%" not in text
+
+
+def test_market_return_sentence_does_not_rank_against_client_benchmark():
+    chart = dict(data=dict(title="U.S. Private Real Estate - Fund Total Return (net)", series=[
+        point("Latest Qtr", value=0.8), point("1-Yr", value=3.3)]))
+    text = observation_sentence(chart, [])
+    assert "0.8%" in text and "3.3%" in text
+    assert "benchmark" not in text.lower() and "outperform" not in text.lower()

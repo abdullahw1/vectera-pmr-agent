@@ -24,11 +24,15 @@ def test_no_key_complete_financial_draft_and_repeatability(tmp_path, no_keys):
     assert first["draft_hash"] == second["draft_hash"]
     assert a["checks_passed"] == a["checks_total"]
     with fitz.open(tmp_path / "a" / "report.pdf") as pdf:
+        assert len(pdf) <= 16
+        assert all((p.rect.width, p.rect.height) == (612, 792) for p in pdf)
         text = "\n".join(p.get_text() for p in pdf)
     assert "$456.8M" in text
     assert "5.46% vs 2.66%" in text
     assert "withdrawn" in text and "lapsed" in text
     assert len(first["sections"]) == 14
+    market = next(s for s in first["sections"] if s["title"] == "Market Update")
+    assert all(block["type"] == "paragraph" for block in market["blocks"])
     assert len(first["data"]["charts"]) == 7
     with pytest.raises(ValueError, match="Finalization blocked"):
         approve(tmp_path / "a", dict(draft_hash=first["draft_hash"], reviewer="Test", confirmed_charts=[]))
