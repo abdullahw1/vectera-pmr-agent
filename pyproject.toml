@@ -15,6 +15,9 @@ dependencies = {file = ["requirements.txt"]}
 [tool.setuptools.packages.find]
 include = ["pmr*"]
 
+[tool.setuptools.package-data]
+pmr = ["web/*.html", "web/icons/*.svg", "web/icons/LICENSE"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 filterwarnings = ["ignore::DeprecationWarning"]

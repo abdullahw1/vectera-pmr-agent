@@ -21,19 +21,23 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table, Tab
                                Image, PageBreak, KeepTogether, HRFlowable)
 
 from .ingest import norm
+from .numeric import display
+from .market import select_observations
+from .appendix import append_exhibits
 
-NAVY = "#1b2b49"
-GOLD = "#c5a04a"
+NAVY = "#1b2a4a"
+GOLD = "#c8a24b"
 
 
 def money(value):
-    return f"${number(value / 1e6, 1)}M"
+    if value is None:
+        return "n/m"
+    return f"${number(Decimal(str(value)) / 1_000_000, 1)}M"
 
 
 def number(value, places=1):
     """Use financial half-up rounding, including values exactly between display ticks."""
-    decimal = Decimal(str(value)).quantize(Decimal(1).scaleb(-places), rounding=ROUND_HALF_UP)
-    return f"{decimal:,.{places}f}"
+    return display(value, places)
 
 
 def dollars(value):
@@ -42,21 +46,33 @@ def dollars(value):
 
 def build_sections(data, sources, ledger):
     p, funds, activity = data["portfolio"], data["funds"], data["activity"]
+    if any(p[key] <= 0 for key in ["nav", "plan", "target"]):
+        raise ValueError("Required allocation ratios need positive portfolio NAV, plan assets and target; source values are not invented")
     sections = []
     def add(title):
         section = dict(title=title, blocks=[]); sections.append(section); return section
     def para(section, text, ids):
         section["blocks"].append(dict(type="paragraph", text=text, evidence=list(dict.fromkeys(i for i in ids if i))))
-    def table(section, columns, rows, evidence):
-        section["blocks"].append(dict(type="table", columns=columns, rows=rows, evidence=list(dict.fromkeys(evidence))))
+    def table(section, columns, rows, evidence, cell_evidence=None):
+        block = dict(type="table", columns=columns, rows=rows, evidence=list(dict.fromkeys(evidence)))
+        if cell_evidence:
+            block["cell_evidence"] = cell_evidence
+        section["blocks"].append(block)
     def derived(key, value, formula, inputs):
         p[key] = value
-        p[key + "_id"] = ledger.add(value, {"kind": "calculation"}, formula=formula, inputs=inputs)
+        p[key + "_id"] = ledger.add(value, {"kind": "calculation"}, formula=formula, inputs=inputs,
+                                   numeric=dict(entity=p["name"], metric=key, period=data["quarter"],
+                                                unit="USD" if key == "approved_total" else "count" if key.endswith("count") or key == "positions" else "%",
+                                                authority="deterministic calculation", permitted_formats=[str(value), number(value, 1)]))
     open_total = sum(e["amount"] or 0 for e in activity["open"])
     derived("approved_total", p["commitment"] + open_total, "flash commitments + open approvals",
             [p["commitment_id"]] + [e["amount_id"] for e in activity["open"]])
     count_ids = [f["name_id"] for f in funds] + [e["id"] for e in activity["open"]]
     derived("positions", len(funds) + len(activity["open"]), "count flash investments + count open approvals", count_ids)
+    derived("funded_count", len(funds), "count flash investments", [f["name_id"] for f in funds])
+    scope_ids = [e["id"] for e in activity["scope"]]
+    derived("open_count", len(activity["open"]), "count open approvals", [e["id"] for e in activity["open"]] + scope_ids)
+    derived("new_count", len(activity["new"]), "count current-quarter approvals", [e["id"] for e in activity["new"]] + scope_ids)
     derived("plan_pct", p["nav"] / p["plan"] * 100, "NAV / total plan assets * 100", [p["nav_id"], p["plan_id"]])
     derived("target_pct", p["nav"] / p["target"] * 100, "NAV / target allocation * 100", [p["nav_id"], p["target_id"]])
     prior_pages = sources["prior"][2]; prior_file = sources["prior"][1].name
@@ -72,7 +88,7 @@ def build_sections(data, sources, ledger):
          f"{p['positions']} individual investment positions: {len(funds)} funded and carried in the flash, plus "
          f"{len(activity['open'])} open approvals not funded by quarter-end. The funded investments have generated "
          f"a since-inception net IRR of {p['irr']:.1f}% and a {p['multiple']:.2f}x net equity multiple.",
-         [p[k + "_id"] for k in ["approved_total", "positions", "irr", "multiple"]])
+         [p[k + "_id"] for k in ["approved_total", "positions", "funded_count", "open_count", "irr", "multiple"]])
     para(s, f"At quarter-end, portfolio NAV was {money(p['nav'])}, or {p['plan_pct']:.1f}% of the "
          f"{money(p['plan'])} total plan and {p['target_pct']:.1f}% of its {money(p['target'])} target real estate allocation.",
          [p[k + "_id"] for k in ["nav", "plan_pct", "plan", "target_pct", "target"]])
@@ -116,7 +132,8 @@ def build_sections(data, sources, ledger):
     rows = [[f["name"], "; ".join(f["roles"]), number(f["income"], 2), number(f["appreciation"], 2),
              number(f["fees"], 2), number(f["contribution"], 2)] for f in featured]
     table(s, ["Fund", "Role", "Income", "Apprec.", "Fees", "Contribution"], rows,
-          [f[k + "_id"] for f in featured for k in ["name", "roles", "income", "appreciation", "fees", "contribution"]])
+          [f[k + "_id"] for f in featured for k in ["name", "roles", "income", "appreciation", "fees", "contribution"]],
+          cell_evidence=[[[f[k + "_id"]] for k in ["name", "roles", "income", "appreciation", "fees", "contribution"]] for f in featured])
     if len([f for f in funds if f["contribution"] < 0]) < 2:
         para(s, "Every other fund contributed positively or had zero dollar contribution during the quarter.", [f["contribution_id"] for f in funds])
     # Prior narrative is a baseline, never a source of current-period asset drivers.
@@ -134,7 +151,7 @@ def build_sections(data, sources, ledger):
         fid = ledger.add(share, {"kind": "calculation"}, formula="sleeve NAV / portfolio NAV * 100", inputs=[sl["nav_id"], p["nav_id"]])
         para(s, f"The {sleeve} sleeve represented {share:.1f}% of portfolio market value and returned {sl['q_net']:.2f}% net during the quarter.", [fid, sl["q_net_id"]])
         for fund in [f for f in funds if f["sleeve"] == sleeve]:
-            return_text = f"returned {fund['q_net']:.2f}% net" if fund["q_net"] is not None else "had no quarterly net return reported in the flash"
+            return_text = f"returned {fund['q_net']:.2f}% net" if fund["q_net"] is not None else "had a quarterly net return of n/m (not reported in the flash)"
             role = " was the Portfolio's " + " and ".join(fund["roles"]) + "." if fund["roles"] else "."
             text = fund["name"] + role + f" The Fund {return_text}, with quarter-end NAV of {money(fund['nav'])} and {number(fund['ltv'])}% LTV."
             ids = [fund[k + "_id"] for k in ["name", "roles", "q_net", "nav", "ltv"]]
@@ -150,7 +167,7 @@ def build_sections(data, sources, ledger):
                     para(s, "No current manager report was supplied for this fund. Commentary is limited to verified flash figures; asset-level drivers are unavailable.", [fund["name_id"]])
     s = add("Recent Investment Activity")
     para(s, f"The Investment Committee approved {len(activity['new'])} new commitments for {data['client']} during the quarter." if activity["new"]
-         else "No new commitments were approved for this client during the quarter.", [e["id"] for e in activity["new"]])
+         else "No new commitments were approved for this client during the quarter.", [p["new_count_id"]])
     for e in activity["new"]:
         para(s, f"{e['name']} - {money(e['amount'])}, approved {e['date']}.", [e[k] for k in ["id", "amount_id", "date_id", "action_id"]])
         if any(opened["name"] == e["name"] for opened in activity["open"]):
@@ -162,22 +179,28 @@ def build_sections(data, sources, ledger):
         explanation = e["recommendation"].split(";", 1)[1].strip() if ";" in e["recommendation"] else ""
         action_text = "lapsed" if e["action"] == "lapsed" else "was " + e["action"]
         para(s, f"The previously approved {money(e['amount'])} commitment to {e['name']} {action_text} during the quarter. "
-             + (explanation[:1].upper() + explanation[1:] + "." if explanation else ""), [e[k] for k in ["id", "amount_id", "action_id"]])
+             + (explanation[:1].upper() + explanation[1:] + "." if explanation else ""), [e[k] for k in ["id", "amount_id", "action_id", "date_id"]])
     s = add("Market Update")
     # House-view text is condensed by choosing portfolio-relevant slides; numerical pixels remain separately reviewable.
     for slide in data["slides"]:
         if any(word in norm(slide["title"]) for word in ["key themes", "risks", "positioning"]):
             para(s, " ".join(t.lstrip("• ") for t in slide["text"]), [slide["id"]])
     available = [c for c in data["charts"] if c["data"]]
-    for chart in available[:3]:
+    for chart in available:
         values = chart["data"].get("series", [])
-        highlights = chart["data"].get("highlights", [])
-        selected = [values[i] for i in highlights if isinstance(i, int) and 0 <= i < len(values)][:4]
-        values = selected or values[:4]
+        values = select_observations(values, data["diversification"]["property"])
         if values:
             table(s, ["Market Exhibit", "Series / Period", "Value"],
                   [[chart["data"].get("title", ""), str(v.get("series", "")) + " / " + str(v.get("label", "")),
-                    str(v.get("value", "")) + str(v.get("unit", ""))] for v in values], [chart["id"]])
+                    ("~" if v.get("method") == "axis_read" else "") +
+                    ("$" + number(v["value"], 0) + " / month" if v["unit"] == "USD/month" else
+                     number(v["value"], 1) + v["unit"])] for v in values], [chart["id"]])
+    for signal in data.get("market_signals", []):
+        para(s, f"For {signal['title']}, the transaction/appraisal gap {signal['direction']} from "
+             f"{signal['old_gap']:.1f} to {signal['new_gap']:.1f} percentage points between "
+             f"{signal['earlier']} and {signal['later']}.", [signal["id"]])
+    if any(v.get("method") == "axis_read" for c in available for v in c["data"]["series"]):
+        para(s, "Values marked ~ are approximate gridline readings at their declared precision, not exact underlying observations. They require human confirmation.", [c["id"] for c in available])
     if data["charts"] and not available:
         para(s, "Quantitative chart-image extraction is unavailable in this run. The house-view chart images are retained in the review package for inspection; no pixel values have been guessed.", [])
     para(s, f"House-view market indices and the {p['benchmark']} are distinct series. "
@@ -204,7 +227,7 @@ def build_sections(data, sources, ledger):
             fid = ledger.add(text, {"file": prior_file, "page": i + 1, "quote": match[1]})
             para(s, text, [fid]); break
     s = add("Appendix A: Quarterly Flash Report")
-    para(s, "The following pages reproduce the current quarter's supplied flash PDF. The workbook remains the authoritative source for portfolio calculations.", [])
+    para(s, "The following pages reproduce the supplied flash content on Letter paper. Wide tables use labeled panels with repeated investment names; the original PDF is retained separately. The workbook remains authoritative for portfolio calculations.", [])
     order = data.get("template", {}).get("section_order", [])
     lookup = {norm(s["title"]): s for s in sections}
     if order and all(norm(title) in lookup for title in order) and len(order) == len(sections):
@@ -224,6 +247,7 @@ def chart_bytes(kind, data):
         ax.bar([x + .18 for x in xs], [v["benchmark"] for v in annual], .36, color=GOLD, label=data["portfolio"]["benchmark"])
         ax.set_xticks(xs, [f"{v['horizon']}-Yr" for v in annual]); ax.set_ylabel("Net return (%)"); ax.axhline(0, color="#555555", lw=.7)
         for container in ax.containers: ax.bar_label(container, fmt="%.1f", padding=3, fontsize=8)
+        ax.margins(y=.15)
         ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(.5, 1.2), ncol=2)
     elif kind == "allocation":
         rows = data["history"]
@@ -285,13 +309,14 @@ def render_pdf(data, sections, path, appendix, approved=False):
                 cells = [[Paragraph(html.escape(str(c)), styles["CellPMR"]) for c in row] for row in [block["columns"]] + block["rows"]]
                 table = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
                 table.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), colors.HexColor(NAVY)),
-                    ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#eef1f5")]),
+                    ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#eef1f6")]),
                     ("VALIGN", (0, 0), (-1, -1), "TOP"), ("LINEBELOW", (0, 0), (-1, 0), .5, colors.HexColor(NAVY)),
                     ("LEFTPADDING", (0, 0), (-1, -1), 5), ("RIGHTPADDING", (0, 0), (-1, -1), 5),
                     ("TOPPADDING", (0, 0), (-1, -1), 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
                 # Paragraphs have their own styles, so header color must be set on their text.
                 table._cellvalues[0] = [Paragraph('<font color="white"><b>' + html.escape(str(c)) + '</b></font>', styles["CellPMR"]) for c in block["columns"]]
-                story.extend([table, Spacer(1, 12)])
+                story.extend([KeepTogether([table]) if section["title"] == "Market Update" and len(block["rows"]) <= 8 else table,
+                              Spacer(1, 12)])
     def footer(canvas, doc):
         canvas.setFont("Helvetica", 7); canvas.setFillColor(colors.grey)
         canvas.drawString(45, 28, "Vectera Advisors | Trade Secret & Confidential")
@@ -301,6 +326,5 @@ def render_pdf(data, sections, path, appendix, approved=False):
                       title=f"{data['client']} {data['quarter']} Performance Measurement Report", invariant=1).build(story, onFirstPage=footer, onLaterPages=footer)
     with fitz.open(stream=buffer.getvalue(), filetype="pdf") as result:
         if appendix:
-            with fitz.open(appendix) as flash:
-                result.insert_pdf(flash)
+            append_exhibits(result, appendix, approved=approved)
         result.save(path)

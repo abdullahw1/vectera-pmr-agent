@@ -9,4 +9,9 @@ __pycache__/
 *.swp
 *.swo
 output/cache/
+output/live-check/
+output/runs/
+output/uploads/
+output/workspace-ui.jpg
+output/error-ui.jpg
 tmp/

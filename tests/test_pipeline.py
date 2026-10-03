@@ -54,11 +54,36 @@ def test_mocked_chart_review_and_finalization(tmp_path, no_keys, monkeypatch):
         approve(tmp_path, dict(draft_hash=payload["draft_hash"], reviewer="Test", confirmed_charts=[]))
     corrected = dict(title="Offline corrected exhibit", series=[dict(label="Test period", series="Test", value=2, unit="%")])
     approve(tmp_path, dict(draft_hash=payload["draft_hash"], reviewer="Test", confirmed_charts=chart_ids,
-                           corrections={chart_ids[0]: corrected}))
+                           acknowledged=True, corrections={chart_ids[0]: dict(data=corrected, reason="Test corrected visible value")}))
     approval = json.loads((tmp_path / "approval.json").read_text())
     assert approval["draft_hash"] == payload["draft_hash"]
     assert len(approval["report_sha256"]) == 64
     evidence = json.loads((tmp_path / "final_evidence.json").read_text())
-    assert evidence["facts"][chart_ids[0]]["value"] == corrected
+    assert evidence["facts"][chart_ids[0]]["value"]["series"][0]["value"] == 2
     with fitz.open(tmp_path / "final_report.pdf") as pdf:
         assert "DRAFT" not in "\n".join(p.get_text() for p in pdf)
+
+
+def test_source_change_during_model_enrichment_is_rejected(tmp_path, no_keys, monkeypatch):
+    import shutil
+    import openpyxl
+    root = tmp_path / "inputs"
+    shutil.copytree(INPUTS, root)
+    changed = False
+    def extraction(self, prompt, image=None):
+        nonlocal changed
+        if image:
+            if not changed:
+                path = root / "flash_4Q25.xlsx"
+                book = openpyxl.load_workbook(path)
+                row = next(r for r in book["CashActivity(Agg)"] if r[0].value == "Cornerstone Core Property Fund")
+                row[5].value += 1
+                book.save(path)
+                changed = True
+            return dict(title="Test", series=[dict(label="Test", series="Test", value=1, unit="%")])
+        return None
+    monkeypatch.setattr("pmr.models.Model.ask", extraction)
+    with pytest.raises(ValueError, match="changed during generation"):
+        generate(root, tmp_path / "output", "CPERS", "4Q25")
+    assert not (tmp_path / "output" / "draft.json").exists()
+    assert json.loads((tmp_path / "output" / "diagnostics.json").read_text())["status"] == "blocked"

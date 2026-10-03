@@ -4,6 +4,7 @@ import shutil
 
 import openpyxl
 import pytest
+from decimal import Decimal
 
 from pmr.evidence import Ledger
 from pmr.ingest import discover, quarter, entity
@@ -29,8 +30,9 @@ def copied(tmp_path):
 def test_golden_financial_results():
     data, activity, ledger = calculate()
     assert not [x for x in ledger.issues if x["severity"] == "blocker"]
-    assert all(x["passed"] for x in ledger.checks)
-    assert data["portfolio"]["nav"] == pytest.approx(436116069.16)
+    assert all(x["passed"] for x in ledger.checks if x["severity"] == "blocker")
+    assert any(c["delta"] == Decimal("0.51") and c["severity"] == "warning" for c in ledger.checks)
+    assert data["portfolio"]["nav"] == Decimal("436116069.16")
     assert data["portfolio"]["one_net"] == pytest.approx(5.4568960063)
     assert data["portfolio"]["ex_us"] == pytest.approx(9.6199045052)
     roles = {f["name"]: f["roles"] for f in data["funds"]}
@@ -52,9 +54,9 @@ def test_rows_move_and_filenames_change(tmp_path):
     book.save(path)
     path.rename(root / "unhelpful_name.xlsx")
     data, activity, ledger = calculate(root)
-    assert data["portfolio"]["nav"] == pytest.approx(436116069.16)
+    assert data["portfolio"]["nav"] == Decimal("436116069.16")
     assert len(data["funds"]) == 12
-    assert all(c["passed"] for c in ledger.checks)
+    assert all(c["passed"] for c in ledger.checks if c["severity"] == "blocker")
     assert len(activity["new"]) == 2
 
 
@@ -123,7 +125,7 @@ def test_zero_balance_fund_can_be_added_without_code_edits(tmp_path):
     book.save(path)
     data, _, ledger = calculate(root)
     assert len(data["funds"]) == 13
-    assert all(c["passed"] for c in ledger.checks)
+    assert all(c["passed"] for c in ledger.checks if c["severity"] == "blocker")
     assert not next(f for f in data["funds"] if f["name"].startswith("Additional"))["roles"]
 
 
@@ -150,7 +152,7 @@ def test_different_client_identity_benchmark_and_policy(tmp_path):
     assert data["portfolio"]["benchmark"] == "EWRS Custom Benchmark"
     assert data["policy"]["sector"] == [42]
     assert data["policy"]["leverage"] == [45, 70]
-    assert all(c["passed"] for c in ledger.checks)
+    assert all(c["passed"] for c in ledger.checks if c["severity"] == "blocker")
 
 
 def test_after_quarter_approval_excluded(tmp_path):

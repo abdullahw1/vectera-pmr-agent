@@ -1,0 +1,6018 @@
+{
+  "passed": true,
+  "mode": "online",
+  "runs": [
+    {
+      "client": "CPERS",
+      "quarter": "4Q25",
+      "meaning_hash": "dd69f208df9f90711d2ccfa311d6dab45b122ab90a0c257f07e53250ee32ebca",
+      "semantic_hash": "a555a399ea2bb6025e8d7dd34bc232c1e9d29d6b6a184806ef4c818c659ca505",
+      "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
+      "source_hashes": {
+        "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
+        "flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
+        "flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
+        "flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
+        "flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
+        "ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
+        "manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
+        "manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
+        "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
+        "manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
+        "manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
+        "manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
+        "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
+        "market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
+        "prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
+        "prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b"
+      },
+      "implementation_hashes": {
+        "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+        "__main__.py": "5fd857a3a064eef8ed7e57935bc4ef56a195ee43836283100d5cbb80d9703f31",
+        "agent.py": "da9363576beecda277e22d8fdc31209be4bc24f35ece300ee33291e77f6f5b4b",
+        "appendix.py": "f6217d2a917248dff2b5555ea23a3232166925e158f3d82a4b12aa71de81b71a",
+        "charts.py": "8fbdfdf81910b678fcb81f19f7b91dacf2c6959d785e6d3232232f7896633ec0",
+        "config.py": "dd2b4d95ab80598ce217fae9b9c031a3f54f0b05d81e022f8b0569eda94fa59a",
+        "crosschecks.py": "0758aca585de3a7aa7c5a2e191aac9775bcd7b610207a610e9379839ff3af269",
+        "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
+        "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
+        "ingest.py": "bdd75ed6331e4f93963d8981c24218f5dc1f759e328ffd769687cfbfa33f6970",
+        "market.py": "59c6497ab50f741b33c0389fa76727058327035d3e354d9aa1dcb40564e96b1a",
+        "models.py": "8ee35924780dceea48cff96601c87f27592cde0a7f43595125a12f23e2f0f40e",
+        "narrative.py": "64cd8b43d59d679843dc50491059e1d64db408fd46353d8d2d7b794352e881a2",
+        "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
+        "pipeline.py": "6e05e18082fe9d582d05a5a9b467e7edc945dc59ee715e86e3bbefb81efafdae",
+        "report.py": "7001a6cb57aeec5a18a94364f4ae52d5cc80fc082db668d571a210e0effa2da6",
+        "review.py": "4b7f9a85e229ec0e13627d94c3ad181d630d4078ab67c9ec2a0f5b0182628dab",
+        "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
+        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac"
+      },
+      "checks_passed": 58,
+      "checks_total": 58,
+      "supporting_checks_failed": 1,
+      "issues": [
+        {
+          "code": "reconciliation",
+          "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
+          "severity": "warning",
+          "evidence": [
+            "f_6faa3496a5ff4dd8",
+            "f_8af12216d589319a",
+            "f_6c69b87841fc08cc",
+            "f_715daf00f71e7500",
+            "f_9abbdd11972ef684",
+            "f_06e1878e05198846",
+            "f_d3748ab9ba07455f",
+            "f_f1b493f43db48766"
+          ]
+        },
+        {
+          "code": "missing_manager",
+          "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+          "severity": "warning",
+          "fund": "Meridian Opportunity Fund V"
+        },
+        {
+          "code": "agent_review",
+          "message": "Evidence investigator stopped: repeated_action; deterministic source excerpts retained",
+          "severity": "warning"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 4, chart 1",
+          "severity": "review",
+          "fact_id": "f_6d57eddcaeaf2604"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 5, chart 1",
+          "severity": "review",
+          "fact_id": "f_585c23b393cd1f1e"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 6, chart 1",
+          "severity": "review",
+          "fact_id": "f_a8368b9c322d8e77"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 7, chart 1",
+          "severity": "review",
+          "fact_id": "f_40b4ae9da0b0b8fb"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 8, chart 1",
+          "severity": "review",
+          "fact_id": "f_1e9d1839d8ae53af"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 9, chart 1",
+          "severity": "review",
+          "fact_id": "f_a10e970c92b9cd19"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 10, chart 1",
+          "severity": "review",
+          "fact_id": "f_639f583c749c2eec"
+        },
+        {
+          "code": "history_ownership",
+          "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+          "severity": "warning",
+          "evidence": [
+            "f_b9c0c533e3c13eec",
+            "f_fe245671d1c72119"
+          ]
+        }
+      ],
+      "ranked_funds": [
+        {
+          "name": "Cornerstone Core Property Fund",
+          "roles": [
+            "second-largest detractor",
+            "largest individual position"
+          ],
+          "contribution": "-187176.36",
+          "nav": "54424849.41"
+        },
+        {
+          "name": "Redwood Logistics Trust",
+          "roles": [
+            "largest contributor",
+            "second-largest individual position"
+          ],
+          "contribution": "1367035.55",
+          "nav": "51915756.06"
+        },
+        {
+          "name": "Ironwood Value-Add Fund III",
+          "roles": [
+            "second-largest contributor"
+          ],
+          "contribution": "1036289",
+          "nav": "11103969"
+        },
+        {
+          "name": "Meridian Opportunity Fund V",
+          "roles": [
+            "largest detractor"
+          ],
+          "contribution": "-469293.73",
+          "nav": "30237149.55"
+        }
+      ],
+      "model_provider": "openai",
+      "model_name": "gpt-4.1-mini-2025-04-14",
+      "api_calls": 12,
+      "api_usage": [
+        {
+          "prompt_tokens": 227,
+          "completion_tokens": 23,
+          "total_tokens": 250,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 306,
+          "completion_tokens": 22,
+          "total_tokens": 328,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 578,
+          "completion_tokens": 97,
+          "total_tokens": 675,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 721,
+          "completion_tokens": 23,
+          "total_tokens": 744,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 770,
+          "completion_tokens": 22,
+          "total_tokens": 792,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 276,
+          "total_tokens": 1688,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 980,
+          "total_tokens": 2460,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 626,
+          "total_tokens": 2106,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 376,
+          "total_tokens": 1788,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 585,
+          "total_tokens": 1997,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 1531,
+          "total_tokens": 3011,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 701,
+          "total_tokens": 2181,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "client": "CPERS",
+      "quarter": "4Q25",
+      "meaning_hash": "1d851fec88f7167ea7bb643bd6988764c2e0fd8d236fc1e4cbfbd13efb4b6e4c",
+      "semantic_hash": "a555a399ea2bb6025e8d7dd34bc232c1e9d29d6b6a184806ef4c818c659ca505",
+      "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
+      "source_hashes": {
+        "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
+        "flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
+        "flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
+        "flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
+        "flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
+        "ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
+        "manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
+        "manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
+        "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
+        "manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
+        "manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
+        "manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
+        "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
+        "market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
+        "prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
+        "prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b"
+      },
+      "implementation_hashes": {
+        "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+        "__main__.py": "5fd857a3a064eef8ed7e57935bc4ef56a195ee43836283100d5cbb80d9703f31",
+        "agent.py": "da9363576beecda277e22d8fdc31209be4bc24f35ece300ee33291e77f6f5b4b",
+        "appendix.py": "f6217d2a917248dff2b5555ea23a3232166925e158f3d82a4b12aa71de81b71a",
+        "charts.py": "8fbdfdf81910b678fcb81f19f7b91dacf2c6959d785e6d3232232f7896633ec0",
+        "config.py": "dd2b4d95ab80598ce217fae9b9c031a3f54f0b05d81e022f8b0569eda94fa59a",
+        "crosschecks.py": "0758aca585de3a7aa7c5a2e191aac9775bcd7b610207a610e9379839ff3af269",
+        "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
+        "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
+        "ingest.py": "bdd75ed6331e4f93963d8981c24218f5dc1f759e328ffd769687cfbfa33f6970",
+        "market.py": "59c6497ab50f741b33c0389fa76727058327035d3e354d9aa1dcb40564e96b1a",
+        "models.py": "8ee35924780dceea48cff96601c87f27592cde0a7f43595125a12f23e2f0f40e",
+        "narrative.py": "64cd8b43d59d679843dc50491059e1d64db408fd46353d8d2d7b794352e881a2",
+        "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
+        "pipeline.py": "6e05e18082fe9d582d05a5a9b467e7edc945dc59ee715e86e3bbefb81efafdae",
+        "report.py": "7001a6cb57aeec5a18a94364f4ae52d5cc80fc082db668d571a210e0effa2da6",
+        "review.py": "4b7f9a85e229ec0e13627d94c3ad181d630d4078ab67c9ec2a0f5b0182628dab",
+        "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
+        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac"
+      },
+      "checks_passed": 58,
+      "checks_total": 58,
+      "supporting_checks_failed": 1,
+      "issues": [
+        {
+          "code": "reconciliation",
+          "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
+          "severity": "warning",
+          "evidence": [
+            "f_6faa3496a5ff4dd8",
+            "f_8af12216d589319a",
+            "f_6c69b87841fc08cc",
+            "f_715daf00f71e7500",
+            "f_9abbdd11972ef684",
+            "f_06e1878e05198846",
+            "f_d3748ab9ba07455f",
+            "f_f1b493f43db48766"
+          ]
+        },
+        {
+          "code": "missing_manager",
+          "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+          "severity": "warning",
+          "fund": "Meridian Opportunity Fund V"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 4, chart 1",
+          "severity": "review",
+          "fact_id": "f_6d57eddcaeaf2604"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 5, chart 1",
+          "severity": "review",
+          "fact_id": "f_585c23b393cd1f1e"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 6, chart 1",
+          "severity": "review",
+          "fact_id": "f_f1604a0ba6797969"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 7, chart 1",
+          "severity": "review",
+          "fact_id": "f_40b4ae9da0b0b8fb"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 8, chart 1",
+          "severity": "review",
+          "fact_id": "f_1e9d1839d8ae53af"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 9, chart 1",
+          "severity": "review",
+          "fact_id": "f_e7530a703c092fd7"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 10, chart 1",
+          "severity": "review",
+          "fact_id": "f_f414ede9f5f6c10c"
+        },
+        {
+          "code": "history_ownership",
+          "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+          "severity": "warning",
+          "evidence": [
+            "f_b9c0c533e3c13eec",
+            "f_fe245671d1c72119"
+          ]
+        }
+      ],
+      "ranked_funds": [
+        {
+          "name": "Cornerstone Core Property Fund",
+          "roles": [
+            "second-largest detractor",
+            "largest individual position"
+          ],
+          "contribution": "-187176.36",
+          "nav": "54424849.41"
+        },
+        {
+          "name": "Redwood Logistics Trust",
+          "roles": [
+            "largest contributor",
+            "second-largest individual position"
+          ],
+          "contribution": "1367035.55",
+          "nav": "51915756.06"
+        },
+        {
+          "name": "Ironwood Value-Add Fund III",
+          "roles": [
+            "second-largest contributor"
+          ],
+          "contribution": "1036289",
+          "nav": "11103969"
+        },
+        {
+          "name": "Meridian Opportunity Fund V",
+          "roles": [
+            "largest detractor"
+          ],
+          "contribution": "-469293.73",
+          "nav": "30237149.55"
+        }
+      ],
+      "model_provider": "openai",
+      "model_name": "gpt-4.1-mini-2025-04-14",
+      "api_calls": 12,
+      "api_usage": [
+        {
+          "prompt_tokens": 227,
+          "completion_tokens": 11,
+          "total_tokens": 238,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 507,
+          "completion_tokens": 21,
+          "total_tokens": 528,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 554,
+          "completion_tokens": 24,
+          "total_tokens": 578,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 788,
+          "completion_tokens": 80,
+          "total_tokens": 868,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 916,
+          "completion_tokens": 9,
+          "total_tokens": 925,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 276,
+          "total_tokens": 1688,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 980,
+          "total_tokens": 2460,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 626,
+          "total_tokens": 2106,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 376,
+          "total_tokens": 1788,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 585,
+          "total_tokens": 1997,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 1531,
+          "total_tokens": 3011,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 698,
+          "total_tokens": 2178,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      ]
+    }
+  ],
+  "meaningful_equal": true,
+  "revision_equal": true,
+  "required_output_complete": true,
+  "semantic_manifests": [
+    {
+      "charts": [
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "1-Yr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": 3.3
+            },
+            {
+              "label": "3-Yr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": -2.4
+            },
+            {
+              "label": "5-Yr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": 3.3
+            },
+            {
+              "label": "Latest Qtr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": 1.0
+            }
+          ],
+          "slide": 4
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.4
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 3.8
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            }
+          ],
+          "slide": 5
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "Industrial",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 1.7
+            },
+            {
+              "label": "Industrial",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 1.3
+            },
+            {
+              "label": "Industrial",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 1.8
+            },
+            {
+              "label": "Office",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 0.6
+            },
+            {
+              "label": "Office",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 0.4
+            },
+            {
+              "label": "Office",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 0.4
+            },
+            {
+              "label": "Residential",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 2.2
+            },
+            {
+              "label": "Residential",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 1.4
+            },
+            {
+              "label": "Residential",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 1.3
+            },
+            {
+              "label": "Retail",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 0.2
+            },
+            {
+              "label": "Retail",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 0.2
+            },
+            {
+              "label": "Retail",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 0.1
+            }
+          ],
+          "slide": 6
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "1-Yr",
+              "method": "label",
+              "series": "Industrial: Specialized",
+              "unit": "%",
+              "value": 5.5
+            },
+            {
+              "label": "1-Yr",
+              "method": "label",
+              "series": "NPI-Industrial",
+              "unit": "%",
+              "value": 4.4
+            },
+            {
+              "label": "3-Yr",
+              "method": "label",
+              "series": "Industrial: Specialized",
+              "unit": "%",
+              "value": 4.0
+            },
+            {
+              "label": "3-Yr",
+              "method": "label",
+              "series": "NPI-Industrial",
+              "unit": "%",
+              "value": 1.6
+            },
+            {
+              "label": "5-Yr",
+              "method": "label",
+              "series": "Industrial: Specialized",
+              "unit": "%",
+              "value": 11.8
+            },
+            {
+              "label": "5-Yr",
+              "method": "label",
+              "series": "NPI-Industrial",
+              "unit": "%",
+              "value": 10.2
+            }
+          ],
+          "slide": 7
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "4Q21",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 2350.0
+            },
+            {
+              "label": "4Q21",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2150.0
+            },
+            {
+              "label": "4Q22",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3200.0
+            },
+            {
+              "label": "4Q22",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2300.0
+            },
+            {
+              "label": "4Q23",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3500.0
+            },
+            {
+              "label": "4Q23",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2350.0
+            },
+            {
+              "label": "4Q24",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3500.0
+            },
+            {
+              "label": "4Q24",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2450.0
+            },
+            {
+              "label": "4Q25",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3400.0
+            },
+            {
+              "label": "4Q25",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2500.0
+            }
+          ],
+          "slide": 8
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "22Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.1
+            },
+            {
+              "label": "22Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "22Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.3
+            },
+            {
+              "label": "22Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 5.7
+            },
+            {
+              "label": "22Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "22Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "22Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.4
+            },
+            {
+              "label": "22Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.2
+            },
+            {
+              "label": "23Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "23Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.2
+            },
+            {
+              "label": "23Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.2
+            },
+            {
+              "label": "23Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 5.7
+            },
+            {
+              "label": "23Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.4
+            },
+            {
+              "label": "23Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.9
+            },
+            {
+              "label": "23Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.5
+            },
+            {
+              "label": "23Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.2
+            },
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.9
+            },
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 10.3
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 6.0
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.7
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.9
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.8
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.8
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.6
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.7
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 8.3
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.9
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.8
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.6
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.3
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.6
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.7
+            }
+          ],
+          "slide": 9
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "Austin",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 65.0
+            },
+            {
+              "label": "Austin",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 30.0
+            },
+            {
+              "label": "Charlotte",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 38.0
+            },
+            {
+              "label": "Charlotte",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 17.0
+            },
+            {
+              "label": "Chicago",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 2.0
+            },
+            {
+              "label": "Chicago",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 5.0
+            },
+            {
+              "label": "Denver",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 25.0
+            },
+            {
+              "label": "Denver",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 15.0
+            },
+            {
+              "label": "LA",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 0.0
+            },
+            {
+              "label": "LA",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 3.0
+            },
+            {
+              "label": "NY/NJ",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 9.0
+            },
+            {
+              "label": "NY/NJ",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 5.0
+            },
+            {
+              "label": "Phoenix",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 30.0
+            },
+            {
+              "label": "Phoenix",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 17.0
+            },
+            {
+              "label": "Tampa",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 25.0
+            },
+            {
+              "label": "Tampa",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 13.0
+            }
+          ],
+          "slide": 10
+        }
+      ],
+      "client": "CPERS",
+      "financials": {
+        "activity": {
+          "events": [
+            {
+              "action": "approved",
+              "action_id": "f_5519b88c82956e7a",
+              "amount": "20000000",
+              "amount_id": "f_6d53c51b8bfee765",
+              "date": "2025-02-11",
+              "date_id": "f_90f09760525ef3d9",
+              "id": "f_cf54691d90486688",
+              "name": "Meridian Opportunity Fund V",
+              "recommendation": "Approve a commitment of up to USD20 million to Meridian Opportunity Fund V"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_7de421a51001b15b",
+              "amount": "20000000",
+              "amount_id": "f_be489c2e2cd75f37",
+              "date": "2025-04-08",
+              "date_id": "f_ad1584e3e5b803cf",
+              "id": "f_ed33bd8e9b59753c",
+              "name": "Blackford Special Situations Fund II",
+              "recommendation": "Approve up to a USD20 million commitment to Blackford Special Situations Fund II"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_b3bf258157c14f60",
+              "amount": "20000000",
+              "amount_id": "f_4f89addad068e2a5",
+              "date": "2025-06-17",
+              "date_id": "f_21cad4d72ffa4f8d",
+              "id": "f_30a82808c5faa5c1",
+              "name": "Ironwood Value-Add Fund III",
+              "recommendation": "Approve a commitment of up to USD20 million to Ironwood Value-Add Fund III"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_3d7f4da712e28b20",
+              "amount": "25000000",
+              "amount_id": "f_3a01975ed5569db2",
+              "date": "2025-08-19",
+              "date_id": "f_c55713d55758bcfb",
+              "id": "f_ebba3c8fcf555aad",
+              "name": "Alder Creek Multifamily Fund III",
+              "recommendation": "Approve a commitment of up to USD 25 million to a value-add multifamily strategy"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_30a201c12e3a3965",
+              "amount": "30000000",
+              "amount_id": "f_c11065aafe7de151",
+              "date": "2025-09-16",
+              "date_id": "f_36804666902b2348",
+              "id": "f_641c51c419a0a24c",
+              "name": "Sentinel Logistics Income Fund",
+              "recommendation": "Approve a commitment of up to USD 30 million to a core-plus logistics strategy"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_7b8336c60d751713",
+              "amount": "40000000",
+              "amount_id": "f_30769425b6d75350",
+              "date": "2025-10-14",
+              "date_id": "f_c7f914fd458e6014",
+              "id": "f_024f9747ea82a800",
+              "name": "Northgate Logistics Partners",
+              "recommendation": "Approve a commitment of up to USD40 million to Northgate Logistics Partners"
+            },
+            {
+              "action": "withdrawn",
+              "action_id": "f_a5a61961686b2af0",
+              "amount": "25000000",
+              "amount_id": "f_4b0ad78b4a6c19de",
+              "date": "2025-11-18",
+              "date_id": "f_7152e7649d731553",
+              "id": "f_957442e1990f951a",
+              "name": "Alder Creek Multifamily Fund III",
+              "recommendation": "Withdraw the previously approved USD 25 million commitment to Alder Creek Multifamily Fund III; the Fund closed at its hard cap without an allocation to the client"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_20dffd8905560704",
+              "amount": "25000000",
+              "amount_id": "f_66bc2b8a15a61598",
+              "date": "2025-11-18",
+              "date_id": "f_acb1d33c303dcaed",
+              "id": "f_56fe2135e7d842d0",
+              "name": "Ridgeline Value Fund IV",
+              "recommendation": "Approve up to a USD25 million commitment to Ridgeline Value Fund IV"
+            },
+            {
+              "action": "lapsed",
+              "action_id": "f_f8fe906f23f7bb13",
+              "amount": "30000000",
+              "amount_id": "f_548f67eab570eef8",
+              "date": "2025-12-09",
+              "date_id": "f_db1b0451c16c7a7b",
+              "id": "f_596da09c0187dd39",
+              "name": "Sentinel Logistics Income Fund",
+              "recommendation": "Note the lapse of the previously approved USD 30 million commitment to Sentinel Logistics Income Fund; the approval expired unexercised on 30 November 2025 and is not being renewed"
+            }
+          ],
+          "new": [
+            {
+              "action": "approved",
+              "action_id": "f_7b8336c60d751713",
+              "amount": "40000000",
+              "amount_id": "f_30769425b6d75350",
+              "date": "2025-10-14",
+              "date_id": "f_c7f914fd458e6014",
+              "id": "f_024f9747ea82a800",
+              "name": "Northgate Logistics Partners",
+              "recommendation": "Approve a commitment of up to USD40 million to Northgate Logistics Partners"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_20dffd8905560704",
+              "amount": "25000000",
+              "amount_id": "f_66bc2b8a15a61598",
+              "date": "2025-11-18",
+              "date_id": "f_acb1d33c303dcaed",
+              "id": "f_56fe2135e7d842d0",
+              "name": "Ridgeline Value Fund IV",
+              "recommendation": "Approve up to a USD25 million commitment to Ridgeline Value Fund IV"
+            }
+          ],
+          "open": [
+            {
+              "action": "approved",
+              "action_id": "f_7b8336c60d751713",
+              "amount": "40000000",
+              "amount_id": "f_30769425b6d75350",
+              "date": "2025-10-14",
+              "date_id": "f_c7f914fd458e6014",
+              "id": "f_024f9747ea82a800",
+              "name": "Northgate Logistics Partners",
+              "recommendation": "Approve a commitment of up to USD40 million to Northgate Logistics Partners"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_20dffd8905560704",
+              "amount": "25000000",
+              "amount_id": "f_66bc2b8a15a61598",
+              "date": "2025-11-18",
+              "date_id": "f_acb1d33c303dcaed",
+              "id": "f_56fe2135e7d842d0",
+              "name": "Ridgeline Value Fund IV",
+              "recommendation": "Approve up to a USD25 million commitment to Ridgeline Value Fund IV"
+            }
+          ],
+          "reversed": [
+            {
+              "action": "withdrawn",
+              "action_id": "f_a5a61961686b2af0",
+              "amount": "25000000",
+              "amount_id": "f_4b0ad78b4a6c19de",
+              "date": "2025-11-18",
+              "date_id": "f_7152e7649d731553",
+              "id": "f_957442e1990f951a",
+              "name": "Alder Creek Multifamily Fund III",
+              "recommendation": "Withdraw the previously approved USD 25 million commitment to Alder Creek Multifamily Fund III; the Fund closed at its hard cap without an allocation to the client"
+            },
+            {
+              "action": "lapsed",
+              "action_id": "f_f8fe906f23f7bb13",
+              "amount": "30000000",
+              "amount_id": "f_548f67eab570eef8",
+              "date": "2025-12-09",
+              "date_id": "f_db1b0451c16c7a7b",
+              "id": "f_596da09c0187dd39",
+              "name": "Sentinel Logistics Income Fund",
+              "recommendation": "Note the lapse of the previously approved USD 30 million commitment to Sentinel Logistics Income Fund; the approval expired unexercised on 30 November 2025 and is not being renewed"
+            }
+          ],
+          "scope": [
+            {
+              "id": "f_d523c9ece4b38f09"
+            }
+          ]
+        },
+        "compliance": [
+          {
+            "actual": "36.2% (Industrial)",
+            "evidence": [
+              "f_dea15697cfa9083b",
+              "f_79212cf224c49141"
+            ],
+            "label": "Style / sector concentration",
+            "limit": "<=40% per sector",
+            "status": "In compliance"
+          },
+          {
+            "actual": "9.6% Ex-US",
+            "evidence": [
+              "f_11b582c6ecddb641",
+              "f_3f2ff107eb54353d"
+            ],
+            "label": "Location diversification",
+            "limit": "<=35% Ex-US",
+            "status": "In compliance"
+          },
+          {
+            "actual": "34.0% strategic / 37.7% tactical",
+            "evidence": [
+              "f_e1d97e7d49a814e5",
+              "f_0e22f36a5ac7f9cc",
+              "f_d8297b3c312c6b0d"
+            ],
+            "label": "Leverage (loan-to-value)",
+            "limit": "<=50% / 75%",
+            "status": "In compliance"
+          },
+          {
+            "actual": "5.46% vs 2.66% (1-Yr)",
+            "evidence": [
+              "f_53f50bc5fd317cdf",
+              "f_9466d7cd729149f2"
+            ],
+            "label": "Return objective",
+            "limit": "Exceed benchmark",
+            "status": "In compliance"
+          }
+        ],
+        "diversification": {
+          "geography": [
+            {
+              "id": "f_a3b5c0e513590309",
+              "label": "Northeast",
+              "value": 10.21531681791713
+            },
+            {
+              "id": "f_e22e08a28df87573",
+              "label": "Mideast",
+              "value": 13.07782520604736
+            },
+            {
+              "id": "f_19bb8f00f7485fd0",
+              "label": "East North Central",
+              "value": 7.12806118834026
+            },
+            {
+              "id": "f_3b333ba5e57363ca",
+              "label": "West North Central",
+              "value": 2.804817107906016
+            },
+            {
+              "id": "f_e01c76d5b356961d",
+              "label": "Southeast",
+              "value": 17.22007307886236
+            },
+            {
+              "id": "f_a090cdf36c947283",
+              "label": "Southwest",
+              "value": 8.281096281391738
+            },
+            {
+              "id": "f_d20f17358f3485e2",
+              "label": "Mountain",
+              "value": 7.983794363143867
+            },
+            {
+              "id": "f_53bf1184fa3d2858",
+              "label": "Pacific",
+              "value": 17.63727326703328
+            },
+            {
+              "id": "f_ce59f4fd6ef93995",
+              "label": "Various-US",
+              "value": 3.582728105861375
+            },
+            {
+              "id": "f_6bcb0c93d383e24a",
+              "label": "Ex-US",
+              "value": 12.0690145834966
+            }
+          ],
+          "property": [
+            {
+              "id": "f_832187d04bd0b44c",
+              "label": "Apartment",
+              "value": 23.45868508190368
+            },
+            {
+              "id": "f_08f8c668cd8ebf81",
+              "label": "Office",
+              "value": 7.871396721411899
+            },
+            {
+              "id": "f_dea15697cfa9083b",
+              "label": "Industrial",
+              "value": 36.20124610806096
+            },
+            {
+              "id": "f_52292f2691d1b045",
+              "label": "Retail",
+              "value": 8.185721779735681
+            },
+            {
+              "id": "f_1d1b6e48488091ea",
+              "label": "Hotel",
+              "value": 1.210078231954257
+            },
+            {
+              "id": "f_97c84788ecdd606a",
+              "label": "Other",
+              "value": 23.07287207693352
+            }
+          ]
+        },
+        "funds": [
+          {
+            "appreciation": "-557954.4",
+            "appreciation_id": "f_dca8e865c6f78202",
+            "beginning": "55152948.31",
+            "beginning_id": "f_698c4752d3eb7937",
+            "commitment": "40000000",
+            "commitment_id": "f_348d042f759af67a",
+            "contribution": "-187176.36",
+            "contribution_id": "f_fed7c150864778b1",
+            "contributions": "0",
+            "contributions_id": "f_4f4d61379390c213",
+            "distributions": "540922.54",
+            "distributions_id": "f_4d7b2d0b8be4d070",
+            "ending": "54424849.41",
+            "ending_id": "f_a271e386f18b62ee",
+            "fees": "163256.86",
+            "fees_id": "f_d0fe577737882740",
+            "funded": "67672938.77",
+            "funded_id": "f_78fa68e75eaf2eb4",
+            "income": "534034.9",
+            "income_id": "f_f514f0f46e5e489f",
+            "irr": 9.87284312831661,
+            "irr_id": "f_d85ad595123b2e68",
+            "ltv": 28.2,
+            "ltv_id": "f_99c7452e8935aae5",
+            "multiple": 2.29230116837735,
+            "multiple_id": "f_3e71efb5f32a5b9c",
+            "name": "Cornerstone Core Property Fund",
+            "name_id": "f_0b38330db80c6de6",
+            "nav": "54424849.41",
+            "nav_id": "f_b6faf534b0c97e70",
+            "q_net": -0.339376888698555,
+            "q_net_id": "f_9f821123efe8fbc3",
+            "roles": [
+              "second-largest detractor",
+              "largest individual position"
+            ],
+            "roles_id": "f_782b92c0fd5efc5f",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_9cfcb8addd40e1b2",
+            "withdrawals": "0",
+            "withdrawals_id": "f_690a7d37a3f17ea7"
+          },
+          {
+            "appreciation": "147008.9",
+            "appreciation_id": "f_ba1d7e8d2640bb7a",
+            "beginning": "44534756.42",
+            "beginning_id": "f_2b9265c4cbd703bd",
+            "commitment": "40000000",
+            "commitment_id": "f_47a8800474b94b35",
+            "contribution": "466410.84",
+            "contribution_id": "f_623dd0037e2fa7af",
+            "contributions": "93089.87",
+            "contributions_id": "f_13e05b0095ac05a4",
+            "distributions": "0",
+            "distributions_id": "f_7b158f3eca6d7dad",
+            "ending": "41870446.64",
+            "ending_id": "f_5726ffb035605111",
+            "fees": "93089.87",
+            "fees_id": "f_ddae30621f808834",
+            "funded": "41594403.91",
+            "funded_id": "f_8f3d2a0ead22dc79",
+            "income": "412491.81",
+            "income_id": "f_fe2272fffdff77a8",
+            "irr": 7.002246621176489,
+            "irr_id": "f_25679028ae430f83",
+            "ltv": 27.9597150489369,
+            "ltv_id": "f_9c43c229515df79c",
+            "multiple": 2.16457243659055,
+            "multiple_id": "f_6cc2f3798a27b8e8",
+            "name": "Beacon Diversified Property Trust",
+            "name_id": "f_1ddbfa65c04644d2",
+            "nav": "41870446.64",
+            "nav_id": "f_ca559080040daee0",
+            "q_net": 1.1191008452347,
+            "q_net_id": "f_f072978d13ad5f7b",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_1ebff6d818c7efa8",
+            "withdrawals": "3223810.49",
+            "withdrawals_id": "f_87a59020797a1d82"
+          },
+          {
+            "appreciation": "147924.68",
+            "appreciation_id": "f_aae51f9546682516",
+            "beginning": "48428073.68",
+            "beginning_id": "f_d85a0cbb03ec519b",
+            "commitment": "30273946.42",
+            "commitment_id": "f_0ae17bc8581ff367",
+            "contribution": "590243.76",
+            "contribution_id": "f_076a9525078474d2",
+            "contributions": "0",
+            "contributions_id": "f_6bf1e1a9f00167a3",
+            "distributions": "442319.08",
+            "distributions_id": "f_9138a587ea29793b",
+            "ending": "48575998.36",
+            "ending_id": "f_b063519e2cd9edde",
+            "fees": "95960.81",
+            "fees_id": "f_21bc73bafbbd1be8",
+            "funded": "41960593.29",
+            "funded_id": "f_4818d5aa6eac5bf6",
+            "income": "538279.89",
+            "income_id": "f_60e907c987b4353c",
+            "irr": 7.461515098076809,
+            "irr_id": "f_40f19e679b1de39c",
+            "ltv": 22.17,
+            "ltv_id": "f_0a81cfae3102456b",
+            "multiple": 1.90804358834174,
+            "multiple_id": "f_2a5e6f8a58552b34",
+            "name": "Summit Multifamily Partners",
+            "name_id": "f_69afbc35654a0ded",
+            "nav": "48575998.36",
+            "nav_id": "f_50b213c0b6acf969",
+            "q_net": 1.21880495164886,
+            "q_net_id": "f_b5ebef0c508b5f6d",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_e94e664a1158c442",
+            "withdrawals": "0",
+            "withdrawals_id": "f_76fce00a97c341d0"
+          },
+          {
+            "appreciation": "277855.27",
+            "appreciation_id": "f_0490288a4ba3c85c",
+            "beginning": "30680965.2",
+            "beginning_id": "f_6bce0d7a04db80ba",
+            "commitment": "15910000",
+            "commitment_id": "f_006aeb2efb9f440b",
+            "contribution": "320081.52",
+            "contribution_id": "f_61e7b56776a63ce8",
+            "contributions": "0",
+            "contributions_id": "f_2bb4965bb8a96ae0",
+            "distributions": "170363.04",
+            "distributions_id": "f_b40ef27734b8b15d",
+            "ending": "30830683.68",
+            "ending_id": "f_2bf6c8095608f282",
+            "fees": "66232",
+            "fees_id": "f_b63b05994e6b996b",
+            "funded": "20912167.39",
+            "funded_id": "f_d69bd683d9fe2cec",
+            "income": "108458.25",
+            "income_id": "f_7705ccbc4f13383a",
+            "irr": 8.98776172766865,
+            "irr_id": "f_1fe8ead47bb1495d",
+            "ltv": 50.0,
+            "ltv_id": "f_4ede22fabe7dd521",
+            "multiple": 1.89918805876582,
+            "multiple_id": "f_65b4404b01551b7b",
+            "name": "Whitfield Diversified Property Fund",
+            "name_id": "f_205a258010db4f8a",
+            "nav": "30830683.68",
+            "nav_id": "f_0e852509de05e45c",
+            "q_net": 1.0432576612681,
+            "q_net_id": "f_cac987fcf7cfc3db",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_9ec14b1650825e5f",
+            "withdrawals": "0",
+            "withdrawals_id": "f_ace5a692c7962540"
+          },
+          {
+            "appreciation": "306712.31",
+            "appreciation_id": "f_540f0ba86635f246",
+            "beginning": "50124791.55",
+            "beginning_id": "f_fc78bd6422a4b29a",
+            "commitment": "60000000",
+            "commitment_id": "f_ec2d145eee18e6f0",
+            "contribution": "373688.78",
+            "contribution_id": "f_ffd884c57b95f68a",
+            "contributions": "0",
+            "contributions_id": "f_5dd91fbea43dc8ed",
+            "distributions": "299359.13",
+            "distributions_id": "f_6cf3b16bb818d083",
+            "ending": "50199121.2",
+            "ending_id": "f_dc98fea8ce2c70b0",
+            "fees": "121948.94",
+            "fees_id": "f_1f386ee2285b8c9a",
+            "funded": "69338036.09",
+            "funded_id": "f_5872b2f05db90a2b",
+            "income": "188925.41",
+            "income_id": "f_89b673da7c1b58d8",
+            "irr": 4.56079692951544,
+            "irr_id": "f_2b964eeece5f294f",
+            "ltv": 49.3,
+            "ltv_id": "f_0e6e442d9b2a8b5b",
+            "multiple": 1.32357785733761,
+            "multiple_id": "f_f989996958b6f775",
+            "name": "Silverline Core-Plus Fund",
+            "name_id": "f_05b59e99389849b8",
+            "nav": "50199121.2",
+            "nav_id": "f_ed146f59bd89ec2d",
+            "q_net": 0.749506586638144,
+            "q_net_id": "f_bf738eb028e2171f",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_4a6ae5c19a43a5a2",
+            "withdrawals": "0",
+            "withdrawals_id": "f_4cf235ff36aa53a0"
+          },
+          {
+            "appreciation": "188349",
+            "appreciation_id": "f_faf5c8f162dbb917",
+            "beginning": "49518338",
+            "beginning_id": "f_094ac5e653f8c39d",
+            "commitment": "45630580",
+            "commitment_id": "f_fae7966c76f8a9fc",
+            "contribution": "813393",
+            "contribution_id": "f_3d7f263997745bcd",
+            "contributions": "0",
+            "contributions_id": "f_2e5715259e47f59e",
+            "distributions": "602493",
+            "distributions_id": "f_92a30ce2db36b4ff",
+            "ending": "49729238",
+            "ending_id": "f_337de032d4a3bed2",
+            "fees": "76247",
+            "fees_id": "f_268c86fdd66916d3",
+            "funded": "49039514",
+            "funded_id": "f_eef1381e7c413ec4",
+            "income": "701291",
+            "income_id": "f_99562f77d91ae1ec",
+            "irr": 6.63099777274422,
+            "irr_id": "f_59b6fde39d156683",
+            "ltv": 25.2589494702858,
+            "ltv_id": "f_f6523001b5d159a6",
+            "multiple": 1.40556445971304,
+            "multiple_id": "f_9d2d53c9b0c625d1",
+            "name": "Kestrel U.S. Real Estate Fund",
+            "name_id": "f_d2c5a1b09abbd5ee",
+            "nav": "49729238",
+            "nav_id": "f_f438d23d6cae148e",
+            "q_net": 1.66261896895477,
+            "q_net_id": "f_54f77e01e5ee87db",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_805ddb2ebc6bd66f",
+            "withdrawals": "0",
+            "withdrawals_id": "f_6c5e403000cee534"
+          },
+          {
+            "appreciation": "1081768.36",
+            "appreciation_id": "f_b0e2cc3d0d6feb20",
+            "beginning": "50893040.57",
+            "beginning_id": "f_7a57ca9ff8ae2a59",
+            "commitment": "40000000",
+            "commitment_id": "f_72c3c767851de062",
+            "contribution": "1367035.55",
+            "contribution_id": "f_daeef0717ee618e3",
+            "contributions": "0",
+            "contributions_id": "f_38042dc533210641",
+            "distributions": "344320.06",
+            "distributions_id": "f_17a8a9cb7fe67c46",
+            "ending": "51915756.06",
+            "ending_id": "f_d4944cba00cdb325",
+            "fees": "61356.27",
+            "fees_id": "f_691a850d8fc86cdc",
+            "funded": "41100937.25",
+            "funded_id": "f_463c9ff9d9331435",
+            "income": "346623.46",
+            "income_id": "f_ef2222f687cbe598",
+            "irr": 10.0643683508967,
+            "irr_id": "f_544b93e57effd349",
+            "ltv": 31.15,
+            "ltv_id": "f_c59194cffa21a503",
+            "multiple": 1.36207301331066,
+            "multiple_id": "f_368a7e7d65f9f059",
+            "name": "Redwood Logistics Trust",
+            "name_id": "f_a28ed47ef16e42a6",
+            "nav": "51915756.06",
+            "nav_id": "f_b2aa2571b6e37b63",
+            "q_net": 2.69214164511806,
+            "q_net_id": "f_2cd919e557b98dab",
+            "roles": [
+              "largest contributor",
+              "second-largest individual position"
+            ],
+            "roles_id": "f_682779d40e1f6f46",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_3ae40116e4376486",
+            "withdrawals": "0",
+            "withdrawals_id": "f_e7995a5b0ce57c72"
+          },
+          {
+            "appreciation": "163692.26",
+            "appreciation_id": "f_e3cc4da01adea17f",
+            "beginning": "43089031.2",
+            "beginning_id": "f_e79f1c29ae7cbd8c",
+            "commitment": "40000000",
+            "commitment_id": "f_b1ad92dafb3a82cc",
+            "contribution": "563014.90",
+            "contribution_id": "f_d8f38326b9d3bead",
+            "contributions": "64633.57",
+            "contributions_id": "f_93e1b156510bbcd8",
+            "distributions": "442309.43",
+            "distributions_id": "f_3d773e11e77b16cd",
+            "ending": "43274370.24",
+            "ending_id": "f_863b05a08cdb9020",
+            "fees": "64633.57",
+            "fees_id": "f_c6af6380bc8172cc",
+            "funded": "41206412.06",
+            "funded_id": "f_487bdc8a808fe557",
+            "income": "463956.21",
+            "income_id": "f_d221b34421358505",
+            "irr": 4.76859516972454,
+            "irr_id": "f_10723b1e12b734a5",
+            "ltv": 44.49,
+            "ltv_id": "f_67385ffeab46ef3c",
+            "multiple": 1.14925583234582,
+            "multiple_id": "f_554aff28518da905",
+            "name": "Harborview Industrial Fund",
+            "name_id": "f_2d8e82fff98516f3",
+            "nav": "43274370.24",
+            "nav_id": "f_bc0466f306b31a3a",
+            "q_net": 1.30723300416828,
+            "q_net_id": "f_fcdcb73a6fb7211d",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_b2e96c766e9ce226",
+            "withdrawals": "0",
+            "withdrawals_id": "f_daa179317cee723c"
+          },
+          {
+            "appreciation": "8942",
+            "appreciation_id": "f_42b87db84208fa92",
+            "beginning": "110082",
+            "beginning_id": "f_dc79c26a58675860",
+            "commitment": "20000000",
+            "commitment_id": "f_812e4edb386ff231",
+            "contribution": "2538",
+            "contribution_id": "f_78ac8f655dafdf27",
+            "contributions": "0",
+            "contributions_id": "f_ef4a8420f9cb6ad4",
+            "distributions": "0",
+            "distributions_id": "f_83fe904564c23dad",
+            "ending": "112620",
+            "ending_id": "f_024082dec0580df7",
+            "fees": "634",
+            "fees_id": "f_53c8ded116b83367",
+            "funded": "20524591",
+            "funded_id": "f_bb9e1c3a2df71f19",
+            "income": "-5770",
+            "income_id": "f_82d84caf7bf1accc",
+            "irr": 20.040093794608,
+            "irr_id": "f_70553cc1b274e12e",
+            "ltv": 0.0,
+            "ltv_id": "f_22baa58ba15b84db",
+            "multiple": 1.90118848166085,
+            "multiple_id": "f_900332dce66e44f0",
+            "name": "Tidewater Distressed Realty Fund",
+            "name_id": "f_cbdb4277c0a67314",
+            "nav": "112620",
+            "nav_id": "f_b02afeb3e7dfabe6",
+            "q_net": null,
+            "q_net_id": null,
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Tactical",
+            "unfunded": "0",
+            "unfunded_id": "f_058361fdc2910d55",
+            "withdrawals": "0",
+            "withdrawals_id": "f_123575c9faf8c6bf"
+          },
+          {
+            "appreciation": "942909",
+            "appreciation_id": "f_9566cbb8f151eef7",
+            "beginning": "10163914",
+            "beginning_id": "f_b8903587b9116539",
+            "commitment": "20000000",
+            "commitment_id": "f_08f370a988ff9eba",
+            "contribution": "1036289",
+            "contribution_id": "f_fcf6f6c622717c7c",
+            "contributions": "0",
+            "contributions_id": "f_09e598b984b36915",
+            "distributions": "96234",
+            "distributions_id": "f_7576d00d14e90c55",
+            "ending": "11103969",
+            "ending_id": "f_7e27e799a9f55fe0",
+            "fees": "32150",
+            "fees_id": "f_aad953d82519921e",
+            "funded": "19627826",
+            "funded_id": "f_2b9e2f6b4d70f5ca",
+            "income": "125530",
+            "income_id": "f_0b3d1989d649bd7b",
+            "irr": 9.86511749723479,
+            "irr_id": "f_f2173b5bcedf86a2",
+            "ltv": 0.0,
+            "ltv_id": "f_c322e63b5a8ea881",
+            "multiple": 1.46882838680147,
+            "multiple_id": "f_0321655388066d55",
+            "name": "Ironwood Value-Add Fund III",
+            "name_id": "f_c14e046778ff1105",
+            "nav": "11103969",
+            "nav_id": "f_ada3d9c7655e2a05",
+            "q_net": 10.2178501274776,
+            "q_net_id": "f_6a9cb440ed2c8787",
+            "roles": [
+              "second-largest contributor"
+            ],
+            "roles_id": "f_1ca4a9b13598864f",
+            "sleeve": "Tactical",
+            "unfunded": "2700807",
+            "unfunded_id": "f_eb038ce1c6fb94a0",
+            "withdrawals": "0",
+            "withdrawals_id": "f_ba5406e5762b2865"
+          },
+          {
+            "appreciation": "-468729.81",
+            "appreciation_id": "f_6be78ee7ad77d437",
+            "beginning": "30706443.28",
+            "beginning_id": "f_e0140d79b97d710d",
+            "commitment": "20000000",
+            "commitment_id": "f_ea24ae6c13672d50",
+            "contribution": "-469293.73",
+            "contribution_id": "f_53e3ca2b0f3a395f",
+            "contributions": "0",
+            "contributions_id": "f_056bbf7200de9be8",
+            "distributions": "0",
+            "distributions_id": "f_d978ac3eb8b6b8f0",
+            "ending": "30237149.55",
+            "ending_id": "f_d72f5c849f766dad",
+            "fees": "-31290.15",
+            "fees_id": "f_a5c2f964ad4e881d",
+            "funded": "41481787.06",
+            "funded_id": "f_5a9491b9b8c8e5cb",
+            "income": "-31854.07",
+            "income_id": "f_e3e92e3ca4118e0c",
+            "irr": 17.9657709243879,
+            "irr_id": "f_7832f5f67a9b2e6e",
+            "ltv": 42.2,
+            "ltv_id": "f_482b5f7ce812aab6",
+            "multiple": 1.40291503656352,
+            "multiple_id": "f_11f61c7b3080812c",
+            "name": "Meridian Opportunity Fund V",
+            "name_id": "f_7e76b74a96a1f345",
+            "nav": "30237149.55",
+            "nav_id": "f_292eeb058ae709e7",
+            "q_net": -1.52832330895732,
+            "q_net_id": "f_8c80f8eee2162e8e",
+            "roles": [
+              "largest detractor"
+            ],
+            "roles_id": "f_196949e4e86bfca9",
+            "sleeve": "Tactical",
+            "unfunded": "2147890",
+            "unfunded_id": "f_d964eda1755e4b8e",
+            "withdrawals": "0",
+            "withdrawals_id": "f_f7feda5b7ca2d0c7"
+          },
+          {
+            "appreciation": "1082224.05",
+            "appreciation_id": "f_8d2f6db69da8d1df",
+            "beginning": "23456973.18",
+            "beginning_id": "f_a40037852fdf4d8c",
+            "commitment": "20000000",
+            "commitment_id": "f_ae1fee079a93dd6f",
+            "contribution": "733640.17",
+            "contribution_id": "f_5138474c5e26fa15",
+            "contributions": "0",
+            "contributions_id": "f_df18d54392ed1fc2",
+            "distributions": "348746.33",
+            "distributions_id": "f_a49914a78da897dc",
+            "ending": "23841867.02",
+            "ending_id": "f_df9cb704127ded71",
+            "fees": "306936.43",
+            "fees_id": "f_0d0f5583743334cd",
+            "funded": "20996183.21",
+            "funded_id": "f_187ea82ec9ceb31a",
+            "income": "-41647.45",
+            "income_id": "f_341d69bea144b058",
+            "irr": 10.7535903035472,
+            "irr_id": "f_260c303db69e41c6",
+            "ltv": 49.7,
+            "ltv_id": "f_f4ecc8e6af4917b9",
+            "multiple": 1.31574999006689,
+            "multiple_id": "f_5918138fbf9101af",
+            "name": "Blackford Special Situations Fund II",
+            "name_id": "f_9ec6e048945507c2",
+            "nav": "23841867.02",
+            "nav_id": "f_7ffd4fa8307e0a8c",
+            "q_net": 3.12861066161374,
+            "q_net_id": "f_9685030898a53ccc",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Tactical",
+            "unfunded": "2737253.24",
+            "unfunded_id": "f_0cfc353a394315ac",
+            "withdrawals": "0",
+            "withdrawals_id": "f_8fa20dbf0062b39b"
+          }
+        ],
+        "history": [
+          {
+            "nav": 372.0,
+            "nav_id": "f_6b138f431a4d55a1",
+            "nav_precision": 0,
+            "quarter": "1Q24",
+            "quarter_id": "f_736e4d7841ba51c9",
+            "target": 480.0,
+            "target_id": "f_6727130e49c89f13",
+            "target_precision": 0
+          },
+          {
+            "nav": 386.0,
+            "nav_id": "f_b3f1adfbec278e19",
+            "nav_precision": 0,
+            "quarter": "2Q24",
+            "quarter_id": "f_67f474c375399be3",
+            "target": 482.0,
+            "target_id": "f_fcf2e36911fa6b0d",
+            "target_precision": 0
+          },
+          {
+            "nav": 397.0,
+            "nav_id": "f_fb85bc54f7a6b33d",
+            "nav_precision": 0,
+            "quarter": "3Q24",
+            "quarter_id": "f_ddb79e4bfab62bdd",
+            "target": 484.0,
+            "target_id": "f_d057ec64259eb6fc",
+            "target_precision": 0
+          },
+          {
+            "nav": 405.0,
+            "nav_id": "f_8c376b6ef858cf84",
+            "nav_precision": 0,
+            "quarter": "4Q24",
+            "quarter_id": "f_a00d31e6d85d6946",
+            "target": 486.0,
+            "target_id": "f_0ab99b60a5f9643c",
+            "target_precision": 0
+          },
+          {
+            "nav": 412.0,
+            "nav_id": "f_49c27762492eff81",
+            "nav_precision": 0,
+            "quarter": "1Q25",
+            "quarter_id": "f_d5c2807196c01177",
+            "target": 489.0,
+            "target_id": "f_98baba8ac6f17644",
+            "target_precision": 0
+          },
+          {
+            "nav": 424.0,
+            "nav_id": "f_999bd40156c5ab1c",
+            "nav_precision": 0,
+            "quarter": "2Q25",
+            "quarter_id": "f_589f8faa10aa5e13",
+            "target": 491.0,
+            "target_id": "f_8c6d633a4f99d70d",
+            "target_precision": 0
+          },
+          {
+            "nav": 437.0,
+            "nav_id": "f_c1feb14310aba019",
+            "nav_precision": 0,
+            "quarter": "3Q25",
+            "quarter_id": "f_92a1741bd2688289",
+            "target": 489.0,
+            "target_id": "f_d6ca25c3f776a89b",
+            "target_precision": 0
+          },
+          {
+            "nav": 436.0,
+            "nav_id": "f_b9c0c533e3c13eec",
+            "nav_precision": 0,
+            "quarter": "4Q25",
+            "quarter_id": "f_b51692af84362ace",
+            "target": 496.0,
+            "target_id": "f_fe245671d1c72119",
+            "target_precision": 0
+          }
+        ],
+        "policy": {
+          "allocation": [
+            10.0,
+            5.0,
+            20.0
+          ],
+          "allocation_id": "f_c4a35056612b5b2a",
+          "ex_us": [
+            35.0
+          ],
+          "ex_us_id": "f_3f2ff107eb54353d",
+          "leverage": [
+            50.0,
+            75.0
+          ],
+          "leverage_id": "f_d8297b3c312c6b0d",
+          "sector": [
+            40.0
+          ],
+          "sector_id": "f_79212cf224c49141"
+        },
+        "portfolio": {
+          "annual": [
+            {
+              "benchmark": 2.661877523805845,
+              "benchmark_id": "f_9466d7cd729149f2",
+              "horizon": 1,
+              "value": 5.456896006300482,
+              "value_id": "f_cd11a49a98d073b8"
+            },
+            {
+              "benchmark": -3.01595722640724,
+              "benchmark_id": "f_8818b6851f331848",
+              "horizon": 3,
+              "value": -0.4689220195756127,
+              "value_id": "f_94ef41240ac94d32"
+            },
+            {
+              "benchmark": 2.507888001548886,
+              "benchmark_id": "f_fcd8ab95242c641d",
+              "horizon": 5,
+              "value": 5.582675897256585,
+              "value_id": "f_04fb6a7e62ce25d9"
+            }
+          ],
+          "appreciation": "3320701.62",
+          "appreciation_id": "f_db45732e5c667aed",
+          "approved_total": "456814526.42",
+          "approved_total_id": "f_05eed7a975cccf5d",
+          "beginning": "436859357.39",
+          "beginning_id": "f_9222a208183539ad",
+          "benchmark": "CPERS Custom Benchmark",
+          "benchmark_id": "f_10a88430f35664c4",
+          "benchmark_one": 2.661877523805845,
+          "benchmark_one_id": "f_9466d7cd729149f2",
+          "benchmark_q": 0.698383729519694,
+          "benchmark_q_id": "f_fb857de535e7e8cf",
+          "commitment": "391814526.42",
+          "commitment_id": "f_25adffcd906c8b83",
+          "contributions": "157723.44",
+          "contributions_id": "f_600a4e4d89d41549",
+          "distributions": "3287066.61",
+          "distributions_id": "f_88611d9681d908ea",
+          "ex_us": 9.61990450522944,
+          "ex_us_id": "f_11b582c6ecddb641",
+          "fees": "1051155.6",
+          "fees_id": "f_aa5aee0d6a365ee0",
+          "funded": "475455390.03",
+          "funded_count": 12,
+          "funded_count_id": "f_240cde16bf713515",
+          "funded_id": "f_3c068a2ed00adb45",
+          "income": "3340319.41",
+          "income_id": "f_9501f197ea195e1c",
+          "irr": 9.32738743007635,
+          "irr_id": "f_3ccae37f6bb64d49",
+          "multiple": 1.44949928269256,
+          "multiple_id": "f_af3e168a135899d2",
+          "name": "Cascadia Public Employees' Retirement System",
+          "name_id": "f_928ae5d68f836b1e",
+          "nav": "436116069.16",
+          "nav_id": "f_edfa97ca0b6a5ad0",
+          "new_count": 2,
+          "new_count_id": "f_b006d3d92f868ae8",
+          "one_net": 5.456896006300482,
+          "one_net_id": "f_53f50bc5fd317cdf",
+          "open_count": 2,
+          "open_count_id": "f_36042cfc2be7adbb",
+          "plan": "4955864422",
+          "plan_id": "f_ca18939dbd562f9c",
+          "plan_pct": "8.800000000484274749193290179",
+          "plan_pct_id": "f_30d52ba521cc4478",
+          "positions": 14,
+          "positions_id": "f_269cd600b64c4f86",
+          "q_gross": 1.524751826261894,
+          "q_gross_id": "f_d41e601cd6844867",
+          "q_net": 1.284135348162377,
+          "q_net_id": "f_4dd1402b398cc860",
+          "target": "495586442",
+          "target_id": "f_077944b4d7752ee4",
+          "target_pct": "88.00000004035622911572710054",
+          "target_pct_id": "f_293362276d4356ca",
+          "unfunded": "7585950.24",
+          "unfunded_id": "f_d93c5a5d41dcc020",
+          "withdrawals": "3223810.49",
+          "withdrawals_id": "f_d0ede1040ba5685b"
+        },
+        "sleeves": {
+          "Strategic": {
+            "ltv": 33.971,
+            "ltv_id": "f_e1d97e7d49a814e5",
+            "nav": "370820463.59",
+            "nav_id": "f_9c05ddef0b18ee8a",
+            "q_net": 1.156401240214102,
+            "q_net_id": "f_f296021c0d49e71a"
+          },
+          "Tactical": {
+            "ltv": 37.689,
+            "ltv_id": "f_0e22f36a5ac7f9cc",
+            "nav": "65295605.57",
+            "nav_id": "f_a6c4918e96360bee",
+            "q_net": 2.022386359491009,
+            "q_net_id": "f_11bd42b3869eb373"
+          }
+        }
+      },
+      "quarter": "4Q25",
+      "structure": [
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2001",
+                "2011"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "456.8",
+                "14",
+                "12",
+                "2",
+                "9.3",
+                "1.45"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "436.1",
+                "8.8",
+                "4,955.9",
+                "88.0",
+                "495.6"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.28",
+                "5.46",
+                "0.70",
+                "2.66"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Portfolio Overview"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "10",
+                "5",
+                "20"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Statistic",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Funded investments",
+                  "12"
+                ],
+                [
+                  "Approved, not yet funded",
+                  "2"
+                ],
+                [
+                  "Total committed or approved",
+                  "$456.8M"
+                ],
+                [
+                  "Flash commitment total",
+                  "$391.8M"
+                ],
+                [
+                  "Market value (NAV)",
+                  "$436.1M"
+                ],
+                [
+                  "Real estate as % of plan assets",
+                  "8.8%"
+                ],
+                [
+                  "NAV as % of target",
+                  "88.0%"
+                ],
+                [
+                  "Strategic / Tactical split",
+                  "85.0% / 15.0%"
+                ],
+                [
+                  "Since-inception net IRR",
+                  "9.3%"
+                ],
+                [
+                  "Since-inception net equity multiple",
+                  "1.45x"
+                ]
+              ],
+              "type": "table"
+            }
+          ],
+          "title": "Investment Guidelines & Fund Statistics"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Portfolio Managers"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": "annual",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Annualized Time-Weighted Return"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "3.3",
+                "3.3",
+                "1.1",
+                "1.52",
+                "1.28"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Fund",
+                "Role",
+                "Income",
+                "Apprec.",
+                "Fees",
+                "Contribution"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Redwood Logistics Trust",
+                  "largest contributor; second-largest individual position",
+                  "346,623.46",
+                  "1,081,768.36",
+                  "61,356.27",
+                  "1,367,035.55"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "second-largest contributor",
+                  "125,530.00",
+                  "942,909.00",
+                  "32,150.00",
+                  "1,036,289.00"
+                ],
+                [
+                  "Cornerstone Core Property Fund",
+                  "second-largest detractor; largest individual position",
+                  "534,034.90",
+                  "-557,954.40",
+                  "163,256.86",
+                  "-187,176.36"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "largest detractor",
+                  "-31,854.07",
+                  "-468,729.81",
+                  "-31,290.15",
+                  "-469,293.73"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.18",
+                "1.28",
+                "+10.4"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Performance Update"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "85.0",
+                "1.16"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "-0.34",
+                "54.4",
+                "28.2",
+                "534,034.90",
+                "557,954.40",
+                "163,256.86",
+                "187,176.36"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "28"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.12",
+                "41.9",
+                "28.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.22",
+                "48.6",
+                "22.2"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.04",
+                "30.8",
+                "50.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "0.75",
+                "50.2",
+                "49.3"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.66",
+                "49.7",
+                "25.3"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2.69",
+                "51.9",
+                "31.2",
+                "346,623.46",
+                "1,081,768.36",
+                "61,356.27",
+                "1,367,035.55"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "97",
+                "40",
+                "10",
+                "31"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.31",
+                "43.3",
+                "44.5"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Strategic Portfolio"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "15.0",
+                "2.02"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "0.1",
+                "0.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "10.22",
+                "11.1",
+                "0.0",
+                "125,530.00",
+                "942,909.00",
+                "32,150.00",
+                "1,036,289.00"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "-1.53",
+                "30.2",
+                "42.2",
+                "31,854.07",
+                "468,729.81",
+                "31,290.15",
+                "469,293.73"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "3.13",
+                "23.8",
+                "49.7"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Tactical and Special Situations Portfolio"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "40.0",
+                "2025",
+                "10",
+                "14"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "25.0",
+                "2025",
+                "11",
+                "18"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "25.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "30.0",
+                "30",
+                "2025"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Recent Investment Activity"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2023",
+                "2024"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2020",
+                "2021"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Private Real Estate \u2014 Fund Total Return (net)",
+                  "Fund Total Return (net) / Latest Qtr",
+                  "1.0%"
+                ],
+                [
+                  "U.S. Private Real Estate \u2014 Fund Total Return (net)",
+                  "Fund Total Return (net) / 1-Yr",
+                  "3.3%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "NPI Cap Rate vs. 10-Year Treasury",
+                  "10-Yr Treasury Yield / 25Q4",
+                  "~4.2%"
+                ],
+                [
+                  "NPI Cap Rate vs. 10-Year Treasury",
+                  "NPI Val-Wtd Cap Rate / 25Q4",
+                  "~4.6%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2025 / Industrial",
+                  "~1.7%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2026-27 (p.a.) / Industrial",
+                  "~1.3%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2028-30 (p.a.) / Industrial",
+                  "~1.8%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2025 / Residential",
+                  "~2.2%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2026-27 (p.a.) / Residential",
+                  "~1.4%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2028-30 (p.a.) / Residential",
+                  "~1.3%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Industrial \u2014 Total Return (net, % annualized)",
+                  "Industrial: Specialized / 1-Yr",
+                  "5.5%"
+                ],
+                [
+                  "U.S. Industrial \u2014 Total Return (net, % annualized)",
+                  "NPI-Industrial / 1-Yr",
+                  "4.4%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
+                  "Cost to Own / 4Q25",
+                  "$3,400 / month"
+                ],
+                [
+                  "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
+                  "Cost to Rent / 4Q25",
+                  "$2,500 / month"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
+                  "Appraisal Cap Rate / 25Q4",
+                  "~5.6%"
+                ],
+                [
+                  "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
+                  "Transaction Cap Rate / 25Q4",
+                  "~7.7%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Population Growth / Austin",
+                  "~65.0%"
+                ],
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Retail Inventory Growth / Austin",
+                  "~30.0%"
+                ],
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Population Growth / Charlotte",
+                  "~38.0%"
+                ],
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Retail Inventory Growth / Charlotte",
+                  "~17.0%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "0.7",
+                "2.1",
+                "25",
+                "25"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Market Update"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": "allocation",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "436.1",
+                "495.6"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Allocation Over Time"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": "property",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": "geography",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "12.1",
+                "9.6"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Diversification"
+        },
+        {
+          "blocks": [
+            {
+              "columns": [
+                "Guideline",
+                "Limit",
+                "Actual",
+                "Status"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Style / sector concentration",
+                  "<=40% per sector",
+                  "36.2% (Industrial)",
+                  "In compliance"
+                ],
+                [
+                  "Location diversification",
+                  "<=35% Ex-US",
+                  "9.6% Ex-US",
+                  "In compliance"
+                ],
+                [
+                  "Leverage (loan-to-value)",
+                  "<=50% / 75%",
+                  "34.0% strategic / 37.7% tactical",
+                  "In compliance"
+                ],
+                [
+                  "Return objective",
+                  "Exceed benchmark",
+                  "5.46% vs 2.66% (1-Yr)",
+                  "In compliance"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Compliance"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Disclosure Statements"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Appendix A: Quarterly Flash Report"
+        }
+      ]
+    },
+    {
+      "charts": [
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "1-Yr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": 3.3
+            },
+            {
+              "label": "3-Yr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": -2.4
+            },
+            {
+              "label": "5-Yr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": 3.3
+            },
+            {
+              "label": "Latest Qtr",
+              "method": "label",
+              "series": "Fund Total Return (net)",
+              "unit": "%",
+              "value": 1.0
+            }
+          ],
+          "slide": 4
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.4
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 3.8
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "10-Yr Treasury Yield",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "NPI Val-Wtd Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            }
+          ],
+          "slide": 5
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "Industrial",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 1.7
+            },
+            {
+              "label": "Industrial",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 1.3
+            },
+            {
+              "label": "Industrial",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 1.8
+            },
+            {
+              "label": "Office",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 0.6
+            },
+            {
+              "label": "Office",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 0.4
+            },
+            {
+              "label": "Office",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 0.4
+            },
+            {
+              "label": "Residential",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 2.2
+            },
+            {
+              "label": "Residential",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 1.4
+            },
+            {
+              "label": "Residential",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 1.3
+            },
+            {
+              "label": "Retail",
+              "method": "axis_read",
+              "series": "2025",
+              "unit": "%",
+              "value": 0.2
+            },
+            {
+              "label": "Retail",
+              "method": "axis_read",
+              "series": "2026-27 (p.a.)",
+              "unit": "%",
+              "value": 0.2
+            },
+            {
+              "label": "Retail",
+              "method": "axis_read",
+              "series": "2028-30 (p.a.)",
+              "unit": "%",
+              "value": 0.1
+            }
+          ],
+          "slide": 6
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "1-Yr",
+              "method": "label",
+              "series": "Industrial: Specialized",
+              "unit": "%",
+              "value": 5.5
+            },
+            {
+              "label": "1-Yr",
+              "method": "label",
+              "series": "NPI-Industrial",
+              "unit": "%",
+              "value": 4.4
+            },
+            {
+              "label": "3-Yr",
+              "method": "label",
+              "series": "Industrial: Specialized",
+              "unit": "%",
+              "value": 4.0
+            },
+            {
+              "label": "3-Yr",
+              "method": "label",
+              "series": "NPI-Industrial",
+              "unit": "%",
+              "value": 1.6
+            },
+            {
+              "label": "5-Yr",
+              "method": "label",
+              "series": "Industrial: Specialized",
+              "unit": "%",
+              "value": 11.8
+            },
+            {
+              "label": "5-Yr",
+              "method": "label",
+              "series": "NPI-Industrial",
+              "unit": "%",
+              "value": 10.2
+            }
+          ],
+          "slide": 7
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "4Q21",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 2350.0
+            },
+            {
+              "label": "4Q21",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2150.0
+            },
+            {
+              "label": "4Q22",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3200.0
+            },
+            {
+              "label": "4Q22",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2300.0
+            },
+            {
+              "label": "4Q23",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3500.0
+            },
+            {
+              "label": "4Q23",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2350.0
+            },
+            {
+              "label": "4Q24",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3500.0
+            },
+            {
+              "label": "4Q24",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2450.0
+            },
+            {
+              "label": "4Q25",
+              "method": "label",
+              "series": "Cost to Own",
+              "unit": "USD/month",
+              "value": 3400.0
+            },
+            {
+              "label": "4Q25",
+              "method": "label",
+              "series": "Cost to Rent",
+              "unit": "USD/month",
+              "value": 2500.0
+            }
+          ],
+          "slide": 8
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "22Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.1
+            },
+            {
+              "label": "22Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "22Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.3
+            },
+            {
+              "label": "22Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 5.7
+            },
+            {
+              "label": "22Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.2
+            },
+            {
+              "label": "22Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 4.6
+            },
+            {
+              "label": "22Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.4
+            },
+            {
+              "label": "22Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.2
+            },
+            {
+              "label": "23Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 4.7
+            },
+            {
+              "label": "23Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.2
+            },
+            {
+              "label": "23Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.2
+            },
+            {
+              "label": "23Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 5.7
+            },
+            {
+              "label": "23Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.4
+            },
+            {
+              "label": "23Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.9
+            },
+            {
+              "label": "23Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.5
+            },
+            {
+              "label": "23Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.2
+            },
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.9
+            },
+            {
+              "label": "24Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 10.3
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 6.0
+            },
+            {
+              "label": "24Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.7
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.9
+            },
+            {
+              "label": "24Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.8
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.8
+            },
+            {
+              "label": "24Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.6
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.7
+            },
+            {
+              "label": "25Q1",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 8.3
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.9
+            },
+            {
+              "label": "25Q2",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.8
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.6
+            },
+            {
+              "label": "25Q3",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 6.3
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "Appraisal Cap Rate",
+              "unit": "%",
+              "value": 5.6
+            },
+            {
+              "label": "25Q4",
+              "method": "axis_read",
+              "series": "Transaction Cap Rate",
+              "unit": "%",
+              "value": 7.7
+            }
+          ],
+          "slide": 9
+        },
+        {
+          "chart": 1,
+          "observations": [
+            {
+              "label": "Austin",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 65.0
+            },
+            {
+              "label": "Austin",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 30.0
+            },
+            {
+              "label": "Charlotte",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 38.0
+            },
+            {
+              "label": "Charlotte",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 17.0
+            },
+            {
+              "label": "Chicago",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 2.0
+            },
+            {
+              "label": "Chicago",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 5.0
+            },
+            {
+              "label": "Denver",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 25.0
+            },
+            {
+              "label": "Denver",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 15.0
+            },
+            {
+              "label": "LA",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 0.0
+            },
+            {
+              "label": "LA",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 3.0
+            },
+            {
+              "label": "NY/NJ",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 9.0
+            },
+            {
+              "label": "NY/NJ",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 5.0
+            },
+            {
+              "label": "Phoenix",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 30.0
+            },
+            {
+              "label": "Phoenix",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 17.0
+            },
+            {
+              "label": "Tampa",
+              "method": "axis_read",
+              "series": "Population Growth",
+              "unit": "%",
+              "value": 25.0
+            },
+            {
+              "label": "Tampa",
+              "method": "axis_read",
+              "series": "Retail Inventory Growth",
+              "unit": "%",
+              "value": 13.0
+            }
+          ],
+          "slide": 10
+        }
+      ],
+      "client": "CPERS",
+      "financials": {
+        "activity": {
+          "events": [
+            {
+              "action": "approved",
+              "action_id": "f_5519b88c82956e7a",
+              "amount": "20000000",
+              "amount_id": "f_6d53c51b8bfee765",
+              "date": "2025-02-11",
+              "date_id": "f_90f09760525ef3d9",
+              "id": "f_cf54691d90486688",
+              "name": "Meridian Opportunity Fund V",
+              "recommendation": "Approve a commitment of up to USD20 million to Meridian Opportunity Fund V"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_7de421a51001b15b",
+              "amount": "20000000",
+              "amount_id": "f_be489c2e2cd75f37",
+              "date": "2025-04-08",
+              "date_id": "f_ad1584e3e5b803cf",
+              "id": "f_ed33bd8e9b59753c",
+              "name": "Blackford Special Situations Fund II",
+              "recommendation": "Approve up to a USD20 million commitment to Blackford Special Situations Fund II"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_b3bf258157c14f60",
+              "amount": "20000000",
+              "amount_id": "f_4f89addad068e2a5",
+              "date": "2025-06-17",
+              "date_id": "f_21cad4d72ffa4f8d",
+              "id": "f_30a82808c5faa5c1",
+              "name": "Ironwood Value-Add Fund III",
+              "recommendation": "Approve a commitment of up to USD20 million to Ironwood Value-Add Fund III"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_3d7f4da712e28b20",
+              "amount": "25000000",
+              "amount_id": "f_3a01975ed5569db2",
+              "date": "2025-08-19",
+              "date_id": "f_c55713d55758bcfb",
+              "id": "f_ebba3c8fcf555aad",
+              "name": "Alder Creek Multifamily Fund III",
+              "recommendation": "Approve a commitment of up to USD 25 million to a value-add multifamily strategy"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_30a201c12e3a3965",
+              "amount": "30000000",
+              "amount_id": "f_c11065aafe7de151",
+              "date": "2025-09-16",
+              "date_id": "f_36804666902b2348",
+              "id": "f_641c51c419a0a24c",
+              "name": "Sentinel Logistics Income Fund",
+              "recommendation": "Approve a commitment of up to USD 30 million to a core-plus logistics strategy"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_7b8336c60d751713",
+              "amount": "40000000",
+              "amount_id": "f_30769425b6d75350",
+              "date": "2025-10-14",
+              "date_id": "f_c7f914fd458e6014",
+              "id": "f_024f9747ea82a800",
+              "name": "Northgate Logistics Partners",
+              "recommendation": "Approve a commitment of up to USD40 million to Northgate Logistics Partners"
+            },
+            {
+              "action": "withdrawn",
+              "action_id": "f_a5a61961686b2af0",
+              "amount": "25000000",
+              "amount_id": "f_4b0ad78b4a6c19de",
+              "date": "2025-11-18",
+              "date_id": "f_7152e7649d731553",
+              "id": "f_957442e1990f951a",
+              "name": "Alder Creek Multifamily Fund III",
+              "recommendation": "Withdraw the previously approved USD 25 million commitment to Alder Creek Multifamily Fund III; the Fund closed at its hard cap without an allocation to the client"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_20dffd8905560704",
+              "amount": "25000000",
+              "amount_id": "f_66bc2b8a15a61598",
+              "date": "2025-11-18",
+              "date_id": "f_acb1d33c303dcaed",
+              "id": "f_56fe2135e7d842d0",
+              "name": "Ridgeline Value Fund IV",
+              "recommendation": "Approve up to a USD25 million commitment to Ridgeline Value Fund IV"
+            },
+            {
+              "action": "lapsed",
+              "action_id": "f_f8fe906f23f7bb13",
+              "amount": "30000000",
+              "amount_id": "f_548f67eab570eef8",
+              "date": "2025-12-09",
+              "date_id": "f_db1b0451c16c7a7b",
+              "id": "f_596da09c0187dd39",
+              "name": "Sentinel Logistics Income Fund",
+              "recommendation": "Note the lapse of the previously approved USD 30 million commitment to Sentinel Logistics Income Fund; the approval expired unexercised on 30 November 2025 and is not being renewed"
+            }
+          ],
+          "new": [
+            {
+              "action": "approved",
+              "action_id": "f_7b8336c60d751713",
+              "amount": "40000000",
+              "amount_id": "f_30769425b6d75350",
+              "date": "2025-10-14",
+              "date_id": "f_c7f914fd458e6014",
+              "id": "f_024f9747ea82a800",
+              "name": "Northgate Logistics Partners",
+              "recommendation": "Approve a commitment of up to USD40 million to Northgate Logistics Partners"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_20dffd8905560704",
+              "amount": "25000000",
+              "amount_id": "f_66bc2b8a15a61598",
+              "date": "2025-11-18",
+              "date_id": "f_acb1d33c303dcaed",
+              "id": "f_56fe2135e7d842d0",
+              "name": "Ridgeline Value Fund IV",
+              "recommendation": "Approve up to a USD25 million commitment to Ridgeline Value Fund IV"
+            }
+          ],
+          "open": [
+            {
+              "action": "approved",
+              "action_id": "f_7b8336c60d751713",
+              "amount": "40000000",
+              "amount_id": "f_30769425b6d75350",
+              "date": "2025-10-14",
+              "date_id": "f_c7f914fd458e6014",
+              "id": "f_024f9747ea82a800",
+              "name": "Northgate Logistics Partners",
+              "recommendation": "Approve a commitment of up to USD40 million to Northgate Logistics Partners"
+            },
+            {
+              "action": "approved",
+              "action_id": "f_20dffd8905560704",
+              "amount": "25000000",
+              "amount_id": "f_66bc2b8a15a61598",
+              "date": "2025-11-18",
+              "date_id": "f_acb1d33c303dcaed",
+              "id": "f_56fe2135e7d842d0",
+              "name": "Ridgeline Value Fund IV",
+              "recommendation": "Approve up to a USD25 million commitment to Ridgeline Value Fund IV"
+            }
+          ],
+          "reversed": [
+            {
+              "action": "withdrawn",
+              "action_id": "f_a5a61961686b2af0",
+              "amount": "25000000",
+              "amount_id": "f_4b0ad78b4a6c19de",
+              "date": "2025-11-18",
+              "date_id": "f_7152e7649d731553",
+              "id": "f_957442e1990f951a",
+              "name": "Alder Creek Multifamily Fund III",
+              "recommendation": "Withdraw the previously approved USD 25 million commitment to Alder Creek Multifamily Fund III; the Fund closed at its hard cap without an allocation to the client"
+            },
+            {
+              "action": "lapsed",
+              "action_id": "f_f8fe906f23f7bb13",
+              "amount": "30000000",
+              "amount_id": "f_548f67eab570eef8",
+              "date": "2025-12-09",
+              "date_id": "f_db1b0451c16c7a7b",
+              "id": "f_596da09c0187dd39",
+              "name": "Sentinel Logistics Income Fund",
+              "recommendation": "Note the lapse of the previously approved USD 30 million commitment to Sentinel Logistics Income Fund; the approval expired unexercised on 30 November 2025 and is not being renewed"
+            }
+          ],
+          "scope": [
+            {
+              "id": "f_d523c9ece4b38f09"
+            }
+          ]
+        },
+        "compliance": [
+          {
+            "actual": "36.2% (Industrial)",
+            "evidence": [
+              "f_dea15697cfa9083b",
+              "f_79212cf224c49141"
+            ],
+            "label": "Style / sector concentration",
+            "limit": "<=40% per sector",
+            "status": "In compliance"
+          },
+          {
+            "actual": "9.6% Ex-US",
+            "evidence": [
+              "f_11b582c6ecddb641",
+              "f_3f2ff107eb54353d"
+            ],
+            "label": "Location diversification",
+            "limit": "<=35% Ex-US",
+            "status": "In compliance"
+          },
+          {
+            "actual": "34.0% strategic / 37.7% tactical",
+            "evidence": [
+              "f_e1d97e7d49a814e5",
+              "f_0e22f36a5ac7f9cc",
+              "f_d8297b3c312c6b0d"
+            ],
+            "label": "Leverage (loan-to-value)",
+            "limit": "<=50% / 75%",
+            "status": "In compliance"
+          },
+          {
+            "actual": "5.46% vs 2.66% (1-Yr)",
+            "evidence": [
+              "f_53f50bc5fd317cdf",
+              "f_9466d7cd729149f2"
+            ],
+            "label": "Return objective",
+            "limit": "Exceed benchmark",
+            "status": "In compliance"
+          }
+        ],
+        "diversification": {
+          "geography": [
+            {
+              "id": "f_a3b5c0e513590309",
+              "label": "Northeast",
+              "value": 10.21531681791713
+            },
+            {
+              "id": "f_e22e08a28df87573",
+              "label": "Mideast",
+              "value": 13.07782520604736
+            },
+            {
+              "id": "f_19bb8f00f7485fd0",
+              "label": "East North Central",
+              "value": 7.12806118834026
+            },
+            {
+              "id": "f_3b333ba5e57363ca",
+              "label": "West North Central",
+              "value": 2.804817107906016
+            },
+            {
+              "id": "f_e01c76d5b356961d",
+              "label": "Southeast",
+              "value": 17.22007307886236
+            },
+            {
+              "id": "f_a090cdf36c947283",
+              "label": "Southwest",
+              "value": 8.281096281391738
+            },
+            {
+              "id": "f_d20f17358f3485e2",
+              "label": "Mountain",
+              "value": 7.983794363143867
+            },
+            {
+              "id": "f_53bf1184fa3d2858",
+              "label": "Pacific",
+              "value": 17.63727326703328
+            },
+            {
+              "id": "f_ce59f4fd6ef93995",
+              "label": "Various-US",
+              "value": 3.582728105861375
+            },
+            {
+              "id": "f_6bcb0c93d383e24a",
+              "label": "Ex-US",
+              "value": 12.0690145834966
+            }
+          ],
+          "property": [
+            {
+              "id": "f_832187d04bd0b44c",
+              "label": "Apartment",
+              "value": 23.45868508190368
+            },
+            {
+              "id": "f_08f8c668cd8ebf81",
+              "label": "Office",
+              "value": 7.871396721411899
+            },
+            {
+              "id": "f_dea15697cfa9083b",
+              "label": "Industrial",
+              "value": 36.20124610806096
+            },
+            {
+              "id": "f_52292f2691d1b045",
+              "label": "Retail",
+              "value": 8.185721779735681
+            },
+            {
+              "id": "f_1d1b6e48488091ea",
+              "label": "Hotel",
+              "value": 1.210078231954257
+            },
+            {
+              "id": "f_97c84788ecdd606a",
+              "label": "Other",
+              "value": 23.07287207693352
+            }
+          ]
+        },
+        "funds": [
+          {
+            "appreciation": "-557954.4",
+            "appreciation_id": "f_dca8e865c6f78202",
+            "beginning": "55152948.31",
+            "beginning_id": "f_698c4752d3eb7937",
+            "commitment": "40000000",
+            "commitment_id": "f_348d042f759af67a",
+            "contribution": "-187176.36",
+            "contribution_id": "f_fed7c150864778b1",
+            "contributions": "0",
+            "contributions_id": "f_4f4d61379390c213",
+            "distributions": "540922.54",
+            "distributions_id": "f_4d7b2d0b8be4d070",
+            "ending": "54424849.41",
+            "ending_id": "f_a271e386f18b62ee",
+            "fees": "163256.86",
+            "fees_id": "f_d0fe577737882740",
+            "funded": "67672938.77",
+            "funded_id": "f_78fa68e75eaf2eb4",
+            "income": "534034.9",
+            "income_id": "f_f514f0f46e5e489f",
+            "irr": 9.87284312831661,
+            "irr_id": "f_d85ad595123b2e68",
+            "ltv": 28.2,
+            "ltv_id": "f_99c7452e8935aae5",
+            "multiple": 2.29230116837735,
+            "multiple_id": "f_3e71efb5f32a5b9c",
+            "name": "Cornerstone Core Property Fund",
+            "name_id": "f_0b38330db80c6de6",
+            "nav": "54424849.41",
+            "nav_id": "f_b6faf534b0c97e70",
+            "q_net": -0.339376888698555,
+            "q_net_id": "f_9f821123efe8fbc3",
+            "roles": [
+              "second-largest detractor",
+              "largest individual position"
+            ],
+            "roles_id": "f_782b92c0fd5efc5f",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_9cfcb8addd40e1b2",
+            "withdrawals": "0",
+            "withdrawals_id": "f_690a7d37a3f17ea7"
+          },
+          {
+            "appreciation": "147008.9",
+            "appreciation_id": "f_ba1d7e8d2640bb7a",
+            "beginning": "44534756.42",
+            "beginning_id": "f_2b9265c4cbd703bd",
+            "commitment": "40000000",
+            "commitment_id": "f_47a8800474b94b35",
+            "contribution": "466410.84",
+            "contribution_id": "f_623dd0037e2fa7af",
+            "contributions": "93089.87",
+            "contributions_id": "f_13e05b0095ac05a4",
+            "distributions": "0",
+            "distributions_id": "f_7b158f3eca6d7dad",
+            "ending": "41870446.64",
+            "ending_id": "f_5726ffb035605111",
+            "fees": "93089.87",
+            "fees_id": "f_ddae30621f808834",
+            "funded": "41594403.91",
+            "funded_id": "f_8f3d2a0ead22dc79",
+            "income": "412491.81",
+            "income_id": "f_fe2272fffdff77a8",
+            "irr": 7.002246621176489,
+            "irr_id": "f_25679028ae430f83",
+            "ltv": 27.9597150489369,
+            "ltv_id": "f_9c43c229515df79c",
+            "multiple": 2.16457243659055,
+            "multiple_id": "f_6cc2f3798a27b8e8",
+            "name": "Beacon Diversified Property Trust",
+            "name_id": "f_1ddbfa65c04644d2",
+            "nav": "41870446.64",
+            "nav_id": "f_ca559080040daee0",
+            "q_net": 1.1191008452347,
+            "q_net_id": "f_f072978d13ad5f7b",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_1ebff6d818c7efa8",
+            "withdrawals": "3223810.49",
+            "withdrawals_id": "f_87a59020797a1d82"
+          },
+          {
+            "appreciation": "147924.68",
+            "appreciation_id": "f_aae51f9546682516",
+            "beginning": "48428073.68",
+            "beginning_id": "f_d85a0cbb03ec519b",
+            "commitment": "30273946.42",
+            "commitment_id": "f_0ae17bc8581ff367",
+            "contribution": "590243.76",
+            "contribution_id": "f_076a9525078474d2",
+            "contributions": "0",
+            "contributions_id": "f_6bf1e1a9f00167a3",
+            "distributions": "442319.08",
+            "distributions_id": "f_9138a587ea29793b",
+            "ending": "48575998.36",
+            "ending_id": "f_b063519e2cd9edde",
+            "fees": "95960.81",
+            "fees_id": "f_21bc73bafbbd1be8",
+            "funded": "41960593.29",
+            "funded_id": "f_4818d5aa6eac5bf6",
+            "income": "538279.89",
+            "income_id": "f_60e907c987b4353c",
+            "irr": 7.461515098076809,
+            "irr_id": "f_40f19e679b1de39c",
+            "ltv": 22.17,
+            "ltv_id": "f_0a81cfae3102456b",
+            "multiple": 1.90804358834174,
+            "multiple_id": "f_2a5e6f8a58552b34",
+            "name": "Summit Multifamily Partners",
+            "name_id": "f_69afbc35654a0ded",
+            "nav": "48575998.36",
+            "nav_id": "f_50b213c0b6acf969",
+            "q_net": 1.21880495164886,
+            "q_net_id": "f_b5ebef0c508b5f6d",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_e94e664a1158c442",
+            "withdrawals": "0",
+            "withdrawals_id": "f_76fce00a97c341d0"
+          },
+          {
+            "appreciation": "277855.27",
+            "appreciation_id": "f_0490288a4ba3c85c",
+            "beginning": "30680965.2",
+            "beginning_id": "f_6bce0d7a04db80ba",
+            "commitment": "15910000",
+            "commitment_id": "f_006aeb2efb9f440b",
+            "contribution": "320081.52",
+            "contribution_id": "f_61e7b56776a63ce8",
+            "contributions": "0",
+            "contributions_id": "f_2bb4965bb8a96ae0",
+            "distributions": "170363.04",
+            "distributions_id": "f_b40ef27734b8b15d",
+            "ending": "30830683.68",
+            "ending_id": "f_2bf6c8095608f282",
+            "fees": "66232",
+            "fees_id": "f_b63b05994e6b996b",
+            "funded": "20912167.39",
+            "funded_id": "f_d69bd683d9fe2cec",
+            "income": "108458.25",
+            "income_id": "f_7705ccbc4f13383a",
+            "irr": 8.98776172766865,
+            "irr_id": "f_1fe8ead47bb1495d",
+            "ltv": 50.0,
+            "ltv_id": "f_4ede22fabe7dd521",
+            "multiple": 1.89918805876582,
+            "multiple_id": "f_65b4404b01551b7b",
+            "name": "Whitfield Diversified Property Fund",
+            "name_id": "f_205a258010db4f8a",
+            "nav": "30830683.68",
+            "nav_id": "f_0e852509de05e45c",
+            "q_net": 1.0432576612681,
+            "q_net_id": "f_cac987fcf7cfc3db",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_9ec14b1650825e5f",
+            "withdrawals": "0",
+            "withdrawals_id": "f_ace5a692c7962540"
+          },
+          {
+            "appreciation": "306712.31",
+            "appreciation_id": "f_540f0ba86635f246",
+            "beginning": "50124791.55",
+            "beginning_id": "f_fc78bd6422a4b29a",
+            "commitment": "60000000",
+            "commitment_id": "f_ec2d145eee18e6f0",
+            "contribution": "373688.78",
+            "contribution_id": "f_ffd884c57b95f68a",
+            "contributions": "0",
+            "contributions_id": "f_5dd91fbea43dc8ed",
+            "distributions": "299359.13",
+            "distributions_id": "f_6cf3b16bb818d083",
+            "ending": "50199121.2",
+            "ending_id": "f_dc98fea8ce2c70b0",
+            "fees": "121948.94",
+            "fees_id": "f_1f386ee2285b8c9a",
+            "funded": "69338036.09",
+            "funded_id": "f_5872b2f05db90a2b",
+            "income": "188925.41",
+            "income_id": "f_89b673da7c1b58d8",
+            "irr": 4.56079692951544,
+            "irr_id": "f_2b964eeece5f294f",
+            "ltv": 49.3,
+            "ltv_id": "f_0e6e442d9b2a8b5b",
+            "multiple": 1.32357785733761,
+            "multiple_id": "f_f989996958b6f775",
+            "name": "Silverline Core-Plus Fund",
+            "name_id": "f_05b59e99389849b8",
+            "nav": "50199121.2",
+            "nav_id": "f_ed146f59bd89ec2d",
+            "q_net": 0.749506586638144,
+            "q_net_id": "f_bf738eb028e2171f",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_4a6ae5c19a43a5a2",
+            "withdrawals": "0",
+            "withdrawals_id": "f_4cf235ff36aa53a0"
+          },
+          {
+            "appreciation": "188349",
+            "appreciation_id": "f_faf5c8f162dbb917",
+            "beginning": "49518338",
+            "beginning_id": "f_094ac5e653f8c39d",
+            "commitment": "45630580",
+            "commitment_id": "f_fae7966c76f8a9fc",
+            "contribution": "813393",
+            "contribution_id": "f_3d7f263997745bcd",
+            "contributions": "0",
+            "contributions_id": "f_2e5715259e47f59e",
+            "distributions": "602493",
+            "distributions_id": "f_92a30ce2db36b4ff",
+            "ending": "49729238",
+            "ending_id": "f_337de032d4a3bed2",
+            "fees": "76247",
+            "fees_id": "f_268c86fdd66916d3",
+            "funded": "49039514",
+            "funded_id": "f_eef1381e7c413ec4",
+            "income": "701291",
+            "income_id": "f_99562f77d91ae1ec",
+            "irr": 6.63099777274422,
+            "irr_id": "f_59b6fde39d156683",
+            "ltv": 25.2589494702858,
+            "ltv_id": "f_f6523001b5d159a6",
+            "multiple": 1.40556445971304,
+            "multiple_id": "f_9d2d53c9b0c625d1",
+            "name": "Kestrel U.S. Real Estate Fund",
+            "name_id": "f_d2c5a1b09abbd5ee",
+            "nav": "49729238",
+            "nav_id": "f_f438d23d6cae148e",
+            "q_net": 1.66261896895477,
+            "q_net_id": "f_54f77e01e5ee87db",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_805ddb2ebc6bd66f",
+            "withdrawals": "0",
+            "withdrawals_id": "f_6c5e403000cee534"
+          },
+          {
+            "appreciation": "1081768.36",
+            "appreciation_id": "f_b0e2cc3d0d6feb20",
+            "beginning": "50893040.57",
+            "beginning_id": "f_7a57ca9ff8ae2a59",
+            "commitment": "40000000",
+            "commitment_id": "f_72c3c767851de062",
+            "contribution": "1367035.55",
+            "contribution_id": "f_daeef0717ee618e3",
+            "contributions": "0",
+            "contributions_id": "f_38042dc533210641",
+            "distributions": "344320.06",
+            "distributions_id": "f_17a8a9cb7fe67c46",
+            "ending": "51915756.06",
+            "ending_id": "f_d4944cba00cdb325",
+            "fees": "61356.27",
+            "fees_id": "f_691a850d8fc86cdc",
+            "funded": "41100937.25",
+            "funded_id": "f_463c9ff9d9331435",
+            "income": "346623.46",
+            "income_id": "f_ef2222f687cbe598",
+            "irr": 10.0643683508967,
+            "irr_id": "f_544b93e57effd349",
+            "ltv": 31.15,
+            "ltv_id": "f_c59194cffa21a503",
+            "multiple": 1.36207301331066,
+            "multiple_id": "f_368a7e7d65f9f059",
+            "name": "Redwood Logistics Trust",
+            "name_id": "f_a28ed47ef16e42a6",
+            "nav": "51915756.06",
+            "nav_id": "f_b2aa2571b6e37b63",
+            "q_net": 2.69214164511806,
+            "q_net_id": "f_2cd919e557b98dab",
+            "roles": [
+              "largest contributor",
+              "second-largest individual position"
+            ],
+            "roles_id": "f_682779d40e1f6f46",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_3ae40116e4376486",
+            "withdrawals": "0",
+            "withdrawals_id": "f_e7995a5b0ce57c72"
+          },
+          {
+            "appreciation": "163692.26",
+            "appreciation_id": "f_e3cc4da01adea17f",
+            "beginning": "43089031.2",
+            "beginning_id": "f_e79f1c29ae7cbd8c",
+            "commitment": "40000000",
+            "commitment_id": "f_b1ad92dafb3a82cc",
+            "contribution": "563014.90",
+            "contribution_id": "f_d8f38326b9d3bead",
+            "contributions": "64633.57",
+            "contributions_id": "f_93e1b156510bbcd8",
+            "distributions": "442309.43",
+            "distributions_id": "f_3d773e11e77b16cd",
+            "ending": "43274370.24",
+            "ending_id": "f_863b05a08cdb9020",
+            "fees": "64633.57",
+            "fees_id": "f_c6af6380bc8172cc",
+            "funded": "41206412.06",
+            "funded_id": "f_487bdc8a808fe557",
+            "income": "463956.21",
+            "income_id": "f_d221b34421358505",
+            "irr": 4.76859516972454,
+            "irr_id": "f_10723b1e12b734a5",
+            "ltv": 44.49,
+            "ltv_id": "f_67385ffeab46ef3c",
+            "multiple": 1.14925583234582,
+            "multiple_id": "f_554aff28518da905",
+            "name": "Harborview Industrial Fund",
+            "name_id": "f_2d8e82fff98516f3",
+            "nav": "43274370.24",
+            "nav_id": "f_bc0466f306b31a3a",
+            "q_net": 1.30723300416828,
+            "q_net_id": "f_fcdcb73a6fb7211d",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Strategic",
+            "unfunded": "0",
+            "unfunded_id": "f_b2e96c766e9ce226",
+            "withdrawals": "0",
+            "withdrawals_id": "f_daa179317cee723c"
+          },
+          {
+            "appreciation": "8942",
+            "appreciation_id": "f_42b87db84208fa92",
+            "beginning": "110082",
+            "beginning_id": "f_dc79c26a58675860",
+            "commitment": "20000000",
+            "commitment_id": "f_812e4edb386ff231",
+            "contribution": "2538",
+            "contribution_id": "f_78ac8f655dafdf27",
+            "contributions": "0",
+            "contributions_id": "f_ef4a8420f9cb6ad4",
+            "distributions": "0",
+            "distributions_id": "f_83fe904564c23dad",
+            "ending": "112620",
+            "ending_id": "f_024082dec0580df7",
+            "fees": "634",
+            "fees_id": "f_53c8ded116b83367",
+            "funded": "20524591",
+            "funded_id": "f_bb9e1c3a2df71f19",
+            "income": "-5770",
+            "income_id": "f_82d84caf7bf1accc",
+            "irr": 20.040093794608,
+            "irr_id": "f_70553cc1b274e12e",
+            "ltv": 0.0,
+            "ltv_id": "f_22baa58ba15b84db",
+            "multiple": 1.90118848166085,
+            "multiple_id": "f_900332dce66e44f0",
+            "name": "Tidewater Distressed Realty Fund",
+            "name_id": "f_cbdb4277c0a67314",
+            "nav": "112620",
+            "nav_id": "f_b02afeb3e7dfabe6",
+            "q_net": null,
+            "q_net_id": null,
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Tactical",
+            "unfunded": "0",
+            "unfunded_id": "f_058361fdc2910d55",
+            "withdrawals": "0",
+            "withdrawals_id": "f_123575c9faf8c6bf"
+          },
+          {
+            "appreciation": "942909",
+            "appreciation_id": "f_9566cbb8f151eef7",
+            "beginning": "10163914",
+            "beginning_id": "f_b8903587b9116539",
+            "commitment": "20000000",
+            "commitment_id": "f_08f370a988ff9eba",
+            "contribution": "1036289",
+            "contribution_id": "f_fcf6f6c622717c7c",
+            "contributions": "0",
+            "contributions_id": "f_09e598b984b36915",
+            "distributions": "96234",
+            "distributions_id": "f_7576d00d14e90c55",
+            "ending": "11103969",
+            "ending_id": "f_7e27e799a9f55fe0",
+            "fees": "32150",
+            "fees_id": "f_aad953d82519921e",
+            "funded": "19627826",
+            "funded_id": "f_2b9e2f6b4d70f5ca",
+            "income": "125530",
+            "income_id": "f_0b3d1989d649bd7b",
+            "irr": 9.86511749723479,
+            "irr_id": "f_f2173b5bcedf86a2",
+            "ltv": 0.0,
+            "ltv_id": "f_c322e63b5a8ea881",
+            "multiple": 1.46882838680147,
+            "multiple_id": "f_0321655388066d55",
+            "name": "Ironwood Value-Add Fund III",
+            "name_id": "f_c14e046778ff1105",
+            "nav": "11103969",
+            "nav_id": "f_ada3d9c7655e2a05",
+            "q_net": 10.2178501274776,
+            "q_net_id": "f_6a9cb440ed2c8787",
+            "roles": [
+              "second-largest contributor"
+            ],
+            "roles_id": "f_1ca4a9b13598864f",
+            "sleeve": "Tactical",
+            "unfunded": "2700807",
+            "unfunded_id": "f_eb038ce1c6fb94a0",
+            "withdrawals": "0",
+            "withdrawals_id": "f_ba5406e5762b2865"
+          },
+          {
+            "appreciation": "-468729.81",
+            "appreciation_id": "f_6be78ee7ad77d437",
+            "beginning": "30706443.28",
+            "beginning_id": "f_e0140d79b97d710d",
+            "commitment": "20000000",
+            "commitment_id": "f_ea24ae6c13672d50",
+            "contribution": "-469293.73",
+            "contribution_id": "f_53e3ca2b0f3a395f",
+            "contributions": "0",
+            "contributions_id": "f_056bbf7200de9be8",
+            "distributions": "0",
+            "distributions_id": "f_d978ac3eb8b6b8f0",
+            "ending": "30237149.55",
+            "ending_id": "f_d72f5c849f766dad",
+            "fees": "-31290.15",
+            "fees_id": "f_a5c2f964ad4e881d",
+            "funded": "41481787.06",
+            "funded_id": "f_5a9491b9b8c8e5cb",
+            "income": "-31854.07",
+            "income_id": "f_e3e92e3ca4118e0c",
+            "irr": 17.9657709243879,
+            "irr_id": "f_7832f5f67a9b2e6e",
+            "ltv": 42.2,
+            "ltv_id": "f_482b5f7ce812aab6",
+            "multiple": 1.40291503656352,
+            "multiple_id": "f_11f61c7b3080812c",
+            "name": "Meridian Opportunity Fund V",
+            "name_id": "f_7e76b74a96a1f345",
+            "nav": "30237149.55",
+            "nav_id": "f_292eeb058ae709e7",
+            "q_net": -1.52832330895732,
+            "q_net_id": "f_8c80f8eee2162e8e",
+            "roles": [
+              "largest detractor"
+            ],
+            "roles_id": "f_196949e4e86bfca9",
+            "sleeve": "Tactical",
+            "unfunded": "2147890",
+            "unfunded_id": "f_d964eda1755e4b8e",
+            "withdrawals": "0",
+            "withdrawals_id": "f_f7feda5b7ca2d0c7"
+          },
+          {
+            "appreciation": "1082224.05",
+            "appreciation_id": "f_8d2f6db69da8d1df",
+            "beginning": "23456973.18",
+            "beginning_id": "f_a40037852fdf4d8c",
+            "commitment": "20000000",
+            "commitment_id": "f_ae1fee079a93dd6f",
+            "contribution": "733640.17",
+            "contribution_id": "f_5138474c5e26fa15",
+            "contributions": "0",
+            "contributions_id": "f_df18d54392ed1fc2",
+            "distributions": "348746.33",
+            "distributions_id": "f_a49914a78da897dc",
+            "ending": "23841867.02",
+            "ending_id": "f_df9cb704127ded71",
+            "fees": "306936.43",
+            "fees_id": "f_0d0f5583743334cd",
+            "funded": "20996183.21",
+            "funded_id": "f_187ea82ec9ceb31a",
+            "income": "-41647.45",
+            "income_id": "f_341d69bea144b058",
+            "irr": 10.7535903035472,
+            "irr_id": "f_260c303db69e41c6",
+            "ltv": 49.7,
+            "ltv_id": "f_f4ecc8e6af4917b9",
+            "multiple": 1.31574999006689,
+            "multiple_id": "f_5918138fbf9101af",
+            "name": "Blackford Special Situations Fund II",
+            "name_id": "f_9ec6e048945507c2",
+            "nav": "23841867.02",
+            "nav_id": "f_7ffd4fa8307e0a8c",
+            "q_net": 3.12861066161374,
+            "q_net_id": "f_9685030898a53ccc",
+            "roles": [],
+            "roles_id": "f_8640a8356c98cb5d",
+            "sleeve": "Tactical",
+            "unfunded": "2737253.24",
+            "unfunded_id": "f_0cfc353a394315ac",
+            "withdrawals": "0",
+            "withdrawals_id": "f_8fa20dbf0062b39b"
+          }
+        ],
+        "history": [
+          {
+            "nav": 372.0,
+            "nav_id": "f_6b138f431a4d55a1",
+            "nav_precision": 0,
+            "quarter": "1Q24",
+            "quarter_id": "f_736e4d7841ba51c9",
+            "target": 480.0,
+            "target_id": "f_6727130e49c89f13",
+            "target_precision": 0
+          },
+          {
+            "nav": 386.0,
+            "nav_id": "f_b3f1adfbec278e19",
+            "nav_precision": 0,
+            "quarter": "2Q24",
+            "quarter_id": "f_67f474c375399be3",
+            "target": 482.0,
+            "target_id": "f_fcf2e36911fa6b0d",
+            "target_precision": 0
+          },
+          {
+            "nav": 397.0,
+            "nav_id": "f_fb85bc54f7a6b33d",
+            "nav_precision": 0,
+            "quarter": "3Q24",
+            "quarter_id": "f_ddb79e4bfab62bdd",
+            "target": 484.0,
+            "target_id": "f_d057ec64259eb6fc",
+            "target_precision": 0
+          },
+          {
+            "nav": 405.0,
+            "nav_id": "f_8c376b6ef858cf84",
+            "nav_precision": 0,
+            "quarter": "4Q24",
+            "quarter_id": "f_a00d31e6d85d6946",
+            "target": 486.0,
+            "target_id": "f_0ab99b60a5f9643c",
+            "target_precision": 0
+          },
+          {
+            "nav": 412.0,
+            "nav_id": "f_49c27762492eff81",
+            "nav_precision": 0,
+            "quarter": "1Q25",
+            "quarter_id": "f_d5c2807196c01177",
+            "target": 489.0,
+            "target_id": "f_98baba8ac6f17644",
+            "target_precision": 0
+          },
+          {
+            "nav": 424.0,
+            "nav_id": "f_999bd40156c5ab1c",
+            "nav_precision": 0,
+            "quarter": "2Q25",
+            "quarter_id": "f_589f8faa10aa5e13",
+            "target": 491.0,
+            "target_id": "f_8c6d633a4f99d70d",
+            "target_precision": 0
+          },
+          {
+            "nav": 437.0,
+            "nav_id": "f_c1feb14310aba019",
+            "nav_precision": 0,
+            "quarter": "3Q25",
+            "quarter_id": "f_92a1741bd2688289",
+            "target": 489.0,
+            "target_id": "f_d6ca25c3f776a89b",
+            "target_precision": 0
+          },
+          {
+            "nav": 436.0,
+            "nav_id": "f_b9c0c533e3c13eec",
+            "nav_precision": 0,
+            "quarter": "4Q25",
+            "quarter_id": "f_b51692af84362ace",
+            "target": 496.0,
+            "target_id": "f_fe245671d1c72119",
+            "target_precision": 0
+          }
+        ],
+        "policy": {
+          "allocation": [
+            10.0,
+            5.0,
+            20.0
+          ],
+          "allocation_id": "f_c4a35056612b5b2a",
+          "ex_us": [
+            35.0
+          ],
+          "ex_us_id": "f_3f2ff107eb54353d",
+          "leverage": [
+            50.0,
+            75.0
+          ],
+          "leverage_id": "f_d8297b3c312c6b0d",
+          "sector": [
+            40.0
+          ],
+          "sector_id": "f_79212cf224c49141"
+        },
+        "portfolio": {
+          "annual": [
+            {
+              "benchmark": 2.661877523805845,
+              "benchmark_id": "f_9466d7cd729149f2",
+              "horizon": 1,
+              "value": 5.456896006300482,
+              "value_id": "f_cd11a49a98d073b8"
+            },
+            {
+              "benchmark": -3.01595722640724,
+              "benchmark_id": "f_8818b6851f331848",
+              "horizon": 3,
+              "value": -0.4689220195756127,
+              "value_id": "f_94ef41240ac94d32"
+            },
+            {
+              "benchmark": 2.507888001548886,
+              "benchmark_id": "f_fcd8ab95242c641d",
+              "horizon": 5,
+              "value": 5.582675897256585,
+              "value_id": "f_04fb6a7e62ce25d9"
+            }
+          ],
+          "appreciation": "3320701.62",
+          "appreciation_id": "f_db45732e5c667aed",
+          "approved_total": "456814526.42",
+          "approved_total_id": "f_05eed7a975cccf5d",
+          "beginning": "436859357.39",
+          "beginning_id": "f_9222a208183539ad",
+          "benchmark": "CPERS Custom Benchmark",
+          "benchmark_id": "f_10a88430f35664c4",
+          "benchmark_one": 2.661877523805845,
+          "benchmark_one_id": "f_9466d7cd729149f2",
+          "benchmark_q": 0.698383729519694,
+          "benchmark_q_id": "f_fb857de535e7e8cf",
+          "commitment": "391814526.42",
+          "commitment_id": "f_25adffcd906c8b83",
+          "contributions": "157723.44",
+          "contributions_id": "f_600a4e4d89d41549",
+          "distributions": "3287066.61",
+          "distributions_id": "f_88611d9681d908ea",
+          "ex_us": 9.61990450522944,
+          "ex_us_id": "f_11b582c6ecddb641",
+          "fees": "1051155.6",
+          "fees_id": "f_aa5aee0d6a365ee0",
+          "funded": "475455390.03",
+          "funded_count": 12,
+          "funded_count_id": "f_240cde16bf713515",
+          "funded_id": "f_3c068a2ed00adb45",
+          "income": "3340319.41",
+          "income_id": "f_9501f197ea195e1c",
+          "irr": 9.32738743007635,
+          "irr_id": "f_3ccae37f6bb64d49",
+          "multiple": 1.44949928269256,
+          "multiple_id": "f_af3e168a135899d2",
+          "name": "Cascadia Public Employees' Retirement System",
+          "name_id": "f_928ae5d68f836b1e",
+          "nav": "436116069.16",
+          "nav_id": "f_edfa97ca0b6a5ad0",
+          "new_count": 2,
+          "new_count_id": "f_b006d3d92f868ae8",
+          "one_net": 5.456896006300482,
+          "one_net_id": "f_53f50bc5fd317cdf",
+          "open_count": 2,
+          "open_count_id": "f_36042cfc2be7adbb",
+          "plan": "4955864422",
+          "plan_id": "f_ca18939dbd562f9c",
+          "plan_pct": "8.800000000484274749193290179",
+          "plan_pct_id": "f_30d52ba521cc4478",
+          "positions": 14,
+          "positions_id": "f_269cd600b64c4f86",
+          "q_gross": 1.524751826261894,
+          "q_gross_id": "f_d41e601cd6844867",
+          "q_net": 1.284135348162377,
+          "q_net_id": "f_4dd1402b398cc860",
+          "target": "495586442",
+          "target_id": "f_077944b4d7752ee4",
+          "target_pct": "88.00000004035622911572710054",
+          "target_pct_id": "f_293362276d4356ca",
+          "unfunded": "7585950.24",
+          "unfunded_id": "f_d93c5a5d41dcc020",
+          "withdrawals": "3223810.49",
+          "withdrawals_id": "f_d0ede1040ba5685b"
+        },
+        "sleeves": {
+          "Strategic": {
+            "ltv": 33.971,
+            "ltv_id": "f_e1d97e7d49a814e5",
+            "nav": "370820463.59",
+            "nav_id": "f_9c05ddef0b18ee8a",
+            "q_net": 1.156401240214102,
+            "q_net_id": "f_f296021c0d49e71a"
+          },
+          "Tactical": {
+            "ltv": 37.689,
+            "ltv_id": "f_0e22f36a5ac7f9cc",
+            "nav": "65295605.57",
+            "nav_id": "f_a6c4918e96360bee",
+            "q_net": 2.022386359491009,
+            "q_net_id": "f_11bd42b3869eb373"
+          }
+        }
+      },
+      "quarter": "4Q25",
+      "structure": [
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2001",
+                "2011"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "456.8",
+                "14",
+                "12",
+                "2",
+                "9.3",
+                "1.45"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "436.1",
+                "8.8",
+                "4,955.9",
+                "88.0",
+                "495.6"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.28",
+                "5.46",
+                "0.70",
+                "2.66"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Portfolio Overview"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "10",
+                "5",
+                "20"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Statistic",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Funded investments",
+                  "12"
+                ],
+                [
+                  "Approved, not yet funded",
+                  "2"
+                ],
+                [
+                  "Total committed or approved",
+                  "$456.8M"
+                ],
+                [
+                  "Flash commitment total",
+                  "$391.8M"
+                ],
+                [
+                  "Market value (NAV)",
+                  "$436.1M"
+                ],
+                [
+                  "Real estate as % of plan assets",
+                  "8.8%"
+                ],
+                [
+                  "NAV as % of target",
+                  "88.0%"
+                ],
+                [
+                  "Strategic / Tactical split",
+                  "85.0% / 15.0%"
+                ],
+                [
+                  "Since-inception net IRR",
+                  "9.3%"
+                ],
+                [
+                  "Since-inception net equity multiple",
+                  "1.45x"
+                ]
+              ],
+              "type": "table"
+            }
+          ],
+          "title": "Investment Guidelines & Fund Statistics"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Portfolio Managers"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": "annual",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Annualized Time-Weighted Return"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "3.3",
+                "3.3",
+                "1.1",
+                "1.52",
+                "1.28"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Fund",
+                "Role",
+                "Income",
+                "Apprec.",
+                "Fees",
+                "Contribution"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Redwood Logistics Trust",
+                  "largest contributor; second-largest individual position",
+                  "346,623.46",
+                  "1,081,768.36",
+                  "61,356.27",
+                  "1,367,035.55"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "second-largest contributor",
+                  "125,530.00",
+                  "942,909.00",
+                  "32,150.00",
+                  "1,036,289.00"
+                ],
+                [
+                  "Cornerstone Core Property Fund",
+                  "second-largest detractor; largest individual position",
+                  "534,034.90",
+                  "-557,954.40",
+                  "163,256.86",
+                  "-187,176.36"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "largest detractor",
+                  "-31,854.07",
+                  "-468,729.81",
+                  "-31,290.15",
+                  "-469,293.73"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.18",
+                "1.28",
+                "+10.4"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Performance Update"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "85.0",
+                "1.16"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "-0.34",
+                "54.4",
+                "28.2",
+                "534,034.90",
+                "557,954.40",
+                "163,256.86",
+                "187,176.36"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "28"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.12",
+                "41.9",
+                "28.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.22",
+                "48.6",
+                "22.2"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.04",
+                "30.8",
+                "50.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "0.75",
+                "50.2",
+                "49.3"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.66",
+                "49.7",
+                "25.3"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2.69",
+                "51.9",
+                "31.2",
+                "346,623.46",
+                "1,081,768.36",
+                "61,356.27",
+                "1,367,035.55"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "97",
+                "40",
+                "10",
+                "31"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1.31",
+                "43.3",
+                "44.5"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Strategic Portfolio"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "15.0",
+                "2.02"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "0.1",
+                "0.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "10.22",
+                "11.1",
+                "0.0",
+                "125,530.00",
+                "942,909.00",
+                "32,150.00",
+                "1,036,289.00"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "-1.53",
+                "30.2",
+                "42.2",
+                "31,854.07",
+                "468,729.81",
+                "31,290.15",
+                "469,293.73"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "3.13",
+                "23.8",
+                "49.7"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Tactical and Special Situations Portfolio"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "40.0",
+                "2025",
+                "10",
+                "14"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "25.0",
+                "2025",
+                "11",
+                "18"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "25.0"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "30.0",
+                "30",
+                "2025"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Recent Investment Activity"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2023",
+                "2024"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "2020",
+                "2021"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Private Real Estate \u2014 Fund Total Return (net)",
+                  "Fund Total Return (net) / Latest Qtr",
+                  "1.0%"
+                ],
+                [
+                  "U.S. Private Real Estate \u2014 Fund Total Return (net)",
+                  "Fund Total Return (net) / 1-Yr",
+                  "3.3%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "NPI Cap Rate vs. 10-Year Treasury",
+                  "10-Yr Treasury Yield / 25Q4",
+                  "~4.2%"
+                ],
+                [
+                  "NPI Cap Rate vs. 10-Year Treasury",
+                  "NPI Val-Wtd Cap Rate / 25Q4",
+                  "~4.6%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2025 / Industrial",
+                  "~1.7%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2026-27 (p.a.) / Industrial",
+                  "~1.3%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2028-30 (p.a.) / Industrial",
+                  "~1.8%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2025 / Residential",
+                  "~2.2%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2026-27 (p.a.) / Residential",
+                  "~1.4%"
+                ],
+                [
+                  "Forecast NOI Growth by Sector (% per year)",
+                  "2028-30 (p.a.) / Residential",
+                  "~1.3%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Industrial \u2014 Total Return (net, % annualized)",
+                  "Industrial: Specialized / 1-Yr",
+                  "5.5%"
+                ],
+                [
+                  "U.S. Industrial \u2014 Total Return (net, % annualized)",
+                  "NPI-Industrial / 1-Yr",
+                  "4.4%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
+                  "Cost to Own / 4Q25",
+                  "$3,400 / month"
+                ],
+                [
+                  "U.S. Residential \u2014 Monthly Cost to Own vs. Rent",
+                  "Cost to Rent / 4Q25",
+                  "$2,500 / month"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
+                  "Appraisal Cap Rate / 25Q4",
+                  "~5.6%"
+                ],
+                [
+                  "U.S. Office \u2014 Appraisal vs. Transaction Cap Rate",
+                  "Transaction Cap Rate / 25Q4",
+                  "~7.7%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Market Exhibit",
+                "Series / Period",
+                "Value"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Population Growth / Austin",
+                  "~65.0%"
+                ],
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Retail Inventory Growth / Austin",
+                  "~30.0%"
+                ],
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Population Growth / Charlotte",
+                  "~38.0%"
+                ],
+                [
+                  "Retail: Population vs. Inventory Growth, 2007-2025 (%)",
+                  "Retail Inventory Growth / Charlotte",
+                  "~17.0%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "0.7",
+                "2.1",
+                "25",
+                "25"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Market Update"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": "allocation",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "436.1",
+                "495.6"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Allocation Over Time"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": "property",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": "geography",
+              "numbers": [],
+              "rows": null,
+              "type": "chart"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "12.1",
+                "9.6"
+              ],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Diversification"
+        },
+        {
+          "blocks": [
+            {
+              "columns": [
+                "Guideline",
+                "Limit",
+                "Actual",
+                "Status"
+              ],
+              "kind": null,
+              "numbers": [],
+              "rows": [
+                [
+                  "Style / sector concentration",
+                  "<=40% per sector",
+                  "36.2% (Industrial)",
+                  "In compliance"
+                ],
+                [
+                  "Location diversification",
+                  "<=35% Ex-US",
+                  "9.6% Ex-US",
+                  "In compliance"
+                ],
+                [
+                  "Leverage (loan-to-value)",
+                  "<=50% / 75%",
+                  "34.0% strategic / 37.7% tactical",
+                  "In compliance"
+                ],
+                [
+                  "Return objective",
+                  "Exceed benchmark",
+                  "5.46% vs 2.66% (1-Yr)",
+                  "In compliance"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Compliance"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Disclosure Statements"
+        },
+        {
+          "blocks": [
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            }
+          ],
+          "title": "Appendix A: Quarterly Flash Report"
+        }
+      ]
+    }
+  ],
+  "full_report_equal": false,
+  "scope": "Separate Python processes and empty caches; every reported figure, chart observation, fund/role/order/compliance and section structure"
+}

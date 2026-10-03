@@ -19,6 +19,9 @@ class Model:
         self.deadline = time.monotonic() + 600
         self.calls = 0
         self.usage = []
+        self.cache_hits = 0
+        self.cache_misses = 0
+        self.failures = 0
         cache.mkdir(parents=True, exist_ok=True)
 
     def ask(self, prompt, image=None):
@@ -31,10 +34,12 @@ class Model:
             try:
                 value = json.loads(cached.read_text(encoding="utf-8"))
                 if isinstance(value, dict):
+                    self.cache_hits += 1
                     return value
             except (ValueError, OSError):
                 self.ledger.issue("invalid_cache", "Unreadable model cache ignored; attempting a fresh request")
         remaining = self.deadline - time.monotonic()
+        self.cache_misses += 1
         if remaining <= 0:
             self.ledger.issue("model_budget", "Ten-minute API time budget exhausted; remaining enrichment omitted")
             return None
@@ -42,7 +47,7 @@ class Model:
             content = [{"type": "text", "text": prompt}]
             if image:
                 content.append({"type": "image_url", "image_url": {"url": "data:image/png;base64," + base64.b64encode(image).decode()}})
-            body = dict(model=self.name, temperature=0, messages=[dict(role="user", content=content)],
+            body = dict(model=self.name, temperature=0, seed=0, messages=[dict(role="user", content=content)],
                         response_format={"type": "json_object"}, max_tokens=3000)
             url = "https://api.openai.com/v1/chat/completions"
             headers = {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]}
@@ -69,6 +74,7 @@ class Model:
             cached.write_text(json.dumps(result, indent=2), encoding="utf-8")
             return result
         except Exception as error:
+            self.failures += 1
             # Do not leak headers or keys in diagnostics; failed enrichment must not destroy the draft.
             self.ledger.issue("model_unavailable", f"{self.provider} enrichment failed ({type(error).__name__}); source-only draft retained")
             return None

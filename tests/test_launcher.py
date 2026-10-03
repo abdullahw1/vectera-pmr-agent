@@ -44,16 +44,14 @@ def test_failed_install_does_not_mark_setup_complete(tmp_path, monkeypatch):
     assert not (folder / ".requirements.sha256").exists()
 
 
-def test_start_prompts_and_opens_review(tmp_path, monkeypatch):
+def test_start_opens_workspace_without_prompts_or_generation(tmp_path, monkeypatch):
     import pmr.__main__ as cli
-    answers = iter(["NEWCLIENT", "1Q26"])
-    monkeypatch.setattr("builtins.input", lambda _: next(answers))
     monkeypatch.setattr(sys, "argv", ["pmr", "start", "--output", str(tmp_path)])
     monkeypatch.setattr(cli, "load_environment", lambda: None)
     generate = Mock(return_value=(None, {"checks_passed": 1, "checks_total": 1, "issues": []}))
     serve = Mock()
     monkeypatch.setattr(cli, "generate", generate)
-    monkeypatch.setattr(cli, "serve", serve)
+    monkeypatch.setattr(cli, "serve_workspace", serve)
     cli.main()
-    assert generate.call_args.args[2:] == ("NEWCLIENT", "1Q26")
-    serve.assert_called_once_with(tmp_path.resolve(), 0, open_browser=True)
+    generate.assert_not_called()
+    serve.assert_called_once_with(Path("inputs"), tmp_path, None, None, 0, open_browser=True)

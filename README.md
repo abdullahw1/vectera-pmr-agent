@@ -6,9 +6,9 @@ Implementation instructions are in **[RUNNING.md](RUNNING.md)**. The original as
 .\start.cmd
 ```
 
-Enter the client and reporting quarter. The launcher installs pinned dependencies on first use and opens the review page automatically on an available local port. Requires Python 3.12 with the Windows `py` launcher; first-time setup needs internet access. On macOS/Linux: `python3.12 scripts/launch.py`. Manual setup remains available in RUNNING.md.
+The launcher installs pinned dependencies on first use and opens the local browser workspace on an available port. In **New Report**, enter the client and quarter, then select **Generate Report**. **Source Documents** accepts another local folder or a folder upload. **Runs** keeps separate reports, progress, evidence review, PDF previews and audit downloads. Requires Python 3.12 with the Windows `py` launcher; first-time setup needs internet access. On macOS/Linux: `python3.12 scripts/launch.py`. Manual setup remains available in RUNNING.md.
 
-The generated draft is `output/report.pdf`; the design rationale is `output/writeup.pdf`. The included output was generated without an API key; market-image extraction and final approval remain explicit review steps.
+The submitted example is `output/report.pdf`; browser-generated drafts are isolated in `output/runs/<run-id>/`. The two-page rationale is `output/writeup.pdf`. Live chart extraction and independent semantic repeatability were tested. Human confirmation/approval and an observed Windows interactive run remain explicit completion gates. See RUNNING.md for the evidence agent, diagnostics and regression results.
 
 ---
 

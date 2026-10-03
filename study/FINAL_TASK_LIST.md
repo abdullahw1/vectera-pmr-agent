@@ -1,6 +1,6 @@
 # Final Coding Task List
 
-Updated October 2, 2026. This supersedes TODAY_TASK.md. Code inspection and source audit are complete; the application changes below are NOT implemented yet. Checkmarks apply only to the stated existing scope. Latest previously observed local test result: 23 passed. Current financial draft artifact: 51/51 checks passed. Neither proves complete submission acceptance.
+Planning snapshot from October 2, 2026. The implementation has since been completed and verified locally. See IMPLEMENTATION_STATUS.md for the current checked task list, observed results, deliberate scope reductions, and remaining human release steps. The unchecked items below preserve the original plan, not the current status.
 
 ## Done: Keep These Foundations
 

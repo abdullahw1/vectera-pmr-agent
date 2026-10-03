@@ -10,7 +10,17 @@ From the extracted submission folder, run **one command** in PowerShell:
 .\start.cmd
 ```
 
-Enter the client code and reporting quarter when prompted. The launcher creates an isolated environment, installs pinned dependencies on first use, generates the draft, and opens the evidence review in your default browser. It picks an available local port automatically. Keep the terminal open during review; Ctrl+C stops the server. First use requires Python 3.12 (with the Windows `py` launcher) and internet access for dependency installation. Subsequent launches reuse the environment unless `requirements.txt` changes. API keys come from existing environment variables or `.env`; no key produces a flagged draft, not a crash.
+The launcher creates an isolated environment, installs pinned dependencies on first use, and opens the local browser workspace. It picks an available local port automatically. Keep the terminal open; Ctrl+C stops the server and any active worker. First use requires Python 3.12 (with the Windows `py` launcher) and internet access for dependency installation. Subsequent launches reuse the environment unless `requirements.txt` changes. API keys come from existing environment variables or `.env`; no key produces a flagged draft, not a crash.
+
+### Browser workflow
+
+1. **New Report:** enter the client code and reporting quarter, for example `CPERS` / `4Q25`. The supplied `inputs` folder is selected by default.
+2. **Source Documents:** optionally enter another local package folder or choose a folder to import. Imports preserve nested document folders and accept PDF, XLSX and PPTX, up to 100 documents / 25 MB. Larger packages can use a local path. A new quarter needs that quarter's actual source documents; changing the quarter field does not invent data.
+3. **Generate Report:** the real pipeline stages show progress. One worker runs at a time. Each run has an isolated output folder and cache, so the sample and earlier drafts are not overwritten. Failures show the discovery/validation reason; private worker diagnostics stay in that run's `run.log`.
+4. **Runs:** select a report. **Evidence Review** shows linked sources, blockers, warnings, chart confirmation and named approval. **PDF Preview** shows the formatted draft. Switching views preserves the review form unless another run is selected.
+5. **Open PDF** and **Audit Bundle** download that run's report and machine-readable evidence. The bundle excludes API keys, provider caches and private logs. The submission ZIP is a separate code-and-documents deliverable.
+
+The workspace is local-only, bound to `127.0.0.1`, with same-origin/host checks and a per-launch token for writes. Credentials are not sent to the browser. It is not an authenticated multi-user service. Restarting restores saved run history; interrupted runs are marked failed rather than silently resumed. Existing `output/report.pdf` is listed as **Existing draft**.
 
 For a non-interactive demo:
 
@@ -53,9 +63,9 @@ On macOS/Linux, use `export OPENAI_API_KEY="your-key"`. Do not commit keys. The 
 
 With no key, the generator still creates all required sections, verified portfolio figures, rankings, compliance checks, charts derived from workbooks, source excerpts, and the flash appendix. Market chart-image numbers remain unavailable, with their original images visible in review. This is a usable financial draft, not an approved final report. Failed model access follows the same conservative degradation path.
 
-The checked-in report was generated in **no-key mode**. Live API extraction and actual Windows execution require separate verification before claiming they have been tested.
+The current draft was generated with live OpenAI access. All seven chart images were automatically extracted, including approximate gridline readings where labels are absent. Two independent live runs passed the full semantic repeatability check. Human chart confirmation/final approval and an observed Windows 11 interactive run remain separate completion gates.
 
-Requests have a 45-second timeout and a ten-minute total model-time budget. Exhausting the budget retains the financial draft and flags unavailable enrichment. `verification.json` records API call counts and provider token usage; actual API cost has not been measured in this no-key development run.
+Requests have a 45-second timeout and a ten-minute total model-time budget. Exhausting the budget retains the financial draft and flags unavailable enrichment. `verification.json` records API call counts and returned provider token usage; billed account charges have not been queried.
 
 ## Another client or period
 
@@ -72,9 +82,9 @@ The workbook contract is label-driven: sheet names and column meanings remain co
 ## Review, correct, approve
 
 1. Inspect the PDF and verification summary. Click report paragraphs, tables, or charts in the review page to inspect source locators and calculation inputs.
-2. Inspect all seven house-view chart images. With model access, their extracted data is shown beside the image. Correct the extraction JSON if needed, then confirm it. A correction modifies an existing automatic extraction; it cannot substitute for an absent initial extraction.
+2. Inspect every house-view chart image. Its extraction appears beside the original image. Values marked `~` are approximate gridline readings, not exact underlying data. Correct the JSON if needed, supply a reason, then confirm it. A correction modifies an existing automatic extraction; it cannot substitute for absent initial extraction.
 3. Read the warnings. Missing manager commentary is a warning; financial reconciliation failures, missing policy, ambiguous required sources, and unavailable image extraction block finalization.
-4. Enter the reviewer name, acknowledge review, and approve. Approval verifies the draft hash and unchanged source files, requires all chart confirmations, and generates `final_report.pdf`, `approval.json`, `final_evidence.json`, and `final_sections.json`.
+4. Enter your reviewer name, acknowledge review, and approve. The backend checks draft/source/exhibit hashes, every chart confirmation and unresolved blockers. It produces `final_report.pdf`, `approval.json`, `final_evidence.json`, `final_sections.json`, `final_manifest.json`, and `final_semantic_manifest.json`. Regenerating a draft invalidates old approved artifacts.
 
 Financial corrections belong in the authoritative input workbook, followed by regeneration and renewed review. Manager narrative is limited to verified source quotations; edit a source or remove an unsupported claim and rerun rather than adding unaudited prose. This prototype does not offer arbitrary financial or narrative overrides in the browser.
 
@@ -87,22 +97,32 @@ Financial corrections belong in the authoritative input workbook, followed by re
 | `output/evidence.json` | Every extracted fact, source locator, formula, matching decision, and check |
 | `output/draft.json` | Complete report model, claim-to-evidence references, input hashes, draft hash |
 | `output/verification.json` | Financial checks, rankings, issues, source hashes and meaningful-output hash |
+| `output/manifest.json` | Report claims and scoped evidence paths; attribution has cell-level references |
+| `output/semantic_manifest.json` | Canonical figures, charts, selection, roles, compliance and structure |
+| `output/agent_trace.json` | Read-only tool actions, observations, quote validation and stopping reason |
+| `output/diagnostics.json` | Stage timings, API usage, cache statistics and issue counts |
+| `output/review.md` | Exported WARNING/BLOCKER/REVIEW queue |
+| `output/live_repeatability.json` | Independent live API runs with empty caches |
+| `output/unseen_rehearsal.json` | Different-client 1Q26 full-pipeline fixture results |
+| `output/regression_matrix.json` | Observed test outcomes, including expected rejection cases |
 | `output/assets/` | Extracted deck images and workbook charts |
 | `output/cache/` | Content-addressed model responses; never API keys |
 | `output/appendix.pdf` | Unmodified supplied flash PDF |
 
-The appendix retains the supplied six pages. This makes the no-key report 17 pages, compared with the example's 13 pages and its shorter appendix. Financial tables remain readable rather than being compressed to meet an approximate page count.
+The standalone `appendix.pdf` retains the six original source pages. Every report page is portrait US Letter. Vector source exhibits have unused outer whitespace removed, and wide tables are split at column groups with investment names repeated. Short panels share a page when they fit. Source-page/panel labels preserve navigation. Report pagination grows to preserve readability rather than forcing an approximate page count.
 
 ## Verification
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe scripts\verify_repeatability.py --client CPERS --quarter 4Q25
+.\.venv\Scripts\python.exe scripts\verify_repeatability.py --client CPERS --quarter 4Q25 --online --record output\live_repeatability.json
+.\.venv\Scripts\python.exe scripts\rehearse_unseen.py
 ```
 
-The repeatability command launches separate Python processes with empty output folders and caches. By default it removes model keys. It compares financial values, roles, compliance and structure using a financial hash, and separately records whether the full report model agrees. `--online` retains keys for independent API runs; extractive sentence selection and image readings can differ and still require human review.
+The repeatability command launches separate processes with empty output folders and caches. It fails on any canonical difference in financial figures, chart observations, fund selection/order/roles, compliance or structure, or on an implementation revision difference. By default it removes keys; `--online` retains them for independent API runs. Full extraction metadata wording is compared separately. Passing twice is observed evidence, not a universal promise of provider determinism. A pinned snapshot, temperature zero, seed and a source/prompt/image-bound cache help stability; chart review remains essential.
 
-Financial checks include per-fund cash roll-forward, cross-sheet NAV, sleeve and portfolio footing, commitments, and diversification totals. Money checks allow two cents for displayed source rounding; exact deltas are retained, not silently overwritten. Tests cover changed row positions, filenames, fund count, client identity, policy, log order, future approvals, missing keys, tampered drafts, failed model calls, and unverifiable model quotations.
+Money uses Decimal, serialized as base-ten strings. Active-portfolio currency reconciliations have zero tolerance: a one-cent error blocks approval. Rounded supporting-document statistics have separately declared precision, not a tolerance on the flash. Percentage sums permit their explicitly recorded source precision. The realized-only source discrepancy is a warning because that row is outside the active portfolio. Tests cover bad numbers, altered rows/names/counts/client/period, multi-year logs, agent feedback and limits, chart schema errors, missing keys, tampering and unsupported quotes.
 
 Direct dependencies are pinned in `requirements.txt`. Development used Python 3.12 on macOS. A Windows CI workflow is included; its result must be observed on a hosted runner before treating Windows support as verified.
 
@@ -113,13 +133,28 @@ Direct dependencies are pinned in `requirements.txt`. Development used Python 3.
 | `ingest.py` | Content discovery, quarter parsing, workbook header/cell access, conservative entity normalization |
 | `finance.py` | Financial formulas, attribution roles, committee event state, policy extraction, compliance |
 | `evidence.py` | Stable fact identifiers, formulas, source locators, checks and issues |
-| `models.py` | Approved API adapters, bounded requests, response caching and verified quote selection |
+| `models.py` | Approved API adapters, shared time budget, response caching and usage counters |
+| `agent.py` | Model-directed read-only action/observation loop over registered source passages |
+| `numeric.py` | Exact currency validation, serialization restoration and display rounding |
+| `charts.py` | Shared extraction/correction schema, units, bounds and uncertainty |
+| `market.py` | Deterministic selection of current, portfolio-relevant market observations |
+| `crosschecks.py` | Precision-aware supporting-source checks and deterministic cap-rate gap direction |
+| `verification.py` | Claim manifest and full meaning-bearing reproducibility signature |
 | `narrative.py` | Manager passages, deck text/images, model image extraction, allocation history |
 | `template.py` | Prior PDF typography, primary color and contents order |
 | `report.py` | Shared report model, charts and PDF layout |
+| `appendix.py` | Readable Letter-size vector source panels and repeated investment names |
 | `review.py` | Evidence UI, chart corrections, approval record and local server |
 | `pipeline.py` | Run orchestration and output manifests |
 
 Module docstrings describe ownership. Comments explain important financial, source-precedence, and approval decisions. See `docs/WALKTHROUGH.md` for a short live-demo script and `docs/WRITEUP.md` for the submission rationale.
+
+The evidence agent chooses what to inspect and validates verbatim passages. Its focus is visible in review; it does not choose portfolio funds or modify the report's numerical inventory. The report uses deterministic source excerpts and financial templates. This deliberate boundary prevents an agent's changing investigation path from changing required financial results. See `docs/ARCHITECTURE.md` for the data flow and trust boundaries.
+
+Input hashes are captured before extraction and checked again before the draft is saved. A source edited during an API call invalidates the run rather than binding old calculations to a new file. The implementation revision is also recorded and checked.
+
+## Package
+
+After review and approval, run `python scripts/package_submission.py --final`. Final mode refuses missing approval artifacts or a modified approved PDF. Without `--final` it packages a clearly labeled draft for inspection. Both exclude keys, environments, caches and personal study material. No command in the application publishes to GitHub.
 
 Official API references: [OpenAI model documentation](https://developers.openai.com/api/docs/models/gpt-4.1-mini), [Anthropic model documentation](https://platform.claude.com/docs/en/models/sonnet-4-6/overview).

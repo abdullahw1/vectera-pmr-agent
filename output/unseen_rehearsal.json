@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "mode": "no-key full pipeline; not vision accuracy or Windows validation",
+  "expected": {
+    "client": "EWRS",
+    "quarter": "1Q26",
+    "funded_count": 13,
+    "removed": "Tidewater Distressed Realty Fund",
+    "added": [
+      "Juniper Property Fund VII",
+      "Ashford Logistics Fund I"
+    ],
+    "nav": "436003449.16",
+    "open_names": [
+      "Ridgeline Value Fund IV"
+    ],
+    "new_count": 0
+  },
+  "observed": {
+    "funded_count": 13,
+    "nav": "436003449.16",
+    "open_names": [
+      "Ridgeline Value Fund IV"
+    ],
+    "new_count": 0,
+    "sections": 14,
+    "checks_passed": 58,
+    "checks_total": 58
+  },
+  "issues": [
+    {
+      "code": "reconciliation",
+      "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
+      "severity": "warning",
+      "evidence": [
+        "f_48efc7c059ca073c",
+        "f_00c93811ad09113d",
+        "f_669cd377f2083e63",
+        "f_cb5a4c70a0cec409",
+        "f_5bbe9c894ab1539d",
+        "f_25c2c1892cffda5b",
+        "f_a21c2d82a7da961c",
+        "f_95a7abf6c3986346"
+      ]
+    },
+    {
+      "code": "missing_manager",
+      "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+      "severity": "warning",
+      "fund": "Meridian Opportunity Fund V"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 4, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_f2153efc8bf78226"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 5, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_20ec64066b2336ce"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 6, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_612347b3a3676179"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 7, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_3853812c79e2ff85"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 8, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_6977062acdc7a3ba"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 9, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_335f89efe190b724"
+    },
+    {
+      "code": "chart_unavailable",
+      "message": "Slide 10, chart 1: image values unavailable without successful model access",
+      "severity": "blocker",
+      "fact_id": "f_a61464863688b3e9"
+    },
+    {
+      "code": "history_ownership",
+      "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+      "severity": "warning",
+      "evidence": [
+        "f_e22a6cb9e3639978",
+        "f_ec5c897c5fa9bb34"
+      ]
+    }
+  ]
+}
