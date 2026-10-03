@@ -1670,6 +1670,20 @@
       },
       "value": "93089.87"
     },
+    "f_1736538836c121d0": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_fee70c26166bc4f2"
+      ],
+      "source": {
+        "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
+        "method": "source-bound model prose",
+        "page": 1,
+        "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
+        "requires_review": true
+      },
+      "value": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, according to the fund manager."
+    },
     "f_17a8a9cb7fe67c46": {
       "numeric": {
         "authority": "source workbook",
@@ -2973,6 +2987,19 @@
         35.0
       ]
     },
+    "f_40acc3d2877e245a": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_5253785e9e45fb51"
+      ],
+      "source": {
+        "kind": "verified market writing bundle",
+        "method": "source-bound model prose",
+        "quote": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%. The deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential. House-view positioning: \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail.",
+        "requires_review": true
+      },
+      "value": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%, and the deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential."
+    },
     "f_40b4ae9da0b0b8fb": {
       "source": {
         "asset": "assets/slide_7_chart_1.png",
@@ -3063,6 +3090,20 @@
         "sheet": "ReturnsMultiples(Agg)"
       },
       "value": 7.461515098076809
+    },
+    "f_424d459257f560cc": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_0993143bfbfcfdff"
+      ],
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "method": "source-bound model prose",
+        "quote": "\u2022 A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office. \u2022 Slower-than-expected supply absorption in select multifamily submarkets.",
+        "requires_review": true,
+        "slide": 12
+      },
+      "value": "A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery, while refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office, and slower-than-expected supply absorption is noted in select multifamily submarkets."
     },
     "f_42b87db84208fa92": {
       "numeric": {
@@ -3579,6 +3620,19 @@
       },
       "value": 8.185721779735681
     },
+    "f_5253785e9e45fb51": {
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_7b3c078cd261039c",
+        "f_dea15697cfa9083b",
+        "f_832187d04bd0b44c",
+        "f_c07fe605813ccf88"
+      ],
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "value": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%. The deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential. House-view positioning: \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail."
+    },
     "f_53bf1184fa3d2858": {
       "numeric": {
         "authority": "source workbook",
@@ -3809,6 +3863,20 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "41870446.64"
+    },
+    "f_5781c533c94498eb": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_f7fec8895394ab59"
+      ],
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "method": "source-bound model prose",
+        "quote": "\u2022 Maintain leverage discipline; prefer moderate loan-to-value. \u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. \u2022 Deploy patiently into the recovery as pricing stabilizes.",
+        "requires_review": true,
+        "slide": 13
+      },
+      "value": "The market deck emphasizes leverage discipline and patient deployment into the recovery as pricing stabilizes."
     },
     "f_585c23b393cd1f1e": {
       "source": {
@@ -5030,6 +5098,19 @@
       },
       "value": "1Q24"
     },
+    "f_74dd8e5be3b7e4e1": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_a06e1e2330ae70b3"
+      ],
+      "source": {
+        "kind": "verified market writing bundle",
+        "method": "source-bound model prose",
+        "quote": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield.",
+        "requires_review": true
+      },
+      "value": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield."
+    },
     "f_7576d00d14e90c55": {
       "numeric": {
         "authority": "source workbook",
@@ -5454,6 +5535,20 @@
       },
       "value": "approved"
     },
+    "f_7de5c251ffdb0891": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_b5b9ce5794ad2acb"
+      ],
+      "source": {
+        "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
+        "method": "source-bound model prose",
+        "page": 1,
+        "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
+        "requires_review": true
+      },
+      "value": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets, with a strategy focused on lease-up, mark-to-market of below-market rents, and selective development completion."
+    },
     "f_7e27e799a9f55fe0": {
       "numeric": {
         "authority": "source workbook",
@@ -5704,6 +5799,16 @@
         "kind": "ranking"
       },
       "value": []
+    },
+    "f_86b1e5a4e1a0dc9e": {
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_6d57eddcaeaf2604"
+      ],
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "value": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr."
     },
     "f_87a59020797a1d82": {
       "numeric": {
@@ -6118,6 +6223,20 @@
         "sheet": "AnnReturns(Agg)"
       },
       "value": 2.661877523805845
+    },
+    "f_946a264c8d8591b9": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_8e53833fb531a012"
+      ],
+      "source": {
+        "file": "manager_reports/redwood_logistics_trust_4Q25.pdf",
+        "method": "source-bound model prose",
+        "page": 1,
+        "quote": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
+        "requires_review": true
+      },
+      "value": "Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting, while Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant, and Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion; leverage remained conservative at approximately 31% loan-to-value."
     },
     "f_94c0712306c039cd": {
       "numeric": {
@@ -6559,6 +6678,30 @@
         "sheet": "Allocation History"
       },
       "value": "4Q24"
+    },
+    "f_a06e1e2330ae70b3": {
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_585c23b393cd1f1e"
+      ],
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "value": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield."
+    },
+    "f_a08f80b56d36e832": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_678546ed97cf51c4"
+      ],
+      "source": {
+        "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
+        "method": "source-bound model prose",
+        "page": 1,
+        "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
+        "requires_review": true
+      },
+      "value": "The fund manager reported that three assets shaped the quarter, with One Financial Plaza (Chicago office) written down on lower submarket comparables and a near-term lease expiry, Bayfront Apartments (San Diego) held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributing positively, partially offsetting the office drag; leverage was conservative at ~28% LTV."
     },
     "f_a090cdf36c947283": {
       "numeric": {
@@ -7667,6 +7810,20 @@
       },
       "value": "0"
     },
+    "f_ba89b458b34536d9": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_269bcd2482f7e88c"
+      ],
+      "source": {
+        "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
+        "method": "source-bound model prose",
+        "page": 1,
+        "quote": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
+        "requires_review": true
+      },
+      "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion."
+    },
     "f_bb9e1c3a2df71f19": {
       "numeric": {
         "authority": "source workbook",
@@ -7920,6 +8077,19 @@
         "sheet": "Log "
       },
       "value": "2025-10-14 00:00:00"
+    },
+    "f_c7ff158a1ce3736e": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_d43da4925626e156"
+      ],
+      "source": {
+        "kind": "verified market writing bundle",
+        "method": "source-bound model prose",
+        "quote": "The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%. The transaction/appraisal gap widened from 0.7 to 2.1 percentage points.",
+        "requires_review": true
+      },
+      "value": "The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%, and the transaction/appraisal gap widened from 0.7 to 2.1 percentage points."
     },
     "f_c9357d48f9331fcc": {
       "source": {
@@ -8296,6 +8466,30 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": 1.524751826261894
+    },
+    "f_d423b5543401e785": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_86b1e5a4e1a0dc9e"
+      ],
+      "source": {
+        "kind": "verified market writing bundle",
+        "method": "source-bound model prose",
+        "quote": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr.",
+        "requires_review": true
+      },
+      "value": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr."
+    },
+    "f_d43da4925626e156": {
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_a10e970c92b9cd19",
+        "f_d80efd691877ad26"
+      ],
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "value": "The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%. The transaction/appraisal gap widened from 0.7 to 2.1 percentage points."
     },
     "f_d4944cba00cdb325": {
       "numeric": {
@@ -9541,6 +9735,20 @@
       },
       "value": 1.32357785733761
     },
+    "f_fa8df8d33ad5b5fe": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_fee70c26166bc4f2"
+      ],
+      "source": {
+        "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
+        "method": "source-bound model prose",
+        "page": 1,
+        "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
+        "requires_review": true
+      },
+      "value": "The Fund is unlevered at the fund level, as stated in the fund overview."
+    },
     "f_fae7966c76f8a9fc": {
       "numeric": {
         "authority": "source workbook",
@@ -9632,6 +9840,20 @@
         "sheet": "Allocation History"
       },
       "value": 397.0
+    },
+    "f_fc2abdb6bdd80403": {
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_c07fe605813ccf88"
+      ],
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "method": "source-bound model prose",
+        "quote": "\u2022 Core real-estate values are stabilizing after the 2023\u20132024 repricing; U.S. private funds have turned positive over the past year (see exhibits). \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail. \u2022 Leverage discipline and patient deployment into the recovery.",
+        "requires_review": true,
+        "slide": 2
+      },
+      "value": "The market deck highlights that core real-estate values are stabilizing after the 2023\u20132024 repricing, with U.S. private funds turning positive over the past year and a preference for industrial / logistics and multifamily, while remaining underweight office and selective in retail."
     },
     "f_fc78bd6422a4b29a": {
       "numeric": {
@@ -9851,9 +10073,17 @@
       "severity": "warning"
     },
     {
+      "code": "negative_fees",
+      "evidence": [
+        "f_a5c2f964ad4e881d"
+      ],
+      "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+      "severity": "warning"
+    },
+    {
       "code": "missing_manager",
       "fund": "Meridian Opportunity Fund V",
-      "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+      "message": "No matched current manager evidence for ranked fund Meridian Opportunity Fund V; flash-only commentary",
       "severity": "warning"
     },
     {
@@ -9906,6 +10136,61 @@
       ],
       "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
       "severity": "warning"
+    },
+    {
+      "code": "narrative_review",
+      "evidence": [
+        "f_a08f80b56d36e832"
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
+      "severity": "warning"
+    },
+    {
+      "code": "narrative_review",
+      "evidence": [
+        "f_1736538836c121d0",
+        "f_fa8df8d33ad5b5fe"
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
+      "severity": "warning"
+    },
+    {
+      "code": "narrative_review",
+      "evidence": [
+        "f_7de5c251ffdb0891"
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
+      "severity": "warning"
+    },
+    {
+      "code": "narrative_review",
+      "evidence": [
+        "f_946a264c8d8591b9"
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
+      "severity": "warning"
+    },
+    {
+      "code": "narrative_review",
+      "evidence": [
+        "f_ba89b458b34536d9"
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
+      "severity": "warning"
+    },
+    {
+      "code": "narrative_review",
+      "evidence": [
+        "f_fc2abdb6bdd80403",
+        "f_424d459257f560cc",
+        "f_d423b5543401e785",
+        "f_74dd8e5be3b7e4e1",
+        "f_40acc3d2877e245a",
+        "f_c7ff158a1ce3736e",
+        "f_5781c533c94498eb"
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
+      "severity": "warning"
     }
   ],
   "matches": [
@@ -9913,43 +10198,43 @@
       "accepted": true,
       "canonical": "Cornerstone Core Property Fund",
       "file": "cornerstone_core_property_fund_4Q25.pdf",
-      "rule": "punctuation/legal suffix/Roman numeral normalization"
+      "rule": "complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization"
     },
     {
       "accepted": true,
       "canonical": "Ironwood Value-Add Fund III",
       "file": "ironwood_value_add_fund_3_4Q25.pdf",
-      "rule": "punctuation/legal suffix/Roman numeral normalization"
+      "rule": "complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization"
     },
     {
       "accepted": true,
       "canonical": "Kestrel U.S. Real Estate Fund",
       "file": "kestrel_us_real_estate_fund_4Q25.pdf",
-      "rule": "punctuation/legal suffix/Roman numeral normalization"
+      "rule": "complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization"
     },
     {
       "accepted": true,
       "canonical": "Northgate Logistics Partners",
       "file": "northgate_logistics_partners_4Q25.pdf",
-      "rule": "punctuation/legal suffix/Roman numeral normalization"
+      "rule": "complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization"
     },
     {
       "accepted": true,
       "canonical": "Redwood Logistics Trust",
       "file": "redwood_logistics_trust_4Q25.pdf",
-      "rule": "punctuation/legal suffix/Roman numeral normalization"
+      "rule": "complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization"
     },
     {
       "accepted": true,
       "canonical": "Ridgeline Value Fund IV",
       "file": "ridgeline_value_fund_iv_4Q25.pdf",
-      "rule": "punctuation/legal suffix/Roman numeral normalization"
+      "rule": "complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization"
     },
     {
       "accepted": true,
       "canonical": "Tidewater Distressed Realty Fund",
       "file": "tidewater_distressed_realty_fund_4Q25.pdf",
-      "rule": "punctuation/legal suffix/Roman numeral normalization"
+      "rule": "complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization"
     }
   ],
   "reporting_period": "4Q25"

@@ -44,8 +44,46 @@
       ]
     },
     {
+      "code": "unmatched_manager",
+      "message": "Unresolved supporting document northgate_logistics_partners_4Q25.pdf; possible funds: Redwood Logistics Trust, Ashford Logistics Fund I, Ironwood Value-Add Fund III. Suggestions are not accepted matches.",
+      "severity": "warning",
+      "candidates": [
+        "Redwood Logistics Trust",
+        "Ashford Logistics Fund I",
+        "Ironwood Value-Add Fund III"
+      ]
+    },
+    {
+      "code": "unmatched_manager",
+      "message": "Unresolved supporting document ridgeline_value_fund_iv_4Q25.pdf; possible funds: Silverline Core-Plus Fund, Ironwood Value-Add Fund III, Whitfield Diversified Property Fund. Suggestions are not accepted matches.",
+      "severity": "warning",
+      "candidates": [
+        "Silverline Core-Plus Fund",
+        "Ironwood Value-Add Fund III",
+        "Whitfield Diversified Property Fund"
+      ]
+    },
+    {
+      "code": "unmatched_manager",
+      "message": "Unresolved supporting document tidewater_distressed_realty_fund_4Q25.pdf; possible funds: Whitfield Diversified Property Fund, Kestrel U.S. Real Estate Fund, Harborview Industrial Fund. Suggestions are not accepted matches.",
+      "severity": "warning",
+      "candidates": [
+        "Whitfield Diversified Property Fund",
+        "Kestrel U.S. Real Estate Fund",
+        "Harborview Industrial Fund"
+      ]
+    },
+    {
+      "code": "negative_fees",
+      "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+      "severity": "warning",
+      "evidence": [
+        "f_ef830f6058c53ba1"
+      ]
+    },
+    {
       "code": "missing_manager",
-      "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+      "message": "No matched current manager evidence for ranked fund Meridian Opportunity Fund V; flash-only commentary",
       "severity": "warning",
       "fund": "Meridian Opportunity Fund V"
     },

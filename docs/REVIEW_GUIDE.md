@@ -23,6 +23,8 @@ These are reference readings from the supplied synthetic images, not production 
 - The realized-only row has a $0.51 roll-forward difference. It is outside the active portfolio; preserve the disclosed warning rather than altering its source.
 - Meridian lacks a manager report. Confirm that the report gives flash figures and no invented asset-level causes.
 - Allocation history has no client column. The requested-period NAV/target agree with the flash at displayed precision, but ownership remains an assumption.
+- Meridian's negative fees are preserved and shown as a fee credit, not silently changed.
+- Inspect narrative paraphrases against their exact supporting quotes. Numeric placeholders and model checks do not establish that every interpretation is correct.
 
 Read the full PDF, including all appendix tables, and the two-page write-up. Confirm that the limitations describe what was actually observed. Enter your actual reviewer name, acknowledge the review, confirm all seven chart extractions, and approve only when satisfied. No automatic tool should acknowledge on your behalf.
 

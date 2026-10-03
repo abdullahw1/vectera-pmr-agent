@@ -111,6 +111,8 @@ def approve(output, request):
     restore_money(payload["data"])
     from .crosschecks import cap_rate_signals
     payload["data"]["market_signals"] = cap_rate_signals(payload["data"]["charts"], ledger)
+    from .synthesis import refresh_market_narrative
+    refresh_market_narrative(payload["data"], ledger)
     context = payload["data"]["source_context"]
     sources = {"prior": (None, Path(context["prior_file"]), context["prior_pages"])}
     sections = build_sections(payload["data"], sources, ledger)

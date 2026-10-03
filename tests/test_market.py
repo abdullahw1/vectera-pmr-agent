@@ -38,3 +38,12 @@ def test_market_return_sentence_does_not_rank_against_client_benchmark():
     text = observation_sentence(chart, [])
     assert "0.8%" in text and "3.3%" in text
     assert "benchmark" not in text.lower() and "outperform" not in text.lower()
+
+
+def test_forward_forecast_uses_next_period_not_current_year():
+    chart = dict(data=dict(title="Forecast NOI Growth by Sector", series=[
+        point("Industrial", series="2025", value=1.7),
+        point("Industrial", series="2026-27 (p.a.)", value=1.3),
+        point("Industrial", series="2028-30 (p.a.)", value=1.8)]))
+    text = observation_sentence(chart, [dict(label="Industrial", value=40)], 2025)
+    assert "2026-27" in text and "1.3%" in text and "1.7%" not in text

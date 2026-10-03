@@ -15,7 +15,8 @@ class Model:
     def __init__(self, cache: Path, ledger):
         self.cache, self.ledger = cache, ledger
         self.provider = "openai" if os.getenv("OPENAI_API_KEY") else "anthropic" if os.getenv("ANTHROPIC_API_KEY") else None
-        self.name = os.getenv("PMR_MODEL", "gpt-4.1-mini-2025-04-14" if self.provider == "openai" else "claude-sonnet-4-6")
+        self.name = os.getenv("PMR_MODEL", "gpt-4.1-2025-04-14" if self.provider == "openai" else "claude-sonnet-4-6")
+        self.vision_name = os.getenv("PMR_VISION_MODEL", "gpt-4.1-mini-2025-04-14" if self.provider == "openai" else self.name)
         self.deadline = time.monotonic() + 600
         self.calls = 0
         self.usage = []
@@ -27,7 +28,8 @@ class Model:
     def ask(self, prompt, image=None):
         if not self.provider:
             return None
-        key = digest(dict(provider=self.provider, model=self.name, prompt=prompt,
+        model_name = self.vision_name if image else self.name
+        key = digest(dict(provider=self.provider, model=model_name, prompt=prompt,
                           image=base64.b64encode(image).decode() if image else None))
         cached = self.cache / (key + ".json")
         if cached.exists():
@@ -47,7 +49,7 @@ class Model:
             content = [{"type": "text", "text": prompt}]
             if image:
                 content.append({"type": "image_url", "image_url": {"url": "data:image/png;base64," + base64.b64encode(image).decode()}})
-            body = dict(model=self.name, temperature=0, seed=0, messages=[dict(role="user", content=content)],
+            body = dict(model=model_name, temperature=0, seed=0, messages=[dict(role="user", content=content)],
                         response_format={"type": "json_object"}, max_tokens=3000)
             url = "https://api.openai.com/v1/chat/completions"
             headers = {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]}
@@ -57,7 +59,7 @@ class Model:
                 content.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                             "data": base64.b64encode(image).decode()}})
             content.append({"type": "text", "text": prompt + " Return only JSON, without Markdown fences."})
-            body = dict(model=self.name, temperature=0, max_tokens=3000, messages=[dict(role="user", content=content)])
+            body = dict(model=model_name, temperature=0, max_tokens=3000, messages=[dict(role="user", content=content)])
             url = "https://api.anthropic.com/v1/messages"
             headers = {"x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01"}
         request = urllib.request.Request(url, json.dumps(body).encode(), {**headers, "Content-Type": "application/json"})

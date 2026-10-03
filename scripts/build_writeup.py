@@ -1,6 +1,7 @@
 """Render the submission write-up as a compact, reviewable two-page PDF."""
 from pathlib import Path
 from xml.sax.saxutils import escape
+import fitz
 
 from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
@@ -32,6 +33,9 @@ def main():
         canvas.drawRightString(564, 25, str(doc.page))
     SimpleDocTemplate(str(output), pagesize=(612, 792), leftMargin=48, rightMargin=48,
                       topMargin=40, bottomMargin=40, invariant=1).build(story, onFirstPage=footer, onLaterPages=footer)
+    with fitz.open(output) as document:
+        if len(document) != 2:
+            raise SystemExit("Write-up must be two pages; shorten the source and rebuild before packaging.")
     print(output)
 
 

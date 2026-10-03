@@ -11,7 +11,9 @@ from .numeric import currency, finite_number, display
 
 
 QUARTER_WORDS = {"first": 1, "second": 2, "third": 3, "fourth": 4}
-ROMANS = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6"}
+ROMANS = dict(zip("i ii iii iv v vi vii viii ix x xi xii xiii xiv xv xvi xvii xviii xix xx".split(), map(str, range(1, 21))))
+NUMBER_WORDS = dict(zip("one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split(), map(str, range(1, 21))))
+ENTITY_ABBREVIATIONS = {"intl": "international", "mgmt": "management", "inv": "investment"}
 
 
 def norm(text):
@@ -21,12 +23,18 @@ def norm(text):
 
 def entity(text):
     text = re.sub(r"\bU\.\s*S\.", "US", str(text), flags=re.I)
+    text = text.replace("&", " and ")
     tokens = norm(text).split()
     if tokens[-2:] == ["l", "p"]:
         tokens = tokens[:-2]
     while tokens and tokens[-1] in {"llc", "lp", "limited"}:
         tokens.pop()
-    return " ".join(ROMANS.get(t, t) for t in tokens)
+    # Number words are vintage labels, not rewrites of asset names like One Financial Plaza.
+    for i, token in enumerate(tokens):
+        if token in NUMBER_WORDS and ((i and tokens[i - 1] in {"fund", "series", "vintage"}) or
+                                     (i == len(tokens) - 1 and "fund" in tokens[:i])):
+            tokens[i] = NUMBER_WORDS[token]
+    return " ".join(ENTITY_ABBREVIATIONS.get(ROMANS.get(t, t), ROMANS.get(t, t)) for t in tokens)
 
 
 def quarter(text):

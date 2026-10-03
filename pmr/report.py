@@ -6,6 +6,7 @@ import io
 import os
 import re
 import tempfile
+from datetime import date
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
@@ -24,6 +25,7 @@ from .ingest import norm
 from .numeric import display
 from .market import observation_sentence
 from .appendix import append_exhibits
+from .synthesis import qualitative_fallback
 
 NAVY = "#1b2a4a"
 GOLD = "#c8a24b"
@@ -41,7 +43,16 @@ def number(value, places=1):
 
 
 def dollars(value):
-    return ("-$" if value < 0 else "$") + number(abs(value), 2)
+    return ("-$" if value < 0 else "$") + number(abs(value), 0)
+
+
+def accounting(value):
+    text = number(abs(value), 0)
+    return f"({text})" if value < 0 else text
+
+
+def billions(value):
+    return f"${number(Decimal(str(value)) / 1_000_000_000, 2)} billion"
 
 
 def build_sections(data, sources, ledger):
@@ -84,15 +95,15 @@ def build_sections(data, sources, ledger):
     if static_intro:
         fid = ledger.add(static_intro, {"file": prior_file, "page": prior_pages.index(overview_page) + 1, "quote": static_intro})
         para(s, re.sub(r"\s+", " ", static_intro), [fid])
-    para(s, f"Since inception, {money(p['approved_total'])} has been committed or approved for commitment across "
+    para(s, f"Since inception, approximately {billions(p['approved_total'])} has been committed or approved for commitment across "
          f"{p['positions']} individual investment positions: {len(funds)} funded and carried in the flash, plus "
-         f"{len(activity['open'])} open approvals not funded by quarter-end. The funded investments have generated "
+         f"{len(activity['open'])} open approvals not funded by Quarter-end. The funded investments have generated "
          f"a since-inception net IRR of {p['irr']:.1f}% and a {p['multiple']:.2f}x net equity multiple.",
          [p[k + "_id"] for k in ["approved_total", "positions", "funded_count", "open_count", "irr", "multiple"]])
-    para(s, f"At quarter-end, portfolio NAV was {money(p['nav'])}, or {p['plan_pct']:.1f}% of the "
-         f"{money(p['plan'])} total plan and {p['target_pct']:.1f}% of its {money(p['target'])} target real estate allocation.",
+    para(s, f"At Quarter-end, portfolio NAV was {billions(p['nav'])}, or {p['plan_pct']:.1f}% of the "
+         f"{billions(p['plan'])} total plan and {p['target_pct']:.1f}% of its {billions(p['target'])} target real estate allocation.",
          [p[k + "_id"] for k in ["nav", "plan_pct", "plan", "target_pct", "target"]])
-    para(s, f"The Portfolio returned {p['q_net']:.2f}% net during the quarter and {p['one_net']:.2f}% over one year, "
+    para(s, f"The Portfolio returned {p['q_net']:.2f}% net during the Quarter and {p['one_net']:.2f}% over one year, "
          f"against {p['benchmark_q']:.2f}% and {p['benchmark_one']:.2f}%, respectively, for the {p['benchmark']}.",
          [p[k + "_id"] for k in ["q_net", "one_net", "benchmark_q", "benchmark_one", "benchmark"]])
     s = add("Investment Guidelines & Fund Statistics")
@@ -122,18 +133,21 @@ def build_sections(data, sources, ledger):
             break
     s = add("Annualized Time-Weighted Return")
     s["blocks"].append(dict(type="chart", kind="annual", evidence=[v[k] for v in p["annual"] for k in ["value_id", "benchmark_id"]]))
-    para(s, f"The chart compares the Portfolio's net time-weighted returns with the {p['benchmark']}. "
-         "Returns are read from the annual returns exhibit, not calculated from fund cash flows.", [p["benchmark_id"]])
+    para(s, f"The chart compares the Portfolio's net time-weighted returns with the {p['benchmark']}.", [p["benchmark_id"]])
     s = add("Performance Update")
     para(s, f"The Portfolio generated {money(p['income'])} of gross income and {money(p['appreciation'])} of appreciation. "
-         f"Manager fees were {money(p['fees'])}. The quarter's return was {p['q_gross']:.2f}% gross and {p['q_net']:.2f}% net.",
+         f"Manager fees were {money(p['fees'])}. The Quarter's return was {p['q_gross']:.2f}% gross and {p['q_net']:.2f}% net.",
          [p[k + "_id"] for k in ["income", "appreciation", "fees", "q_gross", "q_net"]])
     featured = sorted((f for f in funds if f["roles"]), key=lambda f: (-f["contribution"], f["name"]))
-    rows = [[f["name"], "; ".join(f["roles"]), number(f["income"], 2), number(f["appreciation"], 2),
-             number(f["fees"], 2), number(f["contribution"], 2)] for f in featured]
+    rows = [[f["name"], "; ".join(f["roles"]), accounting(f["income"]), accounting(f["appreciation"]),
+             accounting(f["fees"]), accounting(f["contribution"])] for f in featured]
     table(s, ["Fund", "Role", "Income", "Apprec.", "Fees", "Contribution"], rows,
           [f[k + "_id"] for f in featured for k in ["name", "roles", "income", "appreciation", "fees", "contribution"]],
           cell_evidence=[[[f[k + "_id"]] for k in ["name", "roles", "income", "appreciation", "fees", "contribution"]] for f in featured])
+    para(s, "Dollar figures are rounded independently to the nearest dollar; displayed components may not sum exactly.", [])
+    para(s, " ".join(f"{f['name']} was the Portfolio's {' and '.join(f['roles'])}, "
+                     f"contributing {dollars(f['contribution'])} during the Quarter."
+                     for f in featured), [f[k + "_id"] for f in featured for k in ["name", "roles", "contribution"]])
     if len([f for f in funds if f["contribution"] < 0]) < 2:
         para(s, "Every other fund contributed positively or had zero dollar contribution during the quarter.", [f["contribution_id"] for f in funds])
     # Prior narrative is a baseline, never a source of current-period asset drivers.
@@ -149,62 +163,71 @@ def build_sections(data, sources, ledger):
         sl = data["sleeves"][sleeve]
         share = sl["nav"] / p["nav"] * 100
         fid = ledger.add(share, {"kind": "calculation"}, formula="sleeve NAV / portfolio NAV * 100", inputs=[sl["nav_id"], p["nav_id"]])
-        para(s, f"The {sleeve} sleeve represented {share:.1f}% of portfolio market value and returned {sl['q_net']:.2f}% net during the quarter.", [fid, sl["q_net_id"]])
+        para(s, f"The {sleeve} sleeve represented {share:.1f}% of portfolio market value and returned {sl['q_net']:.2f}% net during the Quarter.", [fid, sl["q_net_id"]])
         for fund in [f for f in funds if f["sleeve"] == sleeve]:
             return_text = f"returned {fund['q_net']:.2f}% net" if fund["q_net"] is not None else "had a quarterly net return of n/m (not reported in the flash)"
             role = " was the Portfolio's " + " and ".join(fund["roles"]) + "." if fund["roles"] else "."
-            text = fund["name"] + role + f" The Fund {return_text}, with quarter-end NAV of {money(fund['nav'])} and {number(fund['ltv'])}% LTV."
+            text = fund["name"] + role + f" The Fund {return_text}, with Quarter-end NAV of {money(fund['nav'])} and {number(fund['ltv'])}% LTV."
             ids = [fund[k + "_id"] for k in ["name", "roles", "q_net", "nav", "ltv"]]
             if fund["roles"]:
-                text += f" Income of {dollars(fund['income'])}, appreciation of {dollars(fund['appreciation'])} and fees of {dollars(fund['fees'])} resulted in a {dollars(fund['contribution'])} dollar contribution."
+                fee_text = f"a fee credit of {dollars(abs(fund['fees']))}" if fund['fees'] < 0 else f"fees of {dollars(fund['fees'])}"
+                text += f" Income of {dollars(fund['income'])}, appreciation of {dollars(fund['appreciation'])} and {fee_text} resulted in a {dollars(fund['contribution'])} dollar contribution."
                 ids += [fund[k + "_id"] for k in ["income", "appreciation", "fees", "contribution"]]
             para(s, text, ids)
             if fund["roles"]:
                 passages = data["support"].get(fund["name"], [])
-                for passage in passages:
-                    para(s, passage["text"], [passage["id"]])
+                narrative = data.get("narratives", {}).get(fund["name"])
+                if narrative:
+                    para(s, narrative["text"], narrative["evidence"])
+                elif passages:
+                    if all(p["heading"] == "Unclassified manager page" for p in passages):
+                        para(s, "A current manager report was supplied, but its narrative requires review before asset-level commentary can be included.", [p["id"] for p in passages])
+                    else:
+                        para(s, qualitative_fallback(passages), [p["id"] for p in passages])
                 if not passages:
-                    para(s, "No current manager report was supplied for this fund. Commentary is limited to verified flash figures; asset-level drivers are unavailable.", [fund["name_id"]])
+                    found = fund["name"] in data["support"]
+                    text = "A current manager report was supplied, but asset-level commentary could not be extracted." if found else (
+                        "No matched current manager evidence is available. Unresolved supporting documents require review before absence can be established."
+                        if data.get("unmatched_reports") else "No manager report was supplied for this Fund for the Quarter; no asset-level drivers are reported.")
+                    para(s, text, [fund["name_id"]])
     s = add("Recent Investment Activity")
-    para(s, f"The Investment Committee approved {len(activity['new'])} new commitments for {data['client']} during the quarter." if activity["new"]
-         else "No new commitments were approved for this client during the quarter.", [p["new_count_id"]])
+    para(s, f"The Investment Committee approved {len(activity['new'])} new commitments for {data['client']} during the Quarter." if activity["new"]
+         else "No new commitments were approved for this client during the Quarter.", [p["new_count_id"]])
     for e in activity["new"]:
-        para(s, f"{e['name']} - {money(e['amount'])}, approved {e['date']}.", [e[k] for k in ["id", "amount_id", "date_id", "action_id"]])
+        approved_month = date.fromisoformat(str(e['date'])[:10]).strftime("%B %Y")
+        para(s, f"{e['name']} - {money(e['amount'])}, approved {approved_month}.", [e[k] for k in ["id", "amount_id", "date_id", "action_id"]])
         if any(opened["name"] == e["name"] for opened in activity["open"]):
-            para(s, "The approval remained open and was not carried as a funded holding at quarter-end. No performance figures are assigned to this commitment.",
+            para(s, "The approval remained open and was not carried as a funded holding at Quarter-end. No performance figures are assigned to this commitment.",
                  [e["id"], e["action_id"]] + [fund["name_id"] for fund in funds])
-        for passage in data["support"].get(e["name"], []):
-            para(s, passage["text"], [passage["id"]])
+        narrative = data.get("narratives", {}).get(e["name"])
+        passages = data["support"].get(e["name"], [])
+        if narrative:
+            para(s, narrative["text"], narrative["evidence"])
+        elif passages:
+            para(s, qualitative_fallback(passages), [p["id"] for p in passages])
     for e in activity["reversed"]:
         explanation = e["recommendation"].split(";", 1)[1].strip() if ";" in e["recommendation"] else ""
         action_text = "lapsed" if e["action"] == "lapsed" else "was " + e["action"]
-        para(s, f"The previously approved {money(e['amount'])} commitment to {e['name']} {action_text} during the quarter. "
+        para(s, f"The previously approved {money(e['amount'])} commitment to {e['name']} {action_text} during the Quarter. "
              + (explanation[:1].upper() + explanation[1:] + "." if explanation else ""), [e[k] for k in ["id", "amount_id", "action_id", "date_id"]])
     s = add("Market Update")
-    # House-view text is condensed by choosing portfolio-relevant slides; numerical pixels remain separately reviewable.
-    for slide in data["slides"]:
-        if any(word in norm(slide["title"]) for word in ["key themes", "risks"]):
-            para(s, " ".join(t.lstrip("• ") for t in slide["text"]), [slide["id"]])
+    narrative = data.get("narratives", {}).get("market")
+    if narrative:
+        para(s, narrative["text"], narrative["evidence"])
+    else:
+        bundle = [p for p in data.get("market_passages", []) if not p.get("qualitative_only")]
+        para(s, "Market synthesis is pending review. Verified source observations: " + " ".join(p["text"] for p in bundle)
+             if bundle else "Market narrative is unavailable in this run; source evidence remains available for review.", [p["id"] for p in bundle])
     available = [c for c in data["charts"] if c["data"]]
-    for offset in range(0, len(available), 3):
-        group = available[offset:offset + 3]
-        text = " ".join(observation_sentence(chart, data["diversification"]["property"]) for chart in group)
-        if text.strip():
-            para(s, text, [chart["id"] for chart in group])
-    for signal in data.get("market_signals", []):
-        para(s, f"For {signal['title']}, the transaction/appraisal gap {signal['direction']} from "
-             f"{signal['old_gap']:.1f} to {signal['new_gap']:.1f} percentage points between "
-             f"{signal['earlier']} and {signal['later']}.", [signal["id"]])
     if any(v.get("method") == "axis_read" for c in available for v in c["data"]["series"]):
-        para(s, "Values marked ~ are approximate gridline readings at their declared precision, not exact underlying observations. They require human confirmation.", [c["id"] for c in available])
+        para(s, "Values marked ~ are approximate gridline readings at their declared precision, not exact underlying observations.", [c["id"] for c in available])
     if data["charts"] and not available:
         para(s, "Quantitative chart-image extraction is unavailable in this run. The house-view chart images are retained in the review package for inspection; no pixel values have been guessed.", [])
-    para(s, f"House-view market indices and the {p['benchmark']} are distinct series. "
-         "The client benchmark is used for performance comparison and the return-objective test.", [p["benchmark_id"]])
+    para(s, f"House-view market indices and the {p['benchmark']} are distinct series; "
+         "the client benchmark is used for the return-objective test.", [p["benchmark_id"]])
     s = add("Allocation Over Time")
     s["blocks"].append(dict(type="chart", kind="allocation", evidence=[r[k] for r in data["history"] for k in ["quarter_id", "target_id", "nav_id"]]))
-    para(s, f"Quarter-end NAV was {money(p['nav'])} against a target allocation of {money(p['target'])}. "
-         "The historical exhibit uses the allocation workbook's rounded USD-million series.", [p["nav_id"], p["target_id"]])
+    para(s, f"Quarter-end NAV was {money(p['nav'])} against a target allocation of {money(p['target'])}.", [p["nav_id"], p["target_id"]])
     s = add("Diversification")
     for kind in ["property", "geography"]:
         s["blocks"].append(dict(type="chart", kind=kind, evidence=[v["id"] for v in data["diversification"][kind]]))
@@ -238,6 +261,7 @@ def chart_bytes(kind, data):
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
     fig, ax = plt.subplots(figsize=(7.1, 3.0))
     if kind == "annual":
+        ax.set_title("Annualized Time-Weighted Return (net, %)", pad=30)
         annual = data["portfolio"]["annual"]; xs = list(range(len(annual)))
         ax.bar([x - .18 for x in xs], [v["value"] for v in annual], .36, color=primary, label="Portfolio")
         ax.bar([x + .18 for x in xs], [v["benchmark"] for v in annual], .36, color=GOLD, label=data["portfolio"]["benchmark"])
@@ -246,6 +270,7 @@ def chart_bytes(kind, data):
         ax.margins(y=.15)
         ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(.5, 1.2), ncol=2)
     elif kind == "allocation":
+        ax.set_title("Real Estate Allocation Over Time")
         rows = data["history"]
         ax.plot([r["quarter"] for r in rows], [r["target"] for r in rows], color=GOLD, marker="o", label="Target allocation")
         ax.plot([r["quarter"] for r in rows], [r["nav"] for r in rows], color=NAVY, marker="o", label="NAV")
@@ -253,10 +278,13 @@ def chart_bytes(kind, data):
     else:
         rows = data["diversification"][kind]
         if kind == "property":
-            ax.bar([r["label"] for r in rows], [r["value"] for r in rows], color=[NAVY, GOLD, "#527c8c", "#897c66", "#65745f", "#a4adb5"])
-            ax.set_ylabel("% of market value")
-            for container in ax.containers: ax.bar_label(container, fmt="%.1f%%", padding=3)
+            ax.set_title("Property Type Diversification (%)")
+            wedges, _ = ax.pie([r["value"] for r in rows],
+                              colors=[NAVY, GOLD, "#527c8c", "#897c66", "#65745f", "#a4adb5"])
+            ax.legend(wedges, [f"{r['label']} {r['value']:.1f}%" for r in rows],
+                      loc="center left", bbox_to_anchor=(1, .5), frameon=False, fontsize=8)
         else:
+            ax.set_title("Geographic Diversification (%)")
             rows = sorted(rows, key=lambda r: r["value"])
             ax.barh([r["label"] for r in rows], [r["value"] for r in rows], color=NAVY)
             ax.set_xlabel("% of market value")

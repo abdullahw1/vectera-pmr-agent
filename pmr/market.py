@@ -6,7 +6,7 @@ from .ingest import norm, quarter
 from .numeric import display
 
 
-def observation_sentence(chart, property_mix):
+def observation_sentence(chart, property_mix, reporting_year=None):
     """Condense source observations without adding an investment recommendation."""
     values = select_observations(chart["data"].get("series", []), property_mix)
     if not values:
@@ -27,7 +27,9 @@ def observation_sentence(chart, property_mix):
         if len(cap) == len(treasury) == 1:
             return f"At {cap[0]['label']}, the NPI value-weighted cap rate was {formatted(cap[0])}, against {formatted(treasury[0])} for the 10-year Treasury yield."
     if "noi growth" in title:
-        first = min(v["series"] for v in values)
+        periods = sorted({v["series"] for v in values}, key=lambda s: int(re.search(r"\d{4}", s)[0]) if re.search(r"\d{4}", s) else 9999)
+        forward = [s for s in periods if reporting_year is not None and re.search(r"\d{4}", s) and int(re.search(r"\d{4}", s)[0]) > reporting_year]
+        first = forward[0] if forward else periods[0]
         forecasts = [v for v in values if v["series"] == first]
         return f"The deck forecasts {first} NOI growth of " + " and ".join(
             formatted(v) + " for " + v["label"].lower() for v in forecasts) + "."
@@ -58,6 +60,50 @@ def observation_sentence(chart, property_mix):
         groups.setdefault(value[group_by], []).append(value[other] + " " + formatted)
     return chart["data"]["title"] + ": " + "; ".join(
         key + " (" + ", ".join(items) + ")" for key, items in groups.items()) + "."
+
+
+def market_passages(data, ledger):
+    """A small auditable writing bundle, not an enumeration of every exhibit.
+
+    Keep broad returns, financing conditions, forward NOI for material sectors,
+    and the computed office valuation risk. Full charts remain in the audit.
+    """
+    passages = []
+    for slide in data["slides"]:
+        if any(word in norm(slide["title"]) for word in ["key themes", "risks", "positioning"]):
+            passages.append(dict(id=slide["id"], text=" ".join(slide["text"]),
+                                 source=ledger.facts[slide["id"]]["source"], qualitative_only=True))
+    weights = sorted(data["diversification"]["property"], key=lambda p: (-p["value"], p["label"]))[:2]
+    year = quarter(data["quarter"])[0]
+    for chart in data["charts"]:
+        if not chart["data"]:
+            continue
+        title = norm(chart["data"]["title"])
+        if not any(term in title for term in ["fund total return", "treasury", "noi growth", "office"]):
+            continue
+        text = observation_sentence(chart, data["diversification"]["property"], year)
+        ids = [chart["id"]]
+        words = []
+        if "noi growth" in title:
+            text = "The Portfolio's largest property exposures are " + " and ".join(
+                f"{p['label']} at {p['value']:.1f}%" for p in weights) + ". " + text
+            ids += [p["id"] for p in weights]
+            positioning = next(((slide, bullet) for slide in data["slides"] for bullet in slide["text"]
+                                if any(word in norm(slide["title"]) for word in ["key themes", "positioning"])
+                                and any(term in norm(bullet) for term in ["favor", "favour", "tilt toward"])), None)
+            if positioning:
+                text += " House-view positioning: " + positioning[1]
+                ids.append(positioning[0]["id"])
+        for signal in data.get("market_signals", []):
+            if signal["title"] == chart["data"]["title"]:
+                text += f" The transaction/appraisal gap {signal['direction']} from {signal['old_gap']} to {signal['new_gap']} percentage points."
+                words.append(signal["direction"])
+                ids.append(signal["id"])
+        if text:
+            fid = ledger.add(text, {"kind": "verified market writing bundle"},
+                             formula="deterministically selected chart observations and portfolio exposures", inputs=ids)
+            passages.append(dict(id=fid, text=text, source=ledger.facts[fid]["source"], required_words=words))
+    return passages
 
 
 def period_key(label):

@@ -16,6 +16,7 @@ from .report import build_sections, render_pdf, chart_bytes
 from .review import write_review
 from .template import extract_template
 from .agent import EvidenceAgent
+from .synthesis import build_narratives
 from .verification import write_manifests
 from .crosschecks import supporting_checks, cap_rate_signals
 
@@ -79,6 +80,8 @@ def generate(root: Path, output: Path, client: str, period: str):
     with stage("cross_source_checks"):
         supporting_checks(sources, data, ledger)
         data["market_signals"] = cap_rate_signals(data["charts"], ledger)
+    with stage("grounded_narrative"):
+        data["narratives"] = build_narratives(data, agent, model, ledger)
     data["source_context"] = dict(prior_file=sources["prior"][1].name, prior_pages=sources["prior"][2],
                                    appendix="appendix.pdf" if sources["appendix"] else None,
                                    input_root=str(root.resolve()))
@@ -94,6 +97,7 @@ def generate(root: Path, output: Path, client: str, period: str):
     if any(hashlib.sha256((package_root / name).read_bytes()).hexdigest() != expected for name, expected in code_hashes.items()):
         raise ValueError("Implementation changed during generation; rerun on a stable revision")
     diagnostics = dict(stages=stages, provider=model.provider, model=model.name if model.provider else None,
+                       vision_model=model.vision_name if model.provider else None,
                        api_calls=model.calls, token_usage=model.usage, cache_hits=model.cache_hits,
                        cache_misses=model.cache_misses, failed_calls=model.failures,
                        agent=agent, blockers=sum(i["severity"] == "blocker" for i in ledger.issues),

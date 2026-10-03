@@ -91,3 +91,25 @@ def test_source_change_during_model_enrichment_is_rejected(tmp_path, no_keys, mo
         generate(root, tmp_path / "output", "CPERS", "4Q25")
     assert not (tmp_path / "output" / "draft.json").exists()
     assert json.loads((tmp_path / "output" / "diagnostics.json").read_text())["status"] == "blocked"
+
+
+def test_word_numeral_and_changed_heading_end_to_end(tmp_path, no_keys):
+    import shutil
+    root = tmp_path / "inputs"
+    shutil.copytree(INPUTS, root)
+    report = root / "manager_reports" / "ironwood_value_add_fund_3_4Q25.pdf"
+    with fitz.open(report) as original:
+        text = "\n".join(page.get_text() for page in original)
+    text = text.replace("Ironwood Value-Add Fund 3, L.P.", "Ironwood Value-Add Fund Three, L.P.")
+    text = text.replace("Investments Impacting Performance", "Quarterly Operating Review")
+    with fitz.open() as changed:
+        page = changed.new_page()
+        assert page.insert_textbox(fitz.Rect(35, 35, 560, 780), text, fontsize=9) >= 0
+        changed.save(report)
+    payload, summary = generate(root, tmp_path / "output", "CPERS", "4Q25")
+    assert summary["checks_passed"] == summary["checks_total"]
+    name = "Ironwood Value-Add Fund III"
+    assert name in payload["data"]["support"]
+    assert any(i["code"] == "manager_extraction" and i.get("fund") == name for i in payload["ledger"]["issues"])
+    section = next(s for s in payload["sections"] if s["title"] == "Tactical and Special Situations Portfolio")
+    assert any("A current manager report was supplied" in b.get("text", "") for b in section["blocks"])

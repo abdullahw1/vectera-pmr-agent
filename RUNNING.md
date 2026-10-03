@@ -59,7 +59,7 @@ $env:OPENAI_API_KEY = "your-key"
 $env:ANTHROPIC_API_KEY = "your-key"
 ```
 
-On macOS/Linux, use `export OPENAI_API_KEY="your-key"`. Do not commit keys. The application does not print or write them. If both keys are set, OpenAI is selected. The defaults are `gpt-4.1-mini-2025-04-14` and `claude-sonnet-4-6`; `PMR_MODEL` can override the model identifier for the selected provider.
+On macOS/Linux, use `export OPENAI_API_KEY="your-key"`. Do not commit keys. The application does not print or write them. If both keys are set, OpenAI is selected. OpenAI defaults to `gpt-4.1-2025-04-14` for evidence investigation and prose, and `gpt-4.1-mini-2025-04-14` for chart vision, evaluated separately. Anthropic defaults to `claude-sonnet-4-6`. `PMR_MODEL` and `PMR_VISION_MODEL` override the respective model identifiers for the selected provider.
 
 With no key, the generator still creates all required sections, verified portfolio figures, rankings, compliance checks, charts derived from workbooks, source excerpts, and the flash appendix. Market chart-image numbers remain unavailable, with their original images visible in review. This is a usable financial draft, not an approved final report. Failed model access follows the same conservative degradation path.
 
@@ -86,7 +86,7 @@ The workbook contract is label-driven: sheet names and column meanings remain co
 3. Read the warnings. Missing manager commentary is a warning; financial reconciliation failures, missing policy, ambiguous required sources, and unavailable image extraction block finalization.
 4. Enter your reviewer name, acknowledge review, and approve. The backend checks draft/source/exhibit hashes, every chart confirmation and unresolved blockers. It produces `final_report.pdf`, `approval.json`, `final_evidence.json`, `final_sections.json`, `final_manifest.json`, and `final_semantic_manifest.json`. Regenerating a draft invalidates old approved artifacts.
 
-Financial corrections belong in the authoritative input workbook, followed by regeneration and renewed review. Manager narrative is limited to verified source quotations; edit a source or remove an unsupported claim and rerun rather than adding unaudited prose. This prototype does not offer arbitrary financial or narrative overrides in the browser.
+Financial corrections belong in the authoritative workbook, followed by regeneration and review. Model sentences carry verified source quotes and host-owned numerical placeholders; financial calculations remain code-generated. A separate model check rejects unsupported meaning, but it is not an entailment guarantee: human review remains required. Chart corrections rebind numeric slots; changes invalidating a conclusion require regeneration. This prototype does not offer arbitrary financial or narrative overrides.
 
 ## Output files
 
@@ -122,7 +122,7 @@ An unfamiliar appendix layout is retained as the original vector exhibit on port
 .\.venv\Scripts\python.exe scripts\rehearse_unseen.py
 ```
 
-The repeatability command launches separate processes with empty output folders and caches. It fails on any canonical difference in financial figures, chart observations, fund selection/order/roles, compliance or structure, or on an implementation revision difference. By default it removes keys; `--online` retains them for independent API runs. Full extraction metadata wording is compared separately. Passing twice is observed evidence, not a universal promise of provider determinism. A pinned snapshot, temperature zero, seed and a source/prompt/image-bound cache help stability; chart review remains essential.
+The repeatability command launches separate processes with empty output folders and caches. It fails on any canonical difference in financial figures, chart observations, fund selection/order/roles, compliance or structure, or on an implementation revision difference. By default it removes keys; `--online` retains them for independent API runs. Full payload equality, including prose and extraction metadata, is recorded separately: the final live pair matched canonically, not in its entire payload. Passing twice is observed evidence, not a universal promise of provider determinism. A pinned snapshot, temperature zero, seed and a source/prompt/image-bound cache help stability; chart review remains essential.
 
 Money uses Decimal, serialized as base-ten strings. Active-portfolio currency reconciliations have zero tolerance: a one-cent error blocks approval. Rounded supporting-document statistics have separately declared precision, not a tolerance on the flash. Percentage sums permit their explicitly recorded source precision. The realized-only source discrepancy is a warning because that row is outside the active portfolio. Tests cover bad numbers, altered rows/names/counts/client/period, multi-year logs, agent feedback and limits, chart schema errors, missing keys, tampering and unsupported quotes.
 
@@ -143,6 +143,7 @@ Direct dependencies are pinned in `requirements.txt`. Development used Python 3.
 | `crosschecks.py` | Precision-aware supporting-source checks and deterministic cap-rate gap direction |
 | `verification.py` | Claim manifest and full meaning-bearing reproducibility signature |
 | `narrative.py` | Manager passages, deck text/images, model image extraction, allocation history |
+| `synthesis.py` | Scoped quotes, exact numeric placeholders, bounded repair and complete-source fallback |
 | `template.py` | Prior PDF typography, primary color and contents order |
 | `report.py` | Shared report model, charts and PDF layout |
 | `appendix.py` | Parsed source tables retypeset on portrait Letter with single-row headers |
@@ -151,7 +152,7 @@ Direct dependencies are pinned in `requirements.txt`. Development used Python 3.
 
 Module docstrings describe ownership. Comments explain important financial, source-precedence, and approval decisions. See `docs/WALKTHROUGH.md` for a short live-demo script and `docs/WRITEUP.md` for the submission rationale.
 
-The evidence agent chooses what to inspect and validates verbatim passages. Its focus is visible in review; it does not choose portfolio funds or modify the report's numerical inventory. The report uses deterministic source excerpts and financial templates. This deliberate boundary prevents an agent's changing investigation path from changing required financial results. See `docs/ARCHITECTURE.md` for the data flow and trust boundaries.
+The evidence agent chooses what to inspect and validates verbatim passages. Its validated quotes feed synthesis: the matching narrative must cite its focus evidence. Each sentence names a source; the host attaches its exact quote, with verbatim validation for any model-supplied narrower quote. Numeric values become placeholders; Python restores exact source strings and rejects raw numbers, changed signs/units, wrong source scope or missing/duplicated slots. Sentence ordering may change, but the numerical inventory cannot. This preserves occupancy figures and numerical asset names without model transcription or arithmetic. Unknown headings retain page evidence and a warning. Unmatched reports receive review suggestions, not false absence claims. Rejected prose is labelled pending review with full source excerpts. See `docs/ARCHITECTURE.md` for trust boundaries.
 
 Input hashes are captured before extraction and checked again before the draft is saved. A source edited during an API call invalidates the run rather than binding old calculations to a new file. The implementation revision is also recorded and checked.
 
@@ -159,4 +160,4 @@ Input hashes are captured before extraction and checked again before the draft i
 
 After review and approval, run `python scripts/package_submission.py --final`. Final mode refuses missing approval artifacts or a modified approved PDF. Without `--final` it packages a clearly labeled draft for inspection. Both exclude keys, environments, caches and personal study material. No command in the application publishes to GitHub.
 
-Official API references: [OpenAI model documentation](https://developers.openai.com/api/docs/models/gpt-4.1-mini), [Anthropic model documentation](https://platform.claude.com/docs/en/models/sonnet-4-6/overview).
+Official API references: [OpenAI model documentation](https://developers.openai.com/api/docs/models/gpt-4.1), [Anthropic model documentation](https://platform.claude.com/docs/en/models/sonnet-4-6/overview).

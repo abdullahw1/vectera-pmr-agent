@@ -36,3 +36,22 @@ def test_cache_avoids_second_api_call(monkeypatch, tmp_path):
     assert model.ask("Return JSON") == {"quotes": ["Evidence."]}
     assert model.ask("Return JSON") == {"quotes": ["Evidence."]}
     assert len(calls) == 1
+
+
+def test_prose_and_vision_models_are_separately_configurable(monkeypatch, tmp_path):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-key")
+    monkeypatch.setenv("PMR_MODEL", "prose-model")
+    monkeypatch.setenv("PMR_VISION_MODEL", "vision-model")
+    model = Model(tmp_path, Ledger())
+    requested = []
+    class Response:
+        def __enter__(self): return self
+        def __exit__(self, *args): pass
+        def read(self): return json.dumps({"choices": [{"message": {"content": '{}'}}]}).encode()
+    def respond(request, timeout):
+        requested.append(json.loads(request.data)["model"])
+        return Response()
+    monkeypatch.setattr("urllib.request.urlopen", respond)
+    model.ask("Return JSON")
+    model.ask("Return JSON", b"test image")
+    assert requested == ["prose-model", "vision-model"]

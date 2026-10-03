@@ -29,10 +29,10 @@
       "id": "s1.b2",
       "section": "Portfolio Overview",
       "type": "paragraph",
-      "text": "Since inception, $456.8M has been committed or approved for commitment across 14 individual investment positions: 12 funded and carried in the flash, plus 2 open approvals not funded by quarter-end. The funded investments have generated a since-inception net IRR of 9.3% and a 1.45x net equity multiple.",
+      "text": "Since inception, approximately $0.46 billion has been committed or approved for commitment across 14 individual investment positions: 12 funded and carried in the flash, plus 2 open approvals not funded by Quarter-end. The funded investments have generated a since-inception net IRR of 9.3% and a 1.45x net equity multiple.",
       "rows": null,
       "numbers": [
-        "456.8",
+        "0.46",
         "14",
         "12",
         "2",
@@ -196,14 +196,14 @@
       "id": "s1.b3",
       "section": "Portfolio Overview",
       "type": "paragraph",
-      "text": "At quarter-end, portfolio NAV was $436.1M, or 8.8% of the $4,955.9M total plan and 88.0% of its $495.6M target real estate allocation.",
+      "text": "At Quarter-end, portfolio NAV was $0.44 billion, or 8.8% of the $4.96 billion total plan and 88.0% of its $0.50 billion target real estate allocation.",
       "rows": null,
       "numbers": [
-        "436.1",
+        "0.44",
         "8.8",
-        "4,955.9",
+        "4.96",
         "88.0",
-        "495.6"
+        "0.50"
       ],
       "evidence": [
         "f_edfa97ca0b6a5ad0",
@@ -245,7 +245,7 @@
       "id": "s1.b4",
       "section": "Portfolio Overview",
       "type": "paragraph",
-      "text": "The Portfolio returned 1.28% net during the quarter and 5.46% over one year, against 0.70% and 2.66%, respectively, for the CPERS Custom Benchmark.",
+      "text": "The Portfolio returned 1.28% net during the Quarter and 5.46% over one year, against 0.70% and 2.66%, respectively, for the CPERS Custom Benchmark.",
       "rows": null,
       "numbers": [
         "1.28",
@@ -926,7 +926,7 @@
       "id": "s4.b2",
       "section": "Annualized Time-Weighted Return",
       "type": "paragraph",
-      "text": "The chart compares the Portfolio's net time-weighted returns with the CPERS Custom Benchmark. Returns are read from the annual returns exhibit, not calculated from fund cash flows.",
+      "text": "The chart compares the Portfolio's net time-weighted returns with the CPERS Custom Benchmark.",
       "rows": null,
       "numbers": [],
       "evidence": [
@@ -948,7 +948,7 @@
       "id": "s5.b1",
       "section": "Performance Update",
       "type": "paragraph",
-      "text": "The Portfolio generated $3.3M of gross income and $3.3M of appreciation. Manager fees were $1.1M. The quarter's return was 1.52% gross and 1.28% net.",
+      "text": "The Portfolio generated $3.3M of gross income and $3.3M of appreciation. Manager fees were $1.1M. The Quarter's return was 1.52% gross and 1.28% net.",
       "rows": null,
       "numbers": [
         "3.3",
@@ -1014,92 +1014,92 @@
         [
           "Redwood Logistics Trust",
           "largest contributor; second-largest individual position",
-          "346,623.46",
-          "1,081,768.36",
-          "61,356.27",
-          "1,367,035.55"
+          "346,623",
+          "1,081,768",
+          "61,356",
+          "1,367,036"
         ],
         [
           "Ironwood Value-Add Fund III",
           "second-largest contributor",
-          "125,530.00",
-          "942,909.00",
-          "32,150.00",
-          "1,036,289.00"
+          "125,530",
+          "942,909",
+          "32,150",
+          "1,036,289"
         ],
         [
           "Cornerstone Core Property Fund",
           "second-largest detractor; largest individual position",
-          "534,034.90",
-          "-557,954.40",
-          "163,256.86",
-          "-187,176.36"
+          "534,035",
+          "(557,954)",
+          "163,257",
+          "(187,176)"
         ],
         [
           "Meridian Opportunity Fund V",
           "largest detractor",
-          "-31,854.07",
-          "-468,729.81",
-          "-31,290.15",
-          "-469,293.73"
+          "(31,854)",
+          "(468,730)",
+          "(31,290)",
+          "(469,294)"
         ]
       ],
       "numbers": [
         [],
         [],
         [
-          "346,623.46"
+          "346,623"
         ],
         [
-          "1,081,768.36"
+          "1,081,768"
         ],
         [
-          "61,356.27"
+          "61,356"
         ],
         [
-          "1,367,035.55"
-        ],
-        [],
-        [],
-        [
-          "125,530.00"
-        ],
-        [
-          "942,909.00"
-        ],
-        [
-          "32,150.00"
-        ],
-        [
-          "1,036,289.00"
+          "1,367,036"
         ],
         [],
         [],
         [
-          "534,034.90"
+          "125,530"
         ],
         [
-          "-557,954.40"
+          "942,909"
         ],
         [
-          "163,256.86"
+          "32,150"
         ],
         [
-          "-187,176.36"
+          "1,036,289"
         ],
         [],
         [],
         [
-          "-31,854.07"
+          "534,035"
         ],
         [
-          "-468,729.81"
+          "557,954"
         ],
         [
-          "-31,290.15"
+          "163,257"
         ],
         [
-          "-469,293.73"
+          "187,176"
+        ],
+        [],
+        [],
+        [
+          "31,854"
+        ],
+        [
+          "468,730"
+        ],
+        [
+          "31,290"
+        ],
+        [
+          "469,294"
         ]
       ],
       "evidence": [
@@ -1703,7 +1703,7 @@
         {
           "row": 0,
           "column": 2,
-          "value": "346,623.46",
+          "value": "346,623",
           "evidence": [
             "f_ef2222f687cbe598"
           ],
@@ -1714,7 +1714,7 @@
         {
           "row": 0,
           "column": 3,
-          "value": "1,081,768.36",
+          "value": "1,081,768",
           "evidence": [
             "f_b0e2cc3d0d6feb20"
           ],
@@ -1725,7 +1725,7 @@
         {
           "row": 0,
           "column": 4,
-          "value": "61,356.27",
+          "value": "61,356",
           "evidence": [
             "f_691a850d8fc86cdc"
           ],
@@ -1736,7 +1736,7 @@
         {
           "row": 0,
           "column": 5,
-          "value": "1,367,035.55",
+          "value": "1,367,036",
           "evidence": [
             "f_daeef0717ee618e3"
           ],
@@ -1844,7 +1844,7 @@
         {
           "row": 1,
           "column": 2,
-          "value": "125,530.00",
+          "value": "125,530",
           "evidence": [
             "f_0b3d1989d649bd7b"
           ],
@@ -1855,7 +1855,7 @@
         {
           "row": 1,
           "column": 3,
-          "value": "942,909.00",
+          "value": "942,909",
           "evidence": [
             "f_9566cbb8f151eef7"
           ],
@@ -1866,7 +1866,7 @@
         {
           "row": 1,
           "column": 4,
-          "value": "32,150.00",
+          "value": "32,150",
           "evidence": [
             "f_aad953d82519921e"
           ],
@@ -1877,7 +1877,7 @@
         {
           "row": 1,
           "column": 5,
-          "value": "1,036,289.00",
+          "value": "1,036,289",
           "evidence": [
             "f_fcf6f6c622717c7c"
           ],
@@ -1985,7 +1985,7 @@
         {
           "row": 2,
           "column": 2,
-          "value": "534,034.90",
+          "value": "534,035",
           "evidence": [
             "f_f514f0f46e5e489f"
           ],
@@ -1996,7 +1996,7 @@
         {
           "row": 2,
           "column": 3,
-          "value": "-557,954.40",
+          "value": "(557,954)",
           "evidence": [
             "f_dca8e865c6f78202"
           ],
@@ -2007,7 +2007,7 @@
         {
           "row": 2,
           "column": 4,
-          "value": "163,256.86",
+          "value": "163,257",
           "evidence": [
             "f_d0fe577737882740"
           ],
@@ -2018,7 +2018,7 @@
         {
           "row": 2,
           "column": 5,
-          "value": "-187,176.36",
+          "value": "(187,176)",
           "evidence": [
             "f_fed7c150864778b1"
           ],
@@ -2126,7 +2126,7 @@
         {
           "row": 3,
           "column": 2,
-          "value": "-31,854.07",
+          "value": "(31,854)",
           "evidence": [
             "f_e3e92e3ca4118e0c"
           ],
@@ -2137,7 +2137,7 @@
         {
           "row": 3,
           "column": 3,
-          "value": "-468,729.81",
+          "value": "(468,730)",
           "evidence": [
             "f_6be78ee7ad77d437"
           ],
@@ -2148,7 +2148,7 @@
         {
           "row": 3,
           "column": 4,
-          "value": "-31,290.15",
+          "value": "(31,290)",
           "evidence": [
             "f_a5c2f964ad4e881d"
           ],
@@ -2159,7 +2159,7 @@
         {
           "row": 3,
           "column": 5,
-          "value": "-469,293.73",
+          "value": "(469,294)",
           "evidence": [
             "f_53e3ca2b0f3a395f"
           ],
@@ -2174,6 +2174,522 @@
     },
     {
       "id": "s5.b3",
+      "section": "Performance Update",
+      "type": "paragraph",
+      "text": "Dollar figures are rounded independently to the nearest dollar; displayed components may not sum exactly.",
+      "rows": null,
+      "numbers": [],
+      "evidence": [],
+      "resolved_evidence": [],
+      "locators": [],
+      "status": "nonfactual_process_notice"
+    },
+    {
+      "id": "s5.b4",
+      "section": "Performance Update",
+      "type": "paragraph",
+      "text": "Redwood Logistics Trust was the Portfolio's largest contributor and second-largest individual position, contributing $1,367,036 during the Quarter. Ironwood Value-Add Fund III was the Portfolio's second-largest contributor, contributing $1,036,289 during the Quarter. Cornerstone Core Property Fund was the Portfolio's second-largest detractor and largest individual position, contributing -$187,176 during the Quarter. Meridian Opportunity Fund V was the Portfolio's largest detractor, contributing -$469,294 during the Quarter.",
+      "rows": null,
+      "numbers": [
+        "1,367,036",
+        "1,036,289",
+        "187,176",
+        "469,294"
+      ],
+      "evidence": [
+        "f_a28ed47ef16e42a6",
+        "f_682779d40e1f6f46",
+        "f_daeef0717ee618e3",
+        "f_c14e046778ff1105",
+        "f_1ca4a9b13598864f",
+        "f_fcf6f6c622717c7c",
+        "f_0b38330db80c6de6",
+        "f_782b92c0fd5efc5f",
+        "f_fed7c150864778b1",
+        "f_7e76b74a96a1f345",
+        "f_196949e4e86bfca9",
+        "f_53e3ca2b0f3a395f"
+      ],
+      "resolved_evidence": [
+        "f_0490288a4ba3c85c",
+        "f_05b59e99389849b8",
+        "f_076a9525078474d2",
+        "f_0b38330db80c6de6",
+        "f_0b3d1989d649bd7b",
+        "f_0d0f5583743334cd",
+        "f_0e852509de05e45c",
+        "f_196949e4e86bfca9",
+        "f_1ca4a9b13598864f",
+        "f_1ddbfa65c04644d2",
+        "f_1f386ee2285b8c9a",
+        "f_205a258010db4f8a",
+        "f_21bc73bafbbd1be8",
+        "f_268c86fdd66916d3",
+        "f_292eeb058ae709e7",
+        "f_2d8e82fff98516f3",
+        "f_341d69bea144b058",
+        "f_3d7f263997745bcd",
+        "f_42b87db84208fa92",
+        "f_50b213c0b6acf969",
+        "f_5138474c5e26fa15",
+        "f_53c8ded116b83367",
+        "f_53e3ca2b0f3a395f",
+        "f_540f0ba86635f246",
+        "f_60e907c987b4353c",
+        "f_61e7b56776a63ce8",
+        "f_623dd0037e2fa7af",
+        "f_682779d40e1f6f46",
+        "f_691a850d8fc86cdc",
+        "f_69afbc35654a0ded",
+        "f_6be78ee7ad77d437",
+        "f_7705ccbc4f13383a",
+        "f_782b92c0fd5efc5f",
+        "f_78ac8f655dafdf27",
+        "f_7e76b74a96a1f345",
+        "f_7ffd4fa8307e0a8c",
+        "f_82d84caf7bf1accc",
+        "f_89b673da7c1b58d8",
+        "f_8d2f6db69da8d1df",
+        "f_9566cbb8f151eef7",
+        "f_99562f77d91ae1ec",
+        "f_9ec6e048945507c2",
+        "f_a28ed47ef16e42a6",
+        "f_a5c2f964ad4e881d",
+        "f_aad953d82519921e",
+        "f_aae51f9546682516",
+        "f_ada3d9c7655e2a05",
+        "f_b02afeb3e7dfabe6",
+        "f_b0e2cc3d0d6feb20",
+        "f_b2aa2571b6e37b63",
+        "f_b63b05994e6b996b",
+        "f_b6faf534b0c97e70",
+        "f_ba1d7e8d2640bb7a",
+        "f_bc0466f306b31a3a",
+        "f_c14e046778ff1105",
+        "f_c6af6380bc8172cc",
+        "f_ca559080040daee0",
+        "f_cbdb4277c0a67314",
+        "f_d0fe577737882740",
+        "f_d221b34421358505",
+        "f_d2c5a1b09abbd5ee",
+        "f_d8f38326b9d3bead",
+        "f_daeef0717ee618e3",
+        "f_dca8e865c6f78202",
+        "f_ddae30621f808834",
+        "f_e3cc4da01adea17f",
+        "f_e3e92e3ca4118e0c",
+        "f_ed146f59bd89ec2d",
+        "f_ef2222f687cbe598",
+        "f_f438d23d6cae148e",
+        "f_f514f0f46e5e489f",
+        "f_faf5c8f162dbb917",
+        "f_fcf6f6c622717c7c",
+        "f_fe2272fffdff77a8",
+        "f_fed7c150864778b1",
+        "f_ffd884c57b95f68a"
+      ],
+      "locators": [
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H8",
+          "raw_value": "277855.27"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A17"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A13"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F17",
+          "raw_value": "125530"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G19",
+          "raw_value": "306936.43"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G16",
+          "raw_value": "30830683.68"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A14"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G9",
+          "raw_value": "121948.94"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A16"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G7",
+          "raw_value": "95960.81"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G10",
+          "raw_value": "76247"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G26",
+          "raw_value": "30237149.55"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A20"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F19",
+          "raw_value": "-41647.45"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H16",
+          "raw_value": "8942"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G15",
+          "raw_value": "48575998.36"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G16",
+          "raw_value": "634"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H9",
+          "raw_value": "306712.31"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F7",
+          "raw_value": "538279.89"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G11",
+          "raw_value": "61356.27"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A15"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H18",
+          "raw_value": "-468729.81"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F8",
+          "raw_value": "108458.25"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A26"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G27",
+          "raw_value": "23841867.02"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F16",
+          "raw_value": "-5770"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F9",
+          "raw_value": "188925.41"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H19",
+          "raw_value": "1082224.05"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H17",
+          "raw_value": "942909"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F10",
+          "raw_value": "701291"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A27"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A19"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G18",
+          "raw_value": "-31290.15"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G17",
+          "raw_value": "32150"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H7",
+          "raw_value": "147924.68"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G25",
+          "raw_value": "11103969"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G24",
+          "raw_value": "112620"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H11",
+          "raw_value": "1081768.36"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G19",
+          "raw_value": "51915756.06"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G8",
+          "raw_value": "66232"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G13",
+          "raw_value": "54424849.41"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H6",
+          "raw_value": "147008.9"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G20",
+          "raw_value": "43274370.24"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A25"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G12",
+          "raw_value": "64633.57"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G14",
+          "raw_value": "41870446.64"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A24"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G5",
+          "raw_value": "163256.86"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F12",
+          "raw_value": "463956.21"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "A18"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H5",
+          "raw_value": "-557954.4"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "G6",
+          "raw_value": "93089.87"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H12",
+          "raw_value": "163692.26"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F18",
+          "raw_value": "-31854.07"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G17",
+          "raw_value": "50199121.2"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F11",
+          "raw_value": "346623.46"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "FundingStatus(Agg)",
+          "cell": "G18",
+          "raw_value": "49729238"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F5",
+          "raw_value": "534034.9"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "H10",
+          "raw_value": "188349"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)",
+          "cell": "F6",
+          "raw_value": "412491.81"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "CashActivity(Agg)"
+        }
+      ],
+      "status": "source_linked"
+    },
+    {
+      "id": "s5.b5",
       "section": "Performance Update",
       "type": "paragraph",
       "text": "The quarterly net return changed from 1.18% in the prior report to 1.28%, a change of +10.4 basis points, using the prior report's displayed precision.",
@@ -2212,7 +2728,7 @@
       "id": "s6.b1",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "The Strategic sleeve represented 85.0% of portfolio market value and returned 1.16% net during the quarter.",
+      "text": "The Strategic sleeve represented 85.0% of portfolio market value and returned 1.16% net during the Quarter.",
       "rows": null,
       "numbers": [
         "85.0",
@@ -2254,16 +2770,16 @@
       "id": "s6.b2",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Cornerstone Core Property Fund was the Portfolio's second-largest detractor and largest individual position. The Fund returned -0.34% net, with quarter-end NAV of $54.4M and 28.2% LTV. Income of $534,034.90, appreciation of -$557,954.40 and fees of $163,256.86 resulted in a -$187,176.36 dollar contribution.",
+      "text": "Cornerstone Core Property Fund was the Portfolio's second-largest detractor and largest individual position. The Fund returned -0.34% net, with Quarter-end NAV of $54.4M and 28.2% LTV. Income of $534,035, appreciation of -$557,954 and fees of $163,257 resulted in a -$187,176 dollar contribution.",
       "rows": null,
       "numbers": [
         "-0.34",
         "54.4",
         "28.2",
-        "534,034.90",
-        "557,954.40",
-        "163,256.86",
-        "187,176.36"
+        "534,035,",
+        "557,954",
+        "163,257",
+        "187,176"
       ],
       "evidence": [
         "f_0b38330db80c6de6",
@@ -2769,16 +3285,17 @@
       "id": "s6.b3",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
+      "text": "The fund manager reported that three assets shaped the quarter, with One Financial Plaza (Chicago office) written down on lower submarket comparables and a near-term lease expiry, Bayfront Apartments (San Diego) held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributing positively, partially offsetting the office drag; leverage was conservative at ~28% LTV.",
       "rows": null,
       "numbers": [
         "28"
       ],
       "evidence": [
-        "f_678546ed97cf51c4"
+        "f_a08f80b56d36e832"
       ],
       "resolved_evidence": [
-        "f_678546ed97cf51c4"
+        "f_678546ed97cf51c4",
+        "f_a08f80b56d36e832"
       ],
       "locators": [
         {
@@ -2786,6 +3303,13 @@
           "page": 1,
           "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
           "method": "heading-delimited extraction"
+        },
+        {
+          "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
+          "page": 1,
+          "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
+          "method": "source-bound model prose",
+          "requires_review": true
         }
       ],
       "status": "source_linked"
@@ -2794,7 +3318,7 @@
       "id": "s6.b4",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Beacon Diversified Property Trust. The Fund returned 1.12% net, with quarter-end NAV of $41.9M and 28.0% LTV.",
+      "text": "Beacon Diversified Property Trust. The Fund returned 1.12% net, with Quarter-end NAV of $41.9M and 28.0% LTV.",
       "rows": null,
       "numbers": [
         "1.12",
@@ -3301,7 +3825,7 @@
       "id": "s6.b5",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Summit Multifamily Partners. The Fund returned 1.22% net, with quarter-end NAV of $48.6M and 22.2% LTV.",
+      "text": "Summit Multifamily Partners. The Fund returned 1.22% net, with Quarter-end NAV of $48.6M and 22.2% LTV.",
       "rows": null,
       "numbers": [
         "1.22",
@@ -3808,7 +4332,7 @@
       "id": "s6.b6",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Whitfield Diversified Property Fund. The Fund returned 1.04% net, with quarter-end NAV of $30.8M and 50.0% LTV.",
+      "text": "Whitfield Diversified Property Fund. The Fund returned 1.04% net, with Quarter-end NAV of $30.8M and 50.0% LTV.",
       "rows": null,
       "numbers": [
         "1.04",
@@ -4315,7 +4839,7 @@
       "id": "s6.b7",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Silverline Core-Plus Fund. The Fund returned 0.75% net, with quarter-end NAV of $50.2M and 49.3% LTV.",
+      "text": "Silverline Core-Plus Fund. The Fund returned 0.75% net, with Quarter-end NAV of $50.2M and 49.3% LTV.",
       "rows": null,
       "numbers": [
         "0.75",
@@ -4822,7 +5346,7 @@
       "id": "s6.b8",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Kestrel U.S. Real Estate Fund. The Fund returned 1.66% net, with quarter-end NAV of $49.7M and 25.3% LTV.",
+      "text": "Kestrel U.S. Real Estate Fund. The Fund returned 1.66% net, with Quarter-end NAV of $49.7M and 25.3% LTV.",
       "rows": null,
       "numbers": [
         "1.66",
@@ -5329,16 +5853,16 @@
       "id": "s6.b9",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Redwood Logistics Trust was the Portfolio's largest contributor and second-largest individual position. The Fund returned 2.69% net, with quarter-end NAV of $51.9M and 31.2% LTV. Income of $346,623.46, appreciation of $1,081,768.36 and fees of $61,356.27 resulted in a $1,367,035.55 dollar contribution.",
+      "text": "Redwood Logistics Trust was the Portfolio's largest contributor and second-largest individual position. The Fund returned 2.69% net, with Quarter-end NAV of $51.9M and 31.2% LTV. Income of $346,623, appreciation of $1,081,768 and fees of $61,356 resulted in a $1,367,036 dollar contribution.",
       "rows": null,
       "numbers": [
         "2.69",
         "51.9",
         "31.2",
-        "346,623.46",
-        "1,081,768.36",
-        "61,356.27",
-        "1,367,035.55"
+        "346,623,",
+        "1,081,768",
+        "61,356",
+        "1,367,036"
       ],
       "evidence": [
         "f_a28ed47ef16e42a6",
@@ -5844,7 +6368,7 @@
       "id": "s6.b10",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
+      "text": "Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting, while Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant, and Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion; leverage remained conservative at approximately 31% loan-to-value.",
       "rows": null,
       "numbers": [
         "97",
@@ -5853,10 +6377,11 @@
         "31"
       ],
       "evidence": [
-        "f_8e53833fb531a012"
+        "f_946a264c8d8591b9"
       ],
       "resolved_evidence": [
-        "f_8e53833fb531a012"
+        "f_8e53833fb531a012",
+        "f_946a264c8d8591b9"
       ],
       "locators": [
         {
@@ -5864,6 +6389,13 @@
           "page": 1,
           "quote": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
           "method": "heading-delimited extraction"
+        },
+        {
+          "file": "manager_reports/redwood_logistics_trust_4Q25.pdf",
+          "page": 1,
+          "quote": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
+          "method": "source-bound model prose",
+          "requires_review": true
         }
       ],
       "status": "source_linked"
@@ -5872,7 +6404,7 @@
       "id": "s6.b11",
       "section": "Strategic Portfolio",
       "type": "paragraph",
-      "text": "Harborview Industrial Fund. The Fund returned 1.31% net, with quarter-end NAV of $43.3M and 44.5% LTV.",
+      "text": "Harborview Industrial Fund. The Fund returned 1.31% net, with Quarter-end NAV of $43.3M and 44.5% LTV.",
       "rows": null,
       "numbers": [
         "1.31",
@@ -6379,7 +6911,7 @@
       "id": "s7.b1",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "The Tactical sleeve represented 15.0% of portfolio market value and returned 2.02% net during the quarter.",
+      "text": "The Tactical sleeve represented 15.0% of portfolio market value and returned 2.02% net during the Quarter.",
       "rows": null,
       "numbers": [
         "15.0",
@@ -6421,7 +6953,7 @@
       "id": "s7.b2",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "Tidewater Distressed Realty Fund. The Fund had a quarterly net return of n/m (not reported in the flash), with quarter-end NAV of $0.1M and 0.0% LTV.",
+      "text": "Tidewater Distressed Realty Fund. The Fund had a quarterly net return of n/m (not reported in the flash), with Quarter-end NAV of $0.1M and 0.0% LTV.",
       "rows": null,
       "numbers": [
         "0.1",
@@ -6919,16 +7451,16 @@
       "id": "s7.b3",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "Ironwood Value-Add Fund III was the Portfolio's second-largest contributor. The Fund returned 10.22% net, with quarter-end NAV of $11.1M and 0.0% LTV. Income of $125,530.00, appreciation of $942,909.00 and fees of $32,150.00 resulted in a $1,036,289.00 dollar contribution.",
+      "text": "Ironwood Value-Add Fund III was the Portfolio's second-largest contributor. The Fund returned 10.22% net, with Quarter-end NAV of $11.1M and 0.0% LTV. Income of $125,530, appreciation of $942,909 and fees of $32,150 resulted in a $1,036,289 dollar contribution.",
       "rows": null,
       "numbers": [
         "10.22",
         "11.1",
         "0.0",
-        "125,530.00",
-        "942,909.00",
-        "32,150.00",
-        "1,036,289.00"
+        "125,530,",
+        "942,909",
+        "32,150",
+        "1,036,289"
       ],
       "evidence": [
         "f_c14e046778ff1105",
@@ -7434,16 +7966,33 @@
       "id": "s7.b4",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
+      "text": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, according to the fund manager. The Fund is unlevered at the fund level, as stated in the fund overview.",
       "rows": null,
       "numbers": [],
       "evidence": [
-        "f_fee70c26166bc4f2"
+        "f_1736538836c121d0",
+        "f_fa8df8d33ad5b5fe"
       ],
       "resolved_evidence": [
+        "f_1736538836c121d0",
+        "f_fa8df8d33ad5b5fe",
         "f_fee70c26166bc4f2"
       ],
       "locators": [
+        {
+          "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
+          "page": 1,
+          "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
+          "method": "source-bound model prose",
+          "requires_review": true
+        },
+        {
+          "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
+          "page": 1,
+          "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
+          "method": "source-bound model prose",
+          "requires_review": true
+        },
         {
           "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
           "page": 1,
@@ -7457,16 +8006,16 @@
       "id": "s7.b5",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "Meridian Opportunity Fund V was the Portfolio's largest detractor. The Fund returned -1.53% net, with quarter-end NAV of $30.2M and 42.2% LTV. Income of -$31,854.07, appreciation of -$468,729.81 and fees of -$31,290.15 resulted in a -$469,293.73 dollar contribution.",
+      "text": "Meridian Opportunity Fund V was the Portfolio's largest detractor. The Fund returned -1.53% net, with Quarter-end NAV of $30.2M and 42.2% LTV. Income of -$31,854, appreciation of -$468,730 and a fee credit of $31,290 resulted in a -$469,294 dollar contribution.",
       "rows": null,
       "numbers": [
         "-1.53",
         "30.2",
         "42.2",
-        "31,854.07",
-        "468,729.81",
-        "31,290.15",
-        "469,293.73"
+        "31,854,",
+        "468,730",
+        "31,290",
+        "469,294"
       ],
       "evidence": [
         "f_7e76b74a96a1f345",
@@ -7972,7 +8521,7 @@
       "id": "s7.b6",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "No current manager report was supplied for this fund. Commentary is limited to verified flash figures; asset-level drivers are unavailable.",
+      "text": "No manager report was supplied for this Fund for the Quarter; no asset-level drivers are reported.",
       "rows": null,
       "numbers": [],
       "evidence": [
@@ -7994,7 +8543,7 @@
       "id": "s7.b7",
       "section": "Tactical and Special Situations Portfolio",
       "type": "paragraph",
-      "text": "Blackford Special Situations Fund II. The Fund returned 3.13% net, with quarter-end NAV of $23.8M and 49.7% LTV.",
+      "text": "Blackford Special Situations Fund II. The Fund returned 3.13% net, with Quarter-end NAV of $23.8M and 49.7% LTV.",
       "rows": null,
       "numbers": [
         "3.13",
@@ -8501,7 +9050,7 @@
       "id": "s8.b1",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "The Investment Committee approved 2 new commitments for CPERS during the quarter.",
+      "text": "The Investment Committee approved 2 new commitments for CPERS during the Quarter.",
       "rows": null,
       "numbers": [
         "2"
@@ -8538,13 +9087,11 @@
       "id": "s8.b2",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "Northgate Logistics Partners - $40.0M, approved 2025-10-14.",
+      "text": "Northgate Logistics Partners - $40.0M, approved October 2025.",
       "rows": null,
       "numbers": [
         "40.0",
-        "2025",
-        "10",
-        "14"
+        "2025"
       ],
       "evidence": [
         "f_024f9747ea82a800",
@@ -8592,7 +9139,7 @@
       "id": "s8.b3",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "The approval remained open and was not carried as a funded holding at quarter-end. No performance figures are assigned to this commitment.",
+      "text": "The approval remained open and was not carried as a funded holding at Quarter-end. No performance figures are assigned to this commitment.",
       "rows": null,
       "numbers": [],
       "evidence": [
@@ -8705,16 +9252,24 @@
       "id": "s8.b4",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
+      "text": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets, with a strategy focused on lease-up, mark-to-market of below-market rents, and selective development completion.",
       "rows": null,
       "numbers": [],
       "evidence": [
-        "f_b5b9ce5794ad2acb"
+        "f_7de5c251ffdb0891"
       ],
       "resolved_evidence": [
+        "f_7de5c251ffdb0891",
         "f_b5b9ce5794ad2acb"
       ],
       "locators": [
+        {
+          "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
+          "page": 1,
+          "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
+          "method": "source-bound model prose",
+          "requires_review": true
+        },
         {
           "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
           "page": 1,
@@ -8728,13 +9283,11 @@
       "id": "s8.b5",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "Ridgeline Value Fund IV - $25.0M, approved 2025-11-18.",
+      "text": "Ridgeline Value Fund IV - $25.0M, approved November 2025.",
       "rows": null,
       "numbers": [
         "25.0",
-        "2025",
-        "11",
-        "18"
+        "2025"
       ],
       "evidence": [
         "f_56fe2135e7d842d0",
@@ -8782,7 +9335,7 @@
       "id": "s8.b6",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "The approval remained open and was not carried as a funded holding at quarter-end. No performance figures are assigned to this commitment.",
+      "text": "The approval remained open and was not carried as a funded holding at Quarter-end. No performance figures are assigned to this commitment.",
       "rows": null,
       "numbers": [],
       "evidence": [
@@ -8895,14 +9448,15 @@
       "id": "s8.b7",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
+      "text": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
       "rows": null,
       "numbers": [],
       "evidence": [
-        "f_269bcd2482f7e88c"
+        "f_ba89b458b34536d9"
       ],
       "resolved_evidence": [
-        "f_269bcd2482f7e88c"
+        "f_269bcd2482f7e88c",
+        "f_ba89b458b34536d9"
       ],
       "locators": [
         {
@@ -8910,6 +9464,13 @@
           "page": 1,
           "quote": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
           "method": "heading-delimited extraction"
+        },
+        {
+          "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
+          "page": 1,
+          "quote": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
+          "method": "source-bound model prose",
+          "requires_review": true
         }
       ],
       "status": "source_linked"
@@ -8918,7 +9479,7 @@
       "id": "s8.b8",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "The previously approved $25.0M commitment to Alder Creek Multifamily Fund III was withdrawn during the quarter. The Fund closed at its hard cap without an allocation to the client.",
+      "text": "The previously approved $25.0M commitment to Alder Creek Multifamily Fund III was withdrawn during the Quarter. The Fund closed at its hard cap without an allocation to the client.",
       "rows": null,
       "numbers": [
         "25.0"
@@ -8969,7 +9530,7 @@
       "id": "s8.b9",
       "section": "Recent Investment Activity",
       "type": "paragraph",
-      "text": "The previously approved $30.0M commitment to Sentinel Logistics Income Fund lapsed during the quarter. The approval expired unexercised on 30 November 2025 and is not being renewed.",
+      "text": "The previously approved $30.0M commitment to Sentinel Logistics Income Fund lapsed during the Quarter. The approval expired unexercised on 30 November 2025 and is not being renewed.",
       "rows": null,
       "numbers": [
         "30.0",
@@ -9022,57 +9583,13 @@
       "id": "s9.b1",
       "section": "Market Update",
       "type": "paragraph",
-      "text": "Core real-estate values are stabilizing after the 2023\u20132024 repricing; U.S. private funds have turned positive over the past year (see exhibits). We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail. Leverage discipline and patient deployment into the recovery.",
+      "text": "The market deck highlights that core real-estate values are stabilizing after the 2023\u20132024 repricing, with U.S. private funds turning positive over the past year and a preference for industrial / logistics and multifamily, while remaining underweight office and selective in retail. A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery, while refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office, and slower-than-expected supply absorption is noted in select multifamily submarkets. Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr. At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield. The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%, and the deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential. The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%, and the transaction/appraisal gap widened from 0.7 to 2.1 percentage points. The market deck emphasizes leverage discipline and patient deployment into the recovery as pricing stabilizes.",
       "rows": null,
       "numbers": [
         "2023",
-        "2024"
-      ],
-      "evidence": [
-        "f_c07fe605813ccf88"
-      ],
-      "resolved_evidence": [
-        "f_c07fe605813ccf88"
-      ],
-      "locators": [
-        {
-          "file": "market_outlook_4Q25.pptx",
-          "slide": 2
-        }
-      ],
-      "status": "source_linked"
-    },
-    {
-      "id": "s9.b2",
-      "section": "Market Update",
-      "type": "paragraph",
-      "text": "A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery. Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office. Slower-than-expected supply absorption in select multifamily submarkets.",
-      "rows": null,
-      "numbers": [
+        "2024",
         "2020",
-        "2021"
-      ],
-      "evidence": [
-        "f_0993143bfbfcfdff"
-      ],
-      "resolved_evidence": [
-        "f_0993143bfbfcfdff"
-      ],
-      "locators": [
-        {
-          "file": "market_outlook_4Q25.pptx",
-          "slide": 12
-        }
-      ],
-      "status": "source_linked"
-    },
-    {
-      "id": "s9.b3",
-      "section": "Market Update",
-      "type": "paragraph",
-      "text": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr. At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield. The deck forecasts 2025 NOI growth of ~1.7% for industrial and ~2.2% for residential.",
-      "rows": null,
-      "numbers": [
+        "2021",
         "1.0",
         "3.3",
         "1",
@@ -9080,21 +9597,69 @@
         "4.6",
         "4.2",
         "10",
-        "2025",
-        "1.7",
-        "2.2"
+        "36.2",
+        "23.5",
+        "2026",
+        "27",
+        "1.3",
+        "1.4",
+        "25",
+        "5.6",
+        "7.7",
+        "0.7",
+        "2.1"
       ],
       "evidence": [
-        "f_6d57eddcaeaf2604",
-        "f_585c23b393cd1f1e",
-        "f_7b3c078cd261039c"
+        "f_fc2abdb6bdd80403",
+        "f_424d459257f560cc",
+        "f_d423b5543401e785",
+        "f_74dd8e5be3b7e4e1",
+        "f_40acc3d2877e245a",
+        "f_c7ff158a1ce3736e",
+        "f_5781c533c94498eb"
       ],
       "resolved_evidence": [
+        "f_0993143bfbfcfdff",
+        "f_40acc3d2877e245a",
+        "f_424d459257f560cc",
+        "f_5253785e9e45fb51",
+        "f_5781c533c94498eb",
         "f_585c23b393cd1f1e",
         "f_6d57eddcaeaf2604",
-        "f_7b3c078cd261039c"
+        "f_74dd8e5be3b7e4e1",
+        "f_7b3c078cd261039c",
+        "f_832187d04bd0b44c",
+        "f_86b1e5a4e1a0dc9e",
+        "f_a06e1e2330ae70b3",
+        "f_a10e970c92b9cd19",
+        "f_c07fe605813ccf88",
+        "f_c7ff158a1ce3736e",
+        "f_d423b5543401e785",
+        "f_d43da4925626e156",
+        "f_d80efd691877ad26",
+        "f_dea15697cfa9083b",
+        "f_f7fec8895394ab59",
+        "f_fc2abdb6bdd80403"
       ],
       "locators": [
+        {
+          "file": "market_outlook_4Q25.pptx",
+          "slide": 12
+        },
+        {
+          "file": "market_outlook_4Q25.pptx",
+          "slide": 12,
+          "quote": "\u2022 A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office. \u2022 Slower-than-expected supply absorption in select multifamily submarkets.",
+          "method": "source-bound model prose",
+          "requires_review": true
+        },
+        {
+          "file": "market_outlook_4Q25.pptx",
+          "slide": 13,
+          "quote": "\u2022 Maintain leverage discipline; prefer moderate loan-to-value. \u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. \u2022 Deploy patiently into the recovery as pricing stabilizes.",
+          "method": "source-bound model prose",
+          "requires_review": true
+        },
         {
           "file": "market_outlook_4Q25.pptx",
           "slide": 5,
@@ -9118,53 +9683,12 @@
           "asset": "assets/slide_6_chart_1.png",
           "method": "model vision",
           "requires_review": true
-        }
-      ],
-      "status": "source_linked"
-    },
-    {
-      "id": "s9.b4",
-      "section": "Market Update",
-      "type": "paragraph",
-      "text": "For 1-Yr, net industrial returns were 5.5% for Industrial: Specialized and 4.4% for NPI-Industrial. At 4Q25, monthly housing costs were $3,400/month (cost to own) versus $2,500/month (cost to rent). The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%.",
-      "rows": null,
-      "numbers": [
-        "1",
-        "5.5",
-        "4.4",
-        "4",
-        "3,400",
-        "2,500",
-        "25",
-        "5.6",
-        "7.7"
-      ],
-      "evidence": [
-        "f_40b4ae9da0b0b8fb",
-        "f_1e9d1839d8ae53af",
-        "f_a10e970c92b9cd19"
-      ],
-      "resolved_evidence": [
-        "f_1e9d1839d8ae53af",
-        "f_40b4ae9da0b0b8fb",
-        "f_a10e970c92b9cd19"
-      ],
-      "locators": [
-        {
-          "file": "market_outlook_4Q25.pptx",
-          "slide": 8,
-          "chart": 1,
-          "asset": "assets/slide_8_chart_1.png",
-          "method": "model vision",
-          "requires_review": true
         },
         {
-          "file": "market_outlook_4Q25.pptx",
-          "slide": 7,
-          "chart": 1,
-          "asset": "assets/slide_7_chart_1.png",
-          "method": "model vision",
-          "requires_review": true
+          "file": "flash_4Q25.xlsx",
+          "sheet": "All Property",
+          "cell": "B6",
+          "raw_value": "23.45868508190368"
         },
         {
           "file": "market_outlook_4Q25.pptx",
@@ -9173,78 +9697,36 @@
           "asset": "assets/slide_9_chart_1.png",
           "method": "model vision",
           "requires_review": true
-        }
-      ],
-      "status": "source_linked"
-    },
-    {
-      "id": "s9.b5",
-      "section": "Market Update",
-      "type": "paragraph",
-      "text": "The retail exhibit for 2007-2025 shows Austin: ~65.0% population growth versus ~30.0% retail inventory growth; Charlotte: ~38.0% population growth versus ~17.0% retail inventory growth.",
-      "rows": null,
-      "numbers": [
-        "2007",
-        "2025",
-        "65.0",
-        "30.0",
-        "38.0",
-        "17.0"
-      ],
-      "evidence": [
-        "f_639f583c749c2eec"
-      ],
-      "resolved_evidence": [
-        "f_639f583c749c2eec"
-      ],
-      "locators": [
+        },
         {
           "file": "market_outlook_4Q25.pptx",
-          "slide": 10,
-          "chart": 1,
-          "asset": "assets/slide_10_chart_1.png",
-          "method": "model vision",
+          "slide": 2
+        },
+        {
+          "file": "flash_4Q25.xlsx",
+          "sheet": "All Property",
+          "cell": "D6",
+          "raw_value": "36.20124610806096"
+        },
+        {
+          "file": "market_outlook_4Q25.pptx",
+          "slide": 13
+        },
+        {
+          "file": "market_outlook_4Q25.pptx",
+          "slide": 2,
+          "quote": "\u2022 Core real-estate values are stabilizing after the 2023\u20132024 repricing; U.S. private funds have turned positive over the past year (see exhibits). \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail. \u2022 Leverage discipline and patient deployment into the recovery.",
+          "method": "source-bound model prose",
           "requires_review": true
         }
       ],
       "status": "source_linked"
     },
     {
-      "id": "s9.b6",
+      "id": "s9.b2",
       "section": "Market Update",
       "type": "paragraph",
-      "text": "For U.S. Office \u2014 Appraisal vs. Transaction Cap Rate, the transaction/appraisal gap widened from 0.7 to 2.1 percentage points between 25Q3 and 25Q4.",
-      "rows": null,
-      "numbers": [
-        "0.7",
-        "2.1",
-        "25",
-        "25"
-      ],
-      "evidence": [
-        "f_d80efd691877ad26"
-      ],
-      "resolved_evidence": [
-        "f_a10e970c92b9cd19",
-        "f_d80efd691877ad26"
-      ],
-      "locators": [
-        {
-          "file": "market_outlook_4Q25.pptx",
-          "slide": 9,
-          "chart": 1,
-          "asset": "assets/slide_9_chart_1.png",
-          "method": "model vision",
-          "requires_review": true
-        }
-      ],
-      "status": "source_linked"
-    },
-    {
-      "id": "s9.b7",
-      "section": "Market Update",
-      "type": "paragraph",
-      "text": "Values marked ~ are approximate gridline readings at their declared precision, not exact underlying observations. They require human confirmation.",
+      "text": "Values marked ~ are approximate gridline readings at their declared precision, not exact underlying observations.",
       "rows": null,
       "numbers": [],
       "evidence": [
@@ -9326,10 +9808,10 @@
       "status": "source_linked"
     },
     {
-      "id": "s9.b8",
+      "id": "s9.b3",
       "section": "Market Update",
       "type": "paragraph",
-      "text": "House-view market indices and the CPERS Custom Benchmark are distinct series. The client benchmark is used for performance comparison and the return-objective test.",
+      "text": "House-view market indices and the CPERS Custom Benchmark are distinct series; the client benchmark is used for the return-objective test.",
       "rows": null,
       "numbers": [],
       "evidence": [
@@ -9550,7 +10032,7 @@
       "id": "s10.b2",
       "section": "Allocation Over Time",
       "type": "paragraph",
-      "text": "Quarter-end NAV was $436.1M against a target allocation of $495.6M. The historical exhibit uses the allocation workbook's rounded USD-million series.",
+      "text": "Quarter-end NAV was $436.1M against a target allocation of $495.6M.",
       "rows": null,
       "numbers": [
         "436.1",
@@ -18679,6 +19161,228 @@
       "formula": "transaction - appraisal, latest and preceding chart periods",
       "inputs": [
         "f_a10e970c92b9cd19"
+      ]
+    },
+    "f_a08f80b56d36e832": {
+      "value": "The fund manager reported that three assets shaped the quarter, with One Financial Plaza (Chicago office) written down on lower submarket comparables and a near-term lease expiry, Bayfront Apartments (San Diego) held roughly flat as concessions offset rent growth, and Prairie Logistics (Kansas City) contributing positively, partially offsetting the office drag; leverage was conservative at ~28% LTV.",
+      "source": {
+        "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
+        "page": 1,
+        "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_678546ed97cf51c4"
+      ]
+    },
+    "f_1736538836c121d0": {
+      "value": "Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially, while Northline Logistics (Nashville) appreciated on completion of a build-to-suit, according to the fund manager.",
+      "source": {
+        "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
+        "page": 1,
+        "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_fee70c26166bc4f2"
+      ]
+    },
+    "f_fa8df8d33ad5b5fe": {
+      "value": "The Fund is unlevered at the fund level, as stated in the fund overview.",
+      "source": {
+        "file": "manager_reports/ironwood_value_add_fund_3_4Q25.pdf",
+        "page": 1,
+        "quote": "Two assets drove the result. Eastgate Industrial (Phoenix) reached stabilized occupancy and was marked up materially. Northline Logistics (Nashville) appreciated on completion of a build-to-suit. The Fund is unlevered at the fund level.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_fee70c26166bc4f2"
+      ]
+    },
+    "f_7de5c251ffdb0891": {
+      "value": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets, with a strategy focused on lease-up, mark-to-market of below-market rents, and selective development completion.",
+      "source": {
+        "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
+        "page": 1,
+        "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_b5b9ce5794ad2acb"
+      ]
+    },
+    "f_946a264c8d8591b9": {
+      "value": "Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting, while Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant, and Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion; leverage remained conservative at approximately 31% loan-to-value.",
+      "source": {
+        "file": "manager_reports/redwood_logistics_trust_4Q25.pdf",
+        "page": 1,
+        "quote": "Three assets drove the quarter. Gateway Logistics Center (Dallas) was marked up following the completion of lease-up to 97% occupancy at rents ahead of underwriting. Harbor 40 Distribution (Savannah) appreciated modestly on a new 10-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) was held flat pending a planned expansion. Leverage remained conservative at approximately 31% loan-to-value.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_8e53833fb531a012"
+      ]
+    },
+    "f_ba89b458b34536d9": {
+      "value": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros, with a strategy emphasizing operational improvement, unit renovation, and mark-to-market of below-market rents, as well as selective ground-up completion.",
+      "source": {
+        "file": "manager_reports/ridgeline_value_fund_iv_4Q25.pdf",
+        "page": 1,
+        "quote": "Ridgeline Value Fund IV is the fourth vintage in Ridgeline Capital's diversified value-add series, targeting the acquisition and repositioning of multifamily and mixed-use assets in supply-constrained coastal and Mountain-West metros. The strategy emphasizes operational improvement, unit renovation, and mark-to-market of below-market rents, with selective ground-up completion.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_269bcd2482f7e88c"
+      ]
+    },
+    "f_86b1e5a4e1a0dc9e": {
+      "value": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr.",
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_6d57eddcaeaf2604"
+      ]
+    },
+    "f_a06e1e2330ae70b3": {
+      "value": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield.",
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_585c23b393cd1f1e"
+      ]
+    },
+    "f_5253785e9e45fb51": {
+      "value": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%. The deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential. House-view positioning: \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail.",
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_7b3c078cd261039c",
+        "f_dea15697cfa9083b",
+        "f_832187d04bd0b44c",
+        "f_c07fe605813ccf88"
+      ]
+    },
+    "f_d43da4925626e156": {
+      "value": "The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%. The transaction/appraisal gap widened from 0.7 to 2.1 percentage points.",
+      "source": {
+        "kind": "verified market writing bundle"
+      },
+      "formula": "deterministically selected chart observations and portfolio exposures",
+      "inputs": [
+        "f_a10e970c92b9cd19",
+        "f_d80efd691877ad26"
+      ]
+    },
+    "f_fc2abdb6bdd80403": {
+      "value": "The market deck highlights that core real-estate values are stabilizing after the 2023\u20132024 repricing, with U.S. private funds turning positive over the past year and a preference for industrial / logistics and multifamily, while remaining underweight office and selective in retail.",
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 2,
+        "quote": "\u2022 Core real-estate values are stabilizing after the 2023\u20132024 repricing; U.S. private funds have turned positive over the past year (see exhibits). \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail. \u2022 Leverage discipline and patient deployment into the recovery.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_c07fe605813ccf88"
+      ]
+    },
+    "f_424d459257f560cc": {
+      "value": "A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery, while refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office, and slower-than-expected supply absorption is noted in select multifamily submarkets.",
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 12,
+        "quote": "\u2022 A resurgence in rate volatility could re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office. \u2022 Slower-than-expected supply absorption in select multifamily submarkets.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_0993143bfbfcfdff"
+      ]
+    },
+    "f_d423b5543401e785": {
+      "value": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr.",
+      "source": {
+        "kind": "verified market writing bundle",
+        "quote": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_86b1e5a4e1a0dc9e"
+      ]
+    },
+    "f_74dd8e5be3b7e4e1": {
+      "value": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield.",
+      "source": {
+        "kind": "verified market writing bundle",
+        "quote": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_a06e1e2330ae70b3"
+      ]
+    },
+    "f_40acc3d2877e245a": {
+      "value": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%, and the deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential.",
+      "source": {
+        "kind": "verified market writing bundle",
+        "quote": "The Portfolio's largest property exposures are Industrial at 36.2% and Apartment at 23.5%. The deck forecasts 2026-27 (p.a.) NOI growth of ~1.3% for industrial and ~1.4% for residential. House-view positioning: \u2022 We favor industrial / logistics and multifamily, remain underweight office, and are selective in retail.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_5253785e9e45fb51"
+      ]
+    },
+    "f_c7ff158a1ce3736e": {
+      "value": "The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%, and the transaction/appraisal gap widened from 0.7 to 2.1 percentage points.",
+      "source": {
+        "kind": "verified market writing bundle",
+        "quote": "The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%. The transaction/appraisal gap widened from 0.7 to 2.1 percentage points.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_d43da4925626e156"
+      ]
+    },
+    "f_5781c533c94498eb": {
+      "value": "The market deck emphasizes leverage discipline and patient deployment into the recovery as pricing stabilizes.",
+      "source": {
+        "file": "market_outlook_4Q25.pptx",
+        "slide": 13,
+        "quote": "\u2022 Maintain leverage discipline; prefer moderate loan-to-value. \u2022 Tilt toward industrial / logistics and multifamily; underweight office; be selective in retail. \u2022 Deploy patiently into the recovery as pricing stabilizes.",
+        "method": "source-bound model prose",
+        "requires_review": true
+      },
+      "formula": "exact numeric slots and scoped quotes; paraphrase meaning requires review",
+      "inputs": [
+        "f_f7fec8895394ab59"
       ]
     },
     "f_05eed7a975cccf5d": {

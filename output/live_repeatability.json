@@ -5,8 +5,8 @@
     {
       "client": "CPERS",
       "quarter": "4Q25",
-      "meaning_hash": "a6bcd42ae8f1fa39f4b02b248d1b47949a598a100230f36b06db08f3cc0926a0",
-      "semantic_hash": "79f7cdcbe44a74b2d750f7300ab778e4ca678eb9fda218cebdfa4497c0474c1d",
+      "meaning_hash": "78cdd84e080cd17d1c5f9c2881052c971df7855a93ceb4884cebd32419111249",
+      "semantic_hash": "28dc0057c6382ae637dd20d984bc8a58a3787d8cbc5f9e32517e61a304558240",
       "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
       "source_hashes": {
         "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -37,14 +37,15 @@
         "errors.py": "0f99dc7872b59f510d243cbed64bce616ff216d4758a16f631e8e9058fdc1b3d",
         "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
         "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
-        "ingest.py": "bdd75ed6331e4f93963d8981c24218f5dc1f759e328ffd769687cfbfa33f6970",
-        "market.py": "cdf84010c1087052ec003e6424566dddcdf917068e5f2e9d0e6a5fcd1a930a3c",
-        "models.py": "8ee35924780dceea48cff96601c87f27592cde0a7f43595125a12f23e2f0f40e",
-        "narrative.py": "64cd8b43d59d679843dc50491059e1d64db408fd46353d8d2d7b794352e881a2",
+        "ingest.py": "b52c0aafe65c728935c4bd067888645781681f39fdd7fdf9dfd3001884dcb728",
+        "market.py": "a5152a80274df29e81f9e59fb2c943eb84d6cbb6fae0c4fc99707160e6ed085e",
+        "models.py": "1b9f4bad059b8da27cc574514b0e5b3893638f222d58509fa0e10730e6be1157",
+        "narrative.py": "19e38104712e1ffcb90da14857e831248c711937006b45e70e645cd6dfd3ab92",
         "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
-        "pipeline.py": "a72082e613efe24cfbda52de8b638c049c9708793b87a850dd6c7e7fb99ebf94",
-        "report.py": "a1ee01887fc398c84e39fcff94e9dbb3f8a84637603a6ea313cb00f016db5cbf",
-        "review.py": "aadc14112224423549e79766df2633b113991e9e29ad58623779ef154a43cc91",
+        "pipeline.py": "63e6beedf95036a84ca7c89919f6067d8073fb5054d89351049d0d6ec484ee63",
+        "report.py": "378f7e14c572365664592c7bc5f0fef556558c23b76cdc7436351bf107f6abbb",
+        "review.py": "228cd36e5715ce39084958338ab791b2b7b82b25df436f4d4e3dc84164adec66",
+        "synthesis.py": "bd07859deadc72786b9eaf5e47d72c95012c3f5e80687dbe3d854556fc67256b",
         "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
         "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac",
         "workspace.py": "533bdab4db2fd17c3811e8e901cda520f67a9682bf5c6cb553c757334d54a4bd"
@@ -69,8 +70,16 @@
           ]
         },
         {
+          "code": "negative_fees",
+          "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+          "severity": "warning",
+          "evidence": [
+            "f_a5c2f964ad4e881d"
+          ]
+        },
+        {
           "code": "missing_manager",
-          "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+          "message": "No matched current manager evidence for ranked fund Meridian Opportunity Fund V; flash-only commentary",
           "severity": "warning",
           "fund": "Meridian Opportunity Fund V"
         },
@@ -90,7 +99,7 @@
           "code": "chart_review",
           "message": "Confirm image-extracted values on slide 6, chart 1",
           "severity": "review",
-          "fact_id": "f_7b3c078cd261039c"
+          "fact_id": "f_f1604a0ba6797969"
         },
         {
           "code": "chart_review",
@@ -102,7 +111,7 @@
           "code": "chart_review",
           "message": "Confirm image-extracted values on slide 8, chart 1",
           "severity": "review",
-          "fact_id": "f_c57fe5c98ad226cd"
+          "fact_id": "f_1e9d1839d8ae53af"
         },
         {
           "code": "chart_review",
@@ -114,7 +123,7 @@
           "code": "chart_review",
           "message": "Confirm image-extracted values on slide 10, chart 1",
           "severity": "review",
-          "fact_id": "f_639f583c749c2eec"
+          "fact_id": "f_db84df1debe8c53c"
         },
         {
           "code": "history_ownership",
@@ -123,6 +132,60 @@
           "evidence": [
             "f_b9c0c533e3c13eec",
             "f_fe245671d1c72119"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
+          "severity": "warning",
+          "evidence": [
+            "f_a08f80b56d36e832"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
+          "severity": "warning",
+          "evidence": [
+            "f_ac637fb309c1b156"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
+          "severity": "warning",
+          "evidence": [
+            "f_7de5c251ffdb0891"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
+          "severity": "warning",
+          "evidence": [
+            "f_946a264c8d8591b9"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
+          "severity": "warning",
+          "evidence": [
+            "f_ba89b458b34536d9"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
+          "severity": "warning",
+          "evidence": [
+            "f_a6ef5f2823efb421",
+            "f_7d66af00c382b018",
+            "f_d423b5543401e785",
+            "f_b1c7ba7aaba9277c",
+            "f_073264f4a9804d77",
+            "f_1eea667781673220",
+            "f_4d556142b4c877a0"
           ]
         }
       ],
@@ -163,8 +226,8 @@
         }
       ],
       "model_provider": "openai",
-      "model_name": "gpt-4.1-mini-2025-04-14",
-      "api_calls": 12,
+      "model_name": "gpt-4.1-2025-04-14",
+      "api_calls": 23,
       "api_usage": [
         {
           "prompt_tokens": 227,
@@ -183,8 +246,8 @@
         },
         {
           "prompt_tokens": 507,
-          "completion_tokens": 21,
-          "total_tokens": 528,
+          "completion_tokens": 22,
+          "total_tokens": 529,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -197,9 +260,9 @@
           }
         },
         {
-          "prompt_tokens": 554,
-          "completion_tokens": 24,
-          "total_tokens": 578,
+          "prompt_tokens": 779,
+          "completion_tokens": 35,
+          "total_tokens": 814,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -212,24 +275,9 @@
           }
         },
         {
-          "prompt_tokens": 788,
-          "completion_tokens": 80,
-          "total_tokens": 868,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 916,
+          "prompt_tokens": 860,
           "completion_tokens": 9,
-          "total_tokens": 925,
+          "total_tokens": 869,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -273,8 +321,585 @@
         },
         {
           "prompt_tokens": 1480,
-          "completion_tokens": 628,
-          "total_tokens": 2108,
+          "completion_tokens": 626,
+          "total_tokens": 2106,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 376,
+          "total_tokens": 1788,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 585,
+          "total_tokens": 1997,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 1531,
+          "total_tokens": 3011,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 697,
+          "total_tokens": 2177,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 609,
+          "completion_tokens": 114,
+          "total_tokens": 723,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 278,
+          "completion_tokens": 34,
+          "total_tokens": 312,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 428,
+          "completion_tokens": 74,
+          "total_tokens": 502,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 229,
+          "completion_tokens": 64,
+          "total_tokens": 293,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 431,
+          "completion_tokens": 93,
+          "total_tokens": 524,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 239,
+          "completion_tokens": 36,
+          "total_tokens": 275,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 489,
+          "completion_tokens": 123,
+          "total_tokens": 612,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 295,
+          "completion_tokens": 55,
+          "total_tokens": 350,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 447,
+          "completion_tokens": 109,
+          "total_tokens": 556,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 269,
+          "completion_tokens": 44,
+          "total_tokens": 313,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1079,
+          "completion_tokens": 560,
+          "total_tokens": 1639,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1048,
+          "completion_tokens": 57,
+          "total_tokens": 1105,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "client": "CPERS",
+      "quarter": "4Q25",
+      "meaning_hash": "f20fd7ec949d9b359740f3beb5bd63aef9e14df0f00412b4caed83e434166d56",
+      "semantic_hash": "28dc0057c6382ae637dd20d984bc8a58a3787d8cbc5f9e32517e61a304558240",
+      "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
+      "source_hashes": {
+        "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
+        "flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
+        "flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
+        "flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
+        "flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
+        "ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
+        "manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
+        "manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
+        "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
+        "manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
+        "manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
+        "manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
+        "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
+        "market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
+        "prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
+        "prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b"
+      },
+      "implementation_hashes": {
+        "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+        "__main__.py": "f9245d1c0f711f76b472c699ac2af0c0a3bcc92c831321908f16dedbc016d295",
+        "agent.py": "da9363576beecda277e22d8fdc31209be4bc24f35ece300ee33291e77f6f5b4b",
+        "appendix.py": "1e3424634872174cdfe4dc97b06b6178ad7b699800b9ca7ddefe70d240921b83",
+        "charts.py": "8fbdfdf81910b678fcb81f19f7b91dacf2c6959d785e6d3232232f7896633ec0",
+        "config.py": "dd2b4d95ab80598ce217fae9b9c031a3f54f0b05d81e022f8b0569eda94fa59a",
+        "crosschecks.py": "0758aca585de3a7aa7c5a2e191aac9775bcd7b610207a610e9379839ff3af269",
+        "errors.py": "0f99dc7872b59f510d243cbed64bce616ff216d4758a16f631e8e9058fdc1b3d",
+        "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
+        "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
+        "ingest.py": "b52c0aafe65c728935c4bd067888645781681f39fdd7fdf9dfd3001884dcb728",
+        "market.py": "a5152a80274df29e81f9e59fb2c943eb84d6cbb6fae0c4fc99707160e6ed085e",
+        "models.py": "1b9f4bad059b8da27cc574514b0e5b3893638f222d58509fa0e10730e6be1157",
+        "narrative.py": "19e38104712e1ffcb90da14857e831248c711937006b45e70e645cd6dfd3ab92",
+        "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
+        "pipeline.py": "63e6beedf95036a84ca7c89919f6067d8073fb5054d89351049d0d6ec484ee63",
+        "report.py": "378f7e14c572365664592c7bc5f0fef556558c23b76cdc7436351bf107f6abbb",
+        "review.py": "228cd36e5715ce39084958338ab791b2b7b82b25df436f4d4e3dc84164adec66",
+        "synthesis.py": "bd07859deadc72786b9eaf5e47d72c95012c3f5e80687dbe3d854556fc67256b",
+        "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
+        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac",
+        "workspace.py": "533bdab4db2fd17c3811e8e901cda520f67a9682bf5c6cb553c757334d54a4bd"
+      },
+      "checks_passed": 58,
+      "checks_total": 58,
+      "supporting_checks_failed": 1,
+      "issues": [
+        {
+          "code": "reconciliation",
+          "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
+          "severity": "warning",
+          "evidence": [
+            "f_6faa3496a5ff4dd8",
+            "f_8af12216d589319a",
+            "f_6c69b87841fc08cc",
+            "f_715daf00f71e7500",
+            "f_9abbdd11972ef684",
+            "f_06e1878e05198846",
+            "f_d3748ab9ba07455f",
+            "f_f1b493f43db48766"
+          ]
+        },
+        {
+          "code": "negative_fees",
+          "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+          "severity": "warning",
+          "evidence": [
+            "f_a5c2f964ad4e881d"
+          ]
+        },
+        {
+          "code": "missing_manager",
+          "message": "No matched current manager evidence for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+          "severity": "warning",
+          "fund": "Meridian Opportunity Fund V"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 4, chart 1",
+          "severity": "review",
+          "fact_id": "f_6d57eddcaeaf2604"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 5, chart 1",
+          "severity": "review",
+          "fact_id": "f_585c23b393cd1f1e"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 6, chart 1",
+          "severity": "review",
+          "fact_id": "f_d1b44828ed975d39"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 7, chart 1",
+          "severity": "review",
+          "fact_id": "f_40b4ae9da0b0b8fb"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 8, chart 1",
+          "severity": "review",
+          "fact_id": "f_1e9d1839d8ae53af"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 9, chart 1",
+          "severity": "review",
+          "fact_id": "f_e7530a703c092fd7"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 10, chart 1",
+          "severity": "review",
+          "fact_id": "f_639f583c749c2eec"
+        },
+        {
+          "code": "history_ownership",
+          "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+          "severity": "warning",
+          "evidence": [
+            "f_b9c0c533e3c13eec",
+            "f_fe245671d1c72119"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
+          "severity": "warning",
+          "evidence": [
+            "f_acd3c8464da96e9f"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
+          "severity": "warning",
+          "evidence": [
+            "f_945191953251ea5e",
+            "f_82346170c1047c36",
+            "f_c86399d6acadba4f",
+            "f_7c5e30058db019af"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
+          "severity": "warning",
+          "evidence": [
+            "f_7de5c251ffdb0891"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
+          "severity": "warning",
+          "evidence": [
+            "f_946a264c8d8591b9"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
+          "severity": "warning",
+          "evidence": [
+            "f_ba89b458b34536d9"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
+          "severity": "warning",
+          "evidence": [
+            "f_60c23729fba5fe88",
+            "f_424d459257f560cc",
+            "f_8482ce88fd4b76c7",
+            "f_d423b5543401e785",
+            "f_b1c7ba7aaba9277c",
+            "f_7cc49e89a1feaa9a",
+            "f_1eea667781673220"
+          ]
+        }
+      ],
+      "ranked_funds": [
+        {
+          "name": "Cornerstone Core Property Fund",
+          "roles": [
+            "second-largest detractor",
+            "largest individual position"
+          ],
+          "contribution": "-187176.36",
+          "nav": "54424849.41"
+        },
+        {
+          "name": "Redwood Logistics Trust",
+          "roles": [
+            "largest contributor",
+            "second-largest individual position"
+          ],
+          "contribution": "1367035.55",
+          "nav": "51915756.06"
+        },
+        {
+          "name": "Ironwood Value-Add Fund III",
+          "roles": [
+            "second-largest contributor"
+          ],
+          "contribution": "1036289",
+          "nav": "11103969"
+        },
+        {
+          "name": "Meridian Opportunity Fund V",
+          "roles": [
+            "largest detractor"
+          ],
+          "contribution": "-469293.73",
+          "nav": "30237149.55"
+        }
+      ],
+      "model_provider": "openai",
+      "model_name": "gpt-4.1-2025-04-14",
+      "api_calls": 25,
+      "api_usage": [
+        {
+          "prompt_tokens": 227,
+          "completion_tokens": 11,
+          "total_tokens": 238,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 507,
+          "completion_tokens": 22,
+          "total_tokens": 529,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 779,
+          "completion_tokens": 47,
+          "total_tokens": 826,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 872,
+          "completion_tokens": 9,
+          "total_tokens": 881,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 276,
+          "total_tokens": 1688,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 980,
+          "total_tokens": 2460,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 630,
+          "total_tokens": 2110,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -345,177 +970,11 @@
             "accepted_prediction_tokens": 0,
             "rejected_prediction_tokens": 0
           }
-        }
-      ]
-    },
-    {
-      "client": "CPERS",
-      "quarter": "4Q25",
-      "meaning_hash": "b095af74dd1a08ac93f6b87e2d31beca2455c5db5e8ebf34eb56b1bae768892e",
-      "semantic_hash": "79f7cdcbe44a74b2d750f7300ab778e4ca678eb9fda218cebdfa4497c0474c1d",
-      "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
-      "source_hashes": {
-        "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
-        "flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
-        "flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
-        "flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
-        "flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
-        "ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
-        "manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
-        "manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
-        "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
-        "manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
-        "manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
-        "manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
-        "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
-        "market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
-        "prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
-        "prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b"
-      },
-      "implementation_hashes": {
-        "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
-        "__main__.py": "f9245d1c0f711f76b472c699ac2af0c0a3bcc92c831321908f16dedbc016d295",
-        "agent.py": "da9363576beecda277e22d8fdc31209be4bc24f35ece300ee33291e77f6f5b4b",
-        "appendix.py": "1e3424634872174cdfe4dc97b06b6178ad7b699800b9ca7ddefe70d240921b83",
-        "charts.py": "8fbdfdf81910b678fcb81f19f7b91dacf2c6959d785e6d3232232f7896633ec0",
-        "config.py": "dd2b4d95ab80598ce217fae9b9c031a3f54f0b05d81e022f8b0569eda94fa59a",
-        "crosschecks.py": "0758aca585de3a7aa7c5a2e191aac9775bcd7b610207a610e9379839ff3af269",
-        "errors.py": "0f99dc7872b59f510d243cbed64bce616ff216d4758a16f631e8e9058fdc1b3d",
-        "evidence.py": "0f0daaa98627f0f5b5a39c76aee5f910d5475d3a623210e3ba2c9cf7baa160cf",
-        "finance.py": "e3c6a87ecf791dcf0abaf0f3bee65697ed86ac7651f2897161798e29de354fdf",
-        "ingest.py": "bdd75ed6331e4f93963d8981c24218f5dc1f759e328ffd769687cfbfa33f6970",
-        "market.py": "cdf84010c1087052ec003e6424566dddcdf917068e5f2e9d0e6a5fcd1a930a3c",
-        "models.py": "8ee35924780dceea48cff96601c87f27592cde0a7f43595125a12f23e2f0f40e",
-        "narrative.py": "64cd8b43d59d679843dc50491059e1d64db408fd46353d8d2d7b794352e881a2",
-        "numeric.py": "d9f8f790eb572bbe676faad12039e25818f240670504cf1b4bfc915d23e235b2",
-        "pipeline.py": "a72082e613efe24cfbda52de8b638c049c9708793b87a850dd6c7e7fb99ebf94",
-        "report.py": "a1ee01887fc398c84e39fcff94e9dbb3f8a84637603a6ea313cb00f016db5cbf",
-        "review.py": "aadc14112224423549e79766df2633b113991e9e29ad58623779ef154a43cc91",
-        "template.py": "9e863d9b86d3b8658bd8df841621158d98938705b5eb646b60fcda76eab86bfd",
-        "verification.py": "d1ffc36e94a63151e42ff3eb4d8cf70c2a1e0ae98693f85dcd2ac36950db4dac",
-        "workspace.py": "533bdab4db2fd17c3811e8e901cda520f67a9682bf5c6cb553c757334d54a4bd"
-      },
-      "checks_passed": 58,
-      "checks_total": 58,
-      "supporting_checks_failed": 1,
-      "issues": [
-        {
-          "code": "reconciliation",
-          "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
-          "severity": "warning",
-          "evidence": [
-            "f_6faa3496a5ff4dd8",
-            "f_8af12216d589319a",
-            "f_6c69b87841fc08cc",
-            "f_715daf00f71e7500",
-            "f_9abbdd11972ef684",
-            "f_06e1878e05198846",
-            "f_d3748ab9ba07455f",
-            "f_f1b493f43db48766"
-          ]
         },
         {
-          "code": "missing_manager",
-          "message": "No current manager report for ranked fund Meridian Opportunity Fund V; flash-only commentary",
-          "severity": "warning",
-          "fund": "Meridian Opportunity Fund V"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 4, chart 1",
-          "severity": "review",
-          "fact_id": "f_6d57eddcaeaf2604"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 5, chart 1",
-          "severity": "review",
-          "fact_id": "f_27ab7ecf41f22ee6"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 6, chart 1",
-          "severity": "review",
-          "fact_id": "f_7b3c078cd261039c"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 7, chart 1",
-          "severity": "review",
-          "fact_id": "f_40b4ae9da0b0b8fb"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 8, chart 1",
-          "severity": "review",
-          "fact_id": "f_1e9d1839d8ae53af"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 9, chart 1",
-          "severity": "review",
-          "fact_id": "f_9ad7d9ba5c3056b2"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 10, chart 1",
-          "severity": "review",
-          "fact_id": "f_aec0ad487cd52a83"
-        },
-        {
-          "code": "history_ownership",
-          "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
-          "severity": "warning",
-          "evidence": [
-            "f_b9c0c533e3c13eec",
-            "f_fe245671d1c72119"
-          ]
-        }
-      ],
-      "ranked_funds": [
-        {
-          "name": "Cornerstone Core Property Fund",
-          "roles": [
-            "second-largest detractor",
-            "largest individual position"
-          ],
-          "contribution": "-187176.36",
-          "nav": "54424849.41"
-        },
-        {
-          "name": "Redwood Logistics Trust",
-          "roles": [
-            "largest contributor",
-            "second-largest individual position"
-          ],
-          "contribution": "1367035.55",
-          "nav": "51915756.06"
-        },
-        {
-          "name": "Ironwood Value-Add Fund III",
-          "roles": [
-            "second-largest contributor"
-          ],
-          "contribution": "1036289",
-          "nav": "11103969"
-        },
-        {
-          "name": "Meridian Opportunity Fund V",
-          "roles": [
-            "largest detractor"
-          ],
-          "contribution": "-469293.73",
-          "nav": "30237149.55"
-        }
-      ],
-      "model_provider": "openai",
-      "model_name": "gpt-4.1-mini-2025-04-14",
-      "api_calls": 12,
-      "api_usage": [
-        {
-          "prompt_tokens": 227,
-          "completion_tokens": 11,
-          "total_tokens": 238,
+          "prompt_tokens": 621,
+          "completion_tokens": 110,
+          "total_tokens": 731,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -528,9 +987,9 @@
           }
         },
         {
-          "prompt_tokens": 507,
-          "completion_tokens": 21,
-          "total_tokens": 528,
+          "prompt_tokens": 274,
+          "completion_tokens": 44,
+          "total_tokens": 318,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -543,9 +1002,9 @@
           }
         },
         {
-          "prompt_tokens": 554,
-          "completion_tokens": 24,
-          "total_tokens": 578,
+          "prompt_tokens": 428,
+          "completion_tokens": 103,
+          "total_tokens": 531,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -558,9 +1017,9 @@
           }
         },
         {
-          "prompt_tokens": 788,
-          "completion_tokens": 80,
-          "total_tokens": 868,
+          "prompt_tokens": 316,
+          "completion_tokens": 67,
+          "total_tokens": 383,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -573,9 +1032,9 @@
           }
         },
         {
-          "prompt_tokens": 916,
-          "completion_tokens": 9,
-          "total_tokens": 925,
+          "prompt_tokens": 610,
+          "completion_tokens": 127,
+          "total_tokens": 737,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -588,9 +1047,9 @@
           }
         },
         {
-          "prompt_tokens": 1412,
-          "completion_tokens": 276,
-          "total_tokens": 1688,
+          "prompt_tokens": 453,
+          "completion_tokens": 37,
+          "total_tokens": 490,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -603,9 +1062,9 @@
           }
         },
         {
-          "prompt_tokens": 1480,
-          "completion_tokens": 978,
-          "total_tokens": 2458,
+          "prompt_tokens": 431,
+          "completion_tokens": 93,
+          "total_tokens": 524,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -618,9 +1077,9 @@
           }
         },
         {
-          "prompt_tokens": 1480,
-          "completion_tokens": 627,
-          "total_tokens": 2107,
+          "prompt_tokens": 239,
+          "completion_tokens": 37,
+          "total_tokens": 276,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -633,9 +1092,9 @@
           }
         },
         {
-          "prompt_tokens": 1412,
-          "completion_tokens": 376,
-          "total_tokens": 1788,
+          "prompt_tokens": 489,
+          "completion_tokens": 123,
+          "total_tokens": 612,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -648,9 +1107,9 @@
           }
         },
         {
-          "prompt_tokens": 1412,
-          "completion_tokens": 585,
-          "total_tokens": 1997,
+          "prompt_tokens": 295,
+          "completion_tokens": 55,
+          "total_tokens": 350,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -663,9 +1122,9 @@
           }
         },
         {
-          "prompt_tokens": 1480,
-          "completion_tokens": 1530,
-          "total_tokens": 3010,
+          "prompt_tokens": 447,
+          "completion_tokens": 109,
+          "total_tokens": 556,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -678,9 +1137,39 @@
           }
         },
         {
-          "prompt_tokens": 1480,
-          "completion_tokens": 699,
-          "total_tokens": 2179,
+          "prompt_tokens": 269,
+          "completion_tokens": 44,
+          "total_tokens": 313,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1076,
+          "completion_tokens": 539,
+          "total_tokens": 1615,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1020,
+          "completion_tokens": 51,
+          "total_tokens": 1071,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -2456,7 +2945,7 @@
               "columns": null,
               "kind": null,
               "numbers": [
-                "456.8",
+                "0.46",
                 "14",
                 "12",
                 "2",
@@ -2470,11 +2959,11 @@
               "columns": null,
               "kind": null,
               "numbers": [
-                "436.1",
+                "0.44",
                 "8.8",
-                "4,955.9",
+                "4.96",
                 "88.0",
-                "495.6"
+                "0.50"
               ],
               "rows": null,
               "type": "paragraph"
@@ -2643,37 +3132,56 @@
                 [
                   "Redwood Logistics Trust",
                   "largest contributor; second-largest individual position",
-                  "346,623.46",
-                  "1,081,768.36",
-                  "61,356.27",
-                  "1,367,035.55"
+                  "346,623",
+                  "1,081,768",
+                  "61,356",
+                  "1,367,036"
                 ],
                 [
                   "Ironwood Value-Add Fund III",
                   "second-largest contributor",
-                  "125,530.00",
-                  "942,909.00",
-                  "32,150.00",
-                  "1,036,289.00"
+                  "125,530",
+                  "942,909",
+                  "32,150",
+                  "1,036,289"
                 ],
                 [
                   "Cornerstone Core Property Fund",
                   "second-largest detractor; largest individual position",
-                  "534,034.90",
-                  "-557,954.40",
-                  "163,256.86",
-                  "-187,176.36"
+                  "534,035",
+                  "(557,954)",
+                  "163,257",
+                  "(187,176)"
                 ],
                 [
                   "Meridian Opportunity Fund V",
                   "largest detractor",
-                  "-31,854.07",
-                  "-468,729.81",
-                  "-31,290.15",
-                  "-469,293.73"
+                  "(31,854)",
+                  "(468,730)",
+                  "(31,290)",
+                  "(469,294)"
                 ]
               ],
               "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1,367,036",
+                "1,036,289",
+                "187,176",
+                "469,294"
+              ],
+              "rows": null,
+              "type": "paragraph"
             },
             {
               "columns": null,
@@ -2708,10 +3216,10 @@
                 "-0.34",
                 "54.4",
                 "28.2",
-                "534,034.90",
-                "557,954.40",
-                "163,256.86",
-                "187,176.36"
+                "534,035,",
+                "557,954",
+                "163,257",
+                "187,176"
               ],
               "rows": null,
               "type": "paragraph"
@@ -2787,10 +3295,10 @@
                 "2.69",
                 "51.9",
                 "31.2",
-                "346,623.46",
-                "1,081,768.36",
-                "61,356.27",
-                "1,367,035.55"
+                "346,623,",
+                "1,081,768",
+                "61,356",
+                "1,367,036"
               ],
               "rows": null,
               "type": "paragraph"
@@ -2850,10 +3358,10 @@
                 "10.22",
                 "11.1",
                 "0.0",
-                "125,530.00",
-                "942,909.00",
-                "32,150.00",
-                "1,036,289.00"
+                "125,530,",
+                "942,909",
+                "32,150",
+                "1,036,289"
               ],
               "rows": null,
               "type": "paragraph"
@@ -2872,10 +3380,10 @@
                 "-1.53",
                 "30.2",
                 "42.2",
-                "31,854.07",
-                "468,729.81",
-                "31,290.15",
-                "469,293.73"
+                "31,854,",
+                "468,730",
+                "31,290",
+                "469,294"
               ],
               "rows": null,
               "type": "paragraph"
@@ -2917,9 +3425,7 @@
               "kind": null,
               "numbers": [
                 "40.0",
-                "2025",
-                "10",
-                "14"
+                "2025"
               ],
               "rows": null,
               "type": "paragraph"
@@ -2943,9 +3449,7 @@
               "kind": null,
               "numbers": [
                 "25.0",
-                "2025",
-                "11",
-                "18"
+                "2025"
               ],
               "rows": null,
               "type": "paragraph"
@@ -2994,25 +3498,9 @@
               "kind": null,
               "numbers": [
                 "2023",
-                "2024"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
+                "2024",
                 "2020",
-                "2021"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
+                "2021",
                 "1.0",
                 "3.3",
                 "1",
@@ -3020,52 +3508,17 @@
                 "4.6",
                 "4.2",
                 "10",
-                "2025",
-                "1.7",
-                "2.2"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
-                "1",
-                "5.5",
-                "4.4",
-                "4",
-                "3,400",
-                "2,500",
+                "36.2",
+                "23.5",
+                "2026",
+                "27",
+                "1.3",
+                "1.4",
                 "25",
                 "5.6",
-                "7.7"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
-                "2007",
-                "2025",
-                "65.0",
-                "30.0",
-                "38.0",
-                "17.0"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
+                "7.7",
                 "0.7",
-                "2.1",
-                "25",
-                "25"
+                "2.1"
               ],
               "rows": null,
               "type": "paragraph"
@@ -4970,7 +5423,7 @@
               "columns": null,
               "kind": null,
               "numbers": [
-                "456.8",
+                "0.46",
                 "14",
                 "12",
                 "2",
@@ -4984,11 +5437,11 @@
               "columns": null,
               "kind": null,
               "numbers": [
-                "436.1",
+                "0.44",
                 "8.8",
-                "4,955.9",
+                "4.96",
                 "88.0",
-                "495.6"
+                "0.50"
               ],
               "rows": null,
               "type": "paragraph"
@@ -5157,37 +5610,56 @@
                 [
                   "Redwood Logistics Trust",
                   "largest contributor; second-largest individual position",
-                  "346,623.46",
-                  "1,081,768.36",
-                  "61,356.27",
-                  "1,367,035.55"
+                  "346,623",
+                  "1,081,768",
+                  "61,356",
+                  "1,367,036"
                 ],
                 [
                   "Ironwood Value-Add Fund III",
                   "second-largest contributor",
-                  "125,530.00",
-                  "942,909.00",
-                  "32,150.00",
-                  "1,036,289.00"
+                  "125,530",
+                  "942,909",
+                  "32,150",
+                  "1,036,289"
                 ],
                 [
                   "Cornerstone Core Property Fund",
                   "second-largest detractor; largest individual position",
-                  "534,034.90",
-                  "-557,954.40",
-                  "163,256.86",
-                  "-187,176.36"
+                  "534,035",
+                  "(557,954)",
+                  "163,257",
+                  "(187,176)"
                 ],
                 [
                   "Meridian Opportunity Fund V",
                   "largest detractor",
-                  "-31,854.07",
-                  "-468,729.81",
-                  "-31,290.15",
-                  "-469,293.73"
+                  "(31,854)",
+                  "(468,730)",
+                  "(31,290)",
+                  "(469,294)"
                 ]
               ],
               "type": "table"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [],
+              "rows": null,
+              "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": null,
+              "numbers": [
+                "1,367,036",
+                "1,036,289",
+                "187,176",
+                "469,294"
+              ],
+              "rows": null,
+              "type": "paragraph"
             },
             {
               "columns": null,
@@ -5222,10 +5694,10 @@
                 "-0.34",
                 "54.4",
                 "28.2",
-                "534,034.90",
-                "557,954.40",
-                "163,256.86",
-                "187,176.36"
+                "534,035,",
+                "557,954",
+                "163,257",
+                "187,176"
               ],
               "rows": null,
               "type": "paragraph"
@@ -5301,10 +5773,10 @@
                 "2.69",
                 "51.9",
                 "31.2",
-                "346,623.46",
-                "1,081,768.36",
-                "61,356.27",
-                "1,367,035.55"
+                "346,623,",
+                "1,081,768",
+                "61,356",
+                "1,367,036"
               ],
               "rows": null,
               "type": "paragraph"
@@ -5364,10 +5836,10 @@
                 "10.22",
                 "11.1",
                 "0.0",
-                "125,530.00",
-                "942,909.00",
-                "32,150.00",
-                "1,036,289.00"
+                "125,530,",
+                "942,909",
+                "32,150",
+                "1,036,289"
               ],
               "rows": null,
               "type": "paragraph"
@@ -5386,10 +5858,10 @@
                 "-1.53",
                 "30.2",
                 "42.2",
-                "31,854.07",
-                "468,729.81",
-                "31,290.15",
-                "469,293.73"
+                "31,854,",
+                "468,730",
+                "31,290",
+                "469,294"
               ],
               "rows": null,
               "type": "paragraph"
@@ -5431,9 +5903,7 @@
               "kind": null,
               "numbers": [
                 "40.0",
-                "2025",
-                "10",
-                "14"
+                "2025"
               ],
               "rows": null,
               "type": "paragraph"
@@ -5457,9 +5927,7 @@
               "kind": null,
               "numbers": [
                 "25.0",
-                "2025",
-                "11",
-                "18"
+                "2025"
               ],
               "rows": null,
               "type": "paragraph"
@@ -5508,25 +5976,9 @@
               "kind": null,
               "numbers": [
                 "2023",
-                "2024"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
+                "2024",
                 "2020",
-                "2021"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
+                "2021",
                 "1.0",
                 "3.3",
                 "1",
@@ -5534,52 +5986,17 @@
                 "4.6",
                 "4.2",
                 "10",
-                "2025",
-                "1.7",
-                "2.2"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
-                "1",
-                "5.5",
-                "4.4",
-                "4",
-                "3,400",
-                "2,500",
+                "36.2",
+                "23.5",
+                "2026",
+                "27",
+                "1.3",
+                "1.4",
                 "25",
                 "5.6",
-                "7.7"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
-                "2007",
-                "2025",
-                "65.0",
-                "30.0",
-                "38.0",
-                "17.0"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [
+                "7.7",
                 "0.7",
-                "2.1",
-                "25",
-                "25"
+                "2.1"
               ],
               "rows": null,
               "type": "paragraph"

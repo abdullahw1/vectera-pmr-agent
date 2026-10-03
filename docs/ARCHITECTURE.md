@@ -41,7 +41,7 @@ This is one small model-directed investigator inside a controlled reporting work
 
 Retrieval is entity-scoped keyword ranking over a small, automatically parsed passage registry. Heading and entity resolution do the heavy lifting. A vector database would add setup without improving the authoritative financial path. The retrieval boundary can be replaced by the company's shared RAG engine without replacing the calculator or approval validator; that integration is not implemented here.
 
-The agent's focus and verbatim claims aid review. Report numbers cannot vary with the agent path: financial language is templated and source excerpts have a fixed numerical inventory. Chart extraction is the remaining probabilistic numerical boundary, with a shared validator, uncertainty, source images and mandatory human confirmation.
+The agent's validated focus quotes feed grounded synthesis. A matching narrative must cite focus evidence. Every sentence names a source; the host attaches its exact quote, and any narrower model-supplied quote is checked verbatim. Source numbers are masked into placeholders and restored by code. Slots must appear exactly once and belong to the sentence's cited passage; raw numbers, altered signs/units and omitted asset names are rejected. Reordering for natural prose is allowed, not a different numerical inventory. Verified citation presence is not proof of entailment, so a separate model checks meaning and human review remains required. Unknown headings and unmatched names receive distinct warnings, not false absence claims. Chart extraction remains a probabilistic numerical boundary with mandatory confirmation. Corrections rebind market slots; changes invalidating the cited conclusion fail closed.
 
 ## Verification and Operations
 

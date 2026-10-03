@@ -15,3 +15,5 @@ output/uploads/
 output/workspace-ui.jpg
 output/error-ui.jpg
 tmp/
+study/
+output/assets/qa_*

@@ -7,6 +7,7 @@ import re
 import xml.etree.ElementTree as ET
 import zipfile
 from decimal import Decimal
+from difflib import SequenceMatcher
 
 from .ingest import entity, norm, Sheet, quarter
 from .charts import CHART_PROMPT, validate_chart
@@ -28,6 +29,7 @@ def section(text, heading, endings):
 def supporting_documents(sources, financials, activity, ledger, model):
     targets = list(dict.fromkeys([f["name"] for f in financials["funds"]] + [e["name"] for e in activity["new"]]))
     support = {}
+    financials["unmatched_reports"] = []
     for path, pages in sources["managers"]:
         text = "\n".join(pages)
         normalized_lines = [entity(line) for line in text.splitlines() if line.strip()]
@@ -36,9 +38,13 @@ def supporting_documents(sources, financials, activity, ledger, model):
             if matches:
                 ledger.issue("ambiguous_entity", f"Multiple possible funds in {path.name}: {matches}", "blocker")
             ledger.matches.append(dict(file=path.name, candidates=matches, rule="normalized complete source line", accepted=False))
+            suggestions = sorted(targets, key=lambda name: -max(
+                (SequenceMatcher(None, entity(name), line).ratio() for line in normalized_lines), default=0))[:3]
+            financials["unmatched_reports"].append(dict(file=path.name, suggestions=suggestions))
+            ledger.issue("unmatched_manager", f"Unresolved supporting document {path.name}; possible funds: {', '.join(suggestions)}. Suggestions are not accepted matches.", candidates=suggestions)
             continue
         name = matches[0]
-        ledger.matches.append(dict(file=path.name, canonical=name, rule="punctuation/legal suffix/Roman numeral normalization", accepted=True))
+        ledger.matches.append(dict(file=path.name, canonical=name, rule="complete-line match after legal suffix, word/Roman/Arabic vintage, ampersand and explicit abbreviation normalization", accepted=True))
         if name in support:
             ledger.issue("duplicate_manager", f"Multiple manager sources for {name}", "blocker")
             continue
@@ -65,9 +71,20 @@ def supporting_documents(sources, financials, activity, ledger, model):
                     passages.append(dict(text=selected, id=fid, entity=name, heading=heading,
                                          source=ledger.facts[fid]["source"]))
         support[name] = passages
+        if not passages:
+            ledger.issue("manager_extraction", f"Manager report found for {name}, but no recognized narrative section; page evidence retained for review", fund=name)
+            for page_no, page in enumerate(pages, 1):
+                excerpt = clean(page)
+                if excerpt:
+                    fid = ledger.add(excerpt, {"file": str(path.relative_to(sources["root"])), "page": page_no,
+                                              "quote": excerpt, "method": "unrecognized-heading page fallback"})
+                    passages.append(dict(text=excerpt, id=fid, entity=name, heading="Unclassified manager page",
+                                         source=ledger.facts[fid]["source"]))
     for fund in financials["funds"]:
+        if fund["fees"] < 0:
+            ledger.issue("negative_fees", f"{fund['name']} has negative manager fees in the flash; shown as a fee credit, not normalized", evidence=[fund["fees_id"]])
         if fund["roles"] and fund["name"] not in support:
-            ledger.issue("missing_manager", f"No current manager report for ranked fund {fund['name']}; flash-only commentary", fund=fund["name"])
+            ledger.issue("missing_manager", f"No matched current manager evidence for ranked fund {fund['name']}; flash-only commentary", fund=fund["name"])
     for event in activity["new"]:
         if not support.get(event["name"]):
             ledger.issue("missing_strategy", f"No strategy evidence for new commitment {event['name']}", "blocker")
@@ -108,8 +125,14 @@ def deck_evidence(path, output, ledger, model):
                     try:
                         result = validate_chart(result)
                     except ValueError as error:
-                        ledger.issue("invalid_chart_schema", f"Slide {number}, chart {chart_number}: {error}", "blocker")
-                        result = None
+                        repaired = model.ask(CHART_PROMPT + "\nYour extraction failed validation: " + str(error) +
+                                             ". Re-read the image, including axis bounds and all points. Do not clamp values to pass validation.", data)
+                        try:
+                            result = validate_chart(repaired)
+                            ledger.issue("chart_repaired", f"Slide {number}, chart {chart_number}: extraction corrected after schema validation; confirm against image")
+                        except ValueError:
+                            ledger.issue("invalid_chart_schema", f"Slide {number}, chart {chart_number}: {error}", "blocker")
+                            result = None
                 fid = ledger.add(result, {"file": path.name, "slide": number, "chart": chart_number,
                                           "asset": "assets/" + asset, "method": "model vision", "requires_review": True})
                 charts.append(dict(slide=number, chart=chart_number, asset="assets/" + asset, id=fid, data=result))

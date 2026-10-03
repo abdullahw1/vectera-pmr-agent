@@ -23,7 +23,7 @@
 
 ## Questions you should be ready to answer
 
-**Why not ask an LLM to write the whole report?** Code owns money, math, rules and financial templates. Source-extractive commentary fixes the numerical inventory. The model investigates registered passages and reads chart pixels; it does not calculate portfolio results.
+**Why not ask an LLM to write the whole report?** Code owns money, math, rules and financial templates. The model investigates passages, reads pixels and writes connecting prose with exact supporting quotes. Source numbers become placeholders restored by code, so occupancy figures and real asset names survive without model arithmetic.
 
 **What makes this an agent?** A model chooses tools, sees their outputs/errors, and chooses the next action. Read `agent.py`: the action/observation loop and validator are the defining parts, not a framework import. It is a bounded investigator inside a hybrid reporting workflow, not an autonomous analyst.
 
@@ -31,7 +31,7 @@
 
 **Why PyMuPDF?** It is an approved parser, reads text and font/layout information, and extracts flash tables for retypesetting without external executables. ReportLab produces portrait tables with one header row and source-page captions. Blank padding is removed, not financial values. Unfamiliar layouts are retained as original vector exhibits only when they fit readably; otherwise an explicit adapter/review requirement stops generation.
 
-**How do you prevent hallucinations?** Text is limited to automatically extracted, verifiable passages. Financial prose is templated from source facts. Image readings remain reviewable and require confirmation.
+**How do you prevent hallucinations?** Financial sentences are templated. Narrative numbers are exact source-scoped placeholders; raw, duplicated, omitted or cross-source slots fail validation. Every sentence requires a verified quote. Quote presence does not prove meaning; human review remains required. Image readings also require confirmation.
 
 **Is every figure exact?** Authoritative flash currency identities are cent-exact with Decimal and zero tolerance. Display rounding is explicit. Rounded manager statistics have declared precision; unlabeled chart pixels are approximate and marked `~`. Never describe vision estimates as exact source data.
 

@@ -13,10 +13,12 @@ def main():
     root = Path(__file__).resolve().parents[1]
     target = root / "output" / "Vectera_PMR_Submission.zip"
     allowed_roots = {"pmr", "tests", "scripts", "docs", "inputs", ".github"}
-    allowed_files = {"README.md", "RUNNING.md", "SPEC.md", "requirements.txt", "pyproject.toml", ".gitignore", ".env.example", "start.cmd"}
+    allowed_files = {"README.md", "RUNNING.md", "SPEC.md", "requirements.txt", "pyproject.toml", ".gitignore", ".gitattributes", ".env.example", "start.cmd"}
     output_files = {"report.pdf", "writeup.pdf", "evidence.json", "verification.json", "draft.json", "review.html", "review.md", "appendix.pdf", "repeatability.json", "live_repeatability.json", "test-results.xml",
                     "manifest.json", "semantic_manifest.json", "agent_trace.json", "diagnostics.json", "unseen_rehearsal.json", "regression_matrix.json",
                     "final_report.pdf", "approval.json", "final_evidence.json", "final_sections.json", "final_manifest.json", "final_semantic_manifest.json"}
+    if not args.final:
+        output_files = {n for n in output_files if not n.startswith("final_") and n != "approval.json"}
     if args.final:
         for name in ["final_report.pdf", "approval.json", "final_evidence.json", "final_manifest.json", "final_semantic_manifest.json", "writeup.pdf"]:
             if not (root / "output" / name).is_file():

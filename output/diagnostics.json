@@ -3,17 +3,17 @@
     {
       "stage": "discovery",
       "status": "completed",
-      "seconds": 0.472
+      "seconds": 0.41
     },
     {
       "stage": "exact_finance",
       "status": "completed",
-      "seconds": 0.061
+      "seconds": 0.055
     },
     {
       "stage": "source_passages",
       "status": "completed",
-      "seconds": 0.009
+      "seconds": 0.006
     },
     {
       "stage": "evidence_agent",
@@ -23,25 +23,242 @@
     {
       "stage": "chart_vision",
       "status": "completed",
-      "seconds": 0.025
+      "seconds": 0.029
     },
     {
       "stage": "cross_source_checks",
       "status": "completed",
-      "seconds": 0.01
+      "seconds": 0.005
+    },
+    {
+      "stage": "grounded_narrative",
+      "status": "completed",
+      "seconds": 15.073
     },
     {
       "stage": "report_render",
       "status": "completed",
-      "seconds": 3.157
+      "seconds": 2.477
     }
   ],
   "provider": "openai",
-  "model": "gpt-4.1-mini-2025-04-14",
-  "api_calls": 0,
-  "token_usage": [],
-  "cache_hits": 12,
-  "cache_misses": 0,
+  "model": "gpt-4.1-2025-04-14",
+  "vision_model": "gpt-4.1-mini-2025-04-14",
+  "api_calls": 14,
+  "token_usage": [
+    {
+      "prompt_tokens": 609,
+      "completion_tokens": 114,
+      "total_tokens": 723,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 278,
+      "completion_tokens": 34,
+      "total_tokens": 312,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 428,
+      "completion_tokens": 98,
+      "total_tokens": 526,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 311,
+      "completion_tokens": 63,
+      "total_tokens": 374,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 431,
+      "completion_tokens": 93,
+      "total_tokens": 524,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 239,
+      "completion_tokens": 36,
+      "total_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 489,
+      "completion_tokens": 123,
+      "total_tokens": 612,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 295,
+      "completion_tokens": 49,
+      "total_tokens": 344,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 447,
+      "completion_tokens": 109,
+      "total_tokens": 556,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 269,
+      "completion_tokens": 27,
+      "total_tokens": 296,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1076,
+      "completion_tokens": 546,
+      "total_tokens": 1622,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1106,
+      "completion_tokens": 157,
+      "total_tokens": 1263,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 1636,
+      "completion_tokens": 451,
+      "total_tokens": 2087,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    {
+      "prompt_tokens": 974,
+      "completion_tokens": 61,
+      "total_tokens": 1035,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    }
+  ],
+  "cache_hits": 11,
+  "cache_misses": 14,
   "failed_calls": 0,
   "agent": {
     "status": "finished",
@@ -94,54 +311,42 @@
       {
         "step": 2,
         "action": {
-          "tool": "search_passages",
-          "args": {
-            "entity": "Northgate Logistics Partners",
-            "query": "performance drivers"
-          }
-        },
-        "observation": [],
-        "valid": true
-      },
-      {
-        "step": 3,
-        "action": {
           "tool": "inspect_passage",
           "args": {
-            "id": "f_b5b9ce5794ad2acb"
+            "id": "f_678546ed97cf51c4"
           }
         },
         "observation": {
-          "text": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
-          "id": "f_b5b9ce5794ad2acb",
-          "entity": "Northgate Logistics Partners",
-          "heading": "Fund Strategy",
+          "text": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
+          "id": "f_678546ed97cf51c4",
+          "entity": "Cornerstone Core Property Fund",
+          "heading": "Investments Impacting Performance",
           "source": {
-            "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
+            "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
             "page": 1,
-            "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
+            "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
             "method": "heading-delimited extraction"
           }
         },
         "valid": true
       },
       {
-        "step": 4,
+        "step": 3,
         "action": {
           "tool": "validate_claim",
           "args": {
-            "id": "f_b5b9ce5794ad2acb",
-            "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion."
+            "id": "f_678546ed97cf51c4",
+            "quote": "Leverage was conservative at ~28% LTV."
           }
         },
         "observation": {
           "valid": true,
-          "evidence_id": "f_b5b9ce5794ad2acb"
+          "evidence_id": "f_678546ed97cf51c4"
         },
         "valid": true
       },
       {
-        "step": 5,
+        "step": 4,
         "action": {
           "tool": "finish",
           "args": {}
@@ -154,13 +359,13 @@
     ],
     "validated_claims": [
       {
-        "id": "f_b5b9ce5794ad2acb",
-        "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
-        "entity": "Northgate Logistics Partners",
+        "id": "f_678546ed97cf51c4",
+        "quote": "Leverage was conservative at ~28% LTV.",
+        "entity": "Cornerstone Core Property Fund",
         "source": {
-          "file": "manager_reports/northgate_logistics_partners_4Q25.pdf",
+          "file": "manager_reports/cornerstone_core_property_fund_4Q25.pdf",
           "page": 1,
-          "quote": "Northgate Logistics Partners is a value-add industrial fund targeting the acquisition and repositioning of infill logistics and outdoor-storage assets in high-growth Sun Belt and Mountain-West markets. The strategy focuses on lease-up, mark-to-market of below-market rents, and selective development completion.",
+          "quote": "Three assets shaped the quarter. One Financial Plaza (Chicago office) was written down on lower submarket comparables and a near-term lease expiry. Bayfront Apartments (San Diego) was held roughly flat as concessions offset rent growth. Prairie Logistics (Kansas City) contributed positively, partially offsetting the office drag. Leverage was conservative at ~28% LTV.",
           "method": "heading-delimited extraction"
         }
       }
@@ -169,6 +374,6 @@
     "seconds": 0.004
   },
   "blockers": 0,
-  "warnings": 3,
+  "warnings": 10,
   "review_items": 7
 }
