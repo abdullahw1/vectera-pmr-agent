@@ -61,6 +61,14 @@ def test_changed_or_missing_displayed_pdf_blocks_approval(extracted, removed):
     assert not (output / "approval.json").exists()
 
 
+def test_named_draft_pdf_tampering_blocks_approval(extracted):
+    output, _, request = extracted
+    (output / "CPERS_PMR_4Q25_DRAFT.pdf").write_bytes(b"changed client-facing PDF")
+    with pytest.raises(ValueError, match="asset changed"):
+        approve(output, request)
+    assert not (output / "CPERS_PMR_4Q25.pdf").exists()
+
+
 def test_pdf_integrity_cannot_be_omitted(extracted):
     import json
     from pmr.evidence import digest

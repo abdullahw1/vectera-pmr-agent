@@ -5,41 +5,97 @@ The only inputs are a **client code** and a **quarter**, for example `CPERS` and
 right files itself, computes every figure in code, writes the narrative with a model under strict checks,
 and stops at a human review step before anything is final.
 
-**Submitted outputs:** `output/report.pdf` (the 4Q25 draft), `output/writeup.pdf` (two-page rationale),
-`output/review.html` (evidence review), and `output/manifest.json` (every claim mapped to its source).
+**Included in this repository:** [4Q25 draft PMR](output/CPERS_PMR_4Q25_DRAFT.pdf),
+[write-up](docs/WRITEUP.md) ([PDF](output/writeup.pdf)), tests, source documents and
+[audit manifest](output/manifest.json). The report is marked DRAFT until a human reviews and approves it.
 
-## Run it
+## Get Started on Windows 11
 
-Requires Python 3.12. First-time setup needs internet access to install the pinned dependencies.
+Requires **Python 3.12**, including the Windows Python launcher (`py`). First-time setup needs internet
+access. No Docker, database, Git installation or manual dependency setup is needed.
 
-**Windows (one command):**
+1. On GitHub, select **Code > Download ZIP** and extract it to a normal, writable folder. Alternatively, clone the repository if you already use Git.
+2. Install Python 3.12 if needed. Open PowerShell and run `py -3.12 --version` to check it is available.
+3. Open PowerShell in the extracted project folder, where `start.cmd` and `README.md` are located.
+4. Add an OpenAI API key as described below, unless your environment already has one.
+5. Start the application:
 
 ```powershell
 .\start.cmd
 ```
 
-This creates a private environment, installs `requirements.txt`, and opens the local browser workspace:
-enter the client and quarter, select **Generate Report**, then review and approve the draft.
-On macOS/Linux, run `python3.12 scripts/launch.py` instead.
+The launcher creates `.launcher-venv`, installs the pinned dependencies and opens the local browser
+workspace. It prints the exact localhost URL; the port is chosen automatically. Keep the terminal open
+while using the app. Press Ctrl+C in that terminal to stop it.
 
-**Command line (no browser):**
+In the app, enter **CPERS** and **4Q25**, leave the supplied inputs folder selected, and click
+**Generate Report**. Open the new run to inspect its report, charts and warnings. Generation produces
+`CPERS_PMR_4Q25_DRAFT.pdf`; human approval produces `CPERS_PMR_4Q25.pdf`.
+
+For a different package, use **Choose Folder** or enter its local folder path. Then enter that package's
+client code and quarter. The package needs the flash, prior PMR, market deck, IC logs and allocation
+history, plus any available manager reports. Missing manager evidence is flagged, not invented.
+
+## Add an API Key
+
+**OpenAI is recommended for this submission. Only one provider key is needed.** The submitted report
+and primary live checks used OpenAI. Anthropic was also tested, but Sonnet 4.6 misclassified one
+unlabeled chart as having printed value labels; OpenAI kept its readings marked approximate.
+
+If `OPENAI_API_KEY` is already set in your environment, skip this step. Existing environment variables
+take priority over `.env`, so evaluator-provided keys work without editing any file.
+
+Otherwise, run these commands in the project folder before starting the application:
+
+```powershell
+Copy-Item .env.example .env
+notepad .env
+```
+
+Replace the empty value with your own key, then save and close Notepad:
+
+```dotenv
+OPENAI_API_KEY="paste-your-openai-key-here"
+```
+
+Do not overwrite an existing `.env`; edit it instead. The file is ignored by Git and excluded from
+submission ZIPs. The app sends source passages and chart images to the selected provider's API; the key
+is not embedded in the report or browser page. Restart the app after changing a key.
+
+With both keys set, **OpenAI takes priority**. Its defaults are `gpt-4.1-2025-04-14` for prose and
+`gpt-4.1-mini-2025-04-14` for charts. Optional `PMR_MODEL` and `PMR_VISION_MODEL` variables override them.
+To use Anthropic instead, remove or empty `OPENAI_API_KEY` in both the environment and `.env`, then set
+`ANTHROPIC_API_KEY` to a workspace-scoped key. Its default is `claude-sonnet-4-6` for both jobs.
+Cross-workspace Anthropic keys requiring a workspace-ID header are not supported.
+
+**Without a key:** the app still generates the financial figures, fund selection, compliance and report
+structure. Prose falls back to attributed source excerpts. Image-only chart values remain unavailable,
+so the draft cannot be approved. A key is needed for the complete workflow. API usage and cache hits are
+recorded in `output/diagnostics.json`; cost and run time depend on the model and any repair calls.
+
+## macOS / Linux and Command Line
+
+From the project folder, add a key to `.env` using `.env.example` as the template, then launch:
+
+```bash
+python3.12 scripts/launch.py
+```
+
+For a command-line-only run on Windows, without the launcher:
 
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m pmr generate --client CPERS --quarter 4Q25
-.\.venv\Scripts\python.exe -m pmr review      # serves the evidence review at http://127.0.0.1:8765/review.html
+.\.venv\Scripts\python.exe -m pmr review
 ```
 
-Optional flags: `--inputs <folder>` (default `inputs`) and `--output <folder>` (default `output`).
-For another period or client, change only the two parameters, for example `--client NWPT --quarter 1Q26`.
+The review command serves `http://127.0.0.1:8765/review.html`. On macOS/Linux, use
+`python3.12 -m venv .venv` and `.venv/bin/python` in place of the Windows Python commands.
+Optional generation flags are `--inputs <folder>` and `--output <folder>` (defaults: `inputs`, `output`).
+Use the new client and quarter for unseen inputs; no code edits are needed.
 
-**API keys.** Read from `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`, or from a local `.env` (see `.env.example`).
-If both are set, OpenAI is used: `gpt-4.1-2025-04-14` writes prose and `gpt-4.1-mini-2025-04-14` reads chart
-images. Anthropic uses `claude-sonnet-4-6`. `PMR_MODEL` and `PMR_VISION_MODEL` override these.
-**With no key the run still completes:** every figure, fund selection, role, compliance result and section is
-produced by code. Fund and market narrative fall back to attributed source excerpts, and the deck's chart
-values are marked unavailable. That is a blocker, so a no-key draft cannot be approved.
+## Report Presentation
 
 **Report presentation.** The cover, headings, typography, emphasis and vector charts follow the prior PMR.
 The portrait appendix preserves every supplied flash column and blank cell, rather than copying the prior
@@ -52,8 +108,7 @@ Source-excerpt fallbacks preserve the writer's complete numerical inventory, inc
 risks and scoped source bindings. A fresh-run test caught and fixed an earlier fallback that omitted
 those dates; meaning checks still fail when a value or its source context changes.
 
-A cold run with a key takes about a minute and makes about 19 API calls (under $0.10). Reruns reuse a
-content-addressed cache.
+Unchanged reruns reuse a local cache of model responses.
 
 ## What happens in a run
 
@@ -81,20 +136,28 @@ content-addressed cache.
 2. Open **Charts**. Compare each extraction with the displayed source image. Edit individual values if needed, add a correction reason, and select **Confirm These Chart Values**. **Previous chart** and **Next chart** retain value edits in this session. Reloading deliberately requires a new review.
 3. Open **Issues**. Blockers require corrected inputs and regeneration; warnings require inspection but do not prevent release. Chart confirmations are shown separately.
 4. Enter your reviewer name and acknowledge the PDF, sources, charts and warnings. **Approve & Create Final PDF** becomes available only when all requirements are met. Backend checks also enforce these requirements. If you corrected any chart, this first submission saves a **new draft**, not an approval. Select **Reload corrected draft**, inspect the updated report, reconfirm charts and acknowledge it again. Changed market evidence invalidates the old prose; newly written prose receives the same number, quote and paraphrase checks, or verified observations replace it if synthesis is unavailable.
-5. With no further corrections, approval writes `final_report.pdf` and a hash-bound `approval.json`. It is refused if the draft JSON, displayed draft PDF, inputs, implementation or exhibits changed. The approval record includes the exact draft PDF hash as well as the final PDF hash.
+5. With no further corrections, approval writes `CPERS_PMR_4Q25.pdf` and a hash-bound `approval.json`. Names follow the requested client and quarter; drafts carry an `_DRAFT` suffix. Internal `report.pdf` and `final_report.pdf` copies remain for compatibility. Approval is refused if the draft JSON, displayed draft PDF, inputs, implementation or exhibits changed. The approval record includes the exact draft PDF hash as well as the final PDF hash.
 
 Missing cash rows or blank holding NAVs do not erase known holdings or turn them into open approvals. Performance-dependent attribution requires complete cash data, and position ranking requires complete NAV data. Missing figures retain their cell locators and block release. Unresolved IC amounts make the committed-or-approved total unavailable, never a partial sum presented as complete.
 
 ## Verification
 
+After starting once with `start.cmd`, use the launcher's Python environment in PowerShell:
+
 ```powershell
-python -m pytest -q                                                        # golden 4Q25 answers, perturbations, guardrails
-python scripts/verify_repeatability.py --client CPERS --quarter 4Q25       # two clean no-key runs must match
-python scripts/verify_repeatability.py --client CPERS --quarter 4Q25 --online --record output/live_repeatability.json
-python scripts/rehearse_unseen.py                                          # different client, 1Q26, changed rows and funds
-python scripts/package_submission.py                                      # builds a draft package without secrets
-python scripts/verify_clean_install.py                                     # Python 3.12; fresh venv, full tests, no-key run
+.\.launcher-venv\Scripts\python.exe -m pytest -q
+.\.launcher-venv\Scripts\python.exe scripts/verify_repeatability.py --client CPERS --quarter 4Q25
+.\.launcher-venv\Scripts\python.exe scripts/rehearse_unseen.py
 ```
+
+These check the sample answers and guardrails, compare two separate no-key runs, and rehearse a different
+client in 1Q26. They do not require paid model calls. On macOS/Linux, substitute `.launcher-venv/bin/python`.
+If you used the manual setup, substitute `.venv\Scripts\python.exe` or `.venv/bin/python` instead.
+
+For two fresh model-backed runs, add `--online --record output/live_repeatability.json` to the
+repeatability command; this uses the configured key and incurs API charges. The optional
+`scripts/package_submission.py` and `scripts/verify_clean_install.py` scripts build a secret-free ZIP
+and test it in a fresh Python 3.12 environment. A ZIP is not needed to run the GitHub submission.
 
 Results from the submitted run are in `output/test-results.xml`, `output/regression_matrix.json`,
 `output/repeatability.json`, `output/live_repeatability.json`, `output/unseen_rehearsal.json` and

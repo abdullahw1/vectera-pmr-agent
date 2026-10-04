@@ -92,6 +92,21 @@ def test_browser_artifacts_and_bundle_exclude_secrets(workspace):
         assert bundle.namelist() == ["report.pdf"]
 
 
+def test_named_report_downloads_and_bundle(workspace):
+    import json
+
+    workspace.jobs["current"] = dict(id="current", client="CPERS", quarter="4Q25", status="draft", created=1)
+    (workspace.output / "draft.json").write_text(json.dumps({"data": {"client": "CPERS", "quarter": "4Q25"}}))
+    name = "CPERS_PMR_4Q25_DRAFT.pdf"
+    (workspace.output / name).write_bytes(b"named draft")
+    assert workspace.artifact("current", name).read_bytes() == b"named draft"
+    assert workspace.snapshot(workspace.jobs["current"])["report_filename"] == name
+    with pytest.raises(ValueError):
+        workspace.artifact("current", "OTHER_PMR_4Q25.pdf")
+    with zipfile.ZipFile(io.BytesIO(workspace.bundle("current"))) as bundle:
+        assert name in bundle.namelist()
+
+
 def test_worker_failure_is_visible_and_releases_active(workspace, monkeypatch):
     monkeypatch.setattr("pmr.workspace.threading.Thread", Mock())
     job = workspace.create(dict(client="CPERS", quarter="4Q25"))

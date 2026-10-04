@@ -60,6 +60,21 @@ def main():
                 raise SystemExit(
                     f"Draft package blocked: missing {name}. Generate the draft and write-up first."
                 )
+    draft_path = root / "output" / "draft.json"
+    if draft_path.is_file():
+        import sys
+
+        sys.path.insert(0, str(root))
+        from pmr.filenames import report_filename
+
+        data = json.loads(draft_path.read_text(encoding="utf-8"))["data"]
+        output_files.add(report_filename(data["client"], data["quarter"]))
+        if args.final:
+            final_name = report_filename(data["client"], data["quarter"], approved=True)
+            named_pdf = root / "output" / final_name
+            if not named_pdf.is_file() or named_pdf.read_bytes() != (root / "output" / "final_report.pdf").read_bytes():
+                raise SystemExit("Final package blocked: named report missing or changed")
+            output_files.add(final_name)
     if args.final:
         for name in [
             "final_report.pdf",

@@ -20,6 +20,7 @@ from .synthesis import build_narratives
 from .verification import write_manifests
 from .crosschecks import supporting_checks, cap_rate_signals
 from .appendix import register_exhibits
+from .filenames import clear_named_reports
 
 
 def generate(root: Path, output: Path, client: str, period: str):
@@ -27,6 +28,7 @@ def generate(root: Path, output: Path, client: str, period: str):
     if not requested:
         raise ValueError("Quarter must be in 4Q25-style format")
     output.mkdir(parents=True, exist_ok=True)
+    clear_named_reports(output)
     # A regenerated draft must not leave a stale approved report beside it.
     for name in [
         "final_report.pdf",

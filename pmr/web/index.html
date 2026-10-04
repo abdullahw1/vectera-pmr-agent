@@ -690,7 +690,7 @@
           )
           .join("");
         const base = "/runs/" + r.id + "/";
-        const pdf = r.status === "approved" ? "final_report.pdf" : "report.pdf";
+        const pdf = r.report_filename || (r.status === "approved" ? "final_report.pdf" : "report.pdf");
         $("pdf-download").href = base + pdf;
         $("bundle-download").href = base + "bundle.zip";
         $("evidence-tab").classList.toggle("active", mode === "evidence");

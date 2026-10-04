@@ -56,7 +56,9 @@ def main():
         )
         print(f"Required source data could not be resolved: {error}", file=sys.stderr)
         raise SystemExit(2)
-    print(f"Draft saved: {args.output / 'report.pdf'}")
+    from .filenames import report_filename
+
+    print(f"Draft saved: {args.output / report_filename(args.client, args.quarter)}")
     print(f"Verification: {summary['checks_passed']}/{summary['checks_total']} checks passed")
     print(f"Review queue: {len(summary['issues'])} items; launch python -m pmr review")
 

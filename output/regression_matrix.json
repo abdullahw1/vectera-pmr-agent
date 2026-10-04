@@ -1,27 +1,27 @@
 {
   "passed": true,
-  "total": 149,
+  "total": 157,
   "cases": [
     {
       "test": "test_source_exhibits_keep_values_on_letter_pages",
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 2.764
+      "seconds": 2.948
     },
     {
       "test": "test_each_projection_has_one_complete_header_and_unchanged_values",
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.153
+      "seconds": 5.314
     },
     {
       "test": "test_appendix_manifest_maps_every_cell_to_its_source",
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.484
+      "seconds": 5.645
     },
     {
       "test": "test_display_decoration_preserves_cents_and_missing_values",
@@ -35,21 +35,21 @@
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 2.647
+      "seconds": 2.574
     },
     {
       "test": "test_unrecognized_readable_source_layout_is_retained",
       "module": "tests.test_appendix",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.058
+      "seconds": 0.018
     },
     {
       "test": "test_local_env_loads_without_expanding_literal_credentials",
       "module": "tests.test_config",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.002
     },
     {
       "test": "test_external_key_wins",
@@ -63,7 +63,7 @@
       "module": "tests.test_config",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.004
+      "seconds": 0.002
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[Expected one populated flash for UNKNOWN/(2025, 4), found 0-Quarterly spreadsheet not found]",
@@ -91,7 +91,7 @@
       "module": "tests.test_errors",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.001
     },
     {
       "test": "test_errors_are_actionable_and_keep_original_details[Expected number at flash.xlsx/FundingStatus(Agg)/B8-Invalid numerical data]",
@@ -136,74 +136,116 @@
       "seconds": 0.002
     },
     {
+      "test": "test_report_names_follow_client_and_period[CPERS-4Q25-CPERS_PMR_4Q25.pdf]",
+      "module": "tests.test_filenames",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.001
+    },
+    {
+      "test": "test_report_names_follow_client_and_period[ewrs-1Q26-EWRS_PMR_1Q26.pdf]",
+      "module": "tests.test_filenames",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.001
+    },
+    {
+      "test": "test_report_names_follow_client_and_period[Example / Plan-2Q26-EXAMPLE_PLAN_PMR_2Q26.pdf]",
+      "module": "tests.test_filenames",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.001
+    },
+    {
+      "test": "test_invalid_report_names_are_rejected[../-4Q25]",
+      "module": "tests.test_filenames",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.001
+    },
+    {
+      "test": "test_invalid_report_names_are_rejected[CPERS-bad]",
+      "module": "tests.test_filenames",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.001
+    },
+    {
+      "test": "test_regeneration_removes_previous_named_exports",
+      "module": "tests.test_filenames",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.004
+    },
+    {
       "test": "test_golden_financial_results",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.998
+      "seconds": 1.004
     },
     {
       "test": "test_rows_move_and_filenames_change",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.111
+      "seconds": 1.089
     },
     {
       "test": "test_ic_order_does_not_define_chronology",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.896
+      "seconds": 1.026
     },
     {
       "test": "test_bad_cash_value_is_a_blocker",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.974
+      "seconds": 1.067
     },
     {
       "test": "test_fund_missing_from_cash_sheet_blocks_without_crashing",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 8.641
+      "seconds": 9.115
     },
     {
       "test": "test_missing_largest_position_cash_keeps_nav_rank",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 7.523
+      "seconds": 7.637
     },
     {
       "test": "test_blank_funded_nav_preserves_inventory_and_blocks_position_ranking[Blackford Special Situations Fund II]",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 8.112
+      "seconds": 8.072
     },
     {
       "test": "test_blank_funded_nav_preserves_inventory_and_blocks_position_ranking[Cornerstone Core Property Fund]",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 7.941
+      "seconds": 7.909
     },
     {
       "test": "test_fund_missing_from_returns_sheet_keeps_flash_figures",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.994
+      "seconds": 1.12
     },
     {
       "test": "test_conflicting_ic_amounts_block_instead_of_guessing",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 8.727
+      "seconds": 8.586
     },
     {
       "test": "test_entity_normalization_is_conservative",
@@ -217,35 +259,35 @@
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.0
     },
     {
       "test": "test_unknown_committee_action_blocks_finalization",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.062
+      "seconds": 1.024
     },
     {
       "test": "test_zero_balance_fund_can_be_added_without_code_edits",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.057
+      "seconds": 1.177
     },
     {
       "test": "test_different_client_identity_benchmark_and_policy",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.052
+      "seconds": 1.087
     },
     {
       "test": "test_after_quarter_approval_excluded",
       "module": "tests.test_finance",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.014
+      "seconds": 1.057
     },
     {
       "test": "test_currency_rejects_invalid_source[True]",
@@ -287,21 +329,21 @@
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.001
     },
     {
       "test": "test_one_cent_error_blocks_and_exact_serialization",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.077
+      "seconds": 1.133
     },
     {
       "test": "test_plan_facts_have_client_scope_not_adjacent_numeric_cell",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.905
+      "seconds": 0.972
     },
     {
       "test": "test_quote_numbers_cannot_borrow_another_entity",
@@ -364,7 +406,7 @@
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.001
     },
     {
       "test": "test_reordered_model_sentences_keep_the_same_figures_signature",
@@ -392,28 +434,28 @@
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.887
+      "seconds": 2.187
     },
     {
       "test": "test_duplicate_flash_is_not_chosen_by_filename",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.551
+      "seconds": 0.563
     },
     {
       "test": "test_empty_workbook_is_explicit_blocker",
       "module": "tests.test_guardrails",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.957
+      "seconds": 1.006
     },
     {
       "test": "test_setup_installs_once_and_reinstalls_manifest_change",
       "module": "tests.test_launcher",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.009
+      "seconds": 0.007
     },
     {
       "test": "test_failed_install_does_not_mark_setup_complete",
@@ -427,7 +469,7 @@
       "module": "tests.test_launcher",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.008
     },
     {
       "test": "test_latest_quarter_uses_chronology_not_lexical_order",
@@ -497,42 +539,42 @@
       "module": "tests.test_models",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.004
+      "seconds": 0.003
     },
     {
       "test": "test_no_key_complete_financial_draft_and_repeatability",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 12.546
+      "seconds": 12.94
     },
     {
       "test": "test_external_draft_edit_invalidates_approval",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 10.613
+      "seconds": 5.975
     },
     {
       "test": "test_mocked_chart_review_and_finalization",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 10.861
+      "seconds": 10.353
     },
     {
       "test": "test_source_change_during_model_enrichment_is_rejected",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 7.024
+      "seconds": 6.616
     },
     {
       "test": "test_word_numeral_and_changed_heading_end_to_end",
       "module": "tests.test_pipeline",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 7.494
+      "seconds": 6.054
     },
     {
       "test": "test_emphasis_is_dynamic_and_escapes_source_markup",
@@ -553,175 +595,182 @@
       "module": "tests.test_presentation",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.065
+      "seconds": 0.085
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[7]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.16
+      "seconds": 1.2
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[19]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.079
+      "seconds": 1.143
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[42]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.053
+      "seconds": 0.902
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[101]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.204
+      "seconds": 0.977
     },
     {
       "test": "test_randomized_file_row_and_ic_order_preserve_results[503]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.233
+      "seconds": 0.969
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[11]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 2.002
+      "seconds": 2.004
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[37]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 2.006
+      "seconds": 2.195
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[83]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 2.078
+      "seconds": 2.251
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[211]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.994
+      "seconds": 1.962
     },
     {
       "test": "test_randomized_currency_corruption_always_blocks[997]",
       "module": "tests.test_randomized",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 1.96
+      "seconds": 1.997
     },
     {
       "test": "test_coherent_next_quarter_with_cross_year_approval",
       "module": "tests.test_rehearsal",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 2.828
+      "seconds": 2.785
     },
     {
       "test": "test_harder_unseen_layout_and_label_changes",
       "module": "tests.test_rehearsal",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.893
+      "seconds": 5.636
     },
     {
       "test": "test_acknowledgment_is_required_by_backend",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 7.701
+      "seconds": 6.339
     },
     {
       "test": "test_changed_asset_blocks_approval",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 6.367
+      "seconds": 6.553
     },
     {
       "test": "test_changed_or_missing_displayed_pdf_blocks_approval[False]",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 6.006
+      "seconds": 6.209
     },
     {
       "test": "test_changed_or_missing_displayed_pdf_blocks_approval[True]",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 6.56
+      "seconds": 7.575
+    },
+    {
+      "test": "test_named_draft_pdf_tampering_blocks_approval",
+      "module": "tests.test_review_integrity",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 6.25
     },
     {
       "test": "test_pdf_integrity_cannot_be_omitted",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 7.102
+      "seconds": 6.535
     },
     {
       "test": "test_correction_requires_new_draft_review_not_immediate_release",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 10.842
+      "seconds": 10.184
     },
     {
       "test": "test_noop_correction_does_not_create_an_endless_review_cycle",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 8.895
+      "seconds": 7.971
     },
     {
       "test": "test_correction_requires_reason_and_full_schema",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.799
+      "seconds": 6.115
     },
     {
       "test": "test_unknown_chart_id_cannot_be_confirmed",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.76
+      "seconds": 6.245
     },
     {
       "test": "test_one_unconfirmed_chart_blocks_approval",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.675
+      "seconds": 6.211
     },
     {
       "test": "test_changed_implementation_blocks_approval",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 5.809
+      "seconds": 6.023
     },
     {
       "test": "test_final_semantics_and_evidence_are_saved",
       "module": "tests.test_review_integrity",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 7.269
+      "seconds": 8.002
     },
     {
       "test": "test_scoped_quote_and_number_firewall",
@@ -749,21 +798,21 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.002
     },
     {
       "test": "test_section_preference_picks_drivers_over_commentary",
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.015
+      "seconds": 0.017
     },
     {
       "test": "test_invalid_prose_gets_one_bounded_repair",
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.001
     },
     {
       "test": "test_fallback_cannot_change_numerical_inventory",
@@ -777,14 +826,14 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.001
     },
     {
       "test": "test_numbers_and_asset_names_are_bound_to_exact_source",
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.001
     },
     {
       "test": "test_slots_cannot_borrow_numbers_from_another_source",
@@ -805,7 +854,7 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.001
     },
     {
       "test": "test_unsupported_meaning_is_rejected_even_with_real_quote",
@@ -819,14 +868,14 @@
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.001
+      "seconds": 0.002
     },
     {
       "test": "test_host_attaches_exact_quote_without_model_transcription",
       "module": "tests.test_synthesis",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.002
+      "seconds": 0.001
     },
     {
       "test": "test_natural_reordering_preserves_exact_inventory",
@@ -882,42 +931,42 @@
       "module": "tests.test_template",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.05
+      "seconds": 0.054
     },
     {
       "test": "test_upload_preserves_folders",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.005
+      "seconds": 0.004
     },
     {
       "test": "test_upload_rejects_unsafe_paths[../secret.pdf]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.006
+      "seconds": 0.004
     },
     {
       "test": "test_upload_rejects_unsafe_paths[/secret.pdf]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.005
+      "seconds": 0.006
     },
     {
       "test": "test_upload_rejects_unsafe_paths[.env]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.005
+      "seconds": 0.004
     },
     {
       "test": "test_upload_rejects_unsafe_paths[nested/.private.pdf]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.004
+      "seconds": 0.003
     },
     {
       "test": "test_upload_rejects_unsafe_paths[a\\\\report.pdf]",
@@ -931,7 +980,7 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.004
     },
     {
       "test": "test_upload_rejects_invalid_packages[files0]",
@@ -945,35 +994,35 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.009
     },
     {
       "test": "test_upload_rejects_invalid_packages[files2]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.004
     },
     {
       "test": "test_upload_rejects_invalid_packages[files3]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.006
+      "seconds": 0.004
     },
     {
       "test": "test_generate_validates_before_starting_worker",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.013
+      "seconds": 0.006
     },
     {
       "test": "test_restart_marks_interrupted_runs_failed",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.006
+      "seconds": 0.005
     },
     {
       "test": "test_browser_artifacts_and_bundle_exclude_secrets",
@@ -983,18 +1032,25 @@
       "seconds": 0.006
     },
     {
+      "test": "test_named_report_downloads_and_bundle",
+      "module": "tests.test_workspace",
+      "expected": "passed",
+      "observed": "passed",
+      "seconds": 0.005
+    },
+    {
       "test": "test_worker_failure_is_visible_and_releases_active",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.006
+      "seconds": 0.008
     },
     {
       "test": "test_write_routes_require_local_host_token_and_origin[headers0]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.01
+      "seconds": 0.008
     },
     {
       "test": "test_write_routes_require_local_host_token_and_origin[headers1]",
@@ -1008,42 +1064,42 @@
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.007
+      "seconds": 0.003
     },
     {
       "test": "test_bad_requests_return_explicit_error[not json]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.005
+      "seconds": 0.003
     },
     {
       "test": "test_bad_requests_return_explicit_error[[]]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.008
     },
     {
       "test": "test_bad_requests_return_explicit_error[{\"files\":[null]}]",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.004
+      "seconds": 0.005
     },
     {
       "test": "test_http_upload_accepts_valid_document",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.003
+      "seconds": 0.006
     },
     {
       "test": "test_unknown_bundle_is_404",
       "module": "tests.test_workspace",
       "expected": "passed",
       "observed": "passed",
-      "seconds": 0.004
+      "seconds": 0.011
     }
   ]
 }

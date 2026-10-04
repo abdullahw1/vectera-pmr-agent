@@ -20,6 +20,7 @@ import zipfile
 from .ingest import quarter
 from .review import approve
 from .errors import explain_failure
+from .filenames import report_filename
 
 ARTIFACTS = {
     "report.pdf",
@@ -105,6 +106,10 @@ class Workspace:
             )
         if (folder / "approval.json").exists():
             result["status"] = "approved"
+        if job.get("client") and job.get("quarter"):
+            name = report_filename(job["client"], job["quarter"], approved=result["status"] == "approved")
+            if (folder / name).is_file():
+                result["report_filename"] = name
         return result
 
     def state(self):
@@ -253,11 +258,18 @@ class Workspace:
         path = (folder / relative).resolve()
         if not path.is_relative_to(folder.resolve()):
             raise ValueError("Invalid artifact path")
-        if relative not in ARTIFACTS and not (relative.startswith("assets/") and path.suffix == ".png"):
+        if relative not in self.artifact_names(identifier) and not (relative.startswith("assets/") and path.suffix == ".png"):
             raise ValueError("Artifact is not available through the browser")
         if not path.is_file():
             raise ValueError("Artifact is not available yet")
         return path
+
+    def artifact_names(self, identifier):
+        names = set(ARTIFACTS)
+        data = read_json(self.directory(identifier) / "draft.json", {}).get("data", {})
+        if data.get("client") and data.get("quarter"):
+            names.update(report_filename(data["client"], data["quarter"], approved=value) for value in (False, True))
+        return names
 
     def bundle(self, identifier):
         folder = self.directory(identifier)
@@ -265,7 +277,7 @@ class Workspace:
             raise ValueError("Wait for a draft before downloading its audit bundle")
         result = io.BytesIO()
         with zipfile.ZipFile(result, "w", zipfile.ZIP_DEFLATED) as archive:
-            for name in sorted(ARTIFACTS - {"review.html"}):
+            for name in sorted(self.artifact_names(identifier) - {"review.html"}):
                 if (folder / name).is_file():
                     archive.write(folder / name, name)
             for path in (folder / "assets").glob("*.png"):

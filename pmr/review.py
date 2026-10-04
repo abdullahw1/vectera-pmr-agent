@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from .evidence import digest, implementation_hashes
+from .filenames import clear_named_reports, export_report, report_filename
 
 
 def write_review(output, data, sections, ledger, input_hashes, diagnostics=None, code_hashes=None):
@@ -22,6 +23,9 @@ def write_review(output, data, sections, ledger, input_hashes, diagnostics=None,
     if not (output / "report.pdf").is_file():
         raise ValueError("Draft PDF is missing; render it before creating the review package")
     assets["report.pdf"] = hashlib.sha256((output / "report.pdf").read_bytes()).hexdigest()
+    clear_named_reports(output)
+    draft_name = export_report(output, data)
+    assets[draft_name] = assets["report.pdf"]
     payload = dict(
         data=data,
         sections=sections,
@@ -38,6 +42,8 @@ def write_review(output, data, sections, ledger, input_hashes, diagnostics=None,
         (Path(__file__).parent / "web" / "review.html")
         .read_text(encoding="utf-8")
         .replace("__PAYLOAD__", encoded)
+        .replace('href="report.pdf"', f'href="{draft_name}"')
+        .replace('href="final_report.pdf"', f'href="{report_filename(data["client"], data["quarter"], approved=True)}"')
     )
     if diagnostics:
         details = (
@@ -199,9 +205,11 @@ def approve(output, request):
 
     final_semantic_hash = write_manifests(output, payload["data"], sections, ledger, prefix="final_")
     render_pdf(payload["data"], sections, output / "final_report.pdf", appendix, approved=True)
+    final_name = export_report(output, payload["data"], approved=True)
     record = dict(
         draft_hash=payload["draft_hash"],
         reviewer=request["reviewer"],
+        report_filename=final_name,
         acknowledged=True,
         semantic_hash=final_semantic_hash,
         input_hashes=payload["input_hashes"],

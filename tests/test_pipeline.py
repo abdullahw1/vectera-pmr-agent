@@ -23,6 +23,9 @@ def test_no_key_complete_financial_draft_and_repeatability(tmp_path, no_keys):
     assert a["financial_hash"] == b["financial_hash"]
     assert first["draft_hash"] == second["draft_hash"]
     assert first["asset_hashes"]["report.pdf"] == second["asset_hashes"]["report.pdf"]
+    named = tmp_path / "a" / "CPERS_PMR_4Q25_DRAFT.pdf"
+    assert named.read_bytes() == (tmp_path / "a" / "report.pdf").read_bytes()
+    assert first["asset_hashes"][named.name] == first["asset_hashes"]["report.pdf"]
     assert a["checks_passed"] == a["checks_total"]
     with fitz.open(tmp_path / "a" / "report.pdf") as pdf:
         assert len(pdf) <= 16
@@ -86,6 +89,8 @@ def test_mocked_chart_review_and_finalization(tmp_path, no_keys, monkeypatch):
     approval = json.loads((tmp_path / "approval.json").read_text())
     assert approval["draft_hash"] == revised["draft_hash"]
     assert len(approval["report_sha256"]) == 64
+    assert approval["report_filename"] == "CPERS_PMR_4Q25.pdf"
+    assert (tmp_path / "CPERS_PMR_4Q25.pdf").read_bytes() == (tmp_path / "final_report.pdf").read_bytes()
     evidence = json.loads((tmp_path / "final_evidence.json").read_text())
     assert evidence["facts"][chart_ids[0]]["value"]["series"][0]["value"] == 2
     with fitz.open(tmp_path / "final_report.pdf") as pdf:

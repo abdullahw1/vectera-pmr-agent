@@ -1,47 +1,51 @@
 # Vectera PMR Generator: Write-up
 
+## Overview of what was done
+
+I built a tool that turns quarterly documents into a Performance Measurement Report. It reads the flash spreadsheet, prior PMR, manager PDFs, market deck, IC logs and allocation history. I wanted to automate repetitive work while keeping a reviewer in control.
+
 ## Where the model stops and code starts
 
-The rule I followed: if a step decides a number, a ranking, a filter or a pass/fail result, it is Python. If it needs reading or writing judgment, it is a model, and code checks the model's output before it reaches the report.
+I kept numbers, rankings and decisions in plain code that gives the same answer every time. Python finds the files, checks the numbers match, calculates dollar contributions, selects featured funds, filters IC activity and tests compliance. Returns come from the rows named by SPEC, not from model calculations. Figure and role sentences use templates.
 
-Code does all of the following: discovering and classifying input files, reading the flash by labels and headers, footing every fund, sleeve and portfolio total to the cent, computing dollar attribution (income + appreciation - fees), ranking the top two contributors, detractors and positions, applying the four IC-log filters with withdrawals and lapses, computing open approvals and the committed-or-approved totals, parsing guideline limits from the prior PMR, running the four compliance checks, and computing the direction of the office cap-rate gap. Every role and figure sentence in the report is a code template.
+The model reads chart images and writes connecting prose for funds, new commitments and the market update. The prose writer gets number placeholders rather than real figures. Every sentence must cite a source passage. Code fills in the source figures and rejects sentences that add, drop, change or borrow numbers. A second model pass checks the wording against the cited quote. If writing fails these checks, I use an attributed source excerpt instead.
 
-A model does two jobs. First, it reads the outlook deck's chart images, because those numbers exist only in pixels. Each reading is checked against its available axis bounds, keeps its slide locator, and requires human confirmation before approval. Second, it writes connecting prose for featured funds, new commitments and the market update. The writer receives numerical placeholders rather than raw figures. Each sentence cites a registered passage; code restores exact source strings and rejects additions, omissions, changed signs or units, and borrowing numbers from another passage. This does not prove English meaning: a second model pass checks each sentence against its quote, and human review remains required. Failed prose falls back to a complete, attributed source excerpt.
+## How I know it's right
 
-## How I know the output is correct
+The supplied quarter passes 58 checks that the numbers match. Tests check the four featured funds, $456.8M committed or approved across 14 positions, recent activity and compliance results. Expected sample values live in tests, not the reporting code. Other tests cover missing values, shuffled rows, fabricated quotes and changed approval files.
 
-The tests include golden assertions for this quarter: the four featured funds and roles, $456.8M committed or approved across 14 positions, both new commitments, withdrawals and lapses, and compliance actuals. These are test fixtures only, never pipeline constants. Perturbations cover shuffled and moved rows, renamed files, zero-balance funds, a one-cent cash error, unknown IC actions, conflicting amounts, missing cash rows, renamed or unextractable manager headings, fabricated quotes and tampered approvals. Context regressions distinguish changed numeric source bindings from harmless diagnostic ID drift. Appendix tests walk every table cell back to the source PDF. A combined changed-client/period test stacks renamed benchmark and diversification labels, swapped cash columns, a renamed manager heading and a stray file, requiring identical figures, roles and compliance.
+I tested repeatability in separate processes with empty caches. The comparisons cover figures, chart readings, fund selection, roles, compliance, section structure and the source context behind prose numbers. Wording can vary between fresh model calls. CI is configured for tests and no-key repeatability on Windows and macOS with Python 3.12. The fresh-install script unpacks the submission, installs pinned dependencies and runs tests and generation. The recorded local pass is on macOS.
 
-The supplied package has 58 reconciliation checks; currency mismatches block release. Repeatability runs use separate processes and empty caches, comparing every figure, chart reading, selection, role, compliance result and section. Model-prose numbers are also bound to scoped source text, locators and surrounding source context, rather than compared only as a bag of digits. Audit IDs can change with diagnostic metadata without changing those facts. English wording may vary; semantic paraphrase correctness still needs review. Saved records show the observed results, not a guarantee for all future model calls. CI is configured for Windows and macOS; a fresh-install script independently unpacks the submission and runs pinned installation, the full tests and no-key generation on the recorded host.
+## Where a human steps in
 
-## Human review, warnings and blockers
+The review page has Report, Charts and Issues views. A reviewer can inspect source links, compare chart readings with images and submit corrections with a reason. A chart correction creates a new draft, replaces the old market prose and requires another review. It cannot quietly become an approved report.
 
-A live run caught omitted risk dates in fallback prose. Fixed fallbacks preserve the writer's complete, scoped numerical inventory; regression tests reject changed source context.
+Warnings ask for attention without stopping a draft: Meridian has no manager report, Meridian's fees are negative, and the allocation workbook has no client column. Blockers prevent release: a portfolio total that does not add up, a missing holding NAV needed for ranking, or an unresolved approved commitment amount. Missing values stay unavailable rather than becoming zeros or partial totals.
 
-The review page separates Report, Charts and Issues. Clicking text or table cells shows source locators and calculation inputs, including appendix bounding boxes. Chart corrections need reasons and revoke confirmation. They create a new draft, never immediate release: changed market evidence invalidates old prose, triggers checked rewriting or verified-observation fallback, and requires renewed report and chart review. Approval requires all charts confirmed, no blockers, a named reviewer and explicit acknowledgment. The backend refuses changed draft JSON, displayed PDF, inputs, implementation or exhibits. The approval record binds both draft and final PDF hashes.
-
-A warning asks for inspection: missing manager evidence, unresolved document matches or paraphrases. A matched but unextractable report is retained as page evidence, never called absent. Blockers prevent release. Missing cash rows preserve holdings and NAV but suppress contribution rankings; blank holding NAVs retain funded status and cell evidence but suppress position rankings. Unresolved IC amounts make the combined approval total unavailable, not a partial sum. Recoverable gaps produce blocked drafts; unreadable required inputs stop generation explicitly.
+Approval requires confirmed charts, no blockers, a named reviewer and an acknowledgment. File hashes tie approval to the reviewed draft and final PDF. Changed source files, code, draft data or displayed PDF stop approval.
 
 ## Next quarter and format changes
 
-Next quarter, drop the new package into the inputs folder and run with the new client code and quarter. Nothing client- or quarter-specific is in the code. The client's full name and benchmark come from the flash. Guideline limits, the allocation policy, managers and disclosures come from the prior PMR. The IC logs are found by their columns, across years, so an approval made last year and still open is counted. Rows, fund counts and filenames can change because everything is located by labels and headers. A rehearsal script builds a different client for 1Q26, with renamed files, moved rows, one fund removed and two added, and an approval carried from a 2025 log into a 2026 withdrawal. It runs end to end without code changes.
+For the next quarter, I replace the input package and provide the client and quarter. Files are selected by content, and tables by labels and headers. The flash supplies the client name and benchmark; the prior PMR supplies policy limits, managers and disclosures. IC logs are read across years so earlier approvals are not lost.
 
-For format changes, the section order and typography are read from the prior PMR's contents page and fonts. If the prior report gains a section the system does not know, it flags it rather than guessing. Section text is template code in one module, so a wording or layout change is a small, local edit. A new financial measure would need new code, and I would rather say so than pretend otherwise.
-
-The appendix retains every current flash column, including horizons not shown in the prior report, split into portrait tables. Headers expand source abbreviations; currency and accounting signs decorate, never alter, the source values. The manifest records both displayed cells and raw source strings. Main charts are native ReportLab vectors; presentation tests check typography, emphasis, table borders and portrait dimensions.
+The 1Q26 rehearsal changes the client, renames files, moves rows, adds and removes funds, and carries an approval into a later withdrawal. It runs without code edits. The prior PMR supplies section order and typography; unknown sections are flagged. A new financial measure still needs code. I retain current flash columns in portrait appendix tables, including horizons absent from the prior sample.
 
 ## Briefly
 
-Architecture: a single pipeline (discover, compute, gather evidence, write, render), with one shared evidence ledger that every figure and sentence registers in. A small local browser workspace sits on top for analysts, and the CLI does the same thing without it.
+Architecture: I used one pipeline for discovery, calculations, evidence, writing and rendering. The browser workspace and command line run the same pipeline. I left out a database and Docker to keep setup small.
 
-Traceability: manifest.json lists report blocks and individual table cells, including the appendix, with resolved evidence and source locators; evidence.json holds every fact, formula and input.
+Traceability: manifest.json connects report text and table cells to where they came from. evidence.json records facts, formulas and inputs. A reviewer can follow a figure back to its sheet and cell, PDF page or slide.
 
-Ambiguity and entity resolution: names are matched by explicit, logged rules for legal suffixes, punctuation, Roman, Arabic and word numerals, "&" and a few abbreviations. Near misses are suggested for review and never merged automatically.
+Messy inputs and name matching: explicit rules handle punctuation, legal suffixes and Roman or Arabic numerals. Close matches are suggestions, not automatic merges. A matched report with unreadable commentary is not described as missing.
 
-Model choice: pinned GPT-4.1 for prose and GPT-4.1-mini for chart reading, at temperature 0 with a content-addressed cache. Diagnostics record actual model calls, tokens, cache hits and stage timings; repairs can change usage. PDFs use PyMuPDF, with no model download. With no key, finance, selections, compliance and structure still run; prose falls back to attributed excerpts and unavailable chart readings block approval.
+Models and tools: I used pinned GPT-4.1 for prose, GPT-4.1-mini for charts, PyMuPDF for PDFs and ReportLab for output. Calls use temperature zero and a local cache. With no API key, code still produces figures and attributed excerpts, but unavailable chart readings block approval.
 
-With more time: deterministic chart measurement to cross-check the vision readings, authenticated multi-user approval, and more cross-client fixtures. I left out Docker and a database because they add setup without improving correctness here.
+Anthropic also completed two fresh Sonnet 4.6 runs with matching checked output. However, it called an unlabeled chart's readings printed labels, although the values matched. I kept the OpenAI submission because that mistake removed the approximation markers.
 
-## Where SPEC.md and the prior PMR disagree
+One judgment call: since-inception IRR uses the "Vectera Initiated Investments" row, displayed as 9.3%, rather than "Cascadia Portfolio" at 10.2%. SPEC names that row for the total portfolio. It also matches the prior report's 9.2% choice.
 
-The prior PMR's "Of which funded $391.8M" is the flash's commitment amount, not the funded amount, so this report labels it "Flash commitment total". The prior market update ranks the portfolio's return against the market index, which SPEC section 1.10 says not to conflate, so this report keeps them separate. The prior attribution table omits the second-largest position, and this one includes every role. The prior PMR says Vectera was retained in 2001, while the flash's inception data is older. I carried the sentence forward as source text rather than resolving it.
+With more time, I would cross-check chart images with code-based measurement. I would add more cross-client test packages. Shared use would also need authenticated reviewer accounts.
+
+## Where SPEC and the prior PMR disagree
+
+The sample's "Of which funded $391.8M" is the commitment total, not the $475.5M funded amount. I label it "Flash commitment total." I keep market indices separate from the client benchmark and include every required attribution role. I carry forward the prior report's 2001 retention sentence without resolving its conflict with older flash inception dates.
