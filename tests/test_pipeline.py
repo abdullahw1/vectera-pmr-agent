@@ -22,6 +22,7 @@ def test_no_key_complete_financial_draft_and_repeatability(tmp_path, no_keys):
     assert a["meaning_hash"] == b["meaning_hash"]
     assert a["financial_hash"] == b["financial_hash"]
     assert first["draft_hash"] == second["draft_hash"]
+    assert first["asset_hashes"]["report.pdf"] == second["asset_hashes"]["report.pdf"]
     assert a["checks_passed"] == a["checks_total"]
     with fitz.open(tmp_path / "a" / "report.pdf") as pdf:
         assert len(pdf) <= 16
@@ -65,7 +66,7 @@ def test_mocked_chart_review_and_finalization(tmp_path, no_keys, monkeypatch):
         title="Offline corrected exhibit",
         series=[dict(label="Test period", series="Test", value=2, unit="%")],
     )
-    approve(
+    result = approve(
         tmp_path,
         dict(
             draft_hash=payload["draft_hash"],
@@ -75,8 +76,15 @@ def test_mocked_chart_review_and_finalization(tmp_path, no_keys, monkeypatch):
             corrections={chart_ids[0]: dict(data=corrected, reason="Test corrected visible value")},
         ),
     )
+    assert result["status"] == "review_required"
+    assert not (tmp_path / "approval.json").exists()
+    revised = json.loads((tmp_path / "draft.json").read_text())
+    approve(tmp_path, dict(
+        draft_hash=revised["draft_hash"], reviewer="Test",
+        confirmed_charts=chart_ids, acknowledged=True,
+    ))
     approval = json.loads((tmp_path / "approval.json").read_text())
-    assert approval["draft_hash"] == payload["draft_hash"]
+    assert approval["draft_hash"] == revised["draft_hash"]
     assert len(approval["report_sha256"]) == 64
     evidence = json.loads((tmp_path / "final_evidence.json").read_text())
     assert evidence["facts"][chart_ids[0]]["value"]["series"][0]["value"] == 2

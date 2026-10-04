@@ -9,6 +9,8 @@ def extract_template(path, ledger):
     spans = []
     headings = []
     with fitz.open(path) as document:
+        cover = [span for block in document[0].get_text("dict")["blocks"] for line in block.get("lines", []) for span in line["spans"]]
+        cover_names = [s["text"] for s in cover if s["size"] >= 20 and "Performance Measurement" not in s["text"]]
         for page in document:
             for block in page.get_text("dict")["blocks"]:
                 for line in block.get("lines", []):
@@ -37,6 +39,7 @@ def extract_template(path, ledger):
         body_size=body_size,
         heading_size=heading_sizes.most_common(1)[0][0] if heading_sizes else 15,
         section_order=headings,
+        cover_name_lines=cover_names,
     )
     result["id"] = ledger.add(
         result.copy(), {"file": path.name, "method": "PDF font spans and contents headings"}

@@ -23,7 +23,7 @@ def main():
             spaceAfter=12,
         ),
         "heading": ParagraphStyle(
-            "heading", fontName="Helvetica-Bold", fontSize=11, leading=14, spaceBefore=10, spaceAfter=5
+            "heading", fontName="Helvetica-Bold", fontSize=11, leading=14, spaceBefore=10, spaceAfter=5, keepWithNext=True
         ),
         "body": ParagraphStyle("body", fontName="Helvetica", fontSize=9.5, leading=12.5, spaceAfter=7),
     }

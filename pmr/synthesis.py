@@ -9,6 +9,7 @@ import re
 from collections import Counter
 
 from .market import market_passages
+from .evidence import digest
 
 NUMBER = re.compile(
     r"\d{4}[-\u2013]\d{2,4}|\d{2}Q[1-4]|(?:approximately\s+|~)?[-+]?(?:USD\s*|\$)?\d+(?:,\d{3})*(?:\.\d+)?(?:%|x)?(?:\s+(?:million|billion|thousand|percent)\b)?",
@@ -107,7 +108,24 @@ def validate_sentences(result, passages):
             raise ValueError("Narrative quote must exist verbatim in the scoped source")
         if "[[" in rendered or "[[" in literal_quote:
             raise ValueError("Malformed placeholder")
-        validated.append(dict(text=rendered, source_id=identifier, quote=literal_quote))
+        bindings = []
+        for key in SLOT.findall(text):
+            source_text = quote_registry[identifier]
+            position = source_text.index(key)
+            bindings.append(
+                dict(
+                    slot=key,
+                    source_id=identifier,
+                    source_key=digest(
+                        dict(text=registry[identifier]["text"], source=registry[identifier].get("source", {}))
+                    ),
+                    value=slots[key]["value"],
+                    source_context=source_text[max(0, position - 80) : position + len(key) + 80],
+                )
+            )
+        validated.append(
+            dict(text=rendered, source_id=identifier, quote=literal_quote, numeric_bindings=bindings)
+        )
     counts = Counter(observed)
     if any(counts[key] != 1 for key in required) or any(count > 1 for count in counts.values()):
         raise ValueError("Preserve every required numeric placeholder exactly once")
@@ -130,6 +148,19 @@ def validate_sentences(result, passages):
                 if name not in prose:
                     raise ValueError("Narrative omitted a source asset name")
     return validated
+
+
+def source_excerpt(passages, prefix="Manager commentary is pending review. Complete source excerpt: "):
+    """Use the same scoped numerical inventory when model prose is unavailable."""
+    masked, _, _ = prepare(passages)
+    sentences = validate_sentences(dict(sentences=[
+        dict(text=p["text"], source_id=p["id"]) for p in masked
+    ]), passages)
+    return dict(
+        text=prefix + " ".join(s["text"] for s in sentences),
+        evidence=[p["id"] for p in passages],
+        numeric_bindings=[binding for sentence in sentences for binding in sentence["numeric_bindings"]],
+    )
 
 
 def synthesize(passages, purpose, model, ledger):
@@ -233,6 +264,7 @@ def synthesize(passages, purpose, model, ledger):
         evidence=ids,
         masked_response=result,
         source_order=[p["id"] for p in passages],
+        numeric_bindings=[binding for sentence in sentences for binding in sentence["numeric_bindings"]],
     )
 
 
@@ -251,10 +283,37 @@ def build_narratives(data, model, ledger):
     return result
 
 
-def refresh_market_narrative(data, ledger):
-    """Rebind approved corrections to existing prose; changed conclusions fail closed."""
+def refresh_market_narrative(data, ledger, model=None):
+    """Changed evidence invalidates old prose, not just its numerical slots."""
     passages = market_passages(data, ledger)
     narrative = data.get("narratives", {}).get("market")
+
+    def meaning(items):
+        return [
+            {key: p.get(key) for key in ("text", "source", "qualitative_only", "required_words")}
+            for p in items
+        ]
+
+    if narrative and meaning(passages) != meaning(data.get("market_passages", [])):
+        data["narratives"].pop("market")
+        regenerated = (
+            synthesize(passages, "Concise portfolio-relevant market update", model, ledger)
+            if model else None
+        )
+        if regenerated:
+            data["narratives"]["market"] = regenerated
+        ledger.issue(
+            "corrected_narrative_review",
+            "Chart corrections invalidated the previous market prose. Inspect the corrected draft before approval. "
+            + (
+                "New prose passed numeric, quote and paraphrase checks."
+                if regenerated
+                else "Verified source observations replace the old prose; no interpretation was rebound."
+            ),
+            evidence=[p["id"] for p in passages],
+        )
+        data["market_passages"] = passages
+        return
     if narrative:
         old_order = narrative["source_order"]
         if len(old_order) != len(passages):
@@ -289,5 +348,6 @@ def refresh_market_narrative(data, ledger):
             evidence=ids,
             masked_response=response,
             source_order=[p["id"] for p in passages],
+            numeric_bindings=[binding for sentence in sentences for binding in sentence["numeric_bindings"]],
         )
     data["market_passages"] = passages

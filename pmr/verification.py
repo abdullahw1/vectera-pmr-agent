@@ -43,6 +43,11 @@ def validate_numeric_quote(quote, fact, *, entity=None):
 
 
 def semantic_manifest(data, sections):
+    def binding_meaning(binding):
+        # Audit IDs include extraction diagnostics. Compare the scoped source text
+        # and locator fingerprint, while retaining original IDs in the claim manifest.
+        return {k: v for k, v in binding.items() if k != "source_id" or "source_key" not in binding}
+
     financials = {
         key: data[key]
         for key in [
@@ -62,12 +67,18 @@ def semantic_manifest(data, sections):
             "blocks": [
                 {
                     "type": b["type"],
-                    "kind": b.get("kind"),
+                    # Authorship is audit metadata, not report meaning. Both paths
+                    # must carry the identical scoped numerical bindings below.
+                    "kind": "grounded_narrative" if b.get("kind") in {"model_prose", "source_excerpt"} else b.get("kind"),
                     "columns": b.get("columns"),
                     "rows": b.get("rows"),
+                    "numeric_bindings": sorted(
+                        [binding_meaning(v) for v in b.get("numeric_bindings", [])],
+                        key=lambda v: (v.get("source_key", v.get("source_id", "")), v["slot"]),
+                    ),
                     # Model prose may order its sentences differently on a fresh run; its figures must
                     # still match exactly, so compare them as a sorted list rather than in reading order.
-                    "numbers": (sorted if b.get("kind") == "model_prose" else list)(
+                    "numbers": (sorted if b.get("kind") in {"model_prose", "source_excerpt"} else list)(
                         numeric_tokens(b.get("text", ""))
                     ),
                 }
@@ -108,6 +119,7 @@ def claim_manifest(sections, ledger):
                         if block["type"] == "paragraph"
                         else [numeric_tokens(cell) for row in block.get("rows", []) for cell in row]
                     ),
+                    numeric_bindings=block.get("numeric_bindings", []),
                     evidence=ids,
                     resolved_evidence=resolved,
                     locators=[

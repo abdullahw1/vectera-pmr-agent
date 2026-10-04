@@ -41,6 +41,17 @@ images. Anthropic uses `claude-sonnet-4-6`. `PMR_MODEL` and `PMR_VISION_MODEL` o
 produced by code. Fund and market narrative fall back to attributed source excerpts, and the deck's chart
 values are marked unavailable. That is a blocker, so a no-key draft cannot be approved.
 
+**Report presentation.** The cover, headings, typography, emphasis and vector charts follow the prior PMR.
+The portrait appendix preserves every supplied flash column and blank cell, rather than copying the prior
+quarter's smaller selection of columns. Wide return exhibits are split by horizon with one header row;
+`TGRS/TNET` are displayed as `GRS/NET`, and market-value share as `% NAV`. Currency signs and accounting
+negatives are presentation only: source strings and exact locators remain in the manifest. A compact net
+annual-return summary accompanies the full annual-return exhibits.
+
+Source-excerpt fallbacks preserve the writer's complete numerical inventory, including dated market
+risks and scoped source bindings. A fresh-run test caught and fixed an earlier fallback that omitted
+those dates; meaning checks still fail when a value or its source context changes.
+
 A cold run with a key takes about a minute and makes about 19 API calls (under $0.10). Reruns reuse a
 content-addressed cache.
 
@@ -66,22 +77,28 @@ content-addressed cache.
 
 ## Review and approve
 
-Open the review page, click any paragraph, table or chart to see its source locators and calculation
-inputs, confirm or correct each chart-image reading (a correction needs a reason), then enter your name and
-approve. Approval is refused while any blocker remains or if the draft, inputs or exhibits changed since
-generation. It writes `final_report.pdf` and a hash-bound `approval.json`.
+1. Open **Report**, inspect the draft PDF, and click paragraphs or table cells for readable source locators and calculation inputs. Audit JSON is available under **Audit details**.
+2. Open **Charts**. Compare each extraction with the displayed source image. Edit individual values if needed, add a correction reason, and select **Confirm These Chart Values**. **Previous chart** and **Next chart** retain value edits in this session. Reloading deliberately requires a new review.
+3. Open **Issues**. Blockers require corrected inputs and regeneration; warnings require inspection but do not prevent release. Chart confirmations are shown separately.
+4. Enter your reviewer name and acknowledge the PDF, sources, charts and warnings. **Approve & Create Final PDF** becomes available only when all requirements are met. Backend checks also enforce these requirements. If you corrected any chart, this first submission saves a **new draft**, not an approval. Select **Reload corrected draft**, inspect the updated report, reconfirm charts and acknowledge it again. Changed market evidence invalidates the old prose; newly written prose receives the same number, quote and paraphrase checks, or verified observations replace it if synthesis is unavailable.
+5. With no further corrections, approval writes `final_report.pdf` and a hash-bound `approval.json`. It is refused if the draft JSON, displayed draft PDF, inputs, implementation or exhibits changed. The approval record includes the exact draft PDF hash as well as the final PDF hash.
+
+Missing cash rows or blank holding NAVs do not erase known holdings or turn them into open approvals. Performance-dependent attribution requires complete cash data, and position ranking requires complete NAV data. Missing figures retain their cell locators and block release. Unresolved IC amounts make the committed-or-approved total unavailable, never a partial sum presented as complete.
 
 ## Verification
 
 ```powershell
-python -m pytest -q                                                        # 126 tests: golden 4Q25 answers, perturbations, guardrails
+python -m pytest -q                                                        # golden 4Q25 answers, perturbations, guardrails
 python scripts/verify_repeatability.py --client CPERS --quarter 4Q25       # two clean no-key runs must match
 python scripts/verify_repeatability.py --client CPERS --quarter 4Q25 --online --record output/live_repeatability.json
 python scripts/rehearse_unseen.py                                          # different client, 1Q26, changed rows and funds
+python scripts/package_submission.py                                      # builds a draft package without secrets
+python scripts/verify_clean_install.py                                     # Python 3.12; fresh venv, full tests, no-key run
 ```
 
 Results from the submitted run are in `output/test-results.xml`, `output/regression_matrix.json`,
-`output/repeatability.json`, `output/live_repeatability.json` and `output/unseen_rehearsal.json`.
+`output/repeatability.json`, `output/live_repeatability.json`, `output/unseen_rehearsal.json` and
+`output/clean_install_verification.json`. Browser checks are recorded in `output/review_ui_verification.json`; their approval request is mocked, never a real release. The clean-install record names the tested host; it does not claim Windows validation on macOS.
 CI (`.github/workflows/verify.yml`) runs the tests and the repeatability check on Windows and macOS.
 
 ## Layout

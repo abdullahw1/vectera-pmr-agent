@@ -64,6 +64,12 @@ def display(value, places=1):
     return f"{result:,.{places}f}"
 
 
+def sum_if_known(values):
+    """An incomplete sum is unknown, never a partial total presented as complete."""
+    values = list(values)
+    return None if any(value is None for value in values) else sum(values)
+
+
 def restore_money(data):
     """Rehydrate only known currency fields, not history's explicitly USD-million series."""
     for record in [data["portfolio"], *data["funds"], *data["sleeves"].values()]:

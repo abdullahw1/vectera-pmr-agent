@@ -1,12 +1,12 @@
 {
-  "passed": true,
+  "passed": false,
   "mode": "online",
   "runs": [
     {
       "client": "CPERS",
       "quarter": "4Q25",
-      "meaning_hash": "841ce6d0b074726c0744e5d8e6e2806f956a58ae453dccff835538fd12be43f6",
-      "semantic_hash": "1ec3ac60ccd535de65dbb0a3590d4302f7d550d96f66b588fb94d814fe1afe41",
+      "meaning_hash": "43afbeeec65a4c50b700a25e43619ec9484782cc26f66a43eeb9b7c7143608a6",
+      "semantic_hash": "35bfa38d93aef5f2351737ad422def9d3dd5d575ca5a91c4fa4bf4b932a2f924",
       "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
       "source_hashes": {
         "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -42,11 +42,11 @@
         "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
         "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
         "pipeline.py": "44f6b43196481677414312a593fea3f5e406851a625ac7ee53048b2c6a6c6da7",
-        "report.py": "91a8227a908bfb3dc82a13b890d088079c026e8352ca10d9f36b31d6cd3e4567",
+        "report.py": "8e4610890aebe7c44ef85b053083bfb5a8556371aaefa52e1c411543473b1073",
         "review.py": "3d1b29f8599ede2e725579221123c4d36eb655e9d1bb693a83930676752d6b35",
-        "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+        "synthesis.py": "a95d51b732524455080279053c4bf7d8048e0e6aba09698a02faa1132c17bcbf",
         "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
-        "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+        "verification.py": "d6450412cc5ce119d4d918fa61ecff6c5909f92d1d1e9924e38464b1dacb2a03",
         "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
         "web/index.html": "9477b439f203136d42fceb3ba85eca94ab955978885f3b585aef4bf77a926ab0",
         "web/review.html": "dc3d91d4502b33fe69f88e7fcadda9dccd7c5e2d324340ccfb666f412740c89d",
@@ -101,7 +101,7 @@
           "code": "chart_review",
           "message": "Confirm image-extracted values on slide 6, chart 1",
           "severity": "review",
-          "fact_id": "f_fddfecf4275a360b"
+          "fact_id": "f_a8368b9c322d8e77"
         },
         {
           "code": "chart_review",
@@ -149,7 +149,8 @@
           "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
           "severity": "warning",
           "evidence": [
-            "f_ef7244c47896ba79"
+            "f_73fd1a95fc49859c",
+            "f_b16d7e70b4b661d6"
           ]
         },
         {
@@ -181,13 +182,13 @@
           "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
           "severity": "warning",
           "evidence": [
-            "f_60c23729fba5fe88",
+            "f_62d0234578aba7b1",
+            "f_424d459257f560cc",
+            "f_88fb123b2afb87eb",
             "f_7ef22ef872c5dd21",
-            "f_ab216210fc5ca042",
-            "f_40331fbb9022c6a7",
-            "f_304effbc9c46811d",
-            "f_7d66af00c382b018",
-            "f_88fb123b2afb87eb"
+            "f_990b37c781dc3154",
+            "f_9d93f8a86faaf3f9",
+            "f_304effbc9c46811d"
           ]
         }
       ],
@@ -229,7 +230,7 @@
       ],
       "model_provider": "openai",
       "model_name": "gpt-4.1-2025-04-14",
-      "api_calls": 19,
+      "api_calls": 21,
       "api_usage": [
         {
           "prompt_tokens": 1412,
@@ -338,525 +339,8 @@
         },
         {
           "prompt_tokens": 447,
-          "completion_tokens": 108,
-          "total_tokens": 555,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 381,
-          "completion_tokens": 75,
-          "total_tokens": 456,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 419,
-          "completion_tokens": 70,
-          "total_tokens": 489,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 231,
-          "completion_tokens": 65,
-          "total_tokens": 296,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 419,
-          "completion_tokens": 78,
-          "total_tokens": 497,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 243,
-          "completion_tokens": 36,
-          "total_tokens": 279,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 478,
-          "completion_tokens": 122,
-          "total_tokens": 600,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 762,
-          "completion_tokens": 98,
-          "total_tokens": 860,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 434,
-          "completion_tokens": 93,
-          "total_tokens": 527,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 272,
-          "completion_tokens": 27,
-          "total_tokens": 299,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 1060,
-          "completion_tokens": 521,
-          "total_tokens": 1581,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 3264,
-          "completion_tokens": 69,
-          "total_tokens": 3333,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        }
-      ]
-    },
-    {
-      "client": "CPERS",
-      "quarter": "4Q25",
-      "meaning_hash": "dadb391a47a394864ba2b85eb584cd5f48702ee4a7ce871723d4d812e1d18029",
-      "semantic_hash": "1ec3ac60ccd535de65dbb0a3590d4302f7d550d96f66b588fb94d814fe1afe41",
-      "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
-      "source_hashes": {
-        "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
-        "flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
-        "flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
-        "flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
-        "flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
-        "ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
-        "manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
-        "manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
-        "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
-        "manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
-        "manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
-        "manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
-        "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
-        "market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
-        "prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
-        "prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b"
-      },
-      "implementation_hashes": {
-        "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
-        "__main__.py": "f39f35e219410779b4beaa952430e805a227a0909c35ff90ad2d0f12a89c0148",
-        "appendix.py": "efd923017b6311735058e7bd1905693158faf94c6f91af79686a2ddd6b8a13f8",
-        "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
-        "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
-        "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
-        "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
-        "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
-        "finance.py": "b62f038d9756e3da0a4baa9ba2c0e59d257cf10eb50da4fabddbcdcbf68810a6",
-        "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
-        "market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
-        "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
-        "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
-        "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
-        "pipeline.py": "44f6b43196481677414312a593fea3f5e406851a625ac7ee53048b2c6a6c6da7",
-        "report.py": "91a8227a908bfb3dc82a13b890d088079c026e8352ca10d9f36b31d6cd3e4567",
-        "review.py": "3d1b29f8599ede2e725579221123c4d36eb655e9d1bb693a83930676752d6b35",
-        "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
-        "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
-        "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
-        "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
-        "web/index.html": "9477b439f203136d42fceb3ba85eca94ab955978885f3b585aef4bf77a926ab0",
-        "web/review.html": "dc3d91d4502b33fe69f88e7fcadda9dccd7c5e2d324340ccfb666f412740c89d",
-        "workspace.py": "6ffcc9b4a0570f185b36c65806238f009a97ba6f380fe1ca6480325490bf745e"
-      },
-      "checks_passed": 58,
-      "checks_total": 58,
-      "supporting_checks_failed": 1,
-      "issues": [
-        {
-          "code": "reconciliation",
-          "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
-          "severity": "warning",
-          "evidence": [
-            "f_6faa3496a5ff4dd8",
-            "f_8af12216d589319a",
-            "f_6c69b87841fc08cc",
-            "f_715daf00f71e7500",
-            "f_9abbdd11972ef684",
-            "f_06e1878e05198846",
-            "f_d3748ab9ba07455f",
-            "f_f1b493f43db48766"
-          ]
-        },
-        {
-          "code": "negative_fees",
-          "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
-          "severity": "warning",
-          "evidence": [
-            "f_a5c2f964ad4e881d"
-          ]
-        },
-        {
-          "code": "missing_manager",
-          "message": "No matched current manager evidence for ranked fund Meridian Opportunity Fund V; flash-only commentary",
-          "severity": "warning",
-          "fund": "Meridian Opportunity Fund V"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 4, chart 1",
-          "severity": "review",
-          "fact_id": "f_6d57eddcaeaf2604"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 5, chart 1",
-          "severity": "review",
-          "fact_id": "f_585c23b393cd1f1e"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 6, chart 1",
-          "severity": "review",
-          "fact_id": "f_97bd43ea3648f5df"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 7, chart 1",
-          "severity": "review",
-          "fact_id": "f_40b4ae9da0b0b8fb"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 8, chart 1",
-          "severity": "review",
-          "fact_id": "f_c57fe5c98ad226cd"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 9, chart 1",
-          "severity": "review",
-          "fact_id": "f_e7530a703c092fd7"
-        },
-        {
-          "code": "chart_review",
-          "message": "Confirm image-extracted values on slide 10, chart 1",
-          "severity": "review",
-          "fact_id": "f_2cdfd284491476d1"
-        },
-        {
-          "code": "history_ownership",
-          "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
-          "severity": "warning",
-          "evidence": [
-            "f_b9c0c533e3c13eec",
-            "f_fe245671d1c72119"
-          ]
-        },
-        {
-          "code": "narrative_review",
-          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
-          "severity": "warning",
-          "evidence": [
-            "f_cc885b2107b4a52c"
-          ]
-        },
-        {
-          "code": "narrative_review",
-          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
-          "severity": "warning",
-          "evidence": [
-            "f_73fd1a95fc49859c",
-            "f_b16d7e70b4b661d6"
-          ]
-        },
-        {
-          "code": "narrative_review",
-          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
-          "severity": "warning",
-          "evidence": [
-            "f_b0497728800c864e"
-          ]
-        },
-        {
-          "code": "narrative_review",
-          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
-          "severity": "warning",
-          "evidence": [
-            "f_e13d93f23b9938fe"
-          ]
-        },
-        {
-          "code": "narrative_review",
-          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
-          "severity": "warning",
-          "evidence": [
-            "f_64af9bad43de9f56"
-          ]
-        },
-        {
-          "code": "narrative_review",
-          "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
-          "severity": "warning",
-          "evidence": [
-            "f_60c23729fba5fe88",
-            "f_1a8c6bfc937ee9dc",
-            "f_ab216210fc5ca042",
-            "f_dc9d3a6e23dd6f85",
-            "f_304effbc9c46811d",
-            "f_85079671a3c66ebb",
-            "f_88fb123b2afb87eb"
-          ]
-        }
-      ],
-      "ranked_funds": [
-        {
-          "name": "Cornerstone Core Property Fund",
-          "roles": [
-            "second-largest detractor",
-            "largest individual position"
-          ],
-          "contribution": "-187176.36",
-          "nav": "54424849.41"
-        },
-        {
-          "name": "Redwood Logistics Trust",
-          "roles": [
-            "largest contributor",
-            "second-largest individual position"
-          ],
-          "contribution": "1367035.55",
-          "nav": "51915756.06"
-        },
-        {
-          "name": "Ironwood Value-Add Fund III",
-          "roles": [
-            "second-largest contributor"
-          ],
-          "contribution": "1036289",
-          "nav": "11103969"
-        },
-        {
-          "name": "Meridian Opportunity Fund V",
-          "roles": [
-            "largest detractor"
-          ],
-          "contribution": "-469293.73",
-          "nav": "30237149.55"
-        }
-      ],
-      "model_provider": "openai",
-      "model_name": "gpt-4.1-2025-04-14",
-      "api_calls": 19,
-      "api_usage": [
-        {
-          "prompt_tokens": 1412,
-          "completion_tokens": 276,
-          "total_tokens": 1688,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 1480,
-          "completion_tokens": 980,
-          "total_tokens": 2460,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 1480,
-          "completion_tokens": 625,
-          "total_tokens": 2105,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 1412,
-          "completion_tokens": 376,
-          "total_tokens": 1788,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 1412,
-          "completion_tokens": 585,
-          "total_tokens": 1997,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 1480,
-          "completion_tokens": 1531,
-          "total_tokens": 3011,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 1480,
-          "completion_tokens": 697,
-          "total_tokens": 2177,
-          "prompt_tokens_details": {
-            "cached_tokens": 0,
-            "audio_tokens": 0
-          },
-          "completion_tokens_details": {
-            "reasoning_tokens": 0,
-            "audio_tokens": 0,
-            "accepted_prediction_tokens": 0,
-            "rejected_prediction_tokens": 0
-          }
-        },
-        {
-          "prompt_tokens": 447,
-          "completion_tokens": 108,
-          "total_tokens": 555,
+          "completion_tokens": 107,
+          "total_tokens": 554,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -1005,8 +489,8 @@
         },
         {
           "prompt_tokens": 1061,
-          "completion_tokens": 527,
-          "total_tokens": 1588,
+          "completion_tokens": 528,
+          "total_tokens": 1589,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -1019,9 +503,577 @@
           }
         },
         {
-          "prompt_tokens": 3275,
-          "completion_tokens": 66,
-          "total_tokens": 3341,
+          "prompt_tokens": 3276,
+          "completion_tokens": 132,
+          "total_tokens": 3408,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1610,
+          "completion_tokens": 510,
+          "total_tokens": 2120,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 3266,
+          "completion_tokens": 61,
+          "total_tokens": 3327,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "client": "CPERS",
+      "quarter": "4Q25",
+      "meaning_hash": "a1c32872120c7ddf4fdcedf972a095b01b03aa15e64e266f19c06a982900c3a7",
+      "semantic_hash": "0dbe1508482ed1f47e5f7213b1c5e2b64e1c531675d005fc2239dabf72060682",
+      "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
+      "source_hashes": {
+        "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
+        "flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
+        "flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
+        "flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
+        "flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
+        "ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
+        "manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
+        "manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
+        "manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
+        "manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
+        "manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
+        "manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
+        "manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
+        "market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
+        "prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
+        "prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b"
+      },
+      "implementation_hashes": {
+        "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+        "__main__.py": "f39f35e219410779b4beaa952430e805a227a0909c35ff90ad2d0f12a89c0148",
+        "appendix.py": "efd923017b6311735058e7bd1905693158faf94c6f91af79686a2ddd6b8a13f8",
+        "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
+        "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
+        "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+        "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
+        "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+        "finance.py": "b62f038d9756e3da0a4baa9ba2c0e59d257cf10eb50da4fabddbcdcbf68810a6",
+        "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
+        "market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
+        "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
+        "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
+        "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
+        "pipeline.py": "44f6b43196481677414312a593fea3f5e406851a625ac7ee53048b2c6a6c6da7",
+        "report.py": "8e4610890aebe7c44ef85b053083bfb5a8556371aaefa52e1c411543473b1073",
+        "review.py": "3d1b29f8599ede2e725579221123c4d36eb655e9d1bb693a83930676752d6b35",
+        "synthesis.py": "a95d51b732524455080279053c4bf7d8048e0e6aba09698a02faa1132c17bcbf",
+        "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+        "verification.py": "d6450412cc5ce119d4d918fa61ecff6c5909f92d1d1e9924e38464b1dacb2a03",
+        "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+        "web/index.html": "9477b439f203136d42fceb3ba85eca94ab955978885f3b585aef4bf77a926ab0",
+        "web/review.html": "dc3d91d4502b33fe69f88e7fcadda9dccd7c5e2d324340ccfb666f412740c89d",
+        "workspace.py": "6ffcc9b4a0570f185b36c65806238f009a97ba6f380fe1ca6480325490bf745e"
+      },
+      "checks_passed": 58,
+      "checks_total": 58,
+      "supporting_checks_failed": 1,
+      "issues": [
+        {
+          "code": "reconciliation",
+          "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
+          "severity": "warning",
+          "evidence": [
+            "f_6faa3496a5ff4dd8",
+            "f_8af12216d589319a",
+            "f_6c69b87841fc08cc",
+            "f_715daf00f71e7500",
+            "f_9abbdd11972ef684",
+            "f_06e1878e05198846",
+            "f_d3748ab9ba07455f",
+            "f_f1b493f43db48766"
+          ]
+        },
+        {
+          "code": "negative_fees",
+          "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+          "severity": "warning",
+          "evidence": [
+            "f_a5c2f964ad4e881d"
+          ]
+        },
+        {
+          "code": "missing_manager",
+          "message": "No matched current manager evidence for ranked fund Meridian Opportunity Fund V; flash-only commentary",
+          "severity": "warning",
+          "fund": "Meridian Opportunity Fund V"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 4, chart 1",
+          "severity": "review",
+          "fact_id": "f_6d57eddcaeaf2604"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 5, chart 1",
+          "severity": "review",
+          "fact_id": "f_585c23b393cd1f1e"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 6, chart 1",
+          "severity": "review",
+          "fact_id": "f_3ca3880e56fc623c"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 7, chart 1",
+          "severity": "review",
+          "fact_id": "f_40b4ae9da0b0b8fb"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 8, chart 1",
+          "severity": "review",
+          "fact_id": "f_1e9d1839d8ae53af"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 9, chart 1",
+          "severity": "review",
+          "fact_id": "f_9ad7d9ba5c3056b2"
+        },
+        {
+          "code": "chart_review",
+          "message": "Confirm image-extracted values on slide 10, chart 1",
+          "severity": "review",
+          "fact_id": "f_639f583c749c2eec"
+        },
+        {
+          "code": "history_ownership",
+          "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+          "severity": "warning",
+          "evidence": [
+            "f_b9c0c533e3c13eec",
+            "f_fe245671d1c72119"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
+          "severity": "warning",
+          "evidence": [
+            "f_cc885b2107b4a52c"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
+          "severity": "warning",
+          "evidence": [
+            "f_73fd1a95fc49859c",
+            "f_b16d7e70b4b661d6"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
+          "severity": "warning",
+          "evidence": [
+            "f_b0497728800c864e"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
+          "severity": "warning",
+          "evidence": [
+            "f_e13d93f23b9938fe"
+          ]
+        },
+        {
+          "code": "narrative_review",
+          "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
+          "severity": "warning",
+          "evidence": [
+            "f_9f206c09e4307823"
+          ]
+        },
+        {
+          "code": "narrative_rejected",
+          "message": "Concise portfolio-relevant market update: Claim-versus-quote check failed: Each sentence accurately reflects the explicit facts stated in its respective quote, without adding unsupported causal links, motives, recommendations, interpretations, or income-growth claims.; explicit pending-review fallback retained",
+          "severity": "warning"
+        }
+      ],
+      "ranked_funds": [
+        {
+          "name": "Cornerstone Core Property Fund",
+          "roles": [
+            "second-largest detractor",
+            "largest individual position"
+          ],
+          "contribution": "-187176.36",
+          "nav": "54424849.41"
+        },
+        {
+          "name": "Redwood Logistics Trust",
+          "roles": [
+            "largest contributor",
+            "second-largest individual position"
+          ],
+          "contribution": "1367035.55",
+          "nav": "51915756.06"
+        },
+        {
+          "name": "Ironwood Value-Add Fund III",
+          "roles": [
+            "second-largest contributor"
+          ],
+          "contribution": "1036289",
+          "nav": "11103969"
+        },
+        {
+          "name": "Meridian Opportunity Fund V",
+          "roles": [
+            "largest detractor"
+          ],
+          "contribution": "-469293.73",
+          "nav": "30237149.55"
+        }
+      ],
+      "model_provider": "openai",
+      "model_name": "gpt-4.1-2025-04-14",
+      "api_calls": 21,
+      "api_usage": [
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 276,
+          "total_tokens": 1688,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 980,
+          "total_tokens": 2460,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 620,
+          "total_tokens": 2100,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 376,
+          "total_tokens": 1788,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1412,
+          "completion_tokens": 585,
+          "total_tokens": 1997,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 1530,
+          "total_tokens": 3010,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1480,
+          "completion_tokens": 701,
+          "total_tokens": 2181,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 447,
+          "completion_tokens": 108,
+          "total_tokens": 555,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 381,
+          "completion_tokens": 79,
+          "total_tokens": 460,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 419,
+          "completion_tokens": 94,
+          "total_tokens": 513,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 319,
+          "completion_tokens": 52,
+          "total_tokens": 371,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 419,
+          "completion_tokens": 78,
+          "total_tokens": 497,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 243,
+          "completion_tokens": 37,
+          "total_tokens": 280,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 478,
+          "completion_tokens": 122,
+          "total_tokens": 600,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 762,
+          "completion_tokens": 65,
+          "total_tokens": 827,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 434,
+          "completion_tokens": 93,
+          "total_tokens": 527,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 272,
+          "completion_tokens": 45,
+          "total_tokens": 317,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1065,
+          "completion_tokens": 549,
+          "total_tokens": 1614,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 3402,
+          "completion_tokens": 64,
+          "total_tokens": 3466,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 1605,
+          "completion_tokens": 474,
+          "total_tokens": 2079,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        {
+          "prompt_tokens": 3403,
+          "completion_tokens": 60,
+          "total_tokens": 3463,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -1036,7 +1088,7 @@
       ]
     }
   ],
-  "meaningful_equal": true,
+  "meaningful_equal": false,
   "revision_equal": true,
   "required_output_complete": true,
   "semantic_manifests": [
@@ -3091,7 +3143,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [
                 "28"
               ],
@@ -3184,7 +3236,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [
                 "10",
                 "31",
@@ -3277,7 +3329,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [],
               "numeric_bindings": [],
               "rows": null,
@@ -3347,7 +3399,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [],
               "numeric_bindings": [],
               "rows": null,
@@ -3366,7 +3418,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [],
               "numeric_bindings": [],
               "rows": null,
@@ -3401,7 +3453,7 @@
           "blocks": [
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [
                 "0.7",
                 "1",
@@ -7192,7 +7244,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [
                 "28"
               ],
@@ -7285,7 +7337,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [
                 "10",
                 "31",
@@ -7378,7 +7430,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [],
               "numeric_bindings": [],
               "rows": null,
@@ -7448,7 +7500,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [],
               "numeric_bindings": [],
               "rows": null,
@@ -7467,7 +7519,7 @@
             },
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": "model_prose",
               "numbers": [],
               "numeric_bindings": [],
               "rows": null,
@@ -7502,147 +7554,28 @@
           "blocks": [
             {
               "columns": null,
-              "kind": "grounded_narrative",
+              "kind": null,
               "numbers": [
-                "0.7",
-                "1",
                 "1.0",
+                "3.3",
+                "1",
+                "25",
+                "4.6",
+                "4.2",
+                "10",
+                "36.2",
+                "23.5",
+                "2026",
+                "27",
                 "1.3",
                 "1.4",
-                "10",
-                "2.1",
-                "2020",
-                "2021",
-                "2023",
-                "2024",
-                "2026",
-                "23.5",
                 "25",
-                "25",
-                "27",
-                "3.3",
-                "36.2",
-                "4.2",
-                "4.6",
                 "5.6",
-                "7.7"
+                "7.7",
+                "0.7",
+                "2.1"
               ],
-              "numeric_bindings": [
-                {
-                  "slot": "[[VALUE_A]]",
-                  "source_context": "\u2022 Core real-estate values are stabilizing after the [[VALUE_A]] repricing; U.S. private funds have turned positive over the past year (see exhi",
-                  "source_key": "173d71f39c458b58c502ba6b80d5554b91312c614ceb5a06f14fa51bea034d5b",
-                  "value": "2023\u20132024"
-                },
-                {
-                  "slot": "[[VALUE_B]]",
-                  "source_context": "d re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of [[VALUE_B]] vintage debt at higher rates remains a sector-wide overhang, most acute in offi",
-                  "source_key": "580d2642ed72aeb2e6c21dea5588deec13a209837237901d1dbc46d83bf5015a",
-                  "value": "2020\u20132021"
-                },
-                {
-                  "slot": "[[VALUE_C]]",
-                  "source_context": "Broad private real-estate funds returned [[VALUE_C]] net in the latest quarter and [[VALUE_D]] over [[VALUE_E]]-Yr.",
-                  "source_key": "6227f14ac7d9ce8fcd0489ffe229ad8831c120143f84fdbcd8f24fe29deb2aac",
-                  "value": "1.0%"
-                },
-                {
-                  "slot": "[[VALUE_D]]",
-                  "source_context": "ad private real-estate funds returned [[VALUE_C]] net in the latest quarter and [[VALUE_D]] over [[VALUE_E]]-Yr.",
-                  "source_key": "6227f14ac7d9ce8fcd0489ffe229ad8831c120143f84fdbcd8f24fe29deb2aac",
-                  "value": "3.3%"
-                },
-                {
-                  "slot": "[[VALUE_E]]",
-                  "source_context": "state funds returned [[VALUE_C]] net in the latest quarter and [[VALUE_D]] over [[VALUE_E]]-Yr.",
-                  "source_key": "6227f14ac7d9ce8fcd0489ffe229ad8831c120143f84fdbcd8f24fe29deb2aac",
-                  "value": "1"
-                },
-                {
-                  "slot": "[[VALUE_J]]",
-                  "source_context": "The Portfolio's largest property exposures are Industrial at [[VALUE_J]] and Apartment at [[VALUE_K]]. The deck forecasts [[VALUE_L]] (p.a.) NOI growth ",
-                  "source_key": "a2d65f4a6131ad0a8a335ec724a766ea800b52e0824cb608cde162b0e545a290",
-                  "value": "36.2%"
-                },
-                {
-                  "slot": "[[VALUE_K]]",
-                  "source_context": "lio's largest property exposures are Industrial at [[VALUE_J]] and Apartment at [[VALUE_K]]. The deck forecasts [[VALUE_L]] (p.a.) NOI growth of [[VALUE_M]] for industrial",
-                  "source_key": "a2d65f4a6131ad0a8a335ec724a766ea800b52e0824cb608cde162b0e545a290",
-                  "value": "23.5%"
-                },
-                {
-                  "slot": "[[VALUE_L]]",
-                  "source_context": " are Industrial at [[VALUE_J]] and Apartment at [[VALUE_K]]. The deck forecasts [[VALUE_L]] (p.a.) NOI growth of [[VALUE_M]] for industrial and [[VALUE_N]] for residential",
-                  "source_key": "a2d65f4a6131ad0a8a335ec724a766ea800b52e0824cb608cde162b0e545a290",
-                  "value": "2026-27"
-                },
-                {
-                  "slot": "[[VALUE_M]]",
-                  "source_context": "d Apartment at [[VALUE_K]]. The deck forecasts [[VALUE_L]] (p.a.) NOI growth of [[VALUE_M]] for industrial and [[VALUE_N]] for residential. House-view positioning: \u2022 We fa",
-                  "source_key": "a2d65f4a6131ad0a8a335ec724a766ea800b52e0824cb608cde162b0e545a290",
-                  "value": "~1.3%"
-                },
-                {
-                  "slot": "[[VALUE_N]]",
-                  "source_context": " deck forecasts [[VALUE_L]] (p.a.) NOI growth of [[VALUE_M]] for industrial and [[VALUE_N]] for residential. House-view positioning: \u2022 We favor industrial / logistics and ",
-                  "source_key": "a2d65f4a6131ad0a8a335ec724a766ea800b52e0824cb608cde162b0e545a290",
-                  "value": "~1.4%"
-                },
-                {
-                  "slot": "[[VALUE_F]]",
-                  "source_context": "At [[VALUE_F]], the NPI value-weighted cap rate was [[VALUE_G]], against [[VALUE_H]] for the [",
-                  "source_key": "add445bdf7560666d6cd1bfe593fb3c73df5653cd04a991e05c8a15d5601a7e5",
-                  "value": "25Q4"
-                },
-                {
-                  "slot": "[[VALUE_G]]",
-                  "source_context": "At [[VALUE_F]], the NPI value-weighted cap rate was [[VALUE_G]], against [[VALUE_H]] for the [[VALUE_I]]-year Treasury yield.",
-                  "source_key": "add445bdf7560666d6cd1bfe593fb3c73df5653cd04a991e05c8a15d5601a7e5",
-                  "value": "~4.6%"
-                },
-                {
-                  "slot": "[[VALUE_H]]",
-                  "source_context": "At [[VALUE_F]], the NPI value-weighted cap rate was [[VALUE_G]], against [[VALUE_H]] for the [[VALUE_I]]-year Treasury yield.",
-                  "source_key": "add445bdf7560666d6cd1bfe593fb3c73df5653cd04a991e05c8a15d5601a7e5",
-                  "value": "~4.2%"
-                },
-                {
-                  "slot": "[[VALUE_I]]",
-                  "source_context": "], the NPI value-weighted cap rate was [[VALUE_G]], against [[VALUE_H]] for the [[VALUE_I]]-year Treasury yield.",
-                  "source_key": "add445bdf7560666d6cd1bfe593fb3c73df5653cd04a991e05c8a15d5601a7e5",
-                  "value": "10"
-                },
-                {
-                  "slot": "[[VALUE_O]]",
-                  "source_context": "The office exhibit reports, at [[VALUE_O]], appraisal cap rate [[VALUE_P]] versus transaction cap rate [[VALUE_Q]]. The tr",
-                  "source_key": "e56c52b06eec41a6b1c25e374f1c4a84c61b95e32bf9bf5e22ca9abc36660d44",
-                  "value": "25Q4"
-                },
-                {
-                  "slot": "[[VALUE_P]]",
-                  "source_context": "The office exhibit reports, at [[VALUE_O]], appraisal cap rate [[VALUE_P]] versus transaction cap rate [[VALUE_Q]]. The transaction/appraisal gap widened ",
-                  "source_key": "e56c52b06eec41a6b1c25e374f1c4a84c61b95e32bf9bf5e22ca9abc36660d44",
-                  "value": "~5.6%"
-                },
-                {
-                  "slot": "[[VALUE_Q]]",
-                  "source_context": "rts, at [[VALUE_O]], appraisal cap rate [[VALUE_P]] versus transaction cap rate [[VALUE_Q]]. The transaction/appraisal gap widened from [[VALUE_R]] to [[VALUE_S]] percenta",
-                  "source_key": "e56c52b06eec41a6b1c25e374f1c4a84c61b95e32bf9bf5e22ca9abc36660d44",
-                  "value": "~7.7%"
-                },
-                {
-                  "slot": "[[VALUE_R]]",
-                  "source_context": "us transaction cap rate [[VALUE_Q]]. The transaction/appraisal gap widened from [[VALUE_R]] to [[VALUE_S]] percentage points.",
-                  "source_key": "e56c52b06eec41a6b1c25e374f1c4a84c61b95e32bf9bf5e22ca9abc36660d44",
-                  "value": "0.7"
-                },
-                {
-                  "slot": "[[VALUE_S]]",
-                  "source_context": "cap rate [[VALUE_Q]]. The transaction/appraisal gap widened from [[VALUE_R]] to [[VALUE_S]] percentage points.",
-                  "source_key": "e56c52b06eec41a6b1c25e374f1c4a84c61b95e32bf9bf5e22ca9abc36660d44",
-                  "value": "2.1"
-                }
-              ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },

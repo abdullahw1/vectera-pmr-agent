@@ -382,8 +382,7 @@ def make_server(workspace, port=0):
                     self.reply(200, workspace.upload(request))
                 elif path.startswith("/runs/") and path.endswith("/approve"):
                     identifier = path.split("/")[2]
-                    approve(workspace.directory(identifier), request)
-                    self.reply(200, dict(message="Approved. The final PDF and approval record are saved."))
+                    self.reply(200, approve(workspace.directory(identifier), request))
                 else:
                     self.reply(404, dict(message="Not found"))
             except (ValueError, KeyError, TypeError):

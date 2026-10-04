@@ -37,12 +37,15 @@ def main():
         "appendix.pdf",
         "repeatability.json",
         "live_repeatability.json",
+        "live_repeatability_before_fallback_fix.json",
         "test-results.xml",
         "manifest.json",
         "semantic_manifest.json",
         "diagnostics.json",
         "unseen_rehearsal.json",
         "regression_matrix.json",
+        "clean_install_verification.json",
+        "review_ui_verification.json",
         "final_report.pdf",
         "approval.json",
         "final_evidence.json",
@@ -52,6 +55,11 @@ def main():
     }
     if not args.final:
         output_files = {n for n in output_files if not n.startswith("final_") and n != "approval.json"}
+        for name in ["report.pdf", "writeup.pdf", "manifest.json", "evidence.json", "verification.json"]:
+            if not (root / "output" / name).is_file():
+                raise SystemExit(
+                    f"Draft package blocked: missing {name}. Generate the draft and write-up first."
+                )
     if args.final:
         for name in [
             "final_report.pdf",
@@ -76,6 +84,13 @@ def main():
         }
         if current_inputs != approval.get("input_hashes"):
             raise SystemExit("Final package blocked: packaged inputs differ from approved inputs")
+        import sys
+
+        sys.path.insert(0, str(root))
+        from pmr.evidence import implementation_hashes
+
+        if implementation_hashes() != approval.get("implementation_hashes"):
+            raise SystemExit("Final package blocked: implementation differs from approved draft")
     paths = []
     for path in root.rglob("*"):
         if not path.is_file():

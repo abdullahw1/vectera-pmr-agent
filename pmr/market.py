@@ -161,7 +161,12 @@ def market_passages(data, ledger):
         if text:
             fid = ledger.add(
                 text,
-                {"kind": "verified market writing bundle"},
+                {
+                    "kind": "verified market writing bundle",
+                    "file": ledger.facts[chart["id"]]["source"].get("file"),
+                    "slide": chart["slide"],
+                    "chart": chart["chart"],
+                },
                 formula="deterministically selected chart observations and portfolio exposures",
                 inputs=ids,
             )

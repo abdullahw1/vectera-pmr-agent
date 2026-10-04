@@ -48,6 +48,65 @@ def test_changed_asset_blocks_approval(extracted):
         approve(output, request)
 
 
+@pytest.mark.parametrize("removed", [False, True])
+def test_changed_or_missing_displayed_pdf_blocks_approval(extracted, removed):
+    output, payload, request = extracted
+    assert "report.pdf" in payload["asset_hashes"]
+    if removed:
+        (output / "report.pdf").unlink()
+    else:
+        (output / "report.pdf").write_bytes(b"tampered displayed PDF")
+    with pytest.raises(ValueError, match="Draft PDF changed"):
+        approve(output, request)
+    assert not (output / "approval.json").exists()
+
+
+def test_pdf_integrity_cannot_be_omitted(extracted):
+    import json
+    from pmr.evidence import digest
+
+    output, payload, request = extracted
+    payload.pop("draft_hash")
+    payload["asset_hashes"].pop("report.pdf")
+    payload["draft_hash"] = digest(payload)
+    request["draft_hash"] = payload["draft_hash"]
+    (output / "draft.json").write_text(json.dumps(payload, default=str))
+    with pytest.raises(ValueError, match="integrity record is missing"):
+        approve(output, request)
+    assert not (output / "approval.json").exists()
+
+
+def test_correction_requires_new_draft_review_not_immediate_release(extracted):
+    import json
+    import copy
+
+    output, payload, request = extracted
+    corrected = copy.deepcopy(payload["data"]["charts"][0]["data"])
+    corrected["series"][0]["value"] = -1
+    request["corrections"] = {payload["data"]["charts"][0]["id"]: dict(data=corrected, reason="Visible label is negative")}
+    result = approve(output, request)
+    assert result["status"] == "review_required"
+    assert result["draft_hash"] != payload["draft_hash"]
+    assert not (output / "approval.json").exists()
+    assert not (output / "final_report.pdf").exists()
+    with pytest.raises(ValueError, match="Draft changed"):
+        approve(output, request)
+    revised = json.loads((output / "draft.json").read_text())
+    assert revised["data"]["charts"][0]["data"]["series"][0]["value"] == -1
+    request.update(draft_hash=revised["draft_hash"], corrections={})
+    assert approve(output, request)["status"] == "approved"
+    record = json.loads((output / "approval.json").read_text())
+    assert record["corrections"][payload["data"]["charts"][0]["id"]]["reason"] == "Visible label is negative"
+    assert record["asset_hashes"]["report.pdf"] == revised["asset_hashes"]["report.pdf"]
+
+
+def test_noop_correction_does_not_create_an_endless_review_cycle(extracted):
+    output, payload, request = extracted
+    chart = payload["data"]["charts"][0]
+    request["corrections"] = {chart["id"]: dict(data=chart["data"], reason="Confirmed unchanged")}
+    assert approve(output, request)["status"] == "approved"
+
+
 def test_correction_requires_reason_and_full_schema(extracted):
     output, payload, request = extracted
     identifier = payload["data"]["charts"][0]["id"]
@@ -64,6 +123,22 @@ def test_unknown_chart_id_cannot_be_confirmed(extracted):
     request["confirmed_charts"].append("made-up")
     with pytest.raises(ValueError, match="Unknown confirmed"):
         approve(output, request)
+
+
+def test_one_unconfirmed_chart_blocks_approval(extracted):
+    output, _, request = extracted
+    request["confirmed_charts"].pop()
+    with pytest.raises(ValueError, match="Confirm all"):
+        approve(output, request)
+    assert not (output / "approval.json").exists()
+
+
+def test_changed_implementation_blocks_approval(extracted, monkeypatch):
+    output, _, request = extracted
+    monkeypatch.setattr("pmr.review.implementation_hashes", lambda: {"report.py": "changed"})
+    with pytest.raises(ValueError, match="Implementation changed"):
+        approve(output, request)
+    assert not (output / "approval.json").exists()
 
 
 def test_final_semantics_and_evidence_are_saved(extracted):

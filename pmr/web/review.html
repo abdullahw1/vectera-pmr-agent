@@ -1,375 +1,161 @@
 <!doctype html>
 <html lang="en">
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PMR Evidence Review</title
-  ><style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font:
-        14px Arial,
-        sans-serif;
-      color: #242b33;
-      background: #fff;
-    }
-    header {
-      padding: 20px 28px;
-      border-bottom: 1px solid #d9dfe5;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-    }
-    h1 {
-      font-size: 21px;
-      margin: 0 0 5px;
-    }
-    h2 {
-      font-size: 18px;
-    }
-    h3 {
-      font-size: 15px;
-    }
-    button {
-      cursor: pointer;
-      padding: 8px 12px;
-      background: #1b2b49;
-      color: white;
-      border: 0;
-      border-radius: 4px;
-    }
-    button:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-    main {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(300px, 2fr);
-      height: calc(100vh - 90px);
-    }
-    article,
-    aside {
-      overflow: auto;
-      padding: 24px;
-    }
-    aside {
-      border-left: 1px solid #d9dfe5;
-      background: #f7f9fa;
-    }
-    section {
-      margin-bottom: 28px;
-    }
-    p {
-      line-height: 1.6;
-    }
-    .block {
-      padding: 10px 0;
-      border-bottom: 1px solid #edf0f3;
-      cursor: pointer;
-    }
-    .block:hover {
-      background: #f3f6f8;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 12px;
-    }
-    td,
-    th {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #d9dfe5;
-    }
-    th {
-      background: #1b2b49;
-      color: white;
-    }
-    pre {
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      font-size: 12px;
-    }
-    img {
-      max-width: 100%;
-    }
-    .issue {
-      padding: 8px;
-      border-left: 3px solid #bc8534;
-      margin: 8px 0;
-      background: white;
-    }
-    .blocker {
-      border-color: #b03434;
-    }
-    .review {
-      border-color: #377969;
-    }
-    label {
-      display: block;
-      padding: 8px 0;
-    }
-    textarea {
-      width: 100%;
-      min-height: 140px;
-      font: 12px monospace;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 8px;
-    }
-    .ok {
-      color: #287454;
-    }
-    a {
-      color: #245878;
-    }
-    @media (max-width: 800px) {
-      main {
-        display: block;
-        height: auto;
-      }
-      aside {
-        border-left: 0;
-        border-top: 1px solid #ddd;
-      }
-      header {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-    body {
-      height: 100vh;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-rows: auto minmax(0, 1fr);
-      overflow: hidden;
-    }
-    main {
-      height: auto;
-      min-height: 0;
-      min-width: 0;
-    }
-    article,
-    aside {
-      min-height: 0;
-      min-width: 0;
-    }
-    .block {
-      overflow-x: auto;
-    }
-    td,
-    th {
-      overflow-wrap: anywhere;
-    }
-    @media (max-width: 800px) {
-      body {
-        height: auto;
-        overflow: auto;
-      }
-      main {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-      }
-      article,
-      aside {
-        flex: none;
-        overflow: visible;
-        padding: 16px;
-      }
-      aside {
-        border-top: 1px solid #d9dfe5;
-      }
-      header {
-        padding: 16px;
-      }
-      h1 {
-        overflow-wrap: anywhere;
-      }
-    }
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PMR Review</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #242b33; background: white; font: 14px Arial, sans-serif; }
+    header { padding: 16px 24px; border-bottom: 1px solid #d9dfe5; display: flex; gap: 16px; align-items: center; justify-content: space-between; }
+    h1 { font-size: 21px; margin: 0 0 6px; } h2 { font-size: 18px; } h3 { font-size: 15px; }
+    p { line-height: 1.5; overflow-wrap: anywhere; } a { color: #245878; }
+    button { cursor: pointer; padding: 9px 12px; color: white; background: #1b2b49; border: 0; border-radius: 4px; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    button.secondary { background: #edf0f3; color: #242b33; }
+    button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #378bb5; outline-offset: 2px; }
+    nav { padding: 12px 24px; border-bottom: 1px solid #d9dfe5; display: flex; flex-wrap: wrap; gap: 8px; }
+    nav button[aria-selected="false"] { background: #edf0f3; color: #242b33; }
+    main { display: grid; grid-template-columns: minmax(0, 3fr) minmax(340px, 2fr); }
+    article, aside { padding: 24px; min-width: 0; }
+    aside { background: #f7f9fa; border-left: 1px solid #d9dfe5; }
+    section { margin-bottom: 28px; } .block { padding: 8px 0; border-bottom: 1px solid #edf0f3; overflow: auto; cursor: pointer; }
+    .block:hover { background: #f3f6f8; }
+    table { border-collapse: collapse; width: 100%; font-size: 12px; }
+    th, td { padding: 8px; text-align: left; border-bottom: 1px solid #d9dfe5; overflow-wrap: anywhere; }
+    th { background: #1b2b49; color: white; }
+    img { max-width: 100%; height: auto; }
+    .issue, .fact { padding: 12px 0; border-bottom: 1px solid #d9dfe5; }
+    .blocker { border-left: 3px solid #b03434; padding-left: 12px; }
+    .warning { border-left: 3px solid #bc8534; padding-left: 12px; }
+    .ok { color: #287454; } .muted { color: #606c75; font-size: 12px; }
+    label { display: block; margin: 12px 0; } input[type="text"], textarea { width: 100%; padding: 9px; border: 1px solid #aab4be; border-radius: 3px; font: inherit; }
+    input[type="number"] { width: 110px; max-width: 100%; padding: 7px; border: 1px solid #aab4be; }
+    textarea { min-height: 85px; } .json { min-height: 160px; font: 12px monospace; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
+    summary { cursor: pointer; padding: 8px 0; } .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    #feedback { min-height: 24px; } #gate { font-size: 13px; }
+    @media(max-width: 850px) { main { grid-template-columns: 1fr; } aside { border-left: 0; border-top: 1px solid #d9dfe5; } header { align-items: flex-start; flex-direction: column; } article, aside, header, nav { padding: 16px; } }
   </style>
-  <header>
-    <div>
-      <h1 id="title"></h1>
-      <span id="status"></span>
-    </div>
-    <div>
-      <a href="report.pdf" target="_blank">Open PMR</a> &nbsp; <button id="approve">Approve Draft</button>
-    </div>
-  </header>
-  <main>
-    <article id="report"></article>
-    <aside>
-      <h2>Verification</h2>
-      <div id="checks"></div>
-      <h2>Review Queue</h2>
-      <div id="issues"></div>
-      <h2>Evidence</h2>
-      <div id="evidence">Select a report paragraph, table, or chart.</div>
-      <!--DIAGNOSTICS-->
-      <h2>Approval</h2>
-      <label>Reviewer <input type="text" id="reviewer" /></label
-      ><label><input type="checkbox" id="ack" /> I reviewed the report, source evidence, and warnings.</label>
-      <p id="feedback"></p>
-    </aside>
-  </main>
+</head>
+<body>
+  <header><div><h1 id="title"></h1><span id="status" aria-live="polite"></span></div><div class="actions"><a href="report.pdf" target="_blank">Open draft PDF</a><a id="final" href="final_report.pdf" target="_blank" hidden>Open approved PDF</a></div></header>
+  <nav role="tablist" aria-label="Review views"><button role="tab" data-view="report" aria-selected="true">Report</button><button role="tab" data-view="charts" aria-selected="false" id="charts-tab">Charts</button><button role="tab" data-view="issues" aria-selected="false" id="issues-tab">Issues</button></nav>
+  <main><article id="report"></article><aside>
+    <h2>Evidence &amp; Corrections</h2><div id="evidence">Select a paragraph or table cell to inspect its sources.</div>
+    <h2>Verification</h2><div id="checks"></div><!--DIAGNOSTICS-->
+    <h2>Release Approval</h2><p id="gate" aria-live="polite"></p>
+    <label>Reviewer name<input id="reviewer" type="text" autocomplete="name"></label>
+    <label><input id="ack" type="checkbox"> I reviewed the PDF, source evidence, chart values, and all warnings.</label>
+    <button id="approve" disabled>Approve &amp; Create Final PDF</button><p id="feedback" role="status" aria-live="polite"></p>
+    <p class="muted">Draft <span id="draft-id"></span></p>
+  </aside></main>
   <script>
     const D = __PAYLOAD__;
-    const esc = (x) =>
-      String(x ?? "").replace(
-        /[&<>"']/g,
-        (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
-      );
-    document.getElementById("title").textContent = D.data.client + " " + D.data.quarter + " Evidence Review";
-    document.getElementById("status").textContent = "Draft " + D.draft_hash.slice(0, 12);
-    const checks = D.ledger.checks.filter((c) => c.severity === "blocker");
-    document.getElementById("checks").innerHTML =
-      '<p class="ok">' +
-      checks.filter((c) => c.passed).length +
-      " / " +
-      checks.length +
-      " critical checks passed</p>" +
-      checks
-        .filter((c) => !c.passed)
-        .map((c) => "<pre>" + esc(JSON.stringify(c, null, 2)) + "</pre>")
-        .join("");
-    const acknowledged = new Set();
-    const corrections = {};
-    function queue() {
-      document.getElementById("issues").innerHTML = D.ledger.issues
-        .map(
-          (x) =>
-            '<div class="issue ' +
-            esc(x.severity) +
-            '"><b>' +
-            esc(acknowledged.has(x.fact_id) ? "CONFIRMED" : x.severity.toUpperCase()) +
-            "</b><p>" +
-            esc(x.message) +
-            "</p>" +
-            (x.fact_id ? "<button onclick=\"show(['" + x.fact_id + "'])\">Inspect Chart</button>" : "") +
-            "</div>",
-        )
-        .join("");
+    const el = id => document.getElementById(id);
+    const esc = x => String(x ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+    const confirmed = new Set(), corrections = {}, edits = {}, reasons = {}, charts = D.data.charts;
+    const blockers = D.ledger.issues.filter(i => i.severity === "blocker");
+    const warnings = D.ledger.issues.filter(i => i.severity === "warning");
+    let view = "report", chartIndex = 0, approved = false, pending = false, editing;
+    el("title").textContent = `${D.data.client} / ${D.data.quarter} Review`;
+    el("draft-id").textContent = D.draft_hash.slice(0, 12);
+    const checks = D.ledger.checks.filter(c => c.severity === "blocker");
+    el("checks").textContent = `${checks.filter(c => c.passed).length} / ${checks.length} critical checks passed`;
+    function updateGate() {
+      const remaining = charts.filter(c => !confirmed.has(c.id)).length;
+      el("charts-tab").textContent = `Charts (${confirmed.size}/${charts.length})`;
+      el("issues-tab").textContent = `Issues (${blockers.length} blockers, ${warnings.length} warnings)`;
+      el("status").textContent = approved ? "Approved" : blockers.length ? "Blocked - source corrections required" : remaining ? "Draft - chart review required" : "Draft - ready for final review";
+      const tasks = [];
+      if (blockers.length) tasks.push(`${blockers.length} blocker(s) must be fixed and the report regenerated.`);
+      if (remaining) tasks.push(`${remaining} chart(s) still need confirmation.`);
+      if (!el("reviewer").value.trim()) tasks.push("Enter your reviewer name.");
+      if (!el("ack").checked) tasks.push("Review the PDF and warnings, then acknowledge below.");
+      el("gate").textContent = approved ? "Approval saved. The final PDF is available above." : tasks.join(" ") || "All review requirements are met.";
+      el("approve").disabled = approved || pending || tasks.length > 0;
     }
-    queue();
+    function sourceLabel(s) {
+      return [s.file, s.sheet && `Sheet: ${s.sheet}`, s.cell && `Cell: ${s.cell}`, s.page && `Page ${s.page}`, s.slide && `Slide ${s.slide}`, s.row && `Row ${s.row}`, s.column && `Column ${s.column}`].filter(Boolean).join(" / ");
+    }
     function show(ids) {
-      let visited = new Set();
+      const visited = new Set();
       function fact(id) {
-        if (visited.has(id)) return "";
-        visited.add(id);
-        const f = D.ledger.facts[id];
-        if (!f) return "";
-        let out = "<h3>" + esc(id) + "</h3><pre>" + esc(JSON.stringify(f, null, 2)) + "</pre>";
-        if (f.source.asset) {
-          out +=
-            '<img src="' +
-            esc(f.source.asset) +
-            '"><label>Corrected chart extraction (JSON)</label><textarea id="edit_' +
-            id +
-            '">' +
-            esc(JSON.stringify((corrections[id] && corrections[id].data) || f.value, null, 2)) +
-            "</textarea><button onclick=\"confirmChart('" +
-            id +
-            "')\">Confirm Chart Values</button>";
-        }
-        return out + (f.inputs || []).map(fact).join("");
+        if (visited.has(id)) return ""; visited.add(id);
+        const f = D.ledger.facts[id]; if (!f) return "";
+        const s = f.source || {};
+        return `<div class="fact"><h3>${esc(sourceLabel(s) || f.formula || id)}</h3><p>${esc(typeof f.value === "object" ? JSON.stringify(f.value) : f.value)}</p>${s.quote ? `<blockquote>${esc(s.quote)}</blockquote>` : ""}<details><summary>Audit details</summary><pre>${esc(JSON.stringify(f, null, 2))}</pre></details></div>` + (f.inputs || []).map(fact).join("");
       }
-      const panel = document.getElementById("evidence");
-      panel.innerHTML = ids.map(fact).join("");
-      panel.tabIndex = -1;
-      panel.focus();
-      panel.scrollIntoView({ block: "start" });
+      el("evidence").innerHTML = ids.map(fact).join("") || "No source value is asserted in this item.";
     }
-    window.show = show;
-    window.confirmChart = (id) => {
-      try {
-        const v = JSON.parse(document.getElementById("edit_" + id).value);
-        if (
-          !v ||
-          !Array.isArray(v.series) ||
-          !v.series.length ||
-          v.series.some((x) => typeof x.value !== "number" || !Number.isFinite(x.value))
-        )
-          throw Error("Each series requires a finite numeric value.");
-        if (JSON.stringify(v) !== JSON.stringify(D.ledger.facts[id].value)) {
-          const reason = prompt("Reason for correction, including the visible label or gridline:");
-          if (!reason || !reason.trim()) throw Error("A correction reason is required.");
-          corrections[id] = { data: v, reason: reason.trim() };
-        }
-        acknowledged.add(id);
-        queue();
-        document.getElementById("status").textContent =
-          "Draft " +
-          D.draft_hash.slice(0, 12) +
-          "; " +
-          D.ledger.issues.filter((x) => x.severity === "review" && !acknowledged.has(x.fact_id)).length +
-          " chart confirmations remaining";
-        document.getElementById("feedback").textContent =
-          "Chart confirmed. Corrections will be recorded with approval.";
-      } catch (e) {
-        document.getElementById("feedback").textContent = e.message;
-      }
+    function renderReport() {
+      el("report").innerHTML = D.sections.map(s => `<section><h2>${esc(s.title)}</h2>${s.blocks.map(b => {
+        const ids = esc(JSON.stringify(b.evidence || []));
+        if (b.type === "paragraph") return `<div class="block" data-evidence="${ids}"><p>${esc(b.text)}</p></div>`;
+        if (b.type === "chart") return `<div class="block" data-evidence="${ids}"><img alt="${esc(b.kind)}" src="assets/${esc(b.kind)}.png"></div>`;
+        return `<div class="block"><table><thead><tr>${b.columns.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${b.rows.map((r, ri) => `<tr>${r.map((c, ci) => `<td data-evidence="${esc(JSON.stringify(b.cell_evidence?.[ri]?.[ci] || b.evidence || []))}">${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+      }).join("")}</section>`).join("");
+    }
+    function renderCharts() {
+      if (!charts.length) { el("report").innerHTML = "<h2>No chart extractions available</h2><p>Inspect Issues before approval.</p>"; return; }
+      const c = charts[chartIndex]; editing = JSON.parse(JSON.stringify(edits[c.id] || corrections[c.id]?.data || c.data));
+      el("report").innerHTML = `<div class="actions"><button class="secondary" id="previous" ${chartIndex === 0 ? "disabled" : ""}>Previous chart</button><span>Chart ${chartIndex + 1} of ${charts.length}</span><button class="secondary" id="next" ${chartIndex === charts.length - 1 ? "disabled" : ""}>Next chart</button></div><h2>${esc(editing?.title || "Extraction unavailable")}</h2><p>${esc(sourceLabel(D.ledger.facts[c.id]?.source || {}))}</p><img src="${esc(c.asset)}" alt="Source chart for visual verification">`;
+      el("previous").onclick = () => { chartIndex--; renderCharts(); }; el("next").onclick = () => { chartIndex++; renderCharts(); };
+      if (!editing || !Array.isArray(editing.series) || !editing.series.length) { el("evidence").textContent = "Chart extraction unavailable. Resolve the blocker and regenerate; confirmation cannot replace an extraction."; return; }
+      el("evidence").innerHTML = `<h3>${confirmed.has(c.id) ? "Confirmed" : "Awaiting confirmation"}</h3><table><thead><tr><th>Period / Series</th><th>Value</th><th>Reading</th></tr></thead><tbody>${editing.series.map((r, i) => `<tr><td>${esc(r.label)}<br>${esc(r.series)}</td><td><input type="number" step="any" data-value="${i}" aria-label="${esc(r.label + ' ' + r.series)}" value="${esc(r.value)}"> ${esc(r.unit)}</td><td>${esc(r.method || "label")}${r.precision ? `<br>Precision: ${esc(r.precision)}` : ""}</td></tr>`).join("")}</tbody></table><label>Correction reason<textarea id="reason" placeholder="If changed: cite the visible label or gridline.">${esc(corrections[c.id]?.reason || "")}</textarea></label><details><summary>Advanced: labels, units and extraction JSON</summary><textarea id="chart-json" class="json">${esc(JSON.stringify(editing, null, 2))}</textarea><button class="secondary" id="apply-json">Apply JSON edits</button></details><button id="confirm-chart">Confirm These Chart Values</button><p id="chart-feedback" role="status"></p>`;
+      if (reasons[c.id] !== undefined) el("reason").value = reasons[c.id];
+      function changed() { confirmed.delete(c.id); reasons[c.id] = el("reason").value; el("ack").checked = false; updateGate(); }
+      el("evidence").querySelectorAll("[data-value]").forEach(input => input.oninput = () => {
+        editing.series[Number(input.dataset.value)].value = input.value === "" ? null : Number(input.value);
+        edits[c.id] = editing;
+        el("chart-json").value = JSON.stringify(editing, null, 2); changed();
+      });
+      el("chart-json").oninput = changed; el("reason").oninput = changed;
+      el("apply-json").onclick = () => {
+        try { const value = JSON.parse(el("chart-json").value); validateValues(value); edits[c.id] = value; changed(); renderCharts(); }
+        catch (error) { el("chart-feedback").textContent = error.message; }
+      };
+      el("confirm-chart").onclick = () => {
+        try {
+          const value = JSON.parse(el("chart-json").value); validateValues(value);
+          if (JSON.stringify(value) !== JSON.stringify(c.data)) {
+            const reason = el("reason").value.trim(); if (!reason) throw Error("Enter a correction reason before confirming changed values.");
+            corrections[c.id] = {data:value, reason};
+          } else delete corrections[c.id];
+          confirmed.add(c.id); updateGate(); el("chart-feedback").textContent = "Confirmed for this draft. Changes are validated again when approval is submitted.";
+        } catch (error) { el("chart-feedback").textContent = error.message; }
+      };
+    }
+    function validateValues(v) {
+      if (!v || !Array.isArray(v.series) || !v.series.length || v.series.some(r => typeof r.value !== "number" || !Number.isFinite(r.value) || !r.label || !r.series || !r.unit)) throw Error("Every observation needs a label, series, unit and finite numeric value.");
+    }
+    function renderIssues() {
+      el("report").innerHTML = ["blocker", "warning", "review"].map(severity => `<section><h2>${{blocker:"Blockers - fix inputs and regenerate", warning:"Warnings - inspect before approval", review:"Chart confirmations"}[severity]}</h2>${D.ledger.issues.filter(i => i.severity === severity).map(i => `<div class="issue ${esc(severity)}"><strong>${esc(confirmed.has(i.fact_id) ? "CONFIRMED" : i.code)}</strong><p>${esc(i.message)}</p>${i.fact_id && charts.some(c => c.id === i.fact_id) ? `<button data-chart="${esc(i.fact_id)}">Review chart</button>` : i.evidence?.length ? `<button data-evidence="${esc(JSON.stringify(i.evidence))}">Inspect evidence</button>` : ""}</div>`).join("") || "<p>None.</p>"}</section>`).join("");
+    }
+    function switchView(next) {
+      view = next; document.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-selected", String(b.dataset.view === view)));
+      if (view === "charts") renderCharts(); else if (view === "issues") renderIssues(); else renderReport();
+    }
+    document.querySelectorAll("[data-view]").forEach(b => b.onclick = () => switchView(b.dataset.view));
+    el("report").onclick = event => {
+      const evidence = event.target.closest("[data-evidence]"); if (evidence) show(JSON.parse(evidence.dataset.evidence));
+      const chart = event.target.closest("[data-chart]"); if (chart) { chartIndex = charts.findIndex(c => c.id === chart.dataset.chart); switchView("charts"); }
     };
-    document.getElementById("report").innerHTML = D.sections
-      .map(
-        (s) =>
-          "<section><h2>" +
-          esc(s.title) +
-          "</h2>" +
-          s.blocks
-            .map(
-              (b) =>
-                '<div class="block" onclick="show(' +
-                esc(JSON.stringify(b.evidence)) +
-                ')">' +
-                (b.type === "paragraph"
-                  ? "<p>" + esc(b.text) + "</p>"
-                  : b.type === "chart"
-                    ? '<img src="assets/' + esc(b.kind) + '.png">'
-                    : "<table><thead><tr>" +
-                      b.columns.map((c) => "<th>" + esc(c) + "</th>").join("") +
-                      "</tr></thead><tbody>" +
-                      b.rows
-                        .map((r) => "<tr>" + r.map((c) => "<td>" + esc(c) + "</td>").join("") + "</tr>")
-                        .join("") +
-                      "</tbody></table>") +
-                "</div>",
-            )
-            .join("") +
-          "</section>",
-      )
-      .join("");
-    document.getElementById("approve").onclick = async () => {
-      const feedback = document.getElementById("feedback");
-      if (!document.getElementById("ack").checked || !document.getElementById("reviewer").value.trim()) {
-        feedback.textContent = "Enter reviewer name and confirm review first.";
-        feedback.scrollIntoView({ block: "center" });
-        return;
-      }
+    el("reviewer").oninput = updateGate; el("ack").onchange = updateGate;
+    el("approve").onclick = async () => {
+      if (el("approve").disabled) return; pending = true; updateGate(); el("feedback").textContent = "Validating review and creating final PDF...";
       try {
-        let r = await fetch("approve", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "X-PMR-Token": window.PMR_CSRF || "" },
-          body: JSON.stringify({
-            draft_hash: D.draft_hash,
-            reviewer: document.getElementById("reviewer").value.trim(),
-            acknowledged: true,
-            confirmed_charts: [...acknowledged],
-            corrections,
-          }),
-        });
-        let v = await r.json();
-        feedback.textContent = v.message;
-        feedback.scrollIntoView({ block: "center" });
-        if (r.ok)
-          document.getElementById("status").textContent =
-            "Approved; final report available as final_report.pdf";
-      } catch (e) {
-        feedback.textContent = "Launch the review server using the README command to record approval.";
-      }
+        const response = await fetch("approve", {method:"POST", headers:{"Content-Type":"application/json", "X-PMR-Token":window.PMR_CSRF || ""}, body:JSON.stringify({draft_hash:D.draft_hash, reviewer:el("reviewer").value.trim(), acknowledged:el("ack").checked, confirmed_charts:[...confirmed], corrections})});
+        const result = await response.json(); el("feedback").textContent = result.message;
+        if (response.ok && result.status === "review_required") {
+          confirmed.clear(); el("ack").checked = false;
+          el("feedback").appendChild(Object.assign(document.createElement("a"), {href:"review.html", textContent:" Reload corrected draft"}));
+          pending = true;
+          el("approve").hidden = true;
+        } else if (response.ok) { approved = true; el("final").hidden = false; }
+      } catch (error) { el("feedback").textContent = "Approval was not saved. Open review through the running PMR server and retry."; }
+      finally { pending = false; updateGate(); }
     };
+    renderReport(); updateGate();
   </script>
+</body>
 </html>

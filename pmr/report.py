@@ -4,43 +4,36 @@ from __future__ import annotations
 
 import html
 import io
-import os
 import re
-import tempfile
 from datetime import date
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 import fitz
 
-os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "vectera-matplotlib"))
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.enums import TA_CENTER
+from reportlab.lib.enums import TA_LEFT
 from reportlab.platypus import (
     SimpleDocTemplate,
     Paragraph,
     Spacer,
     Table,
     TableStyle,
-    Image,
     PageBreak,
     KeepTogether,
     HRFlowable,
 )
 
 from .ingest import norm
-from .numeric import display
+from .numeric import display, sum_if_known
 from .market import observation_sentence
 from .appendix import append_exhibits
-from .synthesis import qualitative_fallback
+from .synthesis import source_excerpt
+from .visuals import chart_drawing, chart_preview
 
 NAVY = "#1b2a4a"
-GOLD = "#c8a24b"
+GOLD = "#c7a14a"
 
 
 def money(value):
@@ -51,14 +44,18 @@ def money(value):
 
 def number(value, places=1):
     """Use financial half-up rounding, including values exactly between display ticks."""
-    return display(value, places)
+    return "n/m" if value is None else display(value, places)
 
 
 def dollars(value):
+    if value is None:
+        return "unavailable"
     return ("-$" if value < 0 else "$") + number(abs(value), 0)
 
 
 def accounting(value):
+    if value is None:
+        return "unavailable"
     text = number(abs(value), 0)
     return f"({text})" if value < 0 else text
 
@@ -80,10 +77,14 @@ def build_sections(data, sources, ledger):
         sections.append(section)
         return section
 
-    def para(section, text, ids, kind=None):
+    def para(section, text, ids, kind=None, numeric_bindings=None, style=None):
         block = dict(type="paragraph", text=text, evidence=list(dict.fromkeys(i for i in ids if i)))
         if kind:
             block["kind"] = kind
+        if style:
+            block["style"] = style
+        if numeric_bindings is not None:
+            block["numeric_bindings"] = numeric_bindings
         section["blocks"].append(block)
 
     def table(section, columns, rows, evidence, cell_evidence=None):
@@ -109,14 +110,21 @@ def build_sections(data, sources, ledger):
                     else "count" if key.endswith("count") or key == "positions" else "%"
                 ),
                 authority="deterministic calculation",
-                permitted_formats=[str(value), number(value, 1)],
+                permitted_formats=[] if value is None else [str(value), number(value, 1)],
             ),
         )
 
-    open_total = sum(e["amount"] or 0 for e in activity["open"])
+    open_total = sum_if_known(e["amount"] for e in activity["open"])
+    if open_total is None:
+        ledger.issue(
+            "approved_total_unavailable",
+            "Total committed or approved is unavailable until every open IC approval amount is resolved.",
+            "blocker",
+            evidence=[e["amount_id"] for e in activity["open"] if e["amount"] is None],
+        )
     derived(
         "approved_total",
-        p["commitment"] + open_total,
+        None if open_total is None else p["commitment"] + open_total,
         "flash commitments + open approvals",
         [p["commitment_id"]] + [e["amount_id"] for e in activity["open"]],
     )
@@ -165,8 +173,12 @@ def build_sections(data, sources, ledger):
         para(s, re.sub(r"\s+", " ", static_intro), [fid])
     para(
         s,
-        f"Since inception, approximately {billions(p['approved_total'])} has been committed or approved for commitment across "
-        f"{p['positions']} individual investment positions: {len(funds)} funded and carried in the flash, plus "
+        (
+            f"Since inception, approximately {billions(p['approved_total'])} has been committed or approved for commitment across "
+            if p["approved_total"] is not None
+            else "Total committed or approved is unavailable pending resolution of an IC amount. The Portfolio comprises "
+        )
+        + f"{p['positions']} individual investment positions: {len(funds)} funded and carried in the flash, plus "
         f"{len(activity['open'])} open approvals not funded by Quarter-end. The funded investments have generated "
         f"a since-inception net IRR of {p['irr']:.1f}% and a {p['multiple']:.2f}x net equity multiple.",
         [
@@ -174,11 +186,20 @@ def build_sections(data, sources, ledger):
             for k in ["approved_total", "positions", "funded_count", "open_count", "irr", "multiple"]
         ],
     )
+    allocation_text, allocation_ids = "", []
+    if "allocation" in data["policy"]:
+        target, low, high = data["policy"]["allocation"]
+        allocation_text = (
+            f"{data['client']} has allocated {target:.1f}% of total plan assets to real estate, "
+            f"with an allowable range of {low:g}-{high:g}%. "
+        )
+        allocation_ids = [data["policy"]["allocation_id"]]
     para(
         s,
-        f"At Quarter-end, portfolio NAV was {billions(p['nav'])}, or {p['plan_pct']:.1f}% of the "
-        f"{billions(p['plan'])} total plan and {p['target_pct']:.1f}% of its {billions(p['target'])} target real estate allocation.",
-        [p[k + "_id"] for k in ["nav", "plan_pct", "plan", "target_pct", "target"]],
+        allocation_text + f"At Quarter-end, portfolio NAV was {billions(p['nav'])}, or {p['plan_pct']:.1f}% of the "
+        f"{billions(p['plan'])} total plan and {p['target_pct']:.1f}% of its {billions(p['target'])} target real estate allocation. "
+        f"The return objective is to exceed the {p['benchmark']}.",
+        allocation_ids + [p[k + "_id"] for k in ["nav", "plan_pct", "plan", "target_pct", "target", "benchmark"]],
     )
     para(
         s,
@@ -187,18 +208,17 @@ def build_sections(data, sources, ledger):
         [p[k + "_id"] for k in ["q_net", "one_net", "benchmark_q", "benchmark_one", "benchmark"]],
     )
     s = add("Investment Guidelines & Fund Statistics")
-    if "allocation" in data["policy"]:
-        target, low, high = data["policy"]["allocation"]
-        para(
-            s,
-            f"The policy allocation to real estate is {target:g}% of total plan assets, with an allowable range of "
-            f"{low:g}-{high:g}%. The return objective is to exceed the {p['benchmark']}.",
-            [data["policy"]["allocation_id"], p["benchmark_id"]],
-        )
     stats = [
         ["Funded investments", str(len(funds))],
         ["Approved, not yet funded", str(len(activity["open"]))],
-        ["Total committed or approved", money(p["approved_total"])],
+        [
+            "Total committed or approved",
+            (
+                money(p["approved_total"])
+                if p["approved_total"] is not None
+                else "Unavailable: unresolved IC amount"
+            ),
+        ],
         ["Flash commitment total", money(p["commitment"])],
         ["Market value (NAV)", money(p["nav"])],
         ["Real estate as % of plan assets", f"{p['plan_pct']:.1f}%"],
@@ -216,11 +236,27 @@ def build_sections(data, sources, ledger):
         inputs=[data["sleeves"][s]["nav_id"] for s in ["Strategic", "Tactical"]] + [p["nav_id"]],
     )
     stats.insert(7, ["Strategic / Tactical split", split])
+    stat_ids = [
+        p[k + "_id"]
+        for k in [
+            "funded_count",
+            "open_count",
+            "approved_total",
+            "commitment",
+            "nav",
+            "plan_pct",
+            "target_pct",
+            "irr",
+            "multiple",
+        ]
+    ]
+    stat_ids.insert(7, split_id)
     table(
         s,
         ["Statistic", "Value"],
         stats,
         [v for k, v in p.items() if k.endswith("_id")] + count_ids + [split_id],
+        cell_evidence=[[[identifier], [identifier]] for identifier in stat_ids],
     )
     s = add("Portfolio Managers")
     for i, page in enumerate(prior_pages):
@@ -240,11 +276,14 @@ def build_sections(data, sources, ledger):
             evidence=[v[k] for v in p["annual"] for k in ["value_id", "benchmark_id"]],
         )
     )
-    para(
-        s,
-        f"The chart compares the Portfolio's net time-weighted returns with the {p['benchmark']}.",
-        [p["benchmark_id"]],
+    comparisons = [v["value"] > v["benchmark"] for v in p["annual"]]
+    annual_summary = (
+        "The Portfolio outperformed the " + p["benchmark"] + " across all horizons shown above. "
+        if comparisons and all(comparisons)
+        else "The chart shows the Portfolio's net time-weighted returns alongside the " + p["benchmark"] + ". "
     )
+    annual_summary += f"Over the trailing year, the Portfolio returned {p['one_net']:.2f}% net against {p['benchmark_one']:.2f}% for the benchmark."
+    para(s, annual_summary, [p["benchmark_id"], p["one_net_id"], p["benchmark_one_id"]] + [v[k] for v in p["annual"] for k in ["value_id", "benchmark_id"]])
     s = add("Performance Update")
     para(
         s,
@@ -252,7 +291,10 @@ def build_sections(data, sources, ledger):
         f"Manager fees were {money(p['fees'])}. The Quarter's return was {p['q_gross']:.2f}% gross and {p['q_net']:.2f}% net.",
         [p[k + "_id"] for k in ["income", "appreciation", "fees", "q_gross", "q_net"]],
     )
-    featured = sorted((f for f in funds if f["roles"]), key=lambda f: (-f["contribution"], f["name"]))
+    featured = sorted(
+        (f for f in funds if f["roles"]),
+        key=lambda f: (f["contribution"] is None, -(f["contribution"] or 0), f["name"]),
+    )
     rows = [
         [
             f["name"],
@@ -278,10 +320,12 @@ def build_sections(data, sources, ledger):
             for f in featured
         ],
     )
+    s["blocks"][-1]["title"] = "Attribution - Quarterly Dollar Contribution"
     para(
         s,
         "Dollar figures are rounded independently to the nearest dollar; displayed components may not sum exactly.",
         [],
+        style="footnote",
     )
     para(
         s,
@@ -289,14 +333,27 @@ def build_sections(data, sources, ledger):
             f"{f['name']} was the Portfolio's {' and '.join(f['roles'])}, "
             f"contributing {dollars(f['contribution'])} during the Quarter."
             for f in featured
+            if f["contribution"] is not None
         ),
         [f[k + "_id"] for f in featured for k in ["name", "roles", "contribution"]],
     )
-    if len([f for f in funds if f["contribution"] < 0]) < 2:
+    if not data.get("attribution_complete", True):
+        para(
+            s,
+            "Dollar contributor and detractor rankings are unavailable because required cash activity is missing. NAV position rankings require complete NAV data; no partial performance ranking has been substituted.",
+            [f["contribution_id"] for f in funds if f["contribution"] is None],
+        )
+    elif len([f for f in funds if f["contribution"] < 0]) < 2:
         para(
             s,
             "Every other fund contributed positively or had zero dollar contribution during the quarter.",
             [f["contribution_id"] for f in funds],
+        )
+    if any(f["nav"] is None for f in funds):
+        para(
+            s,
+            "Individual position rankings are unavailable because a funded holding's NAV is missing. The holding remains in the inventory; no partial position ranking has been substituted.",
+            [f["nav_id"] for f in funds if f["nav"] is None],
         )
     # Prior narrative is a baseline, never a source of current-period asset drivers.
     match = re.search(r"Portfolio returned\s+([\d.-]+)% net.*?Quarter", overview_page, re.S)
@@ -348,7 +405,7 @@ def build_sections(data, sources, ledger):
                 + f" The Fund {return_text}, with Quarter-end NAV of {money(fund['nav'])} and {number(fund['ltv'])}% LTV."
             )
             ids = [fund[k + "_id"] for k in ["name", "roles", "q_net", "nav", "ltv"]]
-            if fund["roles"]:
+            if fund["roles"] and fund["contribution"] is not None:
                 fee_text = (
                     f"a fee credit of {dollars(abs(fund['fees']))}"
                     if fund["fees"] < 0
@@ -356,14 +413,23 @@ def build_sections(data, sources, ledger):
                 )
                 text += f" Income of {dollars(fund['income'])}, appreciation of {dollars(fund['appreciation'])} and {fee_text} resulted in a {dollars(fund['contribution'])} dollar contribution."
                 ids += [fund[k + "_id"] for k in ["income", "appreciation", "fees", "contribution"]]
+            elif fund["contribution"] is None:
+                text += " Cash activity is unavailable; no dollar contribution has been inferred."
             para(s, text, ids)
             if fund["roles"]:
                 passages = data["support"].get(fund["name"], [])
                 narrative = data.get("narratives", {}).get(fund["name"])
                 if narrative:
-                    para(s, narrative["text"], narrative["evidence"], kind="model_prose")
+                    para(
+                        s,
+                        narrative["text"],
+                        narrative["evidence"],
+                        kind="model_prose",
+                        numeric_bindings=narrative.get("numeric_bindings", []),
+                    )
                 elif passages:
-                    para(s, qualitative_fallback(passages), [p["id"] for p in passages])
+                    excerpt = source_excerpt(passages)
+                    para(s, excerpt["text"], excerpt["evidence"], kind="source_excerpt", numeric_bindings=excerpt["numeric_bindings"])
                 if not passages:
                     found = fund["name"] in data["support"]
                     text = (
@@ -375,7 +441,7 @@ def build_sections(data, sources, ledger):
                             else "No manager report was supplied for this Fund for the Quarter; no asset-level drivers are reported."
                         )
                     )
-                    para(s, text, [fund["name_id"]])
+                    para(s, text, [fund["name_id"]] + data.get("unparsed_reports", {}).get(fund["name"], []))
     s = add("Recent Investment Activity")
     para(
         s,
@@ -394,17 +460,22 @@ def build_sections(data, sources, ledger):
             [e[k] for k in ["id", "amount_id", "date_id", "action_id"]],
         )
         if any(opened["name"] == e["name"] for opened in activity["open"]):
-            para(
-                s,
-                "The approval remained open and was not carried as a funded holding at Quarter-end. No performance figures are assigned to this commitment.",
-                [e["id"], e["action_id"]] + [fund["name_id"] for fund in funds],
-            )
+            s["blocks"][-1]["text"] += " Not yet funded at Quarter-end."
+            s["blocks"][-1]["evidence"] += [fund["name_id"] for fund in funds]
+        s["blocks"][-1]["style"] = "activity_title"
         narrative = data.get("narratives", {}).get(e["name"])
         passages = data["support"].get(e["name"], [])
         if narrative:
-            para(s, narrative["text"], narrative["evidence"], kind="model_prose")
+            para(
+                s,
+                narrative["text"],
+                narrative["evidence"],
+                kind="model_prose",
+                numeric_bindings=narrative.get("numeric_bindings", []),
+            )
         elif passages:
-            para(s, qualitative_fallback(passages), [p["id"] for p in passages])
+            excerpt = source_excerpt(passages)
+            para(s, excerpt["text"], excerpt["evidence"], kind="source_excerpt", numeric_bindings=excerpt["numeric_bindings"])
     for e in activity["reversed"]:
         explanation = e["recommendation"].split(";", 1)[1].strip() if ";" in e["recommendation"] else ""
         action_text = "lapsed" if e["action"] == "lapsed" else "was " + e["action"]
@@ -417,25 +488,27 @@ def build_sections(data, sources, ledger):
     s = add("Market Update")
     narrative = data.get("narratives", {}).get("market")
     if narrative:
-        para(s, narrative["text"], narrative["evidence"], kind="model_prose")
-    else:
-        bundle = [p for p in data.get("market_passages", []) if not p.get("qualitative_only")]
         para(
             s,
-            (
-                "Market synthesis is pending review. Verified source observations: "
-                + " ".join(p["text"] for p in bundle)
-                if bundle
-                else "Market narrative is unavailable in this run; source evidence remains available for review."
-            ),
-            [p["id"] for p in bundle],
+            narrative["text"],
+            narrative["evidence"],
+            kind="model_prose",
+            numeric_bindings=narrative.get("numeric_bindings", []),
         )
+    else:
+        bundle = data.get("market_passages", [])
+        if bundle:
+            excerpt = source_excerpt(bundle, "Market synthesis is pending review. Complete source excerpts: ")
+            para(s, excerpt["text"], excerpt["evidence"], kind="source_excerpt", numeric_bindings=excerpt["numeric_bindings"])
+        else:
+            para(s, "Market narrative is unavailable in this run; source evidence remains available for review.", [])
     available = [c for c in data["charts"] if c["data"]]
     if any(v.get("method") == "axis_read" for c in available for v in c["data"]["series"]):
         para(
             s,
             "Values marked ~ are approximate gridline readings at their declared precision, not exact underlying observations.",
             [c["id"] for c in available],
+            style="footnote",
         )
     if data["charts"] and not available:
         para(
@@ -448,19 +521,23 @@ def build_sections(data, sources, ledger):
         f"House-view market indices and the {p['benchmark']} are distinct series; "
         "the client benchmark is used for the return-objective test.",
         [p["benchmark_id"]],
+        style="footnote",
     )
     s = add("Allocation Over Time")
+    history_ids = [r[k] for r in data["history"] for k in ["quarter_id", "target_id", "nav_id"]]
+    para(
+        s,
+        f"The Portfolio's net asset value has moved from {money(data['history'][0]['nav'] * 1_000_000)} "
+        f"at {data['history'][0]['quarter']} to {money(p['nav'])} at Quarter-end, "
+        f"against a target allocation of {money(p['target'])}.",
+        history_ids + [p["nav_id"], p["target_id"]],
+    )
     s["blocks"].append(
         dict(
             type="chart",
             kind="allocation",
             evidence=[r[k] for r in data["history"] for k in ["quarter_id", "target_id", "nav_id"]],
         )
-    )
-    para(
-        s,
-        f"Quarter-end NAV was {money(p['nav'])} against a target allocation of {money(p['target'])}.",
-        [p["nav_id"], p["target_id"]],
     )
     s = add("Diversification")
     for kind in ["property", "geography"]:
@@ -473,6 +550,7 @@ def build_sections(data, sources, ledger):
         f"Look-through Ex-US property exposure was {look['value']:.1f}%. The compliance test uses the separate "
         f"fund-level Ex-US classification, {p['ex_us']:.1f}%. These measure property location and fund classification, respectively.",
         [look["id"], p["ex_us_id"]],
+        style="footnote",
     )
     s = add("Compliance")
     table(
@@ -480,6 +558,22 @@ def build_sections(data, sources, ledger):
         ["Guideline", "Limit", "Actual", "Status"],
         [[r[k] for k in ["label", "limit", "actual", "status"]] for r in data["compliance"]],
         [fid for r in data["compliance"] for fid in r["evidence"]],
+        cell_evidence=[
+            [
+                r["evidence"],
+                r["evidence"],
+                r["evidence"],
+                [
+                    ledger.add(
+                        r["status"],
+                        {"kind": "calculation"},
+                        formula="deterministic guideline comparison: " + r["label"],
+                        inputs=r["evidence"],
+                    )
+                ],
+            ]
+            for r in data["compliance"]
+        ],
     )
     para(
         s,
@@ -502,6 +596,7 @@ def build_sections(data, sources, ledger):
         "The following pages retypeset the supplied flash on portrait Letter paper with single-row table headers. The original PDF is retained separately; the workbook remains authoritative for portfolio calculations.",
         [],
     )
+    s["blocks"].extend(data.get("appendix_exhibits", []))
     order = data.get("template", {}).get("section_order", [])
     lookup = {norm(s["title"]): s for s in sections}
     if order and all(norm(title) in lookup for title in order) and len(order) == len(sections):
@@ -515,74 +610,33 @@ def build_sections(data, sources, ledger):
 
 
 def chart_bytes(kind, data):
-    primary = data.get("template", {}).get("primary", NAVY)
-    plt.rcParams.update(
-        {"font.family": "DejaVu Sans", "font.size": 9, "axes.spines.top": False, "axes.spines.right": False}
-    )
-    fig, ax = plt.subplots(figsize=(7.1, 3.0))
-    if kind == "annual":
-        ax.set_title("Annualized Time-Weighted Return (net, %)", pad=30)
-        annual = data["portfolio"]["annual"]
-        xs = list(range(len(annual)))
-        ax.bar([x - 0.18 for x in xs], [v["value"] for v in annual], 0.36, color=primary, label="Portfolio")
-        ax.bar(
-            [x + 0.18 for x in xs],
-            [v["benchmark"] for v in annual],
-            0.36,
-            color=GOLD,
-            label=data["portfolio"]["benchmark"],
-        )
-        ax.set_xticks(xs, [f"{v['horizon']}-Yr" for v in annual])
-        ax.set_ylabel("Net return (%)")
-        ax.axhline(0, color="#555555", lw=0.7)
-        for container in ax.containers:
-            ax.bar_label(container, fmt="%.1f", padding=3, fontsize=8)
-        ax.margins(y=0.15)
-        ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, 1.2), ncol=2)
-    elif kind == "allocation":
-        ax.set_title("Real Estate Allocation Over Time")
-        rows = data["history"]
-        ax.plot(
-            [r["quarter"] for r in rows],
-            [r["target"] for r in rows],
-            color=GOLD,
-            marker="o",
-            label="Target allocation",
-        )
-        ax.plot([r["quarter"] for r in rows], [r["nav"] for r in rows], color=NAVY, marker="o", label="NAV")
-        ax.set_ylabel("USD million")
-        ax.legend(frameon=False)
-    else:
-        rows = data["diversification"][kind]
-        if kind == "property":
-            ax.set_title("Property Type Diversification (%)")
-            wedges, _ = ax.pie(
-                [r["value"] for r in rows], colors=[NAVY, GOLD, "#527c8c", "#897c66", "#65745f", "#a4adb5"]
-            )
-            ax.legend(
-                wedges,
-                [f"{r['label']} {r['value']:.1f}%" for r in rows],
-                loc="center left",
-                bbox_to_anchor=(1, 0.5),
-                frameon=False,
-                fontsize=8,
-            )
-        else:
-            ax.set_title("Geographic Diversification (%)")
-            rows = sorted(rows, key=lambda r: r["value"])
-            ax.barh([r["label"] for r in rows], [r["value"] for r in rows], color=NAVY)
-            ax.set_xlabel("% of market value")
-            for container in ax.containers:
-                ax.bar_label(container, fmt="%.1f%%", padding=3, fontsize=8)
-            ax.set_xlim(0, max(r["value"] for r in rows) * 1.22)
-    ax.grid(axis="x" if kind == "geography" else "y", alpha=0.18)
-    ax.set_axisbelow(True)
-    fig.tight_layout()
-    buf = io.BytesIO()
-    fig.savefig(buf, format="png", dpi=160)
-    plt.close(fig)
-    buf.seek(0)
-    return buf
+    return chart_preview(kind, data)
+
+
+def styled_text(text, data, section=""):
+    """Escape source text before adding presentation-only emphasis."""
+    names = [f["name"] for f in data["funds"]] + [e["name"] for rows in data["activity"].values() if isinstance(rows, list) for e in rows if isinstance(e, dict) and "name" in e]
+    if section == "Portfolio Managers" and "," in text:
+        names.append(text.split(",", 1)[0])
+    patterns = [re.escape(name) for name in sorted(set(names), key=len, reverse=True)]
+    if section in {"Portfolio Overview", "Market Update", "Allocation Over Time"}:
+        patterns += [r"[-+~]?\$[\d,.]+(?:M| billion)?", r"[-+~]?[\d.]+%", r"[\d.]+x\b"]
+    if not patterns:
+        return html.escape(text)
+    matcher = re.compile("|".join(patterns))
+    result, end = [], 0
+    for match in matcher.finditer(text):
+        result.extend([html.escape(text[end:match.start()]), "<b>" + html.escape(match[0]) + "</b>"])
+        end = match.end()
+    return "".join(result) + html.escape(text[end:])
+
+
+def market_paragraphs(text):
+    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", text)
+    if len(sentences) < 4:
+        return [text]
+    count = 3 if len(sentences) >= 6 else 2
+    return [" ".join(sentences[i * len(sentences) // count:(i + 1) * len(sentences) // count]) for i in range(count)]
 
 
 def render_pdf(data, sections, path, appendix, approved=False):
@@ -593,19 +647,19 @@ def render_pdf(data, sections, path, appendix, approved=False):
         ParagraphStyle(
             name="BodyPMR",
             fontName=template.get("body_font", "Helvetica"),
-            fontSize=template.get("body_size", 9.2),
-            leading=12,
-            spaceAfter=9,
+            fontSize=9,
+            leading=13,
+            spaceAfter=6,
         )
     )
     styles.add(
         ParagraphStyle(
             name="TitlePMR",
             fontName="Helvetica-Bold",
-            fontSize=25,
-            leading=31,
+            fontSize=23,
+            leading=28,
             textColor=colors.HexColor(NAVY),
-            alignment=TA_CENTER,
+            alignment=TA_LEFT,
         )
     )
     styles.add(
@@ -615,26 +669,33 @@ def render_pdf(data, sections, path, appendix, approved=False):
             fontSize=template.get("heading_size", 15),
             leading=18,
             textColor=colors.HexColor(primary),
-            spaceBefore=12,
+            spaceBefore=6,
             spaceAfter=7,
         )
     )
-    styles.add(ParagraphStyle(name="CellPMR", fontName="Helvetica", fontSize=7, leading=9))
+    styles.add(ParagraphStyle(name="CellPMR", fontName="Helvetica", fontSize=7.2, leading=8.6))
+    styles.add(ParagraphStyle(name="StatsCellPMR", fontName="Helvetica", fontSize=8, leading=10))
+    styles.add(ParagraphStyle(name="ManagerPMR", parent=styles["BodyPMR"], spaceAfter=0))
+    styles.add(ParagraphStyle(name="SubheadingPMR", fontName="Helvetica-Bold", fontSize=10, leading=13, textColor=colors.HexColor(primary), spaceBefore=6, spaceAfter=5, keepWithNext=True))
+    styles.add(ParagraphStyle(name="FootnotePMR", fontName="Helvetica-Oblique", fontSize=7.5, leading=10, spaceAfter=6))
+    styles.add(ParagraphStyle(name="CoverQuarter", fontName="Helvetica", fontSize=13, leading=16, textColor=colors.HexColor("#444444")))
+    styles.add(ParagraphStyle(name="CoverConfidential", fontName="Helvetica", fontSize=7.5, leading=10, textColor=colors.HexColor("#444444")))
+    name_lines = template.get("cover_name_lines", [])
+    cover_name = "<br/>".join(html.escape(line) for line in name_lines) if norm(" ".join(name_lines)) == norm(data["portfolio"]["name"]) else html.escape(data["portfolio"]["name"])
     story = [
-        Spacer(1, 140),
-        Paragraph(html.escape(data["portfolio"]["name"]), styles["TitlePMR"]),
-        Spacer(1, 25),
+        Spacer(1, 108),
+        Paragraph(cover_name, styles["TitlePMR"]),
+        Spacer(1, 8),
         Paragraph("Performance Measurement Report", styles["TitlePMR"]),
-        Spacer(1, 20),
-        Paragraph(data["period_label"], styles["BodyPMR"]),
-        Paragraph("Prepared by Vectera Advisors", styles["BodyPMR"]),
-        Paragraph("Trade Secret &amp; Confidential", styles["BodyPMR"]),
-        Paragraph(
-            "APPROVED" if approved else "DRAFT - pending evidence review and approval", styles["BodyPMR"]
-        ),
+        Spacer(1, 8),
+        Paragraph(data["period_label"], styles["CoverQuarter"]),
+        Spacer(1, 188),
+        Paragraph("Prepared by Vectera Advisors", styles["CoverQuarter"]),
+        Spacer(1, 10),
+        Paragraph("Trade Secret &amp; Confidential", styles["CoverConfidential"]),
         PageBreak(),
     ]
-    story += [Paragraph("Contents", styles["HeadingPMR"])]
+    story += [Paragraph("Contents", styles["HeadingPMR"]), HRFlowable(width="100%", thickness=0.6, color=colors.HexColor(primary), spaceAfter=8)]
     for i, s in enumerate(sections, 1):
         story.append(Paragraph(f"{i}. {html.escape(s['title'])}", styles["BodyPMR"]))
     story.append(PageBreak())
@@ -654,23 +715,33 @@ def render_pdf(data, sections, path, appendix, approved=False):
             continue  # The appendix renderer supplies its heading, not an extra introduction page.
         if index and section["title"] in page_starts:
             story.append(PageBreak())
-        story.append(Paragraph(html.escape(section["title"]), styles["HeadingPMR"]))
-        story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor(NAVY), spaceAfter=8))
-        for block in section["blocks"]:
+        subheading = section["title"] in {"Investment Guidelines & Fund Statistics", "Portfolio Managers"}
+        story.append(Paragraph(html.escape(section["title"]), styles["SubheadingPMR"] if subheading else styles["HeadingPMR"]))
+        if not subheading:
+            story.append(HRFlowable(width="100%", thickness=0.6, color=colors.HexColor(primary), spaceAfter=6))
+        blocks = list(section["blocks"])
+        if section["title"] == "Portfolio Overview" and len(blocks) >= 4:
+            blocks = [{**blocks[0], "text": blocks[0]["text"] + " " + blocks[1]["text"]}] + blocks[2:]
+        for block in blocks:
             if block["type"] == "paragraph":
-                story.append(Paragraph(html.escape(block["text"]), styles["BodyPMR"]))
+                style = styles["ManagerPMR"] if section["title"] == "Portfolio Managers" else styles["FootnotePMR"] if block.get("style") == "footnote" else styles["SubheadingPMR"] if block.get("style") == "activity_title" else styles["BodyPMR"]
+                texts = market_paragraphs(block["text"]) if section["title"] == "Market Update" and block.get("kind") in {"model_prose", "source_excerpt"} else [block["text"]]
+                story.extend(Paragraph(styled_text(text, data, section["title"]), style) for text in texts)
             elif block["type"] == "chart":
-                story.append(Image(chart_bytes(block["kind"], data), width=495, height=209))
-                story.append(Spacer(1, 10))
+                story.append(chart_drawing(block["kind"], data))
+                story.append(Spacer(1, 6))
             else:
+                if block.get("title"):
+                    story.append(Paragraph(html.escape(block["title"]), styles["SubheadingPMR"]))
                 count = len(block["columns"])
                 widths = (
-                    [110, 135, 60, 60, 55, 75]
+                    [111.6, 133.2, 54, 57.6, 43.2, 61.2]
                     if count == 6
-                    else [125, 105, 170, 95] if count == 4 else [300, 195] if count == 2 else [200, 220, 75]
+                    else [140.4, 97.2, 133.2, 90] if count == 4 else [230.4, 230.4] if count == 2 else [180, 205, 75.8]
                 )
+                cell_style = styles["CellPMR"] if count == 6 else styles["StatsCellPMR"]
                 cells = [
-                    [Paragraph(html.escape(str(c)), styles["CellPMR"]) for c in row]
+                    [Paragraph(html.escape(str(c)), cell_style) for c in row]
                     for row in [block["columns"]] + block["rows"]
                 ]
                 table = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
@@ -678,20 +749,21 @@ def render_pdf(data, sections, path, appendix, approved=False):
                     TableStyle(
                         [
                             ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor(NAVY)),
-                            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#eef1f6")]),
+                            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#edf0f6")]),
+                            ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#cbd1dd")),
                             ("VALIGN", (0, 0), (-1, -1), "TOP"),
                             ("LINEBELOW", (0, 0), (-1, 0), 0.5, colors.HexColor(NAVY)),
                             ("LEFTPADDING", (0, 0), (-1, -1), 5),
                             ("RIGHTPADDING", (0, 0), (-1, -1), 5),
-                            ("TOPPADDING", (0, 0), (-1, -1), 5),
-                            ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+                            ("TOPPADDING", (0, 0), (-1, -1), 3),
+                            ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
                         ]
                     )
                 )
                 # Paragraphs have their own styles, so header color must be set on their text.
                 table._cellvalues[0] = [
                     Paragraph(
-                        '<font color="white"><b>' + html.escape(str(c)) + "</b></font>", styles["CellPMR"]
+                        '<font color="white"><b>' + html.escape(str(c)) + "</b></font>", cell_style
                     )
                     for c in block["columns"]
                 ]
@@ -716,8 +788,8 @@ def render_pdf(data, sections, path, appendix, approved=False):
     SimpleDocTemplate(
         buffer,
         pagesize=(612, 792),
-        leftMargin=57,
-        rightMargin=60,
+        leftMargin=50.4,
+        rightMargin=50.4,
         topMargin=48,
         bottomMargin=48,
         title=f"{data['client']} {data['quarter']} Performance Measurement Report",
@@ -726,4 +798,5 @@ def render_pdf(data, sections, path, appendix, approved=False):
     with fitz.open(stream=buffer.getvalue(), filetype="pdf") as result:
         if appendix:
             append_exhibits(result, appendix, approved=approved)
-        result.save(path)
+        # Retain ReportLab's invariant document ID instead of generating a random one.
+        result.save(path, no_new_id=True)

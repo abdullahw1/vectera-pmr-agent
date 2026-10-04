@@ -6,10 +6,10 @@ import re
 from datetime import datetime
 
 from .ingest import Sheet, bounds, entity, norm, quarter
-from .numeric import MONEY_HEADERS, currency
+from .numeric import MONEY_HEADERS, currency, sum_if_known
 
 
-def get(sheet, row, headers, key, *, optional=False, blank_zero=False):
+def get(sheet, row, headers, key, *, optional=False, blank_zero=False, allow_missing=False):
     index = headers.get(norm(key))
     if index is None:
         if optional:
@@ -17,6 +17,26 @@ def get(sheet, row, headers, key, *, optional=False, blank_zero=False):
         raise ValueError(f"Column {key!r} missing in {sheet.ws.title}")
     if optional and row[index].value is None:
         return None, None
+    if allow_missing and row[index].value is None:
+        identifier = sheet.ledger.add(
+            None,
+            {
+                "file": sheet.path.name,
+                "sheet": sheet.ws.title,
+                "cell": row[index].coordinate,
+                "entity": str(row[0].value),
+                "metric": key,
+                "status": "unavailable",
+                "reason": "blank required figure",
+            },
+        )
+        sheet.ledger.issue(
+            "fund_value_missing",
+            f"{row[0].value}: {key} is missing at {sheet.ws.title}/{row[index].coordinate}; no value inferred",
+            "blocker",
+            evidence=[identifier],
+        )
+        return None, identifier
     return sheet.number(row[index], blank_zero=blank_zero, monetary=norm(key) in MONEY_HEADERS, metric=key)
 
 
@@ -122,7 +142,8 @@ def build_financials(sources, requested, client, ledger):
             if any(isinstance(c.value, (int, float)) for c in row[1:]):
                 sleeve = None
             continue
-        if sleeve and label and isinstance(row[fh[norm("Market Value ($)")]].value, (int, float)):
+        # A holding's identity is independent of whether its NAV is available.
+        if sleeve and label:
             funded_rows.append((sleeve, row))
     funds, sleeves = [], {}
     canonical = [entity(row[0].value) for _, row in funded_rows]
@@ -137,12 +158,8 @@ def build_financials(sources, requested, client, ledger):
             ("funded", "Funded Amount"),
             ("unfunded", "Unfunded Commitments"),
         ]:
-            fund[key], fund[key + "_id"] = get(funding, row, fh, header)
+            fund[key], fund[key + "_id"] = get(funding, row, fh, header, allow_missing=True)
         cr = find_or_flag(cash, label, ledger)
-        if cr is None:
-            # Contribution cannot be computed, so the fund cannot be ranked; footing
-            # checks then fail visibly too. The draft still renders for review.
-            continue
         for key, header in {
             "beginning": "Beginning Market Value ($)",
             "contributions": "Contributions",
@@ -154,10 +171,24 @@ def build_financials(sources, requested, client, ledger):
             "ending": "Market Value ($)",
             "ltv": "LTV",
         }.items():
-            fund[key], fund[key + "_id"] = get(
-                cash, cr, ch, header, blank_zero=key in {"contributions", "distributions", "withdrawals"}
-            )
-        fund["contribution"] = fund["income"] + fund["appreciation"] - fund["fees"]
+            if cr is None:
+                fund[key] = None
+                fund[key + "_id"] = ledger.add(
+                    None,
+                    {
+                        "file": path.name,
+                        "sheet": cash.ws.title,
+                        "entity": label,
+                        "metric": header,
+                        "status": "unavailable",
+                        "reason": "missing or ambiguous fund row",
+                    },
+                )
+            else:
+                fund[key], fund[key + "_id"] = get(
+                    cash, cr, ch, header, blank_zero=key in {"contributions", "distributions", "withdrawals"}
+                )
+        fund["contribution"] = None if cr is None else fund["income"] + fund["appreciation"] - fund["fees"]
         fund["contribution_id"] = ledger.add(
             fund["contribution"],
             {"file": path.name, "sheet": cash.ws.title},
@@ -165,11 +196,15 @@ def build_financials(sources, requested, client, ledger):
             inputs=[fund[k + "_id"] for k in ["income", "appreciation", "fees"]],
         )
         rolled = (
-            fund["beginning"]
-            + fund["contributions"]
-            - fund["distributions"]
-            - fund["withdrawals"]
-            + fund["contribution"]
+            None
+            if cr is None
+            else (
+                fund["beginning"]
+                + fund["contributions"]
+                - fund["distributions"]
+                - fund["withdrawals"]
+                + fund["contribution"]
+            )
         )
         ledger.check(label + " cash roll-forward", rolled, fund["ending"])
         ledger.check(label + " cross-sheet NAV", fund["ending"], fund["nav"])
@@ -199,7 +234,7 @@ def build_financials(sources, requested, client, ledger):
         ]:
             data[key], data[key + "_id"] = get(sheet, row, headers, header)
         members = [f for f in funds if f["sleeve"] == sleeve]
-        ledger.check(sleeve + " NAV footing", sum(f["nav"] for f in members), data["nav"])
+        ledger.check(sleeve + " NAV footing", sum_if_known(f["nav"] for f in members), data["nav"])
         for key, header in [
             ("income", "Gross Income"),
             ("fees", "Manager Fees"),
@@ -210,14 +245,19 @@ def build_financials(sources, requested, client, ledger):
             ("withdrawals", "Withdrawals"),
         ]:
             value, identifier = get(cash, cr, ch, header)
-            ledger.check(sleeve + " " + key + " footing", sum(f[key] for f in members), value)
+            ledger.check(
+                sleeve + " " + key + " footing",
+                sum_if_known(f[key] for f in members),
+                value,
+                evidence=[f[key + "_id"] for f in members] + [identifier],
+            )
         sleeves[sleeve] = data
     ledger.check("Portfolio NAV footing", sum(s["nav"] for s in sleeves.values()), portfolio["nav"])
-    ledger.check("Commitment footing", sum(f["commitment"] for f in funds), portfolio["commitment"])
+    ledger.check("Commitment footing", sum_if_known(f["commitment"] for f in funds), portfolio["commitment"])
     for key in ["funded", "unfunded"]:
         ledger.check(
             key + " footing",
-            sum(f[key] for f in funds),
+            sum_if_known(f[key] for f in funds),
             portfolio[key],
             evidence=[f[key + "_id"] for f in funds] + [portfolio[key + "_id"]],
         )
@@ -231,7 +271,12 @@ def build_financials(sources, requested, client, ledger):
         ("withdrawals", "Withdrawals"),
     ]:
         portfolio[key], portfolio[key + "_id"] = get(cash, cash.find(total_label, numeric=True), ch, header)
-        ledger.check("Portfolio " + key + " footing", sum(f[key] for f in funds), portfolio[key])
+        ledger.check(
+            "Portfolio " + key + " footing",
+            sum_if_known(f[key] for f in funds),
+            portfolio[key],
+            evidence=[f[key + "_id"] for f in funds] + [portfolio[key + "_id"]],
+        )
     ledger.check(
         "Portfolio cash roll-forward",
         portfolio["beginning"]
@@ -330,10 +375,26 @@ def build_financials(sources, requested, client, ledger):
                 values.append(dict(label=str(c.value), value=value, id=fid))
         ledger.check(key + " diversification sum", sum(v["value"] for v in values), 100, 0.02)
         diversification[key] = values
+    attribution_complete = all(f["contribution"] is not None for f in funds)
+    positions_complete = all(f["nav"] is not None for f in funds)
+    if not positions_complete:
+        ledger.issue(
+            "positions_incomplete",
+            "NAV position ranks are unavailable: a funded holding's NAV is missing; no partial position ranking substituted.",
+            "blocker",
+            evidence=[f["nav_id"] for f in funds if f["nav"] is None],
+        )
+    if not attribution_complete:
+        ledger.issue(
+            "attribution_incomplete",
+            "Dollar contributor/detractor ranks are unavailable: cash data is incomplete. NAV position ranks require complete NAV data.",
+            "blocker",
+            evidence=[f["contribution_id"] for f in funds if f["contribution"] is None],
+        )
     for category, eligible, descending in [
-        ("contributor", [f for f in funds if f["contribution"] > 0], True),
-        ("detractor", [f for f in funds if f["contribution"] < 0], False),
-        ("individual position", funds, True),
+        ("contributor", [f for f in funds if attribution_complete and f["contribution"] > 0], True),
+        ("detractor", [f for f in funds if attribution_complete and f["contribution"] < 0], False),
+        ("individual position", funds if positions_complete else [], True),
     ]:
         key = "nav" if category == "individual position" else "contribution"
         ranked = sorted(eligible, key=lambda f: ((-1 if descending else 1) * f[key], entity(f["name"])))[:2]
@@ -394,6 +455,7 @@ def build_financials(sources, requested, client, ledger):
         portfolio["one_net"] > portfolio["benchmark_one"],
     )
     return dict(
+        attribution_complete=attribution_complete,
         portfolio=portfolio,
         funds=funds,
         sleeves=sleeves,

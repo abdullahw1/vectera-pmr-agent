@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "draft_hash": "bf15fea253df9d64ff01e0814ae47b2005883c1a4ee5ca5dd2ca4e2fb3620ab7",
+  "implementation_hashes": {
+    "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+    "__main__.py": "f39f35e219410779b4beaa952430e805a227a0909c35ff90ad2d0f12a89c0148",
+    "appendix.py": "efd923017b6311735058e7bd1905693158faf94c6f91af79686a2ddd6b8a13f8",
+    "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
+    "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
+    "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+    "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
+    "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+    "finance.py": "b62f038d9756e3da0a4baa9ba2c0e59d257cf10eb50da4fabddbcdcbf68810a6",
+    "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
+    "market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
+    "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
+    "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
+    "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
+    "pipeline.py": "44f6b43196481677414312a593fea3f5e406851a625ac7ee53048b2c6a6c6da7",
+    "report.py": "91a8227a908bfb3dc82a13b890d088079c026e8352ca10d9f36b31d6cd3e4567",
+    "review.py": "3d1b29f8599ede2e725579221123c4d36eb655e9d1bb693a83930676752d6b35",
+    "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+    "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+    "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+    "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+    "web/index.html": "9477b439f203136d42fceb3ba85eca94ab955978885f3b585aef4bf77a926ab0",
+    "web/review.html": "dc3d91d4502b33fe69f88e7fcadda9dccd7c5e2d324340ccfb666f412740c89d",
+    "workspace.py": "6ffcc9b4a0570f185b36c65806238f009a97ba6f380fe1ca6480325490bf745e"
+  },
+  "real_approval_saved": false,
+  "standard": {
+    "passed": true,
+    "checks": [
+      "desktop/mobile layout",
+      "source image rendered",
+      "friendly numeric edit",
+      "correction reason required",
+      "edits survive navigation",
+      "edits revoke confirmation",
+      "incomplete review disables approval",
+      "all requirements enable approval",
+      "mocked success exposes final PDF"
+    ],
+    "real_approval_saved": false,
+    "errors": []
+  },
+  "corrected_draft": {
+    "passed": true,
+    "real_approval_saved": false,
+    "scope": "Current review template; correction POST intercepted, no model or approval call",
+    "checks": [
+      "new draft response does not show final PDF",
+      "approval control hidden until reload",
+      "acknowledgment cleared",
+      "chart confirmations cleared",
+      "corrected draft reload link",
+      "mobile width",
+      "no browser script errors"
+    ]
+  }
+}

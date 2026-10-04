@@ -6,10 +6,10 @@ import html
 import json
 from pathlib import Path
 
-from .evidence import digest
+from .evidence import digest, implementation_hashes
 
 
-def write_review(output, data, sections, ledger, input_hashes, diagnostics=None):
+def write_review(output, data, sections, ledger, input_hashes, diagnostics=None, code_hashes=None):
     import hashlib
 
     assets = {
@@ -19,8 +19,16 @@ def write_review(output, data, sections, ledger, input_hashes, diagnostics=None)
     }
     if (output / "appendix.pdf").exists():
         assets["appendix.pdf"] = hashlib.sha256((output / "appendix.pdf").read_bytes()).hexdigest()
+    if not (output / "report.pdf").is_file():
+        raise ValueError("Draft PDF is missing; render it before creating the review package")
+    assets["report.pdf"] = hashlib.sha256((output / "report.pdf").read_bytes()).hexdigest()
     payload = dict(
-        data=data, sections=sections, ledger=ledger.__dict__, input_hashes=input_hashes, asset_hashes=assets
+        data=data,
+        sections=sections,
+        ledger=ledger.__dict__,
+        input_hashes=input_hashes,
+        asset_hashes=assets,
+        implementation_hashes=code_hashes if code_hashes is not None else implementation_hashes(),
     )
     payload["draft_hash"] = digest(payload)
     (output / "draft.json").write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
@@ -59,6 +67,8 @@ def approve(output, request):
     payload["draft_hash"] = stored_hash
     if request.get("draft_hash") != payload["draft_hash"]:
         raise ValueError("Draft changed; reload and review the current draft")
+    if payload.get("implementation_hashes") != implementation_hashes():
+        raise ValueError("Implementation changed; regenerate and review the new draft")
     if not str(request.get("reviewer", "")).strip():
         raise ValueError("Reviewer name is required")
     import hashlib
@@ -74,7 +84,12 @@ def approve(output, request):
     for path, expected in payload["asset_hashes"].items():
         file = output / path
         if not file.is_file() or hashlib.sha256(file.read_bytes()).hexdigest() != expected:
-            raise ValueError("Source exhibit or rendered asset changed; regenerate the draft")
+            raise ValueError(
+                "Draft PDF changed; regenerate and review it" if path == "report.pdf"
+                else "Source exhibit or rendered asset changed; regenerate the draft"
+            )
+    if "report.pdf" not in payload["asset_hashes"]:
+        raise ValueError("Draft PDF integrity record is missing; regenerate and review it")
     blockers = [x for x in payload["ledger"]["issues"] if x["severity"] == "blocker"]
     # Chart corrections cannot manufacture an initial extraction: unavailable pixels require a model rerun.
     if blockers:
@@ -95,6 +110,7 @@ def approve(output, request):
 
     for chart in payload["data"]["charts"]:
         validate_chart(chart["data"])
+    changed = False
     for fid, record in request.get("corrections", {}).items():
         if (
             fid not in chart_ids
@@ -106,9 +122,15 @@ def approve(output, request):
         correction = validate_chart(record.get("data"))
         for chart in payload["data"]["charts"]:
             if chart["id"] == fid:
+                if correction == chart["data"]:
+                    continue
+                changed = True
                 chart["data"] = correction
+                payload["data"].setdefault("chart_corrections", {})[fid] = {
+                    **record, "reviewer": request["reviewer"],
+                }
         fact = payload["ledger"]["facts"][fid]
-        fact["original_extraction"] = fact["value"]
+        fact.setdefault("original_extraction", fact["value"])
         fact["value"] = correction
         fact["reviewer"] = request["reviewer"]
         fact["correction_reason"] = record["reason"]
@@ -122,14 +144,60 @@ def approve(output, request):
     payload["data"]["market_signals"] = cap_rate_signals(payload["data"]["charts"], ledger)
     from .synthesis import refresh_market_narrative
 
-    refresh_market_narrative(payload["data"], ledger)
+    if changed:
+        from .models import Model
+
+        model = Model(output / "cache", ledger)
+        refresh_market_narrative(payload["data"], ledger, model)
+    else:
+        refresh_market_narrative(payload["data"], ledger)
     context = payload["data"]["source_context"]
     sources = {"prior": (None, Path(context["prior_file"]), context["prior_pages"])}
     sections = build_sections(payload["data"], sources, ledger)
     from .verification import write_manifests
 
-    final_semantic_hash = write_manifests(output, payload["data"], sections, ledger, prefix="final_")
     appendix = output / context["appendix"] if context["appendix"] else None
+    if changed:
+        # A correction creates a new draft, never an unseen approved document.
+        render_pdf(payload["data"], sections, output / "report.pdf", appendix)
+        semantic_hash = write_manifests(output, payload["data"], sections, ledger)
+        ledger.save(output / "evidence.json")
+        diagnostics = (
+            json.loads((output / "diagnostics.json").read_text(encoding="utf-8"))
+            if (output / "diagnostics.json").exists() else {}
+        )
+        diagnostics.update(
+            correction_api_calls=model.calls,
+            correction_token_usage=model.usage,
+            blockers=sum(i["severity"] == "blocker" for i in ledger.issues),
+            warnings=sum(i["severity"] == "warning" for i in ledger.issues),
+        )
+        (output / "diagnostics.json").write_text(json.dumps(diagnostics, indent=2), encoding="utf-8")
+        revised = write_review(
+            output, payload["data"], sections, ledger, payload["input_hashes"],
+            diagnostics, payload["implementation_hashes"],
+        )
+        for name in (
+            "approval.json", "final_report.pdf", "final_evidence.json",
+            "final_sections.json", "final_manifest.json", "final_semantic_manifest.json",
+        ):
+            (output / name).unlink(missing_ok=True)
+        verification = output / "verification.json"
+        if verification.exists():
+            summary = json.loads(verification.read_text(encoding="utf-8"))
+            summary.update(
+                semantic_hash=semantic_hash,
+                meaning_hash=digest(dict(data=payload["data"], sections=sections)),
+                issues=ledger.issues,
+            )
+            verification.write_text(json.dumps(summary, indent=2, default=str), encoding="utf-8")
+        return dict(
+            status="review_required", draft_hash=revised["draft_hash"],
+            message="Corrections saved as a new DRAFT, not approved. Reload review, inspect the corrected report, "
+            "reconfirm charts and acknowledge it before approving.",
+        )
+
+    final_semantic_hash = write_manifests(output, payload["data"], sections, ledger, prefix="final_")
     render_pdf(payload["data"], sections, output / "final_report.pdf", appendix, approved=True)
     record = dict(
         draft_hash=payload["draft_hash"],
@@ -138,8 +206,9 @@ def approve(output, request):
         semantic_hash=final_semantic_hash,
         input_hashes=payload["input_hashes"],
         asset_hashes=payload["asset_hashes"],
+        implementation_hashes=payload["implementation_hashes"],
         confirmed_charts=sorted(chart_ids),
-        corrections=request.get("corrections", {}),
+        corrections={**payload["data"].get("chart_corrections", {}), **request.get("corrections", {})},
     )
     from datetime import datetime, timezone
 
@@ -148,6 +217,7 @@ def approve(output, request):
     (output / "approval.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
     ledger.save(output / "final_evidence.json")
     (output / "final_sections.json").write_text(json.dumps(sections, indent=2, default=str), encoding="utf-8")
+    return dict(status="approved", message="Approved. The final PDF and approval record are saved.")
 
 
 def serve(output, port, open_browser=False):
@@ -165,14 +235,14 @@ def serve(output, port, open_browser=False):
                 length = int(self.headers.get("Content-Length", 0))
                 if not 0 < length < 1_000_000:
                     raise ValueError("Invalid request size")
-                approve(output, json.loads(self.rfile.read(length)))
-                status, message = 200, "Approved. final_report.pdf and approval.json have been saved."
+                result = approve(output, json.loads(self.rfile.read(length)))
+                status = 200
             except (ValueError, KeyError, TypeError) as error:
-                status, message = 400, str(error)
+                status, result = 400, dict(message=str(error))
             self.send_response(status)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps(dict(message=message)).encode())
+            self.wfile.write(json.dumps(result).encode())
 
     with ThreadingHTTPServer(("127.0.0.1", port), Handler) as server:
         url = f"http://127.0.0.1:{server.server_port}/review.html"

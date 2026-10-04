@@ -1,5 +1,6 @@
 import pytest
 from pmr.synthesis import validate_sentences, synthesize, qualitative_fallback, prepare
+from pmr.synthesis import source_excerpt
 from pmr.evidence import Ledger
 from pmr.report import accounting, dollars, billions
 from decimal import Decimal
@@ -7,7 +8,6 @@ from pathlib import Path
 import fitz
 from pmr.ingest import pdf_pages
 from pmr.narrative import supporting_documents
-
 
 PASSAGES = [
     dict(
@@ -66,6 +66,20 @@ def test_renamed_heading_is_not_a_missing_report(tmp_path):
     assert not any(i["code"] == "missing_manager" for i in ledger.issues)
 
 
+def test_matched_report_without_extractable_sections_retains_page_evidence():
+    name = "Cornerstone Core Property Fund"
+    ledger, data = Ledger(), dict(funds=[dict(name=name, roles=["largest position"], fees=Decimal("0"))])
+    sources = dict(root=Path("inputs"), managers=[(Path("inputs/manager.pdf"), [name])])
+    support = supporting_documents(sources, data, dict(new=[]), ledger, None)
+    assert support[name] == []
+    identifiers = data["unparsed_reports"][name]
+    assert ledger.facts[identifiers[0]]["source"]["page"] == 1
+    issue = next(i for i in ledger.issues if i["code"] == "manager_extraction")
+    assert issue["evidence"] == identifiers
+    assert "no commentary inferred" in issue["message"]
+    assert not any(i["code"] == "missing_manager" for i in ledger.issues)
+
+
 def test_section_preference_picks_drivers_over_commentary(tmp_path):
     ledger = Ledger()
     name = "Redwood Logistics Trust"
@@ -111,6 +125,30 @@ def test_fallback_cannot_change_numerical_inventory():
     assert "pending review" in text and "97% occupancy" in text
     assert "Cedar Ridge was held flat pending expansion." in text
     assert qualitative_fallback([dict(text="Return was 9%.")])
+
+
+def test_source_fallback_and_writer_preserve_identical_scoped_meaning():
+    from pmr.verification import semantic_manifest
+    from pmr.evidence import digest
+
+    passages = [
+        dict(id="risk", text="Refinancing 2020-2021 debt remains a risk.", source=dict(file="deck.pdf", slide=3), qualitative_only=True),
+        dict(id="return", text="Broad funds returned 1.0% in the latest quarter.", source=dict(file="deck.pdf", slide=4)),
+    ]
+    masked, _, _ = prepare(passages)
+    writer = validate_sentences(dict(sentences=[dict(text=p["text"], source_id=p["id"]) for p in masked]), passages)
+    excerpt = source_excerpt(passages, "Verified source excerpts: ")
+    assert "2020-2021" in excerpt["text"]
+    assert len(excerpt["numeric_bindings"]) == 2
+    keys = ["portfolio", "funds", "sleeves", "activity", "policy", "compliance", "history", "diversification"]
+    data = {k: {} for k in keys}
+    data.update(client="OTHER", quarter="1Q26", charts=[])
+    model_block = dict(type="paragraph", kind="model_prose", text=" ".join(s["text"] for s in writer), numeric_bindings=[b for s in writer for b in s["numeric_bindings"]])
+    fallback_block = dict(type="paragraph", kind="source_excerpt", **excerpt)
+    signature = lambda block: digest(semantic_manifest(data, [dict(title="Market", blocks=[block])]))
+    assert signature(model_block) == signature(fallback_block)
+    fallback_block["numeric_bindings"][0]["source_context"] = "A different risk period."
+    assert signature(model_block) != signature(fallback_block)
 
 
 def test_numbers_and_asset_names_are_bound_to_exact_source():
@@ -233,3 +271,58 @@ def test_manager_claim_cannot_be_attributed_to_market_deck():
     ledger = Ledger()
     assert synthesize(PASSAGES, "Performance drivers for a fund", Model(), ledger) is None
     assert any("attributed to the market deck" in i["message"] for i in ledger.issues)
+
+
+def test_corrected_negative_return_cannot_rebind_positive_prose(monkeypatch):
+    from pmr.synthesis import refresh_market_narrative
+
+    old = dict(id="old", text="The market return was 1.0%.", source=dict(file="deck.pdf", slide=4))
+    corrected = dict(id="new", text="The market return was -1.0%.", source=old["source"])
+    data = dict(market_passages=[old], narratives={"market": dict(
+        text="The market delivered a positive return of 1.0%.",
+        source_order=["old"],
+        masked_response=dict(sentences=[dict(text="The market delivered a positive return of [[VALUE_A]].", source_id="old")]),
+    )})
+    monkeypatch.setattr("pmr.synthesis.market_passages", lambda data, ledger: [corrected])
+    ledger = Ledger()
+    refresh_market_narrative(data, ledger)
+    assert "market" not in data["narratives"]
+    assert data["market_passages"] == [corrected]
+    assert any(i["code"] == "corrected_narrative_review" for i in ledger.issues)
+
+
+def test_corrected_market_prose_is_rewritten_and_semantically_checked(monkeypatch):
+    from pmr.synthesis import refresh_market_narrative
+
+    source = dict(file="deck.pdf", slide=4)
+    corrected = dict(id="new", text="The market return was -1.0%.", source=source)
+    data = dict(market_passages=[dict(id="old", text="The market return was 1.0%.", source=source)], narratives={"market": {"text": "Stale positive return."}})
+    monkeypatch.setattr("pmr.synthesis.market_passages", lambda data, ledger: [corrected])
+
+    class Model:
+        provider = "test"
+        checks = 0
+
+        def ask(self, prompt):
+            if prompt.startswith("CHECK_PARAPHRASES"):
+                self.checks += 1
+                return dict(supported=[True], reason="Supports negative return")
+            return dict(sentences=[dict(text="The market recorded a negative return of [[VALUE_A]].", source_id="new")])
+
+    model = Model()
+    refresh_market_narrative(data, Ledger(), model)
+    assert model.checks == 1
+    assert data["narratives"]["market"]["text"] == "The market recorded a negative return of -1.0%."
+
+
+def test_unchanged_market_evidence_can_rebind_transient_ids(monkeypatch):
+    from pmr.synthesis import refresh_market_narrative
+
+    old = dict(id="old", text="The market return was 1.0%.", source=dict(file="deck.pdf", slide=4))
+    new = {**old, "id": "new"}
+    data = dict(market_passages=[old], narratives={"market": dict(
+        source_order=["old"], masked_response=dict(sentences=[dict(text="The market return was [[VALUE_A]].", source_id="old")]),
+    )})
+    monkeypatch.setattr("pmr.synthesis.market_passages", lambda data, ledger: [new])
+    refresh_market_narrative(data, Ledger())
+    assert data["narratives"]["market"]["text"] == "The market return was 1.0%."

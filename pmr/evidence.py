@@ -14,6 +14,15 @@ def digest(value: Any) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, default=str).encode()).hexdigest()
 
 
+def implementation_hashes():
+    root = Path(__file__).resolve().parent
+    return {
+        str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in sorted(root.rglob("*"))
+        if p.suffix in {".py", ".html"}
+    }
+
+
 @dataclass
 class Ledger:
     facts: dict = field(default_factory=dict)
@@ -39,6 +48,26 @@ class Ledger:
             self.issues.append(record)
 
     def check(self, name, actual, expected, tolerance=0, *, severity="blocker", evidence=None):
+        if actual is None or expected is None:
+            self.checks.append(
+                dict(
+                    name=name,
+                    actual=actual,
+                    expected=expected,
+                    delta=None,
+                    tolerance=tolerance,
+                    passed=False,
+                    severity=severity,
+                    evidence=evidence or [],
+                )
+            )
+            self.issue(
+                "incomplete_reconciliation",
+                f"{name}: unavailable because a required value is missing",
+                severity,
+                evidence=evidence or [],
+            )
+            return
         if isinstance(actual, Decimal) or isinstance(expected, Decimal):
             actual, expected, tolerance = (Decimal(str(v)) for v in (actual, expected, tolerance))
         delta = actual - expected

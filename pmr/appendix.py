@@ -3,11 +3,15 @@
 import html
 import io
 import statistics
+import re
+from decimal import Decimal
 
 import fitz
 from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
+from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, Spacer
+from reportlab.platypus import HRFlowable
 
 NAVY = colors.HexColor("#1b2a4a")
 HEADER_ALIASES = {
@@ -25,7 +29,46 @@ HEADER_ALIASES = {
     "Northeast": "NE",
     "Southeast": "SE",
     "Southwest": "SW",
+    "Various-US": "Various US",
 }
+
+
+def presentation_header(header):
+    """Expand source abbreviations without changing their metric or horizon."""
+    header = HEADER_ALIASES.get(header, header)
+    names = {
+        "Commitment ($)": "Commitment", "Funded Amount": "Funded", "Unfunded ($)": "Unfunded",
+        "Capital Returned": "Returned", "Market Value ($)": "Market Value", "Market Value (%)": "% NAV",
+        "Beginning value ($)": "Beginning MV", "Capital in ($)": "Contrib.", "Distrib. ($)": "Distrib.",
+        "Withdraw. ($)": "Withdrawals", "Income ($)": "Income", "Fees ($)": "Fees", "Apprec. ($)": "Apprec.",
+        "NET IRR": "Net IRR", "TWR Calculation": "TWR Inception",
+    }
+    header = names.get(header, header)
+    header = re.sub(r"\s*\(%\)", "", header)
+    header = re.sub(r"\bTGRS\b", "GRS", header)
+    header = re.sub(r"\bTNET\b", "NET", header)
+    header = re.sub(r"\b(\d+) Year(?:\(s\))?", r"\1 Yr", header)
+    return header
+
+
+def display_cell(exhibit, column, value):
+    """Unit decoration only; retain original PDF precision and blank cells."""
+    if not value:
+        return ""
+    header = exhibit["headers"][column]
+    monetary = header in {
+        "Total Plan Assets", "Target Allocation", "Market Value", "Unfunded", "Remaining",
+        "Commitment", "Funded", "Returned", "Beginning MV", "Contrib.", "Distrib.",
+        "Withdrawals", "Income", "Fees", "Apprec.",
+    }
+    if header == "Allocation / plan":
+        percent = format(Decimal(value.replace(',', '')) * 100, "f")
+        if "." in percent:
+            percent = percent.rstrip("0").rstrip(".")
+        return percent + (".0" if "." not in percent else "") + "%"
+    if monetary and re.fullmatch(r"-?\d[\d,]*(?:\.\d+)?", value):
+        return "($" + value[1:] + ")" if value.startswith("-") else "$" + value
+    return value
 
 
 class UnsupportedExhibitLayout(ValueError):
@@ -116,14 +159,14 @@ def extract_exhibits(source):
                 if title == "Portfolio Composition ($)":
                     # These are the source's paired dollars/ratio columns, not inferred values.
                     headers = [
-                        "Plan assets ($)",
-                        "Allocation ($)",
+                        "Total Plan Assets",
+                        "Target Allocation",
                         "Allocation / plan",
-                        "Market value ($)",
-                        "Market value (%)",
-                        "Unfunded ($)",
-                        "Unfunded (%)",
-                        "Remaining allocation ($)",
+                        "Market Value",
+                        "NAV / plan",
+                        "Unfunded",
+                        "Unfunded / plan",
+                        "Remaining",
                     ]
                     data_start = start + 2
                 else:
@@ -142,12 +185,15 @@ def extract_exhibits(source):
                     data_start += 1
                 headers = [HEADER_ALIASES.get(h, h) for h in headers]
                 if title == "Investment" and "Vintage" in headers:
-                    title = "Investment funding"
+                    title = "Investment Schedule"
                 elif title == "Investment" and "Beginning value ($)" in headers:
                     title = "Quarterly cash activity"
                 elif title != "Investment":
                     headers[0] = "Portfolio" if title != "Portfolio Composition ($)" else headers[0]
                 data = clean_rows(rows[data_start:end])
+                source_rows = [
+                    i for i in range(data_start, end) if any(value not in {None, ""} for value in rows[i][1:])
+                ]
                 if not data:
                     continue
                 projections = [(title, list(range(len(headers))))]
@@ -174,18 +220,104 @@ def extract_exhibits(source):
                         projections.append(("Returns: " + " / ".join(names), [0] + pending))
                     if scalar:
                         projections.append(("Valuation and inception statistics", [0] + scalar))
+                fund_returns = any(h in {"NET IRR", "Net Multiple"} for h in headers)
                 for name, columns in projections:
+                    if name.startswith("Returns:"):
+                        name = ("Returns and Multiples (%) - " if fund_returns else "Annualized Time-Weighted Returns (%) - ") + name.removeprefix("Returns: ")
+                    elif name == "Valuation and inception statistics":
+                        name = "Valuation, IRR and Net Multiples" if fund_returns else "Annual Returns - TWR Inception"
+                    elif name == "Performance Summary":
+                        name += " (%)"
                     exhibits.append(
                         dict(
                             title=name,
                             source_page=page_number,
+                            source_rows=[i + 1 for i in source_rows],
+                            source_headers=list(range(start + 1, data_start + 1)),
                             columns=columns,
                             identity=" | ".join(str(v) for row in rows[:2] for v in row if v),
-                            headers=[headers[c] for c in columns],
+                            headers=[presentation_header(headers[c]) for c in columns],
                             rows=[[row[c] for c in columns] for row in data],
                         )
                     )
+                if grouped and not fund_returns and "TWR Calculation" in headers:
+                    net_columns = [i for i, header in enumerate(headers) if header.lower().endswith(" net")]
+                    if net_columns:
+                        exhibits.append(dict(
+                            title="Annualized Net Time-Weighted Return (%)",
+                            source_page=page_number,
+                            source_rows=[i + 1 for i in source_rows],
+                            source_headers=list(range(start + 1, data_start + 1)),
+                            columns=[0] + net_columns,
+                            identity=" | ".join(str(v) for row in rows[:2] for v in row if v),
+                            headers=["Investment"] + [presentation_header(headers[i]).removesuffix(" Net").removesuffix(" NET") for i in net_columns],
+                            rows=[[row[c] for c in [0] + net_columns] for row in data],
+                        ))
     return exhibits
+
+
+def register_exhibits(source, ledger):
+    """Register the exact exhibits the PDF renderer uses, with original cell locators."""
+    try:
+        exhibits = extract_exhibits(source)
+    except UnsupportedExhibitLayout:
+        # The renderer retains unfamiliar readable pages. Keep their text-span evidence too.
+        blocks = []
+        with fitz.open(source) as document:
+            for page_no, page in enumerate(document, 1):
+                ids, text = [], []
+                for block in page.get_text("dict")["blocks"]:
+                    for line in block.get("lines", []):
+                        for span in line["spans"]:
+                            if span["text"].strip():
+                                text.append(span["text"])
+                                ids.append(
+                                    ledger.add(
+                                        span["text"],
+                                        {
+                                            "file": source.name,
+                                            "page": page_no,
+                                            "bbox": list(span["bbox"]),
+                                            "method": "original PDF text span",
+                                        },
+                                    )
+                                )
+                blocks.append(dict(type="paragraph", text=" ".join(text), evidence=ids))
+        return blocks
+    blocks = []
+    with fitz.open(source) as document:
+        tables = {page.number + 1: page.find_tables().tables[0] for page in document}
+        for exhibit in exhibits:
+            table = tables[exhibit["source_page"]]
+            cells = []
+            for row_number, row in zip(exhibit["source_rows"], exhibit["rows"]):
+                cell_ids = []
+                for column, value in zip(exhibit["columns"], row):
+                    locator = dict(
+                        file=source.name,
+                        page=exhibit["source_page"],
+                        table=1,
+                        row=row_number,
+                        column=column + 1,
+                        raw_value=value,
+                    )
+                    bbox = table.rows[row_number - 1].cells[column]
+                    if bbox:
+                        locator["bbox"] = list(bbox)
+                    displayed = display_cell(exhibit, len(cell_ids), value)
+                    cell_ids.append([ledger.add(displayed, locator, formula="source PDF value with displayed unit decoration", inputs=[])])
+                cells.append(cell_ids)
+            blocks.append(
+                dict(
+                    type="table",
+                    title=exhibit["title"],
+                    columns=exhibit["headers"],
+                    rows=[[display_cell(exhibit, column, value) for column, value in enumerate(row)] for row in exhibit["rows"]],
+                    cell_evidence=cells,
+                    evidence=list(dict.fromkeys(i for row in cells for cell in row for i in cell)),
+                )
+            )
+    return blocks
 
 
 def append_exhibits(result, source, approved=False):
@@ -194,7 +326,7 @@ def append_exhibits(result, source, approved=False):
     except UnsupportedExhibitLayout:
         append_original_pages(result, source, approved)
         return
-    body = ParagraphStyle("AppendixCell", fontName="Helvetica", fontSize=7.2, leading=8.6)
+    body = ParagraphStyle("AppendixCell", fontName="Helvetica", fontSize=6.8, leading=8.2)
     heading = ParagraphStyle(
         "AppendixHeading",
         fontName="Helvetica-Bold",
@@ -208,16 +340,25 @@ def append_exhibits(result, source, approved=False):
     caption = ParagraphStyle(
         "AppendixCaption", fontName="Helvetica", fontSize=7.2, leading=10, spaceAfter=4, keepWithNext=True
     )
+    section_heading = ParagraphStyle("AppendixSection", parent=heading, fontSize=15, leading=18, spaceBefore=0)
     story = [
-        Paragraph("Appendix A: Quarterly Flash Report", heading),
+        Paragraph("Appendix A: Quarterly Flash Report", section_heading),
+        HRFlowable(width="100%", thickness=0.6, color=NAVY, spaceAfter=6),
+        Paragraph(html.escape(exhibits[0]["identity"]), caption),
         Paragraph(
             "Retypeset from the supplied flash PDF. Values retain the source exhibit's displayed precision; "
             "blank cells remain blank. The original PDF is retained in the audit package.",
             caption,
         ),
     ]
-    story.append(Paragraph(html.escape(exhibits[0]["identity"]), caption))
+    diversification_started = False
     for exhibit in exhibits:
+        if "Diversification" in exhibit["title"] and not diversification_started:
+            story.extend([
+                Paragraph("Diversification and Annual Returns", heading),
+                HRFlowable(width="100%", thickness=0.6, color=NAVY, spaceAfter=6),
+            ])
+            diversification_started = True
         story.append(Paragraph(html.escape(exhibit["title"]), heading))
         story.append(Paragraph(f"Flash source page {exhibit['source_page']}", caption))
         if "Geographic Diversification" in exhibit["title"]:
@@ -228,22 +369,29 @@ def append_exhibits(result, source, approved=False):
                 )
             )
         count = len(exhibit["headers"])
-        widths = [160] + [380 / (count - 1)] * (count - 1)
+        widths = [134] + [364 / (count - 1)] * (count - 1)
         if exhibit["title"] == "Portfolio Composition ($)":
-            widths = [540 / count] * count
+            widths = [498 / count] * count
         elif exhibit["title"] == "Quarterly cash activity" and count == 10:
-            widths = [148] + [44.5] * 8 + [36]
+            # Reserve enough space for each actual amount, including its currency sign.
+            numeric_widths = [max(
+                34,
+                max(stringWidth(display_cell(exhibit, c, row[c]), "Helvetica", body.fontSize) for row in exhibit["rows"]) + 5,
+                max(stringWidth(word, "Helvetica-Bold", body.fontSize) for word in exhibit["headers"][c].split()) + 5,
+            ) for c in range(1, count)]
+            widths = [498 - sum(numeric_widths)] + numeric_widths
         header = [
             Paragraph('<font color="white"><b>' + html.escape(str(c)) + "</b></font>", body)
             for c in exhibit["headers"]
         ]
-        cells = [header] + [[Paragraph(html.escape(c), body) for c in row] for row in exhibit["rows"]]
+        cells = [header] + [[Paragraph(html.escape(display_cell(exhibit, column, c)), body) for column, c in enumerate(row)] for row in exhibit["rows"]]
         table = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
         table.setStyle(
             TableStyle(
                 [
                     ("BACKGROUND", (0, 0), (-1, 0), NAVY),
                     ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#edf0f6")]),
+                    ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#cbd1dd")),
                     ("VALIGN", (0, 0), (-1, -1), "TOP"),
                     ("LEFTPADDING", (0, 0), (-1, -1), 2),
                     ("RIGHTPADDING", (0, 0), (-1, -1), 2),
@@ -264,7 +412,7 @@ def append_exhibits(result, source, approved=False):
 
     buffer = io.BytesIO()
     SimpleDocTemplate(
-        buffer, pagesize=(612, 792), leftMargin=36, rightMargin=36, topMargin=38, bottomMargin=44, invariant=1
+        buffer, pagesize=(612, 792), leftMargin=50.4, rightMargin=50.4, topMargin=48, bottomMargin=44, invariant=1
     ).build(story, onFirstPage=footer, onLaterPages=footer)
     with fitz.open(stream=buffer.getvalue(), filetype="pdf") as appendix:
         result.insert_pdf(appendix)

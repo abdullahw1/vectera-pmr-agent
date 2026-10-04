@@ -8,7 +8,7 @@ import time
 from contextlib import contextmanager
 from pathlib import Path
 
-from .evidence import Ledger, digest
+from .evidence import Ledger, digest, implementation_hashes
 from .finance import build_financials, commitments
 from .ingest import discover, quarter
 from .models import Model
@@ -19,6 +19,7 @@ from .template import extract_template
 from .synthesis import build_narratives
 from .verification import write_manifests
 from .crosschecks import supporting_checks, cap_rate_signals
+from .appendix import register_exhibits
 
 
 def generate(root: Path, output: Path, client: str, period: str):
@@ -47,10 +48,7 @@ def generate(root: Path, output: Path, client: str, period: str):
         }
 
     input_hashes = source_hashes()
-    package_root = Path(__file__).resolve().parent
-    code_hashes = {
-        p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(package_root.glob("*.py"))
-    }
+    code_hashes = implementation_hashes()
     stages = []
 
     def progress():
@@ -108,6 +106,7 @@ def generate(root: Path, output: Path, client: str, period: str):
     )
     if sources["appendix"]:
         (output / "appendix.pdf").write_bytes(sources["appendix"].read_bytes())
+        data["appendix_exhibits"] = register_exhibits(sources["appendix"], ledger)
     sections = build_sections(data, sources, ledger)
     assets = output / "assets"
     assets.mkdir(exist_ok=True)
@@ -137,7 +136,9 @@ def generate(root: Path, output: Path, client: str, period: str):
             raise ValueError(
                 "Source files changed during generation; regenerate from an unchanged input package"
             )
-    payload = write_review(output, data, sections, ledger, input_hashes, diagnostics)
+        if implementation_hashes() != code_hashes:
+            raise ValueError("Implementation changed during generation; regenerate the draft")
+    payload = write_review(output, data, sections, ledger, input_hashes, diagnostics, code_hashes)
     # Runtime paths and model-selected wording are not part of financial reproducibility.
     financial_signature = {
         key: data[key]

@@ -143,6 +143,49 @@ def test_reordered_model_sentences_keep_the_same_figures_signature():
     assert signature(first, None) != signature(reordered, None)
 
 
+def test_repeatability_checks_numeric_source_context_not_just_token_bag():
+    keys = ["portfolio", "funds", "sleeves", "activity", "policy", "compliance", "history", "diversification"]
+    data = {k: {} for k in keys}
+    data.update(client="A", quarter="1Q26", charts=[])
+    bindings = [
+        dict(slot="[[N1]]", source_id="income", value="1.0", source_context="Income returned [[N1]]%."),
+        dict(slot="[[N2]]", source_id="cap", value="4.6", source_context="Office cap rate was [[N2]]%."),
+    ]
+
+    def signature(text, values):
+        block = dict(type="paragraph", text=text, kind="model_prose", numeric_bindings=values)
+        return digest(semantic_manifest(data, [dict(title="Market", blocks=[block])]))
+
+    original = signature("Income returned 1.0%. Office cap rate was 4.6%.", bindings)
+    assert original == signature("Office cap rate was 4.6%. Income returned 1.0%.", bindings[::-1])
+    swapped = copy.deepcopy(bindings)
+    swapped[0]["value"], swapped[1]["value"] = swapped[1]["value"], swapped[0]["value"]
+    assert original != signature("Income returned 4.6%. Office cap rate was 1.0%.", swapped)
+    changed_context = copy.deepcopy(bindings)
+    changed_context[1]["source_context"] = "Industrial cap rate was [[N2]]%."
+    assert original != signature("Income returned 1.0%. Office cap rate was 4.6%.", changed_context)
+
+
+def test_stable_source_context_ignores_diagnostic_identifier_drift():
+    keys = ["portfolio", "funds", "sleeves", "activity", "policy", "compliance", "history", "diversification"]
+    data = {k: {} for k in keys}
+    data.update(client="A", quarter="1Q26", charts=[])
+    binding = dict(
+        slot="[[N1]]",
+        source_id="old-audit-id",
+        source_key="scoped-source-fingerprint",
+        value="1.0%",
+        source_context="Return was [[N1]].",
+    )
+    block = dict(type="paragraph", text="Return was 1.0%.", kind="model_prose", numeric_bindings=[binding])
+    sections = [dict(title="Market", blocks=[block])]
+    before = digest(semantic_manifest(data, sections))
+    binding["source_id"] = "new-audit-id"
+    assert digest(semantic_manifest(data, sections)) == before
+    binding["source_key"] = "different-source-or-period"
+    assert digest(semantic_manifest(data, sections)) != before
+
+
 def test_relevant_invalid_ic_date_and_full_client_name(tmp_path):
     root = copied(tmp_path)
     path = root / "ic_log_2025.xlsx"

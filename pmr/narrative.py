@@ -80,6 +80,7 @@ def supporting_documents(sources, financials, activity, ledger, model):
     )
     support = {}
     financials["unmatched_reports"] = []
+    financials["unparsed_reports"] = {}
     for path, pages in sources["managers"]:
         text = "\n".join(pages)
         normalized_lines = [entity(line) for line in text.splitlines() if line.strip()]
@@ -123,11 +124,31 @@ def supporting_documents(sources, financials, activity, ledger, model):
         sections = prose_sections(pages)
         chosen, rule = choose_sections(sections)
         if rule == "fallback":
+            page_ids = [
+                ledger.add(
+                    text,
+                    {
+                        "file": str(path.relative_to(sources["root"])),
+                        "page": i + 1,
+                        "quote": text,
+                        "method": "matched report retained for manual section review",
+                    },
+                )
+                for i, text in enumerate(pages)
+                if text.strip()
+            ]
+            if not chosen:
+                financials["unparsed_reports"][name] = page_ids
             ledger.issue(
                 "manager_extraction",
-                f"{path.name}: no performance, strategy or status heading recognised; using all prose sections "
-                f"({', '.join(h for _, h, _ in chosen) or 'none'}) for review",
+                f"{path.name}: no performance, strategy or status heading recognised; "
+                + (
+                    f"using prose sections ({', '.join(h for _, h, _ in chosen)}) for review"
+                    if chosen
+                    else "no commentary inferred; matched source pages retained for manual review"
+                ),
                 fund=name,
+                evidence=page_ids,
             )
         passages = []
         for page_no, heading, text in chosen:
@@ -151,7 +172,7 @@ def supporting_documents(sources, financials, activity, ledger, model):
             )
         support[name] = passages
     for fund in financials["funds"]:
-        if fund["fees"] < 0:
+        if fund["fees"] is not None and fund["fees"] < 0:
             ledger.issue(
                 "negative_fees",
                 f"{fund['name']} has negative manager fees in the flash; shown as a fee credit, not normalized",

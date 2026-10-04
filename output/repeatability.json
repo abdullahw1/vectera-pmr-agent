@@ -5,8 +5,8 @@
     {
       "client": "CPERS",
       "quarter": "4Q25",
-      "meaning_hash": "8355b9525c24432d1816559fc79f364cbeea676d915ff0d0436f3e70003090fd",
-      "semantic_hash": "bd075118d5413ba33da0d02d1204aa6e617603ff036d5947f9c6eea97b26b48e",
+      "meaning_hash": "1156f7e9a68b62f524b7850d8898cf010287b169d1745d76d5c0a38c77114ad4",
+      "semantic_hash": "1276102fad8314e4724972d3737b931ced7c8cec2d2db14ad6d250032af7177b",
       "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
       "source_hashes": {
         "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -29,25 +29,28 @@
       "implementation_hashes": {
         "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
         "__main__.py": "f39f35e219410779b4beaa952430e805a227a0909c35ff90ad2d0f12a89c0148",
-        "appendix.py": "accde3ebbd82469c68c1ae0f228ee712a840cb53ee4de9ec4ddbdb0c458c9ed2",
+        "appendix.py": "efd923017b6311735058e7bd1905693158faf94c6f91af79686a2ddd6b8a13f8",
         "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
         "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
         "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
         "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
-        "evidence.py": "6a6cc68d190ddb5131e2f052ad397e2e07bb2e77db2c0d3a24c8fe58e5152621",
-        "finance.py": "04a270e537a357b80db4403c88cbdd554426b3dc47a0689d0b68bb653122cf9f",
+        "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+        "finance.py": "b62f038d9756e3da0a4baa9ba2c0e59d257cf10eb50da4fabddbcdcbf68810a6",
         "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
-        "market.py": "fdb828cb83904b057e6c2f0ba8433f503c2345c793a786a4d11ccd13cc7143ba",
+        "market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
         "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
-        "narrative.py": "553f9bc790d3899977555c6bd8f6f67a57905bf51dd062e55a6f7615d072568c",
-        "numeric.py": "77d0ef38d922391f89de2a3a5a01830fbcc52c10806694bfb8787908c002b450",
-        "pipeline.py": "7a9fcf39691fed48b558321c162abb5a48864ff1e3b39f698251a64af7488216",
-        "report.py": "9339e4e2f453c73c9d852b5b2728f51c31f84e610b35a5774e4182fe0281a426",
-        "review.py": "12d19dd396ec46d33229ee509a071c911e89cff6275ac936e3ca74202ae95422",
-        "synthesis.py": "14566deb0b7daa08aedd061d64973fce3002b90db85f78bc48d556a38614a05a",
-        "template.py": "e2f34491b56f7bd8e79c085d3c43d195f2c7dbd1e95ea0f36f1ae4c7ffee352d",
-        "verification.py": "6892c8fbf396348c6d34e70ded348b3100229886e34323e8f17da1efccfa2efb",
-        "workspace.py": "666c8977fb4674c0c0a92a63b7fd9297dbe7a34fcae67d22ab5a67865a018a93"
+        "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
+        "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
+        "pipeline.py": "44f6b43196481677414312a593fea3f5e406851a625ac7ee53048b2c6a6c6da7",
+        "report.py": "91a8227a908bfb3dc82a13b890d088079c026e8352ca10d9f36b31d6cd3e4567",
+        "review.py": "3d1b29f8599ede2e725579221123c4d36eb655e9d1bb693a83930676752d6b35",
+        "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+        "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+        "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+        "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+        "web/index.html": "9477b439f203136d42fceb3ba85eca94ab955978885f3b585aef4bf77a926ab0",
+        "web/review.html": "dc3d91d4502b33fe69f88e7fcadda9dccd7c5e2d324340ccfb666f412740c89d",
+        "workspace.py": "6ffcc9b4a0570f185b36c65806238f009a97ba6f380fe1ca6480325490bf745e"
       },
       "checks_passed": 58,
       "checks_total": 58,
@@ -178,8 +181,8 @@
     {
       "client": "CPERS",
       "quarter": "4Q25",
-      "meaning_hash": "8355b9525c24432d1816559fc79f364cbeea676d915ff0d0436f3e70003090fd",
-      "semantic_hash": "bd075118d5413ba33da0d02d1204aa6e617603ff036d5947f9c6eea97b26b48e",
+      "meaning_hash": "1156f7e9a68b62f524b7850d8898cf010287b169d1745d76d5c0a38c77114ad4",
+      "semantic_hash": "1276102fad8314e4724972d3737b931ced7c8cec2d2db14ad6d250032af7177b",
       "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
       "source_hashes": {
         "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -202,25 +205,28 @@
       "implementation_hashes": {
         "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
         "__main__.py": "f39f35e219410779b4beaa952430e805a227a0909c35ff90ad2d0f12a89c0148",
-        "appendix.py": "accde3ebbd82469c68c1ae0f228ee712a840cb53ee4de9ec4ddbdb0c458c9ed2",
+        "appendix.py": "efd923017b6311735058e7bd1905693158faf94c6f91af79686a2ddd6b8a13f8",
         "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
         "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
         "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
         "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
-        "evidence.py": "6a6cc68d190ddb5131e2f052ad397e2e07bb2e77db2c0d3a24c8fe58e5152621",
-        "finance.py": "04a270e537a357b80db4403c88cbdd554426b3dc47a0689d0b68bb653122cf9f",
+        "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+        "finance.py": "b62f038d9756e3da0a4baa9ba2c0e59d257cf10eb50da4fabddbcdcbf68810a6",
         "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
-        "market.py": "fdb828cb83904b057e6c2f0ba8433f503c2345c793a786a4d11ccd13cc7143ba",
+        "market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
         "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
-        "narrative.py": "553f9bc790d3899977555c6bd8f6f67a57905bf51dd062e55a6f7615d072568c",
-        "numeric.py": "77d0ef38d922391f89de2a3a5a01830fbcc52c10806694bfb8787908c002b450",
-        "pipeline.py": "7a9fcf39691fed48b558321c162abb5a48864ff1e3b39f698251a64af7488216",
-        "report.py": "9339e4e2f453c73c9d852b5b2728f51c31f84e610b35a5774e4182fe0281a426",
-        "review.py": "12d19dd396ec46d33229ee509a071c911e89cff6275ac936e3ca74202ae95422",
-        "synthesis.py": "14566deb0b7daa08aedd061d64973fce3002b90db85f78bc48d556a38614a05a",
-        "template.py": "e2f34491b56f7bd8e79c085d3c43d195f2c7dbd1e95ea0f36f1ae4c7ffee352d",
-        "verification.py": "6892c8fbf396348c6d34e70ded348b3100229886e34323e8f17da1efccfa2efb",
-        "workspace.py": "666c8977fb4674c0c0a92a63b7fd9297dbe7a34fcae67d22ab5a67865a018a93"
+        "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
+        "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
+        "pipeline.py": "44f6b43196481677414312a593fea3f5e406851a625ac7ee53048b2c6a6c6da7",
+        "report.py": "91a8227a908bfb3dc82a13b890d088079c026e8352ca10d9f36b31d6cd3e4567",
+        "review.py": "3d1b29f8599ede2e725579221123c4d36eb655e9d1bb693a83930676752d6b35",
+        "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+        "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+        "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+        "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+        "web/index.html": "9477b439f203136d42fceb3ba85eca94ab955978885f3b585aef4bf77a926ab0",
+        "web/review.html": "dc3d91d4502b33fe69f88e7fcadda9dccd7c5e2d324340ccfb666f412740c89d",
+        "workspace.py": "6ffcc9b4a0570f185b36c65806238f009a97ba6f380fe1ca6480325490bf745e"
       },
       "checks_passed": 58,
       "checks_total": 58,
@@ -1424,6 +1430,7 @@
                 "2001",
                 "2011"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1438,6 +1445,7 @@
                 "9.3",
                 "1.45"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1445,12 +1453,16 @@
               "columns": null,
               "kind": null,
               "numbers": [
+                "10.0",
+                "5",
+                "20",
                 "0.44",
                 "8.8",
                 "4.96",
                 "88.0",
                 "0.50"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1463,6 +1475,7 @@
                 "0.70",
                 "2.66"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -1472,23 +1485,13 @@
         {
           "blocks": [
             {
-              "columns": null,
-              "kind": null,
-              "numbers": [
-                "10",
-                "5",
-                "20"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
               "columns": [
                 "Statistic",
                 "Value"
               ],
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": [
                 [
                   "Funded investments",
@@ -1542,6 +1545,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1549,6 +1553,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1556,6 +1561,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1563,6 +1569,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -1575,13 +1582,18 @@
               "columns": null,
               "kind": "annual",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "chart"
             },
             {
               "columns": null,
               "kind": null,
-              "numbers": [],
+              "numbers": [
+                "5.46",
+                "2.66"
+              ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -1600,6 +1612,7 @@
                 "1.52",
                 "1.28"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1614,6 +1627,7 @@
               ],
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": [
                 [
                   "Redwood Logistics Trust",
@@ -1654,6 +1668,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1666,6 +1681,7 @@
                 "187,176",
                 "469,294"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1677,6 +1693,7 @@
                 "1.28",
                 "+10.4"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -1692,6 +1709,7 @@
                 "85.0",
                 "1.16"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1707,14 +1725,23 @@
                 "163,257",
                 "187,176"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [
                 "28"
+              ],
+              "numeric_bindings": [
+                {
+                  "slot": "[[VALUE_A]]",
+                  "source_context": " positively, partially offsetting the office drag. Leverage was conservative at [[VALUE_A]] LTV.",
+                  "source_key": "38154c191eb1c6becdb4d04f1cfa22c1a8ef28a54f794121deda064fbf23dbb3",
+                  "value": "~28%"
+                }
               ],
               "rows": null,
               "type": "paragraph"
@@ -1727,6 +1754,7 @@
                 "41.9",
                 "28.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1738,6 +1766,7 @@
                 "48.6",
                 "22.2"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1749,6 +1778,7 @@
                 "30.8",
                 "50.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1760,6 +1790,7 @@
                 "50.2",
                 "49.3"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1771,6 +1802,7 @@
                 "49.7",
                 "25.3"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1786,17 +1818,44 @@
                 "61,356",
                 "1,367,036"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [
-                "97",
-                "40",
                 "10",
-                "31"
+                "31",
+                "40",
+                "97"
+              ],
+              "numeric_bindings": [
+                {
+                  "slot": "[[VALUE_A]]",
+                  "source_context": "Logistics Center (Dallas) was marked up following the completion of lease-up to [[VALUE_A]] occupancy at rents ahead of underwriting. Harbor [[VALUE_B]] Distribution (Sava",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "97%"
+                },
+                {
+                  "slot": "[[VALUE_B]]",
+                  "source_context": "ion of lease-up to [[VALUE_A]] occupancy at rents ahead of underwriting. Harbor [[VALUE_B]] Distribution (Savannah) appreciated modestly on a new [[VALUE_C]]-year lease to",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "40"
+                },
+                {
+                  "slot": "[[VALUE_C]]",
+                  "source_context": "iting. Harbor [[VALUE_B]] Distribution (Savannah) appreciated modestly on a new [[VALUE_C]]-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) wa",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "10"
+                },
+                {
+                  "slot": "[[VALUE_D]]",
+                  "source_context": "e) was held flat pending a planned expansion. Leverage remained conservative at [[VALUE_D]] loan-to-value.",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "approximately 31%"
+                }
               ],
               "rows": null,
               "type": "paragraph"
@@ -1809,6 +1868,7 @@
                 "43.3",
                 "44.5"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -1824,6 +1884,7 @@
                 "15.0",
                 "2.02"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1834,6 +1895,7 @@
                 "0.1",
                 "0.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1849,13 +1911,15 @@
                 "32,150",
                 "1,036,289"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1871,6 +1935,7 @@
                 "31,290",
                 "469,294"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1878,6 +1943,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1889,6 +1955,7 @@
                 "23.8",
                 "49.7"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -1903,6 +1970,7 @@
               "numbers": [
                 "2"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1913,20 +1981,15 @@
                 "40.0",
                 "2025"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1937,20 +2000,15 @@
                 "25.0",
                 "2025"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1960,6 +2018,7 @@
               "numbers": [
                 "25.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1971,6 +2030,7 @@
                 "30",
                 "2025"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -1981,8 +2041,27 @@
           "blocks": [
             {
               "columns": null,
-              "kind": null,
-              "numbers": [],
+              "kind": "grounded_narrative",
+              "numbers": [
+                "2020",
+                "2021",
+                "2023",
+                "2024"
+              ],
+              "numeric_bindings": [
+                {
+                  "slot": "[[VALUE_A]]",
+                  "source_context": "\u2022 Core real-estate values are stabilizing after the [[VALUE_A]] repricing; U.S. private funds have turned positive over the past year (see exhi",
+                  "source_key": "173d71f39c458b58c502ba6b80d5554b91312c614ceb5a06f14fa51bea034d5b",
+                  "value": "2023\u20132024"
+                },
+                {
+                  "slot": "[[VALUE_B]]",
+                  "source_context": "d re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of [[VALUE_B]] vintage debt at higher rates remains a sector-wide overhang, most acute in offi",
+                  "source_key": "580d2642ed72aeb2e6c21dea5588deec13a209837237901d1dbc46d83bf5015a",
+                  "value": "2020\u20132021"
+                }
+              ],
               "rows": null,
               "type": "paragraph"
             },
@@ -1990,6 +2069,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -1997,6 +2077,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -2007,20 +2088,24 @@
           "blocks": [
             {
               "columns": null,
-              "kind": "allocation",
-              "numbers": [],
-              "rows": null,
-              "type": "chart"
-            },
-            {
-              "columns": null,
               "kind": null,
               "numbers": [
+                "372.0",
+                "1",
                 "436.1",
                 "495.6"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": "allocation",
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": null,
+              "type": "chart"
             }
           ],
           "title": "Allocation Over Time"
@@ -2031,6 +2116,7 @@
               "columns": null,
               "kind": "property",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "chart"
             },
@@ -2038,6 +2124,7 @@
               "columns": null,
               "kind": "geography",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "chart"
             },
@@ -2048,6 +2135,7 @@
                 "12.1",
                 "9.6"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -2065,6 +2153,7 @@
               ],
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": [
                 [
                   "Style / sector concentration",
@@ -2097,6 +2186,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -2109,6 +2199,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -2121,8 +2212,1449 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Total Plan Assets",
+                "Target Allocation",
+                "Allocation / plan",
+                "Market Value",
+                "NAV / plan",
+                "Unfunded",
+                "Unfunded / plan",
+                "Remaining"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "$4,955,864,422",
+                  "$495,586,442",
+                  "10.0%",
+                  "$436,116,069",
+                  "8.8%",
+                  "$7,585,950",
+                  "0.2%",
+                  "$51,884,423"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Portfolio",
+                "Quarter GRS",
+                "Quarter NET",
+                "1 Yr GRS",
+                "1 Yr NET",
+                "3 Yr GRS",
+                "3 Yr NET",
+                "5 Yr GRS"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "1.52%",
+                  "1.28%",
+                  "6.75%",
+                  "5.46%",
+                  "0.54%",
+                  "-0.47%",
+                  "7.28%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Vintage",
+                "Commitment",
+                "Funded",
+                "Unfunded",
+                "Returned",
+                "Market Value",
+                "% NAV"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "2010",
+                  "$40,000,000",
+                  "$67,672,939",
+                  "$0",
+                  "$100,701,907",
+                  "$54,424,849",
+                  "12.48%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "2011",
+                  "$40,000,000",
+                  "$41,594,404",
+                  "$0",
+                  "$48,163,654",
+                  "$41,870,447",
+                  "9.60%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "2013",
+                  "$30,273,946",
+                  "$41,960,593",
+                  "$0",
+                  "$31,486,643",
+                  "$48,575,998",
+                  "11.14%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "2016",
+                  "$15,910,000",
+                  "$20,912,167",
+                  "$0",
+                  "$8,885,455",
+                  "$30,830,684",
+                  "7.07%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "2016",
+                  "$60,000,000",
+                  "$69,338,036",
+                  "$0",
+                  "$41,575,168",
+                  "$50,199,121",
+                  "11.51%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "2017",
+                  "$45,630,580",
+                  "$49,039,514",
+                  "$0",
+                  "$19,198,960",
+                  "$49,729,238",
+                  "11.40%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "2020",
+                  "$40,000,000",
+                  "$41,100,937",
+                  "$0",
+                  "$4,066,721",
+                  "$51,915,756",
+                  "11.90%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "2022",
+                  "$40,000,000",
+                  "$41,206,412",
+                  "$0",
+                  "$4,082,339",
+                  "$43,274,370",
+                  "9.92%"
+                ],
+                [
+                  "Strategic Investments",
+                  "1993",
+                  "$311,814,526",
+                  "$372,825,003",
+                  "$0",
+                  "$258,160,847",
+                  "$370,820,464",
+                  "85.03%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "2011",
+                  "$20,000,000",
+                  "$20,524,591",
+                  "$0",
+                  "$38,908,496",
+                  "$112,620",
+                  "0.03%"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "2015",
+                  "$20,000,000",
+                  "$19,627,826",
+                  "$2,700,807",
+                  "$17,725,939",
+                  "$11,103,969",
+                  "2.55%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "2020",
+                  "$20,000,000",
+                  "$41,481,787",
+                  "$2,147,890",
+                  "$27,958,273",
+                  "$30,237,150",
+                  "6.93%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "2022",
+                  "$20,000,000",
+                  "$20,996,183",
+                  "$2,737,253",
+                  "$3,783,861",
+                  "$23,841,867",
+                  "5.47%"
+                ],
+                [
+                  "Tactical Investments",
+                  "2004",
+                  "$80,000,000",
+                  "$102,630,387",
+                  "$7,585,950",
+                  "$88,376,569",
+                  "$65,295,606",
+                  "14.97%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "2010",
+                  "$391,814,526",
+                  "$475,455,390",
+                  "$7,585,950",
+                  "$346,537,416",
+                  "$436,116,069",
+                  "100.00%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "1993",
+                  "$391,814,526",
+                  "$475,455,390",
+                  "$7,585,950",
+                  "$346,537,416",
+                  "$436,116,069",
+                  "100.00%"
+                ],
+                [
+                  "US Portfolio",
+                  "1993",
+                  "$354,114,526",
+                  "$429,655,390",
+                  "$4,885,143",
+                  "$325,137,416",
+                  "$394,162,120",
+                  "90.38%"
+                ],
+                [
+                  "Ex-US Portfolio",
+                  "2005",
+                  "$37,700,000",
+                  "$45,800,000",
+                  "$2,700,807",
+                  "$21,400,000",
+                  "$41,953,949",
+                  "9.62%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Quarter INC",
+                "Quarter APP",
+                "Quarter GRS",
+                "Quarter NET",
+                "1 Yr INC",
+                "1 Yr APP",
+                "1 Yr GRS",
+                "1 Yr NET"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "0.97%",
+                  "-1.01%",
+                  "-0.04%",
+                  "-0.34%",
+                  "3.91%",
+                  "-0.36%",
+                  "3.54%",
+                  "2.46%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "0.99%",
+                  "0.35%",
+                  "1.34%",
+                  "1.12%",
+                  "3.87%",
+                  "0.92%",
+                  "4.81%",
+                  "3.94%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "1.11%",
+                  "0.31%",
+                  "1.42%",
+                  "1.22%",
+                  "4.87%",
+                  "2.07%",
+                  "7.02%",
+                  "6.15%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "0.35%",
+                  "0.91%",
+                  "1.26%",
+                  "1.04%",
+                  "1.22%",
+                  "3.50%",
+                  "4.75%",
+                  "3.86%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "0.38%",
+                  "0.62%",
+                  "0.99%",
+                  "0.75%",
+                  "1.66%",
+                  "1.72%",
+                  "3.40%",
+                  "2.40%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "1.43%",
+                  "0.38%",
+                  "1.82%",
+                  "1.66%",
+                  "5.92%",
+                  "1.29%",
+                  "7.27%",
+                  "6.61%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "0.68%",
+                  "2.13%",
+                  "2.81%",
+                  "2.69%",
+                  "2.66%",
+                  "4.54%",
+                  "7.29%",
+                  "7.06%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "1.08%",
+                  "0.38%",
+                  "1.46%",
+                  "1.31%",
+                  "4.38%",
+                  "2.10%",
+                  "6.54%",
+                  "5.92%"
+                ],
+                [
+                  "Strategic Investments",
+                  "0.88%",
+                  "0.47%",
+                  "1.36%",
+                  "1.16%",
+                  "3.59%",
+                  "3.40%",
+                  "7.06%",
+                  "6.21%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "1.24%",
+                  "9.30%",
+                  "10.53%",
+                  "10.22%",
+                  "6.69%",
+                  "9.87%",
+                  "17.12%",
+                  "15.70%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "-0.10%",
+                  "-1.53%",
+                  "-1.63%",
+                  "-1.53%",
+                  "-0.48%",
+                  "2.33%",
+                  "1.84%",
+                  "0.77%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "-0.18%",
+                  "4.62%",
+                  "4.44%",
+                  "3.13%",
+                  "0.30%",
+                  "10.28%",
+                  "10.61%",
+                  "8.49%"
+                ],
+                [
+                  "Tactical Investments",
+                  "0.07%",
+                  "2.43%",
+                  "2.50%",
+                  "2.02%",
+                  "3.88%",
+                  "4.68%",
+                  "8.66%",
+                  "6.72%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "0.76%",
+                  "0.76%",
+                  "1.52%",
+                  "1.28%",
+                  "3.19%",
+                  "3.49%",
+                  "6.75%",
+                  "5.46%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "0.76%",
+                  "0.76%",
+                  "1.52%",
+                  "1.28%",
+                  "3.20%",
+                  "3.49%",
+                  "6.75%",
+                  "5.46%"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "0.70%",
+                  "",
+                  "",
+                  "",
+                  "2.66%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "1.72%",
+                  "13.12%",
+                  "14.84%",
+                  "12.78%",
+                  "5.05%",
+                  "8.41%",
+                  "13.10%",
+                  "7.96%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "3 Yr INC",
+                "3 Yr APP",
+                "3 Yr GRS",
+                "3 Yr NET",
+                "5 Yr INC",
+                "5 Yr APP",
+                "5 Yr GRS",
+                "5 Yr NET"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "3.89%",
+                  "-4.11%",
+                  "-0.34%",
+                  "-1.43%",
+                  "3.80%",
+                  "1.64%",
+                  "5.49%",
+                  "4.31%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "3.71%",
+                  "-7.56%",
+                  "-4.07%",
+                  "-4.75%",
+                  "3.55%",
+                  "-1.28%",
+                  "2.24%",
+                  "1.57%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "4.67%",
+                  "-5.01%",
+                  "-0.52%",
+                  "-1.40%",
+                  "4.47%",
+                  "1.94%",
+                  "6.47%",
+                  "5.51%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "1.07%",
+                  "-1.32%",
+                  "-0.26%",
+                  "-1.10%",
+                  "1.97%",
+                  "7.10%",
+                  "9.13%",
+                  "7.36%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "1.60%",
+                  "-9.34%",
+                  "-7.86%",
+                  "-8.08%",
+                  "2.07%",
+                  "0.58%",
+                  "2.63%",
+                  "1.34%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "5.44%",
+                  "-1.38%",
+                  "4.01%",
+                  "3.41%",
+                  "5.44%",
+                  "1.46%",
+                  "6.95%",
+                  "6.40%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "2.66%",
+                  "-2.05%",
+                  "0.57%",
+                  "1.51%",
+                  "2.61%",
+                  "8.60%",
+                  "11.37%",
+                  "10.67%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "3.81%",
+                  "-3.02%",
+                  "0.70%",
+                  "0.76%",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Strategic Investments",
+                  "3.50%",
+                  "-4.66%",
+                  "-1.32%",
+                  "-1.82%",
+                  "3.55%",
+                  "2.12%",
+                  "5.72%",
+                  "4.66%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "6.31%",
+                  "-1.37%",
+                  "4.90%",
+                  "3.67%",
+                  "6.62%",
+                  "0.37%",
+                  "7.01%",
+                  "5.80%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "-0.81%",
+                  "15.38%",
+                  "14.48%",
+                  "11.02%",
+                  "-0.59%",
+                  "31.66%",
+                  "30.91%",
+                  "23.58%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "0.58%",
+                  "15.56%",
+                  "16.21%",
+                  "12.89%",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Tactical Investments",
+                  "3.14%",
+                  "1.14%",
+                  "4.27%",
+                  "2.87%",
+                  "3.58%",
+                  "4.76%",
+                  "8.45%",
+                  "5.90%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "3.12%",
+                  "-2.49%",
+                  "0.54%",
+                  "-0.47%",
+                  "3.32%",
+                  "3.87%",
+                  "7.27%",
+                  "5.57%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.16%",
+                  "-2.53%",
+                  "0.54%",
+                  "-0.47%",
+                  "3.34%",
+                  "3.85%",
+                  "7.28%",
+                  "5.58%"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "-3.02%",
+                  "",
+                  "",
+                  "",
+                  "2.51%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "2.45%",
+                  "5.49%",
+                  "7.98%",
+                  "5.57%",
+                  "2.30%",
+                  "16.36%",
+                  "18.91%",
+                  "16.44%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Since Inception GRS",
+                "Since Inception NET"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "9.82%",
+                  "8.60%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "6.76%",
+                  "5.98%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "7.87%",
+                  "6.87%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "10.32%",
+                  "8.57%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "5.58%",
+                  "4.17%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "6.82%",
+                  "6.24%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "11.37%",
+                  "10.67%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "8.93%",
+                  "7.93%"
+                ],
+                [
+                  "Strategic Investments",
+                  "10.21%",
+                  "9.03%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "",
+                  ""
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "11.41%",
+                  "9.24%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "30.91%",
+                  "23.58%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "12.83%",
+                  "8.60%"
+                ],
+                [
+                  "Tactical Investments",
+                  "12.51%",
+                  "9.38%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "23.10%",
+                  "19.54%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "11.06%",
+                  "9.36%"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "8.12%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "21.13%",
+                  "16.98%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Market Value",
+                "TWR Inception",
+                "Net IRR",
+                "Net Multiple"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "$54,424,849",
+                  "4Q 10",
+                  "9.87%",
+                  "2.29x"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "$41,870,447",
+                  "4Q 11",
+                  "7.00%",
+                  "2.16x"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "$48,575,998",
+                  "1Q 14",
+                  "7.46%",
+                  "1.91x"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "$30,830,684",
+                  "3Q 16",
+                  "8.99%",
+                  "1.90x"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "$50,199,121",
+                  "1Q 17",
+                  "4.56%",
+                  "1.32x"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "$49,729,238",
+                  "4Q 17",
+                  "6.63%",
+                  "1.41x"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "$51,915,756",
+                  "1Q 21",
+                  "10.06%",
+                  "1.36x"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "$43,274,370",
+                  "1Q 22",
+                  "4.77%",
+                  "1.15x"
+                ],
+                [
+                  "Strategic Investments",
+                  "$370,820,464",
+                  "2Q 97",
+                  "12.76%",
+                  "1.58x"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "$112,620",
+                  "4Q 11",
+                  "20.04%",
+                  "1.90x"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "$11,103,969",
+                  "3Q 15",
+                  "9.87%",
+                  "1.47x"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "$30,237,150",
+                  "1Q 21",
+                  "17.97%",
+                  "1.40x"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "$23,841,867",
+                  "2Q 22",
+                  "10.75%",
+                  "1.32x"
+                ],
+                [
+                  "Tactical Investments",
+                  "$65,295,606",
+                  "4Q 04",
+                  "9.98%",
+                  "1.36x"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "$436,116,069",
+                  "1Q 10",
+                  "9.33%",
+                  "1.45x"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "$436,116,069",
+                  "2Q 97",
+                  "10.22%",
+                  "1.45x"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "$0",
+                  "2Q 97",
+                  "",
+                  ""
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "$205,783",
+                  "2Q 10",
+                  "15.05%",
+                  "1.63x"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Beginning MV",
+                "Contrib.",
+                "Distrib.",
+                "Withdrawals",
+                "Income",
+                "Fees",
+                "Apprec.",
+                "Market Value",
+                "LTV"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "$55,152,948",
+                  "",
+                  "$540,923",
+                  "$0",
+                  "$534,035",
+                  "$163,257",
+                  "($557,954)",
+                  "$54,424,849",
+                  "28.2%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "$44,534,756",
+                  "$93,090",
+                  "$0",
+                  "$3,223,810",
+                  "$412,492",
+                  "$93,090",
+                  "$147,009",
+                  "$41,870,447",
+                  "28.0%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "$48,428,074",
+                  "",
+                  "$442,319",
+                  "$0",
+                  "$538,280",
+                  "$95,961",
+                  "$147,925",
+                  "$48,575,998",
+                  "22.2%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "$30,680,965",
+                  "",
+                  "$170,363",
+                  "$0",
+                  "$108,458",
+                  "$66,232",
+                  "$277,855",
+                  "$30,830,684",
+                  "50.0%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "$50,124,792",
+                  "",
+                  "$299,359",
+                  "$0",
+                  "$188,925",
+                  "$121,949",
+                  "$306,712",
+                  "$50,199,121",
+                  "49.3%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "$49,518,338",
+                  "",
+                  "$602,493",
+                  "$0",
+                  "$701,291",
+                  "$76,247",
+                  "$188,349",
+                  "$49,729,238",
+                  "25.3%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "$50,893,041",
+                  "",
+                  "$344,320",
+                  "$0",
+                  "$346,623",
+                  "$61,356",
+                  "$1,081,768",
+                  "$51,915,756",
+                  "31.2%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "$43,089,031",
+                  "$64,634",
+                  "$442,309",
+                  "$0",
+                  "$463,956",
+                  "$64,634",
+                  "$163,692",
+                  "$43,274,370",
+                  "44.5%"
+                ],
+                [
+                  "Strategic Investments",
+                  "$372,421,945",
+                  "$157,723",
+                  "$2,842,086",
+                  "$3,223,810",
+                  "$3,294,061",
+                  "$742,725",
+                  "$1,755,356",
+                  "$370,820,464",
+                  "34.0%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "$110,082",
+                  "",
+                  "$0",
+                  "$0",
+                  "($5,770)",
+                  "$634",
+                  "$8,942",
+                  "$112,620",
+                  "0.0%"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "$10,163,914",
+                  "",
+                  "$96,234",
+                  "$0",
+                  "$125,530",
+                  "$32,150",
+                  "$942,909",
+                  "$11,103,969",
+                  "0.0%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "$30,706,443",
+                  "",
+                  "$0",
+                  "$0",
+                  "($31,854)",
+                  "($31,290)",
+                  "($468,730)",
+                  "$30,237,150",
+                  "42.2%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "$23,456,973",
+                  "",
+                  "$348,746",
+                  "$0",
+                  "($41,647)",
+                  "$306,936",
+                  "$1,082,224",
+                  "$23,841,867",
+                  "49.7%"
+                ],
+                [
+                  "Tactical Investments",
+                  "$64,437,412",
+                  "$0",
+                  "$444,980",
+                  "$0",
+                  "$46,258",
+                  "$308,430",
+                  "$1,565,345",
+                  "$65,295,606",
+                  "37.7%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "$436,859,357",
+                  "$157,723",
+                  "$3,287,067",
+                  "$3,223,810",
+                  "$3,340,319",
+                  "$1,051,156",
+                  "$3,320,702",
+                  "$436,116,069",
+                  "34.5%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "$436,859,357",
+                  "$157,723",
+                  "$3,287,067",
+                  "$3,223,810",
+                  "$3,340,319",
+                  "$1,051,156",
+                  "$3,320,702",
+                  "$436,116,069",
+                  "34.5%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "$206,654",
+                  "",
+                  "$26,465",
+                  "$0",
+                  "$3,441",
+                  "$4,115",
+                  "$26,268",
+                  "$205,783",
+                  "0.0%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Portfolio",
+                "Apartment",
+                "Office",
+                "Industrial",
+                "Retail",
+                "Hotel",
+                "Other"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "23.5%",
+                  "7.9%",
+                  "36.2%",
+                  "8.2%",
+                  "1.2%",
+                  "23.1%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Portfolio",
+                "NE",
+                "Mideast",
+                "E. North Central",
+                "W. North Central",
+                "SE",
+                "SW",
+                "Mountain",
+                "Pacific",
+                "Various US",
+                "Ex-US"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "10.2%",
+                  "13.1%",
+                  "7.1%",
+                  "2.8%",
+                  "17.2%",
+                  "8.3%",
+                  "8.0%",
+                  "17.6%",
+                  "3.6%",
+                  "12.1%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "1 Yr Inc",
+                "1 Yr App",
+                "1 Yr Grs",
+                "1 Yr Net",
+                "2 Yr Inc",
+                "2 Yr App",
+                "2 Yr Grs",
+                "2 Yr Net"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "2.66%",
+                  "",
+                  "",
+                  "",
+                  "0.29%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "5.44%",
+                  "",
+                  "",
+                  "",
+                  "3.16%",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.23%",
+                  "3.46%",
+                  "6.75%",
+                  "5.46%",
+                  "3.07%",
+                  "0.75%",
+                  "3.84%",
+                  "2.61%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "3 Yr Inc",
+                "3 Yr App",
+                "3 Yr Grs",
+                "3 Yr Net",
+                "5 Yr Inc",
+                "5 Yr App",
+                "5 Yr Grs",
+                "5 Yr Net"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "-3.02%",
+                  "",
+                  "",
+                  "",
+                  "2.51%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "-0.52%",
+                  "",
+                  "",
+                  "",
+                  "4.31%",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.17%",
+                  "-2.54%",
+                  "0.54%",
+                  "-0.47%",
+                  "3.35%",
+                  "3.84%",
+                  "7.28%",
+                  "5.58%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "10 Yr Inc",
+                "10 Yr App",
+                "10 Yr Grs",
+                "10 Yr Net",
+                "Inception Inc",
+                "Inception App",
+                "Inception Grs",
+                "Inception Net"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "3.88%",
+                  "",
+                  "",
+                  "",
+                  "8.12%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "5.37%",
+                  "",
+                  "",
+                  "",
+                  "8.65%",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.96%",
+                  "4.41%",
+                  "8.50%",
+                  "6.68%",
+                  "6.41%",
+                  "4.45%",
+                  "11.06%",
+                  "9.37%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "TWR Inception"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "2Q 97"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "2Q 97"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "2Q 97"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "1 Yr",
+                "2 Yr",
+                "3 Yr",
+                "5 Yr",
+                "10 Yr",
+                "Inception"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "2.66%",
+                  "0.29%",
+                  "-3.02%",
+                  "2.51%",
+                  "3.88%",
+                  "8.12%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "5.46%",
+                  "2.61%",
+                  "-0.47%",
+                  "5.58%",
+                  "6.68%",
+                  "9.37%"
+                ]
+              ],
+              "type": "table"
             }
           ],
           "title": "Appendix A: Quarterly Flash Report"
@@ -3200,6 +4732,7 @@
                 "2001",
                 "2011"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3214,6 +4747,7 @@
                 "9.3",
                 "1.45"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3221,12 +4755,16 @@
               "columns": null,
               "kind": null,
               "numbers": [
+                "10.0",
+                "5",
+                "20",
                 "0.44",
                 "8.8",
                 "4.96",
                 "88.0",
                 "0.50"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3239,6 +4777,7 @@
                 "0.70",
                 "2.66"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3248,23 +4787,13 @@
         {
           "blocks": [
             {
-              "columns": null,
-              "kind": null,
-              "numbers": [
-                "10",
-                "5",
-                "20"
-              ],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
               "columns": [
                 "Statistic",
                 "Value"
               ],
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": [
                 [
                   "Funded investments",
@@ -3318,6 +4847,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3325,6 +4855,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3332,6 +4863,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3339,6 +4871,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3351,13 +4884,18 @@
               "columns": null,
               "kind": "annual",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "chart"
             },
             {
               "columns": null,
               "kind": null,
-              "numbers": [],
+              "numbers": [
+                "5.46",
+                "2.66"
+              ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3376,6 +4914,7 @@
                 "1.52",
                 "1.28"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3390,6 +4929,7 @@
               ],
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": [
                 [
                   "Redwood Logistics Trust",
@@ -3430,6 +4970,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3442,6 +4983,7 @@
                 "187,176",
                 "469,294"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3453,6 +4995,7 @@
                 "1.28",
                 "+10.4"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3468,6 +5011,7 @@
                 "85.0",
                 "1.16"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3483,14 +5027,23 @@
                 "163,257",
                 "187,176"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [
                 "28"
+              ],
+              "numeric_bindings": [
+                {
+                  "slot": "[[VALUE_A]]",
+                  "source_context": " positively, partially offsetting the office drag. Leverage was conservative at [[VALUE_A]] LTV.",
+                  "source_key": "38154c191eb1c6becdb4d04f1cfa22c1a8ef28a54f794121deda064fbf23dbb3",
+                  "value": "~28%"
+                }
               ],
               "rows": null,
               "type": "paragraph"
@@ -3503,6 +5056,7 @@
                 "41.9",
                 "28.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3514,6 +5068,7 @@
                 "48.6",
                 "22.2"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3525,6 +5080,7 @@
                 "30.8",
                 "50.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3536,6 +5092,7 @@
                 "50.2",
                 "49.3"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3547,6 +5104,7 @@
                 "49.7",
                 "25.3"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3562,17 +5120,44 @@
                 "61,356",
                 "1,367,036"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [
-                "97",
-                "40",
                 "10",
-                "31"
+                "31",
+                "40",
+                "97"
+              ],
+              "numeric_bindings": [
+                {
+                  "slot": "[[VALUE_A]]",
+                  "source_context": "Logistics Center (Dallas) was marked up following the completion of lease-up to [[VALUE_A]] occupancy at rents ahead of underwriting. Harbor [[VALUE_B]] Distribution (Sava",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "97%"
+                },
+                {
+                  "slot": "[[VALUE_B]]",
+                  "source_context": "ion of lease-up to [[VALUE_A]] occupancy at rents ahead of underwriting. Harbor [[VALUE_B]] Distribution (Savannah) appreciated modestly on a new [[VALUE_C]]-year lease to",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "40"
+                },
+                {
+                  "slot": "[[VALUE_C]]",
+                  "source_context": "iting. Harbor [[VALUE_B]] Distribution (Savannah) appreciated modestly on a new [[VALUE_C]]-year lease to an investment-grade tenant. Cedar Ridge Infill (Inland Empire) wa",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "10"
+                },
+                {
+                  "slot": "[[VALUE_D]]",
+                  "source_context": "e) was held flat pending a planned expansion. Leverage remained conservative at [[VALUE_D]] loan-to-value.",
+                  "source_key": "42a70d93a6efe1b812ebeafae2eddedf9cce02020b5e67e7370dc032bd2e7e7c",
+                  "value": "approximately 31%"
+                }
               ],
               "rows": null,
               "type": "paragraph"
@@ -3585,6 +5170,7 @@
                 "43.3",
                 "44.5"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3600,6 +5186,7 @@
                 "15.0",
                 "2.02"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3610,6 +5197,7 @@
                 "0.1",
                 "0.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3625,13 +5213,15 @@
                 "32,150",
                 "1,036,289"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3647,6 +5237,7 @@
                 "31,290",
                 "469,294"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3654,6 +5245,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3665,6 +5257,7 @@
                 "23.8",
                 "49.7"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3679,6 +5272,7 @@
               "numbers": [
                 "2"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3689,20 +5283,15 @@
                 "40.0",
                 "2025"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3713,20 +5302,15 @@
                 "25.0",
                 "2025"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
             {
               "columns": null,
-              "kind": null,
+              "kind": "grounded_narrative",
               "numbers": [],
-              "rows": null,
-              "type": "paragraph"
-            },
-            {
-              "columns": null,
-              "kind": null,
-              "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3736,6 +5320,7 @@
               "numbers": [
                 "25.0"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3747,6 +5332,7 @@
                 "30",
                 "2025"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3757,8 +5343,27 @@
           "blocks": [
             {
               "columns": null,
-              "kind": null,
-              "numbers": [],
+              "kind": "grounded_narrative",
+              "numbers": [
+                "2020",
+                "2021",
+                "2023",
+                "2024"
+              ],
+              "numeric_bindings": [
+                {
+                  "slot": "[[VALUE_A]]",
+                  "source_context": "\u2022 Core real-estate values are stabilizing after the [[VALUE_A]] repricing; U.S. private funds have turned positive over the past year (see exhi",
+                  "source_key": "173d71f39c458b58c502ba6b80d5554b91312c614ceb5a06f14fa51bea034d5b",
+                  "value": "2023\u20132024"
+                },
+                {
+                  "slot": "[[VALUE_B]]",
+                  "source_context": "d re-widen bid-ask spreads and stall the transaction recovery. \u2022 Refinancing of [[VALUE_B]] vintage debt at higher rates remains a sector-wide overhang, most acute in offi",
+                  "source_key": "580d2642ed72aeb2e6c21dea5588deec13a209837237901d1dbc46d83bf5015a",
+                  "value": "2020\u20132021"
+                }
+              ],
               "rows": null,
               "type": "paragraph"
             },
@@ -3766,6 +5371,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             },
@@ -3773,6 +5379,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3783,20 +5390,24 @@
           "blocks": [
             {
               "columns": null,
-              "kind": "allocation",
-              "numbers": [],
-              "rows": null,
-              "type": "chart"
-            },
-            {
-              "columns": null,
               "kind": null,
               "numbers": [
+                "372.0",
+                "1",
                 "436.1",
                 "495.6"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
+            },
+            {
+              "columns": null,
+              "kind": "allocation",
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": null,
+              "type": "chart"
             }
           ],
           "title": "Allocation Over Time"
@@ -3807,6 +5418,7 @@
               "columns": null,
               "kind": "property",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "chart"
             },
@@ -3814,6 +5426,7 @@
               "columns": null,
               "kind": "geography",
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "chart"
             },
@@ -3824,6 +5437,7 @@
                 "12.1",
                 "9.6"
               ],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3841,6 +5455,7 @@
               ],
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": [
                 [
                   "Style / sector concentration",
@@ -3873,6 +5488,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3885,6 +5501,7 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
             }
@@ -3897,8 +5514,1449 @@
               "columns": null,
               "kind": null,
               "numbers": [],
+              "numeric_bindings": [],
               "rows": null,
               "type": "paragraph"
+            },
+            {
+              "columns": [
+                "Total Plan Assets",
+                "Target Allocation",
+                "Allocation / plan",
+                "Market Value",
+                "NAV / plan",
+                "Unfunded",
+                "Unfunded / plan",
+                "Remaining"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "$4,955,864,422",
+                  "$495,586,442",
+                  "10.0%",
+                  "$436,116,069",
+                  "8.8%",
+                  "$7,585,950",
+                  "0.2%",
+                  "$51,884,423"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Portfolio",
+                "Quarter GRS",
+                "Quarter NET",
+                "1 Yr GRS",
+                "1 Yr NET",
+                "3 Yr GRS",
+                "3 Yr NET",
+                "5 Yr GRS"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "1.52%",
+                  "1.28%",
+                  "6.75%",
+                  "5.46%",
+                  "0.54%",
+                  "-0.47%",
+                  "7.28%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Vintage",
+                "Commitment",
+                "Funded",
+                "Unfunded",
+                "Returned",
+                "Market Value",
+                "% NAV"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "2010",
+                  "$40,000,000",
+                  "$67,672,939",
+                  "$0",
+                  "$100,701,907",
+                  "$54,424,849",
+                  "12.48%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "2011",
+                  "$40,000,000",
+                  "$41,594,404",
+                  "$0",
+                  "$48,163,654",
+                  "$41,870,447",
+                  "9.60%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "2013",
+                  "$30,273,946",
+                  "$41,960,593",
+                  "$0",
+                  "$31,486,643",
+                  "$48,575,998",
+                  "11.14%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "2016",
+                  "$15,910,000",
+                  "$20,912,167",
+                  "$0",
+                  "$8,885,455",
+                  "$30,830,684",
+                  "7.07%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "2016",
+                  "$60,000,000",
+                  "$69,338,036",
+                  "$0",
+                  "$41,575,168",
+                  "$50,199,121",
+                  "11.51%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "2017",
+                  "$45,630,580",
+                  "$49,039,514",
+                  "$0",
+                  "$19,198,960",
+                  "$49,729,238",
+                  "11.40%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "2020",
+                  "$40,000,000",
+                  "$41,100,937",
+                  "$0",
+                  "$4,066,721",
+                  "$51,915,756",
+                  "11.90%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "2022",
+                  "$40,000,000",
+                  "$41,206,412",
+                  "$0",
+                  "$4,082,339",
+                  "$43,274,370",
+                  "9.92%"
+                ],
+                [
+                  "Strategic Investments",
+                  "1993",
+                  "$311,814,526",
+                  "$372,825,003",
+                  "$0",
+                  "$258,160,847",
+                  "$370,820,464",
+                  "85.03%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "2011",
+                  "$20,000,000",
+                  "$20,524,591",
+                  "$0",
+                  "$38,908,496",
+                  "$112,620",
+                  "0.03%"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "2015",
+                  "$20,000,000",
+                  "$19,627,826",
+                  "$2,700,807",
+                  "$17,725,939",
+                  "$11,103,969",
+                  "2.55%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "2020",
+                  "$20,000,000",
+                  "$41,481,787",
+                  "$2,147,890",
+                  "$27,958,273",
+                  "$30,237,150",
+                  "6.93%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "2022",
+                  "$20,000,000",
+                  "$20,996,183",
+                  "$2,737,253",
+                  "$3,783,861",
+                  "$23,841,867",
+                  "5.47%"
+                ],
+                [
+                  "Tactical Investments",
+                  "2004",
+                  "$80,000,000",
+                  "$102,630,387",
+                  "$7,585,950",
+                  "$88,376,569",
+                  "$65,295,606",
+                  "14.97%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "2010",
+                  "$391,814,526",
+                  "$475,455,390",
+                  "$7,585,950",
+                  "$346,537,416",
+                  "$436,116,069",
+                  "100.00%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "1993",
+                  "$391,814,526",
+                  "$475,455,390",
+                  "$7,585,950",
+                  "$346,537,416",
+                  "$436,116,069",
+                  "100.00%"
+                ],
+                [
+                  "US Portfolio",
+                  "1993",
+                  "$354,114,526",
+                  "$429,655,390",
+                  "$4,885,143",
+                  "$325,137,416",
+                  "$394,162,120",
+                  "90.38%"
+                ],
+                [
+                  "Ex-US Portfolio",
+                  "2005",
+                  "$37,700,000",
+                  "$45,800,000",
+                  "$2,700,807",
+                  "$21,400,000",
+                  "$41,953,949",
+                  "9.62%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Quarter INC",
+                "Quarter APP",
+                "Quarter GRS",
+                "Quarter NET",
+                "1 Yr INC",
+                "1 Yr APP",
+                "1 Yr GRS",
+                "1 Yr NET"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "0.97%",
+                  "-1.01%",
+                  "-0.04%",
+                  "-0.34%",
+                  "3.91%",
+                  "-0.36%",
+                  "3.54%",
+                  "2.46%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "0.99%",
+                  "0.35%",
+                  "1.34%",
+                  "1.12%",
+                  "3.87%",
+                  "0.92%",
+                  "4.81%",
+                  "3.94%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "1.11%",
+                  "0.31%",
+                  "1.42%",
+                  "1.22%",
+                  "4.87%",
+                  "2.07%",
+                  "7.02%",
+                  "6.15%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "0.35%",
+                  "0.91%",
+                  "1.26%",
+                  "1.04%",
+                  "1.22%",
+                  "3.50%",
+                  "4.75%",
+                  "3.86%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "0.38%",
+                  "0.62%",
+                  "0.99%",
+                  "0.75%",
+                  "1.66%",
+                  "1.72%",
+                  "3.40%",
+                  "2.40%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "1.43%",
+                  "0.38%",
+                  "1.82%",
+                  "1.66%",
+                  "5.92%",
+                  "1.29%",
+                  "7.27%",
+                  "6.61%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "0.68%",
+                  "2.13%",
+                  "2.81%",
+                  "2.69%",
+                  "2.66%",
+                  "4.54%",
+                  "7.29%",
+                  "7.06%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "1.08%",
+                  "0.38%",
+                  "1.46%",
+                  "1.31%",
+                  "4.38%",
+                  "2.10%",
+                  "6.54%",
+                  "5.92%"
+                ],
+                [
+                  "Strategic Investments",
+                  "0.88%",
+                  "0.47%",
+                  "1.36%",
+                  "1.16%",
+                  "3.59%",
+                  "3.40%",
+                  "7.06%",
+                  "6.21%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "1.24%",
+                  "9.30%",
+                  "10.53%",
+                  "10.22%",
+                  "6.69%",
+                  "9.87%",
+                  "17.12%",
+                  "15.70%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "-0.10%",
+                  "-1.53%",
+                  "-1.63%",
+                  "-1.53%",
+                  "-0.48%",
+                  "2.33%",
+                  "1.84%",
+                  "0.77%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "-0.18%",
+                  "4.62%",
+                  "4.44%",
+                  "3.13%",
+                  "0.30%",
+                  "10.28%",
+                  "10.61%",
+                  "8.49%"
+                ],
+                [
+                  "Tactical Investments",
+                  "0.07%",
+                  "2.43%",
+                  "2.50%",
+                  "2.02%",
+                  "3.88%",
+                  "4.68%",
+                  "8.66%",
+                  "6.72%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "0.76%",
+                  "0.76%",
+                  "1.52%",
+                  "1.28%",
+                  "3.19%",
+                  "3.49%",
+                  "6.75%",
+                  "5.46%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "0.76%",
+                  "0.76%",
+                  "1.52%",
+                  "1.28%",
+                  "3.20%",
+                  "3.49%",
+                  "6.75%",
+                  "5.46%"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "0.70%",
+                  "",
+                  "",
+                  "",
+                  "2.66%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "1.72%",
+                  "13.12%",
+                  "14.84%",
+                  "12.78%",
+                  "5.05%",
+                  "8.41%",
+                  "13.10%",
+                  "7.96%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "3 Yr INC",
+                "3 Yr APP",
+                "3 Yr GRS",
+                "3 Yr NET",
+                "5 Yr INC",
+                "5 Yr APP",
+                "5 Yr GRS",
+                "5 Yr NET"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "3.89%",
+                  "-4.11%",
+                  "-0.34%",
+                  "-1.43%",
+                  "3.80%",
+                  "1.64%",
+                  "5.49%",
+                  "4.31%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "3.71%",
+                  "-7.56%",
+                  "-4.07%",
+                  "-4.75%",
+                  "3.55%",
+                  "-1.28%",
+                  "2.24%",
+                  "1.57%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "4.67%",
+                  "-5.01%",
+                  "-0.52%",
+                  "-1.40%",
+                  "4.47%",
+                  "1.94%",
+                  "6.47%",
+                  "5.51%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "1.07%",
+                  "-1.32%",
+                  "-0.26%",
+                  "-1.10%",
+                  "1.97%",
+                  "7.10%",
+                  "9.13%",
+                  "7.36%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "1.60%",
+                  "-9.34%",
+                  "-7.86%",
+                  "-8.08%",
+                  "2.07%",
+                  "0.58%",
+                  "2.63%",
+                  "1.34%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "5.44%",
+                  "-1.38%",
+                  "4.01%",
+                  "3.41%",
+                  "5.44%",
+                  "1.46%",
+                  "6.95%",
+                  "6.40%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "2.66%",
+                  "-2.05%",
+                  "0.57%",
+                  "1.51%",
+                  "2.61%",
+                  "8.60%",
+                  "11.37%",
+                  "10.67%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "3.81%",
+                  "-3.02%",
+                  "0.70%",
+                  "0.76%",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Strategic Investments",
+                  "3.50%",
+                  "-4.66%",
+                  "-1.32%",
+                  "-1.82%",
+                  "3.55%",
+                  "2.12%",
+                  "5.72%",
+                  "4.66%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "6.31%",
+                  "-1.37%",
+                  "4.90%",
+                  "3.67%",
+                  "6.62%",
+                  "0.37%",
+                  "7.01%",
+                  "5.80%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "-0.81%",
+                  "15.38%",
+                  "14.48%",
+                  "11.02%",
+                  "-0.59%",
+                  "31.66%",
+                  "30.91%",
+                  "23.58%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "0.58%",
+                  "15.56%",
+                  "16.21%",
+                  "12.89%",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Tactical Investments",
+                  "3.14%",
+                  "1.14%",
+                  "4.27%",
+                  "2.87%",
+                  "3.58%",
+                  "4.76%",
+                  "8.45%",
+                  "5.90%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "3.12%",
+                  "-2.49%",
+                  "0.54%",
+                  "-0.47%",
+                  "3.32%",
+                  "3.87%",
+                  "7.27%",
+                  "5.57%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.16%",
+                  "-2.53%",
+                  "0.54%",
+                  "-0.47%",
+                  "3.34%",
+                  "3.85%",
+                  "7.28%",
+                  "5.58%"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "-3.02%",
+                  "",
+                  "",
+                  "",
+                  "2.51%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "2.45%",
+                  "5.49%",
+                  "7.98%",
+                  "5.57%",
+                  "2.30%",
+                  "16.36%",
+                  "18.91%",
+                  "16.44%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Since Inception GRS",
+                "Since Inception NET"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "9.82%",
+                  "8.60%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "6.76%",
+                  "5.98%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "7.87%",
+                  "6.87%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "10.32%",
+                  "8.57%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "5.58%",
+                  "4.17%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "6.82%",
+                  "6.24%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "11.37%",
+                  "10.67%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "8.93%",
+                  "7.93%"
+                ],
+                [
+                  "Strategic Investments",
+                  "10.21%",
+                  "9.03%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "",
+                  ""
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "11.41%",
+                  "9.24%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "30.91%",
+                  "23.58%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "12.83%",
+                  "8.60%"
+                ],
+                [
+                  "Tactical Investments",
+                  "12.51%",
+                  "9.38%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "23.10%",
+                  "19.54%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "11.06%",
+                  "9.36%"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "8.12%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "21.13%",
+                  "16.98%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Market Value",
+                "TWR Inception",
+                "Net IRR",
+                "Net Multiple"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "$54,424,849",
+                  "4Q 10",
+                  "9.87%",
+                  "2.29x"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "$41,870,447",
+                  "4Q 11",
+                  "7.00%",
+                  "2.16x"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "$48,575,998",
+                  "1Q 14",
+                  "7.46%",
+                  "1.91x"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "$30,830,684",
+                  "3Q 16",
+                  "8.99%",
+                  "1.90x"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "$50,199,121",
+                  "1Q 17",
+                  "4.56%",
+                  "1.32x"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "$49,729,238",
+                  "4Q 17",
+                  "6.63%",
+                  "1.41x"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "$51,915,756",
+                  "1Q 21",
+                  "10.06%",
+                  "1.36x"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "$43,274,370",
+                  "1Q 22",
+                  "4.77%",
+                  "1.15x"
+                ],
+                [
+                  "Strategic Investments",
+                  "$370,820,464",
+                  "2Q 97",
+                  "12.76%",
+                  "1.58x"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "$112,620",
+                  "4Q 11",
+                  "20.04%",
+                  "1.90x"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "$11,103,969",
+                  "3Q 15",
+                  "9.87%",
+                  "1.47x"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "$30,237,150",
+                  "1Q 21",
+                  "17.97%",
+                  "1.40x"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "$23,841,867",
+                  "2Q 22",
+                  "10.75%",
+                  "1.32x"
+                ],
+                [
+                  "Tactical Investments",
+                  "$65,295,606",
+                  "4Q 04",
+                  "9.98%",
+                  "1.36x"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "$436,116,069",
+                  "1Q 10",
+                  "9.33%",
+                  "1.45x"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "$436,116,069",
+                  "2Q 97",
+                  "10.22%",
+                  "1.45x"
+                ],
+                [
+                  "CPERS Custom Benchmark",
+                  "$0",
+                  "2Q 97",
+                  "",
+                  ""
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "$205,783",
+                  "2Q 10",
+                  "15.05%",
+                  "1.63x"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "Beginning MV",
+                "Contrib.",
+                "Distrib.",
+                "Withdrawals",
+                "Income",
+                "Fees",
+                "Apprec.",
+                "Market Value",
+                "LTV"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cornerstone Core Property Fund",
+                  "$55,152,948",
+                  "",
+                  "$540,923",
+                  "$0",
+                  "$534,035",
+                  "$163,257",
+                  "($557,954)",
+                  "$54,424,849",
+                  "28.2%"
+                ],
+                [
+                  "Beacon Diversified Property Trust",
+                  "$44,534,756",
+                  "$93,090",
+                  "$0",
+                  "$3,223,810",
+                  "$412,492",
+                  "$93,090",
+                  "$147,009",
+                  "$41,870,447",
+                  "28.0%"
+                ],
+                [
+                  "Summit Multifamily Partners",
+                  "$48,428,074",
+                  "",
+                  "$442,319",
+                  "$0",
+                  "$538,280",
+                  "$95,961",
+                  "$147,925",
+                  "$48,575,998",
+                  "22.2%"
+                ],
+                [
+                  "Whitfield Diversified Property Fund",
+                  "$30,680,965",
+                  "",
+                  "$170,363",
+                  "$0",
+                  "$108,458",
+                  "$66,232",
+                  "$277,855",
+                  "$30,830,684",
+                  "50.0%"
+                ],
+                [
+                  "Silverline Core-Plus Fund",
+                  "$50,124,792",
+                  "",
+                  "$299,359",
+                  "$0",
+                  "$188,925",
+                  "$121,949",
+                  "$306,712",
+                  "$50,199,121",
+                  "49.3%"
+                ],
+                [
+                  "Kestrel U.S. Real Estate Fund",
+                  "$49,518,338",
+                  "",
+                  "$602,493",
+                  "$0",
+                  "$701,291",
+                  "$76,247",
+                  "$188,349",
+                  "$49,729,238",
+                  "25.3%"
+                ],
+                [
+                  "Redwood Logistics Trust",
+                  "$50,893,041",
+                  "",
+                  "$344,320",
+                  "$0",
+                  "$346,623",
+                  "$61,356",
+                  "$1,081,768",
+                  "$51,915,756",
+                  "31.2%"
+                ],
+                [
+                  "Harborview Industrial Fund",
+                  "$43,089,031",
+                  "$64,634",
+                  "$442,309",
+                  "$0",
+                  "$463,956",
+                  "$64,634",
+                  "$163,692",
+                  "$43,274,370",
+                  "44.5%"
+                ],
+                [
+                  "Strategic Investments",
+                  "$372,421,945",
+                  "$157,723",
+                  "$2,842,086",
+                  "$3,223,810",
+                  "$3,294,061",
+                  "$742,725",
+                  "$1,755,356",
+                  "$370,820,464",
+                  "34.0%"
+                ],
+                [
+                  "Tidewater Distressed Realty Fund",
+                  "$110,082",
+                  "",
+                  "$0",
+                  "$0",
+                  "($5,770)",
+                  "$634",
+                  "$8,942",
+                  "$112,620",
+                  "0.0%"
+                ],
+                [
+                  "Ironwood Value-Add Fund III",
+                  "$10,163,914",
+                  "",
+                  "$96,234",
+                  "$0",
+                  "$125,530",
+                  "$32,150",
+                  "$942,909",
+                  "$11,103,969",
+                  "0.0%"
+                ],
+                [
+                  "Meridian Opportunity Fund V",
+                  "$30,706,443",
+                  "",
+                  "$0",
+                  "$0",
+                  "($31,854)",
+                  "($31,290)",
+                  "($468,730)",
+                  "$30,237,150",
+                  "42.2%"
+                ],
+                [
+                  "Blackford Special Situations Fund II",
+                  "$23,456,973",
+                  "",
+                  "$348,746",
+                  "$0",
+                  "($41,647)",
+                  "$306,936",
+                  "$1,082,224",
+                  "$23,841,867",
+                  "49.7%"
+                ],
+                [
+                  "Tactical Investments",
+                  "$64,437,412",
+                  "$0",
+                  "$444,980",
+                  "$0",
+                  "$46,258",
+                  "$308,430",
+                  "$1,565,345",
+                  "$65,295,606",
+                  "37.7%"
+                ],
+                [
+                  "Vectera Initiated Investments",
+                  "$436,859,357",
+                  "$157,723",
+                  "$3,287,067",
+                  "$3,223,810",
+                  "$3,340,319",
+                  "$1,051,156",
+                  "$3,320,702",
+                  "$436,116,069",
+                  "34.5%"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "$436,859,357",
+                  "$157,723",
+                  "$3,287,067",
+                  "$3,223,810",
+                  "$3,340,319",
+                  "$1,051,156",
+                  "$3,320,702",
+                  "$436,116,069",
+                  "34.5%"
+                ],
+                [
+                  "Realized Vectera Initiated Investments",
+                  "$206,654",
+                  "",
+                  "$26,465",
+                  "$0",
+                  "$3,441",
+                  "$4,115",
+                  "$26,268",
+                  "$205,783",
+                  "0.0%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Portfolio",
+                "Apartment",
+                "Office",
+                "Industrial",
+                "Retail",
+                "Hotel",
+                "Other"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "23.5%",
+                  "7.9%",
+                  "36.2%",
+                  "8.2%",
+                  "1.2%",
+                  "23.1%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Portfolio",
+                "NE",
+                "Mideast",
+                "E. North Central",
+                "W. North Central",
+                "SE",
+                "SW",
+                "Mountain",
+                "Pacific",
+                "Various US",
+                "Ex-US"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "10.2%",
+                  "13.1%",
+                  "7.1%",
+                  "2.8%",
+                  "17.2%",
+                  "8.3%",
+                  "8.0%",
+                  "17.6%",
+                  "3.6%",
+                  "12.1%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "1 Yr Inc",
+                "1 Yr App",
+                "1 Yr Grs",
+                "1 Yr Net",
+                "2 Yr Inc",
+                "2 Yr App",
+                "2 Yr Grs",
+                "2 Yr Net"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "2.66%",
+                  "",
+                  "",
+                  "",
+                  "0.29%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "5.44%",
+                  "",
+                  "",
+                  "",
+                  "3.16%",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.23%",
+                  "3.46%",
+                  "6.75%",
+                  "5.46%",
+                  "3.07%",
+                  "0.75%",
+                  "3.84%",
+                  "2.61%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "3 Yr Inc",
+                "3 Yr App",
+                "3 Yr Grs",
+                "3 Yr Net",
+                "5 Yr Inc",
+                "5 Yr App",
+                "5 Yr Grs",
+                "5 Yr Net"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "-3.02%",
+                  "",
+                  "",
+                  "",
+                  "2.51%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "-0.52%",
+                  "",
+                  "",
+                  "",
+                  "4.31%",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.17%",
+                  "-2.54%",
+                  "0.54%",
+                  "-0.47%",
+                  "3.35%",
+                  "3.84%",
+                  "7.28%",
+                  "5.58%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "10 Yr Inc",
+                "10 Yr App",
+                "10 Yr Grs",
+                "10 Yr Net",
+                "Inception Inc",
+                "Inception App",
+                "Inception Grs",
+                "Inception Net"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "",
+                  "",
+                  "",
+                  "3.88%",
+                  "",
+                  "",
+                  "",
+                  "8.12%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "5.37%",
+                  "",
+                  "",
+                  "",
+                  "8.65%",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "3.96%",
+                  "4.41%",
+                  "8.50%",
+                  "6.68%",
+                  "6.41%",
+                  "4.45%",
+                  "11.06%",
+                  "9.37%"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "TWR Inception"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "2Q 97"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "2Q 97"
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "2Q 97"
+                ]
+              ],
+              "type": "table"
+            },
+            {
+              "columns": [
+                "Investment",
+                "1 Yr",
+                "2 Yr",
+                "3 Yr",
+                "5 Yr",
+                "10 Yr",
+                "Inception"
+              ],
+              "kind": null,
+              "numbers": [],
+              "numeric_bindings": [],
+              "rows": [
+                [
+                  "CPERS Custom Benchmark",
+                  "2.66%",
+                  "0.29%",
+                  "-3.02%",
+                  "2.51%",
+                  "3.88%",
+                  "8.12%"
+                ],
+                [
+                  "NPI + 50 BPS",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Cascadia Public Employees' Retirement System Portfolio",
+                  "5.46%",
+                  "2.61%",
+                  "-0.47%",
+                  "5.58%",
+                  "6.68%",
+                  "9.37%"
+                ]
+              ],
+              "type": "table"
             }
           ],
           "title": "Appendix A: Quarterly Flash Report"

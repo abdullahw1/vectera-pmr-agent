@@ -103,8 +103,64 @@ def test_fund_missing_from_cash_sheet_blocks_without_crashing(tmp_path):
     sheet.delete_rows(row[0].row)
     book.save(path)
     data, _, ledger = calculate(root)
-    assert "Blackford Special Situations Fund II" not in {f["name"] for f in data["funds"]}
+    fund = next(f for f in data["funds"] if f["name"] == "Blackford Special Situations Fund II")
+    assert len(data["funds"]) == 12 and fund["nav"] > 0
+    assert fund["contribution"] is None and fund["ltv"] is None
+    assert not data["attribution_complete"]
+    assert all(
+        not any("contributor" in role or "detractor" in role for role in f["roles"]) for f in data["funds"]
+    )
     assert any(x["code"] == "fund_row_missing" and x["severity"] == "blocker" for x in ledger.issues)
+    payload, summary = generate(root, tmp_path / "out", "CPERS", "4Q25")
+    assert len(payload["data"]["activity"]["open"]) == 2
+    assert payload["data"]["portfolio"]["approved_total"] == Decimal("456814526.42")
+    assert payload["data"]["portfolio"]["funded_count"] == 12
+    assert summary["checks_passed"] < summary["checks_total"]
+
+
+def test_missing_largest_position_cash_keeps_nav_rank(tmp_path):
+    root = copied(tmp_path)
+    path = root / "flash_4Q25.xlsx"
+    book = openpyxl.load_workbook(path)
+    sheet = book["CashActivity(Agg)"]
+    row = next(r for r in sheet if r[0].value == "Cornerstone Core Property Fund")
+    sheet.delete_rows(row[0].row)
+    book.save(path)
+    payload, _ = generate(root, tmp_path / "out", "CPERS", "4Q25")
+    fund = next(f for f in payload["data"]["funds"] if f["name"] == "Cornerstone Core Property Fund")
+    assert fund["roles"] == ["largest individual position"]
+    assert fund["contribution"] is None
+    text = " ".join(b.get("text", "") for s in payload["sections"] for b in s["blocks"])
+    assert "no partial performance ranking" in text
+
+
+@pytest.mark.parametrize("name", ["Blackford Special Situations Fund II", "Cornerstone Core Property Fund"])
+def test_blank_funded_nav_preserves_inventory_and_blocks_position_ranking(tmp_path, name):
+    root = copied(tmp_path)
+    path = root / "flash_4Q25.xlsx"
+    book = openpyxl.load_workbook(path)
+    sheet = book["FundingStatus(Agg)"]
+    header = next(r for r in sheet if r[0].value == "Investment")
+    column = next(c.column for c in header if c.value == "Market Value ($)")
+    row = next(r for r in sheet if r[0].value == name)
+    coordinate = sheet.cell(row[0].row, column).coordinate
+    sheet[coordinate].value = None
+    book.save(path)
+    payload, summary = generate(root, tmp_path / "out", "CPERS", "4Q25")
+    data = payload["data"]
+    fund = next(f for f in data["funds"] if f["name"] == name)
+    assert fund["nav"] is None and fund["contribution"] is not None
+    assert data["portfolio"]["funded_count"] == 12
+    assert len(data["activity"]["open"]) == 2
+    assert all(e["name"] != name for e in data["activity"]["open"])
+    assert data["portfolio"]["approved_total"] == Decimal("456814526.42")
+    assert all(not any("position" in role for role in f["roles"]) for f in data["funds"])
+    fact = payload["ledger"]["facts"][fund["nav_id"]]
+    assert fact["value"] is None and fact["source"]["cell"] == coordinate
+    assert any(i["code"] == "positions_incomplete" and i["severity"] == "blocker" for i in summary["issues"])
+    assert any(i["code"] == "fund_value_missing" for i in summary["issues"])
+    assert (tmp_path / "out/report.pdf").is_file()
+    assert not (tmp_path / "out/approval.json").exists()
 
 
 def test_fund_missing_from_returns_sheet_keeps_flash_figures(tmp_path):
@@ -134,8 +190,13 @@ def test_conflicting_ic_amounts_block_instead_of_guessing(tmp_path):
     assert northgate["amount"] is None
     assert any(x["code"] == "ic_amount" and x["severity"] == "blocker" for x in ledger.issues)
     # The full pipeline must still produce a reviewable draft, not crash downstream.
-    _, summary = generate(root, tmp_path / "out", "CPERS", "4Q25")
+    payload, summary = generate(root, tmp_path / "out", "CPERS", "4Q25")
     assert any(x["code"] == "ic_amount" for x in summary["issues"])
+    assert payload["data"]["portfolio"]["approved_total"] is None
+    overview = " ".join(b.get("text", "") for b in payload["sections"][0]["blocks"])
+    assert "unavailable pending resolution" in overview
+    assert "$0.42 billion" not in overview
+    assert payload["data"]["portfolio"]["commitment"] == Decimal("391814526.42")
 
 
 def test_entity_normalization_is_conservative():
