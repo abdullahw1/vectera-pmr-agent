@@ -3,37 +3,37 @@
     {
       "stage": "discovery",
       "status": "completed",
-      "seconds": 0.971
+      "seconds": 0.922
     },
     {
       "stage": "exact_finance",
       "status": "completed",
-      "seconds": 0.064
+      "seconds": 0.068
     },
     {
       "stage": "source_passages",
       "status": "completed",
-      "seconds": 0.006
+      "seconds": 0.012
     },
     {
       "stage": "chart_vision",
       "status": "completed",
-      "seconds": 0.034
+      "seconds": 0.082
     },
     {
       "stage": "cross_source_checks",
       "status": "completed",
-      "seconds": 0.006
+      "seconds": 0.007
     },
     {
       "stage": "grounded_narrative",
       "status": "completed",
-      "seconds": 0.017
+      "seconds": 0.072
     },
     {
       "stage": "report_render",
       "status": "completed",
-      "seconds": 2.537
+      "seconds": 2.627
     }
   ],
   "provider": "openai",
@@ -41,10 +41,11 @@
   "vision_model": "gpt-4.1-mini-2025-04-14",
   "api_calls": 0,
   "token_usage": [],
-  "cache_hits": 19,
+  "cache_hits": 0,
   "cache_misses": 0,
   "failed_calls": 0,
   "blockers": 0,
   "warnings": 10,
-  "review_items": 7
+  "review_items": 7,
+  "revision": "Appendix-only correction using reviewed report content; requires new approval"
 }

@@ -452,6 +452,7 @@
     </p>
     <main id="new-view">
       <h1>New Report</h1>
+      <p class="muted">Enter the client code and quarter, then generate a draft. For the included example, use CPERS and 4Q25.</p>
       <form id="report-form" class="form-area">
         <div class="fields">
           <div>
@@ -536,6 +537,10 @@
       </section>
       <div id="review-area" hidden>
         <div class="metrics" id="metrics"></div>
+        <div class="form-footer" style="margin: 12px 0 18px; flex-wrap: wrap">
+          <div><strong id="review-next-title">Draft ready for review</strong><p class="muted" id="review-next-note" style="margin: 5px 0">Review the PDF, confirm chart values, then approve.</p></div>
+          <button class="button primary" id="review-next">Review &amp; Confirm Charts</button>
+        </div>
         <div class="mode-tabs" role="group" aria-label="Report view">
           <button class="button active" id="evidence-tab">Evidence Review</button
           ><button class="button" id="pdf-tab">PDF Preview</button>
@@ -558,7 +563,8 @@
         initialized = false,
         frameKey = "",
         pdfKey = "",
-        uploading = false;
+        uploading = false,
+        requestedReviewView = null;
       const tableMarkup = {};
       function updateTable(id, runs) {
         const markup = table(runs);
@@ -619,6 +625,7 @@
       }
       function selectRun(id) {
         selected = id;
+        requestedReviewView = null;
         mode = "evidence";
         view("detail");
         renderDetail();
@@ -693,6 +700,9 @@
         const pdf = r.report_filename || (r.status === "approved" ? "final_report.pdf" : "report.pdf");
         $("pdf-download").href = base + pdf;
         $("bundle-download").href = base + "bundle.zip";
+        $("review-next-title").textContent = r.status === "approved" ? "Final report ready" : r.blockers ? "Source corrections required" : "Draft ready for review";
+        $("review-next-note").textContent = r.status === "approved" ? "Download the approved PDF or open the audit bundle." : r.blockers ? "Open the blocking issues, correct the inputs and generate again." : "Review the report, confirm each chart against its source, then review warnings and approve.";
+        $("review-next").textContent = r.status === "approved" ? "Download Final PDF" : r.blockers ? "Review Blocking Issues" : "Review & Confirm Charts";
         $("evidence-tab").classList.toggle("active", mode === "evidence");
         $("pdf-tab").classList.toggle("active", mode === "pdf");
         if (r.id !== frameKey) {
@@ -757,6 +767,19 @@
       $("evidence-tab").onclick = () => {
         mode = "evidence";
         renderDetail();
+      };
+      function openReviewView() {
+        if (requestedReviewView) $("report-frame").contentWindow.postMessage({type:"pmr-review-view", view:requestedReviewView}, location.origin);
+      }
+      $("report-frame").onload = openReviewView;
+      $("review-next").onclick = () => {
+        const run = state.runs.find(r => r.id === selected);
+        if (run.status === "approved") {
+          const link = document.createElement("a"); link.href = $("pdf-download").href;
+          link.download = run.report_filename || "final_report.pdf"; document.body.appendChild(link); link.click(); link.remove(); return;
+        }
+        requestedReviewView = run.blockers ? "issues" : "charts";
+        mode = "evidence"; renderDetail(); openReviewView(); $("report-frame").scrollIntoView({block:"start", behavior:"smooth"});
       };
       $("pdf-tab").onclick = () => {
         mode = "pdf";

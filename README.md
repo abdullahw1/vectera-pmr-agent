@@ -6,7 +6,7 @@ right files itself, computes every figure in code, writes the narrative with a m
 and stops at a human review step before anything is final.
 
 **Included in this repository:** [4Q25 draft PMR](output/CPERS_PMR_4Q25_DRAFT.pdf),
-[write-up](docs/WRITEUP.md) ([PDF](output/writeup.pdf)), tests, source documents and
+[two-page write-up](output/writeup.pdf), tests, source documents and
 [audit manifest](output/manifest.json). The report is marked DRAFT until a human reviews and approves it.
 
 ## Get Started on Windows 11
@@ -135,7 +135,7 @@ Unchanged reruns reuse a local cache of model responses.
 1. Open **Report**, inspect the draft PDF, and click paragraphs or table cells for readable source locators and calculation inputs. Audit JSON is available under **Audit details**.
 2. Open **Charts**. Compare each extraction with the displayed source image. Edit individual values if needed, add a correction reason, and select **Confirm These Chart Values**. **Previous chart** and **Next chart** retain value edits in this session. Reloading deliberately requires a new review.
 3. Open **Issues**. Blockers require corrected inputs and regeneration; warnings require inspection but do not prevent release. Chart confirmations are shown separately.
-4. Enter your reviewer name and acknowledge the PDF, sources, charts and warnings. **Approve & Create Final PDF** becomes available only when all requirements are met. Backend checks also enforce these requirements. If you corrected any chart, this first submission saves a **new draft**, not an approval. Select **Reload corrected draft**, inspect the updated report, reconfirm charts and acknowledge it again. Changed market evidence invalidates the old prose; newly written prose receives the same number, quote and paraphrase checks, or verified observations replace it if synthesis is unavailable.
+4. Enter your reviewer name and acknowledge the PDF, sources, charts and warnings. **Approve & Download Final PDF** becomes available only when all requirements are met. Backend checks also enforce these requirements. Successful approval downloads the named final PDF; a download link remains available if your browser blocks it. If you corrected any chart, this first submission saves a **new draft**, not an approval. Select **Review corrected draft**, inspect the updated report, reconfirm charts and acknowledge it again. Changed market evidence invalidates the old prose; newly written prose receives the same number, quote and paraphrase checks, or verified observations replace it if synthesis is unavailable.
 5. With no further corrections, approval writes `CPERS_PMR_4Q25.pdf` and a hash-bound `approval.json`. Names follow the requested client and quarter; drafts carry an `_DRAFT` suffix. Internal `report.pdf` and `final_report.pdf` copies remain for compatibility. Approval is refused if the draft JSON, displayed draft PDF, inputs, implementation or exhibits changed. The approval record includes the exact draft PDF hash as well as the final PDF hash.
 
 Missing cash rows or blank holding NAVs do not erase known holdings or turn them into open approvals. Performance-dependent attribution requires complete cash data, and position ranking requires complete NAV data. Missing figures retain their cell locators and block release. Unresolved IC amounts make the committed-or-approved total unavailable, never a partial sum presented as complete.
@@ -171,7 +171,6 @@ pmr/        pipeline code (entry point: python -m pmr)
 pmr/web/    browser workspace and review page
 tests/      pytest suite
 scripts/    launcher, repeatability, unseen-input rehearsal, packaging
-docs/       WRITEUP.md (source of output/writeup.pdf)
 inputs/     the supplied 4Q25 package
 output/     generated report, evidence and verification results
 ```

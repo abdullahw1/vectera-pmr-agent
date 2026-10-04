@@ -10,6 +10,29 @@ from .evidence import digest, implementation_hashes
 from .filenames import clear_named_reports, export_report, report_filename
 
 
+def diagnostics_summary(diagnostics):
+    provider = {"openai": "OpenAI", "anthropic": "Anthropic"}.get(diagnostics.get("provider"), "No model access")
+    usage = diagnostics.get("token_usage", [])
+    tokens = sum(u.get("input_tokens", u.get("prompt_tokens", 0)) + u.get("output_tokens", u.get("completion_tokens", 0)) for u in usage)
+    rows = [
+        ("AI provider", provider),
+        ("Writing model", diagnostics.get("model") or "Source excerpts only"),
+        ("Chart-reading model", diagnostics.get("vision_model") or "Unavailable"),
+        ("API requests", diagnostics.get("api_calls", 0)),
+        ("Saved responses reused", diagnostics.get("cache_hits", 0)),
+        ("Failed API requests", diagnostics.get("failed_calls", 0)),
+        ("Tokens used", f"{tokens:,}"),
+    ]
+    names = dict(discovery="Find source files", exact_finance="Check financial figures", source_passages="Read source passages", chart_vision="Read charts", cross_source_checks="Compare sources", grounded_narrative="Write and check prose", report_render="Create PDF", source_integrity="Check unchanged inputs")
+    stages = "".join(
+        f"<li>{html.escape(names.get(s['stage'], s['stage']))}: {html.escape(str(s.get('status', 'unknown')))} ({html.escape(str(s.get('seconds', '?')))} seconds)</li>"
+        for s in diagnostics.get("stages", [])
+    )
+    return '<h2>Run Summary</h2><dl class="run-summary">' + "".join(
+        f"<dt>{html.escape(label)}</dt><dd>{html.escape(str(value))}</dd>" for label, value in rows
+    ) + '</dl><details><summary>Processing steps</summary><ul>' + stages + '</ul></details><a href="diagnostics.json" target="_blank">Technical log</a>'
+
+
 def write_review(output, data, sections, ledger, input_hashes, diagnostics=None, code_hashes=None):
     import hashlib
 
@@ -22,6 +45,9 @@ def write_review(output, data, sections, ledger, input_hashes, diagnostics=None,
         assets["appendix.pdf"] = hashlib.sha256((output / "appendix.pdf").read_bytes()).hexdigest()
     if not (output / "report.pdf").is_file():
         raise ValueError("Draft PDF is missing; render it before creating the review package")
+    # A new review package cannot inherit approval from an earlier draft.
+    for name in ("approval.json", "final_report.pdf", "final_evidence.json", "final_sections.json"):
+        (output / name).unlink(missing_ok=True)
     assets["report.pdf"] = hashlib.sha256((output / "report.pdf").read_bytes()).hexdigest()
     clear_named_reports(output)
     draft_name = export_report(output, data)
@@ -46,12 +72,7 @@ def write_review(output, data, sections, ledger, input_hashes, diagnostics=None,
         .replace('href="final_report.pdf"', f'href="{report_filename(data["client"], data["quarter"], approved=True)}"')
     )
     if diagnostics:
-        details = (
-            "<h2>Run Diagnostics</h2><details><summary>Stages, model usage and cache</summary><pre>"
-            + html.escape(json.dumps(diagnostics, indent=2))
-            + "</pre></details>"
-        )
-        page = page.replace("<!--DIAGNOSTICS-->", details)
+        page = page.replace("<!--DIAGNOSTICS-->", diagnostics_summary(diagnostics))
     (output / "review.html").write_text(page, encoding="utf-8")
     (output / "review.md").write_text(
         "# Review Queue\n\n" + "\n".join(f"- {i['severity'].upper()}: {i['message']}" for i in ledger.issues),
@@ -225,7 +246,7 @@ def approve(output, request):
     (output / "approval.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
     ledger.save(output / "final_evidence.json")
     (output / "final_sections.json").write_text(json.dumps(sections, indent=2, default=str), encoding="utf-8")
-    return dict(status="approved", message="Approved. The final PDF and approval record are saved.")
+    return dict(status="approved", report_filename=final_name, message="Approved. Your final PDF is ready to download.")
 
 
 def serve(output, port, open_browser=False):

@@ -243,15 +243,17 @@ def extract_exhibits(source):
                 if grouped and not fund_returns and "TWR Calculation" in headers:
                     net_columns = [i for i, header in enumerate(headers) if header.lower().endswith(" net")]
                     if net_columns:
+                        # Keep gross-only series in the full exhibit, not an empty net-only row.
+                        net_rows = [i for i, row in enumerate(data) if any(row[c] for c in net_columns)]
                         exhibits.append(dict(
                             title="Annualized Net Time-Weighted Return (%)",
                             source_page=page_number,
-                            source_rows=[i + 1 for i in source_rows],
+                            source_rows=[source_rows[i] + 1 for i in net_rows],
                             source_headers=list(range(start + 1, data_start + 1)),
                             columns=[0] + net_columns,
                             identity=" | ".join(str(v) for row in rows[:2] for v in row if v),
                             headers=["Investment"] + [presentation_header(headers[i]).removesuffix(" Net").removesuffix(" NET") for i in net_columns],
-                            rows=[[row[c] for c in [0] + net_columns] for row in data],
+                            rows=[[data[i][c] for c in [0] + net_columns] for i in net_rows],
                         ))
     return exhibits
 

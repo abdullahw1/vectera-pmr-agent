@@ -1,6 +1,7 @@
 """Render the submission write-up as a compact, reviewable two-page PDF."""
 
 from pathlib import Path
+import argparse
 from xml.sax.saxutils import escape
 import fitz
 
@@ -10,7 +11,9 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph
 
 
 def main():
-    source = Path("docs/WRITEUP.md")
+    parser = argparse.ArgumentParser(description="Build a two-page write-up from a local Markdown file.")
+    parser.add_argument("source", type=Path, help="Path to your write-up Markdown file")
+    source = parser.parse_args().source
     output = Path("output/writeup.pdf")
     output.parent.mkdir(exist_ok=True)
     styles = {

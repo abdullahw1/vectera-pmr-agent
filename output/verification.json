@@ -1,8 +1,8 @@
 {
   "client": "CPERS",
   "quarter": "4Q25",
-  "meaning_hash": "d7cba8cc7e14da1207b6e3ec99851b03b8d69367c62ac8d71c2c0a3c03b60959",
-  "semantic_hash": "1ec3ac60ccd535de65dbb0a3590d4302f7d550d96f66b588fb94d814fe1afe41",
+  "meaning_hash": "c8c0a63c15daa068013d9752c011ca5423194b17afd583b5048b8c9c12eb2544",
+  "semantic_hash": "d3cae3247b82c59f3452293b681b04d3801b83d2c152fa842b9c94d327dffc95",
   "financial_hash": "f3db74e71d9bfad0be1eb1185e63a16d4c66ce9656545b30ef8776a59369746d",
   "source_hashes": {
     "allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
@@ -25,7 +25,7 @@
   "implementation_hashes": {
     "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
     "__main__.py": "dcb1c5bb03130f3d9612df765fa70aa3f6ac1d73f1c3440f387f29fb8a33c8ce",
-    "appendix.py": "efd923017b6311735058e7bd1905693158faf94c6f91af79686a2ddd6b8a13f8",
+    "appendix.py": "446754f9449b8bc0c3563699b9215bebde043a964084d200196133eea9691f5e",
     "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
     "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
     "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
@@ -40,13 +40,13 @@
     "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
     "pipeline.py": "8e8acae9336d485009d96b144398b22998cceeb1628dbcdcaefe064521c4c12c",
     "report.py": "91a8227a908bfb3dc82a13b890d088079c026e8352ca10d9f36b31d6cd3e4567",
-    "review.py": "36588d26a3b84ed6c590b0224561356d8fbfbde4c9b8a1fe5018d9b047837acc",
+    "review.py": "dca069e122ce5bd823052abdda5b541c9143c7d0b6293b292d30889fb3e4debc",
     "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
     "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
     "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
     "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
-    "web/index.html": "ca6aa379b5fe3e37f8c8cda3b74559fb4e5dbcb1dbc92e6ba837141ec0be2e82",
-    "web/review.html": "dc3d91d4502b33fe69f88e7fcadda9dccd7c5e2d324340ccfb666f412740c89d",
+    "web/index.html": "35561f5d34a26ce683ef767bd1c0488c6760daa4f2c8a1ffcf64544d2d65d6ab",
+    "web/review.html": "618c0ced8a11953e90145dace3ecce70a9b70f094f3047dd8697314e4be84984",
     "workspace.py": "5a5ad0f5b64872f39a28e54d35de02ec7edfec38291dd707c30dd48f9ff6199f"
   },
   "checks_passed": 58,
@@ -55,8 +55,6 @@
   "issues": [
     {
       "code": "reconciliation",
-      "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
-      "severity": "warning",
       "evidence": [
         "f_6faa3496a5ff4dd8",
         "f_8af12216d589319a",
@@ -66,126 +64,128 @@
         "f_06e1878e05198846",
         "f_d3748ab9ba07455f",
         "f_f1b493f43db48766"
-      ]
+      ],
+      "message": "Out-of-portfolio realized-only roll-forward: difference 0.5100",
+      "severity": "warning"
     },
     {
       "code": "negative_fees",
-      "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
-      "severity": "warning",
       "evidence": [
         "f_a5c2f964ad4e881d"
-      ]
+      ],
+      "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+      "severity": "warning"
     },
     {
       "code": "missing_manager",
+      "fund": "Meridian Opportunity Fund V",
       "message": "No matched current manager evidence for ranked fund Meridian Opportunity Fund V; flash-only commentary",
-      "severity": "warning",
-      "fund": "Meridian Opportunity Fund V"
+      "severity": "warning"
     },
     {
       "code": "chart_review",
+      "fact_id": "f_6d57eddcaeaf2604",
       "message": "Confirm image-extracted values on slide 4, chart 1",
-      "severity": "review",
-      "fact_id": "f_6d57eddcaeaf2604"
+      "severity": "review"
     },
     {
       "code": "chart_review",
+      "fact_id": "f_585c23b393cd1f1e",
       "message": "Confirm image-extracted values on slide 5, chart 1",
-      "severity": "review",
-      "fact_id": "f_585c23b393cd1f1e"
+      "severity": "review"
     },
     {
       "code": "chart_review",
+      "fact_id": "f_f1604a0ba6797969",
       "message": "Confirm image-extracted values on slide 6, chart 1",
-      "severity": "review",
-      "fact_id": "f_7b3c078cd261039c"
+      "severity": "review"
     },
     {
       "code": "chart_review",
+      "fact_id": "f_40b4ae9da0b0b8fb",
       "message": "Confirm image-extracted values on slide 7, chart 1",
-      "severity": "review",
-      "fact_id": "f_40b4ae9da0b0b8fb"
+      "severity": "review"
     },
     {
       "code": "chart_review",
+      "fact_id": "f_1e9d1839d8ae53af",
       "message": "Confirm image-extracted values on slide 8, chart 1",
-      "severity": "review",
-      "fact_id": "f_1e9d1839d8ae53af"
+      "severity": "review"
     },
     {
       "code": "chart_review",
+      "fact_id": "f_36f499d42dcc1dcf",
       "message": "Confirm image-extracted values on slide 9, chart 1",
-      "severity": "review",
-      "fact_id": "f_a10e970c92b9cd19"
+      "severity": "review"
     },
     {
       "code": "chart_review",
+      "fact_id": "f_639f583c749c2eec",
       "message": "Confirm image-extracted values on slide 10, chart 1",
-      "severity": "review",
-      "fact_id": "f_639f583c749c2eec"
+      "severity": "review"
     },
     {
       "code": "history_ownership",
-      "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
-      "severity": "warning",
       "evidence": [
         "f_b9c0c533e3c13eec",
         "f_fe245671d1c72119"
-      ]
+      ],
+      "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+      "severity": "warning"
     },
     {
       "code": "narrative_review",
-      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
-      "severity": "warning",
       "evidence": [
         "f_cc885b2107b4a52c"
-      ]
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
+      "severity": "warning"
     },
     {
       "code": "narrative_review",
-      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
-      "severity": "warning",
       "evidence": [
         "f_ef7244c47896ba79"
-      ]
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ironwood Value-Add Fund III",
+      "severity": "warning"
     },
     {
       "code": "narrative_review",
-      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
-      "severity": "warning",
       "evidence": [
         "f_b0497728800c864e"
-      ]
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Northgate Logistics Partners",
+      "severity": "warning"
     },
     {
       "code": "narrative_review",
-      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
-      "severity": "warning",
       "evidence": [
         "f_e13d93f23b9938fe"
-      ]
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
+      "severity": "warning"
     },
     {
       "code": "narrative_review",
-      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
-      "severity": "warning",
       "evidence": [
         "f_9f206c09e4307823"
-      ]
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Ridgeline Value Fund IV",
+      "severity": "warning"
     },
     {
       "code": "narrative_review",
-      "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
-      "severity": "warning",
       "evidence": [
         "f_60c23729fba5fe88",
+        "f_7d66af00c382b018",
+        "f_9c041056fc39f335",
         "f_7ef22ef872c5dd21",
         "f_ab216210fc5ca042",
-        "f_155e05db52edd73a",
-        "f_95640c56269be62b",
-        "f_424d459257f560cc",
-        "f_ecf8a5d979af9b06"
-      ]
+        "f_d580772c37283675",
+        "f_1863298bfa1dfed7"
+      ],
+      "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
+      "severity": "warning"
     }
   ],
   "ranked_funds": [

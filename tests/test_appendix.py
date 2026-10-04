@@ -83,6 +83,23 @@ def test_display_decoration_preserves_cents_and_missing_values():
     assert presentation_header("3 Year(s) (%) TNET") == "3 Yr NET"
 
 
+def test_net_summary_omits_gross_only_series_but_full_exhibits_keep_them():
+    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    exhibits = extract_exhibits(source)
+    summary = next(e for e in exhibits if e["title"] == "Annualized Net Time-Weighted Return (%)")
+    assert [row[0] for row in summary["rows"]] == [
+        "CPERS Custom Benchmark", "Cascadia Public Employees' Retirement System Portfolio",
+    ]
+    assert all(any(row[1:]) for row in summary["rows"])
+    with fitz.open(source) as original:
+        raw = original[summary["source_page"] - 1].find_tables().tables[0].extract()
+        for row, source_row in zip(summary["rows"], summary["source_rows"]):
+            assert row == [str(raw[source_row - 1][c] or "") for c in summary["columns"]]
+    full = next(e for e in exhibits if e["title"] == "Annualized Time-Weighted Returns (%) - 1 Year / 2 Year")
+    npi = next(row for row in full["rows"] if row[0] == "NPI + 50 BPS")
+    assert "5.44%" in npi and "3.16%" in npi
+
+
 def test_exhibit_titles_follow_metrics_not_source_page_numbers(tmp_path):
     source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
     shuffled = tmp_path / "shuffled.pdf"

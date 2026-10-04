@@ -112,7 +112,24 @@ def test_noop_correction_does_not_create_an_endless_review_cycle(extracted):
     output, payload, request = extracted
     chart = payload["data"]["charts"][0]
     request["corrections"] = {chart["id"]: dict(data=chart["data"], reason="Confirmed unchanged")}
-    assert approve(output, request)["status"] == "approved"
+    result = approve(output, request)
+    assert result["status"] == "approved"
+    assert result["report_filename"] == "CPERS_PMR_4Q25.pdf"
+    assert (output / result["report_filename"]).is_file()
+
+
+def test_new_review_package_removes_previous_release(extracted):
+    from pmr.evidence import Ledger
+    from pmr.review import write_review
+
+    output, payload, request = extracted
+    approve(output, request)
+    write_review(output, payload["data"], payload["sections"],
+                 Ledger(**payload["ledger"]), payload["input_hashes"])
+    for name in ("approval.json", "final_report.pdf", "final_sections.json",
+                 "final_evidence.json", "CPERS_PMR_4Q25.pdf"):
+        assert not (output / name).exists()
+    assert (output / "CPERS_PMR_4Q25_DRAFT.pdf").is_file()
 
 
 def test_correction_requires_reason_and_full_schema(extracted):

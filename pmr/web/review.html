@@ -34,19 +34,23 @@
     pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
     summary { cursor: pointer; padding: 8px 0; } .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
     #feedback { min-height: 24px; } #gate { font-size: 13px; }
+    .review-flow { padding: 14px 24px; background: #eef5f2; border-bottom: 1px solid #d9dfe5; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .review-flow p { margin: 0; } .run-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 12px; font-size: 12px; }
+    .run-summary dt { color: #606c75; } .run-summary dd { margin: 0; overflow-wrap: anywhere; }
     @media(max-width: 850px) { main { grid-template-columns: 1fr; } aside { border-left: 0; border-top: 1px solid #d9dfe5; } header { align-items: flex-start; flex-direction: column; } article, aside, header, nav { padding: 16px; } }
   </style>
 </head>
 <body>
   <header><div><h1 id="title"></h1><span id="status" aria-live="polite"></span></div><div class="actions"><a href="report.pdf" target="_blank">Open draft PDF</a><a id="final" href="final_report.pdf" target="_blank" hidden>Open approved PDF</a></div></header>
-  <nav role="tablist" aria-label="Review views"><button role="tab" data-view="report" aria-selected="true">Report</button><button role="tab" data-view="charts" aria-selected="false" id="charts-tab">Charts</button><button role="tab" data-view="issues" aria-selected="false" id="issues-tab">Issues</button></nav>
+  <div class="review-flow"><p id="next-step" aria-live="polite"></p><button id="continue-review">Confirm chart values</button></div>
+  <nav role="tablist" aria-label="Review views"><button role="tab" data-view="report" aria-selected="true">1. Review Report</button><button role="tab" data-view="charts" aria-selected="false" id="charts-tab">2. Confirm Charts</button><button role="tab" data-view="issues" aria-selected="false" id="issues-tab">3. Warnings &amp; Approval</button></nav>
   <main><article id="report"></article><aside>
     <h2>Evidence &amp; Corrections</h2><div id="evidence">Select a paragraph or table cell to inspect its sources.</div>
     <h2>Verification</h2><div id="checks"></div><!--DIAGNOSTICS-->
     <h2>Release Approval</h2><p id="gate" aria-live="polite"></p>
     <label>Reviewer name<input id="reviewer" type="text" autocomplete="name"></label>
     <label><input id="ack" type="checkbox"> I reviewed the PDF, source evidence, chart values, and all warnings.</label>
-    <button id="approve" disabled>Approve &amp; Create Final PDF</button><p id="feedback" role="status" aria-live="polite"></p>
+    <button id="approve" disabled>Approve &amp; Download Final PDF</button><p id="feedback" role="status" aria-live="polite"></p>
     <p class="muted">Draft <span id="draft-id"></span></p>
   </aside></main>
   <script>
@@ -56,15 +60,21 @@
     const confirmed = new Set(), corrections = {}, edits = {}, reasons = {}, charts = D.data.charts;
     const blockers = D.ledger.issues.filter(i => i.severity === "blocker");
     const warnings = D.ledger.issues.filter(i => i.severity === "warning");
-    let view = "report", chartIndex = 0, approved = false, pending = false, editing;
+    let view = "report", chartIndex = 0, approved = false, pending = false, reviewRequired = false, editing;
     el("title").textContent = `${D.data.client} / ${D.data.quarter} Review`;
     el("draft-id").textContent = D.draft_hash.slice(0, 12);
     const checks = D.ledger.checks.filter(c => c.severity === "blocker");
     el("checks").textContent = `${checks.filter(c => c.passed).length} / ${checks.length} critical checks passed`;
     function updateGate() {
       const remaining = charts.filter(c => !confirmed.has(c.id)).length;
-      el("charts-tab").textContent = `Charts (${confirmed.size}/${charts.length})`;
-      el("issues-tab").textContent = `Issues (${blockers.length} blockers, ${warnings.length} warnings)`;
+      el("charts-tab").textContent = `2. Confirm Charts (${confirmed.size}/${charts.length})`;
+      el("issues-tab").textContent = `3. Warnings & Approval (${warnings.length} warnings)`;
+      el("next-step").textContent = approved ? "Final report saved. Use Download final PDF to get another copy." : blockers.length ? `${blockers.length} blocking issue(s) need corrected inputs before approval.` : remaining ? `Review the report, then compare and confirm ${remaining} remaining chart(s) against their source images.` : "Charts confirmed. Review warnings, enter your name and acknowledge the report to approve.";
+      el("continue-review").textContent = approved ? "Download final PDF" : blockers.length ? "Review blocking issues" : remaining ? "Confirm chart values" : "Review warnings & approve";
+      if (reviewRequired) {
+        el("next-step").textContent = "Your corrections created a new draft. Reload it and review again before approval.";
+        el("continue-review").textContent = "Review corrected draft";
+      }
       el("status").textContent = approved ? "Approved" : blockers.length ? "Blocked - source corrections required" : remaining ? "Draft - chart review required" : "Draft - ready for final review";
       const tasks = [];
       if (blockers.length) tasks.push(`${blockers.length} blocker(s) must be fixed and the report regenerated.`);
@@ -121,7 +131,9 @@
             const reason = el("reason").value.trim(); if (!reason) throw Error("Enter a correction reason before confirming changed values.");
             corrections[c.id] = {data:value, reason};
           } else delete corrections[c.id];
-          confirmed.add(c.id); updateGate(); el("chart-feedback").textContent = "Confirmed for this draft. Changes are validated again when approval is submitted.";
+          confirmed.add(c.id); updateGate();
+          const next = charts.findIndex(chart => !confirmed.has(chart.id));
+          if (next >= 0) { chartIndex = next; renderCharts(); } else { switchView("issues"); el("evidence").textContent = "All charts confirmed. Review warnings, then complete Release Approval below."; }
         } catch (error) { el("chart-feedback").textContent = error.message; }
       };
     }
@@ -135,6 +147,24 @@
       view = next; document.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-selected", String(b.dataset.view === view)));
       if (view === "charts") renderCharts(); else if (view === "issues") renderIssues(); else renderReport();
     }
+    function downloadFinal() {
+      const link = document.createElement("a"); link.href = el("final").href;
+      link.download = el("final").download || `${D.data.client}_PMR_${D.data.quarter}.pdf`;
+      document.body.appendChild(link); link.click(); link.remove();
+    }
+    el("continue-review").onclick = () => {
+      if (reviewRequired) { location.href = "review.html"; return; }
+      if (approved) return downloadFinal();
+      if (blockers.length) return switchView("issues");
+      const next = charts.findIndex(chart => !confirmed.has(chart.id));
+      if (next >= 0) { chartIndex = next; switchView("charts"); }
+      else { switchView("issues"); el("reviewer").focus(); }
+    };
+    window.addEventListener("message", event => {
+      if (event.origin === location.origin && event.source === window.parent && event.data?.type === "pmr-review-view" && ["report", "charts", "issues"].includes(event.data.view)) {
+        switchView(event.data.view);
+      }
+    });
     document.querySelectorAll("[data-view]").forEach(b => b.onclick = () => switchView(b.dataset.view));
     el("report").onclick = event => {
       const evidence = event.target.closest("[data-evidence]"); if (evidence) show(JSON.parse(evidence.dataset.evidence));
@@ -147,11 +177,17 @@
         const response = await fetch("approve", {method:"POST", headers:{"Content-Type":"application/json", "X-PMR-Token":window.PMR_CSRF || ""}, body:JSON.stringify({draft_hash:D.draft_hash, reviewer:el("reviewer").value.trim(), acknowledged:el("ack").checked, confirmed_charts:[...confirmed], corrections})});
         const result = await response.json(); el("feedback").textContent = result.message;
         if (response.ok && result.status === "review_required") {
+          reviewRequired = true;
           confirmed.clear(); el("ack").checked = false;
           el("feedback").appendChild(Object.assign(document.createElement("a"), {href:"review.html", textContent:" Reload corrected draft"}));
           pending = true;
           el("approve").hidden = true;
-        } else if (response.ok) { approved = true; el("final").hidden = false; }
+        } else if (response.ok && result.status === "approved") {
+          approved = true; el("final").hidden = false;
+          if (result.report_filename) el("final").href = encodeURIComponent(result.report_filename);
+          el("final").download = result.report_filename || `${D.data.client}_PMR_${D.data.quarter}.pdf`;
+          el("final").textContent = "Download final PDF"; downloadFinal();
+        }
       } catch (error) { el("feedback").textContent = "Approval was not saved. Open review through the running PMR server and retry."; }
       finally { pending = false; updateGate(); }
     };
