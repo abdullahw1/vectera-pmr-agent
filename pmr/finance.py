@@ -9,7 +9,10 @@ from .ingest import Sheet, bounds, entity, norm, quarter
 from .numeric import MONEY_HEADERS, currency, sum_if_known
 
 
-def get(sheet, row, headers, key, *, optional=False, blank_zero=False, allow_missing=False):
+def get(
+    sheet, row, headers, key, *, optional=False, blank_zero=False,
+    allow_missing=False, missing_code="fund_value_missing",
+):
     index = headers.get(norm(key))
     if index is None:
         if optional:
@@ -31,7 +34,7 @@ def get(sheet, row, headers, key, *, optional=False, blank_zero=False, allow_mis
             },
         )
         sheet.ledger.issue(
-            "fund_value_missing",
+            missing_code,
             f"{row[0].value}: {key} is missing at {sheet.ws.title}/{row[index].coordinate}; no value inferred",
             "blocker",
             evidence=[identifier],
@@ -324,7 +327,10 @@ def build_financials(sources, requested, client, ledger):
             )
     tr = returns.find(total_label, numeric=True)
     for key, header in [("irr", "NET IRR"), ("multiple", "Net Multiple")]:
-        portfolio[key], portfolio[key + "_id"] = get(returns, tr, rh, header)
+        # A missing required track-record figure blocks release, not the rest of the draft.
+        portfolio[key], portfolio[key + "_id"] = get(
+            returns, tr, rh, header, allow_missing=True, missing_code="portfolio_value_missing"
+        )
     benchmark_row = next(
         r for r in returns.rows() if isinstance(r[0].value, str) and "benchmark" in r[0].value.lower()
     )

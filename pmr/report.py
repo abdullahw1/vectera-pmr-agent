@@ -171,6 +171,18 @@ def build_sections(data, sources, ledger):
             {"file": prior_file, "page": prior_pages.index(overview_page) + 1, "quote": static_intro},
         )
         para(s, re.sub(r"\s+", " ", static_intro), [fid])
+    irr_text = "not available" if p["irr"] is None else f"{p['irr']:.1f}%"
+    multiple_text = "not available" if p["multiple"] is None else f"{p['multiple']:.2f}x"
+    if p["irr"] is not None and p["multiple"] is not None:
+        track_record = (
+            f"The funded investments have generated a since-inception net IRR of {irr_text} "
+            f"and a {multiple_text} net equity multiple."
+        )
+    else:
+        track_record = (
+            f"Since-inception net IRR is {irr_text}; the net equity multiple is {multiple_text}. "
+            "Missing track-record figures are not reported in the current flash."
+        )
     para(
         s,
         (
@@ -179,8 +191,7 @@ def build_sections(data, sources, ledger):
             else "Total committed or approved is unavailable pending resolution of an IC amount. The Portfolio comprises "
         )
         + f"{p['positions']} individual investment positions: {len(funds)} funded and carried in the flash, plus "
-        f"{len(activity['open'])} open approvals not funded by Quarter-end. The funded investments have generated "
-        f"a since-inception net IRR of {p['irr']:.1f}% and a {p['multiple']:.2f}x net equity multiple.",
+        f"{len(activity['open'])} open approvals not funded by Quarter-end. " + track_record,
         [
             p[k + "_id"]
             for k in ["approved_total", "positions", "funded_count", "open_count", "irr", "multiple"]
@@ -223,8 +234,8 @@ def build_sections(data, sources, ledger):
         ["Market value (NAV)", money(p["nav"])],
         ["Real estate as % of plan assets", f"{p['plan_pct']:.1f}%"],
         ["NAV as % of target", f"{p['target_pct']:.1f}%"],
-        ["Since-inception net IRR", f"{p['irr']:.1f}%"],
-        ["Since-inception net equity multiple", f"{p['multiple']:.2f}x"],
+        ["Since-inception net IRR", irr_text],
+        ["Since-inception net equity multiple", multiple_text],
     ]
     split = " / ".join(
         number(data["sleeves"][s]["nav"] / p["nav"] * 100) + "%" for s in ["Strategic", "Tactical"]
