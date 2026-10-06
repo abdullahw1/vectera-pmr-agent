@@ -1,0 +1,11 @@
+{
+  "scope": "Focused tests rerun in the delivery checkout; the full 167-test suite result is recorded separately in test-results.json.",
+  "working_directory": "/Users/abdullahwaheed/Downloads/Vectera_Round2/v2-delivery",
+  "python": "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+  "arguments": ["-m", "pytest", "tests/test_missing_portfolio_returns.py", "-q"],
+  "exit_code": 0,
+  "passed": 6,
+  "seconds": 25.14,
+  "api_keys_disabled": true,
+  "observed_output": "6 passed in 25.14s"
+}

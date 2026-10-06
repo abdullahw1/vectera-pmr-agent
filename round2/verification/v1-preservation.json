@@ -1,0 +1,35 @@
+{
+  "historical_root": "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/round2",
+  "current_root": "/Users/abdullahwaheed/Downloads/Vectera_Round2",
+  "historical_records_preserved": true,
+  "explanation": "Original command/cwd/output paths record the actual earlier runs; relocation does not rewrite them.",
+  "original_round2_folder_absent": true,
+  "frozen_commit": "618b990a66a2940fac7f7d65fa6f7768c9d89652",
+  "frozen_source_file_count": 113,
+  "source_hashes_match_frozen_commit_export": true,
+  "input_file_count": 15,
+  "inputs_match_received_archive": true,
+  "original_run_outputs_unchanged": true,
+  "failure_files_byte_identical": true,
+  "outputs": [
+    {
+      "run": "first",
+      "output_file_sha256": {
+        "diagnostics.json": "c678bf09050b11cc1d8a906d3433106b0ba6d209b26daaf912ce36904837efa6",
+        "failure.json": "2cd8bf56dd92476f123dca3546d9630d2d2e86a815643e3bbae6cb474e295ae6",
+        "progress.json": "5ae9cb8dae05754e07190b60ca361f92e18e2809f81a849c64033027fa517e9c"
+      },
+      "exit_code": 2
+    },
+    {
+      "run": "second",
+      "output_file_sha256": {
+        "diagnostics.json": "675e900b826ccc1046a4e19c9e9612f4c297f0c743a8fdd80202f8b9ba457652",
+        "failure.json": "2cd8bf56dd92476f123dca3546d9630d2d2e86a815643e3bbae6cb474e295ae6",
+        "progress.json": "0b009d91cc8d63d4e04e5297549b7a9c76b26e8db9f39bfe9d13f361b3ad79e5"
+      },
+      "exit_code": 2
+    }
+  ],
+  "verification_scope": "Hash-only preservation check of v1 files, inputs, and original outputs; separate v2 work is not part of the frozen v1 result."
+}

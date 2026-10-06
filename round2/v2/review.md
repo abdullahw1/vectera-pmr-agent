@@ -1,0 +1,22 @@
+# Review Queue
+
+- BLOCKER: Vectera Initiated Investments: NET IRR is missing at ReturnsMultiples(Agg)/V28; no value inferred
+- BLOCKER: Vectera Initiated Investments: Net Multiple is missing at ReturnsMultiples(Agg)/W28; no value inferred
+- WARNING: No matched current manager evidence for ranked fund Kestrel U.S. Real Estate Fund; flash-only commentary
+- WARNING: Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized
+- REVIEW: Confirm image-extracted values on slide 4, chart 1
+- REVIEW: Confirm image-extracted values on slide 5, chart 1
+- REVIEW: Confirm image-extracted values on slide 6, chart 1
+- REVIEW: Confirm image-extracted values on slide 7, chart 1
+- REVIEW: Confirm image-extracted values on slide 8, chart 1
+- REVIEW: Confirm image-extracted values on slide 9, chart 1
+- REVIEW: Confirm image-extracted values on slide 10, chart 1
+- BLOCKER: Allocation history/flash target at USD-million display precision: difference 14.0000
+- WARNING: Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.
+- WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Auburn Ridge Residential Fund II
+- WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Beacon Hill Medical Office Fund
+- WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Calder Grove Industrial Partners
+- WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund
+- WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust
+- WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Silverline Core-Plus Fund
+- WARNING: Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update

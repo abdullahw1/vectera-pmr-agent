@@ -1,0 +1,147 @@
+{
+  "commit": "618b990a66a2940fac7f7d65fa6f7768c9d89652",
+  "tag": "v1-submission",
+  "started_at": "2026-10-05T18:34:00.546441+00:00",
+  "completed_at": "2026-10-05T18:34:04.879335+00:00",
+  "python": "3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "executable": "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+  "platform": "macOS-15.4.1-x86_64-i386-64bit",
+  "dependencies": {
+    "PyMuPDF": "1.26.4",
+    "openpyxl": "3.1.5",
+    "reportlab": "4.4.4",
+    "matplotlib": "3.10.6",
+    "pillow": "11.3.0",
+    "pytest": "8.4.2",
+    "python-dotenv": "1.1.1",
+    "charset-normalizer": "3.5.1",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "et_xmlfile": "2.0.0",
+    "fonttools": "4.66.1",
+    "iniconfig": "2.3.0",
+    "kiwisolver": "1.5.1",
+    "numpy": "2.5.3",
+    "packaging": "26.3",
+    "pluggy": "1.6.0",
+    "Pygments": "2.21.0",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0"
+  },
+  "runtime_note": "Existing macOS Python 3.12 environment with all applicable v1 dependency pins checked; not a fresh install or Windows run.",
+  "provider": "openai",
+  "model": "gpt-4.1-2025-04-14",
+  "vision_model": "gpt-4.1-mini-2025-04-14",
+  "source_unchanged": true,
+  "inputs_unchanged": true,
+  "input_file_sha256": {
+    "allocation_history.xlsx": "076a12726b442d44a218e8be9bbe18cf2cfdcca245d5a0081940b20c89ebfe41",
+    "flash_1Q26.pdf": "df357807f15ab295f5f64f5d8145052670fa3fab452d18b4d756427809510a10",
+    "flash_1Q26.xlsx": "d8f6e97c34094ae85c62e2a3efdaed479fea25e43923c0613a8e3cb4229ae33d",
+    "ic_log_2026.xlsx": "604787b4805f3074375398cf9e40ff37071809b430bc98c799ca5971da1df4b5",
+    "manager_reports/auburn_ridge_residential_fund_ii_1Q26.pdf": "269d8fb9ef7ee274ba7b6c1b91fca3ef285b43b0c7c78b515d8db1dba2f47de2",
+    "manager_reports/beacon_hill_medical_office_fund_1Q26.pdf": "43d64e1126daf714c486099f5d364713e322aa8df932fcb2bad05f119c7c5126",
+    "manager_reports/blackford_special_situations_fund_ii_1Q26.pdf": "2bc4a409b9005a80868366a1e5a975fb8f330f3ff5e70b8c48bfd0c339a628ef",
+    "manager_reports/calder_grove_industrial_partners_1Q26.pdf": "1432b7b6eefe2263b5647e7cf3e5b9531888966d42f49bf11afb02c69a94a824",
+    "manager_reports/cornerstone_core_property_fund_1Q26.pdf": "e7f71c00bd7175993d1288968a7e8fb6ecc978a170ac33c63d289db08f44cf40",
+    "manager_reports/ironwood_value_add_fund_3_1Q26.pdf": "256f0adfc7cac3465bafd9614bbd2f5aef688d3ec1648817bb6b638c7e21e165",
+    "manager_reports/redwood_logistics_trust_1Q26.pdf": "80c18ce563c9498109314f5ec1de33ab100a47dba4109e215789c8ecb1f0b840",
+    "manager_reports/silverline_core_plus_fund_1Q26.pdf": "f9cd3a3695c9e945ac987c50bfc1f20453184bb12ed99c31a2c7b3764df0adfd",
+    "manager_reports/tidewater_distressed_realty_fund_1Q26.pdf": "844657d9edb2b4049f5f5682a0e6112a9e9e92e8677a618d480fddb247636aa3",
+    "market_outlook_1Q26.pptx": "8db4c4cecd1bc56adb1afbe914042dc1473341b6147d0b063c4ae7245f4b9aac",
+    "prior_pmr_4Q25.pdf": "7667a068e10435408a4ad000e701bc4915bc0b677780a230611251cb26b86f06"
+  },
+  "runs": [
+    {
+      "command": [
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+        "-m",
+        "pmr",
+        "generate",
+        "--client",
+        "CPERS",
+        "--quarter",
+        "1Q26",
+        "--inputs",
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment_fixes/Vectera_PMR_Rerun_1Q26/inputs",
+        "--output",
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/round2/v1-runs/first/output"
+      ],
+      "working_directory": "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/round2/v1-freeze/source",
+      "exit_code": 2,
+      "seconds": 2.661,
+      "failure": {
+        "status": "blocked",
+        "reason": "Expected number at flash_1Q26.xlsx/ReturnsMultiples(Agg)/V28"
+      },
+      "diagnostics": {
+        "status": "blocked",
+        "stages": [
+          {
+            "stage": "discovery",
+            "status": "completed",
+            "seconds": 1.169
+          },
+          {
+            "stage": "exact_finance",
+            "status": "failed",
+            "seconds": 0.055
+          }
+        ]
+      },
+      "output_files": {
+        "diagnostics.json": "c678bf09050b11cc1d8a906d3433106b0ba6d209b26daaf912ce36904837efa6",
+        "failure.json": "2cd8bf56dd92476f123dca3546d9630d2d2e86a815643e3bbae6cb474e295ae6",
+        "progress.json": "5ae9cb8dae05754e07190b60ca361f92e18e2809f81a849c64033027fa517e9c"
+      },
+      "fresh_output_and_cache": true
+    },
+    {
+      "command": [
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+        "-m",
+        "pmr",
+        "generate",
+        "--client",
+        "CPERS",
+        "--quarter",
+        "1Q26",
+        "--inputs",
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment_fixes/Vectera_PMR_Rerun_1Q26/inputs",
+        "--output",
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/round2/v1-runs/second/output"
+      ],
+      "working_directory": "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/round2/v1-freeze/source",
+      "exit_code": 2,
+      "seconds": 1.624,
+      "failure": {
+        "status": "blocked",
+        "reason": "Expected number at flash_1Q26.xlsx/ReturnsMultiples(Agg)/V28"
+      },
+      "diagnostics": {
+        "status": "blocked",
+        "stages": [
+          {
+            "stage": "discovery",
+            "status": "completed",
+            "seconds": 0.75
+          },
+          {
+            "stage": "exact_finance",
+            "status": "failed",
+            "seconds": 0.06
+          }
+        ]
+      },
+      "output_files": {
+        "diagnostics.json": "675e900b826ccc1046a4e19c9e9612f4c297f0c743a8fdd80202f8b9ba457652",
+        "failure.json": "2cd8bf56dd92476f123dca3546d9630d2d2e86a815643e3bbae6cb474e295ae6",
+        "progress.json": "0b009d91cc8d63d4e04e5297549b7a9c76b26e8db9f39bfe9d13f361b3ad79e5"
+      },
+      "fresh_output_and_cache": true
+    }
+  ],
+  "failure_reproducible": true,
+  "successful_report_repeatability_tested": false
+}

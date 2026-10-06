@@ -1,0 +1,2287 @@
+{
+  "mode": "live",
+  "started_at": "2026-10-05T19:15:43.369563+00:00",
+  "completed_at": "2026-10-05T19:18:12.264747+00:00",
+  "python": "3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "platform": "macOS-15.4.1-x86_64-i386-64bit",
+  "dependencies": {
+    "PyMuPDF": "1.26.4",
+    "openpyxl": "3.1.5",
+    "reportlab": "4.4.4",
+    "matplotlib": "3.10.6",
+    "pillow": "11.3.0",
+    "pytest": "8.4.2",
+    "python-dotenv": "1.1.1",
+    "charset-normalizer": "3.5.1",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "et_xmlfile": "2.0.0",
+    "fonttools": "4.66.1",
+    "iniconfig": "2.3.0",
+    "kiwisolver": "1.5.1",
+    "numpy": "2.5.3",
+    "packaging": "26.3",
+    "pluggy": "1.6.0",
+    "Pygments": "2.21.0",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0"
+  },
+  "environment_note": "Existing macOS Python 3.12 environment; not a Windows run or fresh install.",
+  "v1_commit": "618b990a66a2940fac7f7d65fa6f7768c9d89652",
+  "v2_source_file_sha256": {
+    ".env.example": "c5536cd8eeda99bc2fb3db23d6b67ddacfd67ab2100fef9d8ef438dc402079e6",
+    ".gitattributes": "89c9ae6dd04bc2b53e50c113a404efa1bab5adc1fe499e5e251523f07970372f",
+    ".github/workflows/verify.yml": "cdd143fd5f7ae41b621df85a30e1987a14c25308d0262a6a22f9540fdaf465ab",
+    ".gitignore": "36665175cd222349e58bca9eb3952d77512d2d9c2103bd37a7376206c4d8a6f4",
+    "README.md": "c3effd8a4903d8a54bfc771bb9216e73e3fc2091627009e1891c27fb877a5ee7",
+    "SPEC.md": "339f160ad8526e92cbb2a2f16d6bb8451e8401417051ecb3e73cc1dfcfe0ade7",
+    "inputs/allocation_history.xlsx": "55c36017ab81730d48785e4344b0e2d5cdf933c06c3e2bd83f40b794e5f6cc3d",
+    "inputs/flash_3Q25.xlsx": "5558132c748c382f8afcbe1764356588fc2069a00f1e30404fbfb153ce0663f4",
+    "inputs/flash_4Q25.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
+    "inputs/flash_4Q25.xlsx": "b666b341eafb44f81ec92f05c721ba4102bfaaf9beb5c5570df2942dfaa3f6f2",
+    "inputs/flash_4Q25_NWPT.xlsx": "10045fe1d82b6be0f1d88a53d350c7fb121199213ce9ce684d31df67bc764a49",
+    "inputs/ic_log_2025.xlsx": "7740c8e5007907521e256072a8820c9c0d7bb4a3fcb78f2ef03b96330b181cd2",
+    "inputs/manager_reports/cornerstone_core_property_fund_4Q25.pdf": "e7aad4eb386276068bb5b8595c5c9306fa6cc0183049f42e17ee2bc4ac2df320",
+    "inputs/manager_reports/ironwood_value_add_fund_3_4Q25.pdf": "e4aa1af408edbbc1949104849a01d74245af145a4d61c539aaa1083083e4ae5d",
+    "inputs/manager_reports/kestrel_us_real_estate_fund_4Q25.pdf": "c366ef111f8a7571b99399c84b4695a167f7f819f59222b8d2957cba5b6194e0",
+    "inputs/manager_reports/northgate_logistics_partners_4Q25.pdf": "58fdc9bef92784209f3f4856f9355f641655799733dd5d96a1da20e759a2197b",
+    "inputs/manager_reports/redwood_logistics_trust_4Q25.pdf": "903c8b3ba46036f6e8df2a5c9ced6f646923c610fc5bc9a2be4b616e358ead7b",
+    "inputs/manager_reports/ridgeline_value_fund_iv_4Q25.pdf": "cbc4e6234c0899c5e4cd7051cbb6e353617b8db6352f377b8dba935d973c70b2",
+    "inputs/manager_reports/tidewater_distressed_realty_fund_4Q25.pdf": "b76f34a76523355313e363e97c2084ebad141119f1e96b9cc6db100f5a5c4074",
+    "inputs/market_outlook_4Q25.pptx": "04f0cbd1b3c1770e4707a01186bac127fac186a62523530241a305be69b34290",
+    "inputs/prior_pmr_2Q25.pdf": "818a090b7344f7754c313d869b693b52921b60b0dbea4421bf646f7ad1617f0e",
+    "inputs/prior_pmr_3Q25.pdf": "a3152af51648b01cafee494dcf6ec2a670d1e647a97ed88c93574f03af5d446b",
+    "output/CPERS_PMR_4Q25_DRAFT.pdf": "c71bedd04e84ca6bf0bc08eb5224fddfb97a506b7df7d41af5ae09a72e5283a7",
+    "output/appendix.pdf": "2ee38ccd02b245321169bd109b1a11661abed79383fb060f7f80f5523ec99a30",
+    "output/assets/allocation.png": "bdb1f08b3cf59645c0a77a435f34f3fbcf21213f991ab9197e5a8ff814c53c26",
+    "output/assets/annual.png": "d72d10742e40ff2c0debbcecb94f1eef0de925c7b07b322c69810d8534b4e04c",
+    "output/assets/geography.png": "a343c45d7ace5e76c73b1ffb3bad0cdb76a51cab21358a344450bcf5ce310464",
+    "output/assets/property.png": "3eba3518300c4f5e58e7a9960bde73fe272d7e59a3aa62ba54f0a897434372d8",
+    "output/assets/slide_10_chart_1.png": "284dced29440a7597eb6223151a2a4b62cc4a582998eaf2be93d829630c9085d",
+    "output/assets/slide_4_chart_1.png": "af6e5c5932fefb336696acbc989987c2a1dcdaf0bf7076642bc81a5659c1e3dc",
+    "output/assets/slide_5_chart_1.png": "19d9d9a0ec636346f1d059a2ededa0e8bbf5fce58533b2e73769f32ee061b1fc",
+    "output/assets/slide_6_chart_1.png": "cc6f7c6c7bc51d13983a1364e3feda683d7327a0d7fc23fff73747e2d46e9483",
+    "output/assets/slide_7_chart_1.png": "db463ff4b1a6648975ab02fb6b9c8c684715a31080df1da6f1eff0cd2d3e26bf",
+    "output/assets/slide_8_chart_1.png": "6f74de1a36e65febbb5c46d3ed5a6854eb39f0daf61ad1834719835c09616127",
+    "output/assets/slide_9_chart_1.png": "05de74df3a64e0ca9a9650f4dfca566525367a95fee5e7f2665d3143227c2a32",
+    "output/clean_install_verification.json": "60223e67dcd7219b8b06d67e63647ab6c4fc499c8a6778eec73a968e868397d1",
+    "output/diagnostics.json": "3807f4750a43cef93e3bb5d7737dad6720d3cd9b512694cb2078054b7eaf0081",
+    "output/draft.json": "0aa8c5107bee6af62aaa9990cf9b75a0ecb64d41e748603ded3546da96abafe0",
+    "output/evidence.json": "2f8658744eeb7f25125f81f589d215ebaaaad69a03c1a82c76391eebcd69ba00",
+    "output/live_repeatability.json": "f61ae17bc7667ccd82bbe5eb37f04076e0fee1a051263ddad4a897d235df7cf7",
+    "output/live_repeatability_before_fallback_fix.json": "0c562b8cd7c12b53d2ba81ecbf87868863c44d68e15138f296781512d67a4d91",
+    "output/manifest.json": "e087034adb1f6596c5b656ac53fa432a184a4e28232d3febe6abca2a0b613dc7",
+    "output/regression_matrix.json": "ce57b128ce5e281a8a2d26e5fc9aa5b085c1a7d9364aa42c2e3bfd3e1a5b200f",
+    "output/repeatability.json": "2ea1a39a485f6b5815527945d38eaeb16945b506ee7cba413eea4440104e7e73",
+    "output/report.pdf": "c71bedd04e84ca6bf0bc08eb5224fddfb97a506b7df7d41af5ae09a72e5283a7",
+    "output/review.html": "28fcd5ff7eb8dd97f0c128042337f1550bb2f5fc872126b64bc452d8382156d0",
+    "output/review.md": "779f56b2905bbad26217a1d3047c73f86afa9f6ca0cee8237e4f3a4481c46cd6",
+    "output/review_ui_verification.json": "ae746f25647df2578b88d2cd477c9cb898026941bcb19e6305c886b34e9fabef",
+    "output/semantic_manifest.json": "f1296dd2a7850ed90f51a479e174dd033e51cecbe8cedccb487f912769d64c4c",
+    "output/test-results.xml": "9a05c6afb13886a19b0ff321ed17531a134b15d94f84b37a5a3fb0f5cf3edb22",
+    "output/unseen_rehearsal.json": "ccbc9afcdb78bed89d9175418dfd1cb08341a37b92bbff986eaaf8d3035a8155",
+    "output/verification.json": "bc994696bb9cb86539b8350e61489b52c3655f3fabd7974053637667bd84a26d",
+    "output/writeup.pdf": "cd4fe1e154c280977d925c82b6ac8436aa8d4b2c9f66ed90c41f2cea541cc24b",
+    "pmr/__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+    "pmr/__main__.py": "dcb1c5bb03130f3d9612df765fa70aa3f6ac1d73f1c3440f387f29fb8a33c8ce",
+    "pmr/appendix.py": "446754f9449b8bc0c3563699b9215bebde043a964084d200196133eea9691f5e",
+    "pmr/charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
+    "pmr/config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
+    "pmr/crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+    "pmr/errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
+    "pmr/evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+    "pmr/filenames.py": "cd25503f2e3b156a747c865778a8104018f2a383556e141c648e754bdc9b65f5",
+    "pmr/finance.py": "3dd292d637ca779e64f033af0d88a5d9822bc305434ea0313a9e3a190c0871d4",
+    "pmr/ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
+    "pmr/market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
+    "pmr/models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
+    "pmr/narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
+    "pmr/numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
+    "pmr/pipeline.py": "8e8acae9336d485009d96b144398b22998cceeb1628dbcdcaefe064521c4c12c",
+    "pmr/report.py": "9cf8d75f6f2f7f167a055cfa045a33b8fab8b9ae888165fe30b8beaf7f284ee8",
+    "pmr/review.py": "dca069e122ce5bd823052abdda5b541c9143c7d0b6293b292d30889fb3e4debc",
+    "pmr/synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+    "pmr/template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+    "pmr/verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+    "pmr/visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+    "pmr/web/icons/LICENSE": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "pmr/web/icons/arrow-left.svg": "e31ed0af85ffbed2b54f78f37af197c3b84b24e776cba1d27613d6a9ad555a16",
+    "pmr/web/icons/download.svg": "f68a21e11115edc0aef51ac6f8f4618e14d2b92055f1cb9f5d670efc696bea85",
+    "pmr/web/icons/file-text.svg": "512f414d72aabc5218b94a9da571df70d8e0b014cfb32ec366b559ec868952d6",
+    "pmr/web/icons/folder-open.svg": "af84f4455cde361ebefbae99f9114adcec8e2d7209bcf49e80bd724f6d36f61e",
+    "pmr/web/icons/play.svg": "f0cab5b458fdf5e5d5d1a8aeb3d368ccab337cc578b1f8081807b8e39f68f1a1",
+    "pmr/web/icons/plus.svg": "b29207ee8f5cc0e829c0bab2e5b223fc88687599c6bd40b94ba35f52327615d6",
+    "pmr/web/index.html": "35561f5d34a26ce683ef767bd1c0488c6760daa4f2c8a1ffcf64544d2d65d6ab",
+    "pmr/web/review.html": "618c0ced8a11953e90145dace3ecce70a9b70f094f3047dd8697314e4be84984",
+    "pmr/workspace.py": "5a5ad0f5b64872f39a28e54d35de02ec7edfec38291dd707c30dd48f9ff6199f",
+    "pyproject.toml": "9754749e769a78774d4af806383b0b033e8cee5d619eaff766d2a4d4cc68b4f5",
+    "requirements.txt": "90cb7e9a634e7602b189d93fe6d37ce57b1774f92642d1d6028cdd293d8d3d16",
+    "scripts/build_verification_summary.py": "6fe4b181ecb9577b31fef184d252947a421e6e90e80e0b0b5917580e3820c191",
+    "scripts/build_writeup.py": "42d51c8d5ef6c450a237a811e7b5780a5fd7b4018a6c9d00a022ac006106923a",
+    "scripts/launch.py": "e0382a0b401723334f7caba0d72bc1d5c169dc10077c26d5dc4d599a74efc67d",
+    "scripts/package_submission.py": "82f8572f6f04aabe620eec9d3360d1c4e86d777eeaed930354d52d4566fc4988",
+    "scripts/rehearse_unseen.py": "0379f0e6975a3777a2848ed2bcd787ec163d7718f3f10f10d7b31378ad67d336",
+    "scripts/verify_clean_install.py": "6e3d1458d572e2d60ec3eb625081da14554cb41e441fa5c6de00fc5faf78b6bf",
+    "scripts/verify_repeatability.py": "684f1fd8911ada7f4f49f823ebba1273f1a53ece33a06cc5720f2aa23b852ca5",
+    "start.cmd": "5ea3e6d4915fc6b408d11042a83c4e57f1a94d0e42de58366ac2fd25b597277e",
+    "tests/test_appendix.py": "f346a887384bf298e2fcaf68fb294bddb8365abb55b954ebbee9bebde7e45df1",
+    "tests/test_config.py": "ee9e9af63b2b921ddd00fb25ebf79c90f5d9ae3c76773f569fe66ae2df6e4d31",
+    "tests/test_errors.py": "9126b3ba9f089967cf33ab117ebcf2705b79259cc43c11067778bfd32ecf1bf5",
+    "tests/test_filenames.py": "80e233ae4f22ed96b8229718b6117934fed136b12228a2406c7a6ad18dc48890",
+    "tests/test_finance.py": "8bd5ca120e226e48713fb13fb620c173c2a7610ee8a3a5060d6e67ea5293c267",
+    "tests/test_guardrails.py": "7e0ea5948a07b2499f16e5a274f403888159ca25aa0b18edfcd91d64f2d8e186",
+    "tests/test_launcher.py": "3e476b938621d91deb3bfdb2cc2d8b5b9550e0c5a88561136df2f06056f410da",
+    "tests/test_market.py": "890b9624443f978c9d8f2c7fd807c85de811a92cd79a9c353dddfa77010eaba1",
+    "tests/test_missing_portfolio_returns.py": "2c87801f05d5fa77b2da51d096527f1d45f7a6495847569df7129e7da2b68b4d",
+    "tests/test_models.py": "fe8209ea85ed6250c4cfe2e26c086a4d368f86acd36a9d5bfc082a69087b8249",
+    "tests/test_pipeline.py": "817fa5613e06c86eda6253e1e2cfaf70222a532367e0ca19bea50a29ecbc5b50",
+    "tests/test_presentation.py": "95415b0a0f79940c423194c68d6cb47f640319b5a878337b7c40179b7edea1f8",
+    "tests/test_randomized.py": "df904028b2cb37127fe7e56d560e0be8d907a4f3a77abf9e2c09695330a03fa6",
+    "tests/test_rehearsal.py": "80e9aeb24251e34026e89639df7f583800d55e2cdf54b13dd90e12eebe5adc5d",
+    "tests/test_review_integrity.py": "989007e4f88377890df669ee8eb78ac85c1015b9ca65a846fc4fded7e4c2a467",
+    "tests/test_review_usability.py": "b9c0d09a616481dda276f101ceee6c05ccbc01038b0d61b2513e01c36821c3a0",
+    "tests/test_synthesis.py": "fd561bbd16e7f3d7962a9c2363fae09f528aa40b6637a973dadfdde05529030e",
+    "tests/test_template.py": "dcf3a7a8b4bd71c7437ade57f5e56c4ad969b5be691ea3bdb4e4592cdd01b113",
+    "tests/test_workspace.py": "1de905bd19c171232d7b9a94cbad9ef68ddb7a007629b16759a058b7d91c86ae"
+  },
+  "integrity": {
+    "v1_source_unchanged": true,
+    "received_inputs_unchanged": true,
+    "v2_source_unchanged_during_runs": true
+  },
+  "runs": [
+    {
+      "command": [
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+        "-m",
+        "pmr",
+        "generate",
+        "--client",
+        "CPERS",
+        "--quarter",
+        "1Q26",
+        "--inputs",
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment_fixes/Vectera_PMR_Rerun_1Q26/inputs",
+        "--output",
+        "/Users/abdullahwaheed/Downloads/Vectera_Round2/v2-runs/live/first/output"
+      ],
+      "working_directory": "/Users/abdullahwaheed/Downloads/Vectera_Round2/v2-source",
+      "exit_code": 0,
+      "seconds": 81.474,
+      "fresh_output_and_cache": true,
+      "failure": null,
+      "verification": {
+        "client": "CPERS",
+        "quarter": "1Q26",
+        "meaning_hash": "1329dbc1d3a5f457372362a5a75ea3b21ad9644a69895fe11aa61cf0e3dbf0c1",
+        "semantic_hash": "b1ad92518cdc48deef44e53ba578e84ef84d3b91b758ee3c14160dc426ff983f",
+        "financial_hash": "4dfcdd75e79651e321cc6f0a9c3714188a4c53c403c6c32a2cab49aacf9467eb",
+        "source_hashes": {
+          "allocation_history.xlsx": "076a12726b442d44a218e8be9bbe18cf2cfdcca245d5a0081940b20c89ebfe41",
+          "flash_1Q26.pdf": "df357807f15ab295f5f64f5d8145052670fa3fab452d18b4d756427809510a10",
+          "flash_1Q26.xlsx": "d8f6e97c34094ae85c62e2a3efdaed479fea25e43923c0613a8e3cb4229ae33d",
+          "ic_log_2026.xlsx": "604787b4805f3074375398cf9e40ff37071809b430bc98c799ca5971da1df4b5",
+          "manager_reports/auburn_ridge_residential_fund_ii_1Q26.pdf": "269d8fb9ef7ee274ba7b6c1b91fca3ef285b43b0c7c78b515d8db1dba2f47de2",
+          "manager_reports/beacon_hill_medical_office_fund_1Q26.pdf": "43d64e1126daf714c486099f5d364713e322aa8df932fcb2bad05f119c7c5126",
+          "manager_reports/blackford_special_situations_fund_ii_1Q26.pdf": "2bc4a409b9005a80868366a1e5a975fb8f330f3ff5e70b8c48bfd0c339a628ef",
+          "manager_reports/calder_grove_industrial_partners_1Q26.pdf": "1432b7b6eefe2263b5647e7cf3e5b9531888966d42f49bf11afb02c69a94a824",
+          "manager_reports/cornerstone_core_property_fund_1Q26.pdf": "e7f71c00bd7175993d1288968a7e8fb6ecc978a170ac33c63d289db08f44cf40",
+          "manager_reports/ironwood_value_add_fund_3_1Q26.pdf": "256f0adfc7cac3465bafd9614bbd2f5aef688d3ec1648817bb6b638c7e21e165",
+          "manager_reports/redwood_logistics_trust_1Q26.pdf": "80c18ce563c9498109314f5ec1de33ab100a47dba4109e215789c8ecb1f0b840",
+          "manager_reports/silverline_core_plus_fund_1Q26.pdf": "f9cd3a3695c9e945ac987c50bfc1f20453184bb12ed99c31a2c7b3764df0adfd",
+          "manager_reports/tidewater_distressed_realty_fund_1Q26.pdf": "844657d9edb2b4049f5f5682a0e6112a9e9e92e8677a618d480fddb247636aa3",
+          "market_outlook_1Q26.pptx": "8db4c4cecd1bc56adb1afbe914042dc1473341b6147d0b063c4ae7245f4b9aac",
+          "prior_pmr_4Q25.pdf": "7667a068e10435408a4ad000e701bc4915bc0b677780a230611251cb26b86f06"
+        },
+        "implementation_hashes": {
+          "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+          "__main__.py": "dcb1c5bb03130f3d9612df765fa70aa3f6ac1d73f1c3440f387f29fb8a33c8ce",
+          "appendix.py": "446754f9449b8bc0c3563699b9215bebde043a964084d200196133eea9691f5e",
+          "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
+          "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
+          "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+          "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
+          "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+          "filenames.py": "cd25503f2e3b156a747c865778a8104018f2a383556e141c648e754bdc9b65f5",
+          "finance.py": "3dd292d637ca779e64f033af0d88a5d9822bc305434ea0313a9e3a190c0871d4",
+          "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
+          "market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
+          "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
+          "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
+          "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
+          "pipeline.py": "8e8acae9336d485009d96b144398b22998cceeb1628dbcdcaefe064521c4c12c",
+          "report.py": "9cf8d75f6f2f7f167a055cfa045a33b8fab8b9ae888165fe30b8beaf7f284ee8",
+          "review.py": "dca069e122ce5bd823052abdda5b541c9143c7d0b6293b292d30889fb3e4debc",
+          "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+          "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+          "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+          "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+          "web/index.html": "35561f5d34a26ce683ef767bd1c0488c6760daa4f2c8a1ffcf64544d2d65d6ab",
+          "web/review.html": "618c0ced8a11953e90145dace3ecce70a9b70f094f3047dd8697314e4be84984",
+          "workspace.py": "5a5ad0f5b64872f39a28e54d35de02ec7edfec38291dd707c30dd48f9ff6199f"
+        },
+        "checks_passed": 62,
+        "checks_total": 63,
+        "supporting_checks_failed": 0,
+        "issues": [
+          {
+            "code": "portfolio_value_missing",
+            "message": "Vectera Initiated Investments: NET IRR is missing at ReturnsMultiples(Agg)/V28; no value inferred",
+            "severity": "blocker",
+            "evidence": [
+              "f_c5c5f55b5226caa8"
+            ]
+          },
+          {
+            "code": "portfolio_value_missing",
+            "message": "Vectera Initiated Investments: Net Multiple is missing at ReturnsMultiples(Agg)/W28; no value inferred",
+            "severity": "blocker",
+            "evidence": [
+              "f_2397c68fd24cb681"
+            ]
+          },
+          {
+            "code": "missing_manager",
+            "message": "No matched current manager evidence for ranked fund Kestrel U.S. Real Estate Fund; flash-only commentary",
+            "severity": "warning",
+            "fund": "Kestrel U.S. Real Estate Fund"
+          },
+          {
+            "code": "negative_fees",
+            "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+            "severity": "warning",
+            "evidence": [
+              "f_e81c8eb20242f0ce"
+            ]
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 4, chart 1",
+            "severity": "review",
+            "fact_id": "f_a44443adf5cc3910"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 5, chart 1",
+            "severity": "review",
+            "fact_id": "f_35b9cf0ed879059e"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 6, chart 1",
+            "severity": "review",
+            "fact_id": "f_c165d161b06a8721"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 7, chart 1",
+            "severity": "review",
+            "fact_id": "f_80438af1104fa68b"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 8, chart 1",
+            "severity": "review",
+            "fact_id": "f_345846c08cfd0520"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 9, chart 1",
+            "severity": "review",
+            "fact_id": "f_c5fc7f8f54fc3661"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 10, chart 1",
+            "severity": "review",
+            "fact_id": "f_8156ab2ba2b1135e"
+          },
+          {
+            "code": "reconciliation",
+            "message": "Allocation history/flash target at USD-million display precision: difference 14.0000",
+            "severity": "blocker",
+            "evidence": [
+              "f_daed0227c255e87c",
+              "f_e088d2e9d897392a"
+            ]
+          },
+          {
+            "code": "history_ownership",
+            "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+            "severity": "warning",
+            "evidence": [
+              "f_0d346f47e872a40f",
+              "f_daed0227c255e87c"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Auburn Ridge Residential Fund II",
+            "severity": "warning",
+            "evidence": [
+              "f_8f35464fc7ba3a23"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Beacon Hill Medical Office Fund",
+            "severity": "warning",
+            "evidence": [
+              "f_4cc40acb900575ad"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Calder Grove Industrial Partners",
+            "severity": "warning",
+            "evidence": [
+              "f_4d16132129f78b96"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
+            "severity": "warning",
+            "evidence": [
+              "f_89fd8a7ed30ea98e"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
+            "severity": "warning",
+            "evidence": [
+              "f_b625b23762e8fb52"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Silverline Core-Plus Fund",
+            "severity": "warning",
+            "evidence": [
+              "f_3bc9f3b7565014d4",
+              "f_2be521605ef4278d",
+              "f_8e5f70a33e2bd501"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
+            "severity": "warning",
+            "evidence": [
+              "f_5505b570e2027e9a",
+              "f_3377522197d9237a",
+              "f_16cb1d97cc52da61",
+              "f_54972519e7b04b46",
+              "f_5f71e3d62097a2d4",
+              "f_2e44a4183c0e1101",
+              "f_f59dcd90f985604d"
+            ]
+          }
+        ],
+        "ranked_funds": [
+          {
+            "name": "Cornerstone Core Property Fund",
+            "roles": [
+              "largest contributor",
+              "largest individual position"
+            ],
+            "contribution": "1825000",
+            "nav": "55689849.41"
+          },
+          {
+            "name": "Silverline Core-Plus Fund",
+            "roles": [
+              "second-largest detractor"
+            ],
+            "contribution": "-316000",
+            "nav": "49578121.2"
+          },
+          {
+            "name": "Kestrel U.S. Real Estate Fund",
+            "roles": [
+              "second-largest contributor"
+            ],
+            "contribution": "1147000",
+            "nav": "50261238"
+          },
+          {
+            "name": "Redwood Logistics Trust",
+            "roles": [
+              "largest detractor",
+              "second-largest individual position"
+            ],
+            "contribution": "-950000",
+            "nav": "50615756.06"
+          }
+        ],
+        "model_provider": "openai",
+        "model_name": "gpt-4.1-2025-04-14",
+        "api_calls": 23,
+        "api_usage": [
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 276,
+            "total_tokens": 1688,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 980,
+            "total_tokens": 2460,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 626,
+            "total_tokens": 2106,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 376,
+            "total_tokens": 1788,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 585,
+            "total_tokens": 1997,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 1531,
+            "total_tokens": 3011,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 701,
+            "total_tokens": 2181,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 447,
+            "completion_tokens": 112,
+            "total_tokens": 559,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 512,
+            "completion_tokens": 59,
+            "total_tokens": 571,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 418,
+            "completion_tokens": 76,
+            "total_tokens": 494,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 237,
+            "completion_tokens": 40,
+            "total_tokens": 277,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 423,
+            "completion_tokens": 82,
+            "total_tokens": 505,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 251,
+            "completion_tokens": 36,
+            "total_tokens": 287,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 428,
+            "completion_tokens": 81,
+            "total_tokens": 509,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 254,
+            "completion_tokens": 59,
+            "total_tokens": 313,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 444,
+            "completion_tokens": 113,
+            "total_tokens": 557,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 395,
+            "completion_tokens": 64,
+            "total_tokens": 459,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 420,
+            "completion_tokens": 107,
+            "total_tokens": 527,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 498,
+            "completion_tokens": 34,
+            "total_tokens": 532,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1066,
+            "completion_tokens": 528,
+            "total_tokens": 1594,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 3301,
+            "completion_tokens": 140,
+            "total_tokens": 3441,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1615,
+            "completion_tokens": 450,
+            "total_tokens": 2065,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 3291,
+            "completion_tokens": 67,
+            "total_tokens": 3358,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          }
+        ]
+      },
+      "diagnostics": {
+        "stages": [
+          {
+            "stage": "discovery",
+            "status": "completed",
+            "seconds": 0.838
+          },
+          {
+            "stage": "exact_finance",
+            "status": "completed",
+            "seconds": 0.066
+          },
+          {
+            "stage": "source_passages",
+            "status": "completed",
+            "seconds": 0.008
+          },
+          {
+            "stage": "chart_vision",
+            "status": "completed",
+            "seconds": 44.139
+          },
+          {
+            "stage": "cross_source_checks",
+            "status": "completed",
+            "seconds": 0.013
+          },
+          {
+            "stage": "grounded_narrative",
+            "status": "completed",
+            "seconds": 30.057
+          },
+          {
+            "stage": "report_render",
+            "status": "completed",
+            "seconds": 1.382
+          }
+        ],
+        "provider": "openai",
+        "model": "gpt-4.1-2025-04-14",
+        "vision_model": "gpt-4.1-mini-2025-04-14",
+        "api_calls": 23,
+        "token_usage": [
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 276,
+            "total_tokens": 1688,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 980,
+            "total_tokens": 2460,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 626,
+            "total_tokens": 2106,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 376,
+            "total_tokens": 1788,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 585,
+            "total_tokens": 1997,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 1531,
+            "total_tokens": 3011,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 701,
+            "total_tokens": 2181,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 447,
+            "completion_tokens": 112,
+            "total_tokens": 559,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 512,
+            "completion_tokens": 59,
+            "total_tokens": 571,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 418,
+            "completion_tokens": 76,
+            "total_tokens": 494,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 237,
+            "completion_tokens": 40,
+            "total_tokens": 277,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 423,
+            "completion_tokens": 82,
+            "total_tokens": 505,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 251,
+            "completion_tokens": 36,
+            "total_tokens": 287,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 428,
+            "completion_tokens": 81,
+            "total_tokens": 509,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 254,
+            "completion_tokens": 59,
+            "total_tokens": 313,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 444,
+            "completion_tokens": 113,
+            "total_tokens": 557,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 395,
+            "completion_tokens": 64,
+            "total_tokens": 459,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 420,
+            "completion_tokens": 107,
+            "total_tokens": 527,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 498,
+            "completion_tokens": 34,
+            "total_tokens": 532,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1066,
+            "completion_tokens": 528,
+            "total_tokens": 1594,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 3301,
+            "completion_tokens": 140,
+            "total_tokens": 3441,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1615,
+            "completion_tokens": 450,
+            "total_tokens": 2065,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 3291,
+            "completion_tokens": 67,
+            "total_tokens": 3358,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          }
+        ],
+        "cache_hits": 0,
+        "cache_misses": 23,
+        "failed_calls": 0,
+        "blockers": 3,
+        "warnings": 10,
+        "review_items": 7
+      },
+      "output_file_sha256": {
+        "CPERS_PMR_1Q26_DRAFT.pdf": "5a9f5c9d6eb50d17904c3ef32752677ba9653e0b88bce3e87c391a12ce2df51c",
+        "appendix.pdf": "df357807f15ab295f5f64f5d8145052670fa3fab452d18b4d756427809510a10",
+        "assets/allocation.png": "c4d0c48649d0d474783f02a4c4c59e1f559372307372659dfba3011aabf4b5c1",
+        "assets/annual.png": "c0b22900bd21633d5d90170e5e0e1713dc895b4544060a4b8e92e87ef8bb78c6",
+        "assets/geography.png": "333c6e47499db3d9feaaacdd3f1c544a450e843852b61609e2553dd055bd782f",
+        "assets/property.png": "75c9b24f893beae9864e40c1073fdbd8aa8d90fbee5d59f324c3a5296c902d5e",
+        "assets/slide_10_chart_1.png": "284dced29440a7597eb6223151a2a4b62cc4a582998eaf2be93d829630c9085d",
+        "assets/slide_4_chart_1.png": "af6e5c5932fefb336696acbc989987c2a1dcdaf0bf7076642bc81a5659c1e3dc",
+        "assets/slide_5_chart_1.png": "19d9d9a0ec636346f1d059a2ededa0e8bbf5fce58533b2e73769f32ee061b1fc",
+        "assets/slide_6_chart_1.png": "cc6f7c6c7bc51d13983a1364e3feda683d7327a0d7fc23fff73747e2d46e9483",
+        "assets/slide_7_chart_1.png": "db463ff4b1a6648975ab02fb6b9c8c684715a31080df1da6f1eff0cd2d3e26bf",
+        "assets/slide_8_chart_1.png": "6f74de1a36e65febbb5c46d3ed5a6854eb39f0daf61ad1834719835c09616127",
+        "assets/slide_9_chart_1.png": "05de74df3a64e0ca9a9650f4dfca566525367a95fee5e7f2665d3143227c2a32",
+        "cache/161dc3a4fed4e2e8d5a6b9137532c89b2a4514858b51666b1413a09f1225b994.json": "15ebf8a9727fc94ea74d6a0b2e186535ee6eaa504f3715b3f77852e00cae0a1e",
+        "cache/236f260b2f1990bd91958fa622a8c09b626fdc404aa94be184ea6c55e0c51938.json": "22c7d0e55622118f327a42e00aeafa93d8b550bdd87435aebdfa6286bd9e61a7",
+        "cache/2628e6233bd2cf231b8fbce411fd1ebc718cdc9424b0d6d48094438850d24614.json": "88ad315ae548f0e7e6c783fb14c52619465e4fe9b3afcf9bd70dad7dbce94b14",
+        "cache/274bef04d04781d7d1cdb5d4166f9aed331480af22cb9e1abc78bf265ef68296.json": "14f4ec19cd26152bcc11282050640358deba25b5aad3f971d04bfee0df8430ac",
+        "cache/3b2488d24d76d28cca7118973cf2ca22b60e4932df069cbf16e03f75b107c2db.json": "04b0b2b60cf243f8f0f603a76b0f807a98a02713e618491f1b6266a6fca4922c",
+        "cache/3e4a00557ff37f042b0d9a44952197095eb5486940df954c2914bd2ef31ed05a.json": "aa511a983ae421068a37304c271db3fb3d25cfb4fa20110c70ca2174ca47eb47",
+        "cache/42a5ddfa4062a560e18f7ac79aab43fcf0a050ea9c4b70978859f3fe47a9a16a.json": "ef747dc7cd351bc30d7c441aecae7f1a20c47b29cf39ba421cd94a917038276a",
+        "cache/49c332734961033930fea21f8eee6003786880b4e00d324cda85ebe4de83f1f7.json": "12de279d4226647f1b8f32ef341ace6659555fbd8c1642d26d9e949fdab0d562",
+        "cache/4a9b47bc323127eb31fba6ff1626e6842b6f4130cbb18dee59cf1edac7bf6e1c.json": "f542bba9a01827fac326fdcf72ed5298a6c255e0790435e38398586f7080fd7c",
+        "cache/59cefc0914d1e631e50bcae065370d3578aee3291ec0fba29e144d079bc7bea3.json": "c9c40b656b134f5261fe3149df205a52264606a06f4eee692eae3b522496edd4",
+        "cache/5b6198cf8c7530268ae2dc9c27b68f80498850c69c1a7a1dc17c4244fab02429.json": "b8a35bf962017ad6b19f9a24bcdcd9a7eeb52b742cbfe1e3cba32fc746fd4163",
+        "cache/628bd5e0d57116d40cb211b2190d2bc9cb29aa93eab105827511925ecc421e5e.json": "c931229b5992b854048014cd9ad7269b77de5d3807fd4401b73cf9f53c517910",
+        "cache/744fa3ee4043c572ffdcc2ddb4bb38b6b34d844f1a583af2534b9be91046f7af.json": "c0b6c6fbb201c4f8d969275105977b305be8effbb57d2e7a4424d1153e12b84a",
+        "cache/75c86fb92661fb148eb25ba8d1808a215ce7a55a15736df79d989a2f4770c719.json": "df10158ec28dd809cdecf8b29392ceed89a868ea7d4f3a24a1f8e21bd4ab91f3",
+        "cache/7db97f178aced71f6b7438140ea4bc7d36ff98f113efc3eebd09644c95378b1f.json": "9fb0802653a473e2e171f65e07eb7916c01549612499998cb41f7d5543b40f15",
+        "cache/8c78953942c58ac1b10ac1c9927086e1f900cb8c1e7b04065c361fbc5662452d.json": "9ccaa8e96f2e0daaccaf778751a1ec4e3535e3d92d7875e0d0d59d9565dd066b",
+        "cache/a06579336f0f66b26b1b5712357514f777d725489cbb44f7bfe1872d1beda070.json": "af86737977ca3273dc26465c46d6ba5ffd2a0cc6dc032c340075d0c1d56afdda",
+        "cache/c09ae5a7e4dd8441932df051f78ddd7196322a3f978327e366e69dd5f3b13b1d.json": "bffbd64b9472de5d69b06e6efdc5c9b1aa2a182456905bf125d65ad9167c3c0e",
+        "cache/d417b7525282d7bfe87d871d93c67c365fad73bcc8558edf0aa38e9ad048fe10.json": "df507cc163e1a50d7c9cf502c4aa6c881a0d35127401c1b95cca36028101b245",
+        "cache/de310d3b5e435df8f2457a1ba5acb43f2bb230df9a31d4c403dc246ef40811d8.json": "eca9cc77ad5e8a3337fff5fb89384615cf81e672a9700b1c0955c5766b6b7746",
+        "cache/eeb8595cc5d56ec40bc4ee64673be680a0eed9fd7331a033aaa5fbef197511a5.json": "d0317ed44ba92048a9cf23b7f7a3f437309e467abde6b48772657c851a499fc4",
+        "cache/f588be1165377bc684e5a37bdbcb482e9caedeb8f56406e10e558156dd4f0f07.json": "16a9ea49db5b7b28cfb7971047b23eed3ae85182edc90b096298a7641b4fdeb6",
+        "cache/fcbec85d0b0c41f11d0f549ad0ee12590a9c2308730e4269617f18504a93d2c8.json": "8b55a19965e4a711e70f38801375e8ab7a4b9cfc46c42c935d0c6e27dbd5bda8",
+        "diagnostics.json": "3c69f929a96d02a3f7d7e307b1ab60daabd0029a9fa3ca574defbe237400e240",
+        "draft.json": "7f767ab0331a5d2f52d7431612df3b12ae1772354668365708aa23a6625654a0",
+        "evidence.json": "e5c7c8e510ce213ae561c4ab03cc8e529eecaeacf706745638372ed24968db83",
+        "manifest.json": "a7922ac19e570bbf24e5af96cbc99e94046581a4b869a4531b868a45f534c82a",
+        "progress.json": "387c5302dfc88ad90c1c9ad43f08d5d6e90c0708c81067eb661606bdd40e93ed",
+        "report.pdf": "5a9f5c9d6eb50d17904c3ef32752677ba9653e0b88bce3e87c391a12ce2df51c",
+        "review.html": "a8c9415c2ac249584a0c6de469dfca446dbd78830f920a9a20d2570c0417663e",
+        "review.md": "06db1ee7be1fd842db183190a87bac801369d25e2000b6754df8c7396a0625dd",
+        "semantic_manifest.json": "029c38ab0ae022ecc26e4b5db91b84f47b4350955d06b3546c047f0412215fec",
+        "verification.json": "7af8662df8bc03b0161becec2d19e9283c082935d180c3614318036925cea343"
+      }
+    },
+    {
+      "command": [
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+        "-m",
+        "pmr",
+        "generate",
+        "--client",
+        "CPERS",
+        "--quarter",
+        "1Q26",
+        "--inputs",
+        "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment_fixes/Vectera_PMR_Rerun_1Q26/inputs",
+        "--output",
+        "/Users/abdullahwaheed/Downloads/Vectera_Round2/v2-runs/live/second/output"
+      ],
+      "working_directory": "/Users/abdullahwaheed/Downloads/Vectera_Round2/v2-source",
+      "exit_code": 0,
+      "seconds": 66.941,
+      "fresh_output_and_cache": true,
+      "failure": null,
+      "verification": {
+        "client": "CPERS",
+        "quarter": "1Q26",
+        "meaning_hash": "d0ed84b4c854b483778af74ea523a3fa036c0592b6afd810f760312b67ba276a",
+        "semantic_hash": "b1ad92518cdc48deef44e53ba578e84ef84d3b91b758ee3c14160dc426ff983f",
+        "financial_hash": "4dfcdd75e79651e321cc6f0a9c3714188a4c53c403c6c32a2cab49aacf9467eb",
+        "source_hashes": {
+          "allocation_history.xlsx": "076a12726b442d44a218e8be9bbe18cf2cfdcca245d5a0081940b20c89ebfe41",
+          "flash_1Q26.pdf": "df357807f15ab295f5f64f5d8145052670fa3fab452d18b4d756427809510a10",
+          "flash_1Q26.xlsx": "d8f6e97c34094ae85c62e2a3efdaed479fea25e43923c0613a8e3cb4229ae33d",
+          "ic_log_2026.xlsx": "604787b4805f3074375398cf9e40ff37071809b430bc98c799ca5971da1df4b5",
+          "manager_reports/auburn_ridge_residential_fund_ii_1Q26.pdf": "269d8fb9ef7ee274ba7b6c1b91fca3ef285b43b0c7c78b515d8db1dba2f47de2",
+          "manager_reports/beacon_hill_medical_office_fund_1Q26.pdf": "43d64e1126daf714c486099f5d364713e322aa8df932fcb2bad05f119c7c5126",
+          "manager_reports/blackford_special_situations_fund_ii_1Q26.pdf": "2bc4a409b9005a80868366a1e5a975fb8f330f3ff5e70b8c48bfd0c339a628ef",
+          "manager_reports/calder_grove_industrial_partners_1Q26.pdf": "1432b7b6eefe2263b5647e7cf3e5b9531888966d42f49bf11afb02c69a94a824",
+          "manager_reports/cornerstone_core_property_fund_1Q26.pdf": "e7f71c00bd7175993d1288968a7e8fb6ecc978a170ac33c63d289db08f44cf40",
+          "manager_reports/ironwood_value_add_fund_3_1Q26.pdf": "256f0adfc7cac3465bafd9614bbd2f5aef688d3ec1648817bb6b638c7e21e165",
+          "manager_reports/redwood_logistics_trust_1Q26.pdf": "80c18ce563c9498109314f5ec1de33ab100a47dba4109e215789c8ecb1f0b840",
+          "manager_reports/silverline_core_plus_fund_1Q26.pdf": "f9cd3a3695c9e945ac987c50bfc1f20453184bb12ed99c31a2c7b3764df0adfd",
+          "manager_reports/tidewater_distressed_realty_fund_1Q26.pdf": "844657d9edb2b4049f5f5682a0e6112a9e9e92e8677a618d480fddb247636aa3",
+          "market_outlook_1Q26.pptx": "8db4c4cecd1bc56adb1afbe914042dc1473341b6147d0b063c4ae7245f4b9aac",
+          "prior_pmr_4Q25.pdf": "7667a068e10435408a4ad000e701bc4915bc0b677780a230611251cb26b86f06"
+        },
+        "implementation_hashes": {
+          "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+          "__main__.py": "dcb1c5bb03130f3d9612df765fa70aa3f6ac1d73f1c3440f387f29fb8a33c8ce",
+          "appendix.py": "446754f9449b8bc0c3563699b9215bebde043a964084d200196133eea9691f5e",
+          "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
+          "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
+          "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+          "errors.py": "d98189a27b9edd8d1a66c743925d5ce5825d5f176fc00c76ad05e32e9a7d6fa1",
+          "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+          "filenames.py": "cd25503f2e3b156a747c865778a8104018f2a383556e141c648e754bdc9b65f5",
+          "finance.py": "3dd292d637ca779e64f033af0d88a5d9822bc305434ea0313a9e3a190c0871d4",
+          "ingest.py": "7160589ce5a076f31a46041fb1785fba28e3758871dd814ce5fe791d2e9cef7e",
+          "market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
+          "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
+          "narrative.py": "d9158b7a5351452b4a5c8dad4d90182e29d5b7a49b1817be5b41f3aa652a058d",
+          "numeric.py": "4a1d5a8cd2ec2c8aad2c39d817b25524f3e52253665fa7d14cb109975e84b996",
+          "pipeline.py": "8e8acae9336d485009d96b144398b22998cceeb1628dbcdcaefe064521c4c12c",
+          "report.py": "9cf8d75f6f2f7f167a055cfa045a33b8fab8b9ae888165fe30b8beaf7f284ee8",
+          "review.py": "dca069e122ce5bd823052abdda5b541c9143c7d0b6293b292d30889fb3e4debc",
+          "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+          "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+          "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+          "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+          "web/index.html": "35561f5d34a26ce683ef767bd1c0488c6760daa4f2c8a1ffcf64544d2d65d6ab",
+          "web/review.html": "618c0ced8a11953e90145dace3ecce70a9b70f094f3047dd8697314e4be84984",
+          "workspace.py": "5a5ad0f5b64872f39a28e54d35de02ec7edfec38291dd707c30dd48f9ff6199f"
+        },
+        "checks_passed": 62,
+        "checks_total": 63,
+        "supporting_checks_failed": 0,
+        "issues": [
+          {
+            "code": "portfolio_value_missing",
+            "message": "Vectera Initiated Investments: NET IRR is missing at ReturnsMultiples(Agg)/V28; no value inferred",
+            "severity": "blocker",
+            "evidence": [
+              "f_c5c5f55b5226caa8"
+            ]
+          },
+          {
+            "code": "portfolio_value_missing",
+            "message": "Vectera Initiated Investments: Net Multiple is missing at ReturnsMultiples(Agg)/W28; no value inferred",
+            "severity": "blocker",
+            "evidence": [
+              "f_2397c68fd24cb681"
+            ]
+          },
+          {
+            "code": "missing_manager",
+            "message": "No matched current manager evidence for ranked fund Kestrel U.S. Real Estate Fund; flash-only commentary",
+            "severity": "warning",
+            "fund": "Kestrel U.S. Real Estate Fund"
+          },
+          {
+            "code": "negative_fees",
+            "message": "Meridian Opportunity Fund V has negative manager fees in the flash; shown as a fee credit, not normalized",
+            "severity": "warning",
+            "evidence": [
+              "f_e81c8eb20242f0ce"
+            ]
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 4, chart 1",
+            "severity": "review",
+            "fact_id": "f_a44443adf5cc3910"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 5, chart 1",
+            "severity": "review",
+            "fact_id": "f_e0208e2d2052cd16"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 6, chart 1",
+            "severity": "review",
+            "fact_id": "f_c165d161b06a8721"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 7, chart 1",
+            "severity": "review",
+            "fact_id": "f_80438af1104fa68b"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 8, chart 1",
+            "severity": "review",
+            "fact_id": "f_f849db90f7c38549"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 9, chart 1",
+            "severity": "review",
+            "fact_id": "f_0b5098efd9a47d83"
+          },
+          {
+            "code": "chart_review",
+            "message": "Confirm image-extracted values on slide 10, chart 1",
+            "severity": "review",
+            "fact_id": "f_3318e8c0367bbab4"
+          },
+          {
+            "code": "reconciliation",
+            "message": "Allocation history/flash target at USD-million display precision: difference 14.0000",
+            "severity": "blocker",
+            "evidence": [
+              "f_daed0227c255e87c",
+              "f_e088d2e9d897392a"
+            ]
+          },
+          {
+            "code": "history_ownership",
+            "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+            "severity": "warning",
+            "evidence": [
+              "f_0d346f47e872a40f",
+              "f_daed0227c255e87c"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Auburn Ridge Residential Fund II",
+            "severity": "warning",
+            "evidence": [
+              "f_ffe5027942ab93c2"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Beacon Hill Medical Office Fund",
+            "severity": "warning",
+            "evidence": [
+              "f_4604feb30ce4e671"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Calder Grove Industrial Partners",
+            "severity": "warning",
+            "evidence": [
+              "f_4d16132129f78b96"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Cornerstone Core Property Fund",
+            "severity": "warning",
+            "evidence": [
+              "f_89fd8a7ed30ea98e"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Redwood Logistics Trust",
+            "severity": "warning",
+            "evidence": [
+              "f_b625b23762e8fb52"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Silverline Core-Plus Fund",
+            "severity": "warning",
+            "evidence": [
+              "f_3bc9f3b7565014d4",
+              "f_2be521605ef4278d",
+              "f_8e5f70a33e2bd501"
+            ]
+          },
+          {
+            "code": "narrative_review",
+            "message": "Review paraphrase meaning against verified quotes: Concise portfolio-relevant market update",
+            "severity": "warning",
+            "evidence": [
+              "f_d2d5d278bd97481e",
+              "f_bb9850f8ed08ccf6",
+              "f_14a955af246dcfec",
+              "f_073beed380f75399",
+              "f_078f2a3056c54953",
+              "f_00e4e6ce1bcd84fb",
+              "f_ce994536b583b6c5"
+            ]
+          }
+        ],
+        "ranked_funds": [
+          {
+            "name": "Cornerstone Core Property Fund",
+            "roles": [
+              "largest contributor",
+              "largest individual position"
+            ],
+            "contribution": "1825000",
+            "nav": "55689849.41"
+          },
+          {
+            "name": "Silverline Core-Plus Fund",
+            "roles": [
+              "second-largest detractor"
+            ],
+            "contribution": "-316000",
+            "nav": "49578121.2"
+          },
+          {
+            "name": "Kestrel U.S. Real Estate Fund",
+            "roles": [
+              "second-largest contributor"
+            ],
+            "contribution": "1147000",
+            "nav": "50261238"
+          },
+          {
+            "name": "Redwood Logistics Trust",
+            "roles": [
+              "largest detractor",
+              "second-largest individual position"
+            ],
+            "contribution": "-950000",
+            "nav": "50615756.06"
+          }
+        ],
+        "model_provider": "openai",
+        "model_name": "gpt-4.1-2025-04-14",
+        "api_calls": 21,
+        "api_usage": [
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 276,
+            "total_tokens": 1688,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 980,
+            "total_tokens": 2460,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 730,
+            "total_tokens": 2210,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 376,
+            "total_tokens": 1788,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 585,
+            "total_tokens": 1997,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 1530,
+            "total_tokens": 3010,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 697,
+            "total_tokens": 2177,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 447,
+            "completion_tokens": 108,
+            "total_tokens": 555,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 508,
+            "completion_tokens": 44,
+            "total_tokens": 552,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 418,
+            "completion_tokens": 78,
+            "total_tokens": 496,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 239,
+            "completion_tokens": 35,
+            "total_tokens": 274,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 423,
+            "completion_tokens": 82,
+            "total_tokens": 505,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 251,
+            "completion_tokens": 34,
+            "total_tokens": 285,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 428,
+            "completion_tokens": 81,
+            "total_tokens": 509,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 254,
+            "completion_tokens": 60,
+            "total_tokens": 314,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 444,
+            "completion_tokens": 113,
+            "total_tokens": 557,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 395,
+            "completion_tokens": 70,
+            "total_tokens": 465,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 420,
+            "completion_tokens": 107,
+            "total_tokens": 527,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 498,
+            "completion_tokens": 32,
+            "total_tokens": 530,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1064,
+            "completion_tokens": 524,
+            "total_tokens": 1588,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 3287,
+            "completion_tokens": 54,
+            "total_tokens": 3341,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          }
+        ]
+      },
+      "diagnostics": {
+        "stages": [
+          {
+            "stage": "discovery",
+            "status": "completed",
+            "seconds": 0.792
+          },
+          {
+            "stage": "exact_finance",
+            "status": "completed",
+            "seconds": 0.07
+          },
+          {
+            "stage": "source_passages",
+            "status": "completed",
+            "seconds": 0.009
+          },
+          {
+            "stage": "chart_vision",
+            "status": "completed",
+            "seconds": 40.492
+          },
+          {
+            "stage": "cross_source_checks",
+            "status": "completed",
+            "seconds": 0.006
+          },
+          {
+            "stage": "grounded_narrative",
+            "status": "completed",
+            "seconds": 19.546
+          },
+          {
+            "stage": "report_render",
+            "status": "completed",
+            "seconds": 1.381
+          }
+        ],
+        "provider": "openai",
+        "model": "gpt-4.1-2025-04-14",
+        "vision_model": "gpt-4.1-mini-2025-04-14",
+        "api_calls": 21,
+        "token_usage": [
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 276,
+            "total_tokens": 1688,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 980,
+            "total_tokens": 2460,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 730,
+            "total_tokens": 2210,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 376,
+            "total_tokens": 1788,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1412,
+            "completion_tokens": 585,
+            "total_tokens": 1997,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 1530,
+            "total_tokens": 3010,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1480,
+            "completion_tokens": 697,
+            "total_tokens": 2177,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 447,
+            "completion_tokens": 108,
+            "total_tokens": 555,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 508,
+            "completion_tokens": 44,
+            "total_tokens": 552,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 418,
+            "completion_tokens": 78,
+            "total_tokens": 496,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 239,
+            "completion_tokens": 35,
+            "total_tokens": 274,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 423,
+            "completion_tokens": 82,
+            "total_tokens": 505,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 251,
+            "completion_tokens": 34,
+            "total_tokens": 285,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 428,
+            "completion_tokens": 81,
+            "total_tokens": 509,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 254,
+            "completion_tokens": 60,
+            "total_tokens": 314,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 444,
+            "completion_tokens": 113,
+            "total_tokens": 557,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 395,
+            "completion_tokens": 70,
+            "total_tokens": 465,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 420,
+            "completion_tokens": 107,
+            "total_tokens": 527,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 498,
+            "completion_tokens": 32,
+            "total_tokens": 530,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 1064,
+            "completion_tokens": 524,
+            "total_tokens": 1588,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          {
+            "prompt_tokens": 3287,
+            "completion_tokens": 54,
+            "total_tokens": 3341,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          }
+        ],
+        "cache_hits": 0,
+        "cache_misses": 21,
+        "failed_calls": 0,
+        "blockers": 3,
+        "warnings": 10,
+        "review_items": 7
+      },
+      "output_file_sha256": {
+        "CPERS_PMR_1Q26_DRAFT.pdf": "b0c6afaf170d8546f467cff456da7ea82a0141493deff0465958b2a65ab7455a",
+        "appendix.pdf": "df357807f15ab295f5f64f5d8145052670fa3fab452d18b4d756427809510a10",
+        "assets/allocation.png": "c4d0c48649d0d474783f02a4c4c59e1f559372307372659dfba3011aabf4b5c1",
+        "assets/annual.png": "c0b22900bd21633d5d90170e5e0e1713dc895b4544060a4b8e92e87ef8bb78c6",
+        "assets/geography.png": "333c6e47499db3d9feaaacdd3f1c544a450e843852b61609e2553dd055bd782f",
+        "assets/property.png": "75c9b24f893beae9864e40c1073fdbd8aa8d90fbee5d59f324c3a5296c902d5e",
+        "assets/slide_10_chart_1.png": "284dced29440a7597eb6223151a2a4b62cc4a582998eaf2be93d829630c9085d",
+        "assets/slide_4_chart_1.png": "af6e5c5932fefb336696acbc989987c2a1dcdaf0bf7076642bc81a5659c1e3dc",
+        "assets/slide_5_chart_1.png": "19d9d9a0ec636346f1d059a2ededa0e8bbf5fce58533b2e73769f32ee061b1fc",
+        "assets/slide_6_chart_1.png": "cc6f7c6c7bc51d13983a1364e3feda683d7327a0d7fc23fff73747e2d46e9483",
+        "assets/slide_7_chart_1.png": "db463ff4b1a6648975ab02fb6b9c8c684715a31080df1da6f1eff0cd2d3e26bf",
+        "assets/slide_8_chart_1.png": "6f74de1a36e65febbb5c46d3ed5a6854eb39f0daf61ad1834719835c09616127",
+        "assets/slide_9_chart_1.png": "05de74df3a64e0ca9a9650f4dfca566525367a95fee5e7f2665d3143227c2a32",
+        "cache/0837f8dc8a754b3b226f864f43849d351238130846761d20f308f266304ed0c2.json": "8c35c8fe28e4620484388c8f2f763136e254e6a57fcff60e50b2b837264b30c0",
+        "cache/161dc3a4fed4e2e8d5a6b9137532c89b2a4514858b51666b1413a09f1225b994.json": "ea7d3706635a8564595255d3937c6173599052c568a12200a7f86da70241c24a",
+        "cache/274bef04d04781d7d1cdb5d4166f9aed331480af22cb9e1abc78bf265ef68296.json": "14f4ec19cd26152bcc11282050640358deba25b5aad3f971d04bfee0df8430ac",
+        "cache/3b2488d24d76d28cca7118973cf2ca22b60e4932df069cbf16e03f75b107c2db.json": "d702f28d9d14f5b2077da168df294ef36cf91e5e445eb65f6504c9e57266f83f",
+        "cache/3e4a00557ff37f042b0d9a44952197095eb5486940df954c2914bd2ef31ed05a.json": "46a5b261ef2431aa646c54b9301174a476a4cf8f9d68f390b0328bf56fc762a9",
+        "cache/42a5ddfa4062a560e18f7ac79aab43fcf0a050ea9c4b70978859f3fe47a9a16a.json": "972472c02ed1c95c737c7c7b1ed6e587b8972ff3021cd0044b0643e325976a1a",
+        "cache/4796e0bbc2fe5a9b5be6355efab212a947cdf219a16d2df04fb9c3dde9907173.json": "9b64db974d7cb28a2f3b753fc7f174e3249397eb308bf76c6446cd5c8aee6901",
+        "cache/49c332734961033930fea21f8eee6003786880b4e00d324cda85ebe4de83f1f7.json": "12de279d4226647f1b8f32ef341ace6659555fbd8c1642d26d9e949fdab0d562",
+        "cache/59cefc0914d1e631e50bcae065370d3578aee3291ec0fba29e144d079bc7bea3.json": "1ce87395d4e782647e88a3393249d8185c5d8bf7f1db0f78f83ee3f53ed8566e",
+        "cache/5b6198cf8c7530268ae2dc9c27b68f80498850c69c1a7a1dc17c4244fab02429.json": "919ce709bc0ed5cf5e7af0aed333d137cba0e870a35aa39b1f8980d17b49e8ae",
+        "cache/6e3728460ff0e24e8de57ae875c2c3e490ea5f3b237cf43f09c518675f460f8c.json": "c57e015e52646c4d1e1920a402392a153a87618b6d82c813e083aeb4e8283977",
+        "cache/744fa3ee4043c572ffdcc2ddb4bb38b6b34d844f1a583af2534b9be91046f7af.json": "c0b6c6fbb201c4f8d969275105977b305be8effbb57d2e7a4424d1153e12b84a",
+        "cache/8c78953942c58ac1b10ac1c9927086e1f900cb8c1e7b04065c361fbc5662452d.json": "71e586533af4a9c36e1ecc9ca9ac3e5d0715c4e7c62f86be6be93baf52d43706",
+        "cache/a06579336f0f66b26b1b5712357514f777d725489cbb44f7bfe1872d1beda070.json": "af86737977ca3273dc26465c46d6ba5ffd2a0cc6dc032c340075d0c1d56afdda",
+        "cache/c09ae5a7e4dd8441932df051f78ddd7196322a3f978327e366e69dd5f3b13b1d.json": "bffbd64b9472de5d69b06e6efdc5c9b1aa2a182456905bf125d65ad9167c3c0e",
+        "cache/d417b7525282d7bfe87d871d93c67c365fad73bcc8558edf0aa38e9ad048fe10.json": "df507cc163e1a50d7c9cf502c4aa6c881a0d35127401c1b95cca36028101b245",
+        "cache/de310d3b5e435df8f2457a1ba5acb43f2bb230df9a31d4c403dc246ef40811d8.json": "a109e463d5bfc2282d755625f33f554130a0dc20c1cac68d9668b8dc5d4ec25a",
+        "cache/eeb8595cc5d56ec40bc4ee64673be680a0eed9fd7331a033aaa5fbef197511a5.json": "6dbdc9062256793b022a80e42d34f0ba05a03b21c400fa80a55d215344217337",
+        "cache/f588be1165377bc684e5a37bdbcb482e9caedeb8f56406e10e558156dd4f0f07.json": "66f44a32223db5bcd8867951fd7ec31139bde8cfb01bbc9424426a2de69afcbe",
+        "cache/f9354793cb19ed3a62d7052a672c8126c265579df4edd92782ba0b7a0e34e5d2.json": "4c67061d1c15aaa9fee6fd9b424c0f729cf4de06f98999bdd357a871258aa885",
+        "cache/fcbec85d0b0c41f11d0f549ad0ee12590a9c2308730e4269617f18504a93d2c8.json": "8b55a19965e4a711e70f38801375e8ab7a4b9cfc46c42c935d0c6e27dbd5bda8",
+        "diagnostics.json": "f13fa2ab1e217e860750b7f48e1b99147905538af60713830ffe11144b0e3c81",
+        "draft.json": "acf8cc94eab31d0ff369b3e524aa28f5ab5cbd8aeaf5982c3bb7d7acb2bf4b5a",
+        "evidence.json": "62f0fcfa6c31446b122d8f2ef24e6b745d316d2d89afbf001d586b713a32b89a",
+        "manifest.json": "9f49e5daaf2425188598ec8d8e6949880e5f7f9210ce034cc48bee833698c9b0",
+        "progress.json": "641cf1e8b45dbeeb38d29c5fe9c0c4efa19a4678e25012f5c16d40e363174f1d",
+        "report.pdf": "b0c6afaf170d8546f467cff456da7ea82a0141493deff0465958b2a65ab7455a",
+        "review.html": "dc8f499d56f7c49f49005d52ac2ea549868c356bb05f6f2f411b70a9cd418925",
+        "review.md": "06db1ee7be1fd842db183190a87bac801369d25e2000b6754df8c7396a0625dd",
+        "semantic_manifest.json": "029c38ab0ae022ecc26e4b5db91b84f47b4350955d06b3546c047f0412215fec",
+        "verification.json": "04d4e1a49fee215fa110f62003d1d88b0d3f5e80d168a471f9047c229bfccb36"
+      }
+    }
+  ],
+  "comparison": {
+    "two_drafts_generated": true,
+    "financial_hash_equal": true,
+    "semantic_manifest_equal": true,
+    "unavailable_figures_equal": true,
+    "aggregate_missing_blockers_per_run": [
+      2,
+      2
+    ],
+    "figures_foot_in_each_run": [
+      false,
+      false
+    ],
+    "report_bytes_equal": false,
+    "full_meaning_hash_equal": false,
+    "final_report_created": false,
+    "unavailable_figures": [
+      {
+        "irr": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "V28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "NET IRR",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        },
+        "multiple": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "W28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "Net Multiple",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        }
+      },
+      {
+        "irr": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "V28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "NET IRR",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        },
+        "multiple": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "W28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "Net Multiple",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        }
+      }
+    ]
+  },
+  "scope": "Partial-draft repeatability, not report completeness or approval. Live-model chart/prose differences are reported, not normalized away."
+}

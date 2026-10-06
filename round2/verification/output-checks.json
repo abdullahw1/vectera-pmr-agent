@@ -1,0 +1,168 @@
+{
+  "scope": "Automated draft/source-link checks and deliberately rejected release attempts, not genuine human review or approval.",
+  "modified_production_files": [
+    "pmr/finance.py",
+    "pmr/report.py"
+  ],
+  "added_test_files": [
+    "tests/test_missing_portfolio_returns.py"
+  ],
+  "runs": [
+    {
+      "mode": "no-key",
+      "run": "first",
+      "pages": 15,
+      "portrait": true,
+      "unavailable_figures": {
+        "irr": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "V28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "NET IRR",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        },
+        "multiple": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "W28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "Net Multiple",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        }
+      },
+      "approval_refused": true,
+      "approval_failure": "Finalization blocked: Vectera Initiated Investments: NET IRR is missing at ReturnsMultiples(Agg)/V28; no value inferred; Vectera Initiated Investments: Net Multiple is missing at ReturnsMultiples(Agg)/W28; no value inferred; Slide 4, chart 1: image values unavailable without successful model access; Slide 5, chart 1: image values unavailable without successful model access; Slide 6, chart 1: image values unavailable without successful model access; Slide 7, chart 1: image values unavailable without successful model access; Slide 8, chart 1: image values unavailable without successful model access; Slide 9, chart 1: image values unavailable without successful model access; Slide 10, chart 1: image values unavailable without successful model access; Allocation history/flash target at USD-million display precision: difference 14.0000",
+      "live_chart_extractions": 0,
+      "model_prose_blocks": 0,
+      "api_calls": 0,
+      "failed_api_calls": 0,
+      "final_report_created": false
+    },
+    {
+      "mode": "no-key",
+      "run": "second",
+      "pages": 15,
+      "portrait": true,
+      "unavailable_figures": {
+        "irr": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "V28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "NET IRR",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        },
+        "multiple": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "W28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "Net Multiple",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        }
+      },
+      "approval_refused": true,
+      "approval_failure": "Finalization blocked: Vectera Initiated Investments: NET IRR is missing at ReturnsMultiples(Agg)/V28; no value inferred; Vectera Initiated Investments: Net Multiple is missing at ReturnsMultiples(Agg)/W28; no value inferred; Slide 4, chart 1: image values unavailable without successful model access; Slide 5, chart 1: image values unavailable without successful model access; Slide 6, chart 1: image values unavailable without successful model access; Slide 7, chart 1: image values unavailable without successful model access; Slide 8, chart 1: image values unavailable without successful model access; Slide 9, chart 1: image values unavailable without successful model access; Slide 10, chart 1: image values unavailable without successful model access; Allocation history/flash target at USD-million display precision: difference 14.0000",
+      "live_chart_extractions": 0,
+      "model_prose_blocks": 0,
+      "api_calls": 0,
+      "failed_api_calls": 0,
+      "final_report_created": false
+    },
+    {
+      "mode": "live",
+      "run": "first",
+      "pages": 15,
+      "portrait": true,
+      "unavailable_figures": {
+        "irr": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "V28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "NET IRR",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        },
+        "multiple": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "W28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "Net Multiple",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        }
+      },
+      "approval_refused": true,
+      "approval_failure": "Finalization blocked: Vectera Initiated Investments: NET IRR is missing at ReturnsMultiples(Agg)/V28; no value inferred; Vectera Initiated Investments: Net Multiple is missing at ReturnsMultiples(Agg)/W28; no value inferred; Allocation history/flash target at USD-million display precision: difference 14.0000",
+      "live_chart_extractions": 7,
+      "model_prose_blocks": 7,
+      "api_calls": 23,
+      "failed_api_calls": 0,
+      "final_report_created": false
+    },
+    {
+      "mode": "live",
+      "run": "second",
+      "pages": 15,
+      "portrait": true,
+      "unavailable_figures": {
+        "irr": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "V28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "NET IRR",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        },
+        "multiple": {
+          "value": null,
+          "source": {
+            "file": "flash_1Q26.xlsx",
+            "sheet": "ReturnsMultiples(Agg)",
+            "cell": "W28",
+            "entity": "Vectera Initiated Investments",
+            "metric": "Net Multiple",
+            "status": "unavailable",
+            "reason": "blank required figure"
+          }
+        }
+      },
+      "approval_refused": true,
+      "approval_failure": "Finalization blocked: Vectera Initiated Investments: NET IRR is missing at ReturnsMultiples(Agg)/V28; no value inferred; Vectera Initiated Investments: Net Multiple is missing at ReturnsMultiples(Agg)/W28; no value inferred; Allocation history/flash target at USD-million display precision: difference 14.0000",
+      "live_chart_extractions": 7,
+      "model_prose_blocks": 7,
+      "api_calls": 21,
+      "failed_api_calls": 0,
+      "final_report_created": false
+    }
+  ]
+}

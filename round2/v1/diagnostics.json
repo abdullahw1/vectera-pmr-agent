@@ -1,0 +1,15 @@
+{
+  "status": "blocked",
+  "stages": [
+    {
+      "stage": "discovery",
+      "status": "completed",
+      "seconds": 1.169
+    },
+    {
+      "stage": "exact_finance",
+      "status": "failed",
+      "seconds": 0.055
+    }
+  ]
+}

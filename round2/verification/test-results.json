@@ -1,0 +1,23 @@
+{
+  "scope": "Recorded from completed pytest executions in the isolated v2 source copy, with API keys disabled; not Windows or fresh-install verification.",
+  "working_directory": "/Users/abdullahwaheed/Downloads/Vectera_Round2/v2-source",
+  "python": "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+  "focused": {
+    "arguments": ["-m", "pytest", "tests/test_missing_portfolio_returns.py", "-q"],
+    "exit_code": 0,
+    "passed": 6,
+    "seconds": 41.59
+  },
+  "full_suite": {
+    "arguments": ["-m", "pytest", "-q"],
+    "exit_code": 0,
+    "passed": 167,
+    "seconds": 267.88
+  },
+  "environment": {
+    "OPENAI_API_KEY": "empty",
+    "ANTHROPIC_API_KEY": "empty",
+    "PMR_LOAD_ENV": "0",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

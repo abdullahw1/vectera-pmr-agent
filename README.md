@@ -1,5 +1,12 @@
 # Vectera PMR Generator
 
+## Round-Two Submission
+
+This branch contains the optional v2, based on the unchanged `v1-submission` tag.
+Start with [the round-two delivery guide](round2/README.md) for the one-page note, original v1 failure,
+1Q26 draft, and verification records. The 1Q26 report is a **blocked draft**, not an approved final report.
+The original 4Q25 submission below remains as the comparison baseline.
+
 Generates a client's quarterly Performance Measurement Report (PMR) from a folder of quarterly inputs.
 The only inputs are a **client code** and a **quarter**, for example `CPERS` and `4Q25`. The system finds the
 right files itself, computes every figure in code, writes the narrative with a model under strict checks,
