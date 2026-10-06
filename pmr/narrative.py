@@ -285,8 +285,8 @@ def allocation_history(source, requested, ledger):
     path, ws = source
     sheet = Sheet(path, ws, ledger)
     start, headers = sheet.headers("Quarter")
-    target = next(v for k, v in headers.items() if k.startswith("target allocation"))
-    nav = next(v for k, v in headers.items() if k.startswith("net asset value"))
+    target = sheet.column(headers, "target allocation", prefix=True)
+    nav = sheet.column(headers, "net asset value", prefix=True)
     result = []
     for row in sheet.rows():
         period = quarter(row[0].value)

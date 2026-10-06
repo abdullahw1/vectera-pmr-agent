@@ -2,8 +2,12 @@
 
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
+import traceback
+from zipfile import BadZipFile
+from xml.etree.ElementTree import ParseError
 
 from .pipeline import generate
 from .review import serve
@@ -49,13 +53,36 @@ def main():
         return
     try:
         _, summary = generate(args.inputs.resolve(), args.output.resolve(), args.client, args.quarter)
-    except (ValueError, StopIteration, KeyError) as error:
-        args.output.mkdir(parents=True, exist_ok=True)
-        (args.output / "failure.json").write_text(
-            json.dumps(dict(status="blocked", reason=str(error)), indent=2), encoding="utf-8"
+    except Exception as error:
+        known = isinstance(error, (ValueError, StopIteration, KeyError, OSError, BadZipFile, ParseError))
+        reason = str(error) if known and str(error) else (
+            f"Unexpected generation failure ({type(error).__name__}); inspect the stage diagnostics"
         )
-        print(f"Required source data could not be resolved: {error}", file=sys.stderr)
-        raise SystemExit(2)
+        if isinstance(error, OSError):
+            reason = f"Local file operation failed ({type(error).__name__})" + (
+                f": {error.filename}" if error.filename else ""
+            )
+        for key in ("OPENAI_API_KEY", "ANTHROPIC_API_KEY"):
+            secret = os.getenv(key)
+            if secret:
+                reason = reason.replace(secret, "[redacted]")
+        category = "filesystem" if isinstance(error, OSError) else "source_data" if known else "unexpected"
+        from .errors import explain_failure
+
+        failure = dict(status="blocked", reason=reason, error_type=type(error).__name__, category=category,
+                       **explain_failure(reason, args.client, args.quarter))
+        if not known:
+            failure["frames"] = [dict(file=f.filename, line=f.lineno, function=f.name)
+                                 for f in traceback.extract_tb(error.__traceback__)]
+        try:
+            if args.inputs.resolve() == args.output.resolve() or args.inputs.resolve() in args.output.resolve().parents:
+                raise OSError("Failure records must not be written inside the input folder")
+            args.output.mkdir(parents=True, exist_ok=True)
+            (args.output / "failure.json").write_text(json.dumps(failure, indent=2), encoding="utf-8")
+        except OSError as save_error:
+            print(f"Could not save failure record ({type(save_error).__name__}); check output-folder access.", file=sys.stderr)
+        print(f"Report generation stopped: {reason}", file=sys.stderr)
+        raise SystemExit(2 if known else 3)
     from .filenames import report_filename
 
     print(f"Draft saved: {args.output / report_filename(args.client, args.quarter)}")

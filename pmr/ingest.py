@@ -107,9 +107,13 @@ class Sheet:
                     "interpretation": "blank capital flow = zero",
                 },
             )
+        location = f"{self.path.name}/{self.ws.title}/{cell.coordinate}"
         if isinstance(cell.value, bool) or not isinstance(cell.value, (int, float)):
-            raise ValueError(f"Expected number at {self.path.name}/{self.ws.title}/{cell.coordinate}")
-        value = currency(cell.value) if monetary else finite_number(cell.value)
+            raise ValueError(f"Expected number at {location}" + (f" ({metric})" if metric else ""))
+        try:
+            value = currency(cell.value) if monetary else finite_number(cell.value)
+        except ValueError as error:
+            raise ValueError(f"Invalid numerical data at {location} ({metric or 'value'}): {error}") from error
         source = {
             "file": self.path.name,
             "sheet": self.ws.title,
@@ -136,7 +140,7 @@ class Sheet:
     def headers(self, marker="Investment", grouped=False):
         row = next((r for r in self.rows() if norm(r[0].value) == norm(marker)), None)
         if row is None:
-            raise ValueError(f"Header {marker!r} missing in {self.ws.title}")
+            raise ValueError(f"Header {marker!r} missing in {self.path.name}/{self.ws.title}")
         result, group = {}, ""
         lower = list(self.ws.iter_rows(min_row=row[0].row + 1, max_row=row[0].row + 1))[0]
         for i, c in enumerate(row):
@@ -144,8 +148,21 @@ class Sheet:
                 group = str(c.value)
             key = norm(group + " " + str(lower[i].value or "")) if grouped and i else norm(c.value)
             if key:
+                if key in result:
+                    raise ValueError(f"Ambiguous column {key!r} in {self.path.name}/{self.ws.title}")
                 result[key] = i
         return row[0].row, result
+
+    def column(self, headers, label, *, prefix=False):
+        key = norm(label)
+        matches = [value for name, value in headers.items() if name == key]
+        if not matches and prefix:
+            matches = [value for name, value in headers.items() if name.startswith(key)]
+        if len(matches) != 1:
+            raise ValueError(
+                f"Column {label!r} matched {len(matches)} columns in {self.path.name}/{self.ws.title}"
+            )
+        return matches[0]
 
 
 def flash_identity(book):
@@ -231,6 +248,9 @@ def discover(root, client, requested, ledger):
                 )
             )
     if len(candidates) != 1:
+        unreadable = [item["file"] for item in ledger.discovery if item["status"] == "failed"]
+        if not candidates and unreadable:
+            raise ValueError("Unreadable source workbooks: " + ", ".join(unreadable) + "; cannot locate the requested flash")
         raise ValueError(f"Expected one populated flash for {client}/{requested}, found {len(candidates)}")
     flash, book = candidates[0]
     ledger.discovery.append(

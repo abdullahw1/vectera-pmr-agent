@@ -17,7 +17,7 @@ def get(
     if index is None:
         if optional:
             return None, None
-        raise ValueError(f"Column {key!r} missing in {sheet.ws.title}")
+        raise ValueError(f"Column {key!r} missing in {sheet.path.name}/{sheet.ws.title}")
     if optional and row[index].value is None:
         return None, None
     if allow_missing and row[index].value is None:
@@ -83,6 +83,11 @@ def policy_from_prior(prior, ledger):
 
 def build_financials(sources, requested, client, ledger):
     book, path = sources["book"], sources["flash"]
+    required = {"FundingStatus(Agg)", "CashActivity(Agg)", "ReturnsMultiples(Agg)",
+                "AnnReturns(Agg)", "All Property", "All Geographic"}
+    missing = sorted(required - set(book.sheetnames))
+    if missing:
+        raise ValueError(f"Required sheets missing in {path.name}: {', '.join(missing)}")
     sheets = {name: Sheet(path, book[name], ledger) for name in book.sheetnames}
     funding = sheets["FundingStatus(Agg)"]
     _, fh = funding.headers()
@@ -102,21 +107,26 @@ def build_financials(sources, requested, client, ledger):
         portfolio[key], portfolio[key + "_id"] = get(funding, total, fh, header)
     # Composition values are located by their labels, not the investment schedule.
     for label, key in [("Total Plan Assets", "plan"), ("Allocation", "target")]:
-        label_cell = next(c for row in funding.rows() for c in row if norm(c.value) == norm(label))
+        labels = [c for row in funding.rows() for c in row if norm(c.value) == norm(label)]
+        if len(labels) != 1:
+            raise ValueError(f"Required label {label!r} matched {len(labels)} cells in {path.name}/{funding.ws.title}")
+        label_cell = labels[0]
         cell = funding.ws.cell(label_cell.row + 1, label_cell.column)
         portfolio[key], portfolio[key + "_id"] = funding.number(
             cell, monetary=True, metric=label, entity_name=sources["name"]
         )
     # FundingStatus explicitly owns total-portfolio trailing returns (§1.9).
-    header = next(r for r in funding.rows() if norm(r[0].value) == "performance summary")
+    header = funding.find("Performance Summary")
     lower = funding.rows()[header[0].row]
     # A duplicated portfolio row also exists below the schedule; identify this row by its block.
     # find() is intentionally strict elsewhere; this summary selection is constrained by its header.
-    summary = next(
-        r
-        for r in funding.rows()
-        if r[0].row > header[0].row + 1 and norm(r[0].value) == norm(sources["name"] + " Portfolio")
-    )
+    schedule_start, _ = funding.headers()
+    summaries = [r for r in funding.rows()
+                 if header[0].row + 1 < r[0].row < schedule_start
+                 and norm(r[0].value) == norm(sources["name"] + " Portfolio")]
+    if len(summaries) != 1:
+        raise ValueError(f"Performance summary portfolio row matched {len(summaries)} rows in {path.name}/{funding.ws.title}")
+    summary = summaries[0]
     group = ""
     for i, c in enumerate(header):
         if c.value is not None:
@@ -133,6 +143,9 @@ def build_financials(sources, requested, client, ledger):
             portfolio["q_gross"], portfolio["q_gross_id"] = funding.number(
                 summary[i], metric=group + " gross return"
             )
+    missing_returns = sorted({"q_net", "one_net", "q_gross"} - portfolio.keys())
+    if missing_returns:
+        raise ValueError(f"Required performance summary columns missing in {path.name}/{funding.ws.title}: {', '.join(missing_returns)}")
     funded_rows, sleeve = [], None
     sleeve_labels = {norm("Strategic Investments"): "Strategic", norm("Tactical Investments"): "Tactical"}
     start, _ = funding.headers()
@@ -150,6 +163,8 @@ def build_financials(sources, requested, client, ledger):
             funded_rows.append((sleeve, row))
     funds, sleeves = [], {}
     canonical = [entity(row[0].value) for _, row in funded_rows]
+    if not funded_rows:
+        raise ValueError(f"No funded holdings found in {path.name}/{funding.ws.title}")
     if len(canonical) != len(set(canonical)):
         raise ValueError("Ambiguous canonical fund identities in flash")
     for sleeve, row in funded_rows:
@@ -189,9 +204,12 @@ def build_financials(sources, requested, client, ledger):
                 )
             else:
                 fund[key], fund[key + "_id"] = get(
-                    cash, cr, ch, header, blank_zero=key in {"contributions", "distributions", "withdrawals"}
+                    cash, cr, ch, header,
+                    blank_zero=key in {"contributions", "distributions", "withdrawals"},
+                    allow_missing=key not in {"contributions", "distributions", "withdrawals"},
                 )
-        fund["contribution"] = None if cr is None else fund["income"] + fund["appreciation"] - fund["fees"]
+        contribution_known = all(fund[k] is not None for k in ("income", "appreciation", "fees"))
+        fund["contribution"] = fund["income"] + fund["appreciation"] - fund["fees"] if contribution_known else None
         fund["contribution_id"] = ledger.add(
             fund["contribution"],
             {"file": path.name, "sheet": cash.ws.title},
@@ -200,7 +218,7 @@ def build_financials(sources, requested, client, ledger):
         )
         rolled = (
             None
-            if cr is None
+            if any(fund[k] is None for k in ("beginning", "contributions", "distributions", "withdrawals", "contribution"))
             else (
                 fund["beginning"]
                 + fund["contributions"]
@@ -214,14 +232,18 @@ def build_financials(sources, requested, client, ledger):
         rr = find_or_flag(returns, label, ledger)
         for key, header in [("q_net", "Quarter NET"), ("irr", "NET IRR"), ("multiple", "Net Multiple")]:
             # Single-level labels do not have a second-level subheader.
-            column = next((v for h, v in rh.items() if h == norm(header)), None)
-            if column is None:
-                column = next(v for h, v in rh.items() if h.startswith(norm(header)))
+            column = returns.column(rh, header, prefix=True)
             if rr is None or rr[column].value is None:
-                fund[key], fund[key + "_id"] = None, None
+                source = dict(file=path.name, sheet=returns.ws.title, entity=label, metric=header,
+                              status="unavailable", reason="missing fund row" if rr is None else "blank reported figure")
+                if rr is not None:
+                    source["cell"] = rr[column].coordinate
+                fund[key], fund[key + "_id"] = None, ledger.add(None, source)
             else:
                 fund[key], fund[key + "_id"] = returns.number(rr[column], metric=header)
         funds.append(fund)
+    if {f["sleeve"] for f in funds} != {"Strategic", "Tactical"}:
+        raise ValueError(f"Required Strategic and Tactical holdings sections not both populated in {path.name}/{funding.ws.title}")
     for sleeve in sorted(set(f["sleeve"] for f in funds)):
         label = sleeve + " Investments"
         fr, cr, rr = (
@@ -331,9 +353,10 @@ def build_financials(sources, requested, client, ledger):
         portfolio[key], portfolio[key + "_id"] = get(
             returns, tr, rh, header, allow_missing=True, missing_code="portfolio_value_missing"
         )
-    benchmark_row = next(
-        r for r in returns.rows() if isinstance(r[0].value, str) and "benchmark" in r[0].value.lower()
-    )
+    benchmarks = [r for r in returns.rows() if isinstance(r[0].value, str) and "benchmark" in r[0].value.lower()]
+    if len(benchmarks) != 1:
+        raise ValueError(f"Benchmark row matched {len(benchmarks)} rows in {path.name}/{returns.ws.title}")
+    benchmark_row = benchmarks[0]
     portfolio["benchmark"] = benchmark_row[0].value
     portfolio["benchmark_id"] = returns.fact(benchmark_row[0])
     portfolio["benchmark_q"], portfolio["benchmark_q_id"] = get(returns, benchmark_row, rh, "Quarter NET")
@@ -351,9 +374,7 @@ def build_financials(sources, requested, client, ledger):
     )
     horizons = sorted({int(v) for v in re.findall(r"\b(\d+)[- ]Yr\b", prior_chart)})
     if not horizons:
-        ledger.issue(
-            "return_horizons", "Cannot identify annualized chart horizons in the prior report", "blocker"
-        )
+        ledger.issue("return_horizons", "Cannot identify annualized chart horizons in the prior report", "blocker")
     for horizon in horizons:
         value, fid = get(annual, ar, ah, f"{horizon} Year Net")
         bench, bid = get(annual, br, ah, f"{horizon} Year Net")
@@ -370,10 +391,13 @@ def build_financials(sources, requested, client, ledger):
         row = sheet.find(sources["name"] + " Portfolio")
         # The category header is the nearest row above the client row that labels several columns.
         header = next(
-            r
+            (r
             for r in reversed(sheet.rows()[: row[0].row - 1])
-            if sum(isinstance(c.value, str) and bool(c.value.strip()) for c in r[1:]) >= 2
+            if sum(isinstance(c.value, str) and bool(c.value.strip()) for c in r[1:]) >= 2),
+            None,
         )
+        if header is None:
+            raise ValueError(f"Diversification category header missing in {path.name}/{sheet_name}")
         values = []
         for i, c in enumerate(header):
             if i and c.value is not None:

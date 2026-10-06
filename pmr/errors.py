@@ -28,11 +28,37 @@ def explain_failure(reason, client, period):
         message = f"More than one report could be the most recent prior PMR for {client}."
         action = "Keep the intended prior-quarter report in the source package and move conflicting copies to another folder, then generate again."
     elif reason.startswith(
-        ("Expected number at ", "Expected a finite number", "Currency must ", "Invalid currency")
+        ("Expected number at ", "Expected a finite number", "Currency must ", "Invalid currency", "Invalid numerical data at ", "Required allocation ratios")
     ):
         title = "Invalid numerical data"
         message = "A required financial value is missing or invalid. The app will not guess a value or silently round it."
         action = "Check the original spreadsheet using Technical Details below. Correct the source value and generate a new draft."
+    elif reason.startswith(("Required sheets missing", "Required label", "Required performance summary", "Column ",
+                            "Header ", "Ambiguous column", "Performance summary portfolio", "Benchmark row",
+                            "No funded holdings", "Required Strategic", "Diversification category", "Required annualized")):
+        title = "Required table structure is missing or ambiguous"
+        message = "The source package does not contain an unambiguous table or label needed for this report."
+        action = "Check the file, sheet, and label in Technical Details. Restore the required structure and generate again; do not guess a matching column or row."
+    elif reason.startswith("Unexpected generation failure"):
+        title = "Unexpected application error"
+        message = "The application stopped unexpectedly. No completed report was released for this run."
+        action = "Keep the input package unchanged and inspect the stage diagnostics or contact the developer. This is not necessarily a problem with your data."
+    elif reason.startswith("Local file operation failed"):
+        title = "File access failed"
+        message = "A source or output file could not be opened or written."
+        action = "Check folder permissions, available disk space, and whether the file is locked by another program, then run again."
+    elif reason.startswith("Unreadable source workbooks") or reason in {"File is not a zip file", "File is not a ZIP file"}:
+        title = "Source document is damaged or unreadable"
+        message = "A required workbook or presentation could not be read."
+        action = "Extract a fresh copy of the input package and verify the indicated files open normally before generating again."
+    elif reason.startswith("Output folder must be separate"):
+        title = "Choose a separate output folder"
+        message = "Reports cannot be written inside the source-document folder."
+        action = "Choose an output folder outside the inputs folder and run again."
+    elif reason.startswith("Source folder does not exist"):
+        title = "Source folder is unavailable"
+        message = "The selected source folder cannot be found or is not a folder."
+        action = "Select the extracted document package folder and generate again."
     elif reason.startswith("Source files changed during generation"):
         title = "Source documents changed during the run"
         message = "The input package changed while the report was being generated. Its evidence can no longer be verified consistently."

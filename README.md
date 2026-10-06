@@ -2,7 +2,9 @@
 
 ## Round-Two Submission
 
-This branch contains the optional v2, based on the unchanged `v1-submission` tag.
+This local preview branch adds further error-handling work on top of the submitted v2.
+The published submission is on `codex/round2-v2`; the frozen v1 is `v1-submission`.
+The files under `round2/` are historical evidence for that submitted v2, not results for these preview changes.
 Start with [the round-two delivery guide](round2/README.md) for the one-page note, original v1 failure,
 1Q26 draft, and verification records. The 1Q26 report is a **blocked draft**, not an approved final report.
 The original 4Q25 submission below remains as the comparison baseline.

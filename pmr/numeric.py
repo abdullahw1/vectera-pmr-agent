@@ -48,7 +48,11 @@ def currency(value):
         result = Decimal(str(value))
     except InvalidOperation as error:
         raise ValueError("Invalid currency") from error
-    if not result.is_finite() or result != result.quantize(Decimal("0.01")):
+    try:
+        valid = result.is_finite() and result == result.quantize(Decimal("0.01"))
+    except InvalidOperation as error:
+        raise ValueError("Currency exceeds supported decimal precision") from error
+    if not valid:
         raise ValueError("Currency must be finite with no fractions of a cent")
     return result
 

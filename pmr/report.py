@@ -66,9 +66,17 @@ def billions(value):
 
 def build_sections(data, sources, ledger):
     p, funds, activity = data["portfolio"], data["funds"], data["activity"]
-    if any(p[key] <= 0 for key in ["nav", "plan", "target"]):
+    if not p["annual"]:
+        raise ValueError(f"Required annualized chart horizons could not be identified in {sources['prior'][1].name}")
+    invalid_ratios = [key for key in ("nav", "plan", "target") if p[key] is None or p[key] <= 0]
+    if invalid_ratios:
         raise ValueError(
-            "Required allocation ratios need positive portfolio NAV, plan assets and target; source values are not invented"
+            "Required allocation ratios need positive portfolio NAV, plan assets and target; invalid: "
+            + ", ".join(
+                f"{key} at " + "/".join(str(ledger.facts[p[key + '_id']]['source'].get(part, '?'))
+                                          for part in ('file', 'sheet', 'cell'))
+                for key in invalid_ratios
+            )
         )
     sections = []
 

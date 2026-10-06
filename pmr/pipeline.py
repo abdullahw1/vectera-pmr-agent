@@ -23,23 +23,43 @@ from .appendix import register_exhibits
 from .filenames import clear_named_reports
 
 
+REPORT_FILES = (
+    "report.pdf", "draft.json", "review.html", "review.md", "manifest.json", "semantic_manifest.json",
+    "evidence.json", "verification.json", "appendix.pdf", "final_report.pdf", "approval.json",
+    "final_evidence.json", "final_sections.json", "final_manifest.json", "final_semantic_manifest.json",
+)
+
+
+def clear_report_files(output):
+    clear_named_reports(output)
+    for name in REPORT_FILES:
+        (output / name).unlink(missing_ok=True)
+
+
 def generate(root: Path, output: Path, client: str, period: str):
+    if root.resolve() == output.resolve() or root.resolve() in output.resolve().parents:
+        raise ValueError("Output folder must be separate from the source documents")
+    try:
+        return _generate(root, output, client, period)
+    except Exception:
+        if output.is_dir():
+            try:
+                clear_report_files(output)
+            except OSError:
+                pass  # Preserve the original failure when filesystem access is also broken.
+        raise
+
+
+def _generate(root: Path, output: Path, client: str, period: str):
+    output.mkdir(parents=True, exist_ok=True)
+    clear_report_files(output)
+    for name in ("diagnostics.json", "failure.json", "progress.json", "progress.tmp"):
+        (output / name).unlink(missing_ok=True)
     requested = quarter(period)
     if not requested:
         raise ValueError("Quarter must be in 4Q25-style format")
-    output.mkdir(parents=True, exist_ok=True)
-    clear_named_reports(output)
-    # A regenerated draft must not leave a stale approved report beside it.
-    for name in [
-        "final_report.pdf",
-        "approval.json",
-        "final_evidence.json",
-        "final_sections.json",
-        "final_manifest.json",
-        "final_semantic_manifest.json",
-    ]:
-        if (output / name).exists():
-            (output / name).unlink()
+    if not root.is_dir():
+        raise ValueError("Source folder does not exist or is not a directory")
     ledger = Ledger(reporting_period=period.upper())
 
     def source_hashes():
@@ -94,8 +114,8 @@ def generate(root: Path, output: Path, client: str, period: str):
         data["support"] = supporting_documents(sources, data, data["activity"], ledger, model)
     with stage("chart_vision"):
         data["slides"], data["charts"] = deck_evidence(sources["deck"], output, ledger, model)
-    data["history"] = allocation_history(sources["history"], requested, ledger)
     with stage("cross_source_checks"):
+        data["history"] = allocation_history(sources["history"], requested, ledger)
         supporting_checks(sources, data, ledger)
         data["market_signals"] = cap_rate_signals(data["charts"], ledger)
     with stage("grounded_narrative"):
@@ -109,12 +129,12 @@ def generate(root: Path, output: Path, client: str, period: str):
     if sources["appendix"]:
         (output / "appendix.pdf").write_bytes(sources["appendix"].read_bytes())
         data["appendix_exhibits"] = register_exhibits(sources["appendix"], ledger)
-    sections = build_sections(data, sources, ledger)
-    assets = output / "assets"
-    assets.mkdir(exist_ok=True)
-    for kind in ["annual", "allocation", "property", "geography"]:
-        (assets / (kind + ".png")).write_bytes(chart_bytes(kind, data).getvalue())
     with stage("report_render"):
+        sections = build_sections(data, sources, ledger)
+        assets = output / "assets"
+        assets.mkdir(exist_ok=True)
+        for kind in ["annual", "allocation", "property", "geography"]:
+            (assets / (kind + ".png")).write_bytes(chart_bytes(kind, data).getvalue())
         render_pdf(data, sections, output / "report.pdf", sources["appendix"])
     semantic_hash = write_manifests(output, data, sections, ledger)
     diagnostics = dict(
