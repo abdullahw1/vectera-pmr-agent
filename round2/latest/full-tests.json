@@ -1,0 +1,39 @@
+{
+  "branch": "codex/round2-preview",
+  "command": [
+    "/Users/abdullahwaheed/Downloads/Vectera_PMR_Assignment/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "seconds": 411.765,
+  "api_access_disabled": true,
+  "source_file_sha256": {
+    "pmr/__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
+    "pmr/__main__.py": "914f4c7c8ca796b5a946646c82829d64b35703fbda5c70cbd0250215fc76a84c",
+    "pmr/appendix.py": "446754f9449b8bc0c3563699b9215bebde043a964084d200196133eea9691f5e",
+    "pmr/charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
+    "pmr/config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
+    "pmr/crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+    "pmr/errors.py": "9c3b41b154e4db5e6b904094a3f09f14f4a0c684fb03d9b3dff9ff237a20db40",
+    "pmr/evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
+    "pmr/filenames.py": "cd25503f2e3b156a747c865778a8104018f2a383556e141c648e754bdc9b65f5",
+    "pmr/finance.py": "cad03cfbd7382a73fa8cd314cbf3421374862853deb4da732055bb65a0f580c9",
+    "pmr/ingest.py": "506e4f0e647c2e9adc8a4ff0d52fcab5f4556434e5c62285ebfc1cf605174a48",
+    "pmr/market.py": "2d498ce95733e1caa0731ad066200c35a9e499e7a0af829809c36fb636665e64",
+    "pmr/models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
+    "pmr/narrative.py": "0b221e315dc0b1c1b0ef787743863a0519e018c26424dd0fae5724b890d2c87c",
+    "pmr/numeric.py": "35f38d176fa741fea6c64ef22b785c61b5891a1f2b88b10373afa9d3f34194fd",
+    "pmr/pipeline.py": "375dfd10579f314e192a855692c858832925585583195ca144abb9181d38f92b",
+    "pmr/report.py": "4787fe832c6854e351bff067c592f1a56fb43ca90c5782d720fe8ed6662c7c91",
+    "pmr/review.py": "b060679556488154d55f217e1ca26a77515edd48e973f61516ad45ee04d6de6e",
+    "pmr/synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
+    "pmr/template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
+    "pmr/verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
+    "pmr/visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
+    "pmr/web/index.html": "3ad99c19a9f242ccc62856bd9895178df8ad3fd6268ffb9f51bfcf2090da9501",
+    "pmr/web/review.html": "feb0227ae1f46b12e9fea33689cd13b1a6b77aaa2d0551c6d6fbf24ecf8002fb",
+    "pmr/workspace.py": "0702075ef024168dcb1d447f29d85e25631dd903d2a549a1cc5004bc798c51ad"
+  }
+}

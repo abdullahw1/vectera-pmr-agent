@@ -1,19 +1,27 @@
 # CPERS 1Q26 Rerun Submission
 
 The evaluated v1 is frozen at tag **`v1-submission`**, commit `618b990a66a2940fac7f7d65fa6f7768c9d89652`.
-This branch, **`codex/round2-v2`**, contains the optional focused v2. Main and the frozen tag are unchanged.
+This branch, **`round2-v2-final`**, contains the latest optional v2. Main and the frozen tag are unchanged.
+The earlier focused v2 remains available on `codex/round2-v2`.
 
 ## Read First
 
 - [One-page note](Abdullah_Waheed_CPERS_1Q26_Rerun_Note.pdf), also available as [editable text](RERUN_NOTE.md).
 - [Original unchanged v1 result](v1/failure.json): both runs stopped at `ReturnsMultiples(Agg)/V28`; no PDF was produced.
-- [V2 1Q26 draft](v2/CPERS_PMR_1Q26_DRAFT.pdf): 15 portrait pages, not approved for release.
-- [V2 review queue](v2/review.md): blockers, warnings, and items requiring review.
-- [Audit manifest](v2/manifest.json): report claims and figures linked to their source locations.
+- [Latest V2 1Q26 draft](latest/CPERS_PMR_1Q26_DRAFT.pdf): 15 portrait pages, not approved for release.
+- [Latest delivery and verification](latest/README.md): current code, tests and run results.
+- [Latest review queue](latest/review.md): blockers, warnings, and items requiring review.
+- [Latest audit manifest](latest/manifest.json): report claims and figures linked to their source locations.
 
 ## What Changed
 
-Only `pmr/finance.py` and `pmr/report.py` changed in production code. Aggregate IRR and net multiple now use the existing missing-value path. Blank figures retain their source cells, display as `not available`, and block final approval. Real zero remains zero. Present figures keep the original wording.
+The initial focused fix changed only `pmr/finance.py` and `pmr/report.py` in production code. Aggregate IRR and net multiple now use the existing missing-value path. Blank figures retain their source cells, display as `not available`, and block final approval. Real zero remains zero. Present figures keep the original wording.
+
+The latest delivery also adds targeted input validation, safer failed-run handling, and a report-first review interface. See [error-handling changes](../PREVIEW_ERROR_HANDLING.md) and [interface changes](../PREVIEW_UI.md). The current code passed 220 tests and produced a fresh 1Q26 draft with the same three source blockers. Full details and current artifacts are under [latest/](latest/README.md).
+
+## Earlier Focused V2 Results
+
+The results in this section and `v2/` describe the earlier focused v2, not a new execution of the latest code. The one-page note records that original investigation and narrow repair; the latest-delivery guide records the subsequent additions.
 
 Six tests were added in `tests/test_missing_portfolio_returns.py`. The tested v2 copy passed all 167 tests. Its two production files and test file are identical to those on this branch. A fresh no-key 4Q25 comparison produced byte-identical v1/v2 PDFs and the same original 58 checks.
 
@@ -40,6 +48,8 @@ python -m pmr generate --client CPERS --quarter 1Q26 --inputs "C:\path\to\receiv
 For unchanged v1, use a separate checkout of `v1-submission` and run the same command with a fresh output folder. Do not edit its code or the input documents.
 
 ## Verification Records
+
+For the current branch, use [the latest test log](latest/full-tests.log), [test record](latest/full-tests.json), and [fresh-run verification](latest/verification.json). The following links preserve the earlier focused v2 evidence.
 
 - [Test results](verification/test-results.json).
 - [Six tests rerun in this delivery checkout](verification/delivery-test-results.json).

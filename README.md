@@ -2,11 +2,11 @@
 
 ## Round-Two Submission
 
-This local preview branch adds further error-handling and review-interface work on top of the submitted v2.
-The published submission is on `codex/round2-v2`; the frozen v1 is `v1-submission`.
-The files under `round2/` are historical evidence for that submitted v2, not results for these preview changes.
+This branch, `round2-v2-final`, packages the latest optional v2, including additional error handling and a simpler review interface.
+The earlier focused v2 remains on `codex/round2-v2`; the frozen v1 is `v1-submission`.
 Start with [the round-two delivery guide](round2/README.md) for the one-page note, original v1 failure,
-1Q26 draft, and verification records. The 1Q26 report is a **blocked draft**, not an approved final report.
+and [latest 1Q26 draft and verification](round2/latest/README.md). Earlier records under `round2/v2/` and
+`round2/verification/` are retained and clearly labelled as historical. The latest 1Q26 report is a **blocked draft**, not an approved final report.
 The original 4Q25 submission below remains as the comparison baseline.
 
 Generates a client's quarterly Performance Measurement Report (PMR) from a folder of quarterly inputs.
@@ -38,7 +38,7 @@ workspace. It prints the exact localhost URL; the port is chosen automatically. 
 while using the app. Press Ctrl+C in that terminal to stop it.
 
 In the app, enter **CPERS** and **4Q25**, leave the supplied inputs folder selected, and click
-**Generate Report**. Open the new run to inspect its report, charts and warnings. Generation produces
+**Generate Draft**. Open the new run to inspect its report, charts and warnings. Generation produces
 `CPERS_PMR_4Q25_DRAFT.pdf`; human approval produces `CPERS_PMR_4Q25.pdf`.
 
 For a different package, use **Choose Folder** or enter its local folder path. Then enter that package's
