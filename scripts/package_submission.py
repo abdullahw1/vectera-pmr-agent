@@ -28,7 +28,6 @@ def main():
     }
     output_files = {
         "report.pdf",
-        "writeup.pdf",
         "evidence.json",
         "verification.json",
         "draft.json",
@@ -55,10 +54,10 @@ def main():
     }
     if not args.final:
         output_files = {n for n in output_files if not n.startswith("final_") and n != "approval.json"}
-        for name in ["report.pdf", "writeup.pdf", "manifest.json", "evidence.json", "verification.json"]:
+        for name in ["report.pdf", "manifest.json", "evidence.json", "verification.json"]:
             if not (root / "output" / name).is_file():
                 raise SystemExit(
-                    f"Draft package blocked: missing {name}. Generate the draft and write-up first."
+                    f"Draft package blocked: missing {name}. Generate the draft first."
                 )
     draft_path = root / "output" / "draft.json"
     if draft_path.is_file():
@@ -82,7 +81,6 @@ def main():
             "final_evidence.json",
             "final_manifest.json",
             "final_semantic_manifest.json",
-            "writeup.pdf",
         ]:
             if not (root / "output" / name).is_file():
                 raise SystemExit(f"Final package blocked: missing {name}. Review and approve first.")

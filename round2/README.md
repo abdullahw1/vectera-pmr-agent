@@ -1,63 +1,29 @@
-# CPERS 1Q26 Rerun Submission
+# CPERS 1Q26 Results
 
-The evaluated v1 is frozen at tag **`v1-submission`**, commit `618b990a66a2940fac7f7d65fa6f7768c9d89652`.
-This branch, **`round2-v2-final`**, contains the latest optional v2. Main and the frozen tag are unchanged.
-The earlier focused v2 remains available on `codex/round2-v2`.
+The evaluated submission is frozen at **`v1-submission`** (`618b990`). This branch, **`round2-v2-final`**, contains v2. The rerun note is attached separately to the submission email.
 
-## Read First
+## Current delivery
 
-- [One-page note](Abdullah_Waheed_CPERS_1Q26_Rerun_Note.pdf), also available as [editable text](RERUN_NOTE.md).
-- [Original unchanged v1 result](v1/failure.json): both runs stopped at `ReturnsMultiples(Agg)/V28`; no PDF was produced.
-- [Latest V2 1Q26 draft](latest/CPERS_PMR_1Q26_DRAFT.pdf): 13 portrait pages, not approved for release.
-- [Latest delivery and verification](latest/README.md): current code, tests and run results.
-- [Latest review queue](latest/review.md): blockers, warnings, and items requiring review.
-- [Latest audit manifest](latest/manifest.json): report claims and figures linked to their source locations.
+| File | Purpose |
+| --- | --- |
+| [V1 failure](v1/failure.json) | Unchanged v1 stopped at the blank aggregate IRR; no PDF was produced. |
+| [V1 execution record](v1/execution-verification.json) | Original run environment and preservation checks. |
+| [V2 draft PDF](latest/CPERS_PMR_1Q26_DRAFT.pdf) | Current 13-page report, not approved for release. |
+| [Review issues](latest/review.md) | Missing figures, conflicting sources and review warnings. |
+| [Financial checks](latest/verification.json) | 62/63 checks passed; allocation target mismatch remains. |
+| [Source manifest](latest/manifest.json) / [evidence](latest/evidence.json) | Figures and claims linked to source cells, pages and passages. |
+| [Full test result](latest/full-tests.json) / [log](latest/full-tests.log) | 229 tests passed on macOS/Python 3.12. |
+| [4Q25 regression](latest/4Q25-regression.json) | 58/58 original-quarter checks passed. |
+| [Cached repeatability](latest/cached-repeatability.json) | Two fresh runs with the same cached responses produced identical PDFs, with no new API calls. |
+| [Output checks](latest/output-checks.json) | Page layout, eight core appendix tables and source-cell coverage. |
+| [Complete flash exhibit](latest/flash-exhibit.zip) | Original flash PDF supplied alongside the compact appendix. |
 
-## What Changed
+V2 treats missing aggregate IRR and multiple as unavailable instead of aborting the whole report. Both still block approval, as does the allocation target conflict ($515M in history versus $501,248,068.80 in the flash). No input values were changed to make the report pass.
 
-The initial focused fix changed only `pmr/finance.py` and `pmr/report.py` in production code. Aggregate IRR and net multiple now use the existing missing-value path. Blank figures retain their source cells, display as `not available`, and block final approval. Real zero remains zero. Present figures keep the original wording.
+The review queue also records Tidewater's termination, individual fund LTV, historical allocation revisions and lagged market data. Chart readings and commentary still require human review. Separate live model calls may differ in wording. No Windows run or approved final PDF is claimed.
 
-The latest delivery adds targeted input validation, safer failed-run handling, source-context warnings and a report-first review interface. It passed 229 tests. The appendix now uses the original sample's core tables, with the complete flash supplied separately and all source cells retained in the audit. The same three source blockers remain. Start with [the current delivery guide](latest/README.md).
+## Reproduce
 
-## Earlier Focused V2 Results
+Follow the [root setup guide](../README.md). Select the received package's `inputs` folder and run **CPERS / 1Q26**. For unchanged v1, use a separate checkout of `v1-submission` with the same input package and a fresh output folder.
 
-The results in this section and `v2/` describe the earlier focused v2, not a new execution of the latest code. The one-page note and latest-delivery guide describe the current corrections as well as the original failure.
-
-Six tests were added in `tests/test_missing_portfolio_returns.py`. The initial isolated v2 copy passed all 167 tests. Its initial two-file repair is preserved in the earlier v2 branch; the current branch includes subsequent changes. That initial no-key 4Q25 comparison produced byte-identical v1/v2 PDFs and the same 58 checks. The latest PDF layout and prose are intentionally different.
-
-Two independent live OpenAI 1Q26 runs matched financial figures, roles, approvals, compliance, chart observations, missing-value states, and report structure. Prose differed, so PDF bytes did not match. Two independent no-key drafts were byte-identical. These are observed results, not guarantees for future model responses.
-
-## Why the Draft Is Blocked
-
-The source does not report aggregate IRR or net multiple. Allocation history also shows a $515M target for 1Q26 while the flash reports $501,248,068.80. The overview follows the flash and the history chart retains the conflicting source series. The draft passes 62 of 63 checks; the failed check concerns that target mismatch, and the two missing figures are separate release blockers.
-
-Earlier allocation-history points were revised too. Current code compares them with the prior report's table and surfaces warnings. Tidewater's termination is included, with the flash return distinguished from the manager notice. The note explains the flash-carried position count, Beacon Hill's PM approval and unresolved source questions. No input values were changed to force a clean report.
-
-## Reproduce on the Supplied Inputs
-
-The received 1Q26 input package is intentionally not republished here. Extract your copy and select its `inputs` folder. API keys still come from the environment or a local ignored `.env`; OpenAI takes priority when both provider keys exist. See the [main README](../README.md#add-an-api-key) for key setup.
-
-On Windows 11 with Python 3.12, run `start.cmd` from the repository root. In the browser, choose the received inputs folder, enter `CPERS` and `1Q26`, and generate a report. The saved artifacts here are evidence from earlier runs, not a preapproved review session.
-
-For the CLI, after installing `requirements.txt` into a Python 3.12 environment:
-
-```powershell
-python -m pmr generate --client CPERS --quarter 1Q26 --inputs "C:\path\to\received\inputs" --output "output\rerun-1Q26"
-```
-
-For unchanged v1, use a separate checkout of `v1-submission` and run the same command with a fresh output folder. Do not edit its code or the input documents.
-
-## Verification Records
-
-For the current branch, use [the latest test log](latest/full-tests.log), [test record](latest/full-tests.json), and [fresh-run verification](latest/verification.json). The following links preserve the earlier focused v2 evidence.
-
-- [Test results](verification/test-results.json).
-- [Six tests rerun in this delivery checkout](verification/delivery-test-results.json).
-- [Original-quarter v1/v2 regression](verification/4Q25-regression.json).
-- [No-key repeatability](verification/no-key-repeatability.json).
-- [Live-model repeatability](verification/live-repeatability.json).
-- [Unavailable values and rejected approval checks](verification/output-checks.json).
-- [V1 preservation verification](verification/v1-preservation.json).
-- [V2 run diagnostics](v2/diagnostics.json), [financial verification](v2/verification.json), [semantic manifest](v2/semantic_manifest.json), and [evidence ledger](v2/evidence.json).
-
-Records preserve the original local paths and run times. They describe existing macOS/Python 3.12 runs, not Windows or fresh-install verification. The full suite result comes from the tested isolated v2 copy; the code is unchanged in this delivery checkout. Chart values and prose still need genuine human review. No human approval or final PDF is included.
+`archive/` retains historical results from the initial focused repair; `latest/` is the current delivery. Original 4Q25 artifacts are in `../output/`. These older records are retained for comparison, not presented as runs of the current code.
