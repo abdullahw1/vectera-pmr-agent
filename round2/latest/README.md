@@ -9,6 +9,7 @@ Branch: **`round2-v2-final`**. Evaluated v1 remains frozen at **`v1-submission`*
 - [Latest 1Q26 draft](CPERS_PMR_1Q26_DRAFT.pdf): generated from this delivery's production code through the local workspace.
 - [Review queue](review.md), [financial verification](verification.json), [claim manifest](manifest.json), [evidence ledger](evidence.json), [semantic manifest](semantic_manifest.json), and [run diagnostics](diagnostics.json).
 - [Full test log](full-tests.log) and [test execution record](full-tests.json).
+- [Appendix cleanup checks](appendix-checks.json): all 414 distinct entity/metric/value facts retained, with three redundant tables removed.
 
 ## Changes After the Initial V2
 
@@ -18,9 +19,11 @@ The workspace now opens the PDF first, with paging and zoom, a compact review ch
 
 ## Observed Results
 
-The current code passed **220 tests** on macOS/Python 3.12 with model API access disabled for the test suite. Desktop and mobile browser checks were performed separately. JavaScript syntax checks passed for both browser pages.
+The current code passed **223 tests** on macOS/Python 3.12 with model API access disabled for the test suite. Desktop and mobile browser checks of the review interface were performed separately before the appendix-only cleanup. JavaScript syntax checks passed for both browser pages.
 
-The fresh CPERS / 1Q26 workspace run produced **15 portrait pages** and passed **62 of 63 financial checks**. It made **23 OpenAI requests**, with no failed requests. Before packaging, its implementation hashes and the test record's source hashes were checked against this delivery's code.
+The fresh CPERS / 1Q26 workspace run originally produced 15 portrait pages and made 23 OpenAI requests. The latest appendix cleanup reused all 23 saved responses, made **zero new API calls**, and produced **14 portrait pages**, still passing **62 of 63 financial checks**. All non-appendix data and the first ten pages are unchanged. Before packaging, the draft's implementation hashes and the test record's source hashes were checked against this delivery's code.
+
+The empty since-inception table and the duplicate 3-/5-year table are omitted. When an IRR/multiple table contains only market values, those values move into the quarterly returns table instead. Unique reported figures, including real zeros, remain visible and source-linked. A short note explains omitted sections. The original 4Q25 exhibits are unchanged.
 
 The three source blockers remain: missing aggregate IRR, missing aggregate investment multiple, and conflicting allocation targets ($515M in history versus $501,248,068.80 in the flash). No charts were falsely confirmed and no human approval or final PDF is included. The PDF stays DRAFT.
 

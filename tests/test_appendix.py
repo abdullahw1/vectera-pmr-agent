@@ -6,7 +6,7 @@ import re
 import fitz
 
 from pmr.appendix import append_exhibits, display_cell, extract_exhibits, presentation_header
-from pmr.appendix import register_exhibits
+from pmr.appendix import register_exhibits, compact_return_exhibits
 from pmr.evidence import Ledger
 from pmr.verification import claim_manifest
 
@@ -124,3 +124,47 @@ def test_unrecognized_readable_source_layout_is_retained(tmp_path):
     assert "123,456.78" in result[0].get_text()
     assert "original layout" in result[0].get_text()
     assert result[0].rect == fitz.Rect(0, 0, 612, 792)
+
+
+def test_empty_and_duplicate_return_tables_are_omitted_without_losing_values():
+    def exhibit(title, headers, rows):
+        return dict(title=title, headers=headers, rows=rows)
+
+    inputs = [
+        exhibit("Investment Schedule", ["Investment", "Market Value"], [["Fund A", "100"]]),
+        exhibit("Returns and Multiples (%) - Quarter", ["Investment", "Quarter NET"], [["Fund A", "0.00%"]]),
+        exhibit("Returns and Multiples (%) - Since Inception", ["Investment", "Since Inception NET"], [["Fund A", ""]]),
+        exhibit("Valuation, IRR and Net Multiples", ["Investment", "Market Value", "Net IRR"], [["Fund A", "100", ""]]),
+        exhibit("Returns and Multiples (%) - 3 Year(s) / 5 Year(s)", ["Investment", "3 Yr NET"], [["Portfolio", "0.62%"]]),
+        exhibit("Annualized Net Time-Weighted Return (%)", ["Investment", "3 Yr Net"], [["Portfolio", "0.62%"]]),
+    ]
+    result = compact_return_exhibits(inputs)
+    assert len(result) == 3
+    assert result[1]["rows"] == [["Fund A", "0.00%"]]
+    assert "Blank source figures remain unavailable" in result[1]["note"]
+    before = {value for e in inputs for r in e["rows"] for value in r[1:] if value}
+    after = {value for e in result for r in e["rows"] for value in r[1:] if value}
+    assert before == after
+
+
+def test_unique_fund_returns_and_real_zero_statistics_are_retained():
+    inputs = [
+        dict(title="Returns and Multiples (%) - 3 Year(s)", headers=["Investment", "3 Yr NET"], rows=[["Fund A", "-2.00%"]]),
+        dict(title="Valuation, IRR and Net Multiples", headers=["Investment", "Net IRR", "Net Multiple"], rows=[["Fund A", "0.00%", "0.00x"]]),
+    ]
+    assert compact_return_exhibits(inputs) == inputs
+
+
+def test_nav_only_statistics_merge_into_quarter_table_with_source_columns():
+    metadata = dict(source_page=2, source_rows=[6, 32])
+    quarter = dict(metadata, title="Returns and Multiples (%) - Quarter", columns=[0, 5],
+                   headers=["Investment", "Quarter NET"], rows=[["Fund A", "1.00%"], ["Benchmark", "0.74%"]])
+    valuation = dict(metadata, title="Valuation, IRR and Net Multiples", columns=[0, 1, 21, 22],
+                     headers=["Investment", "Market Value", "Net IRR", "Net Multiple"],
+                     rows=[["Fund A", "100", "", ""], ["Benchmark", "0", "", ""]])
+    result = compact_return_exhibits([quarter, valuation])
+    assert len(result) == 1
+    assert result[0]["headers"] == ["Investment", "Market Value", "Quarter NET"]
+    assert result[0]["columns"] == [0, 1, 5]
+    assert result[0]["rows"] == [["Fund A", "100", "1.00%"], ["Benchmark", "0", "0.74%"]]
+    assert quarter["headers"] == ["Investment", "Quarter NET"]

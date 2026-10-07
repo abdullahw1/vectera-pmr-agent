@@ -255,7 +255,63 @@ def extract_exhibits(source):
                             headers=["Investment"] + [presentation_header(headers[i]).removesuffix(" Net").removesuffix(" NET") for i in net_columns],
                             rows=[[data[i][c] for c in [0] + net_columns] for i in net_rows],
                         ))
-    return exhibits
+    return compact_return_exhibits(exhibits)
+
+
+def compact_return_exhibits(exhibits):
+    """Omit empty or duplicate return projections, never unique reported figures."""
+    exhibits = [dict(exhibit) for exhibit in exhibits]
+    quarter = next((e for e in exhibits if e["title"].startswith("Returns and Multiples")
+                    and any(h.startswith("Quarter ") for h in e["headers"])), None)
+    valuation = next((e for e in exhibits if e["title"] == "Valuation, IRR and Net Multiples"), None)
+    merged = None
+    if quarter and valuation and "Market Value" in valuation["headers"]:
+        nav = valuation["headers"].index("Market Value")
+        statistics = [i for i in range(1, len(valuation["headers"])) if i != nav]
+        if (not any(row[i] != "" for row in valuation["rows"] for i in statistics)
+                and quarter.get("source_page") == valuation.get("source_page")
+                and quarter.get("source_rows") == valuation.get("source_rows")
+                and "columns" in quarter and "columns" in valuation
+                and [r[0] for r in quarter["rows"]] == [r[0] for r in valuation["rows"]]):
+            # NAV is retained once beside quarterly returns, including a benchmark's real zero.
+            quarter["headers"] = quarter["headers"][:1] + ["Market Value"] + quarter["headers"][1:]
+            quarter["columns"] = quarter["columns"][:1] + [valuation["columns"][nav]] + quarter["columns"][1:]
+            quarter["rows"] = [r[:1] + [v[nav]] + r[1:] for r, v in zip(quarter["rows"], valuation["rows"])]
+            merged = valuation
+    reference = set()
+    for exhibit in exhibits:
+        if exhibit["title"] == "Investment Schedule" or exhibit["title"].startswith("Annualized"):
+            for row in exhibit["rows"]:
+                reference.update(
+                    (row[0], header.lower(), value)
+                    for header, value in zip(exhibit["headers"][1:], row[1:]) if value != ""
+                )
+    retained, omitted = [], False
+    for exhibit in exhibits:
+        if exhibit is merged:
+            omitted = True
+            continue
+        returns = exhibit["title"].startswith("Returns and Multiples")
+        valuation = exhibit["title"] == "Valuation, IRR and Net Multiples"
+        if returns or valuation:
+            reported = {
+                (row[0], header.lower(), value)
+                for row in exhibit["rows"]
+                for header, value in zip(exhibit["headers"][1:], row[1:]) if value != ""
+            }
+            if not reported or reported.issubset(reference):
+                omitted = True
+                continue
+        retained.append(exhibit)
+    if omitted:
+        anchor = next((e for e in retained if e["title"].startswith("Returns and Multiples")), None)
+        if anchor:
+            anchor["note"] = (
+                "Empty return and inception-statistic sections are omitted. Available historical returns "
+                "appear in the annual returns tables; market values remain in the retained tables. "
+                "Blank source figures remain unavailable."
+            )
+    return retained
 
 
 def register_exhibits(source, ledger):
@@ -319,6 +375,11 @@ def register_exhibits(source, ledger):
                     evidence=list(dict.fromkeys(i for row in cells for cell in row for i in cell)),
                 )
             )
+            if exhibit.get("note"):
+                identifier = ledger.add(exhibit["note"], dict(
+                    file=source.name, page=exhibit["source_page"], method="parsed exhibit presentation summary",
+                ))
+                blocks.append(dict(type="paragraph", text=exhibit["note"], evidence=[identifier]))
     return blocks
 
 
@@ -342,6 +403,7 @@ def append_exhibits(result, source, approved=False):
     caption = ParagraphStyle(
         "AppendixCaption", fontName="Helvetica", fontSize=7.2, leading=10, spaceAfter=4, keepWithNext=True
     )
+    omission_note = ParagraphStyle("AppendixOmissionNote", parent=caption, keepWithNext=False)
     section_heading = ParagraphStyle("AppendixSection", parent=heading, fontSize=15, leading=18, spaceBefore=0)
     story = [
         Paragraph("Appendix A: Quarterly Flash Report", section_heading),
@@ -374,6 +436,12 @@ def append_exhibits(result, source, approved=False):
         widths = [134] + [364 / (count - 1)] * (count - 1)
         if exhibit["title"] == "Portfolio Composition ($)":
             widths = [498 / count] * count
+        elif exhibit["title"].startswith("Returns and Multiples") and "Market Value" in exhibit["headers"]:
+            nav = exhibit["headers"].index("Market Value")
+            nav_width = max(stringWidth(display_cell(exhibit, nav, row[nav]), "Helvetica", body.fontSize)
+                            for row in exhibit["rows"]) + 7
+            widths = [134] + [(364 - nav_width) / (count - 2)] * (count - 1)
+            widths[nav] = nav_width
         elif exhibit["title"] == "Quarterly cash activity" and count == 10:
             # Reserve enough space for each actual amount, including its currency sign.
             numeric_widths = [max(
@@ -403,6 +471,8 @@ def append_exhibits(result, source, approved=False):
             )
         )
         story.extend([table, Spacer(1, 8)])
+        if exhibit.get("note"):
+            story.append(Paragraph(html.escape(exhibit["note"]), omission_note))
     first_page = len(result)
 
     def footer(canvas, doc):

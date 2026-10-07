@@ -8,7 +8,7 @@ The earlier focused v2 remains available on `codex/round2-v2`.
 
 - [One-page note](Abdullah_Waheed_CPERS_1Q26_Rerun_Note.pdf), also available as [editable text](RERUN_NOTE.md).
 - [Original unchanged v1 result](v1/failure.json): both runs stopped at `ReturnsMultiples(Agg)/V28`; no PDF was produced.
-- [Latest V2 1Q26 draft](latest/CPERS_PMR_1Q26_DRAFT.pdf): 15 portrait pages, not approved for release.
+- [Latest V2 1Q26 draft](latest/CPERS_PMR_1Q26_DRAFT.pdf): 14 portrait pages, not approved for release.
 - [Latest delivery and verification](latest/README.md): current code, tests and run results.
 - [Latest review queue](latest/review.md): blockers, warnings, and items requiring review.
 - [Latest audit manifest](latest/manifest.json): report claims and figures linked to their source locations.
@@ -17,7 +17,7 @@ The earlier focused v2 remains available on `codex/round2-v2`.
 
 The initial focused fix changed only `pmr/finance.py` and `pmr/report.py` in production code. Aggregate IRR and net multiple now use the existing missing-value path. Blank figures retain their source cells, display as `not available`, and block final approval. Real zero remains zero. Present figures keep the original wording.
 
-The latest delivery also adds targeted input validation, safer failed-run handling, and a report-first review interface. See [error-handling changes](../PREVIEW_ERROR_HANDLING.md) and [interface changes](../PREVIEW_UI.md). The current code passed 220 tests and produced a fresh 1Q26 draft with the same three source blockers. Full details and current artifacts are under [latest/](latest/README.md).
+The latest delivery also adds targeted input validation, safer failed-run handling, and a report-first review interface. See [error-handling changes](../PREVIEW_ERROR_HANDLING.md) and [interface changes](../PREVIEW_UI.md). The current code passed 223 tests. Appendix cleanup removed three empty or duplicate tables without losing supplied figures; the same three source blockers remain. Full details and current artifacts are under [latest/](latest/README.md).
 
 ## Earlier Focused V2 Results
 

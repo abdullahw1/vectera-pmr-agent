@@ -1,0 +1,19 @@
+{
+  "removed_tables": [
+    "Returns and Multiples (%) - 3 Year(s) / 5 Year(s)",
+    "Returns and Multiples (%) - Since Inception",
+    "Valuation, IRR and Net Multiples"
+  ],
+  "distinct_entity_metric_values_before": 414,
+  "distinct_entity_metric_values_after": 414,
+  "all_reported_values_preserved": true,
+  "non_appendix_data_unchanged": true,
+  "first_ten_pages_unchanged": true,
+  "pages_before": 15,
+  "pages_after": 14,
+  "all_pages_portrait": true,
+  "api_calls": 0,
+  "cached_responses": 23,
+  "blockers": 3,
+  "code_matches_draft": true
+}

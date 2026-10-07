@@ -2960,6 +2960,7 @@
         {
           "columns": [
             "Investment",
+            "Market Value",
             "Quarter INC",
             "Quarter APP",
             "Quarter GRS",
@@ -2975,6 +2976,7 @@
           "rows": [
             [
               "Cornerstone Core Property Fund",
+              "$55,689,849",
               "1.00%",
               "2.68%",
               "3.68%",
@@ -2986,6 +2988,7 @@
             ],
             [
               "Beacon Diversified Property Trust",
+              "$42,544,447",
               "1.00%",
               "0.61%",
               "1.61%",
@@ -2997,6 +3000,7 @@
             ],
             [
               "Summit Multifamily Partners",
+              "$48,948,998",
               "1.13%",
               "0.79%",
               "1.91%",
@@ -3008,6 +3012,7 @@
             ],
             [
               "Whitfield Diversified Property Fund",
+              "$30,843,684",
               "0.36%",
               "0.47%",
               "0.83%",
@@ -3019,6 +3024,7 @@
             ],
             [
               "Silverline Core-Plus Fund",
+              "$49,578,121",
               "0.38%",
               "-0.77%",
               "-0.39%",
@@ -3030,6 +3036,7 @@
             ],
             [
               "Kestrel U.S. Real Estate Fund",
+              "$50,261,238",
               "1.43%",
               "1.05%",
               "2.48%",
@@ -3041,6 +3048,7 @@
             ],
             [
               "Redwood Logistics Trust",
+              "$50,615,756",
               "0.68%",
               "-2.40%",
               "-1.72%",
@@ -3052,6 +3060,7 @@
             ],
             [
               "Harborview Industrial Fund",
+              "$43,485,370",
               "1.09%",
               "0.44%",
               "1.53%",
@@ -3063,6 +3072,7 @@
             ],
             [
               "Strategic Investments",
+              "$371,967,464",
               "0.90%",
               "0.36%",
               "1.26%",
@@ -3074,6 +3084,7 @@
             ],
             [
               "Tidewater Distressed Realty Fund",
+              "$0",
               "3.64%",
               "2.52%",
               "6.16%",
@@ -3085,6 +3096,7 @@
             ],
             [
               "Ironwood Value-Add Fund III",
+              "$11,315,969",
               "1.16%",
               "1.94%",
               "3.10%",
@@ -3096,6 +3108,7 @@
             ],
             [
               "Meridian Opportunity Fund V",
+              "$30,382,150",
               "-0.08%",
               "0.46%",
               "0.38%",
@@ -3107,6 +3120,7 @@
             ],
             [
               "Blackford Special Situations Fund II",
+              "$23,828,867",
               "-0.16%",
               "2.92%",
               "2.76%",
@@ -3118,6 +3132,7 @@
             ],
             [
               "Northgate Logistics Partners",
+              "$12,010,000",
               "1.58%",
               "1.00%",
               "2.58%",
@@ -3129,6 +3144,7 @@
             ],
             [
               "Ridgeline Value Fund IV",
+              "$7,457,000",
               "1.12%",
               "0.67%",
               "1.79%",
@@ -3140,6 +3156,7 @@
             ],
             [
               "Tactical Investments",
+              "$84,993,986",
               "0.27%",
               "1.51%",
               "1.79%",
@@ -3151,6 +3168,7 @@
             ],
             [
               "Vectera Initiated Investments",
+              "$456,961,449",
               "0.80%",
               "0.55%",
               "1.35%",
@@ -3162,6 +3180,7 @@
             ],
             [
               "Cascadia Public Employees' Retirement System Portfolio",
+              "$456,961,449",
               "0.80%",
               "0.55%",
               "1.35%",
@@ -3173,6 +3192,7 @@
             ],
             [
               "CPERS Custom Benchmark",
+              "$0",
               "",
               "",
               "",
@@ -3186,488 +3206,12 @@
           "type": "table"
         },
         {
-          "columns": [
-            "Investment",
-            "3 Yr INC",
-            "3 Yr APP",
-            "3 Yr GRS",
-            "3 Yr NET",
-            "5 Yr INC",
-            "5 Yr APP",
-            "5 Yr GRS",
-            "5 Yr NET"
-          ],
+          "columns": null,
           "kind": null,
           "numbers": [],
           "numeric_bindings": [],
-          "rows": [
-            [
-              "Cornerstone Core Property Fund",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Beacon Diversified Property Trust",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Summit Multifamily Partners",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Whitfield Diversified Property Fund",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Silverline Core-Plus Fund",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Kestrel U.S. Real Estate Fund",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Redwood Logistics Trust",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Harborview Industrial Fund",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Strategic Investments",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Tidewater Distressed Realty Fund",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Ironwood Value-Add Fund III",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Meridian Opportunity Fund V",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Blackford Special Situations Fund II",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Northgate Logistics Partners",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Ridgeline Value Fund IV",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Tactical Investments",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Vectera Initiated Investments",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Cascadia Public Employees' Retirement System Portfolio",
-              "",
-              "",
-              "1.66%",
-              "0.62%",
-              "",
-              "",
-              "7.28%",
-              "5.58%"
-            ],
-            [
-              "CPERS Custom Benchmark",
-              "",
-              "",
-              "",
-              "-1.89%",
-              "",
-              "",
-              "",
-              "2.47%"
-            ]
-          ],
-          "type": "table"
-        },
-        {
-          "columns": [
-            "Investment",
-            "Since Inception GRS",
-            "Since Inception NET"
-          ],
-          "kind": null,
-          "numbers": [],
-          "numeric_bindings": [],
-          "rows": [
-            [
-              "Cornerstone Core Property Fund",
-              "",
-              ""
-            ],
-            [
-              "Beacon Diversified Property Trust",
-              "",
-              ""
-            ],
-            [
-              "Summit Multifamily Partners",
-              "",
-              ""
-            ],
-            [
-              "Whitfield Diversified Property Fund",
-              "",
-              ""
-            ],
-            [
-              "Silverline Core-Plus Fund",
-              "",
-              ""
-            ],
-            [
-              "Kestrel U.S. Real Estate Fund",
-              "",
-              ""
-            ],
-            [
-              "Redwood Logistics Trust",
-              "",
-              ""
-            ],
-            [
-              "Harborview Industrial Fund",
-              "",
-              ""
-            ],
-            [
-              "Strategic Investments",
-              "",
-              ""
-            ],
-            [
-              "Tidewater Distressed Realty Fund",
-              "",
-              ""
-            ],
-            [
-              "Ironwood Value-Add Fund III",
-              "",
-              ""
-            ],
-            [
-              "Meridian Opportunity Fund V",
-              "",
-              ""
-            ],
-            [
-              "Blackford Special Situations Fund II",
-              "",
-              ""
-            ],
-            [
-              "Northgate Logistics Partners",
-              "",
-              ""
-            ],
-            [
-              "Ridgeline Value Fund IV",
-              "",
-              ""
-            ],
-            [
-              "Tactical Investments",
-              "",
-              ""
-            ],
-            [
-              "Vectera Initiated Investments",
-              "",
-              ""
-            ],
-            [
-              "Cascadia Public Employees' Retirement System Portfolio",
-              "",
-              ""
-            ],
-            [
-              "CPERS Custom Benchmark",
-              "",
-              ""
-            ]
-          ],
-          "type": "table"
-        },
-        {
-          "columns": [
-            "Investment",
-            "Market Value",
-            "TWR Inception",
-            "Net IRR",
-            "Net Multiple"
-          ],
-          "kind": null,
-          "numbers": [],
-          "numeric_bindings": [],
-          "rows": [
-            [
-              "Cornerstone Core Property Fund",
-              "$55,689,849",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Beacon Diversified Property Trust",
-              "$42,544,447",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Summit Multifamily Partners",
-              "$48,948,998",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Whitfield Diversified Property Fund",
-              "$30,843,684",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Silverline Core-Plus Fund",
-              "$49,578,121",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Kestrel U.S. Real Estate Fund",
-              "$50,261,238",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Redwood Logistics Trust",
-              "$50,615,756",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Harborview Industrial Fund",
-              "$43,485,370",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Strategic Investments",
-              "$371,967,464",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Tidewater Distressed Realty Fund",
-              "$0",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Ironwood Value-Add Fund III",
-              "$11,315,969",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Meridian Opportunity Fund V",
-              "$30,382,150",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Blackford Special Situations Fund II",
-              "$23,828,867",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Northgate Logistics Partners",
-              "$12,010,000",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Ridgeline Value Fund IV",
-              "$7,457,000",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Tactical Investments",
-              "$84,993,986",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Vectera Initiated Investments",
-              "$456,961,449",
-              "",
-              "",
-              ""
-            ],
-            [
-              "Cascadia Public Employees' Retirement System Portfolio",
-              "$456,961,449",
-              "",
-              "",
-              ""
-            ],
-            [
-              "CPERS Custom Benchmark",
-              "$0",
-              "",
-              "",
-              ""
-            ]
-          ],
-          "type": "table"
+          "rows": null,
+          "type": "paragraph"
         },
         {
           "columns": [
