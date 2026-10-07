@@ -218,6 +218,8 @@
       if (!v || !Array.isArray(v.series) || !v.series.length || v.series.some(r => typeof r.value !== "number" || !Number.isFinite(r.value) || !r.label || !r.series || !r.unit)) throw Error("Every observation needs a label, series, unit and finite numeric value.");
     }
     function issueTitle(i) {
+      const contextual = {terminated_fund:'Terminated fund needs status review', fund_leverage_risk:'Individual fund leverage needs attention', historical_revision:'Historical allocation figures were revised', market_data_lag:'Market observations predate this quarter'};
+      if (contextual[i.code]) return contextual[i.code];
       const source = D.ledger.facts[i.evidence?.[0]]?.source || {};
       if (i.code === 'portfolio_value_missing') return source.metric === 'NET IRR' ? 'Portfolio lifetime return is not reported' : source.metric === 'Net Multiple' ? 'Portfolio investment multiple is not reported' : 'Required portfolio figure is missing';
       if (i.code === 'reconciliation' && i.message.includes('Allocation history/flash target')) return 'Allocation targets disagree between sources';

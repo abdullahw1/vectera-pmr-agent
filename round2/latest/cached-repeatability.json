@@ -1,0 +1,26 @@
+{
+  "mode": "Two fresh output/cache folders seeded with saved model responses; not independent live-model calls",
+  "records": [
+    {
+      "run": "verified-first",
+      "financial_hash": "1572bb364082a5e24bf79d5b18f2007815297d4c57d6b77a264656735d69e296",
+      "semantic_hash": "39b2f8eaf4062f8a3c7d9a1b78b99414a6b8e9ad3f98012bbdb5976dce88845a",
+      "pdf_sha256": "b7f43f78a5373586c24836ee7a0a2cfb2974f419fb266ee6540dee461bea8956",
+      "api_calls": 0,
+      "cache_hits": 23,
+      "blockers": 3,
+      "warnings": 23
+    },
+    {
+      "run": "verified-second",
+      "financial_hash": "1572bb364082a5e24bf79d5b18f2007815297d4c57d6b77a264656735d69e296",
+      "semantic_hash": "39b2f8eaf4062f8a3c7d9a1b78b99414a6b8e9ad3f98012bbdb5976dce88845a",
+      "pdf_sha256": "b7f43f78a5373586c24836ee7a0a2cfb2974f419fb266ee6540dee461bea8956",
+      "api_calls": 0,
+      "cache_hits": 23,
+      "blockers": 3,
+      "warnings": 23
+    }
+  ],
+  "matched": true
+}

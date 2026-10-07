@@ -28,7 +28,9 @@ def test_pdf_preview_comes_from_the_unchanged_report(draft):
     output, _ = draft
     before = hashlib.sha256((output / "report.pdf").read_bytes()).hexdigest()
     metadata = pdf_preview(output)
-    assert metadata["pages"] == 15 and not metadata["approved"]
+    import fitz
+    with fitz.open(output / "report.pdf") as report:
+        assert metadata["pages"] == len(report) and not metadata["approved"]
     assert metadata["width"] == 612 and metadata["height"] == 792
     assert pdf_preview(output, 2).startswith(b"\x89PNG\r\n\x1a\n")
     assert hashlib.sha256((output / "report.pdf").read_bytes()).hexdigest() == before

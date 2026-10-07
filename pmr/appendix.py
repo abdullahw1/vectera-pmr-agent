@@ -67,7 +67,8 @@ def display_cell(exhibit, column, value):
             percent = percent.rstrip("0").rstrip(".")
         return percent + (".0" if "." not in percent else "") + "%"
     if monetary and re.fullmatch(r"-?\d[\d,]*(?:\.\d+)?", value):
-        return "($" + value[1:] + ")" if value.startswith("-") else "$" + value
+        amount = Decimal(value.replace(",", ""))
+        return f"(${abs(amount):,f})" if amount < 0 else f"${amount:,f}"
     return value
 
 
@@ -131,7 +132,7 @@ def flatten_headers(top, lower):
     return headers
 
 
-def extract_exhibits(source):
+def extract_exhibits(source, *, compact=True):
     """Return projections with original row/column locators; no money conversion."""
     exhibits = []
     with fitz.open(source) as document:
@@ -255,63 +256,92 @@ def extract_exhibits(source):
                             headers=["Investment"] + [presentation_header(headers[i]).removesuffix(" Net").removesuffix(" NET") for i in net_columns],
                             rows=[[data[i][c] for c in [0] + net_columns] for i in net_rows],
                         ))
-    return compact_return_exhibits(exhibits)
+    return compact_report_exhibits(exhibits) if compact else exhibits
 
 
-def compact_return_exhibits(exhibits):
-    """Omit empty or duplicate return projections, never unique reported figures."""
-    exhibits = [dict(exhibit) for exhibit in exhibits]
-    quarter = next((e for e in exhibits if e["title"].startswith("Returns and Multiples")
-                    and any(h.startswith("Quarter ") for h in e["headers"])), None)
+def compact_report_exhibits(exhibits):
+    """Follow the sample's core flash tables; retain full projections in the audit."""
+    core = {"Portfolio Composition ($)", "Performance Summary (%)", "Investment Schedule",
+            "Quarterly cash activity", "Property Type Diversification (%)",
+            "Geographic Diversification (%)", "Annualized Net Time-Weighted Return (%)"}
     valuation = next((e for e in exhibits if e["title"] == "Valuation, IRR and Net Multiples"), None)
-    merged = None
-    if quarter and valuation and "Market Value" in valuation["headers"]:
-        nav = valuation["headers"].index("Market Value")
-        statistics = [i for i in range(1, len(valuation["headers"])) if i != nav]
-        if (not any(row[i] != "" for row in valuation["rows"] for i in statistics)
-                and quarter.get("source_page") == valuation.get("source_page")
-                and quarter.get("source_rows") == valuation.get("source_rows")
-                and "columns" in quarter and "columns" in valuation
-                and [r[0] for r in quarter["rows"]] == [r[0] for r in valuation["rows"]]):
-            # NAV is retained once beside quarterly returns, including a benchmark's real zero.
-            quarter["headers"] = quarter["headers"][:1] + ["Market Value"] + quarter["headers"][1:]
-            quarter["columns"] = quarter["columns"][:1] + [valuation["columns"][nav]] + quarter["columns"][1:]
-            quarter["rows"] = [r[:1] + [v[nav]] + r[1:] for r, v in zip(quarter["rows"], valuation["rows"])]
-            merged = valuation
-    reference = set()
+    selected, geographic = [], []
+
+    def project(exhibit, indices, row_indices=None):
+        indices = list(indices)
+        row_indices = list(range(len(exhibit["rows"]))) if row_indices is None else row_indices
+        return dict(exhibit, headers=[exhibit["headers"][i] for i in indices],
+                    columns=[exhibit["columns"][i] for i in indices],
+                    rows=[[exhibit["rows"][r][i] for i in indices] for r in row_indices],
+                    source_rows=[exhibit["source_rows"][r] for r in row_indices])
+
     for exhibit in exhibits:
-        if exhibit["title"] == "Investment Schedule" or exhibit["title"].startswith("Annualized"):
-            for row in exhibit["rows"]:
-                reference.update(
-                    (row[0], header.lower(), value)
-                    for header, value in zip(exhibit["headers"][1:], row[1:]) if value != ""
-                )
-    retained, omitted = [], False
-    for exhibit in exhibits:
-        if exhibit is merged:
-            omitted = True
+        title = exhibit["title"]
+        quarter = title.startswith("Returns and Multiples") and any(h.startswith("Quarter ") for h in exhibit["headers"])
+        if title not in core and not quarter:
             continue
-        returns = exhibit["title"].startswith("Returns and Multiples")
-        valuation = exhibit["title"] == "Valuation, IRR and Net Multiples"
-        if returns or valuation:
-            reported = {
-                (row[0], header.lower(), value)
-                for row in exhibit["rows"]
-                for header, value in zip(exhibit["headers"][1:], row[1:]) if value != ""
-            }
-            if not reported or reported.issubset(reference):
-                omitted = True
-                continue
-        retained.append(exhibit)
-    if omitted:
-        anchor = next((e for e in retained if e["title"].startswith("Returns and Multiples")), None)
-        if anchor:
-            anchor["note"] = (
-                "Empty return and inception-statistic sections are omitted. Available historical returns "
-                "appear in the annual returns tables; market values remain in the retained tables. "
-                "Blank source figures remain unavailable."
-            )
-    return retained
+        if title == "Portfolio Composition ($)":
+            names = {"Total Plan Assets", "Target Allocation", "Market Value", "Unfunded", "Remaining"}
+            exhibit = project(exhibit, [i for i, h in enumerate(exhibit["headers"]) if h in names])
+        elif title == "Investment Schedule":
+            geographic = [(r, exhibit["source_rows"][i], exhibit) for i, r in enumerate(exhibit["rows"])
+                          if r[0] in {"US Portfolio", "Ex-US Portfolio"}]
+            keep = [i for i, r in enumerate(exhibit["rows"])
+                    if r[0] not in {"US Portfolio", "Ex-US Portfolio"}]
+            # Duplicate totals are detected from their financial cells, not a client name.
+            total = next((r for r in exhibit["rows"] if r[0] == "Vectera Initiated Investments"), None)
+            if total:
+                identity = {name for part in exhibit["identity"].split("|")
+                            for name in [part.strip(), part.strip() + " Portfolio"]}
+                keep = [i for i in keep if exhibit["rows"][i][0] not in identity
+                        or exhibit["rows"][i][2:] != total[2:]]
+            exhibit = project(exhibit, range(len(exhibit["headers"])), keep)
+        elif quarter:
+            if "Market Value" not in exhibit["headers"] and valuation and (
+                    valuation["source_page"] == exhibit["source_page"]
+                    and valuation["source_rows"] == exhibit["source_rows"]):
+                nav = valuation["headers"].index("Market Value")
+                exhibit = dict(exhibit, headers=exhibit["headers"] + ["Market Value"],
+                               columns=exhibit["columns"] + [valuation["columns"][nav]],
+                               rows=[r + [v[nav]] for r, v in zip(exhibit["rows"], valuation["rows"])])
+            indices = [0] + [i for i, h in enumerate(exhibit["headers"]) if h.startswith("Quarter ")]
+            if "Market Value" in exhibit["headers"]:
+                indices.append(exhibit["headers"].index("Market Value"))
+            exhibit = project(exhibit, indices)
+            exhibit["title"] = "Returns and Multiples (%)"
+            total = next((r for r in exhibit["rows"] if r[0] == "Vectera Initiated Investments"), None)
+            if total:
+                identity = {name for part in exhibit["identity"].split("|")
+                            for name in [part.strip(), part.strip() + " Portfolio"]}
+                exhibit = project(exhibit, range(len(exhibit["headers"])),
+                                  [i for i, r in enumerate(exhibit["rows"])
+                                   if r[0] not in identity or r[1:] != total[1:]])
+        elif title == "Annualized Net Time-Weighted Return (%)":
+            exhibit = project(exhibit, [0] + [i for i, h in enumerate(exhibit["headers"])
+                                            if h in {"1 Yr", "3 Yr", "5 Yr"}])
+        elif title == "Quarterly cash activity":
+            total = next((r for r in exhibit["rows"] if r[0] == "Vectera Initiated Investments"), None)
+            if total:
+                identity = {name for part in exhibit["identity"].split("|")
+                            for name in [part.strip(), part.strip() + " Portfolio"]}
+                exhibit = project(exhibit, range(len(exhibit["headers"])),
+                                  [i for i, r in enumerate(exhibit["rows"])
+                                   if r[0] not in identity or r[1:] != total[1:]])
+        selected.append(exhibit)
+    for exhibit in selected:
+        if exhibit["title"] == "Geographic Diversification (%)" and geographic:
+            pieces, refs = [], []
+            for row, source_row, source in geographic:
+                column = source["headers"].index("% NAV")
+                pieces.append(f"{row[0]}: {row[column]} of market value")
+                refs.append(dict(page=source["source_page"], row=source_row,
+                                 column=source["columns"][column] + 1, raw_value=row[column]))
+            exhibit["note"] = "Fund-level classification: " + "; ".join(pieces) + ". These are separate from the look-through exposures above."
+            exhibit["note_sources"] = refs
+    order = ["Portfolio Composition ($)", "Performance Summary (%)", "Investment Schedule",
+             "Quarterly cash activity", "Returns and Multiples (%)", "Property Type Diversification (%)",
+             "Geographic Diversification (%)", "Annualized Net Time-Weighted Return (%)"]
+    return sorted(selected, key=lambda e: order.index(e["title"]))
 
 
 def register_exhibits(source, ledger):
@@ -345,7 +375,8 @@ def register_exhibits(source, ledger):
     blocks = []
     with fitz.open(source) as document:
         tables = {page.number + 1: page.find_tables().tables[0] for page in document}
-        for exhibit in exhibits:
+        audit = extract_exhibits(source, compact=False)
+        for visible, exhibit in [(False, e) for e in audit] + [(True, e) for e in exhibits]:
             table = tables[exhibit["source_page"]]
             cells = []
             for row_number, row in zip(exhibit["source_rows"], exhibit["rows"]):
@@ -365,6 +396,8 @@ def register_exhibits(source, ledger):
                     displayed = display_cell(exhibit, len(cell_ids), value)
                     cell_ids.append([ledger.add(displayed, locator, formula="source PDF value with displayed unit decoration", inputs=[])])
                 cells.append(cell_ids)
+            if not visible:
+                continue
             blocks.append(
                 dict(
                     type="table",
@@ -376,10 +409,12 @@ def register_exhibits(source, ledger):
                 )
             )
             if exhibit.get("note"):
-                identifier = ledger.add(exhibit["note"], dict(
-                    file=source.name, page=exhibit["source_page"], method="parsed exhibit presentation summary",
-                ))
-                blocks.append(dict(type="paragraph", text=exhibit["note"], evidence=[identifier]))
+                ids = [ledger.add(ref["raw_value"], dict(file=source.name, **ref))
+                       for ref in exhibit.get("note_sources", [])]
+                if not ids:
+                    ids = [ledger.add(exhibit["note"], dict(
+                        file=source.name, page=exhibit["source_page"], method="parsed exhibit presentation summary"))]
+                blocks.append(dict(type="paragraph", text=exhibit["note"], evidence=ids))
     return blocks
 
 
@@ -410,17 +445,19 @@ def append_exhibits(result, source, approved=False):
         HRFlowable(width="100%", thickness=0.6, color=NAVY, spaceAfter=6),
         Paragraph(html.escape(exhibits[0]["identity"]), caption),
         Paragraph(
-            "Retypeset from the supplied flash PDF. Values retain the source exhibit's displayed precision; "
-            "blank cells remain blank. The original PDF is retained in the audit package.",
+            "Selected flash exhibits follow the sample PMR. Values retain the source PDF's displayed precision; "
+            "blank figures are not estimated. The complete flash is available as appendix.pdf in the audit package.",
             caption,
         ),
     ]
     diversification_started = False
     for exhibit in exhibits:
         if "Diversification" in exhibit["title"] and not diversification_started:
+            divider = HRFlowable(width="100%", thickness=0.6, color=NAVY, spaceAfter=6)
+            divider.keepWithNext = True
             story.extend([
                 Paragraph("Diversification and Annual Returns", heading),
-                HRFlowable(width="100%", thickness=0.6, color=NAVY, spaceAfter=6),
+                divider,
             ])
             diversification_started = True
         story.append(Paragraph(html.escape(exhibit["title"]), heading))

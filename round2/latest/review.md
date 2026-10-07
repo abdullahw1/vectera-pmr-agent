@@ -13,6 +13,19 @@
 - REVIEW: Confirm image-extracted values on slide 10, chart 1
 - BLOCKER: Allocation history/flash target at USD-million display precision: difference 14.0000
 - WARNING: Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.
+- WARNING: Silverline Core-Plus Fund: individual LTV exceeds its sleeve's numeric threshold; SPEC tests compliance at sleeve level, not per fund.
+- WARNING: Tidewater Distressed Realty Fund: manager reports dissolution. Flash holdings and returns are retained; review the termination and performance-period treatment.
+- WARNING: 1Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 2Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 3Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 4Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 1Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 2Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 2Q25 nav differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 3Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 3Q25 nav differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: 4Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.
+- WARNING: Latest explicitly quarter-labelled chart observations are 4Q25, earlier than 1Q26. Confirm the reporting lag; a renamed deck is not evidence of updated observations.
 - WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Auburn Ridge Residential Fund II
 - WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Beacon Hill Medical Office Fund
 - WARNING: Review paraphrase meaning against verified quotes: Performance drivers or commitment strategy for Calder Grove Industrial Partners

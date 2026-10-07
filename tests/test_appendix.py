@@ -6,7 +6,7 @@ import re
 import fitz
 
 from pmr.appendix import append_exhibits, display_cell, extract_exhibits, presentation_header
-from pmr.appendix import register_exhibits, compact_return_exhibits
+from pmr.appendix import register_exhibits, compact_report_exhibits
 from pmr.evidence import Ledger
 from pmr.verification import claim_manifest
 
@@ -30,7 +30,7 @@ def test_source_exhibits_keep_values_on_letter_pages():
         assert "Flash source page" in page.get_text()
     assert "CPERS Custom Benchmark" in combined
     assert "2025" in combined
-    assert "10 Yr Net" in combined
+    assert "Annual Returns - TWR Inception" not in combined
     assert "% NAV" in combined
     assert "Annualized Net Time-Weighted Return (%)" in combined
     assert "Diversification and Annual Returns" in combined
@@ -54,6 +54,7 @@ def test_appendix_manifest_maps_every_cell_to_its_source():
     source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
     ledger = Ledger()
     blocks = register_exhibits(source, ledger)
+    blocks = [b for b in blocks if b["type"] == "table"]
     claims = claim_manifest([dict(title="Appendix", blocks=blocks)], ledger)
     with fitz.open(source) as document:
         raw_pages = {page.number + 1: page.find_tables().tables[0].extract() for page in document}
@@ -74,6 +75,7 @@ def test_appendix_manifest_maps_every_cell_to_its_source():
 def test_display_decoration_preserves_cents_and_missing_values():
     exhibit = dict(headers=["Market Value", "Fees", "Allocation / plan", "Quarter NET"])
     assert display_cell(exhibit, 0, "1,367,035.55") == "$1,367,035.55"
+    assert display_cell(exhibit, 0, "95000") == "$95,000"
     assert display_cell(exhibit, 1, "-31,290.15") == "($31,290.15)"
     assert display_cell(exhibit, 2, "0.1") == "10.0%"
     assert display_cell(exhibit, 2, "0.12345") == "12.345%"
@@ -95,7 +97,7 @@ def test_net_summary_omits_gross_only_series_but_full_exhibits_keep_them():
         raw = original[summary["source_page"] - 1].find_tables().tables[0].extract()
         for row, source_row in zip(summary["rows"], summary["source_rows"]):
             assert row == [str(raw[source_row - 1][c] or "") for c in summary["columns"]]
-    full = next(e for e in exhibits if e["title"] == "Annualized Time-Weighted Returns (%) - 1 Year / 2 Year")
+    full = next(e for e in extract_exhibits(source, compact=False) if e["title"] == "Annualized Time-Weighted Returns (%) - 1 Year / 2 Year")
     npi = next(row for row in full["rows"] if row[0] == "NPI + 50 BPS")
     assert "5.44%" in npi and "3.16%" in npi
 
@@ -127,32 +129,27 @@ def test_unrecognized_readable_source_layout_is_retained(tmp_path):
 
 
 def test_empty_and_duplicate_return_tables_are_omitted_without_losing_values():
-    def exhibit(title, headers, rows):
-        return dict(title=title, headers=headers, rows=rows)
-
-    inputs = [
-        exhibit("Investment Schedule", ["Investment", "Market Value"], [["Fund A", "100"]]),
-        exhibit("Returns and Multiples (%) - Quarter", ["Investment", "Quarter NET"], [["Fund A", "0.00%"]]),
-        exhibit("Returns and Multiples (%) - Since Inception", ["Investment", "Since Inception NET"], [["Fund A", ""]]),
-        exhibit("Valuation, IRR and Net Multiples", ["Investment", "Market Value", "Net IRR"], [["Fund A", "100", ""]]),
-        exhibit("Returns and Multiples (%) - 3 Year(s) / 5 Year(s)", ["Investment", "3 Yr NET"], [["Portfolio", "0.62%"]]),
-        exhibit("Annualized Net Time-Weighted Return (%)", ["Investment", "3 Yr Net"], [["Portfolio", "0.62%"]]),
-    ]
-    result = compact_return_exhibits(inputs)
-    assert len(result) == 3
-    assert result[1]["rows"] == [["Fund A", "0.00%"]]
-    assert "Blank source figures remain unavailable" in result[1]["note"]
-    before = {value for e in inputs for r in e["rows"] for value in r[1:] if value}
-    after = {value for e in result for r in e["rows"] for value in r[1:] if value}
-    assert before == after
+    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    exhibits = extract_exhibits(source)
+    assert len(exhibits) == 8
+    assert not any("Since Inception" in e["title"] or "Valuation" in e["title"] for e in exhibits)
+    schedule = next(e for e in exhibits if e["title"] == "Investment Schedule")
+    assert not any(r[0] in {"US Portfolio", "Ex-US Portfolio"} for r in schedule["rows"])
+    assert schedule["headers"][-1] == "% NAV"
+    total = next(r for r in schedule["rows"] if r[0] == "Vectera Initiated Investments")
+    assert sum(r[2:] == total[2:] for r in schedule["rows"]) == 1
 
 
 def test_unique_fund_returns_and_real_zero_statistics_are_retained():
-    inputs = [
-        dict(title="Returns and Multiples (%) - 3 Year(s)", headers=["Investment", "3 Yr NET"], rows=[["Fund A", "-2.00%"]]),
-        dict(title="Valuation, IRR and Net Multiples", headers=["Investment", "Net IRR", "Net Multiple"], rows=[["Fund A", "0.00%", "0.00x"]]),
-    ]
-    assert compact_return_exhibits(inputs) == inputs
+    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    ledger = Ledger()
+    register_exhibits(source, ledger)
+    recorded = {(f["source"].get("page"), f["source"].get("row"), f["source"].get("column"),
+                 f["source"].get("raw_value")) for f in ledger.facts.values()}
+    for exhibit in extract_exhibits(source, compact=False):
+        for row, source_row in zip(exhibit["rows"], exhibit["source_rows"]):
+            for value, column in zip(row, exhibit["columns"]):
+                assert (exhibit["source_page"], source_row, column + 1, value) in recorded
 
 
 def test_nav_only_statistics_merge_into_quarter_table_with_source_columns():
@@ -162,9 +159,9 @@ def test_nav_only_statistics_merge_into_quarter_table_with_source_columns():
     valuation = dict(metadata, title="Valuation, IRR and Net Multiples", columns=[0, 1, 21, 22],
                      headers=["Investment", "Market Value", "Net IRR", "Net Multiple"],
                      rows=[["Fund A", "100", "", ""], ["Benchmark", "0", "", ""]])
-    result = compact_return_exhibits([quarter, valuation])
+    result = compact_report_exhibits([quarter, valuation])
     assert len(result) == 1
-    assert result[0]["headers"] == ["Investment", "Market Value", "Quarter NET"]
-    assert result[0]["columns"] == [0, 1, 5]
-    assert result[0]["rows"] == [["Fund A", "100", "1.00%"], ["Benchmark", "0", "0.74%"]]
+    assert result[0]["headers"] == ["Investment", "Quarter NET", "Market Value"]
+    assert result[0]["columns"] == [0, 5, 1]
+    assert result[0]["rows"] == [["Fund A", "1.00%", "100"], ["Benchmark", "0.74%", "0"]]
     assert quarter["headers"] == ["Investment", "Quarter NET"]

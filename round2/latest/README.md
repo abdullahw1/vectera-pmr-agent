@@ -4,12 +4,13 @@ Branch: **`round2-v2-final`**. Evaluated v1 remains frozen at **`v1-submission`*
 
 ## Submission Files
 
-- [One-page investigation note](../Abdullah_Waheed_CPERS_1Q26_Rerun_Note.pdf): the unchanged v1 failure, source issues and initial focused repair.
+- [One-page investigation note](../Abdullah_Waheed_CPERS_1Q26_Rerun_Note.pdf): the unchanged v1 failure, related reader policies, source findings and current corrections.
 - [Unchanged v1 failure](../v1/failure.json): no PDF was produced by v1.
-- [Latest 1Q26 draft](CPERS_PMR_1Q26_DRAFT.pdf): generated from this delivery's production code through the local workspace.
+- [Latest 1Q26 draft](CPERS_PMR_1Q26_DRAFT.pdf): generated from this delivery's code, with the complete [original flash exhibit](flash-exhibit.zip) provided separately.
 - [Review queue](review.md), [financial verification](verification.json), [claim manifest](manifest.json), [evidence ledger](evidence.json), [semantic manifest](semantic_manifest.json), and [run diagnostics](diagnostics.json).
 - [Full test log](full-tests.log) and [test execution record](full-tests.json).
-- [Appendix cleanup checks](appendix-checks.json): all 414 distinct entity/metric/value facts retained, with three redundant tables removed.
+- [Output checks](output-checks.json): 13 portrait pages, eight core tables and all 889 raw source PDF cells retained in the audit.
+- [Current cached repeatability](cached-repeatability.json) and [original-quarter regression](4Q25-regression.json).
 
 ## Changes After the Initial V2
 
@@ -19,18 +20,20 @@ The workspace now opens the PDF first, with paging and zoom, a compact review ch
 
 ## Observed Results
 
-The current code passed **223 tests** on macOS/Python 3.12 with model API access disabled for the test suite. Desktop and mobile browser checks of the review interface were performed separately before the appendix-only cleanup. JavaScript syntax checks passed for both browser pages.
+The current code passed **229 tests** on macOS/Python 3.12 with model API access disabled for the test suite. Earlier desktop/mobile interface checks were supplemented by a current desktop check of the 13-page draft and grouped source-context warnings. JavaScript syntax checks passed for both browser pages.
 
-The fresh CPERS / 1Q26 workspace run originally produced 15 portrait pages and made 23 OpenAI requests. The latest appendix cleanup reused all 23 saved responses, made **zero new API calls**, and produced **14 portrait pages**, still passing **62 of 63 financial checks**. All non-appendix data and the first ten pages are unchanged. Before packaging, the draft's implementation hashes and the test record's source hashes were checked against this delivery's code.
+Two fresh output/cache folders seeded with the same 23 saved model responses produced identical financial results, claims and PDF bytes. Each made **zero new API calls** and produced **13 portrait pages**, passing **62 of 63 financial checks**. This checks cached repeatability, not independent live-model wording. The current no-key 4Q25 regression passed **58 of 58** financial checks. The packaged draft and full test record were checked against this delivery's production-code hashes.
 
-The empty since-inception table and the duplicate 3-/5-year table are omitted. When an IRR/multiple table contains only market values, those values move into the quarterly returns table instead. Unique reported figures, including real zeros, remain visible and source-linked. A short note explains omitted sections. The original 4Q25 exhibits are unchanged.
+The appendix follows the original 3Q25 sample's eight core tables. Composition has five columns; quarterly returns omit mostly blank annual columns; annual net returns show the required 1-/3-/5-year horizons. US/Ex-US classifications move to a source-linked geographic footnote, and duplicate client total rows are removed only when their financial cells match the Vectera total. Cash amounts include separators. The complete flash is supplied in flash-exhibit.zip and retained as appendix.pdf in runtime audit bundles. All original source cells, including omitted detail, remain registered in the evidence ledger. This keeps the flash exhibit available under SPEC 1.11 rather than reducing the report to the newer reference's single schedule without supporting exhibits.
+
+Tidewater's dissolution and the difference between its notice and supplied flash return are explicit. Northgate/Ridgeline contributions are described. Silverline's individual LTV is a warning, not a sleeve-compliance failure. Ten historical target/NAV revisions are linked to both sources; chart labels dating through 4Q25 flag lagged market evidence. These findings appear in the review queue. Financial calculations and approval requirements are unchanged.
 
 The three source blockers remain: missing aggregate IRR, missing aggregate investment multiple, and conflicting allocation targets ($515M in history versus $501,248,068.80 in the flash). No charts were falsely confirmed and no human approval or final PDF is included. The PDF stays DRAFT.
 
-This latest run is a single live generation, not a new two-run repeatability experiment. Earlier repeatability and 4Q25 comparison records remain in the [historical delivery guide](../README.md). Historical allocation revisions and Tidewater's omitted termination commentary remain disclosed limitations. Windows execution is not claimed.
+Earlier independent live-model repeatability and original v1/v2 comparison records remain in the [historical delivery guide](../README.md). No new independent live-model repeatability or Windows execution is claimed. Whether the revised history was intentional, why the deck repeats older observations, and the cross-package Cornerstone funded-balance difference need clarification from the source owner, not a guessed correction.
 
 ## Run It
 
 Use Python 3.12. Follow the [root README](../../README.md) for API key setup and `start.cmd` on Windows or `python3.12 scripts/launch.py` on macOS/Linux. OpenAI is preferred and takes priority when both keys are set. Select the received 1Q26 package's `inputs` folder, enter **CPERS / 1Q26**, and select **Generate Draft**.
 
-The received 1Q26 input package, API keys, model cache and local approval records are not republished in this delivery. The records retain original run paths and identify the hosts actually tested.
+The complete received input package, API keys, model cache and local approval records are not republished. The flash PDF alone is reproduced as a supplementary exhibit. Records retain original run paths and identify the hosts actually tested.

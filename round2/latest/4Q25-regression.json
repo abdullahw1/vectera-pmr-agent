@@ -1,0 +1,7 @@
+{
+  "mode": "Current-code original-quarter no-key regression; golden financial answers are also asserted by pytest",
+  "checks_passed": 58,
+  "checks_total": 58,
+  "financial_hash": "0ac0cd122a10a0dfb7e4cc6c28db05a648ce630f69aa9c1ec4a7e53beb8d15c9",
+  "api_calls": 0
+}

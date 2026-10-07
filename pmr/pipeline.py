@@ -117,6 +117,8 @@ def _generate(root: Path, output: Path, client: str, period: str):
     with stage("cross_source_checks"):
         data["history"] = allocation_history(sources["history"], requested, ledger)
         supporting_checks(sources, data, ledger)
+        from .crosschecks import contextual_checks
+        contextual_checks(sources, data, ledger)
         data["market_signals"] = cap_rate_signals(data["charts"], ledger)
     with stage("grounded_narrative"):
         data["narratives"] = build_narratives(data, model, ledger)

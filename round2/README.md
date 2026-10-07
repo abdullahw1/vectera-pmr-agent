@@ -8,7 +8,7 @@ The earlier focused v2 remains available on `codex/round2-v2`.
 
 - [One-page note](Abdullah_Waheed_CPERS_1Q26_Rerun_Note.pdf), also available as [editable text](RERUN_NOTE.md).
 - [Original unchanged v1 result](v1/failure.json): both runs stopped at `ReturnsMultiples(Agg)/V28`; no PDF was produced.
-- [Latest V2 1Q26 draft](latest/CPERS_PMR_1Q26_DRAFT.pdf): 14 portrait pages, not approved for release.
+- [Latest V2 1Q26 draft](latest/CPERS_PMR_1Q26_DRAFT.pdf): 13 portrait pages, not approved for release.
 - [Latest delivery and verification](latest/README.md): current code, tests and run results.
 - [Latest review queue](latest/review.md): blockers, warnings, and items requiring review.
 - [Latest audit manifest](latest/manifest.json): report claims and figures linked to their source locations.
@@ -17,13 +17,13 @@ The earlier focused v2 remains available on `codex/round2-v2`.
 
 The initial focused fix changed only `pmr/finance.py` and `pmr/report.py` in production code. Aggregate IRR and net multiple now use the existing missing-value path. Blank figures retain their source cells, display as `not available`, and block final approval. Real zero remains zero. Present figures keep the original wording.
 
-The latest delivery also adds targeted input validation, safer failed-run handling, and a report-first review interface. See [error-handling changes](../PREVIEW_ERROR_HANDLING.md) and [interface changes](../PREVIEW_UI.md). The current code passed 223 tests. Appendix cleanup removed three empty or duplicate tables without losing supplied figures; the same three source blockers remain. Full details and current artifacts are under [latest/](latest/README.md).
+The latest delivery adds targeted input validation, safer failed-run handling, source-context warnings and a report-first review interface. It passed 229 tests. The appendix now uses the original sample's core tables, with the complete flash supplied separately and all source cells retained in the audit. The same three source blockers remain. Start with [the current delivery guide](latest/README.md).
 
 ## Earlier Focused V2 Results
 
-The results in this section and `v2/` describe the earlier focused v2, not a new execution of the latest code. The one-page note records that original investigation and narrow repair; the latest-delivery guide records the subsequent additions.
+The results in this section and `v2/` describe the earlier focused v2, not a new execution of the latest code. The one-page note and latest-delivery guide describe the current corrections as well as the original failure.
 
-Six tests were added in `tests/test_missing_portfolio_returns.py`. The tested v2 copy passed all 167 tests. Its two production files and test file are identical to those on this branch. A fresh no-key 4Q25 comparison produced byte-identical v1/v2 PDFs and the same original 58 checks.
+Six tests were added in `tests/test_missing_portfolio_returns.py`. The initial isolated v2 copy passed all 167 tests. Its initial two-file repair is preserved in the earlier v2 branch; the current branch includes subsequent changes. That initial no-key 4Q25 comparison produced byte-identical v1/v2 PDFs and the same 58 checks. The latest PDF layout and prose are intentionally different.
 
 Two independent live OpenAI 1Q26 runs matched financial figures, roles, approvals, compliance, chart observations, missing-value states, and report structure. Prose differed, so PDF bytes did not match. Two independent no-key drafts were byte-identical. These are observed results, not guarantees for future model responses.
 
@@ -31,7 +31,7 @@ Two independent live OpenAI 1Q26 runs matched financial figures, roles, approval
 
 The source does not report aggregate IRR or net multiple. Allocation history also shows a $515M target for 1Q26 while the flash reports $501,248,068.80. The overview follows the flash and the history chart retains the conflicting source series. The draft passes 62 of 63 checks; the failed check concerns that target mismatch, and the two missing figures are separate release blockers.
 
-Earlier allocation-history points were revised too. Current code checks the requested quarter, not historical revisions. Tidewater's termination is omitted from the report because manager prose is displayed only for ranked funds. The note discloses those limitations, the flash-carried position count, and the Beacon Hill PM-committee interpretation. No input values were changed to force a clean report.
+Earlier allocation-history points were revised too. Current code compares them with the prior report's table and surfaces warnings. Tidewater's termination is included, with the flash return distinguished from the manager notice. The note explains the flash-carried position count, Beacon Hill's PM approval and unresolved source questions. No input values were changed to force a clean report.
 
 ## Reproduce on the Supplied Inputs
 

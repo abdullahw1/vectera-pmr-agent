@@ -1,9 +1,9 @@
 {
   "client": "CPERS",
   "quarter": "1Q26",
-  "meaning_hash": "f78b93949373651889332ddc50eb4c69852c836459da88a3184a04223fefcaea",
-  "semantic_hash": "5bb1051e4993a2edc56b1a645a48b614afa2fb5bb43113077cf8716d1be8998d",
-  "financial_hash": "fec0d22949cd9acb737f6b08ec18ce1dd6d6e3914667fbcf103f2e837c2e2f9a",
+  "meaning_hash": "48e27f02b431ce1124c2c2d773d427897fc371121700daa1b58deddb15af8948",
+  "semantic_hash": "39b2f8eaf4062f8a3c7d9a1b78b99414a6b8e9ad3f98012bbdb5976dce88845a",
+  "financial_hash": "1572bb364082a5e24bf79d5b18f2007815297d4c57d6b77a264656735d69e296",
   "source_hashes": {
     ".DS_Store": "86ce3b43da30a79fcf5b936ec7616b29974a14f8b87cc938e92c09f6025a507d",
     "allocation_history.xlsx": "076a12726b442d44a218e8be9bbe18cf2cfdcca245d5a0081940b20c89ebfe41",
@@ -25,10 +25,10 @@
   "implementation_hashes": {
     "__init__.py": "7d9b87f5eb14833ccf0ee7c425792376057e6e7aed778561c6cda978cc3aa307",
     "__main__.py": "914f4c7c8ca796b5a946646c82829d64b35703fbda5c70cbd0250215fc76a84c",
-    "appendix.py": "564df5d9aeebdbd08c233356ca2a8f48b05d8d1a8921a665afb9e8ad25dc1f2f",
+    "appendix.py": "2fd9de7320098464e8d83eed943995defa2c2d8488660b749a3104ef45bfc631",
     "charts.py": "b430841720d0dafa3a0ff95976c22c5fd33253c0ea2393ce51af4b5f31905389",
     "config.py": "906a25bec8f79554eaa1aada55b1f1569ecc06bb0e570d996a73e21bfd3b2233",
-    "crosschecks.py": "3f05ba3059479cdd14f452218f45bd1af319167f1650f09c8423f7215afbad8b",
+    "crosschecks.py": "23f914a39d623267ab8e798d523658c7746b87d8cd2d0d2ea977d3d14266d44b",
     "errors.py": "9c3b41b154e4db5e6b904094a3f09f14f4a0c684fb03d9b3dff9ff237a20db40",
     "evidence.py": "40da7728a8bf9133ec365387478c2e412ee46fc23db774b2785a26500fb626ca",
     "filenames.py": "cd25503f2e3b156a747c865778a8104018f2a383556e141c648e754bdc9b65f5",
@@ -38,15 +38,15 @@
     "models.py": "d630df15e5b60e9f153a4eefae1727b3b40f310eb42ae4e1b8824f8643edae08",
     "narrative.py": "0b221e315dc0b1c1b0ef787743863a0519e018c26424dd0fae5724b890d2c87c",
     "numeric.py": "35f38d176fa741fea6c64ef22b785c61b5891a1f2b88b10373afa9d3f34194fd",
-    "pipeline.py": "375dfd10579f314e192a855692c858832925585583195ca144abb9181d38f92b",
-    "report.py": "4787fe832c6854e351bff067c592f1a56fb43ca90c5782d720fe8ed6662c7c91",
+    "pipeline.py": "352568e9dc18981d76c9c0e2fa0dd7f4e038c58f6d14abf71aea6676aa263785",
+    "report.py": "31bd3e7d2d48bef39c76cc4b19315473d94bb66ae839c4a636c07fa31c454437",
     "review.py": "b060679556488154d55f217e1ca26a77515edd48e973f61516ad45ee04d6de6e",
     "synthesis.py": "ae64c8715d6feb603379ff62dab4eb13e89d745b0530ddcfc725caaeea402966",
     "template.py": "ce957b78246758993b1248018b10179c0332773512474318b12ef6d981c88523",
     "verification.py": "f01005eb7f0e95c0a58a6c7fa5f6d731ff9e6e9a11786a297e9af660cd8c911e",
     "visuals.py": "6e4c8a420eb1a098ff6d077dce9ccf5cf44e832a7eae7453e4e136dfddad2546",
     "web/index.html": "3ad99c19a9f242ccc62856bd9895178df8ad3fd6268ffb9f51bfcf2090da9501",
-    "web/review.html": "feb0227ae1f46b12e9fea33689cd13b1a6b77aaa2d0551c6d6fbf24ecf8002fb",
+    "web/review.html": "46261144cf7ed7b7bd5fb6688c933e9033ca61dc257b1cd88992313463453a37",
     "workspace.py": "0702075ef024168dcb1d447f29d85e25631dd903d2a549a1cc5004bc798c51ad"
   },
   "checks_passed": 62,
@@ -141,6 +141,125 @@
       "evidence": [
         "f_0d346f47e872a40f",
         "f_daed0227c255e87c"
+      ]
+    },
+    {
+      "code": "fund_leverage_risk",
+      "message": "Silverline Core-Plus Fund: individual LTV exceeds its sleeve's numeric threshold; SPEC tests compliance at sleeve level, not per fund.",
+      "severity": "warning",
+      "evidence": [
+        "f_8b76ae74a5afcce2",
+        "f_d43c6ec5c7e24eb3"
+      ]
+    },
+    {
+      "code": "terminated_fund",
+      "message": "Tidewater Distressed Realty Fund: manager reports dissolution. Flash holdings and returns are retained; review the termination and performance-period treatment.",
+      "severity": "warning",
+      "evidence": [
+        "f_9671bb472773022d",
+        "f_ab7caf636c0b1f27",
+        "f_b5e8a834d2ae31fa",
+        "f_86b2d13f9d2e82b7"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "1Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_2459f5c3b1929572",
+        "f_9549f0058e256afe"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "2Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_c85eeb91be9b8e40",
+        "f_6f18bf37d62023fb"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "3Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_9e4a9b6a7c5acd64",
+        "f_a2673851ccd13814"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "4Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_a37d1519b7356980",
+        "f_ae88e1f18a7b4ad3"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "1Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_448a1b5a98f895cf",
+        "f_ccc061b8df894ca2"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "2Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_4a50c7b773bb9d21",
+        "f_dcb1038a52779e3e"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "2Q25 nav differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_0b4fb0f8015c8ff1",
+        "f_dcb1038a52779e3e"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "3Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_261c8180ba511f0a",
+        "f_d4fff965b6bb6d25"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "3Q25 nav differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_9e25e306b5e07b4a",
+        "f_d4fff965b6bb6d25"
+      ]
+    },
+    {
+      "code": "historical_revision",
+      "message": "4Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning",
+      "evidence": [
+        "f_ce495cd515516bb4",
+        "f_2dcdff3f66e2b485"
+      ]
+    },
+    {
+      "code": "market_data_lag",
+      "message": "Latest explicitly quarter-labelled chart observations are 4Q25, earlier than 1Q26. Confirm the reporting lag; a renamed deck is not evidence of updated observations.",
+      "severity": "warning",
+      "evidence": [
+        "f_5c8d0f3504aa0ef8",
+        "f_97f98523681401cb"
       ]
     },
     {

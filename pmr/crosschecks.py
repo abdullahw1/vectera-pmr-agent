@@ -145,3 +145,59 @@ def cap_rate_signals(charts, ledger):
                 )
             )
     return signals
+
+
+def contextual_checks(sources, data, ledger):
+    """Surface status changes and older observations without changing flash figures."""
+    for fund in data["funds"]:
+        status = [p for p in data["support"].get(fund["name"], [])
+                  if re.search(r"\b(?:the )?fund (?:has been|was|is) dissolved\b", p["text"], re.I)]
+        if status:
+            fund["termination"] = status[0]
+            evidence = [status[0]["id"], fund["nav_id"], fund["q_net_id"]]
+            for path, pages in sources["managers"]:
+                if str(path.relative_to(sources["root"])) != status[0]["source"]["file"]:
+                    continue
+                for number, page in enumerate(pages, 1):
+                    match = re.search(r"No quarterly performance percentages are presented[^.]*\.", page)
+                    if match:
+                        fid = ledger.add(match[0], dict(file=status[0]["source"]["file"], page=number, quote=match[0]))
+                        fund["termination_return_note_id"] = fid
+                        evidence.append(fid)
+            ledger.issue("terminated_fund", fund["name"] +
+                         ": manager reports dissolution. Flash holdings and returns are retained; review the termination and performance-period treatment.",
+                         evidence=[i for i in evidence if i])
+        threshold = data["policy"]["leverage"][0 if fund["sleeve"] == "Strategic" else 1]
+        if fund.get("ltv") is not None and fund["ltv"] > threshold:
+            fund["ltv_risk_threshold"] = threshold
+            ledger.issue("fund_leverage_risk", fund["name"] +
+                         ": individual LTV exceeds its sleeve's numeric threshold; SPEC tests compliance at sleeve level, not per fund.",
+                         evidence=[fund["ltv_id"], data["policy"]["leverage_id"]])
+        if fund.get("beginning") == 0 and fund.get("contributions") is not None and fund["contributions"] > 0:
+            fund["newly_funded"] = True
+
+    data["historical_revisions"] = []
+    history = {quarter(row["quarter"]): row for row in data["history"]}
+    for number, page in enumerate(sources["prior"][2], 1):
+        for match in re.finditer(r"(?m)^\s*([1-4]Q\d{2})\s+([\d,]+(?:\.\d+)?)\s+([\d,]+(?:\.\d+)?)[ \t]*$", page):
+            row = history.get(quarter(match[1]))
+            if not row:
+                continue
+            prior = ledger.add(match[0], dict(file=sources["prior"][1].name, page=number, quote=match[0]))
+            for metric, old in zip(["target", "nav"], match.groups()[1:]):
+                if Decimal(str(row[metric])) != Decimal(old.replace(",", "")):
+                    evidence = [row[metric + "_id"], prior]
+                    ledger.issue("historical_revision", f"{row['quarter']} {metric} differs between allocation history and the prior PMR; confirm whether this is an intended restatement.", evidence=evidence)
+                    data["historical_revisions"].append(dict(quarter=row["quarter"], metric=metric, evidence=evidence))
+    periods, evidence = [], []
+    for chart in data["charts"]:
+        for observation in (chart.get("data") or {}).get("series", []):
+            match = re.fullmatch(r"(\d{2})Q([1-4])", observation["label"])
+            if match:
+                periods.append((2000 + int(match[1]), int(match[2])))
+                evidence.append(chart["id"])
+    if periods and max(periods) < quarter(data["quarter"]):
+        latest = max(periods)
+        data["market_observation_period"] = f"{latest[1]}Q{str(latest[0])[-2:]}"
+        data["market_period_evidence"] = list(dict.fromkeys(evidence))
+        ledger.issue("market_data_lag", f"Latest explicitly quarter-labelled chart observations are {data['market_observation_period']}, earlier than {data['quarter']}. Confirm the reporting lag; a renamed deck is not evidence of updated observations.", evidence=data["market_period_evidence"])

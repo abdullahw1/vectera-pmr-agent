@@ -1402,6 +1402,25 @@
       },
       "value": "342000"
     },
+    "f_01f1dc4aca4ab181": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          755.2142028808594,
+          1718.415771484375,
+          769.6842041015625
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_0208512b184c59d0": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -1439,25 +1458,6 @@
         "table": 1
       },
       "value": "$0"
-    },
-    "f_0221ff1ec67c2a6e": {
-      "formula": "source PDF value with displayed unit decoration",
-      "inputs": [],
-      "source": {
-        "bbox": [
-          361.64221954345703,
-          199.42276000976562,
-          434.8522262573242,
-          213.64776611328125
-        ],
-        "column": 3,
-        "file": "flash_1Q26.pdf",
-        "page": 3,
-        "raw_value": "95000",
-        "row": 6,
-        "table": 1
-      },
-      "value": "$95000"
     },
     "f_0230ce202c28e3a9": {
       "formula": "source PDF value with displayed unit decoration",
@@ -1535,6 +1535,25 @@
       },
       "value": "$47,112,725"
     },
+    "f_02c20e84071d9e83": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          784.1642150878906,
+          1862.4357604980469,
+          798.6242065429688
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_0301b3513a1200a8": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -1577,17 +1596,6 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "7500000"
-    },
-    "f_033c4483c191a7cb": {
-      "formula": "(current quarter return - prior displayed quarter return) * 100",
-      "inputs": [
-        "f_e697e3c37a8ece29",
-        "f_5746793c4c2ed97d"
-      ],
-      "source": {
-        "kind": "calculation"
-      },
-      "value": -23.02919472786831
     },
     "f_03581053fff7a346": {
       "source": {
@@ -1650,6 +1658,25 @@
         "table": 1
       },
       "value": ""
+    },
+    "f_040d98f7766295a1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          957.7242126464844,
+          1286.3457641601562,
+          972.2894694010416
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "-1.89%",
+        "row": 32,
+        "table": 1
+      },
+      "value": "-1.89%"
     },
     "f_040f0e8a3b10ac2d": {
       "numeric": {
@@ -1721,6 +1748,25 @@
       },
       "value": "0"
     },
+    "f_0479d5e2a6becba5": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          755.2142028808594,
+          1574.3907470703125,
+          769.6842041015625
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_04eb201a5a5d39c7": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -1784,6 +1830,25 @@
         "page": 6,
         "raw_value": "",
         "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_065720d5bf8cea3d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          798.6242065429688,
+          1862.4357604980469,
+          813.0841979980469
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
         "table": 1
       },
       "value": ""
@@ -1855,6 +1920,44 @@
       },
       "value": ""
     },
+    "f_06cb077fbe088f32": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          827.5491943359375,
+          1214.3457641601562,
+          842.0131429036459
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_06efadffb012c2fe": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          610.5792388916016,
+          1790.4357604980469,
+          625.0442047119141
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_07354f7f139fbcd1": {
       "numeric": {
         "authority": "source workbook",
@@ -1897,6 +2000,25 @@
         "table": 1
       },
       "value": "$560,000"
+    },
+    "f_07654654b839ef00": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          755.2142028808594,
+          1934.7442392202524,
+          769.6842041015625
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
     },
     "f_07e140c8e329e2b4": {
       "numeric": {
@@ -2080,6 +2202,25 @@
       },
       "value": "2Q 97"
     },
+    "f_0991bc1cf7db5700": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          697.3731384277344,
+          1502.3907470703125,
+          711.9361165364584
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_09dfa42b5e945ce4": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -2139,6 +2280,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": 32.6
+    },
+    "f_0a55d8484f1731d0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          682.9142303466797,
+          1358.3657836914062,
+          697.3731384277344
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_0a86c97aae09aa35": {
       "formula": "source PDF value with displayed unit decoration",
@@ -2219,6 +2379,25 @@
       },
       "value": 419.0
     },
+    "f_0bc56a4b6527d5c2": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          798.6242065429688,
+          1934.7442392202524,
+          813.0841979980469
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_0bdf0318eb5f647e": {
       "numeric": {
         "authority": "source workbook",
@@ -2254,6 +2433,25 @@
         "\u2022 Refinancing of 2020\u20132021 vintage debt at higher rates remains a sector-wide overhang, most acute in office.",
         "\u2022 Slower-than-expected supply absorption in select multifamily submarkets."
       ]
+    },
+    "f_0c6be89a6aa288f3": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          653.9841918945312,
+          1070.32080078125,
+          668.44921875
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
     },
     "f_0c91e75acf267d71": {
       "formula": "source PDF value with displayed unit decoration",
@@ -2414,24 +2612,62 @@
       },
       "value": "$190,000"
     },
-    "f_0da97d367e33253b": {
+    "f_0d97f94b6b378891": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
       "source": {
         "bbox": [
-          361.64221954345703,
-          284.75777435302734,
-          434.8522262573242,
-          299.04185485839844
+          1358.3657836914062,
+          625.0442047119141,
+          1430.3657836914062,
+          639.5042114257812
         ],
-        "column": 3,
+        "column": 16,
         "file": "flash_1Q26.pdf",
-        "page": 3,
-        "raw_value": "66000",
-        "row": 12,
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
         "table": 1
       },
-      "value": "$66000"
+      "value": ""
+    },
+    "f_0dc7b9783de348be": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          813.0841979980469,
+          1430.3657836914062,
+          827.5491943359375
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_0de6af3cb503cfe9": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          639.5042114257812,
+          1358.3657836914062,
+          653.9841918945312
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
     },
     "f_0e00538c3af97466": {
       "formula": "source PDF value with displayed unit decoration",
@@ -2528,6 +2764,25 @@
       },
       "value": "1.94%"
     },
+    "f_0edd14d27e376829": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          639.5042114257812,
+          1646.415771484375,
+          653.9841918945312
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_0f5690cf70761020": {
       "numeric": {
         "authority": "source workbook",
@@ -2561,6 +2816,44 @@
         "Market Outlook \u2014 First Quarter 2026",
         "Vectera Advisors \u2014 House View"
       ]
+    },
+    "f_0fd236e8465b5d2d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          697.3731384277344,
+          1934.7442392202524,
+          711.9361165364584
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_0ffa0707495734a7": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          827.5491943359375,
+          1790.4357604980469,
+          842.0131429036459
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
     },
     "f_0ffe5e527ba3c634": {
       "formula": "source PDF value with displayed unit decoration",
@@ -2599,6 +2892,25 @@
         "table": 1
       },
       "value": "1.66%"
+    },
+    "f_1060448c27063c78": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          827.5491943359375,
+          1646.415771484375,
+          842.0131429036459
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
     },
     "f_10adc1aceaa06c97": {
       "formula": "source PDF value with displayed unit decoration",
@@ -3123,6 +3435,25 @@
         "uncertainties": []
       }
     },
+    "f_14f4b8ed99283d57": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          755.2142028808594,
+          1646.415771484375,
+          769.6842041015625
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_15d29bad6430b237": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -3198,25 +3529,6 @@
         "table": 1
       },
       "value": "0.38%"
-    },
-    "f_16d35a134dc48432": {
-      "formula": "source PDF value with displayed unit decoration",
-      "inputs": [],
-      "source": {
-        "bbox": [
-          361.64221954345703,
-          398.55777740478516,
-          434.8522262573242,
-          412.7827835083008
-        ],
-        "column": 3,
-        "file": "flash_1Q26.pdf",
-        "page": 3,
-        "raw_value": "12000000",
-        "row": 20,
-        "table": 1
-      },
-      "value": "$12000000"
     },
     "f_171411c5d1566141": {
       "formula": "source PDF value with displayed unit decoration",
@@ -3383,6 +3695,25 @@
       },
       "value": "$0"
     },
+    "f_196040b06ac849a3": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          827.5491943359375,
+          1142.32080078125,
+          842.0131429036459
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_1984777b38f1f38a": {
       "numeric": {
         "authority": "source workbook",
@@ -3501,6 +3832,25 @@
         "table": 1
       },
       "value": "-0.08%"
+    },
+    "f_1a70fbb741c3022b": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          653.9841918945312,
+          1862.4357604980469,
+          668.44921875
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
     },
     "f_1aa86059de31db16": {
       "formula": "source PDF value with displayed unit decoration",
@@ -3681,6 +4031,25 @@
       },
       "value": ""
     },
+    "f_1cace6eab1ee90eb": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          697.3731384277344,
+          1358.3657836914062,
+          711.9361165364584
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_1cb787d130a77620": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -3779,6 +4148,25 @@
       },
       "value": "Strategic Investments"
     },
+    "f_1dde2fe938528528": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          668.44921875,
+          1862.4357604980469,
+          682.9142303466797
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_1e6d7520d752e4cd": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -3798,6 +4186,25 @@
       },
       "value": "2.76%"
     },
+    "f_1e977e2daf4b3462": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          581.7561238606771,
+          1502.3907470703125,
+          596.1141967773438
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_1eaca915b400dba8": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -3813,6 +4220,25 @@
         "page": 2,
         "raw_value": "",
         "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_1ef33f3b23dff550": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          653.9841918945312,
+          1646.415771484375,
+          668.44921875
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
         "table": 1
       },
       "value": ""
@@ -3859,6 +4285,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "0"
+    },
+    "f_1f94677a0f7cec84": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          625.0442047119141,
+          1934.7442392202524,
+          639.5042114257812
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
     },
     "f_1f95f1c978f8d096": {
       "formula": "source PDF value with displayed unit decoration",
@@ -4001,6 +4446,25 @@
       },
       "value": 48.9
     },
+    "f_20a97eed89a8e82f": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          813.0841979980469,
+          1358.3657836914062,
+          827.5491943359375
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_20f4dcc5716b0585": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -4044,6 +4508,25 @@
       },
       "value": "7500000"
     },
+    "f_21ffa65ede7bd21a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          668.44921875,
+          1574.3907470703125,
+          682.9142303466797
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_2203ebe7038c0bf4": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -4070,6 +4553,44 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "Silverline Core-Plus Fund"
+    },
+    "f_221cb89f4163fbfc": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          943.2642364501953,
+          1142.32080078125,
+          957.7242126464844
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_223a8c5d4d21f5e5": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          581.7561238606771,
+          1070.32080078125,
+          596.1141967773438
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
     },
     "f_22d1f87700bf3c5e": {
       "formula": "source PDF value with displayed unit decoration",
@@ -4128,6 +4649,25 @@
       },
       "value": "Blackford Special Situations Fund II"
     },
+    "f_23595b9ca7423233": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          943.2642364501953,
+          1646.415771484375,
+          957.7242126464844
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_2397c68fd24cb681": {
       "source": {
         "cell": "W28",
@@ -4140,6 +4680,25 @@
       },
       "value": null
     },
+    "f_239b8b55424a4c19": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          899.8831380208334,
+          1790.4357604980469,
+          914.4461263020834
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_2410424ee9ad2fea": {
       "source": {
         "cell": "A1",
@@ -4147,6 +4706,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "Cascadia Public Employees' Retirement System"
+    },
+    "f_241aef3c5b97320d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          581.7561238606771,
+          1718.415771484375,
+          596.1141967773438
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
     },
     "f_2459f5c3b1929572": {
       "numeric": {
@@ -4239,6 +4817,25 @@
       },
       "value": "$30,382,150"
     },
+    "f_2578265b6a08afe2": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          581.7561238606771,
+          1646.415771484375,
+          596.1141967773438
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_25f7f7ccbc103f37": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -4307,6 +4904,44 @@
         "table": 1
       },
       "value": "$0"
+    },
+    "f_272291442f59e261": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          943.2642364501953,
+          1286.3457641601562,
+          957.7242126464844
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "0.62%",
+        "row": 31,
+        "table": 1
+      },
+      "value": "0.62%"
+    },
+    "f_274db629cb89d893": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          769.6842041015625,
+          1646.415771484375,
+          784.1642150878906
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
     },
     "f_27810e68fde2434a": {
       "source": {
@@ -4690,6 +5325,33 @@
       },
       "value": ""
     },
+    "f_2dcdff3f66e2b485": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  4Q25                                         496                            436"
+      },
+      "value": "  4Q25                                         496                            436"
+    },
+    "f_2dd5a441907ddb37": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          697.3731384277344,
+          1790.4357604980469,
+          711.9361165364584
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_2dddbf78d4179783": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -4758,6 +5420,25 @@
       },
       "value": "-2.40%"
     },
+    "f_2e4dcfb5decd264a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          899.8831380208334,
+          1142.32080078125,
+          914.4461263020834
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_2e5a88fd9948b7a7": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -4814,6 +5495,25 @@
         "table": 1
       },
       "value": "$165,000"
+    },
+    "f_2f201936fcc11228": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          697.3731384277344,
+          1574.3907470703125,
+          711.9361165364584
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
     },
     "f_2f2f03b47130535f": {
       "numeric": {
@@ -4956,6 +5656,25 @@
       },
       "value": "5012480688"
     },
+    "f_30a0350dbd180cfe": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          798.6242065429688,
+          1286.3457641601562,
+          813.0841979980469
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_30b738b6345fec7f": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -5020,6 +5739,25 @@
         "sheet": "ReturnsMultiples(Agg)"
       },
       "value": 1.445210851027445
+    },
+    "f_3107703f1684e23d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          842.0131429036459,
+          1934.7442392202524,
+          856.5761413574219
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
     },
     "f_314987e8082e0eff": {
       "formula": "source PDF value with displayed unit decoration",
@@ -5090,6 +5828,25 @@
         "\u2022 Discretionary and enclosed-mall formats remain out of favor."
       ]
     },
+    "f_3221e13a438e776f": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          842.0131429036459,
+          1214.3457641601562,
+          856.5761413574219
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_3253157ec3ae41b2": {
       "numeric": {
         "authority": "source workbook",
@@ -5157,6 +5914,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "Summit Multifamily Partners"
+    },
+    "f_32ac23cdd9dd9c75": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          682.9142303466797,
+          1646.415771484375,
+          697.3731384277344
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_32b6d5ddbc95aefe": {
       "formula": "source PDF value with displayed unit decoration",
@@ -5999,6 +6775,25 @@
       },
       "value": "The office exhibit reports, at 25Q4, appraisal cap rate ~5.6% versus transaction cap rate ~7.7%, and the transaction/appraisal gap widened from 0.7 to 2.1 percentage points."
     },
+    "f_3a74d18822fe687e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          610.5792388916016,
+          1646.415771484375,
+          625.0442047119141
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_3a9d6db481a389e6": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -6087,6 +6882,25 @@
         "kind": "ranking"
       },
       "value": []
+    },
+    "f_3af53846e9bd37cf": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          639.5042114257812,
+          1934.7442392202524,
+          653.9841918945312
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
     },
     "f_3b3915e4599c6012": {
       "formula": "source PDF value with displayed unit decoration",
@@ -6205,6 +7019,44 @@
       },
       "value": "$41,100,937"
     },
+    "f_3be7eb487fa5d21d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          596.1141967773438,
+          1646.415771484375,
+          610.5792388916016
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_3c589e25fd099cce": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          625.0442047119141,
+          1718.415771484375,
+          639.5042114257812
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_3c6f47a210699629": {
       "numeric": {
         "authority": "source workbook",
@@ -6286,6 +7138,44 @@
       },
       "value": "Cascadia Public Employees' Retirement System Portfolio"
     },
+    "f_3cc07fd5a9e53730": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          827.5491943359375,
+          1934.7442392202524,
+          842.0131429036459
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_3cc3984a51931898": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          682.9142303466797,
+          1934.7442392202524,
+          697.3731384277344
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_3ccabca808202630": {
       "source": {
         "file": "market_outlook_1Q26.pptx",
@@ -6358,6 +7248,25 @@
       },
       "value": 1.054552054687939
     },
+    "f_3d7b6385116f18ce": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          813.0841979980469,
+          1070.32080078125,
+          827.5491943359375
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_3d81a9490ee20474": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -6420,24 +7329,43 @@
       },
       "value": "456961449.16"
     },
-    "f_3deb34f1f6054f09": {
+    "f_3e6c291b311b3720": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
       "source": {
         "bbox": [
-          361.64221954345703,
-          412.7827835083008,
-          434.8522262573242,
-          427.06385803222656
+          1142.32080078125,
+          784.1642150878906,
+          1214.3457641601562,
+          798.6242065429688
         ],
-        "column": 3,
+        "column": 13,
         "file": "flash_1Q26.pdf",
-        "page": 3,
-        "raw_value": "7500000",
-        "row": 21,
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
         "table": 1
       },
-      "value": "$7500000"
+      "value": ""
+    },
+    "f_3e6e79895773c835": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          769.6842041015625,
+          1430.3657836914062,
+          784.1642150878906
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
     },
     "f_3ed0270b056abef2": {
       "numeric": {
@@ -6463,6 +7391,25 @@
       },
       "value": "0"
     },
+    "f_3eddc2b0a6a46277": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          899.8831380208334,
+          1502.3907470703125,
+          914.4461263020834
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_3ee3632fcf388f52": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -6481,6 +7428,44 @@
         "table": 1
       },
       "value": "1.79%"
+    },
+    "f_3ef8bff589da9360": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          813.0841979980469,
+          1574.3907470703125,
+          827.5491943359375
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_3f80da652499d123": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          610.5792388916016,
+          1862.4357604980469,
+          625.0442047119141
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
     },
     "f_3fde3625aa273f00": {
       "formula": "source PDF value with displayed unit decoration",
@@ -6508,6 +7493,25 @@
         "sheet": "Log "
       },
       "value": "Approve a commitment of up to USD35 million to Calder Grove Industrial Partners"
+    },
+    "f_412140501243bb91": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          798.6242065429688,
+          1646.415771484375,
+          813.0841979980469
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
     },
     "f_41511bd9c01ccd8e": {
       "formula": "source PDF value with displayed unit decoration",
@@ -6642,6 +7646,25 @@
       "value": [
         35.0
       ]
+    },
+    "f_44044c0c0a14cf25": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          653.9841918945312,
+          1286.3457641601562,
+          668.44921875
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
     },
     "f_445c1e833eb8d567": {
       "numeric": {
@@ -6804,6 +7827,25 @@
       },
       "value": "$48,948,998"
     },
+    "f_4593460a0b9961ab": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          899.8831380208334,
+          1430.3657836914062,
+          914.4461263020834
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_45988ff192acc6c9": {
       "numeric": {
         "authority": "source workbook",
@@ -6858,6 +7900,25 @@
         "table": 1
       },
       "value": "$3,478,500"
+    },
+    "f_467d668938d4e8b5": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          842.0131429036459,
+          1358.3657836914062,
+          856.5761413574219
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
     },
     "f_4689ec74bddf4d0f": {
       "formula": "source PDF value with displayed unit decoration",
@@ -6967,14 +8028,6 @@
       },
       "value": "0"
     },
-    "f_476f0160e0280e80": {
-      "source": {
-        "file": "flash_1Q26.pdf",
-        "method": "parsed exhibit presentation summary",
-        "page": 2
-      },
-      "value": "Empty return and inception-statistic sections are omitted. Available historical returns appear in the annual returns tables; market values remain in the retained tables. Blank source figures remain unavailable."
-    },
     "f_479c6f615e8b4fba": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -7024,6 +8077,25 @@
         "table": 1
       },
       "value": "6.75%"
+    },
+    "f_47fb94dd27c3f2bf": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          813.0841979980469,
+          1502.3907470703125,
+          827.5491943359375
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
     },
     "f_486531ebb8122300": {
       "formula": "source PDF value with displayed unit decoration",
@@ -7133,6 +8205,25 @@
       },
       "value": "539814526"
     },
+    "f_493c38d8fe0c0f78": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          596.1141967773438,
+          1790.4357604980469,
+          610.5792388916016
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_49525a72f4af0742": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -7202,6 +8293,25 @@
         "sheet": "Log "
       },
       "value": "2026-03-10 00:00:00"
+    },
+    "f_49e16a6c25a99bea": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          899.8831380208334,
+          1646.415771484375,
+          914.4461263020834
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
     },
     "f_49ff7b96f10c183f": {
       "formula": "source PDF value with displayed unit decoration",
@@ -7452,6 +8562,25 @@
       },
       "value": "50.8%"
     },
+    "f_4df5231260a3eef0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          668.44921875,
+          1142.32080078125,
+          682.9142303466797
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_4df9559bfebba591": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -7552,6 +8681,25 @@
       },
       "value": 12.57425742574257
     },
+    "f_4fad4a9d737a17c7": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          957.7242126464844,
+          1214.3457641601562,
+          972.2894694010416
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_4fff955c23eac202": {
       "source": {
         "cell": "V12",
@@ -7563,6 +8711,25 @@
         "status": "unavailable"
       },
       "value": null
+    },
+    "f_500b1c0102fc4f0c": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          596.1141967773438,
+          1718.415771484375,
+          610.5792388916016
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
     },
     "f_507d15a948eaa30d": {
       "numeric": {
@@ -7603,6 +8770,25 @@
         "page": 2,
         "raw_value": "",
         "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_508a09b13361d088": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          842.0131429036459,
+          1070.32080078125,
+          856.5761413574219
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
         "table": 1
       },
       "value": ""
@@ -7671,6 +8857,25 @@
         "table": 1
       },
       "value": "$0"
+    },
+    "f_51aa9cc2464c1648": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          610.5792388916016,
+          1070.32080078125,
+          625.0442047119141
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
     },
     "f_5201d4d137126acc": {
       "numeric": {
@@ -7777,6 +8982,25 @@
       },
       "value": "751000"
     },
+    "f_5346b5a64be9f5e4": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          769.6842041015625,
+          1142.32080078125,
+          784.1642150878906
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_53693fcf446997c3": {
       "numeric": {
         "authority": "source workbook",
@@ -7836,6 +9060,25 @@
         "table": 1
       },
       "value": "6.8%"
+    },
+    "f_54279b7b4bb4fa53": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          798.6242065429688,
+          1718.415771484375,
+          813.0841979980469
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
     },
     "f_54387d9773effa7e": {
       "numeric": {
@@ -7926,6 +9169,25 @@
         "table": 1
       },
       "value": "$0"
+    },
+    "f_55121faab2be4243": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          610.5792388916016,
+          1142.32080078125,
+          625.0442047119141
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
     },
     "f_55326ce1625daa8e": {
       "formula": "source PDF value with displayed unit decoration",
@@ -8174,6 +9436,63 @@
         "sheet": "All Geographic"
       },
       "value": 8.316831683168317
+    },
+    "f_574f151287c7857a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          769.6842041015625,
+          1286.3457641601562,
+          784.1642150878906
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_5757e0fbd4076bb0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          361.64221954345703,
+          284.75777435302734,
+          434.8522262573242,
+          299.04185485839844
+        ],
+        "column": 3,
+        "file": "flash_1Q26.pdf",
+        "page": 3,
+        "raw_value": "66000",
+        "row": 12,
+        "table": 1
+      },
+      "value": "$66,000"
+    },
+    "f_5794999299b62ebc": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          943.2642364501953,
+          1934.7442392202524,
+          957.7242126464844
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
     },
     "f_57a6c276a7c98809": {
       "formula": "source PDF value with displayed unit decoration",
@@ -8528,6 +9847,25 @@
       },
       "value": "$568,500"
     },
+    "f_59991dcf96140063": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          697.3731384277344,
+          1862.4357604980469,
+          711.9361165364584
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_59c1c6f1119c14c7": {
       "formula": "sleeve NAV / portfolio NAV * 100",
       "inputs": [
@@ -8596,6 +9934,25 @@
       },
       "value": "Strategic Investments"
     },
+    "f_5a64258ca2a144fa": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          755.2142028808594,
+          1502.3907470703125,
+          769.6842041015625
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_5ada4f385968bcbe": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -8614,6 +9971,25 @@
         "table": 1
       },
       "value": "Ironwood Value-Add Fund III"
+    },
+    "f_5afa8b5754c0f6d9": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          813.0841979980469,
+          1790.4357604980469,
+          827.5491943359375
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
     },
     "f_5b54ce8b87c1b8b8": {
       "formula": "source PDF value with displayed unit decoration",
@@ -8671,6 +10047,25 @@
         "page": 6,
         "raw_value": "",
         "row": 5,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_5be239cf0545696c": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          813.0841979980469,
+          1286.3457641601562,
+          827.5491943359375
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
         "table": 1
       },
       "value": ""
@@ -9032,6 +10427,44 @@
       },
       "value": "-1240000"
     },
+    "f_5d09219f624bfef2": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          625.0442047119141,
+          1574.3907470703125,
+          639.5042114257812
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_5d4d2e5b7198d9fd": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          639.5042114257812,
+          1214.3457641601562,
+          653.9841918945312
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_5d848a9d77897d29": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -9069,6 +10502,25 @@
         "table": 1
       },
       "value": "$68,232,939"
+    },
+    "f_5dbc0ffd730fb5bd": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          361.64221954345703,
+          398.55777740478516,
+          434.8522262573242,
+          412.7827835083008
+        ],
+        "column": 3,
+        "file": "flash_1Q26.pdf",
+        "page": 3,
+        "raw_value": "12000000",
+        "row": 20,
+        "table": 1
+      },
+      "value": "$12,000,000"
     },
     "f_5dcb40e6f42828f1": {
       "formula": "source PDF value with displayed unit decoration",
@@ -9169,6 +10621,82 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "20000000"
+    },
+    "f_5fb25600c23a1232": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          755.2142028808594,
+          1286.3457641601562,
+          769.6842041015625
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_5ff2fbfe29b53a29": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          784.1642150878906,
+          1646.415771484375,
+          798.6242065429688
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_6034b0608b71bcf9": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          784.1642150878906,
+          1502.3907470703125,
+          798.6242065429688
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_61f8a0452d9b45b2": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          899.8831380208334,
+          1862.4357604980469,
+          914.4461263020834
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
     },
     "f_6227f50fd1467986": {
       "formula": "source PDF value with displayed unit decoration",
@@ -9429,6 +10957,25 @@
       },
       "value": "CPERS Custom Benchmark"
     },
+    "f_656480cfa8da7570": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          668.44921875,
+          1286.3457641601562,
+          682.9142303466797
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_657ddd3ea87b78dc": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -9447,6 +10994,25 @@
         "table": 1
       },
       "value": "Silverline Core-Plus Fund"
+    },
+    "f_65d8255c86dde845": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          653.9841918945312,
+          1358.3657836914062,
+          668.44921875
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
     },
     "f_65fa5e2fed138a79": {
       "numeric": {
@@ -9510,6 +11076,25 @@
       },
       "value": "$7,457,000"
     },
+    "f_66fba0bb2240d40d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          668.44921875,
+          1070.32080078125,
+          682.9142303466797
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_672f09c83f7b1a49": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -9566,6 +11151,35 @@
         "table": 1
       },
       "value": "0.36%"
+    },
+    "f_677f40ec501f6115": {
+      "source": {
+        "column": 8,
+        "file": "flash_1Q26.pdf",
+        "page": 1,
+        "raw_value": "10.31%",
+        "row": 51
+      },
+      "value": "10.31%"
+    },
+    "f_67d5d7002e1c0274": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          682.9142303466797,
+          1070.32080078125,
+          697.3731384277344
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_67d84499293f58c8": {
       "numeric": {
@@ -9716,6 +11330,44 @@
       },
       "value": ""
     },
+    "f_691afdb48ff9fd73": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          755.2142028808594,
+          1358.3657836914062,
+          769.6842041015625
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_691ccbe57c70166e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          899.8831380208334,
+          1574.3907470703125,
+          914.4461263020834
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_6925e985be54b671": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -9773,6 +11425,25 @@
       },
       "value": ""
     },
+    "f_6a487e583a986972": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          596.1141967773438,
+          1574.3907470703125,
+          610.5792388916016
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_6a76ebabc1cecacc": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -9791,6 +11462,25 @@
         "table": 1
       },
       "value": "0.75%"
+    },
+    "f_6a7f212a1f6cf835": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          957.7242126464844,
+          1358.3657836914062,
+          972.2894694010416
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
     },
     "f_6b323ce67a4bc279": {
       "numeric": {
@@ -9815,6 +11505,44 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "40000000"
+    },
+    "f_6b417938d0213af5": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          581.7561238606771,
+          1286.3457641601562,
+          596.1141967773438
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_6b57f3402b878553": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          668.44921875,
+          1718.415771484375,
+          682.9142303466797
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
     },
     "f_6ba3fe11de191aed": {
       "numeric": {
@@ -9889,6 +11617,44 @@
       },
       "value": "$204,000"
     },
+    "f_6c8531e895d8f952": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          668.44921875,
+          1358.3657836914062,
+          682.9142303466797
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_6cc53634de968b39": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          697.3731384277344,
+          1214.3457641601562,
+          711.9361165364584
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_6d1b3b3ffdd9f217": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -9931,6 +11697,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "370820463.59"
+    },
+    "f_6d5f529e9ec00b41": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          625.0442047119141,
+          1502.3907470703125,
+          639.5042114257812
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
     },
     "f_6df154cdfc3fd551": {
       "formula": "source PDF value with displayed unit decoration",
@@ -10077,6 +11862,33 @@
         "table": 1
       },
       "value": "$67,000"
+    },
+    "f_6f058542ce2367bd": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          957.7242126464844,
+          1574.3907470703125,
+          972.2894694010416
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "2.47%",
+        "row": 32,
+        "table": 1
+      },
+      "value": "2.47%"
+    },
+    "f_6f18bf37d62023fb": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  2Q24                                         482                            386"
+      },
+      "value": "  2Q24                                         482                            386"
     },
     "f_6f62b8f904e3195b": {
       "formula": "source PDF value with displayed unit decoration",
@@ -10319,6 +12131,25 @@
       },
       "value": "$42,544,447"
     },
+    "f_71a61cd3f87689ff": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          610.5792388916016,
+          1934.7442392202524,
+          625.0442047119141
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_71bc55f03d2a72fa": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -10361,6 +12192,44 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "0"
+    },
+    "f_725c1421ff4b840f": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          755.2142028808594,
+          1142.32080078125,
+          769.6842041015625
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_72d292c418ca2103": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          682.9142303466797,
+          1790.4357604980469,
+          697.3731384277344
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_72e0cdb530f07518": {
       "source": {
@@ -10440,6 +12309,25 @@
       },
       "value": "15910000"
     },
+    "f_73a34f048dbbb095": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          957.7242126464844,
+          1070.32080078125,
+          972.2894694010416
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_73a539ed479507db": {
       "source": {
         "file": "prior_pmr_4Q25.pdf",
@@ -10456,6 +12344,44 @@
         "primary": "#1b2a4a",
         "section_order": []
       }
+    },
+    "f_73eac52a2e8b9794": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          625.0442047119141,
+          1142.32080078125,
+          639.5042114257812
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_73ee9565beff8d00": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          596.1141967773438,
+          1934.7442392202524,
+          610.5792388916016
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
     },
     "f_74713a6235d4d309": {
       "numeric": {
@@ -10547,6 +12473,63 @@
         "table": 1
       },
       "value": "2010"
+    },
+    "f_74f82e47b4f9dd62": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          755.2142028808594,
+          1790.4357604980469,
+          769.6842041015625
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_750f461d70edaf8c": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          827.5491943359375,
+          1286.3457641601562,
+          842.0131429036459
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_75339fc55eeb9dda": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          639.5042114257812,
+          1502.3907470703125,
+          653.9841918945312
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
     },
     "f_75997ee8809eedff": {
       "formula": "source PDF value with displayed unit decoration",
@@ -10642,6 +12625,25 @@
         "table": 1
       },
       "value": "$1,319,500"
+    },
+    "f_76e331758d059df4": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          610.5792388916016,
+          1358.3657836914062,
+          625.0442047119141
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
     },
     "f_76f3036a383cc51e": {
       "formula": "source PDF value with displayed unit decoration",
@@ -10893,6 +12895,25 @@
       },
       "value": "50261238"
     },
+    "f_795f6ec262b128d7": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          899.8831380208334,
+          1070.32080078125,
+          914.4461263020834
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_79a08cb72276915c": {
       "numeric": {
         "authority": "source workbook",
@@ -10933,6 +12954,25 @@
       },
       "value": "27.9"
     },
+    "f_79b9ebb14e263142": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          943.2642364501953,
+          1430.3657836914062,
+          957.7242126464844
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_7a8cfed613e3175b": {
       "numeric": {
         "authority": "source workbook",
@@ -10956,6 +12996,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "30843683.68"
+    },
+    "f_7aa466f98ce21534": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          625.0442047119141,
+          1862.4357604980469,
+          639.5042114257812
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
     },
     "f_7aea76c32a9f099c": {
       "formula": "source PDF value with displayed unit decoration",
@@ -10994,6 +13053,44 @@
         "table": 1
       },
       "value": "$0"
+    },
+    "f_7b36af9dfd7c3f89": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          639.5042114257812,
+          1718.415771484375,
+          653.9841918945312
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_7b499a753388e7a5": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          827.5491943359375,
+          1070.32080078125,
+          842.0131429036459
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
     },
     "f_7c1c0715499787c2": {
       "formula": "source PDF value with displayed unit decoration",
@@ -11038,6 +13135,25 @@
       },
       "value": "65000"
     },
+    "f_7cbf91d5946af8e9": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          798.6242065429688,
+          1790.4357604980469,
+          813.0841979980469
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_7d7ee098ec24b4d0": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -11081,6 +13197,25 @@
       },
       "value": "17500000"
     },
+    "f_7da1f30bc5579d3b": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          943.2642364501953,
+          1718.415771484375,
+          957.7242126464844
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_7e0bbe8017057793": {
       "source": {
         "cell": "A18",
@@ -11112,6 +13247,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "41481787"
+    },
+    "f_7e2fa1b5c7165758": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          784.1642150878906,
+          1286.3457641601562,
+          798.6242065429688
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
     },
     "f_7e40f74fbf0829c6": {
       "formula": "top two positive and negative dollar contributions; top two NAVs; alphabetical tie-break",
@@ -11185,6 +13339,25 @@
       },
       "value": "9.1%"
     },
+    "f_7eab5d9f42067f07": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          827.5491943359375,
+          1358.3657836914062,
+          842.0131429036459
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_7eb6212de586f972": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -11203,6 +13376,17 @@
         "table": 1
       },
       "value": "$60,000,000"
+    },
+    "f_7ed8964efb2f0d8d": {
+      "formula": "(current quarter return rounded to two decimals - prior displayed quarter return) * 100",
+      "inputs": [
+        "f_e697e3c37a8ece29",
+        "f_5746793c4c2ed97d"
+      ],
+      "source": {
+        "kind": "calculation"
+      },
+      "value": "-23.00"
     },
     "f_7f010a178ec38c5d": {
       "numeric": {
@@ -11263,6 +13447,25 @@
       },
       "value": "Blackford Special Situations Fund II"
     },
+    "f_7fb0d4269c07f937": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          784.1642150878906,
+          1430.3657836914062,
+          798.6242065429688
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_7fd1f07bec1dc781": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -11278,6 +13481,25 @@
         "page": 6,
         "raw_value": "",
         "row": 5,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_7fdfa71d480f9995": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          842.0131429036459,
+          1430.3657836914062,
+          856.5761413574219
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
         "table": 1
       },
       "value": ""
@@ -11300,6 +13522,25 @@
         "table": 1
       },
       "value": "3.35%"
+    },
+    "f_802dc8fe4cd75930": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          361.64221954345703,
+          412.7827835083008,
+          434.8522262573242,
+          427.06385803222656
+        ],
+        "column": 3,
+        "file": "flash_1Q26.pdf",
+        "page": 3,
+        "raw_value": "7500000",
+        "row": 21,
+        "table": 1
+      },
+      "value": "$7,500,000"
     },
     "f_803f94118725936c": {
       "formula": "source PDF value with displayed unit decoration",
@@ -11491,6 +13732,44 @@
       },
       "value": "$501,248,069"
     },
+    "f_826d1aa86817f436": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          798.6242065429688,
+          1214.3457641601562,
+          813.0841979980469
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_828f3efa7dc15d84": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          697.3731384277344,
+          1286.3457641601562,
+          711.9361165364584
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_82a99e529f5a89c2": {
       "numeric": {
         "authority": "source workbook",
@@ -11623,6 +13902,44 @@
       },
       "value": 1.712566114948932
     },
+    "f_8507ecc2c31b52d3": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          581.7561238606771,
+          1214.3457641601562,
+          596.1141967773438
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_855e0846157c665e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          813.0841979980469,
+          1646.415771484375,
+          827.5491943359375
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_85d5392053e16f0c": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -11661,6 +13978,25 @@
       },
       "value": "$568,500"
     },
+    "f_85eb2b511c0eb6ca": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          610.5792388916016,
+          1430.3657836914062,
+          625.0442047119141
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_85feaa6a8f4eab69": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -11676,6 +14012,25 @@
         "page": 2,
         "raw_value": "",
         "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_8601b6b49d1e1a2a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          682.9142303466797,
+          1214.3457641601562,
+          697.3731384277344
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
         "table": 1
       },
       "value": ""
@@ -11717,6 +14072,14 @@
         "table": 1
       },
       "value": ""
+    },
+    "f_86b2d13f9d2e82b7": {
+      "source": {
+        "file": "manager_reports/tidewater_distressed_realty_fund_1Q26.pdf",
+        "page": 1,
+        "quote": "No quarterly performance percentages are presented; the residual balance was immaterial and the Fund was terminated\nmid-period."
+      },
+      "value": "No quarterly performance percentages are presented; the residual balance was immaterial and the Fund was terminated\nmid-period."
     },
     "f_86dd477c9120b932": {
       "formula": "source PDF value with displayed unit decoration",
@@ -11768,6 +14131,25 @@
       },
       "value": null
     },
+    "f_874ae414aa090b1a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          625.0442047119141,
+          1646.415771484375,
+          639.5042114257812
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_87ae6a979289f526": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -11787,6 +14169,25 @@
       },
       "value": "$305,000"
     },
+    "f_87b63e395ab6caf2": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          596.1141967773438,
+          1502.3907470703125,
+          610.5792388916016
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_87b91bac07b717a6": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -11805,6 +14206,25 @@
         "table": 1
       },
       "value": "0.48%"
+    },
+    "f_87b92be59cbcf371": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          653.9841918945312,
+          1574.3907470703125,
+          668.44921875
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
     },
     "f_87c0cc3181690ca7": {
       "formula": "source PDF value with displayed unit decoration",
@@ -11861,6 +14281,25 @@
         "kind": "calculation"
       },
       "value": 17
+    },
+    "f_87dbfd8a40f4bf14": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          668.44921875,
+          1646.415771484375,
+          682.9142303466797
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
     },
     "f_888aa4fe7b0cd36b": {
       "numeric": {
@@ -11987,6 +14426,44 @@
       },
       "value": "One Financial Plaza (Chicago office) was written back up following a full-floor lease to an investment-grade tenant, reversing part of last year's markdown, and Bayfront Apartments (San Diego) appreciated on rent growth as concession burn-off completed, while Prairie Logistics (Kansas City) was held flat."
     },
+    "f_8a21c849e60e4df1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          697.3731384277344,
+          1142.32080078125,
+          711.9361165364584
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_8a24a4a973b123f5": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          813.0841979980469,
+          1934.7442392202524,
+          827.5491943359375
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_8a6edd178fb535d8": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -12091,6 +14568,25 @@
       },
       "value": "$11,103,969"
     },
+    "f_8b5d6f95d5af3410": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          581.7561238606771,
+          1862.4357604980469,
+          596.1141967773438
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_8b76ae74a5afcce2": {
       "numeric": {
         "authority": "source workbook",
@@ -12151,6 +14647,25 @@
       },
       "value": "$4,138,861"
     },
+    "f_8bf0105150dccc79": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          361.64221954345703,
+          199.42276000976562,
+          434.8522262573242,
+          213.64776611328125
+        ],
+        "column": 3,
+        "file": "flash_1Q26.pdf",
+        "page": 3,
+        "raw_value": "95000",
+        "row": 6,
+        "table": 1
+      },
+      "value": "$95,000"
+    },
     "f_8c7a06596105c677": {
       "source": {
         "cell": "J9",
@@ -12201,6 +14716,25 @@
         "table": 1
       },
       "value": "$28,000,000"
+    },
+    "f_8d1beb8d5edc69e4": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          668.44921875,
+          1934.7442392202524,
+          682.9142303466797
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
     },
     "f_8d212a0d148a7e79": {
       "source": {
@@ -12465,6 +14999,25 @@
       },
       "value": "At 25Q4, the NPI value-weighted cap rate was ~4.6%, against ~4.2% for the 10-year Treasury yield."
     },
+    "f_8fd9b0b801c5b6fc": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          596.1141967773438,
+          1286.3457641601562,
+          610.5792388916016
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_8fdcf27c396964b3": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -12625,6 +15178,25 @@
       },
       "value": "$0"
     },
+    "f_919f7d6b286c07aa": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          784.1642150878906,
+          1934.7442392202524,
+          798.6242065429688
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_91b0e7d971cc559e": {
       "numeric": {
         "authority": "source workbook",
@@ -12712,6 +15284,25 @@
       },
       "value": "3Q25"
     },
+    "f_92c2550cb4f16aae": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          682.9142303466797,
+          1862.4357604980469,
+          697.3731384277344
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_9325864d4af8d870": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -12783,6 +15374,44 @@
       },
       "value": ""
     },
+    "f_93b8933c69acc891": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          842.0131429036459,
+          1142.32080078125,
+          856.5761413574219
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_93f2a3fd36e10d21": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          581.7561238606771,
+          1358.3657836914062,
+          596.1141967773438
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_94184e028dd9f323": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -12813,6 +15442,25 @@
         "status": "unavailable"
       },
       "value": null
+    },
+    "f_947da617012b9712": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          682.9142303466797,
+          1286.3457641601562,
+          697.3731384277344
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_94818456b831cda3": {
       "source": {
@@ -12850,6 +15498,25 @@
       },
       "value": "69338036"
     },
+    "f_94a4206a42b3e72e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          842.0131429036459,
+          1646.415771484375,
+          856.5761413574219
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_94b1af2d9900f680": {
       "source": {
         "cell": "W13",
@@ -12861,6 +15528,16 @@
         "status": "unavailable"
       },
       "value": null
+    },
+    "f_94e77fcb0412dbbb": {
+      "source": {
+        "column": 8,
+        "file": "flash_1Q26.pdf",
+        "page": 1,
+        "raw_value": "89.69%",
+        "row": 49
+      },
+      "value": "89.69%"
     },
     "f_9527a62d5db74f88": {
       "numeric": {
@@ -12885,6 +15562,14 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "30382149.55"
+    },
+    "f_9549f0058e256afe": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  1Q24                                         480                            372"
+      },
+      "value": "  1Q24                                         480                            372"
     },
     "f_9554d33c8c0864e5": {
       "numeric": {
@@ -13539,6 +16224,25 @@
       },
       "value": "41272412"
     },
+    "f_986bee5033d1ed9c": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          957.7242126464844,
+          1934.7442392202524,
+          972.2894694010416
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_989484b9970f8148": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -13752,6 +16456,25 @@
       },
       "value": ""
     },
+    "f_9b7f2877e03a40be": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          596.1141967773438,
+          1430.3657836914062,
+          610.5792388916016
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_9b8626f46887a3af": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -13838,6 +16561,63 @@
       },
       "value": "255000"
     },
+    "f_9c0a40832cd9df6a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          697.3731384277344,
+          1646.415771484375,
+          711.9361165364584
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_9c35af52306dc33d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          697.3731384277344,
+          1430.3657836914062,
+          711.9361165364584
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_9c5a6e33c8e292d3": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          769.6842041015625,
+          1070.32080078125,
+          784.1642150878906
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_9c86fec786bdcb95": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -13857,6 +16637,44 @@
       },
       "value": "35.2%"
     },
+    "f_9d18d33dd4f17d89": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          943.2642364501953,
+          1214.3457641601562,
+          957.7242126464844
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "1.66%",
+        "row": 31,
+        "table": 1
+      },
+      "value": "1.66%"
+    },
+    "f_9d32efd2e243ea14": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          769.6842041015625,
+          1934.7442392202524,
+          784.1642150878906
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_9da931b8830e886d": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -13875,6 +16693,44 @@
         "table": 1
       },
       "value": "$352,000"
+    },
+    "f_9dd11af4c9f57e1c": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          755.2142028808594,
+          1214.3457641601562,
+          769.6842041015625
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_9dd8097d001d5ae3": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          682.9142303466797,
+          1718.415771484375,
+          697.3731384277344
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_9e25e306b5e07b4a": {
       "numeric": {
@@ -13962,6 +16818,44 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "95000"
+    },
+    "f_9ebed6512aec7570": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          957.7242126464844,
+          1430.3657836914062,
+          972.2894694010416
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_9f26f273736f00be": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          813.0841979980469,
+          1214.3457641601562,
+          827.5491943359375
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
     },
     "f_9f40b7fe4c0f7d41": {
       "numeric": {
@@ -14092,6 +16986,44 @@
       },
       "value": "4Q24"
     },
+    "f_a03c80d57ba4fa8a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          957.7242126464844,
+          1502.3907470703125,
+          972.2894694010416
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_a1d5b50b8c59f1ff": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          639.5042114257812,
+          1790.4357604980469,
+          653.9841918945312
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_a23b4a802f4ac371": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -14110,6 +17042,14 @@
         "table": 1
       },
       "value": ""
+    },
+    "f_a2673851ccd13814": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  3Q24                                         484                            397"
+      },
+      "value": "  3Q24                                         484                            397"
     },
     "f_a2a030cfb2f76201": {
       "numeric": {
@@ -14134,6 +17074,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "1131380"
+    },
+    "f_a2b5812a46c48a9a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          943.2642364501953,
+          1358.3657836914062,
+          957.7242126464844
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
     },
     "f_a2ec6b006b1275a3": {
       "numeric": {
@@ -14186,6 +17145,25 @@
       },
       "value": "11315969"
     },
+    "f_a363995187f956b3": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          769.6842041015625,
+          1214.3457641601562,
+          784.1642150878906
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_a37d1519b7356980": {
       "numeric": {
         "authority": "source workbook",
@@ -14207,6 +17185,25 @@
         "sheet": "Allocation History"
       },
       "value": 502.0
+    },
+    "f_a3d406b32bce71fc": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          697.3731384277344,
+          1070.32080078125,
+          711.9361165364584
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
     },
     "f_a3fd19df89003841": {
       "numeric": {
@@ -14231,6 +17228,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "-38000"
+    },
+    "f_a40d2b590a66aad0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          784.1642150878906,
+          1574.3907470703125,
+          798.6242065429688
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
     },
     "f_a4309c6c1163d278": {
       "formula": "source PDF value with displayed unit decoration",
@@ -14323,6 +17339,25 @@
         "uncertainties": []
       }
     },
+    "f_a49d4c0ad0aba93a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          653.9841918945312,
+          1790.4357604980469,
+          668.44921875
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_a4aee9fde7d77f67": {
       "formula": "income + appreciation - fees",
       "inputs": [
@@ -14379,6 +17414,44 @@
         "kind": "calculation"
       },
       "value": "91.16473012135024509046048618"
+    },
+    "f_a4caaf71a72a6946": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          639.5042114257812,
+          1142.32080078125,
+          653.9841918945312
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_a518491ac3de2713": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          798.6242065429688,
+          1070.32080078125,
+          813.0841979980469
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
     },
     "f_a51bd749c9da54e1": {
       "formula": "source PDF value with displayed unit decoration",
@@ -14759,6 +17832,25 @@
       },
       "value": ""
     },
+    "f_a8fbd4d38318c1fd": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          827.5491943359375,
+          1574.3907470703125,
+          842.0131429036459
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_a94ade6a8fdb45ee": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -14943,6 +18035,25 @@
       },
       "value": "30000000"
     },
+    "f_aaeace33af644bbc": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          842.0131429036459,
+          1286.3457641601562,
+          856.5761413574219
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_aafcbc08a1885a3a": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -15004,6 +18115,44 @@
         "table": 1
       },
       "value": "Redwood Logistics Trust"
+    },
+    "f_ac5a440da43e5fe0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          639.5042114257812,
+          1862.4357604980469,
+          653.9841918945312
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_ac95e92da472cf62": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          682.9142303466797,
+          1574.3907470703125,
+          697.3731384277344
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_aced64935b5267cb": {
       "numeric": {
@@ -15091,6 +18240,63 @@
       },
       "value": "0.55%"
     },
+    "f_adeb2157d55f1fc0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          653.9841918945312,
+          1142.32080078125,
+          668.44921875
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_adfcb247147397ca": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          610.5792388916016,
+          1718.415771484375,
+          625.0442047119141
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_ae206c88b8b58dd1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          957.7242126464844,
+          1862.4357604980469,
+          972.2894694010416
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_ae4163dfa6742871": {
       "numeric": {
         "authority": "source workbook",
@@ -15137,6 +18343,14 @@
       },
       "value": "0"
     },
+    "f_ae88e1f18a7b4ad3": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  4Q24                                         486                            405"
+      },
+      "value": "  4Q24                                         486                            405"
+    },
     "f_aeb5abbcb66527c7": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -15155,6 +18369,44 @@
         "table": 1
       },
       "value": "$69,338,036"
+    },
+    "f_aefc28aaf7484b59": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          639.5042114257812,
+          1574.3907470703125,
+          653.9841918945312
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_af046aeaa21ab220": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          610.5792388916016,
+          1574.3907470703125,
+          625.0442047119141
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
     },
     "f_af4d520f55162d9d": {
       "formula": "source PDF value with displayed unit decoration",
@@ -15193,6 +18445,25 @@
         "table": 1
       },
       "value": "1.16%"
+    },
+    "f_af693cecb370b0f1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          653.9841918945312,
+          1214.3457641601562,
+          668.44921875
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
     },
     "f_afb5be8038c2835b": {
       "numeric": {
@@ -15280,6 +18551,63 @@
       },
       "value": "2004"
     },
+    "f_b04ff22e0c82b48c": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          668.44921875,
+          1502.3907470703125,
+          682.9142303466797
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_b058d58a13330d7a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          943.2642364501953,
+          1862.4357604980469,
+          957.7242126464844
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_b07d92f660172709": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          943.2642364501953,
+          1574.3907470703125,
+          957.7242126464844
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "5.58%",
+        "row": 31,
+        "table": 1
+      },
+      "value": "5.58%"
+    },
     "f_b0ae02873a07ed52": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -15295,6 +18623,25 @@
         "page": 2,
         "raw_value": "",
         "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_b0b311b938d42e97": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          653.9841918945312,
+          1430.3657836914062,
+          668.44921875
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
         "table": 1
       },
       "value": ""
@@ -15394,6 +18741,44 @@
       },
       "value": "Beacon Hill Medical Office Fund"
     },
+    "f_b19444da78de997b": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          842.0131429036459,
+          1790.4357604980469,
+          856.5761413574219
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_b1d61b97ef3210db": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          784.1642150878906,
+          1790.4357604980469,
+          798.6242065429688
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_b20b91a4d0dc7f34": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -15485,6 +18870,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "55689849.41"
+    },
+    "f_b25423497d4cde3c": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          943.2642364501953,
+          1070.32080078125,
+          957.7242126464844
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
     },
     "f_b2d574f4ea71e492": {
       "numeric": {
@@ -15616,6 +19020,25 @@
         "quote": "Calder Grove Industrial Partners is a value-add industrial fund targeting shallow-bay and last-mile distribution assets in inland port and intermodal markets. The strategy focuses on acquiring functionally obsolete assets at a discount to replacement cost, repositioning them, and marking below-market rents to market on rollover."
       },
       "value": "Calder Grove Industrial Partners is a value-add industrial fund targeting shallow-bay and last-mile distribution assets in inland port and intermodal markets. The strategy focuses on acquiring functionally obsolete assets at a discount to replacement cost, repositioning them, and marking below-market rents to market on rollover."
+    },
+    "f_b47804ae878f7dba": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          610.5792388916016,
+          1502.3907470703125,
+          625.0442047119141
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
     },
     "f_b4d58d8803f69c27": {
       "formula": "source PDF value with displayed unit decoration",
@@ -15775,6 +19198,25 @@
       },
       "value": "140000"
     },
+    "f_b598003ae535674e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          682.9142303466797,
+          1142.32080078125,
+          697.3731384277344
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_b5e8a834d2ae31fa": {
       "numeric": {
         "authority": "source workbook",
@@ -15816,6 +19258,44 @@
       },
       "value": "$19,813,960"
     },
+    "f_b6071ee3ded4c3bc": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          581.7561238606771,
+          1934.7442392202524,
+          596.1141967773438
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_b6110e5d9c7971f4": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          957.7242126464844,
+          1718.415771484375,
+          972.2894694010416
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_b613b7063e79b18b": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -15849,6 +19329,25 @@
       },
       "value": "The markdown was concentrated in two assets, as Gateway Logistics Center (Dallas) was written down due to a large tenant exercising an early-termination option and extended re-leasing assumptions, while Harbor 40 Distribution (Savannah) was marked lower on softening market rents following a wave of competing supply delivered nearby; Cedar Ridge Infill completed its expansion on budget and was held flat."
     },
+    "f_b626beecef94a737": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          596.1141967773438,
+          1142.32080078125,
+          610.5792388916016
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_b63b9382ad3e3e17": {
       "source": {
         "cell": "A25",
@@ -15856,6 +19355,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "Ironwood Value-Add Fund III"
+    },
+    "f_b64a1e120cdbde40": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          842.0131429036459,
+          1862.4357604980469,
+          856.5761413574219
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
     },
     "f_b6546a8ba24f5752": {
       "numeric": {
@@ -16120,6 +19638,25 @@
       },
       "value": "$128,000"
     },
+    "f_b948f7c1839cc6ef": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          827.5491943359375,
+          1862.4357604980469,
+          842.0131429036459
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_b9a6c6d89088a0dd": {
       "numeric": {
         "authority": "source workbook",
@@ -16238,6 +19775,25 @@
         "table": 1
       },
       "value": "$7,500,000"
+    },
+    "f_ba46f23d4cf6376b": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          813.0841979980469,
+          1862.4357604980469,
+          827.5491943359375
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
     },
     "f_bac79dde94b2310b": {
       "formula": "source PDF value with displayed unit decoration",
@@ -16499,6 +20055,25 @@
       },
       "value": "Northgate Logistics Partners"
     },
+    "f_bca4c4c335aabb74": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          827.5491943359375,
+          1430.3657836914062,
+          842.0131429036459
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_bcf74842f900c5f4": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -16518,6 +20093,25 @@
       },
       "value": "$40,000,000"
     },
+    "f_bd18be5d3acb8c08": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          957.7242126464844,
+          1790.4357604980469,
+          972.2894694010416
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_bd89bd24c2931bf7": {
       "formula": "deterministically selected chart observations and portfolio exposures",
       "inputs": [
@@ -16530,6 +20124,25 @@
         "slide": 4
       },
       "value": "Broad private real-estate funds returned 1.0% net in the latest quarter and 3.3% over 1-Yr."
+    },
+    "f_bde4aad53873038f": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          625.0442047119141,
+          1286.3457641601562,
+          639.5042114257812
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
     },
     "f_be76240eeb77f9dc": {
       "formula": "source PDF value with displayed unit decoration",
@@ -16601,6 +20214,25 @@
       },
       "value": "This Performance Measurement Report has been prepared by Vectera Advisors solely for Cascadia Public Employees' Retirement System and is intended for the exclusive and confidential use of CPERS and its authorized representatives. Performance results are presented net of investment management fees, incentive allocations and fund-level expenses unless otherwise indicated, and reflect the reinvestment of income. Returns for periods of one year or less are not annualized. Time-weighted returns (TWR) are calculated using a Modified Dietz methodology; since-inception internal rates of return (IRR) and equity multiples are money-weighted and reflect the timing and magnitude of capital flows. Market values are based on the most recent valuations reported by underlying fund managers and may reflect appraised rather than transaction values. Past performance is not indicative of future results. All figures in this report are synthetic and were created solely for an evaluation exercise."
     },
+    "f_bf6d9b8ffa67363e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          581.7561238606771,
+          1430.3657836914062,
+          596.1141967773438
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_bfe3f0bb02e4f58b": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -16663,6 +20295,25 @@
       },
       "value": "97000"
     },
+    "f_c08cc1d0d45625f6": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          899.8831380208334,
+          1358.3657836914062,
+          914.4461263020834
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_c0ad2f61ad79d524": {
       "numeric": {
         "authority": "source workbook",
@@ -16686,6 +20337,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "495676389"
+    },
+    "f_c0bd40d503dbe3a3": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          957.7242126464844,
+          1142.32080078125,
+          972.2894694010416
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
     },
     "f_c1312af64633799f": {
       "formula": "source PDF value with displayed unit decoration",
@@ -16743,6 +20413,25 @@
         "table": 1
       },
       "value": "3.84%"
+    },
+    "f_c171735a5afba2a0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          842.0131429036459,
+          1718.415771484375,
+          856.5761413574219
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
     },
     "f_c18003442b6f3967": {
       "numeric": {
@@ -17298,6 +20987,25 @@
       },
       "value": "42544446.64"
     },
+    "f_c60a157ec69454b1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          769.6842041015625,
+          1862.4357604980469,
+          784.1642150878906
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_c60c09e0c6448e24": {
       "numeric": {
         "authority": "source workbook",
@@ -17321,6 +21029,25 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "41100937"
+    },
+    "f_c6201e7e5b2d45a0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          682.9142303466797,
+          1430.3657836914062,
+          697.3731384277344
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_c62dc284a42cf13f": {
       "formula": "Strategic/Tactical NAV / total NAV * 100",
@@ -17505,6 +21232,25 @@
       },
       "value": "$41,870,447"
     },
+    "f_c8465cf7eb2f0843": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          769.6842041015625,
+          1574.3907470703125,
+          784.1642150878906
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_c85e3dbef87aadd6": {
       "numeric": {
         "authority": "source workbook",
@@ -17603,6 +21349,25 @@
       },
       "value": ""
     },
+    "f_c8fb0058f48e2640": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          755.2142028808594,
+          1430.3657836914062,
+          769.6842041015625
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_c93d769298350c2f": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -17637,6 +21402,25 @@
         "page": 2,
         "raw_value": "",
         "row": 24,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_c9e475b23df22655": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          653.9841918945312,
+          1718.415771484375,
+          668.44921875
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
         "table": 1
       },
       "value": ""
@@ -17736,6 +21520,25 @@
       },
       "value": "$436,116,069"
     },
+    "f_ca2013b346bd37c4": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          625.0442047119141,
+          1790.4357604980469,
+          639.5042114257812
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_ca37829f4f5b4ecf": {
       "numeric": {
         "authority": "source workbook",
@@ -17759,6 +21562,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "0"
+    },
+    "f_ca38b761519b217a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          596.1141967773438,
+          1862.4357604980469,
+          610.5792388916016
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
     },
     "f_ca50c5901f39294d": {
       "numeric": {
@@ -17842,6 +21664,25 @@
       },
       "value": 22.6
     },
+    "f_cae8d383a4a8b814": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          798.6242065429688,
+          1430.3657836914062,
+          813.0841979980469
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_caec7b4b1d533e69": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -17918,6 +21759,25 @@
       },
       "value": "0.00%"
     },
+    "f_cb590dd81bd1395f": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          784.1642150878906,
+          1358.3657836914062,
+          798.6242065429688
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_cb9988de7e34e059": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -17974,6 +21834,25 @@
         "page": 3,
         "raw_value": "",
         "row": 8,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_cbdda27cd799e066": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          899.8831380208334,
+          1286.3457641601562,
+          914.4461263020834
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
         "table": 1
       },
       "value": ""
@@ -18038,6 +21917,25 @@
       },
       "value": 2.465204314386438
     },
+    "f_cc41c47e53c525ac": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          596.1141967773438,
+          1358.3657836914062,
+          610.5792388916016
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_cc6aea6d40f9c4ce": {
       "numeric": {
         "authority": "source workbook",
@@ -18061,6 +21959,14 @@
         "sheet": "FundingStatus(Agg)"
       },
       "value": "456814526"
+    },
+    "f_ccc061b8df894ca2": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  1Q25                                         489                            412"
+      },
+      "value": "  1Q25                                         489                            412"
     },
     "f_ccdf3d18bb5ecffd": {
       "numeric": {
@@ -18102,6 +22008,25 @@
         "table": 1
       },
       "value": "$65,000"
+    },
+    "f_ccf8559eb89c6404": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          842.0131429036459,
+          1502.3907470703125,
+          856.5761413574219
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
     },
     "f_cd01b38256c99b87": {
       "numeric": {
@@ -18164,6 +22089,25 @@
         "table": 1
       },
       "value": "4.45%"
+    },
+    "f_ce2a086e37a0c5c0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          668.44921875,
+          1214.3457641601562,
+          682.9142303466797
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
     },
     "f_ce495cd515516bb4": {
       "numeric": {
@@ -18331,6 +22275,25 @@
       },
       "value": "-0.63%"
     },
+    "f_cf297886bb95f1b1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          798.6242065429688,
+          1502.3907470703125,
+          813.0841979980469
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_cf90612f3dbb0889": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -18349,6 +22312,44 @@
         "table": 1
       },
       "value": "$84,993,986"
+    },
+    "f_cfca78a5fea50181": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          899.8831380208334,
+          1718.415771484375,
+          914.4461263020834
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_cfe727b5fdf603a0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          625.0442047119141,
+          1214.3457641601562,
+          639.5042114257812
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
     },
     "f_d019b4d477d21a1f": {
       "numeric": {
@@ -18496,6 +22497,25 @@
       },
       "value": "-385000"
     },
+    "f_d15fad1fc08314cf": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          697.3731384277344,
+          1718.415771484375,
+          711.9361165364584
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 14,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_d19665612ad12b20": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -18612,6 +22632,25 @@
       },
       "value": "-1.84"
     },
+    "f_d283d0f908e15740": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          596.1141967773438,
+          1214.3457641601562,
+          610.5792388916016
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_d2b17e54d1314e38": {
       "source": {
         "cell": "W10",
@@ -18685,6 +22724,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "0"
+    },
+    "f_d3ac5a4500bb737b": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          682.9142303466797,
+          1502.3907470703125,
+          697.3731384277344
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 13,
+        "table": 1
+      },
+      "value": ""
     },
     "f_d3b2a72d2494755d": {
       "formula": "parse explicit USD amount and unit",
@@ -18778,6 +22836,14 @@
       },
       "value": ""
     },
+    "f_d4fff965b6bb6d25": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  3Q25                                         489                            437"
+      },
+      "value": "  3Q25                                         489                            437"
+    },
     "f_d53e97b8a6d115e4": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -18829,6 +22895,25 @@
       },
       "value": "1Q25"
     },
+    "f_d647c922ba025077": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          842.0131429036459,
+          1574.3907470703125,
+          856.5761413574219
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 24,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_d64ccc93baeab81d": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -18847,6 +22932,25 @@
         "table": 1
       },
       "value": "$0"
+    },
+    "f_d6748a58c27e450d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          581.7561238606771,
+          1574.3907470703125,
+          596.1141967773438
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
     },
     "f_d6b9d3dc65f8796c": {
       "source": {
@@ -18946,6 +23050,25 @@
       },
       "value": "$33,000"
     },
+    "f_d7d9da8f96a77bf0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          827.5491943359375,
+          1718.415771484375,
+          842.0131429036459
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_d878a75dcf3f03c3": {
       "formula": "top two positive and negative dollar contributions; top two NAVs; alphabetical tie-break",
       "inputs": [
@@ -19020,6 +23143,25 @@
         "sheet": "ReturnsMultiples(Agg)"
       },
       "value": 3.370588375231387
+    },
+    "f_d8d0c68897faeb28": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          653.9841918945312,
+          1934.7442392202524,
+          668.44921875
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
     },
     "f_d91b9ede44137d0a": {
       "numeric": {
@@ -19139,6 +23281,25 @@
         "table": 1
       },
       "value": "$60,000"
+    },
+    "f_da6770f13346e1be": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          943.2642364501953,
+          1502.3907470703125,
+          957.7242126464844
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "7.28%",
+        "row": 31,
+        "table": 1
+      },
+      "value": "7.28%"
     },
     "f_da8ce107a4542a35": {
       "formula": "source PDF value with displayed unit decoration",
@@ -19298,6 +23459,25 @@
       },
       "value": ""
     },
+    "f_db1bcdcccc699da2": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          784.1642150878906,
+          1718.415771484375,
+          798.6242065429688
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_db3fba8578742229": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -19372,6 +23552,25 @@
         "\u2022 Leverage discipline and patient deployment into the recovery."
       ]
     },
+    "f_dba911ba6c914e93": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          668.44921875,
+          1430.3657836914062,
+          682.9142303466797
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_dbf05828f217f3ed": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -19410,6 +23609,52 @@
       },
       "value": "$0"
     },
+    "f_dc4b8bbb6c9cacc1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          653.9841918945312,
+          1502.3907470703125,
+          668.44921875
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 11,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_dc9c2f13bd135224": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          581.7561238606771,
+          1142.32080078125,
+          596.1141967773438
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_dcb1038a52779e3e": {
+      "source": {
+        "file": "prior_pmr_4Q25.pdf",
+        "page": 7,
+        "quote": "  2Q25                                         491                            424"
+      },
+      "value": "  2Q25                                         491                            424"
+    },
     "f_dd22bd82a9f52e15": {
       "source": {
         "cell": "C11",
@@ -19430,6 +23675,25 @@
         "status": "unavailable"
       },
       "value": null
+    },
+    "f_dd954bee0b1b0218": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          769.6842041015625,
+          1718.415771484375,
+          784.1642150878906
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
     },
     "f_ddb79e4bfab62bdd": {
       "source": {
@@ -19454,6 +23718,25 @@
         "page": 2,
         "raw_value": "",
         "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_ddd34874efaf0889": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1862.4357604980469,
+          899.8831380208334,
+          1934.7442392202524,
+          914.4461263020834
+        ],
+        "column": 23,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
         "table": 1
       },
       "value": ""
@@ -19837,6 +24120,25 @@
       },
       "value": "$455,000"
     },
+    "f_e00d9496e5b16631": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          813.0841979980469,
+          1142.32080078125,
+          827.5491943359375
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_e031a58b1090aa40": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -19975,6 +24277,44 @@
       },
       "value": "$110,000"
     },
+    "f_e18a0291b104be82": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          798.6242065429688,
+          1142.32080078125,
+          813.0841979980469
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_e1a046136203a7d1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1502.3907470703125,
+          798.6242065429688,
+          1574.3907470703125,
+          813.0841979980469
+        ],
+        "column": 18,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_e1bdde83d8c8a107": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -20021,6 +24361,25 @@
         "table": 1
       },
       "value": "0.79%"
+    },
+    "f_e2de0aa89c9347a5": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          639.5042114257812,
+          1070.32080078125,
+          653.9841918945312
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
     },
     "f_e3188eb1dbe4dfaa": {
       "numeric": {
@@ -20151,6 +24510,25 @@
       },
       "value": "30830683.68"
     },
+    "f_e59343de43c46fe9": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          827.5491943359375,
+          1502.3907470703125,
+          842.0131429036459
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 23,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_e5f556a20311c93f": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -20188,6 +24566,25 @@
         "table": 1
       },
       "value": "$145,000,000"
+    },
+    "f_e6479f82e8fb0962": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          784.1642150878906,
+          1070.32080078125,
+          798.6242065429688
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
     },
     "f_e697e3c37a8ece29": {
       "numeric": {
@@ -20286,6 +24683,25 @@
         "table": 1
       },
       "value": "$436,116,069"
+    },
+    "f_e77d310e8b36b7a1": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1358.3657836914062,
+          639.5042114257812,
+          1430.3657836914062,
+          653.9841918945312
+        ],
+        "column": 16,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
     },
     "f_e7978d886b411de1": {
       "formula": "source PDF value with displayed unit decoration",
@@ -20679,6 +25095,25 @@
       },
       "value": "($30,000)"
     },
+    "f_eb15f21b6069371e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1430.3657836914062,
+          769.6842041015625,
+          1502.3907470703125,
+          784.1642150878906
+        ],
+        "column": 17,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_eb377898ffcf81ed": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -20694,6 +25129,25 @@
         "page": 2,
         "raw_value": "",
         "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_eb64a155ef532271": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          899.8831380208334,
+          1214.3457641601562,
+          914.4461263020834
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 28,
         "table": 1
       },
       "value": ""
@@ -20765,6 +25219,25 @@
       },
       "value": "48.9"
     },
+    "f_ec273912ccf9707e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          943.2642364501953,
+          1790.4357604980469,
+          957.7242126464844
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 31,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_ec366020d4070983": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -20776,6 +25249,25 @@
           596.1141967773438
         ],
         "column": 10,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 6,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_ec62c6bca259a67e": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          581.7561238606771,
+          1790.4357604980469,
+          596.1141967773438
+        ],
+        "column": 21,
         "file": "flash_1Q26.pdf",
         "page": 2,
         "raw_value": "",
@@ -20803,6 +25295,25 @@
       },
       "value": ""
     },
+    "f_ec8fc556505efee0": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          769.6842041015625,
+          1358.3657836914062,
+          784.1642150878906
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_ed505ddbbfec806b": {
       "source": {
         "cell": "V9",
@@ -20814,6 +25325,25 @@
         "status": "unavailable"
       },
       "value": null
+    },
+    "f_ed51071ea4ecfd3a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          610.5792388916016,
+          1286.3457641601562,
+          625.0442047119141
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
     },
     "f_ed9f876636436142": {
       "formula": "source PDF value with displayed unit decoration",
@@ -20912,6 +25442,25 @@
         "quote": "Two suburban office assets in the Mid-Atlantic were written down on extended lease-up assumptions. The Fund's industrial and residential holdings were broadly stable. Leverage remains elevated at 50.8% LTV, the highest in the Program."
       },
       "value": "Two suburban office assets in the Mid-Atlantic were written down on extended lease-up assumptions. The Fund's industrial and residential holdings were broadly stable. Leverage remains elevated at 50.8% LTV, the highest in the Program."
+    },
+    "f_edf1d47421c589c4": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          625.0442047119141,
+          1358.3657836914062,
+          639.5042114257812
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
     },
     "f_ee011b199ed854b7": {
       "formula": "source PDF value with displayed unit decoration",
@@ -21068,6 +25617,25 @@
       },
       "value": null
     },
+    "f_ef4d1d0b9653e220": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1142.32080078125,
+          610.5792388916016,
+          1214.3457641601562,
+          625.0442047119141
+        ],
+        "column": 13,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 8,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_ef820139c35994cd": {
       "numeric": {
         "authority": "source workbook",
@@ -21149,6 +25717,44 @@
       },
       "value": "100.00%"
     },
+    "f_f0a02045ae9103ee": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          625.0442047119141,
+          1070.32080078125,
+          639.5042114257812
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 9,
+        "table": 1
+      },
+      "value": ""
+    },
+    "f_f0fbd20edec37376": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          668.44921875,
+          1790.4357604980469,
+          682.9142303466797
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 12,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_f10c5a46da6e496b": {
       "formula": "source PDF value with displayed unit decoration",
       "inputs": [],
@@ -21205,6 +25811,25 @@
         "table": 1
       },
       "value": "$122,130,387"
+    },
+    "f_f1a5ba1e3e465c6f": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1214.3457641601562,
+          639.5042114257812,
+          1286.3457641601562,
+          653.9841918945312
+        ],
+        "column": 14,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 10,
+        "table": 1
+      },
+      "value": ""
     },
     "f_f1a8d206bc11684f": {
       "numeric": {
@@ -21306,6 +25931,25 @@
       },
       "value": "3.37%"
     },
+    "f_f23822600ecc4144": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1574.3907470703125,
+          957.7242126464844,
+          1646.415771484375,
+          972.2894694010416
+        ],
+        "column": 19,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 32,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_f243b9c9ff9511e8": {
       "numeric": {
         "authority": "source workbook",
@@ -21348,6 +25992,25 @@
         "table": 1
       },
       "value": "$20,000,000"
+    },
+    "f_f26332713ffaf06a": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1718.415771484375,
+          769.6842041015625,
+          1790.4357604980469,
+          784.1642150878906
+        ],
+        "column": 21,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 19,
+        "table": 1
+      },
+      "value": ""
     },
     "f_f2952183b3415f1c": {
       "formula": "source PDF value with displayed unit decoration",
@@ -21530,6 +26193,25 @@
         "table": 1
       },
       "value": "$53,085,950"
+    },
+    "f_f3f3a24a55204387": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          596.1141967773438,
+          1070.32080078125,
+          610.5792388916016
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 7,
+        "table": 1
+      },
+      "value": ""
     },
     "f_f41524e506752ec1": {
       "formula": "source PDF value with displayed unit decoration",
@@ -21752,6 +26434,25 @@
         "table": 1
       },
       "value": "$2,737,253"
+    },
+    "f_f69237b8ae74826f": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1646.415771484375,
+          813.0841979980469,
+          1718.415771484375,
+          827.5491943359375
+        ],
+        "column": 20,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 22,
+        "table": 1
+      },
+      "value": ""
     },
     "f_f69b60fdf13a66de": {
       "source": {
@@ -22131,6 +26832,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": 0.0
+    },
+    "f_f97ce860fa6f79e7": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1070.32080078125,
+          784.1642150878906,
+          1142.32080078125,
+          798.6242065429688
+        ],
+        "column": 12,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 20,
+        "table": 1
+      },
+      "value": ""
     },
     "f_f98d3e37270b6ed8": {
       "formula": "source PDF value with displayed unit decoration",
@@ -22683,6 +27403,25 @@
       },
       "value": "Vectera Initiated Investments"
     },
+    "f_fd0adb5be91102d9": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1790.4357604980469,
+          755.2142028808594,
+          1862.4357604980469,
+          769.6842041015625
+        ],
+        "column": 22,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
+    },
     "f_fd5a5a20eb3149fd": {
       "numeric": {
         "authority": "source workbook",
@@ -22725,6 +27464,25 @@
         "table": 1
       },
       "value": "1.91%"
+    },
+    "f_fd8f5df001103fae": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          998.3207702636719,
+          755.2142028808594,
+          1070.32080078125,
+          769.6842041015625
+        ],
+        "column": 11,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 18,
+        "table": 1
+      },
+      "value": ""
     },
     "f_fda5f27db177b52f": {
       "formula": "source PDF value with displayed unit decoration",
@@ -22840,6 +27598,25 @@
         "sheet": "CashActivity(Agg)"
       },
       "value": "2880"
+    },
+    "f_ff568ab24f2ad36d": {
+      "formula": "source PDF value with displayed unit decoration",
+      "inputs": [],
+      "source": {
+        "bbox": [
+          1286.3457641601562,
+          798.6242065429688,
+          1358.3657836914062,
+          813.0841979980469
+        ],
+        "column": 15,
+        "file": "flash_1Q26.pdf",
+        "page": 2,
+        "raw_value": "",
+        "row": 21,
+        "table": 1
+      },
+      "value": ""
     },
     "f_ff8fb63476797e93": {
       "formula": "source PDF value with displayed unit decoration",
@@ -22983,6 +27760,125 @@
         "f_daed0227c255e87c"
       ],
       "message": "Allocation workbook has no client column. Requested-period rounded NAV/target were checked against the flash; client ownership remains an explicit assumption.",
+      "severity": "warning"
+    },
+    {
+      "code": "fund_leverage_risk",
+      "evidence": [
+        "f_8b76ae74a5afcce2",
+        "f_d43c6ec5c7e24eb3"
+      ],
+      "message": "Silverline Core-Plus Fund: individual LTV exceeds its sleeve's numeric threshold; SPEC tests compliance at sleeve level, not per fund.",
+      "severity": "warning"
+    },
+    {
+      "code": "terminated_fund",
+      "evidence": [
+        "f_9671bb472773022d",
+        "f_ab7caf636c0b1f27",
+        "f_b5e8a834d2ae31fa",
+        "f_86b2d13f9d2e82b7"
+      ],
+      "message": "Tidewater Distressed Realty Fund: manager reports dissolution. Flash holdings and returns are retained; review the termination and performance-period treatment.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_2459f5c3b1929572",
+        "f_9549f0058e256afe"
+      ],
+      "message": "1Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_c85eeb91be9b8e40",
+        "f_6f18bf37d62023fb"
+      ],
+      "message": "2Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_9e4a9b6a7c5acd64",
+        "f_a2673851ccd13814"
+      ],
+      "message": "3Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_a37d1519b7356980",
+        "f_ae88e1f18a7b4ad3"
+      ],
+      "message": "4Q24 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_448a1b5a98f895cf",
+        "f_ccc061b8df894ca2"
+      ],
+      "message": "1Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_4a50c7b773bb9d21",
+        "f_dcb1038a52779e3e"
+      ],
+      "message": "2Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_0b4fb0f8015c8ff1",
+        "f_dcb1038a52779e3e"
+      ],
+      "message": "2Q25 nav differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_261c8180ba511f0a",
+        "f_d4fff965b6bb6d25"
+      ],
+      "message": "3Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_9e25e306b5e07b4a",
+        "f_d4fff965b6bb6d25"
+      ],
+      "message": "3Q25 nav differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "historical_revision",
+      "evidence": [
+        "f_ce495cd515516bb4",
+        "f_2dcdff3f66e2b485"
+      ],
+      "message": "4Q25 target differs between allocation history and the prior PMR; confirm whether this is an intended restatement.",
+      "severity": "warning"
+    },
+    {
+      "code": "market_data_lag",
+      "evidence": [
+        "f_5c8d0f3504aa0ef8",
+        "f_97f98523681401cb"
+      ],
+      "message": "Latest explicitly quarter-labelled chart observations are 4Q25, earlier than 1Q26. Confirm the reporting lag; a renamed deck is not evidence of updated observations.",
       "severity": "warning"
     },
     {

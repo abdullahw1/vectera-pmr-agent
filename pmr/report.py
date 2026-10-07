@@ -189,7 +189,7 @@ def build_sections(data, sources, ledger):
     else:
         track_record = (
             f"Since-inception net IRR is {irr_text}; the net equity multiple is {multiple_text}. "
-            "Missing track-record figures are not reported in the current flash."
+            f"The {data['quarter']} flash does not report these figures."
         )
     para(
         s,
@@ -312,7 +312,9 @@ def build_sections(data, sources, ledger):
     )
     featured = sorted(
         (f for f in funds if f["roles"]),
-        key=lambda f: (f["contribution"] is None, -(f["contribution"] or 0), f["name"]),
+        key=lambda f: (min(({"largest contributor": 0, "second-largest contributor": 1,
+                            "largest detractor": 2, "second-largest detractor": 3}.get(role, 4)
+                           for role in f["roles"]), default=4), f["name"]),
     )
     rows = [
         [
@@ -340,12 +342,9 @@ def build_sections(data, sources, ledger):
         ],
     )
     s["blocks"][-1]["title"] = "Attribution - Quarterly Dollar Contribution"
-    para(
-        s,
-        "Dollar figures are rounded independently to the nearest dollar; displayed components may not sum exactly.",
-        [],
-        style="footnote",
-    )
+    if any(f[k] is not None and Decimal(str(f[k])) != Decimal(str(f[k])).quantize(Decimal("1"))
+           for f in featured for k in ["income", "appreciation", "fees", "contribution"]):
+        para(s, "Dollar figures are rounded independently to the nearest dollar; displayed components may not sum exactly.", [], style="footnote")
     para(
         s,
         " ".join(
@@ -381,17 +380,17 @@ def build_sections(data, sources, ledger):
         fid = ledger.add(
             old, {"file": prior_file, "page": prior_pages.index(overview_page) + 1, "quote": match[0]}
         )
-        delta = (p["q_net"] - old) * 100
+        delta = (Decimal(str(p["q_net"])).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP) - Decimal(str(old))) * 100
         did = ledger.add(
             delta,
             {"kind": "calculation"},
-            formula="(current quarter return - prior displayed quarter return) * 100",
+            formula="(current quarter return rounded to two decimals - prior displayed quarter return) * 100",
             inputs=[p["q_net_id"], fid],
         )
         para(
             s,
             f"The quarterly net return changed from {old:.2f}% in the prior report to {p['q_net']:.2f}%, "
-            f"a change of {delta:+.1f} basis points, using the prior report's displayed precision.",
+            f"a change of {delta:+.1f} basis points, comparing both returns at displayed precision.",
             [fid, p["q_net_id"], did],
         )
     for sleeve in ["Strategic", "Tactical"]:
@@ -417,13 +416,22 @@ def build_sections(data, sources, ledger):
                 if fund["q_net"] is not None
                 else "had a quarterly net return of n/m (not reported in the flash)"
             )
-            role = " was the Portfolio's " + " and ".join(fund["roles"]) + "." if fund["roles"] else "."
-            text = (
-                fund["name"]
-                + role
-                + f" The Fund {return_text}, with Quarter-end NAV of {money(fund['nav'])} and {number(fund['ltv'])}% LTV."
-            )
+            role = " was the Portfolio's " + " and ".join(fund["roles"]) + "." if fund["roles"] else ""
+            text = (fund["name"] + role + (" The Fund " if role else " ")
+                    + f"{return_text} during the Quarter, with Quarter-end NAV of {money(fund['nav'])} and {number(fund['ltv'])}% LTV.")
             ids = [fund[k + "_id"] for k in ["name", "roles", "q_net", "nav", "ltv"]]
+            if fund.get("termination"):
+                text = fund["name"] + role + (" " if role else ". ") + fund["termination"]["text"]
+                ids.append(fund["termination"]["id"])
+                if fund.get("termination_return_note_id") and fund["q_net"] is not None:
+                    text += f" The flash separately reports {fund['q_net']:.2f}% net for the Quarter; the termination notice presents no quarterly performance percentages. This difference requires review."
+                    ids.append(fund["termination_return_note_id"])
+            if fund.get("newly_funded"):
+                text += f" The Fund received {money(fund['contributions'])} in contributions during the Quarter, from a zero beginning NAV."
+                ids += [fund["contributions_id"], fund["beginning_id"]]
+            if "ltv_risk_threshold" in fund:
+                text += f" Its fund-level LTV is above the {fund['ltv_risk_threshold']:.1f}% {fund['sleeve']} sleeve threshold; the formal compliance test applies to the sleeve as a whole."
+                ids.append(data["policy"]["leverage_id"])
             if fund["roles"] and fund["contribution"] is not None:
                 fee_text = (
                     f"a fee credit of {dollars(abs(fund['fees']))}"
@@ -505,6 +513,8 @@ def build_sections(data, sources, ledger):
             [e[k] for k in ["id", "amount_id", "action_id", "date_id"]],
         )
     s = add("Market Update")
+    if data.get("market_observation_period"):
+        para(s, f"The latest explicitly quarter-labelled market observations are {data['market_observation_period']}, not {data['quarter']}. These figures should be read as lagged market evidence.", data["market_period_evidence"], style="footnote")
     narrative = data.get("narratives", {}).get("market")
     if narrative:
         para(
@@ -543,6 +553,9 @@ def build_sections(data, sources, ledger):
         style="footnote",
     )
     s = add("Allocation Over Time")
+    if data.get("historical_revisions"):
+        para(s, "Historical target allocations or NAVs differ from the prior PMR. The revised series requires confirmation.",
+             [i for r in data["historical_revisions"] for i in r["evidence"]], style="footnote")
     history_ids = [r[k] for r in data["history"] for k in ["quarter_id", "target_id", "nav_id"]]
     para(
         s,
