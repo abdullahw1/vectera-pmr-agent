@@ -4,10 +4,39 @@ from __future__ import annotations
 
 import html
 import json
+import re
 from pathlib import Path
 
 from .evidence import digest, implementation_hashes
 from .filenames import clear_named_reports, export_report, report_filename
+
+
+def pdf_preview(output, page=None):
+    """Render the protected report itself; preview images never become source facts."""
+    import fitz
+    import hashlib
+
+    payload = json.loads((output / "draft.json").read_text(encoding="utf-8"))
+    if digest({k: v for k, v in payload.items() if k != "draft_hash"}) != payload.get("draft_hash"):
+        raise ValueError("Saved draft changed; regenerate before preview")
+    approval_file = output / "approval.json"
+    approval = json.loads(approval_file.read_text(encoding="utf-8")) if approval_file.is_file() else None
+    approved = bool(approval and approval.get("draft_hash") == payload["draft_hash"])
+    path = output / ("final_report.pdf" if approved else "report.pdf")
+    content = path.read_bytes()
+    expected = approval.get("report_sha256") if approved else payload.get("asset_hashes", {}).get("report.pdf")
+    if not expected or hashlib.sha256(content).hexdigest() != expected:
+        raise ValueError("PDF integrity check failed; regenerate the report")
+    try:
+        with fitz.open(stream=content, filetype="pdf") as document:
+            if page is None:
+                first = document[0].rect
+                return dict(pages=len(document), width=first.width, height=first.height, approved=approved)
+            if isinstance(page, bool) or not isinstance(page, int) or not 0 <= page < len(document):
+                raise ValueError("Preview page is outside the report")
+            return document[page].get_pixmap(matrix=fitz.Matrix(1.6, 1.6), alpha=False).tobytes("png")
+    except (fitz.FileDataError, fitz.EmptyFileError) as error:
+        raise ValueError("PDF preview is unreadable") from error
 
 
 def diagnostics_summary(diagnostics):
@@ -31,6 +60,24 @@ def diagnostics_summary(diagnostics):
     return '<h2>Run Summary</h2><dl class="run-summary">' + "".join(
         f"<dt>{html.escape(label)}</dt><dd>{html.escape(str(value))}</dd>" for label, value in rows
     ) + '</dl><details><summary>Processing steps</summary><ul>' + stages + '</ul></details><a href="diagnostics.json" target="_blank">Technical log</a>'
+
+
+def render_review_page(payload, diagnostics=None, approval=None):
+    """Serve current presentation without modifying the saved, hash-bound draft."""
+    if digest({k: v for k, v in payload.items() if k != "draft_hash"}) != payload.get("draft_hash"):
+        raise ValueError("Saved draft changed; regenerate before review")
+    data = payload["data"]
+    encoded = json.dumps(payload, default=str).replace("<", "\\u003c")
+    approved = approval if approval and approval.get("draft_hash") == payload["draft_hash"] else None
+    runtime = dict(
+        implementation_current=payload.get("implementation_hashes") == implementation_hashes(),
+        approval=({k: approved.get(k) for k in ("report_filename", "reviewer", "approved_at")} if approved else None),
+    )
+    page = (Path(__file__).parent / "web" / "review.html").read_text(encoding="utf-8")
+    page = page.replace("__PAYLOAD__", encoded).replace("__RUNTIME__", json.dumps(runtime).replace("<", "\\u003c"))
+    page = page.replace('href="report.pdf"', f'href="{report_filename(data["client"], data["quarter"])}"')
+    page = page.replace('href="final_report.pdf"', f'href="{report_filename(data["client"], data["quarter"], approved=True)}"')
+    return page.replace("<!--DIAGNOSTICS-->", diagnostics_summary(diagnostics or {}))
 
 
 def write_review(output, data, sections, ledger, input_hashes, diagnostics=None, code_hashes=None):
@@ -62,17 +109,7 @@ def write_review(output, data, sections, ledger, input_hashes, diagnostics=None,
     )
     payload["draft_hash"] = digest(payload)
     (output / "draft.json").write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
-    # "<" is escaped so source text inside the payload can never close the script tag.
-    encoded = json.dumps(payload, default=str).replace("<", "\\u003c")
-    page = (
-        (Path(__file__).parent / "web" / "review.html")
-        .read_text(encoding="utf-8")
-        .replace("__PAYLOAD__", encoded)
-        .replace('href="report.pdf"', f'href="{draft_name}"')
-        .replace('href="final_report.pdf"', f'href="{report_filename(data["client"], data["quarter"], approved=True)}"')
-    )
-    if diagnostics:
-        page = page.replace("<!--DIAGNOSTICS-->", diagnostics_summary(diagnostics))
+    page = render_review_page(payload, diagnostics)
     (output / "review.html").write_text(page, encoding="utf-8")
     (output / "review.md").write_text(
         "# Review Queue\n\n" + "\n".join(f"- {i['severity'].upper()}: {i['message']}" for i in ledger.issues),
@@ -255,6 +292,47 @@ def serve(output, port, open_browser=False):
     class Handler(SimpleHTTPRequestHandler):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, directory=str(output), **kwargs)
+
+        def do_GET(self):
+            from urllib.parse import urlparse
+
+            path = urlparse(self.path).path
+            match = re.fullmatch(r"/pdf-page-(\d+)\.png", path)
+            if path == "/pdf-preview.json" or match:
+                try:
+                    result = pdf_preview(output, int(match[1]) if match else None)
+                    content = result if match else json.dumps(result).encode()
+                    self.send_response(200)
+                    self.send_header("Content-Type", "image/png" if match else "application/json")
+                    self.send_header("Cache-Control", "no-store")
+                    self.end_headers()
+                    self.wfile.write(content)
+                except (ValueError, KeyError, OSError):
+                    self.send_error(404, "PDF preview is not available")
+                return
+            if path.startswith("/icons/"):
+                icons = Path(__file__).parent / "web" / "icons"
+                file = (icons / path.removeprefix("/icons/")).resolve()
+                if not file.is_relative_to(icons.resolve()) or file.suffix != ".svg" or not file.is_file():
+                    self.send_error(404)
+                    return
+                self.send_response(200)
+                self.send_header("Content-Type", "image/svg+xml")
+                self.end_headers()
+                self.wfile.write(file.read_bytes())
+                return
+            if path == "/review.html" and (output / "draft.json").is_file():
+                def record(name):
+                    file = output / name
+                    return json.loads(file.read_text(encoding="utf-8")) if file.is_file() else None
+
+                page = render_review_page(record("draft.json"), record("diagnostics.json"), record("approval.json"))
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(page.encode("utf-8"))
+                return
+            super().do_GET()
 
         def do_POST(self):
             if self.path != "/approve":

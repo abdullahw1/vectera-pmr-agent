@@ -24,6 +24,16 @@ def document(path="manager_reports/report.pdf"):
     return dict(path=path, data=base64.b64encode(b"synthetic source").decode())
 
 
+def test_defaults_expose_document_count_and_provider_without_credentials(workspace, monkeypatch):
+    key = "fake-secret-not-for-browser"
+    monkeypatch.setenv("OPENAI_API_KEY", key)
+    current = Workspace(workspace.inputs, workspace.output)
+    defaults = current.state()["defaults"]
+    assert defaults["document_count"] == 2
+    assert defaults["provider"] == "openai"
+    assert key not in json.dumps(current.state())
+
+
 def test_upload_preserves_folders(workspace):
     result = workspace.upload(dict(files=[document()]))
     assert result["count"] == 1

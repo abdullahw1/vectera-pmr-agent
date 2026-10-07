@@ -71,6 +71,9 @@ class Workspace:
             client=client or draft.get("data", {}).get("client", ""),
             quarter=period or draft.get("data", {}).get("quarter", ""),
             inputs=str(self.inputs),
+            document_count=sum(p.is_file() and p.suffix.lower() in {".pdf", ".xlsx", ".pptx"}
+                               for p in self.inputs.rglob("*")),
+            provider="openai" if os.getenv("OPENAI_API_KEY") else "anthropic" if os.getenv("ANTHROPIC_API_KEY") else None,
         )
         if draft:
             self.jobs["current"] = dict(
@@ -347,12 +350,25 @@ def make_server(workspace, port=0):
                     self.reply(200, icon.read_bytes(), "image/svg+xml")
                 elif path.startswith("/runs/"):
                     _, _, identifier, relative = path.split("/", 3)
-                    if relative == "bundle.zip":
+                    import re
+                    preview = re.fullmatch(r"pdf-page-(\d+)\.png", relative)
+                    if relative == "pdf-preview.json" or preview:
+                        from .review import pdf_preview
+
+                        result = pdf_preview(workspace.directory(identifier), int(preview[1]) if preview else None)
+                        self.reply(200, result, "image/png" if preview else "application/json")
+                    elif relative == "bundle.zip":
                         self.reply(200, workspace.bundle(identifier), "application/zip")
                     else:
                         file = workspace.artifact(identifier, relative)
                         if relative == "review.html":
-                            page = file.read_text(encoding="utf-8")
+                            from .review import render_review_page
+
+                            payload = read_json(file.parent / "draft.json")
+                            page = render_review_page(
+                                payload, read_json(file.parent / "diagnostics.json", {}),
+                                read_json(file.parent / "approval.json"),
+                            ) if payload else file.read_text(encoding="utf-8")
                             page = page.replace(
                                 "<script>",
                                 "<script>window.PMR_CSRF=" + json.dumps(token) + ";</script><script>",

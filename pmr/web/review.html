@@ -15,7 +15,7 @@
     button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #378bb5; outline-offset: 2px; }
     nav { padding: 12px 24px; border-bottom: 1px solid #d9dfe5; display: flex; flex-wrap: wrap; gap: 8px; }
     nav button[aria-selected="false"] { background: #edf0f3; color: #242b33; }
-    main { display: grid; grid-template-columns: minmax(0, 3fr) minmax(340px, 2fr); }
+    main { display: grid; grid-template-columns: minmax(0, 1fr) 330px; align-items: start; }
     article, aside { padding: 24px; min-width: 0; }
     aside { background: #f7f9fa; border-left: 1px solid #d9dfe5; }
     section { margin-bottom: 28px; } .block { padding: 8px 0; border-bottom: 1px solid #edf0f3; overflow: auto; cursor: pointer; }
@@ -37,52 +37,99 @@
     .review-flow { padding: 14px 24px; background: #eef5f2; border-bottom: 1px solid #d9dfe5; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
     .review-flow p { margin: 0; } .run-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 12px; font-size: 12px; }
     .run-summary dt { color: #606c75; } .run-summary dd { margin: 0; overflow-wrap: anywhere; }
-    @media(max-width: 850px) { main { grid-template-columns: 1fr; } aside { border-left: 0; border-top: 1px solid #d9dfe5; } header { align-items: flex-start; flex-direction: column; } article, aside, header, nav { padding: 16px; } }
+    :root { letter-spacing: 0; } [hidden] { display: none !important; }
+    .embedded > header { display: none; } button { background: #176b50; }
+    nav { position: sticky; top: 0; z-index: 2; padding: 0 20px; gap: 0; background: white; } nav button { border-radius: 0; padding: 13px 17px; background: white; color: #64727a; border-bottom: 2px solid transparent; min-height: 45px; }
+    nav button[aria-selected="false"] { background: white; color: #64727a; } nav button[aria-selected="true"] { background: white; color: #176b50; border-bottom-color: #176b50; font-weight: 600; }
+    article, aside { padding: 20px; } aside { background: white; position: sticky; top: 46px; } .review-flow { background: #f5f8f6; padding: 12px 20px; }
+    .review-flow.blocked { background: #fff8f5; } .review-flow p { max-width: 70%; font-size: 13px; }
+    .pdf-reader { display: block; width: 100%; height: auto; border: 1px solid #dce3e7; background: white; }
+    .pdf-surface { padding: 16px; background: #edf0f2; min-height: 400px; overflow: auto; } .pdf-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .pdf-controls select { min-height: 34px; max-width: 150px; border: 1px solid #aab8bf; background: white; border-radius: 3px; font: inherit; padding: 5px; }
+    .pdf-controls button { min-height: 34px; padding: 7px; display: inline-flex; align-items: center; }
+    .report-tools { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .task { display: flex; width: 100%; justify-content: space-between; align-items: center; text-align: left; padding: 13px 0; border-radius: 0; background: none; color: #253039; border-bottom: 1px solid #dce3e7; }
+    .task:hover { background: #f5f8f6; } .task strong { font-size: 13px; } .task span { font-size: 13px; color: #64727a; }
+    .task .bad { color: #9f353b; } #checks { padding: 15px 0; color: #64727a; font-size: 12px; }
+    h2 { font-size: 18px; margin-top: 0; } aside h2 { font-size: 15px; margin-bottom: 8px; }
+    .release { border-top: 1px solid #dce3e7; margin-top: 14px; } .release summary { font-size: 13px; font-weight: 600; padding: 15px 0; }
+    #technical-button { margin-top: 18px; width: 100%; } #approve, #confirm-chart { width: 100%; }
+    .chart-table { max-height: 410px; overflow: auto; } .chart-table th { position: sticky; top: 0; background: #f4f6f7; color: #64727a; }
+    th { color: #64727a; background: #f4f6f7; } input[type="number"] { width: 82px; min-height: 34px; border-radius: 3px; }
+    .chart-source { display: block; width: 100%; height: auto; border: 1px solid #dce3e7; }
+    .chart-navigation { justify-content: space-between; margin-bottom: 18px; } .icon { width: 16px; height: 16px; } .next-icon { transform: rotate(180deg); }
+    .issue h3 { margin: 0; font-size: 15px; } .issue p { margin: 7px 0 10px; font-size: 13px; }
+    .warning-group { border-bottom: 1px solid #dce3e7; } .warning-group > summary { padding: 14px 0; font-size: 13px; font-weight: 600; }
+    .warning-group .group-body { border-left: 2px solid #e7c879; padding-left: 12px; } .issue details p { font-size: 12px; color: #64727a; }
+    dialog { position: fixed; inset: 0 0 0 auto; margin: 0; width: 460px; max-width: 95vw; height: 100dvh; max-height: 100dvh; padding: 0; border: 0; border-left: 1px solid #dce3e7; color: #253039; background: white; }
+    dialog::backdrop { background: #14212d40; } .drawer-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 20px; border-bottom: 1px solid #dce3e7; }
+    .drawer-heading h2 { margin: 0; font-size: 17px; } .drawer-body { padding: 20px; height: calc(100% - 75px); overflow: auto; }
+    .fact h3 { font-size: 13px; overflow-wrap: anywhere; } .fact p, blockquote { font-size: 13px; line-height: 1.6; } blockquote { margin: 12px 0; border-left: 2px solid #c8d5ce; padding-left: 12px; }
+    #chart-feedback, #feedback { font-size: 13px; } .block:focus-visible { outline: 2px solid #378bb5; }
+    @media(max-width: 850px) { main { grid-template-columns: 1fr; } aside { position: static; border-left: 0; border-top: 1px solid #d9dfe5; } header { align-items: flex-start; flex-direction: column; } article, aside, header { padding: 16px; } nav { padding: 0 8px; } nav button { padding: 12px; font-size: 13px; } .review-flow { padding: 12px 16px; } .review-flow p { max-width: none; } .report-tools { flex-wrap: wrap; } .chart-table { max-height: 360px; } .pdf-surface { padding: 7px; } }
   </style>
 </head>
 <body>
-  <header><div><h1 id="title"></h1><span id="status" aria-live="polite"></span></div><div class="actions"><a href="report.pdf" target="_blank">Open draft PDF</a><a id="final" href="final_report.pdf" target="_blank" hidden>Open approved PDF</a></div></header>
+  <header><div><h1 id="title"></h1><span id="status" aria-live="polite"></span></div><div class="actions"><a id="draft-link" href="report.pdf" target="_blank">Open PDF</a><a id="final" href="final_report.pdf" target="_blank" hidden>Download final PDF</a></div></header>
   <div class="review-flow"><p id="next-step" aria-live="polite"></p><button id="continue-review">Confirm chart values</button></div>
-  <nav role="tablist" aria-label="Review views"><button role="tab" data-view="report" aria-selected="true">1. Review Report</button><button role="tab" data-view="charts" aria-selected="false" id="charts-tab">2. Confirm Charts</button><button role="tab" data-view="issues" aria-selected="false" id="issues-tab">3. Warnings &amp; Approval</button></nav>
+  <nav role="tablist" aria-label="Review views"><button role="tab" data-view="report" aria-selected="true">Report</button><button role="tab" data-view="charts" aria-selected="false" id="charts-tab">Charts</button><button role="tab" data-view="issues" aria-selected="false" id="issues-tab">Issues</button></nav>
   <main><article id="report"></article><aside>
-    <h2>Evidence &amp; Corrections</h2><div id="evidence">Select a paragraph or table cell to inspect its sources.</div>
-    <h2>Verification</h2><div id="checks"></div><!--DIAGNOSTICS-->
-    <h2>Release Approval</h2><p id="gate" aria-live="polite"></p>
+    <div id="checklist"><h2>Review checklist</h2><button class="task" data-open="issues"><strong>Source issues</strong><span id="source-count"></span></button><button class="task" data-open="charts"><strong>Confirm chart readings</strong><span id="chart-count"></span></button><button class="task" data-open="issues"><strong>Review warnings</strong><span id="warning-count"></span></button><div id="checks"></div></div>
+    <div id="chart-editor" hidden></div>
+    <details class="release" id="release-panel"><summary>Final approval</summary><p id="gate" aria-live="polite"></p>
     <label>Reviewer name<input id="reviewer" type="text" autocomplete="name"></label>
     <label><input id="ack" type="checkbox"> I reviewed the PDF, source evidence, chart values, and all warnings.</label>
-    <button id="approve" disabled>Approve &amp; Download Final PDF</button><p id="feedback" role="status" aria-live="polite"></p>
+    <button id="approve" disabled>Approve &amp; Download Final PDF</button><p id="feedback" role="status" aria-live="polite"></p></details>
+    <button class="secondary" id="technical-button">Run details &amp; audit</button>
     <p class="muted">Draft <span id="draft-id"></span></p>
   </aside></main>
+  <dialog id="source-drawer" aria-labelledby="source-title"><div class="drawer-heading"><h2 id="source-title">Source evidence</h2><button class="secondary" data-close="source-drawer">Close</button></div><div class="drawer-body" id="evidence"></div></dialog>
+  <dialog id="technical-drawer" aria-labelledby="technical-title"><div class="drawer-heading"><h2 id="technical-title">Run details &amp; audit</h2><button class="secondary" data-close="technical-drawer">Close</button></div><div class="drawer-body"><!--DIAGNOSTICS--><details><summary>Financial checks</summary><div id="verification-details"></div></details><p><a href="manifest.json" target="_blank">Claim-to-source manifest</a></p><p><a href="evidence.json" target="_blank">Evidence ledger</a></p></div></dialog>
   <script>
     const D = __PAYLOAD__;
+    const R = __RUNTIME__;
+    const embedded = new URLSearchParams(location.search).get("embedded") === "1";
+    document.body.classList.toggle("embedded", embedded);
     const el = id => document.getElementById(id);
     const esc = x => String(x ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
     const confirmed = new Set(), corrections = {}, edits = {}, reasons = {}, charts = D.data.charts;
     const blockers = D.ledger.issues.filter(i => i.severity === "blocker");
     const warnings = D.ledger.issues.filter(i => i.severity === "warning");
-    let view = "report", chartIndex = 0, approved = false, pending = false, reviewRequired = false, editing;
+    let view = "report", chartIndex = 0, approved = !!R.approval, pending = false, reviewRequired = false, editing, auditMode = false;
+    const currentImplementation = R.implementation_current !== false;
+    let pdfInfo = null, pdfPage = 0, previewSerial = 0, pdfZoom = 'fit';
     el("title").textContent = `${D.data.client} / ${D.data.quarter} Review`;
     el("draft-id").textContent = D.draft_hash.slice(0, 12);
     const checks = D.ledger.checks.filter(c => c.severity === "blocker");
-    el("checks").textContent = `${checks.filter(c => c.passed).length} / ${checks.length} critical checks passed`;
+    el("checks").textContent = `${checks.filter(c => c.passed).length} / ${checks.length} financial checks passed`;
+    el("verification-details").innerHTML = checks.map(c => `<div class="fact"><strong class="${c.passed ? 'ok' : ''}">${c.passed ? 'Passed' : 'Needs attention'}</strong><p>${esc(c.name)}</p><details><summary>Values &amp; source references</summary><pre>${esc(JSON.stringify(c, null, 2))}</pre></details></div>`).join('');
     function updateGate() {
-      const remaining = charts.filter(c => !confirmed.has(c.id)).length;
-      el("charts-tab").textContent = `2. Confirm Charts (${confirmed.size}/${charts.length})`;
-      el("issues-tab").textContent = `3. Warnings & Approval (${warnings.length} warnings)`;
+      const remaining = approved ? 0 : charts.filter(c => !confirmed.has(c.id)).length;
+      el("charts-tab").textContent = `Charts ${approved ? charts.length : confirmed.size}/${charts.length}`;
+      el("issues-tab").textContent = `Issues${blockers.length ? ' ' + blockers.length : ''}`;
+      el("source-count").textContent = blockers.length ? `${blockers.length} blockers` : "Clear";
+      el("source-count").classList.toggle("bad", !!blockers.length);
+      el("chart-count").textContent = `${approved ? charts.length : confirmed.size}/${charts.length}`;
+      el("warning-count").textContent = warnings.length;
+      document.querySelector('.review-flow').classList.toggle('blocked', !!blockers.length && !approved);
       el("next-step").textContent = approved ? "Final report saved. Use Download final PDF to get another copy." : blockers.length ? `${blockers.length} blocking issue(s) need corrected inputs before approval.` : remaining ? `Review the report, then compare and confirm ${remaining} remaining chart(s) against their source images.` : "Charts confirmed. Review warnings, enter your name and acknowledge the report to approve.";
       el("continue-review").textContent = approved ? "Download final PDF" : blockers.length ? "Review blocking issues" : remaining ? "Confirm chart values" : "Review warnings & approve";
       if (reviewRequired) {
         el("next-step").textContent = "Your corrections created a new draft. Reload it and review again before approval.";
         el("continue-review").textContent = "Review corrected draft";
+      } else if (!currentImplementation && !approved) {
+        el("next-step").textContent = "The application changed after this draft. Generate a new draft before approval.";
+        el("continue-review").textContent = "Generate a new draft";
       }
       el("status").textContent = approved ? "Approved" : blockers.length ? "Blocked - source corrections required" : remaining ? "Draft - chart review required" : "Draft - ready for final review";
       const tasks = [];
+      if (!currentImplementation) tasks.push("Regenerate this draft with the current application.");
       if (blockers.length) tasks.push(`${blockers.length} blocker(s) must be fixed and the report regenerated.`);
       if (remaining) tasks.push(`${remaining} chart(s) still need confirmation.`);
       if (!el("reviewer").value.trim()) tasks.push("Enter your reviewer name.");
       if (!el("ack").checked) tasks.push("Review the PDF and warnings, then acknowledge below.");
       el("gate").textContent = approved ? "Approval saved. The final PDF is available above." : tasks.join(" ") || "All review requirements are met.";
-      el("approve").disabled = approved || pending || tasks.length > 0;
+      el("approve").disabled = approved || pending || reviewRequired || tasks.length > 0;
     }
     function sourceLabel(s) {
       return [s.file, s.sheet && `Sheet: ${s.sheet}`, s.cell && `Cell: ${s.cell}`, s.page && `Page ${s.page}`, s.slide && `Slide ${s.slide}`, s.row && `Row ${s.row}`, s.column && `Column ${s.column}`].filter(Boolean).join(" / ");
@@ -93,33 +140,63 @@
         if (visited.has(id)) return ""; visited.add(id);
         const f = D.ledger.facts[id]; if (!f) return "";
         const s = f.source || {};
-        return `<div class="fact"><h3>${esc(sourceLabel(s) || f.formula || id)}</h3><p>${esc(typeof f.value === "object" ? JSON.stringify(f.value) : f.value)}</p>${s.quote ? `<blockquote>${esc(s.quote)}</blockquote>` : ""}<details><summary>Audit details</summary><pre>${esc(JSON.stringify(f, null, 2))}</pre></details></div>` + (f.inputs || []).map(fact).join("");
+        const value = f.value === null || f.value === undefined ? "Not reported in the source" : typeof f.value === "object" ? (Array.isArray(f.value) ? f.value.join(' / ') : 'Structured data; see the audit record') : f.value;
+        return `<div class="fact"><h3>${esc(sourceLabel(s) || 'Calculated value')}</h3>${s.metric ? `<p class="muted">${esc(s.metric)}</p>` : ''}${f.value !== s.quote ? `<p>${esc(value)}</p>` : ''}${s.quote ? `<blockquote>${esc(s.quote)}</blockquote>` : ""}${f.formula ? `<p class="muted">Calculation: ${esc(f.formula)}</p>` : ''}<details><summary>Full audit record</summary><pre>${esc(JSON.stringify(f, null, 2))}</pre></details></div>` + (f.inputs || []).map(fact).join("");
       }
       el("evidence").innerHTML = ids.map(fact).join("") || "No source value is asserted in this item.";
+      if (!el("source-drawer").open) el("source-drawer").showModal();
     }
-    function renderReport() {
+    async function renderReport() {
+      const serial = ++previewSerial;
+      const tools = `<div class="report-tools"><div class="pdf-controls" id="pdf-controls"><span class="muted">${approved ? 'Approved report' : 'Draft report'}</span></div><button class="secondary" id="audit-mode">${auditMode ? 'Back to PDF' : 'Inspect report sources'}</button></div>`;
+      if (!auditMode) {
+        el('report').innerHTML = tools + '<div class="pdf-surface" id="pdf-surface"><p class="muted">Loading report preview...</p></div>';
+        el('audit-mode').onclick = () => { auditMode = true; renderReport(); };
+        try {
+          if (!pdfInfo || pdfInfo.approved !== approved) {
+            const response = await fetch('pdf-preview.json', {cache:'no-store'});
+            if (!response.ok) throw Error('Unavailable');
+            pdfInfo = await response.json();
+          }
+          if (serial !== previewSerial || view !== 'report' || auditMode) return;
+          pdfPage = Math.min(pdfPage, pdfInfo.pages - 1);
+          el('pdf-controls').innerHTML = `<button class="secondary" id="pdf-previous" title="Previous page" aria-label="Previous page" ${pdfPage === 0 ? 'disabled' : ''}><img class="icon" src="/icons/arrow-left.svg" alt=""></button><select id="pdf-page" aria-label="PDF page">${Array.from({length:pdfInfo.pages}, (_, i) => `<option value="${i}" ${i === pdfPage ? 'selected' : ''}>Page ${i + 1} of ${pdfInfo.pages}</option>`).join('')}</select><button class="secondary" id="pdf-next" title="Next page" aria-label="Next page" ${pdfPage === pdfInfo.pages - 1 ? 'disabled' : ''}><img class="icon next-icon" src="/icons/arrow-left.svg" alt=""></button><select id="pdf-zoom" aria-label="PDF zoom">${[['fit','Fit width'],['125','125%'],['150','150%'],['200','200%'],['250','250%']].map(([value,label]) => `<option value="${value}" ${pdfZoom === value ? 'selected' : ''}>${label}</option>`).join('')}</select>`;
+          el('pdf-surface').innerHTML = `<img class="pdf-reader" src="pdf-page-${pdfPage}.png?draft=${encodeURIComponent(D.draft_hash)}&final=${approved ? 1 : 0}" alt="${esc(D.data.client)} report, page ${pdfPage + 1}" style="aspect-ratio:${pdfInfo.width}/${pdfInfo.height}">`;
+          el('pdf-previous').onclick = () => { pdfPage--; renderReport(); };
+          el('pdf-next').onclick = () => { pdfPage++; renderReport(); };
+          el('pdf-page').onchange = event => { pdfPage = Number(event.target.value); renderReport(); };
+          const image = el('pdf-surface').querySelector('img'); image.style.maxWidth = 'none'; image.style.width = pdfZoom === 'fit' ? '100%' : pdfZoom + '%';
+          el('pdf-zoom').onchange = event => { pdfZoom = event.target.value; image.style.width = pdfZoom === 'fit' ? '100%' : pdfZoom + '%'; };
+        } catch (error) {
+          if (serial === previewSerial && view === 'report' && !auditMode) el('pdf-surface').innerHTML = '<p>Preview could not be loaded. Open the original PDF or inspect its source-linked text.</p>';
+        }
+        return;
+      }
       el("report").innerHTML = D.sections.map(s => `<section><h2>${esc(s.title)}</h2>${s.blocks.map(b => {
         const ids = esc(JSON.stringify(b.evidence || []));
         if (b.type === "paragraph") return `<div class="block" data-evidence="${ids}"><p>${esc(b.text)}</p></div>`;
         if (b.type === "chart") return `<div class="block" data-evidence="${ids}"><img alt="${esc(b.kind)}" src="assets/${esc(b.kind)}.png"></div>`;
         return `<div class="block"><table><thead><tr>${b.columns.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${b.rows.map((r, ri) => `<tr>${r.map((c, ci) => `<td data-evidence="${esc(JSON.stringify(b.cell_evidence?.[ri]?.[ci] || b.evidence || []))}">${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
       }).join("")}</section>`).join("");
+      el('report').insertAdjacentHTML('afterbegin', tools);
+      el('audit-mode').onclick = () => { auditMode = false; renderReport(); };
     }
     function renderCharts() {
       if (!charts.length) { el("report").innerHTML = "<h2>No chart extractions available</h2><p>Inspect Issues before approval.</p>"; return; }
       const c = charts[chartIndex]; editing = JSON.parse(JSON.stringify(edits[c.id] || corrections[c.id]?.data || c.data));
-      el("report").innerHTML = `<div class="actions"><button class="secondary" id="previous" ${chartIndex === 0 ? "disabled" : ""}>Previous chart</button><span>Chart ${chartIndex + 1} of ${charts.length}</span><button class="secondary" id="next" ${chartIndex === charts.length - 1 ? "disabled" : ""}>Next chart</button></div><h2>${esc(editing?.title || "Extraction unavailable")}</h2><p>${esc(sourceLabel(D.ledger.facts[c.id]?.source || {}))}</p><img src="${esc(c.asset)}" alt="Source chart for visual verification">`;
+      el("report").innerHTML = `<div class="actions chart-navigation"><button class="secondary" id="previous" title="Previous chart" ${chartIndex === 0 ? "disabled" : ""}><img class="icon" src="/icons/arrow-left.svg" alt="">Previous</button><span>Chart ${chartIndex + 1} of ${charts.length}</span><button class="secondary" id="next" title="Next chart" ${chartIndex === charts.length - 1 ? "disabled" : ""}>Next<img class="icon next-icon" src="/icons/arrow-left.svg" alt=""></button></div><h2>${esc(editing?.title || "Chart reading unavailable")}</h2><p class="muted">${esc(sourceLabel(D.ledger.facts[c.id]?.source || {}))}</p><img class="chart-source" src="${esc(c.asset)}" alt="Source chart for visual verification">${editing?.uncertainties?.length ? `<details><summary>Reading notes</summary>${editing.uncertainties.map(u => `<p class="muted">${esc(u)}</p>`).join('')}</details>` : ''}`;
       el("previous").onclick = () => { chartIndex--; renderCharts(); }; el("next").onclick = () => { chartIndex++; renderCharts(); };
-      if (!editing || !Array.isArray(editing.series) || !editing.series.length) { el("evidence").textContent = "Chart extraction unavailable. Resolve the blocker and regenerate; confirmation cannot replace an extraction."; return; }
-      el("evidence").innerHTML = `<h3>${confirmed.has(c.id) ? "Confirmed" : "Awaiting confirmation"}</h3><table><thead><tr><th>Period / Series</th><th>Value</th><th>Reading</th></tr></thead><tbody>${editing.series.map((r, i) => `<tr><td>${esc(r.label)}<br>${esc(r.series)}</td><td><input type="number" step="any" data-value="${i}" aria-label="${esc(r.label + ' ' + r.series)}" value="${esc(r.value)}"> ${esc(r.unit)}</td><td>${esc(r.method || "label")}${r.precision ? `<br>Precision: ${esc(r.precision)}` : ""}</td></tr>`).join("")}</tbody></table><label>Correction reason<textarea id="reason" placeholder="If changed: cite the visible label or gridline.">${esc(corrections[c.id]?.reason || "")}</textarea></label><details><summary>Advanced: labels, units and extraction JSON</summary><textarea id="chart-json" class="json">${esc(JSON.stringify(editing, null, 2))}</textarea><button class="secondary" id="apply-json">Apply JSON edits</button></details><button id="confirm-chart">Confirm These Chart Values</button><p id="chart-feedback" role="status"></p>`;
+      if (!editing || !Array.isArray(editing.series) || !editing.series.length) { el("chart-editor").textContent = "Chart extraction unavailable. Resolve the blocker and regenerate; confirmation cannot replace an extraction."; return; }
+      el("chart-editor").innerHTML = `<h3>${confirmed.has(c.id) ? "Confirmed" : "Check the extracted values"}</h3><div class="chart-table"><table><thead><tr><th>Period / Series</th><th>Value</th><th>Reading</th></tr></thead><tbody>${editing.series.map((r, i) => `<tr><td>${esc(r.label)}<br>${esc(r.series)}</td><td><input type="number" step="any" data-value="${i}" aria-label="${esc(r.label + ' ' + r.series)}" value="${esc(r.value)}"> ${esc(r.unit)}</td><td><span title="${r.method === 'axis_read' ? 'Approximate reading from gridlines' : 'Read from a printed value label'}">${r.method === 'axis_read' ? 'Approx.' : 'Label'}</span>${r.precision ? `<br><span class="muted">${esc(r.precision)} precision</span>` : ""}</td></tr>`).join("")}</tbody></table></div><div id="reason-group" hidden><label>Correction reason<textarea id="reason" placeholder="Reference the visible label or gridline.">${esc(corrections[c.id]?.reason || "")}</textarea></label></div><details><summary>Advanced chart fields</summary><textarea id="chart-json" class="json" aria-label="Chart extraction JSON">${esc(JSON.stringify(editing, null, 2))}</textarea><button class="secondary" id="apply-json">Apply changes</button></details><button id="confirm-chart">Confirm chart &amp; continue</button><p id="chart-feedback" role="status"></p>`;
       if (reasons[c.id] !== undefined) el("reason").value = reasons[c.id];
-      function changed() { confirmed.delete(c.id); reasons[c.id] = el("reason").value; el("ack").checked = false; updateGate(); }
-      el("evidence").querySelectorAll("[data-value]").forEach(input => input.oninput = () => {
+      function changed() { confirmed.delete(c.id); reasons[c.id] = el("reason").value; el("reason-group").hidden = JSON.stringify(edits[c.id] || editing) === JSON.stringify(c.data); el("ack").checked = false; updateGate(); }
+      el("reason-group").hidden = JSON.stringify(editing) === JSON.stringify(c.data);
+      el("chart-editor").querySelectorAll("[data-value]").forEach(input => input.oninput = () => {
         editing.series[Number(input.dataset.value)].value = input.value === "" ? null : Number(input.value);
         edits[c.id] = editing;
         el("chart-json").value = JSON.stringify(editing, null, 2); changed();
       });
-      el("chart-json").oninput = changed; el("reason").oninput = changed;
+      el("chart-json").oninput = () => { changed(); el("reason-group").hidden = false; }; el("reason").oninput = changed;
       el("apply-json").onclick = () => {
         try { const value = JSON.parse(el("chart-json").value); validateValues(value); edits[c.id] = value; changed(); renderCharts(); }
         catch (error) { el("chart-feedback").textContent = error.message; }
@@ -128,23 +205,40 @@
         try {
           const value = JSON.parse(el("chart-json").value); validateValues(value);
           if (JSON.stringify(value) !== JSON.stringify(c.data)) {
-            const reason = el("reason").value.trim(); if (!reason) throw Error("Enter a correction reason before confirming changed values.");
+            const reason = el("reason").value.trim(); if (!reason) { el("reason-group").hidden = false; el("reason").focus(); throw Error("Enter a correction reason before confirming changed values."); }
             corrections[c.id] = {data:value, reason};
           } else delete corrections[c.id];
           confirmed.add(c.id); updateGate();
           const next = charts.findIndex(chart => !confirmed.has(chart.id));
-          if (next >= 0) { chartIndex = next; renderCharts(); } else { switchView("issues"); el("evidence").textContent = "All charts confirmed. Review warnings, then complete Release Approval below."; }
+          if (next >= 0) { chartIndex = next; renderCharts(); } else { switchView("issues"); if (!blockers.length && currentImplementation) el("release-panel").open = true; }
         } catch (error) { el("chart-feedback").textContent = error.message; }
       };
     }
     function validateValues(v) {
       if (!v || !Array.isArray(v.series) || !v.series.length || v.series.some(r => typeof r.value !== "number" || !Number.isFinite(r.value) || !r.label || !r.series || !r.unit)) throw Error("Every observation needs a label, series, unit and finite numeric value.");
     }
+    function issueTitle(i) {
+      const source = D.ledger.facts[i.evidence?.[0]]?.source || {};
+      if (i.code === 'portfolio_value_missing') return source.metric === 'NET IRR' ? 'Portfolio lifetime return is not reported' : source.metric === 'Net Multiple' ? 'Portfolio investment multiple is not reported' : 'Required portfolio figure is missing';
+      if (i.code === 'reconciliation' && i.message.includes('Allocation history/flash target')) return 'Allocation targets disagree between sources';
+      const titles = {reconciliation:'Financial figures do not match', incomplete_reconciliation:'A financial check cannot be completed', missing_manager:'Manager report unavailable', negative_fees:'Fee credit in the source', history_ownership:'Allocation history needs client confirmation', narrative_review:'Review AI-written commentary', chart_unavailable:'Chart values could not be read', fund_value_missing:'Required fund figure is missing', fund_row_missing:'Fund row is missing or ambiguous', policy_missing:'Investment guideline is missing'};
+      return titles[i.code] || i.code.replaceAll('_', ' ').replace(/^./, c => c.toUpperCase());
+    }
+    function issueMarkup(i) {
+      const ids = i.evidence || [], source = D.ledger.facts[ids[0]]?.source || {};
+      let description = i.message;
+      if (i.code === 'portfolio_value_missing') description = 'The current flash leaves this figure blank. A source-backed value is needed before final approval.';
+      if (i.code === 'reconciliation' && i.message.includes('Allocation history/flash target')) description = 'The allocation-history target does not match the flash at the same display precision. Neither source has been silently replaced.';
+      return `<div class="issue ${esc(i.severity)}"><h3>${esc(issueTitle(i))}</h3><p>${esc(description)}</p>${source.file ? `<p class="muted">${esc(sourceLabel(source))}</p>` : ''}${ids.length ? `<button class="secondary" data-evidence="${esc(JSON.stringify(ids))}">Inspect source evidence</button>` : ''}<details><summary>Technical details</summary><p>${esc(i.code)}</p><p>${esc(i.message)}</p></details></div>`;
+    }
     function renderIssues() {
-      el("report").innerHTML = ["blocker", "warning", "review"].map(severity => `<section><h2>${{blocker:"Blockers - fix inputs and regenerate", warning:"Warnings - inspect before approval", review:"Chart confirmations"}[severity]}</h2>${D.ledger.issues.filter(i => i.severity === severity).map(i => `<div class="issue ${esc(severity)}"><strong>${esc(confirmed.has(i.fact_id) ? "CONFIRMED" : i.code)}</strong><p>${esc(i.message)}</p>${i.fact_id && charts.some(c => c.id === i.fact_id) ? `<button data-chart="${esc(i.fact_id)}">Review chart</button>` : i.evidence?.length ? `<button data-evidence="${esc(JSON.stringify(i.evidence))}">Inspect evidence</button>` : ""}</div>`).join("") || "<p>None.</p>"}</section>`).join("");
+      const groups = new Map(); warnings.forEach(i => { const name = i.code === 'narrative_review' ? 'AI-written commentary' : issueTitle(i); if (!groups.has(name)) groups.set(name, []); groups.get(name).push(i); });
+      el('report').innerHTML = `<section><h2>${blockers.length ? 'Source issues' : 'Final review'}</h2><p class="muted">${blockers.length ? 'These issues prevent release. Inspect the sources before changing inputs.' : 'No source blockers. Review the remaining warnings before approval.'}</p>${blockers.map(issueMarkup).join('') || '<p class="ok">No blocking issues.</p>'}</section><section><h2>Warnings (${warnings.length})</h2>${[...groups].map(([name, items]) => `<details class="warning-group"><summary>${esc(name)} <span class="muted">(${items.length})</span></summary><div class="group-body">${items.map(issueMarkup).join('')}</div></details>`).join('') || '<p class="muted">No warnings.</p>'}</section><section><h2>Chart review</h2><p class="muted">${approved ? 0 : charts.filter(c => !confirmed.has(c.id)).length} of ${charts.length} chart readings still need confirmation.</p><button class="secondary" data-open="charts">Open chart review</button></section>`;
     }
     function switchView(next) {
+      previewSerial++;
       view = next; document.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-selected", String(b.dataset.view === view)));
+      el('checklist').hidden = view === 'charts'; el('chart-editor').hidden = view !== 'charts';
       if (view === "charts") renderCharts(); else if (view === "issues") renderIssues(); else renderReport();
     }
     function downloadFinal() {
@@ -155,10 +249,11 @@
     el("continue-review").onclick = () => {
       if (reviewRequired) { location.href = "review.html"; return; }
       if (approved) return downloadFinal();
+      if (!currentImplementation) { if (embedded) window.parent.postMessage({type:'pmr-new-report'}, location.origin); else el('technical-drawer').showModal(); return; }
       if (blockers.length) return switchView("issues");
       const next = charts.findIndex(chart => !confirmed.has(chart.id));
       if (next >= 0) { chartIndex = next; switchView("charts"); }
-      else { switchView("issues"); el("reviewer").focus(); }
+      else { switchView("issues"); el('release-panel').open = true; el("reviewer").focus(); }
     };
     window.addEventListener("message", event => {
       if (event.origin === location.origin && event.source === window.parent && event.data?.type === "pmr-review-view" && ["report", "charts", "issues"].includes(event.data.view)) {
@@ -166,10 +261,13 @@
       }
     });
     document.querySelectorAll("[data-view]").forEach(b => b.onclick = () => switchView(b.dataset.view));
-    el("report").onclick = event => {
+    document.addEventListener('click', event => {
+      const close = event.target.closest('[data-close]'); if (close) el(close.dataset.close).close();
+      const open = event.target.closest('[data-open]'); if (open) switchView(open.dataset.open);
       const evidence = event.target.closest("[data-evidence]"); if (evidence) show(JSON.parse(evidence.dataset.evidence));
       const chart = event.target.closest("[data-chart]"); if (chart) { chartIndex = charts.findIndex(c => c.id === chart.dataset.chart); switchView("charts"); }
-    };
+    });
+    el('technical-button').onclick = () => el('technical-drawer').showModal();
     el("reviewer").oninput = updateGate; el("ack").onchange = updateGate;
     el("approve").onclick = async () => {
       if (el("approve").disabled) return; pending = true; updateGate(); el("feedback").textContent = "Validating review and creating final PDF...";
@@ -182,16 +280,23 @@
           el("feedback").appendChild(Object.assign(document.createElement("a"), {href:"review.html", textContent:" Reload corrected draft"}));
           pending = true;
           el("approve").hidden = true;
+          el('release-panel').open = true;
         } else if (response.ok && result.status === "approved") {
           approved = true; el("final").hidden = false;
           if (result.report_filename) el("final").href = encodeURIComponent(result.report_filename);
           el("final").download = result.report_filename || `${D.data.client}_PMR_${D.data.quarter}.pdf`;
           el("final").textContent = "Download final PDF"; downloadFinal();
+          if (view === 'report') renderReport();
         }
       } catch (error) { el("feedback").textContent = "Approval was not saved. Open review through the running PMR server and retry."; }
       finally { pending = false; updateGate(); }
     };
-    renderReport(); updateGate();
+    if (R.approval) {
+      el('final').hidden = false;
+      el('final').href = encodeURIComponent(R.approval.report_filename || `${D.data.client}_PMR_${D.data.quarter}.pdf`);
+      el('final').download = R.approval.report_filename;
+    }
+    switchView('report'); updateGate();
   </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 ## Round-Two Submission
 
-This local preview branch adds further error-handling work on top of the submitted v2.
+This local preview branch adds further error-handling and review-interface work on top of the submitted v2.
 The published submission is on `codex/round2-v2`; the frozen v1 is `v1-submission`.
 The files under `round2/` are historical evidence for that submitted v2, not results for these preview changes.
 Start with [the round-two delivery guide](round2/README.md) for the one-page note, original v1 failure,
@@ -141,11 +141,13 @@ Unchanged reruns reuse a local cache of model responses.
 
 ## Review and approve
 
-1. Open **Report**, inspect the draft PDF, and click paragraphs or table cells for readable source locators and calculation inputs. Audit JSON is available under **Audit details**.
-2. Open **Charts**. Compare each extraction with the displayed source image. Edit individual values if needed, add a correction reason, and select **Confirm These Chart Values**. **Previous chart** and **Next chart** retain value edits in this session. Reloading deliberately requires a new review.
-3. Open **Issues**. Blockers require corrected inputs and regeneration; warnings require inspection but do not prevent release. Chart confirmations are shown separately.
-4. Enter your reviewer name and acknowledge the PDF, sources, charts and warnings. **Approve & Download Final PDF** becomes available only when all requirements are met. Backend checks also enforce these requirements. Successful approval downloads the named final PDF; a download link remains available if your browser blocks it. If you corrected any chart, this first submission saves a **new draft**, not an approval. Select **Review corrected draft**, inspect the updated report, reconfirm charts and acknowledge it again. Changed market evidence invalidates the old prose; newly written prose receives the same number, quote and paraphrase checks, or verified observations replace it if synthesis is unavailable.
-5. With no further corrections, approval writes `CPERS_PMR_4Q25.pdf` and a hash-bound `approval.json`. Names follow the requested client and quarter; drafts carry an `_DRAFT` suffix. Internal `report.pdf` and `final_report.pdf` copies remain for compatibility. Approval is refused if the draft JSON, displayed draft PDF, inputs, implementation or exhibits changed. The approval record includes the exact draft PDF hash as well as the final PDF hash.
+1. On **New Report**, choose the document folder, enter the client and quarter, and select **Generate Draft**. The selected package and API provider appear beside the controls; keys stay in the environment.
+2. The draft opens in **Report**, with page navigation and zoom. **Inspect report sources** opens the source-linked paragraphs and tables; selecting a paragraph or cell opens its evidence drawer. The **Review checklist** links directly to the remaining tasks.
+3. Open **Charts**. Compare the extracted values with the source image and select **Confirm chart & continue**. Edited values require a correction reason. **Previous** and **Next** retain edits in this session. Advanced chart fields are expandable. Reloading deliberately requires a new review.
+4. Open **Issues**. Blockers are visible first and require corrected inputs and regeneration. Warnings are grouped and expandable; they require inspection but do not prevent release. **Run details & audit** holds model usage, processing steps, financial checks and the machine-readable records.
+5. Expand **Final approval**, enter your reviewer name and acknowledge the PDF, sources, charts and warnings. **Approve & Download Final PDF** becomes available only when all requirements are met. Backend checks also enforce these requirements. Successful approval downloads the named final PDF; a download link remains available if your browser blocks it. If you corrected any chart, this first submission saves a **new draft**, not an approval. Select **Review corrected draft**, inspect the updated report, reconfirm charts and acknowledge it again. Changed market evidence invalidates the old prose; newly written prose receives the same number, quote and paraphrase checks, or verified observations replace it if synthesis is unavailable.
+
+With no further corrections, approval writes `CPERS_PMR_4Q25.pdf` and a hash-bound `approval.json`. Names follow the requested client and quarter; drafts carry an `_DRAFT` suffix. Internal `report.pdf` and `final_report.pdf` copies remain for compatibility. Approval is refused if the draft JSON, displayed draft PDF, inputs, implementation or exhibits changed. The approval record includes the exact draft PDF hash as well as the final PDF hash.
 
 Missing cash rows or blank holding NAVs do not erase known holdings or turn them into open approvals. Performance-dependent attribution requires complete cash data, and position ranking requires complete NAV data. Missing figures retain their cell locators and block release. Unresolved IC amounts make the committed-or-approved total unavailable, never a partial sum presented as complete.
 
