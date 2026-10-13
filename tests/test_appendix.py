@@ -12,7 +12,7 @@ from pmr.verification import claim_manifest
 
 
 def test_source_exhibits_keep_values_on_letter_pages():
-    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    source = Path(__file__).resolve().parents[1] / "fixtures/4Q25/flash_4Q25.pdf"
     result = fitz.open()
     append_exhibits(result, source)
     assert len(result) <= 6  # Source padding and merged titles must not inflate the appendix.
@@ -39,7 +39,7 @@ def test_source_exhibits_keep_values_on_letter_pages():
 
 
 def test_each_projection_has_one_complete_header_and_unchanged_values():
-    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    source = Path(__file__).resolve().parents[1] / "fixtures/4Q25/flash_4Q25.pdf"
     exhibits = extract_exhibits(source)
     with fitz.open(source) as original:
         for exhibit in exhibits:
@@ -51,7 +51,7 @@ def test_each_projection_has_one_complete_header_and_unchanged_values():
 
 
 def test_appendix_manifest_maps_every_cell_to_its_source():
-    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    source = Path(__file__).resolve().parents[1] / "fixtures/4Q25/flash_4Q25.pdf"
     ledger = Ledger()
     blocks = register_exhibits(source, ledger)
     blocks = [b for b in blocks if b["type"] == "table"]
@@ -86,7 +86,7 @@ def test_display_decoration_preserves_cents_and_missing_values():
 
 
 def test_net_summary_omits_gross_only_series_but_full_exhibits_keep_them():
-    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    source = Path(__file__).resolve().parents[1] / "fixtures/4Q25/flash_4Q25.pdf"
     exhibits = extract_exhibits(source)
     summary = next(e for e in exhibits if e["title"] == "Annualized Net Time-Weighted Return (%)")
     assert [row[0] for row in summary["rows"]] == [
@@ -103,7 +103,7 @@ def test_net_summary_omits_gross_only_series_but_full_exhibits_keep_them():
 
 
 def test_exhibit_titles_follow_metrics_not_source_page_numbers(tmp_path):
-    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    source = Path(__file__).resolve().parents[1] / "fixtures/4Q25/flash_4Q25.pdf"
     shuffled = tmp_path / "shuffled.pdf"
     with fitz.open(source) as original:
         original.select([5, 0, 1, 2, 3, 4])
@@ -129,7 +129,7 @@ def test_unrecognized_readable_source_layout_is_retained(tmp_path):
 
 
 def test_empty_and_duplicate_return_tables_are_omitted_without_losing_values():
-    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    source = Path(__file__).resolve().parents[1] / "fixtures/4Q25/flash_4Q25.pdf"
     exhibits = extract_exhibits(source)
     assert len(exhibits) == 8
     assert not any("Since Inception" in e["title"] or "Valuation" in e["title"] for e in exhibits)
@@ -141,7 +141,7 @@ def test_empty_and_duplicate_return_tables_are_omitted_without_losing_values():
 
 
 def test_unique_fund_returns_and_real_zero_statistics_are_retained():
-    source = Path(__file__).resolve().parents[1] / "inputs/flash_4Q25.pdf"
+    source = Path(__file__).resolve().parents[1] / "fixtures/4Q25/flash_4Q25.pdf"
     ledger = Ledger()
     register_exhibits(source, ledger)
     recorded = {(f["source"].get("page"), f["source"].get("row"), f["source"].get("column"),

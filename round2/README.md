@@ -1,6 +1,6 @@
 # CPERS 1Q26 Results
 
-The evaluated submission is frozen at **`v1-submission`** (`618b990`). This branch, **`round2-v2-final`**, contains v2. The rerun note is attached separately to the submission email.
+The evaluated submission is frozen at **`v1-submission`** (`618b990`). This branch, **`round2-1q26-inputs`**, includes the received 1Q26 inputs alongside the submitted v2 reporting code. The prior submission branch remains unchanged. The rerun note was attached separately to the submission email.
 
 ## Current delivery
 
@@ -17,6 +17,7 @@ The evaluated submission is frozen at **`v1-submission`** (`618b990`). This bran
 | [Cached repeatability](latest/cached-repeatability.json) | Two fresh runs with the same cached responses produced identical PDFs, with no new API calls. |
 | [Output checks](latest/output-checks.json) | Page layout, eight core appendix tables and source-cell coverage. |
 | [Complete flash exhibit](latest/flash-exhibit.zip) | Original flash PDF supplied alongside the compact appendix. |
+| [Included-input verification](input-package-verification.json) | 15 received source files matched, 16 original fixtures preserved, 231 tests passed, and both periods rerun without keys. |
 
 V2 treats missing aggregate IRR and multiple as unavailable instead of aborting the whole report. Both still block approval, as does the allocation target conflict ($515M in history versus $501,248,068.80 in the flash). No input values were changed to make the report pass.
 
@@ -24,6 +25,6 @@ The review queue also records Tidewater's termination, individual fund LTV, hist
 
 ## Reproduce
 
-Follow the [root setup guide](../README.md). Select the received package's `inputs` folder and run **CPERS / 1Q26**. For unchanged v1, use a separate checkout of `v1-submission` with the same input package and a fresh output folder.
+Follow the [root setup guide](../README.md). The default `inputs` folder contains the received 1Q26 package; run **CPERS / 1Q26**. For unchanged v1, use a separate checkout of `v1-submission` and point it at these same inputs with a fresh output folder. Original-quarter sources are retained in `fixtures/4Q25` at the repository root.
 
 `archive/` retains historical results from the initial focused repair; `latest/` is the current delivery. Original 4Q25 artifacts are in `../output/`. These older records are retained for comparison, not presented as runs of the current code.

@@ -13,7 +13,7 @@ from pmr.pipeline import generate
 def test_coherent_next_quarter_with_cross_year_approval(tmp_path, monkeypatch):
     for key in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]:
         monkeypatch.delenv(key, raising=False)
-    original = Path(__file__).resolve().parents[1] / "inputs"
+    original = Path(__file__).resolve().parents[1] / "fixtures/4Q25"
     expected = build_fixture(original, tmp_path / "inputs")
     payload, summary = generate(tmp_path / "inputs", tmp_path / "output", "EWRS", "1Q26")
     data = payload["data"]
@@ -40,7 +40,7 @@ def test_harder_unseen_layout_and_label_changes(tmp_path, monkeypatch):
     """Stack layout changes the spec allows on top of the unseen fixture; results must not move."""
     for key in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]:
         monkeypatch.delenv(key, raising=False)
-    original = Path(__file__).resolve().parents[1] / "inputs"
+    original = Path(__file__).resolve().parents[1] / "fixtures/4Q25"
     build_fixture(original, tmp_path / "plain")
     build_fixture(original, tmp_path / "changed")
     root = tmp_path / "changed"

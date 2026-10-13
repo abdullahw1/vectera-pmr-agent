@@ -15,7 +15,7 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     target = root / "output" / "Vectera_PMR_Submission.zip"
-    allowed_roots = {"pmr", "tests", "scripts", "docs", "inputs", ".github"}
+    allowed_roots = {"pmr", "tests", "scripts", "docs", "inputs", "fixtures", ".github"}
     allowed_files = {
         "README.md",
         "SPEC.md",
@@ -25,6 +25,7 @@ def main():
         ".gitattributes",
         ".env.example",
         "start.cmd",
+        "round2/v1/execution-verification.json",
     }
     output_files = {
         "report.pdf",

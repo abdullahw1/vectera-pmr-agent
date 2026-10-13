@@ -12,7 +12,7 @@ from pmr.evidence import Ledger
 from pmr.finance import build_financials, commitments
 from pmr.ingest import discover
 
-INPUTS = Path(__file__).resolve().parents[1] / "inputs"
+INPUTS = Path(__file__).resolve().parents[1] / "fixtures/4Q25"
 
 
 def calculate(root):

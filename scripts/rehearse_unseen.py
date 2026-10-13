@@ -248,7 +248,7 @@ def rehearse(source, record):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--inputs", type=Path, default=Path("inputs"))
+    parser.add_argument("--inputs", type=Path, default=Path("fixtures/4Q25"))
     parser.add_argument("--record", type=Path, default=Path("output/unseen_rehearsal.json"))
     args = parser.parse_args()
     result = rehearse(args.inputs, args.record)

@@ -16,7 +16,7 @@ from pmr.ingest import Sheet, discover, norm
 from pmr.pipeline import generate
 from pmr.review import approve
 
-INPUTS = Path(__file__).resolve().parents[1] / "inputs"
+INPUTS = Path(__file__).resolve().parents[1] / "fixtures/4Q25"
 
 
 @pytest.fixture(autouse=True)

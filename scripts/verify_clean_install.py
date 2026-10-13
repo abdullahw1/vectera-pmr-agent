@@ -56,7 +56,8 @@ def verify(package, record):
             suites = ElementTree.parse(project / "clean-tests.xml").getroot().findall("testsuite")
             result["tests"] = sum(int(s.attrib["tests"]) for s in suites)
             result["tests_passed"] = True
-            run("-m", "pmr", "generate", "--client", "CPERS", "--quarter", "4Q25", "--output", "clean-output")
+            run("-m", "pmr", "generate", "--client", "CPERS", "--quarter", "4Q25",
+                "--inputs", "fixtures/4Q25", "--output", "clean-output")
             summary = json.loads((project / "clean-output/verification.json").read_text(encoding="utf-8"))
             result.update(
                 checks_passed=summary["checks_passed"],

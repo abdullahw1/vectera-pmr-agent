@@ -75,7 +75,7 @@ def test_terminated_ranked_fund_keeps_its_attribution_roles(tmp_path, monkeypatc
 
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    inputs = Path(__file__).resolve().parents[1] / "inputs"
+    inputs = Path(__file__).resolve().parents[1] / "fixtures/4Q25"
     payload, _ = generate(inputs, tmp_path / "base", "CPERS", "4Q25")
     from pmr.report import build_sections
     from pmr.ingest import discover, quarter
