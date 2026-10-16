@@ -11,10 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_delivered_1q26_inputs_match_original_execution_record():
-    record = json.loads((ROOT / "round2/v1/execution-verification.json").read_text())
+    record = json.loads((ROOT / "submission/v1-execution.json").read_text(encoding="utf-8"))
     expected = record["input_file_sha256"]
     files = {
-        str(path.relative_to(ROOT / "inputs")): hashlib.sha256(path.read_bytes()).hexdigest()
+        path.relative_to(ROOT / "inputs").as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
         for path in (ROOT / "inputs").rglob("*")
         if path.is_file()
     }

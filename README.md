@@ -1,37 +1,31 @@
 # Vectera PMR Agent
 
-Generates a quarterly Performance Measurement Report from source documents. Select a client and quarter; the agent finds the relevant files, calculates figures in code, and uses a model for chart reading and source-backed commentary. Reports remain drafts until reviewed and approved.
+Generates a quarterly Performance Measurement Report from spreadsheets, manager reports, a market deck and an IC log. Enter a client and quarter; the app finds the sources, checks the figures and creates a draft for review.
 
-## Round-two submission
+[View the CPERS 1Q26 draft](submission/CPERS_PMR_1Q26_DRAFT.pdf), [v1 result](submission/v1-failure.json) or [audit bundle](submission/audit.zip). The received 1Q26 sources are in `inputs/`; original 4Q25 sources are in `fixtures/4Q25/`. Neither package has been edited.
 
-This branch is **`round2-1q26-inputs`**: the submitted v2 code with the received **1Q26 source package included in `inputs/`**. The original 4Q25 package is preserved in `fixtures/4Q25/` for regression tests. The evaluated v1 is preserved at [tag `v1-submission`](https://github.com/abdullahw1/vectera-pmr-agent/tree/v1-submission); main and the previously submitted `round2-v2-final` branch are unchanged.
+## Start
 
-- [V1 result](round2/v1/failure.json): both unchanged CPERS / 1Q26 runs stopped at the missing aggregate IRR in `ReturnsMultiples(Agg)/V28`, before model calls or a PDF.
-- [V2 1Q26 draft](round2/latest/CPERS_PMR_1Q26_DRAFT.pdf): 13 portrait pages, with missing figures shown as unavailable and final approval blocked.
-- [Results and audit files](round2/README.md): tests, repeatability, review issues and source locations. The one-page rerun note is supplied separately by email.
+Install **Python 3.12**. Download this branch from **Code > Download ZIP**, extract it and open a terminal in the folder containing `start.cmd`.
 
-## Start the app
-
-Use **Python 3.12**. First-time setup needs internet access. No Docker or database is required.
-
-**Windows 11:** download this branch using **Code > Download ZIP**, extract it, and open PowerShell in the folder containing `start.cmd`. Check Python, then launch:
+**Windows 11 / PowerShell:**
 
 ```powershell
 py -3.12 --version
-.\start.cmd --client CPERS --quarter 1Q26 --output output/rerun-1Q26
+.\start.cmd --client CPERS --quarter 1Q26
 ```
 
 **macOS / Linux:**
 
 ```bash
-python3.12 scripts/launch.py --client CPERS --quarter 1Q26 --output output/rerun-1Q26
+python3.12 scripts/launch.py --client CPERS --quarter 1Q26
 ```
 
-The launcher creates a local environment, installs pinned dependencies and opens the browser. Keep the terminal open; Ctrl+C stops the app. The terminal prints the localhost URL.
+The launcher installs the pinned dependencies and opens the local browser app. First setup needs internet access. Keep the terminal open; Ctrl+C stops the server. No database or Docker is needed.
 
-## Add an API key
+## API Key
 
-**OpenAI is preferred; only one provider key is needed.** Existing environment variables take priority, so evaluator-provided keys need no file changes. Otherwise, copy `.env.example` to `.env` and add your key. On Windows:
+**OpenAI is preferred; one provider key is enough.** Evaluator-supplied environment variables work directly. For local use, copy `.env.example` to `.env` and add your key:
 
 ```powershell
 Copy-Item .env.example .env
@@ -42,53 +36,55 @@ notepad .env
 OPENAI_API_KEY="your-key-here"
 ```
 
-Edit rather than overwrite an existing `.env`. It is ignored by Git. Restart the app after changing keys. Source passages and chart images are sent to the selected provider's API.
+Do not overwrite an existing `.env`. It is ignored by Git. Restart after changing keys. The model receives source passages and chart images.
 
-OpenAI takes priority if both keys are set. Defaults are `gpt-4.1-2025-04-14` for prose and `gpt-4.1-mini-2025-04-14` for charts; `PMR_MODEL` and `PMR_VISION_MODEL` can override them. Anthropic is supported through `ANTHROPIC_API_KEY` with default `claude-sonnet-4-6`; unset `OPENAI_API_KEY` to select it. Cross-workspace Anthropic keys requiring a workspace-ID header are not supported.
+OpenAI takes priority when both keys are present. Defaults: `gpt-4.1-2025-04-14` for prose and `gpt-4.1-mini-2025-04-14` for charts. `PMR_MODEL` and `PMR_VISION_MODEL` override them. Anthropic is supported through `ANTHROPIC_API_KEY`, defaulting to `claude-sonnet-4-6`; unset the OpenAI key to select it. Keys requiring an Anthropic workspace-ID header are not supported.
 
-Without a key, financial calculations and report generation still run. Commentary uses attributed source excerpts; image-only chart readings remain unavailable and block approval.
+Without a key, calculations and draft generation still work. Commentary uses source excerpts; image-only chart readings remain unavailable and block final approval.
 
-## Generate and review
+## Generate and Review
 
-1. The default `inputs/` folder now contains the complete **CPERS / 1Q26** rerun package (15 source files, including nine manager reports). Enter **CPERS / 1Q26**, or use the launch command above to prefill them. To reproduce the original quarter, choose `fixtures/4Q25/` and enter **CPERS / 4Q25**. For another package, choose its folder and enter its client and quarter.
-2. Select **Generate Draft**. The report opens with a checklist linking to charts, source issues and financial checks.
-3. Review chart values beside their source images. Corrections require a reason and create a new draft to review. Technical details and audit records are available in expandable views.
-4. Resolve blockers by correcting source data and generating a new draft. Inspect warnings, confirm charts and complete **Final approval**. Successful approval downloads the final PDF; a download link remains available.
+1. Use `inputs/` with **CPERS / 1Q26**. For the original quarter, select `fixtures/4Q25/` with **CPERS / 4Q25**. For custom data, select its source folder and enter its client and quarter.
+2. Select **Generate Draft**. The review checklist links to source issues, financial checks and charts.
+3. Compare chart readings with their source images. A correction needs a reason and creates a new draft. Audit details are available in expandable views.
+4. Fix source blockers and regenerate. Review warnings, confirm charts, enter your name and approve. Successful approval downloads the final PDF.
 
-Drafts are named `<CLIENT>_PMR_<QUARTER>_DRAFT.pdf`; approved reports omit `_DRAFT`. Approval is tied to hashes of the draft, inputs and implementation. Changed files require a new review.
+Draft filenames follow `<CLIENT>_PMR_<QUARTER>_DRAFT.pdf`; approved filenames omit `_DRAFT`. Approval is tied to the draft, source and implementation hashes. Changed files require a new review.
 
-The 1Q26 example cannot be finalized: aggregate IRR and multiple are missing, and allocation history gives a $515M target versus $501,248,068.80 in the flash. V2 retains supported sections without inventing the missing values.
+The supplied 1Q26 draft **cannot be finalized**: portfolio IRR and multiple are absent, and the allocation history gives a $515M target versus $501,248,068.80 in the flash. Supported sections remain available without inventing the missing figures.
 
-## Command line and tests
+## Engineering and Verification
 
-After the launcher has installed dependencies, use its environment:
+File discovery uses contents, not filenames. Money uses `Decimal` and rejects fractions of a cent; rates and percentages are finite floats used as supplied. Calculations, rankings and compliance run in code. Models read chart images and write connecting prose using numerical placeholders and cited passages. Code checks the figures and citations; a second model pass checks the prose. Human review remains required.
+
+Temperature 0, an OpenAI seed and a content-hash cache reduce variation; they do not guarantee identical fresh model responses. The saved identical-PDF result used two fresh output folders with the same cached responses and **zero new API calls**. Financial results and structured selections are checked separately from prose wording.
+
+On `round2-clean`, a fresh macOS/Python 3.12 install passed **246 tests** and **58/58 original-quarter financial checks**. Two separate no-key processes also matched. After setup, run:
 
 ```powershell
-.\.launcher-venv\Scripts\python.exe -m pmr generate --client CPERS --quarter 1Q26 --output "output\rerun-1Q26"
 .\.launcher-venv\Scripts\python.exe -m pytest -q
 .\.launcher-venv\Scripts\python.exe scripts/verify_repeatability.py --client CPERS --quarter 4Q25 --inputs fixtures/4Q25
 .\.launcher-venv\Scripts\python.exe scripts/rehearse_unseen.py
 ```
 
-On macOS/Linux, substitute `.launcher-venv/bin/python`. Tests and the default repeatability/rehearsal commands do not require paid model calls.
+On macOS/Linux, use `.launcher-venv/bin/python`. These commands disable paid model calls. To test an isolated install, first run `scripts/package_submission.py`, then `scripts/verify_clean_install.py` with Python 3.12.
 
-Submitted v2 results: **229 tests passed**, **58/58 original-quarter financial checks**, and two fresh 1Q26 runs with the same cached responses produced identical PDFs. This input-delivery branch passed **231 tests**, including two new delivery tests, plus a fresh no-key 1Q26 run and original-quarter repeatability. See [the input-delivery verification](round2/input-package-verification.json). Cached repeatability is not a guarantee of identical wording from separate live calls. Runs were verified on macOS/Python 3.12; Windows execution was not personally observed. CI is configured for Windows and macOS.
+The [verification record](submission/verification.json) names the branch and scope for each result. The submitted `round2-v2-final` passed [Windows and macOS CI](https://github.com/abdullahw1/vectera-pmr-agent/actions/runs/37577623114). The later input-delivery branch passed on macOS, but Windows failed one new test because path separators differed; this branch fixes that comparison. A Windows 11 interactive demo is separate from CI and has not been verified.
 
-The included 1Q26 files are byte-identical to the received package, excluding Finder metadata only. New delivery tests compare their hashes against the original v1 execution record and exercise a no-key 1Q26 draft. The reporting code under `pmr/` is unchanged; test paths, verification commands and packaging were updated for the new folder layout. Existing artifacts under `output/` are historical 4Q25 results, so the launch command uses a separate 1Q26 output folder.
+## Submission History
 
-## How it works
+Evaluated v1 is frozen at [`v1-submission`](https://github.com/abdullahw1/vectera-pmr-agent/tree/v1-submission). It found the moved total row by label, then stopped on its blank IRR at `ReturnsMultiples(Agg)/V28`, before model calls. Fund-level blanks were tolerated but aggregate blanks were not: an inconsistent missing-value policy, not a hardcoded-cell failure. Both original runs are recorded in [v1-execution.json](submission/v1-execution.json).
 
-File selection uses document contents, not filenames. Financial calculations, rankings and compliance stay in code. The model writes with numerical placeholders and cited passages; code restores source figures, and a second model pass checks the prose. Missing evidence is flagged rather than invented. Essential unreadable inputs stop generation; other missing figures can remain unavailable in a blocked draft.
-
-Every reported figure and claim has source locations in the audit records. The appendix uses eight core sample-style tables; the complete flash exhibit and omitted source cells remain available separately.
+The first v2 repair (`23cdf82`) changed two production files and added six tests. Later v2 work added related validation, contextual source checks (including Tidewater's termination) and review controls. Counts from the first repair do not describe the final branch. The previously submitted `round2-v2-final` branch and v1 tag are unchanged; this `round2-clean` branch fixes the delivery/test layout, not the reporting logic. The emailed rerun note is supplied separately.
 
 ```text
-pmr/       pipeline and browser interface
-tests/     regression and guardrail tests
-scripts/   launcher and verification utilities
-inputs/    received 1Q26 source package, unchanged
-fixtures/  original 4Q25 package for regression tests
-round2/    v1 result and current v2 report/verification
-output/    original 4Q25 artifacts; default folder for new runs
-SPEC.md    assignment requirements
+pmr/          reporting pipeline and browser UI
+inputs/       received 1Q26 source package
+fixtures/     original 4Q25 regression sources
+tests/        regression, messy-input and approval tests
+scripts/      launcher, packaging and verification
+submission/   1Q26 draft, v1 result and verification/audit records
+SPEC.md       assignment requirements
 ```
+
+New runs go in ignored `output/`. `submission/audit.zip` contains the saved draft's manifest, evidence, review queue and historical verification records. Old run paths inside those records are retained as originally recorded, not instructions to follow. Earlier snapshots remain in Git history rather than duplicate folders.

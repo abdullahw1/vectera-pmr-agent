@@ -1,0 +1,74 @@
+{
+  "branch": "round2-clean",
+  "base_commit": "baacb3b0c69f6d8fa891886491fd324f57c271fc",
+  "reporting_code_changed": false,
+  "scope": "Delivery cleanup, portable input-hash test, packaging safety and CI diagnostics; not a financial-rule change",
+  "local_verification": {
+    "status": "passed",
+    "date": "2026-10-15",
+    "branch": "round2-clean",
+    "python": "3.12.0",
+    "platform": "macOS-15.4.1-x86_64-i386-64bit",
+    "fresh_venv_and_pinned_install": true,
+    "tests_passed": 246,
+    "test_seconds": 443.97,
+    "new_packaging_tests": 15,
+    "paid_model_calls": 0,
+    "original_quarter_draft_generated": true,
+    "original_quarter_checks_passed": 58,
+    "original_quarter_checks_total": 58,
+    "received_input_hash_test_passed": true,
+    "received_quarter_draft_test_passed": true,
+    "two_process_no_key_repeatability": {
+      "passed": true,
+      "financial_checks_per_run": "58/58",
+      "structured_results_equal": true,
+      "full_report_meaning_hash_equal": true
+    },
+    "verified_package_sha256": "f728783241063f5e88788ddbedba7875975d6d6904e8cdec073854879c539b3b",
+    "package_note": "README and verification records updated after the verified ZIP was built; source and tests unchanged",
+    "new_branch_ci": "Not yet run; branch has not been pushed",
+    "details": "audit.zip: round2-clean/clean-install.json and round2-clean/repeatability.json"
+  },
+  "saved_report": {
+    "branch": "round2-v2-final",
+    "commit": "c73e9dee60c5df51c3b48e79d305c5edc3bb014c",
+    "pages": 13,
+    "pdf_sha256": "b7f43f78a5373586c24836ee7a0a2cfb2974f419fb266ee6540dee461bea8956",
+    "checks_passed": 62,
+    "checks_total": 63,
+    "blockers": 3,
+    "cached_repeatability": {
+      "matched": true,
+      "runs": 2,
+      "cache_hits_per_run": 23,
+      "new_api_calls": 0,
+      "scope": "Fresh output folders seeded with the same cached model responses; not independent live-model calls"
+    },
+    "tests": {
+      "branch": "round2-v2-final",
+      "passed": 229,
+      "platform": "macOS, Python 3.12"
+    },
+    "detailed_records": "audit.zip"
+  },
+  "previous_ci": {
+    "branch": "round2-1q26-inputs",
+    "commit": "baacb3b0c69f6d8fa891886491fd324f57c271fc",
+    "run_url": "https://github.com/abdullahw1/vectera-pmr-agent/actions/runs/38335690194",
+    "macos": "All 231 tests and original-quarter no-key repeatability passed",
+    "windows": "230 passed, 1 failed; repeatability step skipped",
+    "failure": "test_delivered_1q26_inputs_match_original_execution_record compared native backslash paths with slash-separated saved keys; file hashes matched",
+    "fix": "Use relative_path.as_posix() in the inventory comparison",
+    "interactive_windows_11_verified": false
+  },
+  "submitted_branch_ci": {
+    "branch": "round2-v2-final",
+    "commit": "c73e9dee60c5df51c3b48e79d305c5edc3bb014c",
+    "run_url": "https://github.com/abdullahw1/vectera-pmr-agent/actions/runs/37577623114",
+    "windows": "passed tests and no-key original-quarter repeatability",
+    "macos": "passed tests and no-key original-quarter repeatability",
+    "scope": "Automated GitHub-hosted runners, not an observed Windows 11 interactive demo"
+  },
+  "historical_note": "The initial focused repair changed two production files and added six tests; later final v2 added related validation, contextual checks and review improvements. Historical counts describe their named branch, not this cleanup branch."
+}

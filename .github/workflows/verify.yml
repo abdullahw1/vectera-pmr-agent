@@ -3,6 +3,7 @@ on: [push, pull_request]
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
@@ -11,10 +12,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install -r requirements.txt
-      - run: python -m pytest -q
-      - run: python scripts/verify_repeatability.py --client CPERS --quarter 4Q25 --inputs fixtures/4Q25
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run regression tests (no API calls)
+        env:
+          PMR_LOAD_ENV: '0'
+        run: python -m pytest -q --junitxml=output/test-results.xml
+      - name: Check original-quarter repeatability (no API calls)
+        run: python scripts/verify_repeatability.py --client CPERS --quarter 4Q25 --inputs fixtures/4Q25
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: verification-${{ matrix.os }}
-          path: output/repeatability.json
+          path: |
+            output/test-results.xml
+            output/repeatability.json
